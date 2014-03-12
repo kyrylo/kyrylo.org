@@ -27,9 +27,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# A template language whose goal is to reduce the view syntax to the essential
+# parts without becoming cryptic.
+# https://github.com/slim-template/slim
+gem 'slim-rails'
+
 group :development, :test do
   # A testing framework.
-  # https://github.com/rspec/rspec-rails
+  # https://github.com/rspec/rspec-core
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
 
