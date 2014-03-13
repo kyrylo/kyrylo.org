@@ -32,6 +32,11 @@ gem 'jbuilder', '~> 1.2'
 # https://github.com/slim-template/slim
 gem 'slim-rails'
 
+# A customisable CSS file that makes browsers render all elements more
+# consistently and in line with modern standards.
+# https://github.com/markmcconachie/normalize-rails
+gem 'normalize-rails'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
