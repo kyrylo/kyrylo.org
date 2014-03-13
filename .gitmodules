@@ -1,0 +1,3 @@
+[submodule "vendor/assets/javascripts/modulargrid"]
+	path = vendor/assets/javascripts/modulargrid
+	url = https://github.com/aishek/modulargrid.git

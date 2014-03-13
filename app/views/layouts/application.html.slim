@@ -8,3 +8,6 @@ html
 
   body
     == yield
+
+    - if Rails.env.development?
+      = javascript_include_tag 'modulargrid/build/modulargrid'
