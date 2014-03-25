@@ -41,6 +41,10 @@ group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
   gem 'rspec-rails', '~> 3.0.0.beta'
+
+  # An IRB alternative and runtime developer console
+  # https://github.com/pry/pry
+  gem 'pry-rails', '~> 0.3'
 end
 
 group :doc do
