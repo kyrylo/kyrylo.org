@@ -3,6 +3,7 @@ module ApplicationHelper
   # @example
   #   figure_tag('avatar.png', size: '50x50', figcaption: 'Avatar')
   #   figure_tag('avatar.png', size: '50x50')
+  #   figure_tag('avatar.png')
   # @param [String] source the path to the image
   # @param [Hash] opts the options for the figure (+:figcaption+ plus image_tag's
   #   parameters)
