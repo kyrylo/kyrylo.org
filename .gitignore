@@ -14,3 +14,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# YARD.
+.yardoc
+
+# Generated docs.
+doc/app/*
+
+# Junk files.
+*~
