@@ -6,20 +6,21 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = favicon_link_tag '/favicon.gif'
-
   body
     #layout
-      |
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-        wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-        lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-        dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
-        dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
-        ignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
-        feugait nulla facilisi.
-
-      == yield
-
-      - if Rails.env.development?
-        = javascript_include_tag 'modulargrid/build/modulargrid'
+      #main
+        header
+          = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
+        nav
+          ul
+            li = link_to 'PROJECTS', root_path
+            li = link_to 'ARTICLES', root_path
+            li = link_to 'DESIGN', root_path
+            li = link_to 'BLOG', root_path
+            li = link_to 'JOURNEYS', root_path
+            li = link_to 'TRANSLATIONS', root_path
+            li = link_to 'BOOKSHELF', root_path
+        #content
+          == yield
+    - if Rails.env.development?
+      = javascript_include_tag 'modulargrid/build/modulargrid'
