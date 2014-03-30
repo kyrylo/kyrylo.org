@@ -8,6 +8,8 @@
   box-shadow: 0px -1px 3px #dfdfdf
 
   .content
+    @import home/_avatar
+
     margin: 0 auto
     width: 65%
 
@@ -15,18 +17,9 @@
       font-size: 105%
       width: 70%
       float: left
-      margin-right: 36px
 
-    .avatar
-      figure
-        margin: 0
-        position: relative
-        top: 60px
-        float: right
+    .flip .front
+      +transform(0, 180deg)
 
-        img
-          box-shadow: 2px 2px 2px #3a3a3a
-          border-top: 1px solid #302e2e
-          border-left: 1px solid #302e2e
-          border-right: 1px solid #666
-          border-bottom: 1px solid #666
+    .flip .back
+      +transform(0, 0)

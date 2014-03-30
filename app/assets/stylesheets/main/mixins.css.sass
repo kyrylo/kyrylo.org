@@ -1,0 +1,31 @@
+=transform($x, $y)
+  -o-transform: rotateX($x) rotateY($y)
+  -ms-transform: rotate($x) rotateY($y)
+  -moz-transform: rotateX($x) rotateY($y)
+  -webkit-transform: rotateX($x) rotateY($y)
+
+=transform-preserve-3d($x, $y)
+  +transform($x, $y)
+  -moz-transform-style: preserve-3d
+  -webkit-transform-style: preserve-3d
+
+=backface-visibility($val)
+  -webkit-backface-visibility: $val
+  -moz-backface-visibility: $val
+
+=box-shadow($val)
+  -o-box-shadow: $val
+  -ms-box-shadow: $val
+  -moz-box-shadow: $val
+  -webkit-box-shadow: $val
+  box-shadow: $val
+
+=transition($val)
+  -o-transition: $val
+  -ms-transition: $val
+  -moz-transition: $val
+  -webkit-transition: $val
+  transition: $val
+
+=transition-ease-in-out($s)
+  +transition(all $s ease-in-out)

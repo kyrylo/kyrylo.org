@@ -1,0 +1,38 @@
+.avatar
+  margin-left: 36px
+  float: left
+  margin-top: 57px
+  position: relative
+  cursor: pointer
+
+  figure
+    margin: 0
+    img
+      +box-shadow(2px 2px 2px #3a3a3a)
+      +transition(box-shadow 0.2s)
+      border-top: 1px solid #302e2e
+      border-left: 1px solid #302e2e
+      border-right: 1px solid #666
+      border-bottom: 1px solid #666
+
+    img.hovered
+      +box-shadow(5px 5px 16px #313131)
+      +transition(box-shadow 0.2s)
+      border-right: 1px solid #888
+      border-bottom: 1px solid #888
+      position: relative
+      left: -1px
+      top: -1px
+
+  .front, .back
+    +transition-ease-in-out(.4s)
+    +backface-visibility(hidden)
+    position: absolute
+    top: 0
+    left: 0
+
+  .front
+    +transform-preserve-3d(0, 0)
+
+  .back
+    +transform-preserve-3d(0, -180deg)
