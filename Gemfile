@@ -45,6 +45,16 @@ group :development, :test do
   # An IRB alternative and runtime developer console
   # https://github.com/pry/pry
   gem 'pry-rails', '~> 0.3'
+
+  # Tests web applications by simulating how a real user would interact with
+  # an application.
+  # https://github.com/jnicklas/capybara
+  gem 'capybara'
+
+  # A driver for Capybara. It allows to run Capybara tests on a headless WebKit
+  # browser, provided by PhantomJS.
+  # https://github.com/jonleighton/poltergeist
+  gem 'poltergeist'
 end
 
 group :doc do
