@@ -63,6 +63,10 @@ group :development, :test do
   # browser, provided by PhantomJS.
   # https://github.com/jonleighton/poltergeist
   gem 'poltergeist'
+
+  # Comments for migrations.
+  # https://github.com/pinnymz/migration_comments
+  gem 'migration_comments', '~> 0.3'
 end
 
 group :doc do
