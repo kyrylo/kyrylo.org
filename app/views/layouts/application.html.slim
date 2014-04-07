@@ -13,13 +13,8 @@ html
           = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
         nav
           ul
-            li = link_to 'PROJECTS', projects_path
-            li = link_to 'ARTICLES', root_path
-            li = link_to 'DESIGN', root_path
-            li = link_to 'BLOG', root_path
-            li = link_to 'JOURNEYS', root_path
-            li = link_to 'TRANSLATIONS', root_path
-            li = link_to 'BOOKSHELF', root_path
+            - ApplicationHelper::MENU_ITEMS.each do |menu_item|
+              li = link_to_unless_current menu_item, pathify(menu_item)
         #content
           == yield
     - if Rails.env.development?
