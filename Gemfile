@@ -37,6 +37,12 @@ gem 'slim-rails'
 # https://github.com/markmcconachie/normalize-rails
 gem 'normalize-rails'
 
+# Gives the seed data a little structure. Create seeds for each environment,
+# share seeds between environments and specify dependencies to load seeds in
+# order. All nicely integrated with simple rake tasks.
+# https://github.com/james2m/seedbank
+gem 'seedbank'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
