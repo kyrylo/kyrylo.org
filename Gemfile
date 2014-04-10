@@ -43,6 +43,10 @@ gem 'normalize-rails'
 # https://github.com/james2m/seedbank
 gem 'seedbank'
 
+# An easy file attachment library for Active Record.
+# https://github.com/thoughtbot/paperclip
+gem 'paperclip', '~> 4.1'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
