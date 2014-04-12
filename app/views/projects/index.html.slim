@@ -19,3 +19,6 @@
       div = @projects_count
     .inscription
       = 'project'.pluralize(@projects_count)
+
+.projects-list
+  = render partial: 'project', collection: @projects
