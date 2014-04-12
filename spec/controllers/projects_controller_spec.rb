@@ -2,22 +2,39 @@ require 'spec_helper'
 
 describe ProjectsController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Project. As you add validations to Project, be sure to
-  # adjust the attributes here as well.
-  # let(:valid_attributes) { { "title" => "MyText" } }
+  describe "GET index" do
+    before do
+      get :index
+    end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # ProjectsController. Be sure to keep this updated too.
-  # let(:valid_session) { {} }
+    it "returns http success" do
+      expect(response).to be_success
+    end
 
-  # describe "GET index" do
-  #   it "assigns all projects as @projects" do
-  #     project = Project.create! valid_attributes
-  #     get :index, {}, valid_session
-  #     expect(assigns(:projects)).to eq([project])
-  #   end
-  # end
+    context "no existing projects" do
+      it "collects all projects and stores them" do
+        expect(assigns(:projects)).to be_empty
+      end
+
+      it "assigns the projects counter" do
+        expect(assigns(:projects_count)).to equal(0)
+      end
+    end
+
+    context "some projects exist" do
+      before do
+        FactoryGirl.create(:project)
+        get :index
+      end
+
+      it "collects all projects and stores them" do
+        expect(assigns(:projects)).not_to be_empty
+      end
+
+      it "assigns the projects counter" do
+        expect(assigns(:projects_count)).to equal(1)
+      end
+    end
+  end
 
 end
