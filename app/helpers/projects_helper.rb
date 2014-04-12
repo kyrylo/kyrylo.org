@@ -13,9 +13,10 @@ module ProjectsHelper
         image_tag(
           project.thumbnail.picture.url,
           size:  project.thumbnail.dimensions.join('x'),
-          title: project.title + 'home page',
+          title: project.title + ' home page',
           alt:   project.title
-        )
+        ),
+        project
       )
     else
       link_to project.title, project, class: 'pseudoimg'
