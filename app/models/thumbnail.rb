@@ -1,6 +1,8 @@
 class Thumbnail < ActiveRecord::Base
   belongs_to :project
 
+  validates :picture, presence: true
+
   has_attached_file :picture, styles: { normal: '226x120' }
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
