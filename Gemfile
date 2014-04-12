@@ -47,6 +47,11 @@ gem 'seedbank'
 # https://github.com/thoughtbot/paperclip
 gem 'paperclip', '~> 4.1'
 
+# A fixtures replacement with a straightforward definition syntax, support for
+# multiple build strategies.
+# https://github.com/thoughtbot/factory_girl_rails
+gem 'factory_girl_rails', '~> 4.4'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
