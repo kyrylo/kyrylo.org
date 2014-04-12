@@ -47,11 +47,6 @@ gem 'seedbank'
 # https://github.com/thoughtbot/paperclip
 gem 'paperclip', '~> 4.1'
 
-# A fixtures replacement with a straightforward definition syntax, support for
-# multiple build strategies.
-# https://github.com/thoughtbot/factory_girl_rails
-gem 'factory_girl_rails', '~> 4.4'
-
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
@@ -82,6 +77,16 @@ group :development, :test do
   # Comments for migrations.
   # https://github.com/pinnymz/migration_comments
   gem 'migration_comments', '~> 0.3'
+
+  # A fixtures replacement with a straightforward definition syntax, support for
+  # multiple build strategies.
+  # https://github.com/thoughtbot/factory_girl_rails
+  gem 'factory_girl_rails', '~> 4.4'
+
+  # A library for generating fake data such as names, addresses, and phone
+  # numbers.
+  # https://github.com/stympy/faker
+  gem 'faker', '~> 1.3'
 end
 
 group :doc do
