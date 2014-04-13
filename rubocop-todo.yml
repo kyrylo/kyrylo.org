@@ -35,10 +35,6 @@ DotPosition:
 LineEndConcatenation:
   Enabled: false
 
-# Offense count: 26
-LineLength:
-  Max: 80
-
 # Offense count: 1
 # Configuration parameters: CountComments.
 MethodLength:
