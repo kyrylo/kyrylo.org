@@ -8,6 +8,7 @@ AllCops:
   Exclude:
     - db/schema.rb
     - tmp/**
+  RunRailsCops: true
 
 LineLength:
   Max: 80
