@@ -1,0 +1,15 @@
+AllCops:
+  Include:
+    - Gemfile
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/schema.rb
+    - tmp/**
+
+LineLength:
+  Exclude:
+    - db/seeds/**
+    - config/initializers/secret_token.rb
+
+inherit_from: rubocop-todo.yml
