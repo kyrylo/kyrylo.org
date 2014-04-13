@@ -8,6 +8,7 @@ AllCops:
   Exclude:
     - db/schema.rb
     - tmp/**
+    - bin/**
   RunRailsCops: true
 
 LineLength:
@@ -15,3 +16,37 @@ LineLength:
   Exclude:
     - db/seeds/**
     - config/initializers/secret_token.rb
+
+MethodLength:
+  Max: 15
+
+Documentation:
+  Enabled: true
+  Exclude:
+    - app/helpers/**
+    - app/models/**
+    - app/controllers/**
+    - db/migrate/**
+
+StringLiterals:
+  Enabled: true
+  Exclude:
+    - spec/**
+
+Blocks:
+  Enabled: false
+
+LineEndConcatenation:
+  Enabled: false
+
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  '||'
+    '%i': '||'
+    '%q': '||'
+    '%Q': '||'
+    '%r': '{}'
+    '%s': '||'
+    '%w': '||'
+    '%W': '||'
+    '%x': '||'

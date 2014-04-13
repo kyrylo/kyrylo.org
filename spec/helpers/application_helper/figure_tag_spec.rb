@@ -18,8 +18,8 @@ describe ApplicationHelper do
     end
 
     it "creates a safe buffer without a figcaption" do
-      expect(figure_tag(source).to_s).
-        to eq(without_figcaption_html)
+      expect(figure_tag(source).to_s)
+        .to eq(without_figcaption_html)
     end
   end
 end
