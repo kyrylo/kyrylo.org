@@ -1,3 +1,5 @@
+inherit_from: rubocop-todo.yml
+
 AllCops:
   Include:
     - Gemfile
@@ -8,8 +10,7 @@ AllCops:
     - tmp/**
 
 LineLength:
+  Max: 80
   Exclude:
     - db/seeds/**
     - config/initializers/secret_token.rb
-
-inherit_from: rubocop-todo.yml
