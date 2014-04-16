@@ -1,6 +1,10 @@
 .section-description
   width: 479px
   float: left
+  margin-top: 4px
+
+  p
+    line-height: 1.3
 
 .projects-meta
   float: right
@@ -8,6 +12,7 @@
   position: relative
   width: 225px
   left: 25px
+  top: -35px
 
 
   .eye-hand
@@ -65,8 +70,24 @@
       width: inherit
       height: 120px
 
+      .wrap
+        display: inline-block
+        height: 100%
+        vertical-align: middle
+
+      img, a
+        vertical-align: middle
+        max-height: 120px
+        max-width: 227px
+
       a
         border-bottom: none
+
+    &:nth-child(n+5)
+      margin-top: 47px
+
+  .title
+    margin-top: 13px
 
   .row
     margin-left: 0
@@ -74,9 +95,12 @@
   .pseudoimg
     +user-select(none)
     cursor: pointer
+    display: inline-block
     font-size: 200%
     font-family: Georgia, Times New Roman, serif
 
   .headline
     font-style: italic
     font-size: 90%
+    margin-top: 2px
+    line-height: 1.4
