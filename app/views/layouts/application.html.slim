@@ -7,15 +7,19 @@ html
     = csrf_meta_tags
     = favicon_link_tag '/favicon.gif'
   body
-    #layout
-      #main
-        header
-          = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
-        nav
-          ul
-            - ApplicationHelper::MENU_ITEMS.each do |menu_item|
-              li = link_to_unless_current menu_item, pathify(menu_item)
-        #content
-          == yield
+    #sticky-footer
+      #layout
+        #main
+          header
+            = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
+          nav
+            ul
+              - ApplicationHelper::MENU_ITEMS.each do |menu_item|
+                li = link_to_unless_current menu_item, pathify(menu_item)
+          #content
+            == yield
+    footer
+      #rainbow
+      h1 FOOTER YO
     - if Rails.env.development?
       = javascript_include_tag 'modulargrid/build/modulargrid'
