@@ -18,6 +18,7 @@ html
                 li = link_to_unless_current menu_item, pathify(menu_item)
           #content
             == yield
+      .push
     = render "layouts/footer"
     - if Rails.env.development?
       = javascript_include_tag 'modulargrid/build/modulargrid'
