@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Thumbnail do
-  it "is valid without a picture" do
+  it "is invalid without a picture" do
     expect(FactoryGirl.build(:thumbnail)).to be_invalid
   end
 
