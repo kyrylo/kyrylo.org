@@ -14,7 +14,7 @@
   { full_name: 'Andy Schmandy',
     nick: '',
     personal_page: 'http://example.com/' },
-].each do |assistant_attributes|
-  assistant = Assistant.find_or_initialize_by(name: assistant_attributes[:name])
-  assistant.update_attributes(assistant_attributes)
+].each do |assistant_attrs|
+  asst = Assistant.find_or_initialize_by(full_name: assistant_attrs[:full_name])
+  asst.update_attributes(assistant_attrs)
 end
