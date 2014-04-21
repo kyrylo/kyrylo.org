@@ -1,17 +1,26 @@
 require 'spec_helper'
 
 describe Thumbnail do
-  it "is invalid without a picture" do
-    expect(FactoryGirl.build(:thumbnail)).to be_invalid
+  describe "associations" do
+    it { should belong_to :project }
   end
 
-  it "is valid with a picture" do
-    expect(FactoryGirl.build(:thumbnail_with_picture)).to be_valid
+  describe "validations" do
+    it { should validate_attachment_presence :picture }
+  end
+
+  describe "attachments" do
+    it { should have_attached_file :picture }
+    it {
+      should validate_attachment_content_type(:picture).allowing(
+        'image/png', 'image/gif').rejecting('text/plain', 'text/xml')
+    }
   end
 
   describe "#dimensions" do
+    let(:thumb) { create(:thumbnail_with_picture) }
+
     it "returns the array of the picture's dimensions ([width, height])" do
-      thumb = FactoryGirl.create(:thumbnail_with_picture)
       expect(thumb.dimensions).to match_array([100, 92])
     end
   end

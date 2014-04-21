@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
+require 'paperclip/matchers'
 
 Capybara.javascript_driver = :poltergeist
 
@@ -46,4 +47,8 @@ RSpec.configure do |config|
   # If you do not include FactoryGirl::Syntax::Methods in your test suite, then
   # all factory_girl methods will need to be prefaced with FactoryGirl.
   config.include FactoryGirl::Syntax::Methods
+
+  # Provides RSpec-compatible & Test::Unit-compatible matchers for testing
+  # Paperclip attachments.
+  config.include Paperclip::Shoulda::Matchers
 end
