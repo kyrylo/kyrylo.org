@@ -1,11 +1,13 @@
 FactoryGirl.define do
   factory :project do
-    title Faker::Commerce.product_name
-    headline Faker::Company.catch_phrase
-    description Faker::Lorem.paragraph
+    title { generate :project_title }
+    headline { generate :headline }
+    description { generate :paragraph }
 
-    factory :project_with_thumbnail do
+    trait :with_thumbnail do
       association :thumbnail, factory: :thumbnail_with_picture
     end
+
+    factory :project_with_thumbnail, traits: [:with_thumbnail]
   end
 end

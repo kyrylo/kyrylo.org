@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :licence do
-    name Faker::Lorem.words(1)
-    link Faker::Internet.url
+    name { generate :word }
+    link { generate :url }
   end
 end
