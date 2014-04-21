@@ -88,6 +88,12 @@ group :development, :test do
   # numbers.
   # https://github.com/stympy/faker
   gem 'faker', '~> 1.3'
+
+  # Provides Test::Unit- and RSpec-compatible one-liners that test common Rails
+  # functionality. These tests would otherwise be much longer, more complex, and
+  # error-prone.
+  # https://github.com/thoughtbot/shoulda-matchers
+  gem 'shoulda-matchers'
 end
 
 group :doc do
