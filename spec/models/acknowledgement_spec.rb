@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Acknowledgement do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "associations" do
+    it { should belong_to(:project) }
+    it { should belong_to(:assistant) }
+  end
 end
