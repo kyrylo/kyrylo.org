@@ -42,4 +42,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # If you do not include FactoryGirl::Syntax::Methods in your test suite, then
+  # all factory_girl methods will need to be prefaced with FactoryGirl.
+  config.include FactoryGirl::Syntax::Methods
 end

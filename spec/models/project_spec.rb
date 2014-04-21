@@ -1,30 +1,26 @@
 require 'spec_helper'
 
 describe Project do
-  it "is invalid without title" do
-    expect(FactoryGirl.build(:project, title: nil)).to be_invalid
+
+  describe "associations" do
+    it { should have_one :thumbnail }
+    it { should have_many :acknowledgements }
   end
 
-  it "is invalid without headline" do
-    expect(FactoryGirl.build(:project, headline: nil)).to be_invalid
-  end
-
-  it "is invalid without description" do
-    expect(FactoryGirl.build(:project, description: nil)).to be_invalid
+  describe "validations" do
+    it { should validate_presence_of :title }
+    it { should validate_presence_of :headline }
+    it { should validate_presence_of :description }
   end
 
   describe "#thumbnail" do
-    context "with thumbnail" do
-      it "returns the thumbnail" do
-        project = FactoryGirl.build(:project_with_thumbnail)
-        expect(project.thumbnail).to be_a Thumbnail
-      end
+    it "returns the thumbnail if it exists" do
+      expect(build(:project_with_thumbnail).thumbnail).to be_a Thumbnail
     end
 
-    context "without thumbnail" do
-      it "returns nil" do
-        expect(FactoryGirl.build(:project).thumbnail).to be_nil
-      end
+    it "returns nil if it doesn't exist" do
+      expect(build(:project).thumbnail).to be_nil
     end
   end
+
 end
