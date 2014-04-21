@@ -1,15 +1,13 @@
 require 'spec_helper'
 
 describe Assistant do
-  it "is invalid without a full name" do
-    expect(FactoryGirl.build(:assistant, full_name: nil)).to be_invalid
+  describe "associations" do
+    it { should have_many(:acknowledgements) }
   end
 
-  it "is valid without a nick" do
-    expect(FactoryGirl.build(:assistant, nick: nil)).to be_valid
-  end
-
-  it "is valid without a personal page" do
-    expect(FactoryGirl.build(:assistant, personal_page: nil)).to be_valid
+  describe "validations" do
+    it { should validate_presence_of :full_name }
+    it { should_not validate_presence_of :nick }
+    it { should_not validate_presence_of :personal_page }
   end
 end
