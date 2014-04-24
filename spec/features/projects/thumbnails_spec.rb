@@ -3,40 +3,29 @@ require 'spec_helper'
 describe "projects/thumbnails", js: true do
   self.use_transactional_fixtures = false
 
-  let(:classname) { '.thumbnail' }
-  let(:highlighted) { '.title a' }
+  let(:highlighted) { '.thumbnail .title a' }
 
-  after do
-    Project.destroy_all
+  shared_examples "highlighting" do
+    subject { visit projects_path; find(highlighted) }
+
+    it "highlights the link" do
+      expect(subject['class']).to be_nil
+      find('.thumbimg a').hover
+      expect(subject['class']).to eq('hovered')
+    end
   end
 
   describe "hovering" do
-    context "thumbnail as an image" do
-      before do
-        FactoryGirl.create(:project_with_thumbnail)
-        visit projects_path
-        @thumb_elem = find(classname)
-      end
+    after { Project.destroy_all }
 
-      it "makes the appropriate link highlight" do
-        expect(@thumb_elem.find(highlighted)['class']).to eq(nil)
-        @thumb_elem.find('.thumbimg a').hover
-        expect(@thumb_elem.find(highlighted)['class']).to eq('hovered')
-      end
+    context "thumbnail as an image" do
+      before { create :project_with_thumbnail }
+      include_examples "highlighting"
     end
 
     context "thumbnail as text" do
-      before do
-        FactoryGirl.create(:project)
-        visit projects_path
-        @thumb_elem = find(classname)
-      end
-
-      it "makes the appropriate link highlight" do
-        expect(@thumb_elem.find(highlighted)['class']).to eq(nil)
-        @thumb_elem.find('.thumbimg a').hover
-        expect(@thumb_elem.find(highlighted)['class']).to eq('hovered')
-      end
+      before { create :project }
+      include_examples "highlighting"
     end
   end
 end
