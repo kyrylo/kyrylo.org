@@ -23,7 +23,7 @@ describe ProjectsController do
 
     context "some projects exist" do
       before do
-        FactoryGirl.create(:project)
+        create(:project)
         get :index
       end
 
@@ -39,10 +39,10 @@ describe ProjectsController do
 
   describe "GET show" do
     let(:valid_session) { {} }
+    let(:project) { create(:project) }
 
     it "assigns the requested project as @project" do
-      project = FactoryGirl.create(:project)
-      get :show, {id: project.to_param}, valid_session
+      get :show, { id: project.to_param }, valid_session
       expect(assigns(:project)).to eq(project)
     end
   end
