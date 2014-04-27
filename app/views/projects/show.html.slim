@@ -1,15 +1,10 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @project.title
-p
-  strong Headline:
-  = @project.headline
-p
-  strong Description:
-  = @project.description
-
-/= link_to 'Edit', edit_project_path(@project)
-'|
-= link_to 'Back', projects_path
+.project
+  .sidebar
+    ' sidebar
+  .info
+    h1 = @project.title
+    - if @project_status.status == Project::INCOMPLETE
+      .status
+        .triangle
+          p !!
+        ' incomplete

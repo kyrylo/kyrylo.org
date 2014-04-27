@@ -105,3 +105,39 @@
     font-size: 90%
     margin-top: 2px
     line-height: 1.4
+
+#content .project
+  h1
+    font-size: 150%
+
+  .status
+    font-family: Arial
+    font-size: 70%
+    font-style: italic
+    color: #852b2b
+
+    .triangle
+      +transform(360deg, 360deg)
+      width: 0px
+      height: 0px
+      border-style: inset
+      border-width: 0 6px 9px 6px
+      border-style: solid
+      border-color: transparent transparent #852b2b transparent
+      float: left
+
+      p
+        text-align: center
+        top: 1px
+        left: -5px
+        position: relative
+        width: 9px
+        height: 9px
+        margin: 0px
+        color: #fff
+        font-size: 8px
+        font-weight: 700
+        font-style: normal
+
+.sidebar
+  width: 240px
