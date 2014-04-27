@@ -3,7 +3,8 @@ after 'project_statuses' do
     { title: 'Only Black and White',
       headline: 'This website',
       description: 'This is Only Black and White',
-      first_release_date: Date.new(2014, 5, 15) },
+      first_release_date: Date.new(2014, 5, 15),
+      project_status: ProjectStatus.find_by(status: 1) },
 
     { title: 'Chic et Nature',
       headline: 'Website for the Ukrainian department of a company, which sells perfumes',
@@ -33,7 +34,8 @@ after 'project_statuses' do
     { title: 'Patience',
       headline: 'A solitaire written in Ruby',
       description: 'This is Patience',
-      first_release_date: Date.new(2011, 9, 9) },
+      first_release_date: Date.new(2011, 9, 9),
+      project_status: ProjectStatus.find_by(status: 1) },
 
     { title: 'Lovely Lambdas',
       headline: 'A Ruby library with a group of useless functions',
