@@ -2,8 +2,11 @@ require 'spec_helper'
 
 describe "projects/index" do
   let(:projects) {
-    4.times.map { FactoryGirl.create(:project) } +
-    3.times.map { FactoryGirl.create(:project_with_thumbnail) }
+    projects = 4.times.map { FactoryGirl.create(:project) }
+    projects_with_thumbnails = 3.times.map do
+      FactoryGirl.create(:project_with_thumbnail)
+    end
+    (projects + projects_with_thumbnails).shuffle
   }
 
   before do
