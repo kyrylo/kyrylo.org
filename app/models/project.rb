@@ -3,7 +3,14 @@ class Project < ActiveRecord::Base
 
   has_many :acknowledgements
 
+  has_many :implementations
+  has_many :technologies, through: :implementations
+
+  has_many :subordinations
+  has_many :third_parties, through: :subordinations
+
   belongs_to :project_status
+  belongs_to :licence
 
   validates :title, presence: true
   validates :headline, presence: true

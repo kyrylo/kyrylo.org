@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425182922) do
+ActiveRecord::Schema.define(version: 20140427222349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20140425182922) do
     t.datetime "updated_at"
   end
 
+  create_table "implementations", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "technology_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "implementations", ["project_id"], name: "index_implementations_on_project_id", using: :btree
+  add_index "implementations", ["technology_id"], name: "index_implementations_on_technology_id", using: :btree
+
   create_table "licences", force: true do |t|
     t.text     "name",       null: false
     t.text     "link"
@@ -57,9 +67,21 @@ ActiveRecord::Schema.define(version: 20140425182922) do
     t.datetime "updated_at"
     t.date     "first_release_date"
     t.integer  "project_status_id"
+    t.integer  "licence_id"
   end
 
+  add_index "projects", ["licence_id"], name: "index_projects_on_licence_id", using: :btree
   add_index "projects", ["project_status_id"], name: "index_projects_on_project_status_id", using: :btree
+
+  create_table "subordinations", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "third_party_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subordinations", ["project_id"], name: "index_subordinations_on_project_id", using: :btree
+  add_index "subordinations", ["third_party_id"], name: "index_subordinations_on_third_party_id", using: :btree
 
   create_table "technologies", force: true do |t|
     t.text     "name",       null: false

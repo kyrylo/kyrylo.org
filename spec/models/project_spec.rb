@@ -5,7 +5,12 @@ describe Project do
   describe "associations" do
     it { should have_one :thumbnail }
     it { should have_many :acknowledgements }
+    it { should have_many :implementations }
+    it { should have_many(:technologies).through(:implementations) }
+    it { should have_many :subordinations }
+    it { should have_many(:third_parties).through(:subordinations) }
     it { should belong_to :project_status }
+    it { should belong_to :licence }
   end
 
   describe "validations" do
