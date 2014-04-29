@@ -48,6 +48,10 @@ gem 'seedbank'
 # https://github.com/thoughtbot/paperclip
 gem 'paperclip', '~> 4.1'
 
+# Adds an object-oriented layer of presentation logic to your Rails application.
+# https://github.com/drapergem/draper
+gem 'draper', '~> 1.3'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
