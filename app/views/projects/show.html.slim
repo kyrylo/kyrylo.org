@@ -3,8 +3,8 @@
     ' sidebar
   .info
     h1 = @project.title
-    - if @project_status.status == Project::INCOMPLETE
-      .status
+    - if @project.incomplete?
+      .state
         .triangle
           p !!
         ' incomplete

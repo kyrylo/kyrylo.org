@@ -7,7 +7,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project_status = @project.project_status
   end
 
   private

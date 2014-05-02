@@ -9,7 +9,6 @@ describe Project do
     it { should have_many(:technologies).through(:implementations) }
     it { should have_many :subordinations }
     it { should have_many(:third_parties).through(:subordinations) }
-    it { should belong_to :project_status }
     it { should belong_to :licence }
   end
 
@@ -19,15 +18,23 @@ describe Project do
     it { should validate_presence_of :description }
   end
 
-  describe "callbacks" do
-    before do
-      create(:project_status_finished)
-      create(:project_status_incomplete)
+  describe "states" do
+    describe "initial" do
+      it "equals to 'finished' by default" do
+        expect(build(:project).finished?).to be_truthy
+      end
     end
 
-    describe ".before_save" do
-      it "sets the project to 'finished' by default" do
-        expect(create(:project).project_status.status).to eq(0)
+    describe "finished" do
+      it "transits to 'incomplete'" do
+        expect(build(:project).tap(&:mark_as_incomplete).incomplete?)
+          .to be_truthy
+      end
+    end
+
+    describe "incomplete" do
+      it "transits to 'finished'" do
+        expect(build(:project_incomplete).tap(&:finish).finished?).to be_truthy
       end
     end
   end

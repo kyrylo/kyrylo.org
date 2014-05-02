@@ -9,28 +9,31 @@ class Project < ActiveRecord::Base
   has_many :subordinations
   has_many :third_parties, through: :subordinations
 
-  belongs_to :project_status
   belongs_to :licence
 
   validates :title, presence: true
   validates :headline, presence: true
   validates :description, presence: true
 
-  before_save :set_default_project_status
 
-  # A project's status. It means that the project is usable in spite of the
+  # A project's state. It means that the project is usable in spite of the
   # further possible updates.
-  FINISHED = 0
+  FINISHED = :finished
 
-  # A project's status. It means that the project is not usable. Ususally, the
+  # A project's state. It means that the project is not usable. Ususally, the
   # further updates are not planned in this case.
-  INCOMPLETE = 1
+  INCOMPLETE = :incomplete
 
-  private
+  state_machine :state, initial: FINISHED do
+    event :mark_as_incomplete do
+      transition FINISHED => INCOMPLETE
+    end
 
-  # Every project is finished by default.
-  # @return [void]
-  def set_default_project_status
-    self.project_status ||= ProjectStatus.find_by(status: FINISHED)
+    event :finish do
+      transition INCOMPLETE => FINISHED
+    end
+
+    state FINISHED
+    state INCOMPLETE
   end
 end

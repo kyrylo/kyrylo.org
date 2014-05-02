@@ -1,10 +1,10 @@
-after 'project_statuses', 'development:licences', 'development:technologies', 'development:third_parties' do
+after 'development:licences', 'development:technologies', 'development:third_parties' do
   [
     { title: 'Only Black and White',
       headline: 'This website',
       description: 'This is Only Black and White',
       first_release_date: Date.new(2014, 5, 15),
-      project_status: ProjectStatus.find_by(status: 1),
+      state: Project::INCOMPLETE,
       licence: Licence.find_by(name: 'Unlicense'),
       technologies: [
         Technology.find_by(name: 'Ruby'),
@@ -56,7 +56,7 @@ after 'project_statuses', 'development:licences', 'development:technologies', 'd
       headline: 'A solitaire written in Ruby',
       description: 'This is Patience',
       first_release_date: Date.new(2011, 9, 9),
-      project_status: ProjectStatus.find_by(status: 1),
+      state: Project::INCOMPLETE,
       licence: Licence.find_by(name: 'zlib License') },
 
     { title: 'Lovely Lambdas',

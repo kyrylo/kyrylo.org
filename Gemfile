@@ -52,6 +52,12 @@ gem 'paperclip', '~> 4.1'
 # https://github.com/drapergem/draper
 gem 'draper', '~> 1.3'
 
+# Adds support for creating state machines for attributes on any Ruby class.
+# https://github.com/pluginaweek/state_machine
+# TODO: we're using a fork, since the gem doesn't work with Rails 4 yet.
+# See: https://github.com/pluginaweek/state_machine/issues/295
+gem 'state_machine', '~> 1.2', git: 'https://github.com/seuros/state_machine.git'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
