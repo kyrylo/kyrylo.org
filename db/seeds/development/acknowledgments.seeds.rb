@@ -5,15 +5,15 @@ after 'development:projects', 'development:assistants' do
 
     { project: Project.find_by(title: 'Only Black and White'),
       assistant: Assistant.find_by(full_name: 'Chris Gahan'),
-      text: 'Never forget you!' },
+      text: 'I will never forget you! Thank you so much, OMG!' },
 
     { project: Project.find_by(title: 'Only Black and White'),
       assistant: Assistant.find_by(full_name: 'John Smith'),
-      text: 'Invaluable contributions' },
+      text: "Invaluable contributions. I can't even express how k00 you are!" },
 
     { project: Project.find_by(title: 'Only Black and White'),
       assistant: Assistant.find_by(full_name: 'Andy Schmandy'),
-      text: 'We are proud of you' },
+      text: 'We are proud of you. Your help was very important. Thanks!' },
 
     { project: Project.find_by(title: 'Kredmash Dealer'),
       assistant: Assistant.find_by(full_name: 'John Smith'),
