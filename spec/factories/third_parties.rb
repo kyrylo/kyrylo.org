@@ -1,8 +1,11 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :third_party do
-    name "MyText"
-    link "MyText"
+    name { generate :name }
+
+    trait :with_link do
+      link { generate :link }
+    end
+
+    factory :third_party_with_link, traits: [:with_link]
   end
 end

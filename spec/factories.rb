@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence :project_title do
+  sequence :project_title, aliases: [:name] do
     Faker::Commerce.product_name
   end
 
@@ -13,6 +13,10 @@ FactoryGirl.define do
 
   sequence :word do
     Faker::Lorem.words(1)
+  end
+
+  sequence :short_text do
+    Faker::Lorem.paragraph(3)
   end
 
   sequence :link do

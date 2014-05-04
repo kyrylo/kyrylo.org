@@ -36,4 +36,17 @@ class Project < ActiveRecord::Base
     state FINISHED
     state INCOMPLETE
   end
+
+  # Checks whether any third party software was used in order to create the
+  # project.
+  # @return [Boolean]
+  def any_third_parties?
+    third_parties.any?
+  end
+
+  # Checks whether anyone helped to create the project.
+  # @return [Boolean]
+  def any_acknowledgements?
+    acknowledgements.any?
+  end
 end

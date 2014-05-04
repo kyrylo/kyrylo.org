@@ -49,4 +49,25 @@ describe Project do
     end
   end
 
+  describe "#any_third_parties?" do
+    it "returns true if the project has third parties" do
+      expect(create(:subordination_with_third_party).project
+          .any_third_parties?).to be_truthy
+    end
+
+    it "returns false if the project doesn't have third parties" do
+      expect(create(:subordination).project.any_third_parties?).to be_falsey
+    end
+  end
+
+  describe "#any_acknowledgements?" do
+    it "returns true if the project has acknowledgements" do
+      expect(create(:project_with_acknowledgements)
+          .any_acknowledgements?).to be_truthy
+    end
+
+    it "returns false if the project doesn't have acknowledgements" do
+      expect(create(:project).any_acknowledgements?).to be_falsey
+    end
+  end
 end
