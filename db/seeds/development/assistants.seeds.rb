@@ -9,7 +9,6 @@
   { full_name: 'John Smith' },
 
   { full_name: 'Andy Schmandy',
-    nick: '',
     personal_page: 'http://example.com/' },
 ].each do |assistant_attrs|
   asst = Assistant.find_or_initialize_by(full_name: assistant_attrs[:full_name])
