@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# Rails Assets is the frictionless proxy between Bundler and Bower. It
+# automatically converts the packaged components into gems that are easily
+# droppable into your asset pipeline and stay up to date.
+# https://rails-assets.org/
+source 'https://rails-assets.org'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0'
 
@@ -57,6 +63,10 @@ gem 'draper', '~> 1.3'
 # TODO: we're using a fork, since the gem doesn't work with Rails 4 yet.
 # See: https://github.com/pluginaweek/state_machine/issues/295
 gem 'state_machine', '~> 1.2', git: 'https://github.com/seuros/state_machine.git'
+
+# A jQuery tooltip plugin.
+# https://github.com/iamceege/tooltipster
+gem 'rails-assets-tooltipster', '~> 3.2'
 
 group :development, :test do
   # A testing framework.

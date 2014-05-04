@@ -141,3 +141,25 @@
 
 .sidebar
   width: 240px
+
+  .info-block
+    h4
+      font-family: Times New Roman, serif
+      font-weight: 700
+      font-size: 90%
+
+    a
+      color: #506775
+      border-bottom: 1px solid rgba(80, 103, 117, 0.4)
+
+      &:hover
+        @extend a:hover
+
+    .assistant .hint--right
+      color: #506775
+      border-bottom: 1px dotted rgba(80, 103, 117, 0.4)
+
+      &:hover
+        @extend a:hover
+        cursor: pointer
+        border-bottom-style: dotted
