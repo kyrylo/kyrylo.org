@@ -2,6 +2,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'shoulda/matchers'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'paperclip/matchers'
@@ -51,4 +52,10 @@ RSpec.configure do |config|
   # Provides RSpec-compatible & Test::Unit-compatible matchers for testing
   # Paperclip attachments.
   config.include Paperclip::Shoulda::Matchers
+
+  # Enables focusing on a particular test. Useful for my Guard workflow.
+  config.filter_run focus: true
+
+  # Runs all the tests if the focus option isn't present.
+  config.run_all_when_everything_filtered = true
 end
