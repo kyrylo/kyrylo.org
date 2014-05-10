@@ -71,7 +71,7 @@ gem 'rails-assets-tooltipster', '~> 3.2'
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', '~> 3.0.0.beta2'
 
   # An IRB alternative and runtime developer console
   # https://github.com/pry/pry
@@ -114,6 +114,23 @@ group :development, :test do
   # error-prone.
   # https://github.com/thoughtbot/shoulda-matchers
   gem 'shoulda-matchers'
+
+
+  # A command line tool to easily handle events on file system modifications.
+  # https://github.com/guard/guard
+  gem 'guard', '~> 2.6'
+
+  # Allows to automatically & intelligently install/update bundle when needed.
+  # https://github.com/guard/guard-bundler
+  gem 'guard-bundler', require: false
+
+  # Automatically reload a browser when 'view' files are modified.
+  # https://github.com/guard/guard-livereload
+  gem 'guard-livereload', require: false
+
+  # Automatically runs specs (much like autotest).
+  # https://github.com/guard/guard-rspec
+  gem 'guard-rspec', require: false
 end
 
 group :doc do
