@@ -113,8 +113,15 @@ group :development, :test do
   # functionality. These tests would otherwise be much longer, more complex, and
   # error-prone.
   # https://github.com/thoughtbot/shoulda-matchers
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
 
+  # A Rails application preloader.
+  # https://github.com/rails/spring
+  gem 'spring', '~> 1.1'
+
+  # Implements the rspec command for Spring.
+  # https://github.com/jonleighton/spring-commands-rspec
+  gem 'spring-commands-rspec'
 
   # A command line tool to easily handle events on file system modifications.
   # https://github.com/guard/guard
@@ -143,15 +150,3 @@ group :doc do
   # https://github.com/voloko/sdoc
   gem 'sdoc', '~> 0.4', require: false
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
