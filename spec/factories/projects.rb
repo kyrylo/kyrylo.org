@@ -3,6 +3,8 @@ FactoryGirl.define do
     title { generate :project_title }
     headline { generate :headline }
     description { generate :paragraph }
+    first_release_date Date.new(2012, 12, 3)
+    association :licence, factory: :licence
 
     trait :with_thumbnail do
       association :thumbnail, factory: :thumbnail_with_picture
@@ -14,9 +16,12 @@ FactoryGirl.define do
       end
     end
 
-    trait :with_acknowledgements do
+    trait :with_unique_acknowledgements do
       after(:create) do |project|
-        create_list(:acknowledgement, 3, project: project)
+        project.acknowledgements << build(:acknowledgement_with_nick_text_link)
+        project.acknowledgements << build(:acknowledgement_with_nick_text)
+        project.acknowledgements << build(:acknowledgement_with_nick)
+        project.acknowledgements << build(:acknowledgement)
       end
     end
 
@@ -26,6 +31,10 @@ FactoryGirl.define do
 
     factory :project_with_thumbnail, traits: [:with_thumbnail]
     factory :project_incomplete, traits: [:incomplete]
-    factory :project_with_acknowledgements, traits: [:with_acknowledgements]
+    factory(
+      :project_with_unique_acknowledgements,
+      aliases: [:project_with_acknowledgements],
+      traits: [:with_unique_acknowledgements]
+    )
   end
 end

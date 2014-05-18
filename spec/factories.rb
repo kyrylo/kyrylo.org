@@ -12,7 +12,7 @@ FactoryGirl.define do
   end
 
   sequence :word do
-    Faker::Lorem.words(1)
+    Faker::Lorem.word
   end
 
   sequence :short_text do
@@ -21,5 +21,9 @@ FactoryGirl.define do
 
   sequence :link do
     Faker::Internet.url
+  end
+
+  sequence :full_name do
+    Faker::Name.name
   end
 end
