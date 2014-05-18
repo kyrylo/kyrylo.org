@@ -14,6 +14,7 @@ class Project < ActiveRecord::Base
   validates :title, presence: true
   validates :headline, presence: true
   validates :description, presence: true
+  validates :first_release_date, presence: true
 
 
   # A project's state. It means that the project is usable in spite of the
