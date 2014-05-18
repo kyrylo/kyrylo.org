@@ -138,6 +138,10 @@ group :development, :test do
   # Automatically runs specs (much like autotest).
   # https://github.com/guard/guard-rspec
   gem 'guard-rspec', require: false
+
+  # A ruby library for prettier-still anonymous blocks.
+  # https://github.com/rapportive-oss/ampex
+  gem 'ampex', '~> 3.0'
 end
 
 group :doc do

@@ -34,7 +34,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ampex (3.0.0)
+      blankslate
     arel (5.0.1.20140414130214)
+    blankslate (3.1.2)
     builder (3.2.2)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -148,7 +151,7 @@ GEM
       yard (~> 0.8)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
-    pry-theme (1.0.2)
+    pry-theme (1.0.3)
       coderay (~> 1.1)
       json (~> 1.8)
     rack (1.5.2)
@@ -260,6 +263,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ampex (~> 3.0)
   capybara
   coffee-rails (~> 4.0.0)
   draper (~> 1.3)
