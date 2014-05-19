@@ -1,6 +1,10 @@
 .project
   .sidebar
-    ' sidebar
+    = @project.first_release_date
+    = @project.licence
+    = @project.technologies
+    = @project.third_parties
+    = @project.acknowledgements
   .info
     h1 = @project.title
     - if @project.incomplete?

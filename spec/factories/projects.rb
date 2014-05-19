@@ -25,16 +25,28 @@ FactoryGirl.define do
       end
     end
 
+    trait :with_third_party_software do
+      after(:create) do |project|
+        project.third_parties << build(:third_party)
+        project.third_parties << build(:third_party_with_link)
+      end
+    end
+
     after(:build) do |project|
       project.__send__(:initialize_state_machines, dynamic: :force)
     end
 
     factory :project_with_thumbnail, traits: [:with_thumbnail]
     factory :project_incomplete, traits: [:incomplete]
-    factory(
-      :project_with_unique_acknowledgements,
+    factory(:project_with_unique_acknowledgements,
       aliases: [:project_with_acknowledgements],
       traits: [:with_unique_acknowledgements]
     )
+    factory(:project_stuffed,
+      traits: [
+        :with_thumbnail,
+        :with_unique_acknowledgements,
+        :with_third_party_software
+      ])
   end
 end

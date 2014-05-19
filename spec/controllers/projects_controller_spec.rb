@@ -41,8 +41,13 @@ describe ProjectsController do
     let(:valid_session) { {} }
     let(:project) { create(:project) }
 
+    before { get :show, { id: project.to_param }, valid_session }
+
+    it "decorates project" do
+      expect(assigns(:project)).to be_decorated
+    end
+
     it "assigns the requested project as @project" do
-      get :show, { id: project.to_param }, valid_session
       expect(assigns(:project)).to eq(project)
     end
   end

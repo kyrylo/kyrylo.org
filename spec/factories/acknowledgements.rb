@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :acknowledgement do
     assistant
+    project
 
     trait :with_nick do
       association :assistant, factory: :assistant_with_nick

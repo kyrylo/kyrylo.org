@@ -155,11 +155,28 @@
       &:hover
         @extend a:hover
 
-    .assistant .hint--right
+    .assistant .tooltip
       color: #506775
-      border-bottom: 1px dotted rgba(80, 103, 117, 0.4)
+      border-bottom: 1px dashed rgba(80, 103, 117, 0.4)
 
       &:hover
         @extend a:hover
-        cursor: pointer
-        border-bottom-style: dotted
+        cursor: help
+        border-bottom-style: dashed
+
+.tooltipster-kyrylo-theme
+  border: 1px solid rgba(80, 103, 117, 0.4)
+  background-color: white
+  color: #000
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3)
+
+
+  .tooltipster-content
+    font-family: Georgia, sans-serif
+    font-style: italic
+    font-size: 11px
+    line-height: 16px
+    padding: 8px 10px
+
+    div
+      margin-top: 5px
