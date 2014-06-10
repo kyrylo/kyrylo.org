@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502211442) do
+ActiveRecord::Schema.define(version: 20140608203858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,19 @@ ActiveRecord::Schema.define(version: 20140502211442) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "project_urls", force: true do |t|
+    t.integer  "project_id"
+    t.text     "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "favicon_file_name"
+    t.string   "favicon_content_type"
+    t.integer  "favicon_file_size"
+    t.datetime "favicon_updated_at"
+  end
+
+  add_index "project_urls", ["project_id"], name: "index_project_urls_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.text     "title",              null: false

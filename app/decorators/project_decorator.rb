@@ -1,5 +1,5 @@
 class ProjectDecorator < Draper::Decorator
-  delegate :title, :incomplete?
+  delegate :title, :incomplete?, :project_url
 
   def first_release_date
     info_block('First release date') do
@@ -33,6 +33,13 @@ class ProjectDecorator < Draper::Decorator
     end
   end
 
+  def address
+    h.link_to(
+      project_address,
+      URI::HTTP.build(host: model.project_url.address).to_s
+    )
+  end
+
   private
 
   def info_block(title, id = nil)
@@ -40,5 +47,15 @@ class ProjectDecorator < Draper::Decorator
       h.concat h.content_tag(:h4, title)
       h.concat yield.html_safe
     end
+  end
+
+  def favicon
+    h.content_tag(:span, class: 'favicon') do
+      h.image_tag(model.project_url.favicon.url, alt: model.title)
+    end
+  end
+
+  def project_address
+    favicon + h.content_tag(:span, class: 'url') { model.project_url.address }
   end
 end

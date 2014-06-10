@@ -4,6 +4,7 @@ describe Project do
 
   describe "associations" do
     it { should have_one :thumbnail }
+    it { should have_one :project_url }
     it { should have_many :acknowledgements }
     it { should have_many :implementations }
     it { should have_many(:technologies).through(:implementations) }

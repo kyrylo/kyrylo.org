@@ -13,4 +13,9 @@
           p !!
         ' incomplete
 
+
+    - if @project.project_url
+      .reference
+        = @project.address
+
     .description = [@project.title, ' '].join(' ') * 100

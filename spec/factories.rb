@@ -23,6 +23,10 @@ FactoryGirl.define do
     Faker::Internet.url
   end
 
+  sequence :website do
+    Faker::Internet.domain_name
+  end
+
   sequence :full_name do
     Faker::Name.name
   end

@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   has_one :thumbnail
+  has_one :project_url
 
   has_many :acknowledgements
 

@@ -80,6 +80,42 @@ describe "projects/show" do
     end
   end
 
+  describe "project url" do
+    context "project has the url" do
+      def favicon(img)
+        %r{<span class="favicon"><img alt=".+" src=".+\/#{img}.+" />}
+      end
+
+      let(:project) { build(:project_with_favicon).decorate }
+
+      before { assign(:project, project) && render }
+
+      context "with favicon" do
+        it "displays the custom favicon" do
+          expect(rendered).to match(favicon('favicon\.png\?'))
+        end
+      end
+
+      context "without favicon" do
+        let(:project) { build(:project_without_favicon).decorate }
+
+        it "displays the default favicon" do
+          expect(rendered).to match(favicon('favicon-missing\.png'))
+        end
+      end
+
+      it "displays url" do
+        expect(rendered).to have_selector('.reference .url')
+      end
+    end
+
+    context "project doesn't have the url" do
+      it "doesn't display the url" do
+        expect(rendered).not_to have_selector('.reference .url')
+      end
+    end
+  end
+
   it "displays the project's title" do
     expect(rendered).to have_selector('.info h1', text: project.title)
   end

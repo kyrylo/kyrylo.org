@@ -71,7 +71,17 @@ describe ProjectDecorator do
 
     it "builds the acknowledgements block" do
       expect(subject.acknowledgements)
-        .to eq("<div class=\"info-block\" id=\"acknowledgements\"><h4>Acknowledgements</h4><span class=\"assistant\"><span class=\"full-name \" title=\"\">Bill</span></span><br /><span class=\"assistant\"><span class=\"full-name \" title=\"\">Joe</span></span></div>")
+        .to match(%r{<div class="info-block" id="acknowledgements"><h4>Acknowledgements</h4><span class="assistant"><span class="full-name " title="">(Joe|Bill)</span></span><br /><span class="assistant"><span class="full-name " title="">(Joe|Bill)</span></span></div>})
+    end
+  end
+
+  describe "#address" do
+    let(:project) { build(:project_with_favicon) }
+    let(:website) { project.project_url.address }
+
+    it "displays the project url along with the favicon" do
+      expect(subject.address)
+        .to match(%r{<a href="http://#{website}"><span class="favicon"><img alt=".+" src=".+" /></span><span class="url">#{website}</span></a>})
     end
   end
 end

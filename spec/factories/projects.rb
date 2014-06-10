@@ -10,6 +10,14 @@ FactoryGirl.define do
       association :thumbnail, factory: :thumbnail_with_picture
     end
 
+    trait :with_favicon do
+      association :project_url, factory: :project_url_with_favicon
+    end
+
+    trait :without_favicon do
+      association :project_url, factory: :project_url
+    end
+
     trait :incomplete do
       after(:build) do |project|
         project.mark_as_incomplete
@@ -37,6 +45,8 @@ FactoryGirl.define do
     end
 
     factory :project_with_thumbnail, traits: [:with_thumbnail]
+    factory :project_with_favicon, traits: [:with_favicon]
+    factory :project_without_favicon, traits: [:without_favicon]
     factory :project_incomplete, traits: [:incomplete]
     factory(:project_with_unique_acknowledgements,
       aliases: [:project_with_acknowledgements],
