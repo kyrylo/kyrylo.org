@@ -146,7 +146,7 @@ GEM
       yard (~> 0.8)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
-    pry-theme (1.1.0)
+    pry-theme (1.1.1)
       coderay (~> 1.1)
       json (~> 1.8)
     rack (1.5.2)
