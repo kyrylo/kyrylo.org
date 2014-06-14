@@ -58,4 +58,10 @@ RSpec.configure do |config|
 
   # Runs all the tests if the focus option isn't present.
   config.run_all_when_everything_filtered = true
+
+  # Previously we automatically inferred spec type from a file location, this
+  # was a surprising behaviour for new users and undesirable for some veteran
+  # users so from RSpec 3 onwards this behaviour must be explicitly opted into
+  # with.
+  config.infer_spec_type_from_file_location!
 end
