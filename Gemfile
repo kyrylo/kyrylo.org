@@ -71,7 +71,7 @@ gem 'rails-assets-tooltipster', '~> 3.2'
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
-  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem 'rspec-rails', '~> 3.0'
 
   # An IRB alternative and runtime developer console
   # https://github.com/pry/pry

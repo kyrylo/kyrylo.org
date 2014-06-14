@@ -276,7 +276,7 @@ DEPENDENCIES
   pry-theme (~> 1.0)
   rails (~> 4.0)
   rails-assets-tooltipster (~> 3.2)
-  rspec-rails (~> 3.0.0.beta2)
+  rspec-rails (~> 3.0)
   sass-rails (~> 4.0.0)
   sdoc (~> 0.4)
   seedbank
