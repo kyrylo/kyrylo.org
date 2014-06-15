@@ -47,7 +47,7 @@ FactoryGirl.define do
     factory :project_with_thumbnail, traits: [:with_thumbnail]
     factory :project_with_favicon, traits: [:with_favicon]
     factory :project_without_favicon, traits: [:without_favicon]
-    factory :project_incomplete, traits: [:incomplete]
+    factory :incomplete_project, traits: [:incomplete]
     factory(:project_with_unique_acknowledgements,
       aliases: [:project_with_acknowledgements],
       traits: [:with_unique_acknowledgements]

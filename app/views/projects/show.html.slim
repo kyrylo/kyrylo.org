@@ -6,16 +6,7 @@
     = @project.third_parties
     = @project.acknowledgements
   .info
-    h1 = @project.title
-    - if @project.incomplete?
-      .state
-        .triangle
-          p !!
-        ' incomplete
-
-
-    - if @project.project_url
-      .reference
-        = @project.address
+    = render 'state'
+    = render 'url'
 
     .description = [@project.title, ' '].join(' ') * 100

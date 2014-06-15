@@ -1,0 +1,6 @@
+h1 = @project.title
+- if @project.incomplete?
+  .state
+    .triangle
+      p !!
+    ' incomplete

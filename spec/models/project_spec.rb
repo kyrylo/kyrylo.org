@@ -36,7 +36,7 @@ describe Project do
 
     describe "incomplete" do
       it "transits to 'finished'" do
-        expect(build(:project_incomplete).tap(&:finish).finished?).to be_truthy
+        expect(build(:incomplete_project).tap(&:finish).finished?).to be_truthy
       end
     end
   end

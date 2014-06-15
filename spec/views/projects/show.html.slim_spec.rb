@@ -10,28 +10,6 @@ describe "projects/show" do
     render
   end
 
-  describe "state" do
-    context "incomplete project" do
-      let(:project_incomplete) { create(:project_incomplete) }
-
-      before do
-        assign(:project, project_incomplete)
-        render
-      end
-
-      it "displays state" do
-        expect(rendered).to have_selector('.info .state', text: 'incomplete')
-      end
-    end
-
-    context "finished project" do
-      it "doesn't display state" do
-        expect(rendered)
-          .to_not have_selector('.info .state', text: 'incomplete')
-      end
-    end
-  end
-
   describe "info blocks" do
     let(:project) { create(:project_stuffed).decorate }
 
@@ -77,42 +55,6 @@ describe "projects/show" do
 
     describe "acknowledgements" do
       include_examples 'presence and absence', 'Acknowledgements'
-    end
-  end
-
-  describe "project url" do
-    context "project has the url" do
-      def favicon(img)
-        %r{<span class="favicon"><img alt=".+" src=".+\/#{img}.+" />}
-      end
-
-      let(:project) { build(:project_with_favicon).decorate }
-
-      before { assign(:project, project) && render }
-
-      context "with favicon" do
-        it "displays the custom favicon" do
-          expect(rendered).to match(favicon('favicon\.png\?'))
-        end
-      end
-
-      context "without favicon" do
-        let(:project) { build(:project_without_favicon).decorate }
-
-        it "displays the default favicon" do
-          expect(rendered).to match(favicon('favicon-missing\.png'))
-        end
-      end
-
-      it "displays url" do
-        expect(rendered).to have_selector('.reference .url')
-      end
-    end
-
-    context "project doesn't have the url" do
-      it "doesn't display the url" do
-        expect(rendered).not_to have_selector('.reference .url')
-      end
     end
   end
 
