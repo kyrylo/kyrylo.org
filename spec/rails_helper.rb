@@ -39,12 +39,6 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  # Run specs in random order to surface order dependencies. If you find an
-  # order dependency and want to debug it, you can fix the order by providing
-  # the seed, which is printed after each run.
-  #     --seed 1234
-  config.order = "random"
-
   # If you do not include FactoryGirl::Syntax::Methods in your test suite, then
   # all factory_girl methods will need to be prefaced with FactoryGirl.
   config.include FactoryGirl::Syntax::Methods
@@ -52,12 +46,6 @@ RSpec.configure do |config|
   # Provides RSpec-compatible & Test::Unit-compatible matchers for testing
   # Paperclip attachments.
   config.include Paperclip::Shoulda::Matchers
-
-  # Enables focusing on a particular test. Useful for my Guard workflow.
-  config.filter_run focus: true
-
-  # Runs all the tests if the focus option isn't present.
-  config.run_all_when_everything_filtered = true
 
   # Previously we automatically inferred spec type from a file location, this
   # was a surprising behaviour for new users and undesirable for some veteran
