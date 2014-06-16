@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "projects/acknowledgements", js: true do
   self.use_transactional_fixtures = false

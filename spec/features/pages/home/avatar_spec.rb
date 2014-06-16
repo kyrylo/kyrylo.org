@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "avatar", js: true do
   let(:classname) { '#banner .avatar' }

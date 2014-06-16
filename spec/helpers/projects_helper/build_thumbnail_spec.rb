@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ProjectsHelper do
   describe "#build_thumbnail" do
