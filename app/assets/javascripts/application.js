@@ -15,5 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require moment
 //= require tooltipster
+//= require main
 //= require_tree .

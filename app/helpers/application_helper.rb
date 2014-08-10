@@ -1,8 +1,4 @@
 module ApplicationHelper
-  # Appears on every page (at the top).
-  # @return [Array<String>] the main menu entries
-  MENU_ITEMS = %W|Projects|
-
   # Creates the HTML element &lt;figure&gt; with an optional <figcaption>.
   # @example
   #   figure_tag('avatar.png', size: '50x50', figcaption: 'Avatar')
@@ -19,14 +15,5 @@ module ApplicationHelper
     content_tag(:figure) do
       image_tag(source, opts) + (content_tag(:figcaption, caption) if caption)
     end
-  end
-
-  # Converts the +menu_item+ to the path.
-  # @example
-  #   pathify('Friends') #=> "/friends"
-  # @param [String] menu_item must be a single plural word
-  # @return [String] the path to the resource
-  def pathify(menu_item)
-    __send__("#{ menu_item.downcase }_path")
   end
 end

@@ -1,7 +1,6 @@
 #banner
   background-color: #f6f6f6
   margin: 0 -25px
-  overflow: hidden
   border-right: 1px solid #fff
   border-left: 1px solid #fff
   border-top: 1px solid #fff
@@ -23,3 +22,14 @@
 
     .flip .back
       +transform(0, 0)
+
+  .rainbow
+    height: 1px
+    clear: both
+
+
+  .shadowed .rainbow
+    +box-shadow(0px 1px 4px rgba(0, 0, 0, 0.7))
+
+  .slimline
+    height: 1px

@@ -34,6 +34,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.3.0)
+      activerecord (>= 3, < 5)
     ampex (3.0.0)
       blankslate
     arel (5.0.1.20140414130214)
@@ -115,12 +117,16 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metadown (1.0.1)
+      redcarpet
     method_source (0.8.2)
     migration_comments (0.3.1)
       activerecord (>= 2.3.2)
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.4)
+    momentjs-rails (2.8.1)
+      railties (>= 3.1)
     multi_json (1.10.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
@@ -176,6 +182,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.2)
     request_store (1.0.6)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -254,6 +261,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   ampex (~> 3.0)
   capybara
   coffee-rails (~> 4.0.0)
@@ -266,7 +274,9 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
+  metadown
   migration_comments (~> 0.3)
+  momentjs-rails
   normalize-rails
   paperclip (~> 4.1)
   pg
@@ -276,6 +286,7 @@ DEPENDENCIES
   pry-theme (~> 1.0)
   rails (~> 4.0)
   rails-assets-tooltipster (~> 3.2)
+  redcarpet
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.0)
   sdoc (~> 0.4)

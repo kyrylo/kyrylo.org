@@ -1,24 +1,16 @@
 #banner
   .content
-    .description
-      h1 Greetings!
-      p
-        |
-          You are on the personal website of Kyrylo Silin also known simply as
-          &laquo;kyrylo&raquo; on the internet. I live in the city of Kharkiv,
-          Ukraine. I am interested in programming and computer science, web design
-          and typography, digital painting and computer graphics, football and
-          bicycles. However, the area of my interest is not only limited in the
-          abovesaid branches: I always try to expand my knowledge and I am often
-          interested in many things.
-      p
-        |
-          The goal of this website is to share my knowledge and demonstrate my work
-          to the society, to show projects I have worked on or been involved into.
-          You will also find here my blog and articles. This website is an
-          implementation of one of my dreams.
-    .avatar
-      .front
-        = figure_tag('avatar.png', size: '158x180', title: "Kyrylo's avatar", figcaption: 'Hello there')
-      .back
-        = figure_tag('avatar.png', size: '158x180', title: "Kyrylo's avatar", figcaption: '(O.o)')
+    = render 'banner'
+  = render 'shared/rainbow'
+  .slimline
+  .shadowed
+    = render 'shared/rainbow'
+
+
+.posts
+  - @posts.reverse.each do |post|
+    .post
+      h1 = link_to post.title, post
+      .date[title="#{post.created_at}"] = post.created_at
+      = post.tags.map(&:to_s).join(', ')
+      = post.html.html_safe

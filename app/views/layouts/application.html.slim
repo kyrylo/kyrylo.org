@@ -14,8 +14,9 @@ html
             = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
           nav
             ul
-              - ApplicationHelper::MENU_ITEMS.each do |menu_item|
-                li = link_to_unless_current menu_item, pathify(menu_item)
+              li = link_to 'Articles', '#'
+              li = link_to 'Projects', '#'
+              li = link_to 'Trips', '#'
           #content
             == yield
       .push
