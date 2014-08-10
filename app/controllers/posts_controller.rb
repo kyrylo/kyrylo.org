@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag].singularize)
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -30,6 +34,7 @@ class PostsController < ApplicationController
 
   def update
     prepare_post(post_params[:markdown])
+    @post.slug = nil
 
     respond_to do |format|
       if @post.save
@@ -55,6 +60,7 @@ class PostsController < ApplicationController
     @post.publish_date = m.metadata['publish_date']
     @post.title = m.metadata['title']
     @post.tag_list = m.metadata['tags']
+    @post.markdown = markdown
   end
 
   def set_post

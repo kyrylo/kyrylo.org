@@ -76,6 +76,8 @@ gem 'metadown'
 
 gem 'momentjs-rails'
 
+gem 'friendly_id'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
