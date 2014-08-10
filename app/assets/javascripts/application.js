@@ -17,5 +17,7 @@
 //= require turbolinks
 //= require moment
 //= require tooltipster
+//= require ace/ace
+//= require ace/mode-markdown
 //= require main
 //= require_tree .

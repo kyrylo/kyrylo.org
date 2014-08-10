@@ -78,6 +78,8 @@ gem 'momentjs-rails'
 
 gem 'friendly_id'
 
+gem 'ace-rails-ap'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core

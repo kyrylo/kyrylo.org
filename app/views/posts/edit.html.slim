@@ -1,3 +1,5 @@
+#ace
+
 = form_for @post, url: { controller: 'posts', action: 'update' } do |f|
   = f.text_area :markdown
-  = f.submit :update
+  = f.submit :update, class: 'submit-btn'
