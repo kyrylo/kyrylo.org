@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('MonoSocialIconsFont-1.10.eot');
+    src: url('MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}
+
+body {
+    background-image: url('bg.png');
+}
+
+html, body {
+    height: 100%;
+}
+
+a {
+    color: #4183ca;
+    border-bottom: 1px solid rgba(65, 131, 202, 0.4);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f14a4a;
+    border-bottom: 1px solid rgba(241, 74, 74, 0.4);
+    text-decoration: none;
+}
+
+.pseudo {
+    color: #4183ca;
+    border-bottom: 1px dotted #4aa1f1;
+}
+
+.pseudo:hover {
+    color: #f14a4a;
+    border-bottom: 1px dotted #f14a4a;
+    cursor: pointer;
+}
+
+.selected {
+    font-weight: bold;
+}
+
+.faded {
+    color: #8A8A8A;
+}
+
+#headline {
+    text-align: center;
+}
+
+.page-header {
+    border-bottom: none;
+    margin: 0;
+    padding-top: 2%;
+}
+
+
+#layout {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -65px;
+    padding: 0 0 60px;
+}
+
+#footer {
+    height: 65px;
+    background-color: #fff;
+    color: #000;
+}
+
+#footer .rainbow {
+    width: 100%;
+    height: 5px;
+    background: -webkit-linear-gradient(
+	left, #ff0000, #ffa500, #ffff00, #008000, #00ffff, #0000ff, #800080);
+}
+
+#footer .copyright {
+    float: right;
+}
+
+#last-updated .glyphicon {
+    position: relative;
+    top: 3px;
+}
+
+#lingua {
+    float: right;
+}
+
+#avatar figure {
+    float: left;
+    margin-right: 4%;
+}
+
+#avatar figure img {
+    border: 2px solid #377e50;
+    box-shadow: 2px 2px 5px;
+}
+
+#avatar figure img:hover {
+    border: 2px solid #7fb893;
+    box-shadow: 3px 3px 10px;
+    cursor: pointer;
+}
+
+#avatar figure figcaption {
+    text-align: center;
+}
+
+#welcome h2 {
+    margin-top: 0;
+}
+
+#online-presence .symbol {
+    font-size: 255%;
+    margin-right: 4%;
+}
+
+#online-presence .service-name {
+    line-height: 1.3;
+    padding-right: 6px;
+    width: 8.4em;
+}
+
+#online-presence .inscription {
+    position: relative;
+    bottom: 5px;
+    font-weight: bold;
+}
+
+#online-presence .nick-handle {
+    padding-right: 7px;
+}
+
+#online-presence .github {
+    color: #000;
+}
+
+#online-presence .twitter {
+    color: #00acee;
+}
+
+#online-presence .youtube {
+    color: #df2826;
+}
+
+#online-presence .skype {
+    color: #00aff0;
+}
+
+#online-presence .instagram {
+    color: #a87b5e;
+}
+
+#content {
+    margin-bottom: 4.5em;
+}
+
+.work-type .list-inline li {
+    width: 17.5em;
+    text-align: center;
+}
+
+#articles .list-inline li a {
+    font-size: 130%;
+}
+
+.work-type figure {
+
+}

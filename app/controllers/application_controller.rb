@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   def renderer
     @renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
+
+
+  def parse_markdown_headers(markdown)
+    m = Metadown.render(markdown)
+    [m.output, m.metadata]
+  end
 end

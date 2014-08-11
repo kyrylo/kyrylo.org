@@ -19,5 +19,6 @@
 //= require tooltipster
 //= require ace/ace
 //= require ace/mode-markdown
+//= require fotorama
 //= require main
 //= require_tree .
