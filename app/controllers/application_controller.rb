@@ -4,7 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def renderer
-    @renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    opts = {
+      fenced_code_blocks: true,
+      superscript: true,
+      footnotes: true,
+      no_intra_emphasis: true,
+      lax_html_blocks: true,
+      autolink: true,
+      tables: true
+    }
+    @renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, opts)
   end
 
 
