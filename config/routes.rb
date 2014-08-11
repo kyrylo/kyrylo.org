@@ -60,6 +60,6 @@ Kyrylo::Application.routes.draw do
   resources :posts
   get '/about', to: 'pages#about'
   get '/acknowledgements', to: 'pages#acknowledgements'
+  get '/public_accounts', to: 'pages#public_accounts'
   get ':tag', to: 'posts#index', as: :tag
-
 end

@@ -11,6 +11,10 @@ class PagesController < ApplicationController
     render_markdown('acknowledgements.md')
   end
 
+  def public_accounts
+    render_markdown('public_accounts.md')
+  end
+
   private
 
   def render_markdown(file)
