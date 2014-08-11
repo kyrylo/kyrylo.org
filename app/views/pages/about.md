@@ -85,8 +85,8 @@ _without_ the full stop. Today's website is based on the ideas from 2012.
 I started working on the 2013 version in December. I had decided to release the
 website on the 31th of December as a New Year's present to myself. I
 failed. This version is more mature and doesn't have any weird content except
-the black
-pyramid. The prototype page is available [online](/prototype2013/index.html).
+the black pyramid. The prototype page is available
+[online](/prototype2013/index.html).
 
 <div class="figure center">
 <img src="/images/website2013.png"/>
@@ -101,8 +101,9 @@ and...
 
 I failed. Again. I wasn't satisfied with the quality of the 2013 version, so I
 redesigned it from the top to the bottom. This time I polished everything I
-could. For the bigger resolutions you can right-click on an image and open it
-in a new tab.
+could. I must mention that I has had two versions of this design. The timeline
+has received a lot of my attention and efforts. For the bigger resolutions you
+can right-click on an image and open it in a new tab.
 
 <div class="fotorama" data-height="600">
 	 <img src="images/website2014-index.png"/>
