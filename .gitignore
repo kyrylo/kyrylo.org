@@ -25,3 +25,5 @@ doc/app/*
 *~
 /**/.sass-cache/*
 public/system
+
+*.css.css

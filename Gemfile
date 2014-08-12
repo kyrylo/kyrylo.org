@@ -64,10 +64,6 @@ gem 'draper', '~> 1.3'
 # See: https://github.com/pluginaweek/state_machine/issues/295
 gem 'state_machine', '~> 1.2', git: 'https://github.com/seuros/state_machine.git'
 
-# A jQuery tooltip plugin.
-# https://github.com/iamceege/tooltipster
-gem 'rails-assets-tooltipster', '~> 3.2'
-
 gem 'redcarpet'
 
 gem 'acts-as-taggable-on'

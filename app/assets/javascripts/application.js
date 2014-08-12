@@ -16,7 +16,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require moment
-//= require tooltipster
+//= require highlight.pack
 //= require ace/ace
 //= require ace/mode-markdown
 //= require fotorama

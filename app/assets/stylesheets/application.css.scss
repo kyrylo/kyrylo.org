@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will
+ * include all the files listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets,
+ * vendor/assets/stylesheets, or vendor/assets/stylesheets of plugins, if any,
+ * can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file
+ * per style scope.
+ *
+ */
+
+@import 'normalize-rails';
+@import 'fotorama';
+
+@import 'mixins';
+@import 'fonts';
+@import 'tags';
+@import 'github';
+
+#contact-info {
+    span {
+	font-size: 9px;
+    }
+}
+
+.rainbow {
+    @include linear-gradient((left, red, orange, yellow, green, cyan, blue, purple));
+    .red {
+	@include box-shadow(0px -1px 6px red);
+    }
+    .orange {
+	@include box-shadow(0px -1px 6px orange);
+    }
+    .yellow {
+	@include box-shadow(0px -1px 6px yellow);
+	.right {
+	    @include box-shadow(0px -1px 6px rgba(53, 151, 14, 0.47));
+	}
+    }
+    .green {
+	@include box-shadow(0px -1px 6px green);
+    }
+    .cyan {
+	@include box-shadow(0px -1px 6px cyan);
+    }
+    .blue {
+	@include box-shadow(0px -1px 6px blue);
+    }
+    .violet {
+	@include box-shadow(0px -1px 6px violet);
+    }
+}
+
+#layout {
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    width: 1033px;
+    margin: 0px auto 65px auto;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+
+#sticky-footer {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -103px;
+    overflow: hidden;
+}
+
+#main {
+    padding: 25px;
+}
+
+#content {
+    .post {
+	line-height: 1.4;
+
+	img {
+	    max-width: 100%;
+	}
+	.figure {
+	    margin-bottom: 3em;
+	    img {
+		max-width: 85%;
+		padding: 1px;
+		border: 1px solid #dddddd;
+		@include box-shadow(1px 1px 2px #c7c6c6);
+	    }
+	    .caption {
+		margin-top: 9px;
+		font-style: italic;
+	    }
+	}
+	.center {
+	    text-align: center;
+	}
+    }
+}
+
+.fotorama {
+    margin-bottom: 3em;
+}
+
+
+
+@import 'pages';
+@import 'posts';

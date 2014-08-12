@@ -55,10 +55,10 @@ class PostsController < ApplicationController
   private
 
   def prepare_post(markdown)
-    output, m = parse_markdown_headers(markdown)
-    @post.html = renderer.render(output)
-    @post.title = m['title']
-    @post.tag_list = m['tags']
+    headers = parse_markdown_headers(markdown)
+    @post.html = renderer.render(strip_header(markdown))
+    @post.title = headers['title']
+    @post.tag_list = headers['tags']
     @post.markdown = markdown
   end
 

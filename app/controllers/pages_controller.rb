@@ -19,8 +19,8 @@ class PagesController < ApplicationController
 
   def render_markdown(file)
     markdown = File.read(File.expand_path('app/views/pages/' + file))
-    output, m = parse_markdown_headers(markdown)
-    @title = m['title']
-    @about = renderer.render(output).html_safe
+    headers = parse_markdown_headers(markdown)
+    @title = headers['title']
+    @about = renderer.render(strip_header(markdown)).html_safe
   end
 end
