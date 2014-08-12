@@ -27,11 +27,11 @@ h2 {
 }
 
 h3 {
-    font-size: 150%;
+    font-size: 130%;
 }
 
 h4 {
-    font-size: 130%;
+    font-size: 115%;
 }
 
 h5 {
@@ -47,6 +47,12 @@ a {
     color: #5ab3ee;
     text-decoration: none;
     border-bottom: 1px solid rgba(90, 179, 238, 0.4);
+
+    &:visited {
+	color: #702ead;
+	border-bottom: 1px solid rgba(112, 46, 173, 0.4);
+    }
+
     &:hover {
 	color: #ee5a83;
 	border-bottom: 1px solid rgba(238, 90, 131, 0.4);
@@ -64,13 +70,19 @@ nav {
     text-transform: uppercase;
 
     a {
-	@include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
 	color: #444444;
 	border-bottom: 1px solid rgba(68, 68, 68, 0.6);
+
+	&:visited {
+	    color: #444444;
+	    border-bottom: 1px solid rgba(68, 68, 68, 0.6);
+	}
+
 	&:hover {
 	    color: #eb5353;
 	    border-bottom: 1px solid #eb5353;
 	}
+
     }
 
     ul {
@@ -179,12 +191,18 @@ pre {
     padding: 1em;
 
     code {
-	font-size: 75%;
-	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	line-height: 1.4;
     }
 }
 
+pre code, code {
+    font-size: 75%;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
 blockquote {
     font-family: Oranienbaum, serif;
+    p {
+	margin-bottom: 5px;
+    }
 }
