@@ -18,11 +18,3 @@
         i[class="fa fa-tags"]
         = render_tags(post.tags)
       = post.html.html_safe
-      #disqus_thread
-        javascript:
-          var disqus_shortname = 'kyrylo';
-            (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
