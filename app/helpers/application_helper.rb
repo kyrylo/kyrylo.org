@@ -16,4 +16,10 @@ module ApplicationHelper
       image_tag(source, opts) + (content_tag(:figcaption, caption) if caption)
     end
   end
+
+  def render_tags(tags)
+    tags.map(&:to_s).sort.map do |tag|
+      link_to(tag, tag)
+    end.join(', ').html_safe
+  end
 end

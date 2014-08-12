@@ -57,7 +57,7 @@
 #layout {
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    width: 1033px;
+    max-width: 1033px;
     margin: 0px auto 65px auto;
     margin-top: 40px;
     overflow: hidden;
@@ -99,14 +99,44 @@
 	.center {
 	    text-align: center;
 	}
+	.published_at {
+	    float: left;
+	    margin-right: 2em;
+	    &:hover {
+		cursor: help;
+	    }
+
+	    .date {
+		overflow: hidden;
+	    }
+	}
+	.published_at, .tags {
+	    color: #747474;
+	    font-size: 85%;
+	}
+
+	.published_at i, .tags i {
+	    float: left;
+	    position: relative;
+	    top: 4px;
+	    margin-right: 5px;
+	}
+	.tags {
+	    a {
+		color: #747474;
+		border-bottom: 1px solid rgba(116, 116, 116, 0.25);
+		&:hover {
+		    color: #000;
+		    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+		}
+	    }
+	}
     }
 }
 
 .fotorama {
     margin-bottom: 3em;
 }
-
-
 
 @import 'pages';
 @import 'posts';

@@ -11,6 +11,10 @@
   - @posts.reverse.each do |post|
     .post
       h1 = link_to post.title, post
-      .date[title="#{post.created_at}"] = post.created_at
-      = post.tags.map(&:to_s).join(', ')
+      .published_at
+        i[class="fa fa-clock-o"]
+        .date[title="#{post.created_at}"] = post.created_at
+      .tags
+        i[class="fa fa-tags"]
+        = render_tags(post.tags)
       = post.html.html_safe
