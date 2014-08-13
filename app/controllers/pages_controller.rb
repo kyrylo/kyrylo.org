@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @posts = Post.order('created_at ASC').all
+    @posts = Post.order('created_at DESC').all
+    @count = @posts.count
   end
 
   def about

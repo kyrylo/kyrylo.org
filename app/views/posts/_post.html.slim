@@ -1,0 +1,14 @@
+.post
+  h1 = link_to post.title, post
+  .published_at
+    i[class="fa fa-clock-o"]
+    .date[title="#{post.created_at}"] = post.created_at
+  .tags
+    i[class="fa fa-tags"]
+    = render_tags(post.tags)
+  = post.html.html_safe
+  - if post_counter.succ < count
+    .hr
+      i[class="fa fa-scissors"]
+      i[class="fa fa-scissors"]
+      i[class="fa fa-scissors"]

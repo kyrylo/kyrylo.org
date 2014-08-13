@@ -138,5 +138,14 @@
     margin-bottom: 3em;
 }
 
+.hr {
+    clear: both;
+    text-align: center;
+    margin: 2.5em 0;
+    i {
+	margin: 0 10px;
+    }
+}
+
 @import 'pages';
 @import 'posts';
