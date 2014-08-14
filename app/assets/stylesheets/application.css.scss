@@ -156,5 +156,13 @@
     }
 }
 
+.pagination {
+    padding-top: 20px;
+    margin-top: 5em;
+    span {
+	margin: 0 2px;
+    }
+}
+
 @import 'pages';
 @import 'posts';
