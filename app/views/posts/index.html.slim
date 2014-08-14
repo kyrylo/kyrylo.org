@@ -1,7 +1,1 @@
-.posts
-  - @posts.reverse.each do |post|
-    .post
-      h1 = link_to post.title, post
-      .date[title="#{post.created_at}"] = post.created_at
-      = post.tags.map(&:to_s).join(', ')
-      = post.html.html_safe
+= render 'shared/posts'

@@ -78,6 +78,8 @@ gem 'ace-rails-ap'
 
 gem 'fotoramajs'
 
+gem 'kaminari'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core

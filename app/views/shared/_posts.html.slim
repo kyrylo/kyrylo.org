@@ -1,0 +1,3 @@
+.posts
+  = render partial: @posts, locals: {count: @count}
+  = paginate @posts

@@ -7,6 +7,8 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+    @posts = @posts.order('created_at DESC').page(params[:page]).per(2)
+    @count = @posts.count
   end
 
   def show
