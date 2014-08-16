@@ -44,9 +44,15 @@
 	    font-style: italic;
 	}
     }
+
     .center {
 	text-align: center;
     }
+
+    .left {
+	float: left;
+    }
+
     .published_at {
 	float: left;
 	margin-right: 2em;
