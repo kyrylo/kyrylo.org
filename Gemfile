@@ -80,6 +80,10 @@ gem 'fotoramajs'
 
 gem 'kaminari'
 
+gem 'cancancan'
+
+gem 'devise'
+
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
