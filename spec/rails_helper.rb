@@ -5,7 +5,6 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'capybara/rails'
 require 'capybara/poltergeist'
-require 'paperclip/matchers'
 
 Capybara.javascript_driver = :poltergeist
 
@@ -42,10 +41,6 @@ RSpec.configure do |config|
   # If you do not include FactoryGirl::Syntax::Methods in your test suite, then
   # all factory_girl methods will need to be prefaced with FactoryGirl.
   config.include FactoryGirl::Syntax::Methods
-
-  # Provides RSpec-compatible & Test::Unit-compatible matchers for testing
-  # Paperclip attachments.
-  config.include Paperclip::Shoulda::Matchers
 
   # Previously we automatically inferred spec type from a file location, this
   # was a surprising behaviour for new users and undesirable for some veteran

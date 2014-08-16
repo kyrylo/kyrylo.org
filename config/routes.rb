@@ -57,7 +57,6 @@ Kyrylo::Application.routes.draw do
   #     resources :products
   #   end
 
-  resources :projects, only: [:index, :show]
   resources :posts
   get '/about', to: 'pages#about'
   get '/acknowledgements', to: 'pages#acknowledgements'

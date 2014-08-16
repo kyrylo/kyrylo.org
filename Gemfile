@@ -1,11 +1,5 @@
 source 'https://rubygems.org'
 
-# Rails Assets is the frictionless proxy between Bundler and Bower. It
-# automatically converts the packaged components into gems that are easily
-# droppable into your asset pipeline and stay up to date.
-# https://rails-assets.org/
-source 'https://rails-assets.org'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0'
 
@@ -44,44 +38,15 @@ gem 'slim-rails'
 # https://github.com/markmcconachie/normalize-rails
 gem 'normalize-rails'
 
-# Gives the seed data a little structure. Create seeds for each environment,
-# share seeds between environments and specify dependencies to load seeds in
-# order. All nicely integrated with simple rake tasks.
-# https://github.com/james2m/seedbank
-gem 'seedbank'
-
-# An easy file attachment library for Active Record.
-# https://github.com/thoughtbot/paperclip
-gem 'paperclip', '~> 4.1'
-
-# Adds an object-oriented layer of presentation logic to your Rails application.
-# https://github.com/drapergem/draper
-gem 'draper', '~> 1.3'
-
-# Adds support for creating state machines for attributes on any Ruby class.
-# https://github.com/pluginaweek/state_machine
-# TODO: we're using a fork, since the gem doesn't work with Rails 4 yet.
-# See: https://github.com/pluginaweek/state_machine/issues/295
-gem 'state_machine', '~> 1.2', git: 'https://github.com/seuros/state_machine.git'
-
 gem 'redcarpet'
-
 gem 'acts-as-taggable-on'
-
 gem 'metadown'
-
 gem 'momentjs-rails'
-
 gem 'friendly_id'
-
 gem 'ace-rails-ap'
-
 gem 'fotoramajs'
-
 gem 'kaminari'
-
 gem 'cancancan'
-
 gem 'devise'
 
 group :development, :test do
@@ -111,10 +76,6 @@ group :development, :test do
   # https://github.com/jonleighton/poltergeist
   gem 'poltergeist'
 
-  # Comments for migrations.
-  # https://github.com/pinnymz/migration_comments
-  gem 'migration_comments', '~> 0.3'
-
   # A fixtures replacement with a straightforward definition syntax, support for
   # multiple build strategies.
   # https://github.com/thoughtbot/factory_girl_rails
@@ -138,26 +99,6 @@ group :development, :test do
   # Implements the rspec command for Spring.
   # https://github.com/jonleighton/spring-commands-rspec
   gem 'spring-commands-rspec'
-
-  # A command line tool to easily handle events on file system modifications.
-  # https://github.com/guard/guard
-  gem 'guard', '~> 2.6'
-
-  # Allows to automatically & intelligently install/update bundle when needed.
-  # https://github.com/guard/guard-bundler
-  gem 'guard-bundler', require: false
-
-  # Automatically reload a browser when 'view' files are modified.
-  # https://github.com/guard/guard-livereload
-  gem 'guard-livereload', require: false
-
-  # Automatically runs specs (much like autotest).
-  # https://github.com/guard/guard-rspec
-  gem 'guard-rspec', require: false
-
-  # A ruby library for prettier-still anonymous blocks.
-  # https://github.com/rapportive-oss/ampex
-  gem 'ampex', '~> 3.0'
 end
 
 group :doc do
