@@ -131,6 +131,7 @@ painful.
 In this section I probably need to explain what "Only Black and White" actually
 means and why the site's logo is that cube. The headline refers to my character
 and how I perceive this world. It seems like I can see only the black and the
-white colour. However, the cube with the rainbow inside shows that it's not
+white tones. However, the cube with the rainbow inside shows that it's not
 quite true. Between the black and the white you can observe a lot of interesting
-information and feelings.
+information and feelings. The combination of colours, vertices and edges form an
+arrow, which refers to the constant self-development.
