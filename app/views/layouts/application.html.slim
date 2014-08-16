@@ -13,6 +13,14 @@ html
         #main
           header
             = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
+
+            - if current_user
+              #admin-bar[class="adm"]
+                ul
+                  li = link_to new_post_path do
+                    i[class="fa fa-file-powerpoint-o"]
+                  li = link_to destroy_user_session_path, method: :delete do
+                    i[class="fa fa-sign-out"]
           nav
             ul
               li = link_to 'Articles', '/articles'

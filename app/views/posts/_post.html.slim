@@ -1,5 +1,13 @@
 .post
   h1 = link_to post.title, post
+  - if current_user
+    .adm
+      ul[class="post-control"]
+        li
+          = link_to edit_post_path(post) do
+            i class="fa fa-pencil-square-o"
+        li
+          = link_to "delete", post, method: :delete, data: {confirm: "Are you sure?"}
   .published_at
     i[class="fa fa-clock-o"]
     .date[title="#{post.created_at}"] = post.created_at
