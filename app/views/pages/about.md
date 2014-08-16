@@ -101,7 +101,7 @@ and...
 
 I failed. Again. I wasn't satisfied with the quality of the 2013 version, so I
 redesigned it from the top to the bottom. This time I polished everything I
-could. I must mention that I has had two versions of this design. The timeline
+could. I must mention that I have had two versions of this design. The timeline
 has received a lot of my attention and efforts. For the bigger resolutions you
 can right-click on an image and open it in a new tab.
 
