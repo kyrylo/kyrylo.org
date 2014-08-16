@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @disqus = true
   end
 
   def new

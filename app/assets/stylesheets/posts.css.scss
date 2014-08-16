@@ -19,10 +19,17 @@
 	max-width: 100%;
     }
 
-    .post-content {
-	margin-top: 1em;
+    #disqus_thread {
+	margin-top: 3em;
     }
 
+    .post-content {
+	margin-top: 1em;
+
+	h2, h3, h4 {
+	    clear: both;
+	}
+    }
 
     .figure {
 	margin-bottom: 3em;
