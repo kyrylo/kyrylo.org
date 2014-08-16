@@ -6,7 +6,8 @@
   .tags
     i[class="fa fa-tags"]
     = render_tags(post.tags)
-  = post.html.html_safe
+  .post-content
+    = post.html.html_safe
   - if post_counter.succ < count
     .hr
       i[class="fa fa-scissors"]
