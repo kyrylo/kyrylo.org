@@ -9,8 +9,8 @@ intellectual work I used for building this website.
 
 However, I'd like to personally thank these people:
 
-* Alexey \<[gas13](http://gas13.ru/en_index.php)\> Garkushin -- for my avatar
-* Ivan \<[Jovanny Lemonad](http://jovanny.ru/)\> Gladkikh -- for the Oranienbaum
+* Alexey \<[gas13](http://gas13.ru/en_index.php)\> Garkushin --- for my avatar
+* Ivan \<[Jovanny Lemonad](http://jovanny.ru/)\> Gladkikh --- for the Oranienbaum
 font
 
 I also would like to thank the people that played a significant role in my life:
