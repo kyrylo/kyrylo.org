@@ -13,7 +13,7 @@ html
         #main
           header
             = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
-
+            = link_to_unless_current site_title, root_path, class: 'header-link'
             - if current_user
               #admin-bar[class="adm"]
                 ul
