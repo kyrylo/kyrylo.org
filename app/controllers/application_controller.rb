@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
 
   HEADER_REGEXP = /\A---(.*?)---(.*)/m
 
+  class SmartHTML < Redcarpet::Render::HTML
+    include Redcarpet::Render::SmartyPants
+  end
+
   def renderer
-    @renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML, {
+    @renderer ||= Redcarpet::Markdown.new(SmartHTML, {
         fenced_code_blocks: true,
         superscript: true,
         footnotes: true,
