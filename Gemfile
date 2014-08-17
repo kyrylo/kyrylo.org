@@ -48,6 +48,7 @@ gem 'fotoramajs'
 gem 'kaminari'
 gem 'cancancan'
 gem 'devise'
+gem 'paperclip'
 
 group :development, :test do
   # A testing framework.
