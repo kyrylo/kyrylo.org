@@ -27,7 +27,7 @@ module ApplicationHelper
     content_tag(:div, id: 'site-title') do
       concat(content_tag(:div, class: 'author oddlink') { 'Kyrylo Silin' })
       concat(content_tag(:div, class: 'oddlink') do
-          '&ldquo;Only Black And White&rdquo;'.html_safe
+          '&ldquo;Only Black and White&rdquo;'.html_safe
         end)
     end
   end

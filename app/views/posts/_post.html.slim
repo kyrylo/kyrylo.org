@@ -1,3 +1,6 @@
+- content_for :title
+  = post.title
+
 .post
   h1 = link_to post.title, post
   - if current_user

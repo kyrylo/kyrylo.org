@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Kyrylo
+    title = content_for?(:title) ? content_for(:title) : 'Kyrylo Silin: Only Black and White'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -12,8 +12,9 @@ html
       #layout
         #main
           header
-            = link_to_unless_current image_tag('logo-en.png', width: 441, height: 64), root_path
-            = link_to_unless_current site_title, root_path, class: 'header-link'
+            #site-logo
+              = link_to_unless_current image_tag('logo-en.svg', height: 64), root_path
+              = link_to_unless_current site_title, root_path, class: 'header-link'
             - if current_user
               #admin-bar[class="adm"]
                 ul

@@ -118,18 +118,35 @@ p {
 header {
     margin-top: 11px;
 
-    #site-title {
-	@include transition(color 0.25s ease-out);
-	font-family: Playfair Display SC, Georgia, serif;
-	font-size: 175%;
-	letter-spacing: 1px;
-	line-height: 120%;
-	color: #2c2c2c;
+    #site-logo {
+	overflow: hidden;
 	float: left;
+	margin-bottom: 16px;
+	height: 68px;
 
-	.author {
-	    position: relative;
-	    left: 14px;
+	img {
+	    float: left;
+	    margin-right: 10px;
+	}
+
+	a.header-link {
+	    color: red !important;
+	    float: left;
+	}
+
+	#site-title {
+	    @include transition(color 0.25s ease-out);
+	    font-family: Playfair Display SC, Georgia, serif;
+	    font-size: 175%;
+	    letter-spacing: 1px;
+	    line-height: 120%;
+	    color: #2c2c2c;
+	    float: left;
+
+	    .author {
+		position: relative;
+		left: 14px;
+	    }
 	}
     }
 
