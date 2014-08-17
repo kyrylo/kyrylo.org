@@ -13,7 +13,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @disqus = true
+    if @post.tags.map(&:name).include?('article')
+      @disqus = true
+    end
   end
 
   def new
