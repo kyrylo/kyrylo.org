@@ -1,5 +1,6 @@
-- content_for :title
-  = post.title
+- unless current_page?(root_path)
+  - content_for :title
+    = post.title
 
 .post
   h1 = link_to post.title, post
