@@ -27,3 +27,4 @@ doc/app/*
 public/system
 
 *.css.css
+.DS_Store
