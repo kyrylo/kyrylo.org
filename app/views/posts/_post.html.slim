@@ -1,4 +1,4 @@
-- unless current_page?(root_path)
+- if current_page?(post_path(post))
   - content_for :title
     = post.title
 
