@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20140816203809) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "posts", force: true do |t|
-    t.datetime "publish_date"
     t.text     "markdown"
     t.text     "html"
     t.text     "title"

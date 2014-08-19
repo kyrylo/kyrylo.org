@@ -34,6 +34,10 @@ GEM
     bcrypt (3.1.7)
     builder (3.2.2)
     cancancan (1.9.2)
+    capistrano (3.2.1)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (~> 1.3)
     capybara (2.3.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -53,6 +57,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    colorize (0.7.3)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -100,6 +105,9 @@ GEM
     momentjs-rails (2.8.1)
       railties (>= 3.1)
     multi_json (1.10.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     normalize-rails (3.0.1)
@@ -198,6 +206,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sshkit (1.5.1)
+      colorize
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     temple (0.6.7)
     thor (0.19.1)
     thread_safe (0.3.4)
@@ -226,6 +238,7 @@ DEPENDENCIES
   ace-rails-ap
   acts-as-taggable-on
   cancancan
+  capistrano (~> 3.2.0)
   capybara
   coffee-rails (~> 4.0.0)
   devise
@@ -248,7 +261,7 @@ DEPENDENCIES
   pry-theme (~> 1.0)
   rails (~> 4.0)
   redcarpet
-  rspec-rails (~> 3.0)
+  rspec-rails
   sass-rails (~> 4.0.0)
   sdoc (~> 0.4)
   shoulda-matchers

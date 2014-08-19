@@ -50,11 +50,12 @@ gem 'kaminari'
 gem 'cancancan'
 gem 'devise'
 gem 'paperclip'
+gem 'capistrano', '~> 3.2.0'
 
 group :development, :test do
   # A testing framework.
   # https://github.com/rspec/rspec-core
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails'
 
   # An IRB alternative and runtime developer console
   # https://github.com/pry/pry
