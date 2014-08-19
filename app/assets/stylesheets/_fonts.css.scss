@@ -21,19 +21,6 @@
     font-style: normal;
 }
 
-
-@font-face {
-    font-family: "Minion Pro";
-    src: asset-url("Minion Pro.eot");
-    src: asset-url("Minion Pro.eot") + "?#iefix" format("embedded-opentype");
-    src: asset-url("Minion Pro.svg#minionpro") format("svg");
-    src: asset-url("Minion Pro.woff") format("woff");
-    src: asset-url("Minion Pro.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 @font-face {
     font-family: "Yeseva One";
     src: asset-url("Yeseva One.eot");
