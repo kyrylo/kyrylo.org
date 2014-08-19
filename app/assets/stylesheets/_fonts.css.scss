@@ -1,22 +1,21 @@
 @font-face {
     font-family: "Oranienbaum";
     src: asset-url("Oranienbaum.eot");
-    src: asset-url("Oranienbaum.eot") + "?#iefix" format("embedded-opentype");
-    src: asset-url("Oranienbaum.svg#oranienbaum") format("svg");
-    src: asset-url("Oranienbaum.woff") format("woff");
-    src: asset-url("Oranienbaum.ttf") format("truetype");
+    src: asset-url("Oranienbaum.eot?#iefix") format("embedded-opentype"),
+         asset-url("Oranienbaum.svg#oranienbaum") format("svg"),
+         asset-url("Oranienbaum.woff") format("woff"),
+         asset-url("Oranienbaum.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
-
 @font-face {
     font-family: "Minion Pro";
     src: asset-url("Minion Pro.eot");
-    src: asset-url("Minion Pro.eot") + "?#iefix" format("embedded-opentype");
-    src: asset-url("Minion Pro.svg#minionpro") format("svg");
-    src: asset-url("Minion Pro.woff") format("woff");
-    src: asset-url("Minion Pro.ttf") format("truetype");
+    src: asset-url("Minion Pro.eot?#iefix") format("embedded-opentype"),
+         asset-url("Minion Pro.svg#minionpro") format("svg"),
+         asset-url("Minion Pro.woff") format("woff"),
+         asset-url("Minion Pro.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -24,22 +23,21 @@
 @font-face {
     font-family: "Yeseva One";
     src: asset-url("Yeseva One.eot");
-    src: asset-url("Yeseva One.eot") + "?#iefix" format("embedded-opentype");
-    src: asset-url("Yeseva One.svg#yesevaone") format("svg");
-    src: asset-url("Yeseva One.woff") format("woff");
-    src: asset-url("Yeseva One.ttf") format("truetype");
+    src: asset-url("Yeseva One.eot?#iefix") format("embedded-opentype"),
+         asset-url("Yeseva One.svg#yesevaone") format("svg"),
+         asset-url("Yeseva One.woff") format("woff"),
+         asset-url("Yeseva One.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
-
 @font-face {
     font-family: "Playfair Display SC";
     src: asset-url("PlayfairDisplaySC.eot");
-    src: asset-url("PlayfairDisplaySC.eot") + "?#iefix" format("embedded-opentype");
-    src: asset-url("PlayfairDisplaySC.svg#yesevaone") format("svg");
-    src: asset-url("PlayfairDisplaySC.woff") format("woff");
-    src: asset-url("PlayfairDisplaySC.ttf") format("truetype");
+    src: asset-url("PlayfairDisplaySC.eot?#iefix") format("embedded-opentype"),
+         asset-url("PlayfairDisplaySC.svg#yesevaone") format("svg"),
+         asset-url("PlayfairDisplaySC.woff") format("woff"),
+         asset-url("PlayfairDisplaySC.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
