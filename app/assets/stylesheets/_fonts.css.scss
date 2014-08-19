@@ -1,43 +1,43 @@
 @font-face {
     font-family: "Oranienbaum";
-    src: font-url("Oranienbaum.eot");
-    src: font-url("Oranienbaum.eot?#iefix") format("embedded-opentype"),
-         font-url("Oranienbaum.svg#oranienbaum") format("svg"),
-         font-url("Oranienbaum.woff") format("woff"),
-         font-url("Oranienbaum.ttf") format("truetype");
+    src: font-path("Oranienbaum.eot");
+    src: font-path("Oranienbaum.eot?#iefix") format("embedded-opentype"),
+         font-path("Oranienbaum.svg#oranienbaum") format("svg"),
+         font-path("Oranienbaum.woff") format("woff"),
+         font-path("Oranienbaum.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Minion Pro";
-    src: font-url("Minion Pro.eot");
-    src: font-url("Minion Pro.eot?#iefix") format("embedded-opentype"),
-         font-url("Minion Pro.svg#minionpro") format("svg"),
-         font-url("Minion Pro.woff") format("woff"),
-         font-url("Minion Pro.ttf") format("truetype");
+    src: font-path("Minion Pro.eot");
+    src: font-path("Minion Pro.eot?#iefix") format("embedded-opentype"),
+         font-path("Minion Pro.svg#minionpro") format("svg"),
+         font-path("Minion Pro.woff") format("woff"),
+         font-path("Minion Pro.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Yeseva One";
-    src: font-url("Yeseva One.eot");
-    src: font-url("Yeseva One.eot?#iefix") format("embedded-opentype"),
-         font-url("Yeseva One.svg#yesevaone") format("svg"),
-         font-url("Yeseva One.woff") format("woff"),
-         font-url("Yeseva One.ttf") format("truetype");
+    src: font-path("Yeseva One.eot");
+    src: font-path("Yeseva One.eot?#iefix") format("embedded-opentype"),
+         font-path("Yeseva One.svg#yesevaone") format("svg"),
+         font-path("Yeseva One.woff") format("woff"),
+         font-path("Yeseva One.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Playfair Display SC";
-    src: font-url("PlayfairDisplaySC.eot");
-    src: font-url("PlayfairDisplaySC.eot?#iefix") format("embedded-opentype"),
-         font-url("PlayfairDisplaySC.svg#yesevaone") format("svg"),
-         font-url("PlayfairDisplaySC.woff") format("woff"),
-         font-url("PlayfairDisplaySC.ttf") format("truetype");
+    src: font-path("PlayfairDisplaySC.eot");
+    src: font-path("PlayfairDisplaySC.eot?#iefix") format("embedded-opentype"),
+         font-path("PlayfairDisplaySC.svg#yesevaone") format("svg"),
+         font-path("PlayfairDisplaySC.woff") format("woff"),
+         font-path("PlayfairDisplaySC.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
