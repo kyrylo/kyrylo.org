@@ -19,6 +19,10 @@
 	max-width: 100%;
     }
 
+    pre {
+	clear: both;
+    }
+
     #disqus_thread {
 	margin-top: 3em;
     }
@@ -34,6 +38,8 @@
 
     .figure {
 	margin-bottom: 3em;
+	text-align: center;
+
 	img {
 	    max-width: 85%;
 	    padding: 1px;
@@ -50,8 +56,21 @@
 	text-align: center;
     }
 
+    .right {
+	float: right;
+	margin-left: 25px;
+    }
+
     .left {
 	float: left;
+	margin-right: 25px;
+    }
+
+    .borderless {
+	img {
+	    border: none !important;
+	    box-shadow: none !important;
+	}
     }
 
     .published_at {
