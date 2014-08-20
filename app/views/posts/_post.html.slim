@@ -3,7 +3,7 @@
     = post.title
 
 .post
-  h1 = link_to post.title, post
+  h1 = link_to_unless_current post.title, post
   - if current_user
     .adm
       ul[class="post-control"]
