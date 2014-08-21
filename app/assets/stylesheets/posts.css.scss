@@ -41,7 +41,6 @@
 	text-align: center;
 
 	img {
-	    max-width: 85%;
 	    padding: 1px;
 	    border: 1px solid #dddddd;
 	    @include box-shadow(1px 1px 2px #c7c6c6);
@@ -54,6 +53,9 @@
 
     .center {
 	text-align: center;
+	img {
+	    max-width: 85%;
+	}
     }
 
     .right {
