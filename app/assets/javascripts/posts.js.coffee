@@ -9,3 +9,8 @@ $ ->
 
   $('.submit-btn').click ->
     $post_markdown.text(editor.getValue())
+
+  $('.spoiler').spoiler()
+  $('.spoiler').each (_, spoiler) ->
+    title = $(spoiler).data('spoiler-title')
+    $(spoiler).prevAll('.btn-spoiler:first').text(title)

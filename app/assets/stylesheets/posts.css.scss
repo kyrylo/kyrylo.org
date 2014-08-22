@@ -112,4 +112,21 @@
     .footnotes {
 	font-size: 95%;
     }
+
+    .btn-spoiler {
+	color: #5ab3ee;
+	float: left;
+	border-bottom: 1px dashed #5ab3ee;
+	margin-bottom: 25px;
+
+	&:hover {
+	    cursor: pointer;
+	}
+    }
+
+    .spoiler-visible {
+	background-color: #fffedf;
+	padding: 20px;
+	clear: both;
+    }
 }

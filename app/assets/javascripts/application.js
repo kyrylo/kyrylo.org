@@ -21,5 +21,6 @@
 //= require ace/ace
 //= require ace/mode-markdown
 //= require fotorama
+//= require jquery.spoiler
 //= require main
 //= require_tree .
