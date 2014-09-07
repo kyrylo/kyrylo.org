@@ -6,5 +6,6 @@ title: Public accounts
 <img src="/images/o_o.gif"/>
 </div>
 
-* GitHub -- [github.com/kyrylo](https://github.com/kyrylo)
-* IRC -- [irc.freenode.net/kyrylo](irc://irc.freenode.net/#pry)
+* GitHub --- [@kyrylo](https://github.com/kyrylo)
+* Twitter --- [@kyrylosilin](https://twitter.com/kyrylosilin)
+* IRC --- [irc.freenode.net/kyrylo](irc://irc.freenode.net/#pry)
