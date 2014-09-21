@@ -103,3 +103,40 @@
 	}
     }
 }
+
+#timeline {
+    overflow: hidden;
+    line-height: 150%;
+
+    h2 {
+	border-bottom: 1px solid rgba(206, 206, 206, 0.21);
+    }
+
+    h4 {
+	font-variant: small-caps;
+    }
+
+    ul {
+	list-style-type: none;
+    }
+
+    .section {
+	margin-left: 5%;
+    }
+
+    .tag_list {
+	font-size: 70%;
+	margin-left: 2%;
+	color: #cacaca;
+
+	a {
+	    color: #cacaca;
+	    border-bottom: 1px solid rgba(202, 202, 202, 0.5);
+
+	    &:hover {
+		color: #1a1a1a;
+		border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+	    }
+	}
+    }
+}

@@ -6,3 +6,15 @@
       .sline The good news is you're the pilot&#8221;
 #timeline
   h1 Timeline
+
+  - @grouped_posts.each do |year, tags|
+    h2 = year
+    - tags.sort.each do |tag, posts|
+      .section
+        h4 = tag.capitalize.pluralize
+        ul
+          - posts.each do |post|
+            li
+              = link_to post.title, post_path(post)
+              span.tag_list
+                = render_inner_tags(post.tag_list, tag)

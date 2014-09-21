@@ -1,8 +1,11 @@
 class PagesController < ApplicationController
 
   def home
-    @posts = Post.order('created_at DESC').page(params[:page]).per(10)
-    @count = @posts.count
+    posts = Post.order('created_at DESC')
+    @grouped_posts = posts.group_by { |post| post.created_at.year }
+    @grouped_posts.each do |year, post|
+      @grouped_posts[year] = post.group_by { |p| p.type }
+    end
   end
 
   def about
