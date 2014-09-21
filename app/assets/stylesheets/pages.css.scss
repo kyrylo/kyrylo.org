@@ -82,3 +82,24 @@
 	list-style-type: none;
     }
 }
+
+#sidebar {
+    width: 25%;
+    float: left;
+    margin-right: 25px;
+    font-style: italic;
+
+    .timequote {
+	text-align: center;
+
+	.text {
+	    padding-top: 10px;
+
+	    .fline {
+		text-align: left;
+		position: relative;
+		left: 7px;
+	    }
+	}
+    }
+}
