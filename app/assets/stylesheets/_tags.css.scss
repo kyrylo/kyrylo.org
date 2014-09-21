@@ -156,7 +156,7 @@ header {
 }
 
 footer, .push {
-    height: 103px;
+    height: 120px;
 }
 
 @media screen and (max-width: 965px) {
@@ -188,6 +188,8 @@ footer {
 	max-width: 1033px;
 	margin: 0 auto;
 	padding-top: 26px;
+	line-height: 150%;
+
 	a {
 	    color: #888888;
 	    border-bottom: 1px solid rgba(136, 136, 136, 0.4);
@@ -249,7 +251,6 @@ footer {
 		}
 	    }
 	}
-
     }
 }
 
