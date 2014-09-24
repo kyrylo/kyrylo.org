@@ -16,11 +16,11 @@ $ ->
     $(spoiler).prevAll('.btn-spoiler:first').text(title)
 
   if window.location.pathname is '/articles'
-    $('.post-content .cut').parent().nextUntil('.hr').wrapAll('<div class="uncut">')
-      .hide().promise().done ->
-        $('.post-content .uncut')
-          .after('<button class="continue-reading">Continue reading <i class="fa fa-long-arrow-right"></i></button>')
+    $('.post-content .cut').parent().each (i, cut) ->
+      $cut = $(cut)
+      $cut.nextUntil('.hr').wrapAll('<div class="uncut">').hide().promise().done ->
+        $cut.siblings('.uncut').after('<button class="continue-reading">Continue reading <i class="fa fa-long-arrow-right"></i></button>')
 
     $('.post-content .continue-reading').click ->
-      $('.post-content .uncut *').slideDown(450)
+      $(this).parent().find('.uncut *').slideDown(450)
       $(this).hide()
