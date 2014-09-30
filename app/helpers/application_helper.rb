@@ -19,7 +19,7 @@ module ApplicationHelper
 
   def render_tags(tags)
     tags.map(&:to_s).sort.map do |tag|
-      link_to(tag, tag)
+      link_to(tag, "/#{tag}")
     end.join(', ').html_safe
   end
 
