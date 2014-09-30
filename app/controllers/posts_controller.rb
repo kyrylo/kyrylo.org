@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     end
     @posts = @posts.order('created_at DESC').page(params[:page]).per(10)
     @count = @posts.count
-    @title = 'asdads'
+    @title = "All #{params[:tag]} - kyrylo.org"
   end
 
   def show
