@@ -23,6 +23,10 @@
 	clear: both;
     }
 
+    p {
+	font-size: 105%;
+    }
+
     #disqus_thread {
 	margin-top: 3em;
     }
@@ -102,6 +106,7 @@
 	top: 2px;
 	margin-right: 5px;
     }
+
     .tags {
 	a {
 	    color: #747474;
