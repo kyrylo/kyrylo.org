@@ -128,11 +128,6 @@ header {
 	    margin-right: 10px;
 	}
 
-	a.header-link {
-	    color: red !important;
-	    float: left;
-	}
-
 	#site-title {
 	    @include transition(color 0.25s ease-out);
 	    font-family: Playfair Display SC, Georgia, serif;
