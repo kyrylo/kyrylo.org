@@ -94,11 +94,11 @@
 
 	.text {
 	    padding-top: 10px;
+	    text-align: left;
 
-	    .fline {
-		text-align: left;
-		position: relative;
-		left: 14%;
+	    .quote {
+		margin: 0 auto;
+		max-width: 230px;
 	    }
 	}
     }
