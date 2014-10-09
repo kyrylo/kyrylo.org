@@ -19,7 +19,7 @@ I also would like to thank the people that played a significant role in my life:
 * Alexander Barkov
 * [Conrad Irwin](http://cirw.in/)
 * Mikhail Fedak
-* Vladislav Sypchenko
+* [Vladislav Sypchenko](http://blog.sypchenko.tk/)
 * [Simon Maynard](http://snmaynard.com/)
 
 All the lists are in the alphabetical order.
