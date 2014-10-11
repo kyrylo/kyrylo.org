@@ -32,7 +32,7 @@ GEM
       activerecord (>= 3.2, < 5)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
-    bugsnag (2.1.0)
+    bugsnag (2.5.0)
       httparty (>= 0.6, < 1.0)
       multi_json (~> 1.0)
     builder (3.2.2)
