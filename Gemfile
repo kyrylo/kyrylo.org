@@ -51,6 +51,7 @@ gem 'cancancan'
 gem 'devise'
 gem 'paperclip'
 gem 'capistrano', '~> 3.2.0'
+gem 'bugsnag'
 
 group :development, :test do
   # A testing framework.
