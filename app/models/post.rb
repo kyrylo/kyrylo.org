@@ -7,7 +7,8 @@ class Post < ActiveRecord::Base
     'article',
     'translation',
     'project',
-    'trip'
+    'trip',
+    'design'
   ]
 
   def type
