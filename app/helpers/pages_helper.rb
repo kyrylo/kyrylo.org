@@ -3,4 +3,9 @@ module PagesHelper
     filtered_tags = tag_list.reject { |tag| tag == title_tag }
     render_tags(filtered_tags)
   end
+
+  def fresh_post?(post)
+    diff = Time.diff(Time.now, post.created_at)
+    diff[:year] == 0 && diff[:month] <= 2
+  end
 end

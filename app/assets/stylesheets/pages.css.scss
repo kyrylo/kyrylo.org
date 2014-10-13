@@ -119,8 +119,25 @@
 
     ul {
 	list-style-type: none;
-	padding-left: 1em;
+	padding-left: 2.7em;
 	margin-top: 0.7em;
+	line-height: 200%;
+
+	li {
+	    position: relative;
+
+	    .new-badge {
+		line-height: 150%;
+		position: absolute;
+		background: red;
+		color: white;
+		left: -40px;
+		font-family: Minion Pro, Georgia, Times New Roman, serif;
+		padding: 0px 4px;
+		border-radius: 3px;
+		top: 5px;
+	    }
+	}
     }
 
     .section {

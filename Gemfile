@@ -52,6 +52,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'capistrano', '~> 3.2.0'
 gem 'bugsnag'
+gem 'time_diff'
 
 group :development, :test do
   # A testing framework.

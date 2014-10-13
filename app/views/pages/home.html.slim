@@ -22,8 +22,11 @@
       .section
         h4 = tag.capitalize.pluralize
         ul
-          - posts.each do |post|
+          - posts.sort_by(&:title).each do |post|
             li
+              - if fresh_post?(post)
+                span.new-badge
+                  ' new
               = link_to post.title, post_path(post)
               span.tag_list
                 = render_inner_tags(post.tag_list, tag)
