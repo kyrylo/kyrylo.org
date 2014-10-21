@@ -15,11 +15,11 @@ content.
 
 ## 2010
 
-The first version is dated on the 11th of January 2010. The site's headline was
-"Kyrylo Silin: internet and life.", with a full stop in the end. I really had
-had no idea why I wanted a website. The next version has appeared during the
-same year and it was even more simple. I don't have a graphical evidence,
-though.
+[The first version](/prototype2010/index.html) is dated on the 11th of
+January 2010. The site's headline was "Kyrylo Silin: internet and life.", with a
+full stop in the end. I really had no idea why I wanted a website. The next
+version has appeared during the same year and it was even more simple. I don't
+have a graphical evidence, though.
 
 <div class="figure center">
 <img src="/images/website2010.png" data-caption=""/>

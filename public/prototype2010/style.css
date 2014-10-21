@@ -1,0 +1,68 @@
+/* Curacao's blog stylesheet */
+
+body { background:#545454; color:white; font-size:100.01%; }
+a:link { color:#BF9C72; text-decoration:underline; }
+a:hover { text-decoration:underline; }
+a:visited { color:#511984; }
+a:active { color:#A5CCF9; }
+a:focus { color:#DEB887; }
+
+img { border:none; }
+
+hr { width:98%; }
+
+.thewhole {
+	display:block;
+	position:relative;
+	left:14%;
+	float:left;
+	width:72%;
+}
+
+.external {
+	background-image:url(/images/external.png);
+}
+
+/* HEAD */
+
+.thehead {
+	margin-right:auto;
+	margin: 0% 0% 0% 18%;
+}
+
+.nav ul {
+	list-style-type:none;
+	width:95.5%;
+}
+
+.nav li {
+	display:inline-block;
+	margin:0% -10% 0% 18%;
+}
+/* MAIN CONTENT */
+
+#thecontent {
+	width:100%;
+}
+
+.entry {
+	display:block;
+	margin-left:6%;
+	width:85%;
+}
+
+.title {
+	color:;
+}
+
+/* FOOTER */
+
+.thefooter {
+	
+}
+
+.cp {
+	position:relative;
+	left:5%;
+	font-size:85%;
+}
