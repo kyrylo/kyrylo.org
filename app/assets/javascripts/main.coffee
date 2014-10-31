@@ -10,3 +10,5 @@ $(document).on 'page:change', ->
 
 $(document).on 'page:restore', ->
   $('pre code').each (i, e) -> hljs.highlightBlock(e)
+
+window.blockFotoramaData = true
