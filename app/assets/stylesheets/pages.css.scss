@@ -127,15 +127,17 @@
 	    position: relative;
 
 	    .new-badge {
-		line-height: 150%;
+		line-height: 100%;
 		position: absolute;
-		background: red;
+		background: #ff5757;
+		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 		color: white;
 		left: -40px;
 		font-family: Minion Pro, Georgia, Times New Roman, serif;
 		padding: 0px 4px;
-		border-radius: 3px;
-		top: 5px;
+		border-radius: 2px;
+		top: 9px;
+		font-size: 90%;
 	    }
 	}
     }
