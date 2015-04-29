@@ -1,3 +1,4 @@
+# coding: utf-8
 module ApplicationHelper
   # Creates the HTML element &lt;figure&gt; with an optional <figcaption>.
   # @example
@@ -30,5 +31,10 @@ module ApplicationHelper
           '&ldquo;Only Black and White&rdquo;'.html_safe
         end)
     end
+  end
+
+  def generate_title(str)
+    motto = 'Kyrylo Silin: Only Black and White'
+    str && str + " — #{motto}" || motto
   end
 end

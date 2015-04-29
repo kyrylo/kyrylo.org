@@ -27,6 +27,9 @@
               - if fresh_post?(post)
                 span.new-badge
                   ' new
-              = link_to post.title, post_path(post)
-              span.tag_list
-                = render_inner_tags(post.tag_list, tag)
+              - if post.is_a?(Post)
+                = link_to post.title, post_path(post)
+                span.tag_list
+                  = render_inner_tags(post.tag_list, tag)
+              - else
+                = link_to post.title, trip_path(post)

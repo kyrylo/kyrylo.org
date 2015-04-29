@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816203809) do
+ActiveRecord::Schema.define(version: 20150429140847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,22 @@ ActiveRecord::Schema.define(version: 20140816203809) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "trips", force: :cascade do |t|
+    t.text     "where"
+    t.text     "title"
+    t.datetime "when_start"
+    t.datetime "when_end"
+    t.text     "html"
+    t.text     "markdown"
+    t.text     "slug"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "thumb_file_name"
+    t.string   "thumb_content_type"
+    t.integer  "thumb_file_size"
+    t.datetime "thumb_updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

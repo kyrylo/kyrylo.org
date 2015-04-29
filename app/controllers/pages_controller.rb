@@ -1,11 +1,33 @@
 class PagesController < ApplicationController
 
   def home
-    posts = Post.order('created_at DESC')
-    @grouped_posts = posts.group_by { |post| post.created_at.year }
-    @grouped_posts.each do |year, post|
-      @grouped_posts[year] = post.group_by { |p| p.type }
+    records = (Post.all + Trip.all).sort_by do |record|
+      if record.is_a?(Trip)
+        record.when_start
+      else
+        record.created_at
+      end
     end
+
+    posts = records.group_by do |record|
+      if record.is_a?(Trip)
+        record.when_start.year
+      else
+        record.created_at.year
+      end
+    end
+
+    posts.each do |year, post|
+      posts[year] = post.group_by do |p|
+        if p.is_a?(Trip)
+          'trip'
+        else
+          p.type
+        end
+      end
+    end
+
+    @grouped_posts = Array(posts).sort.reverse
   end
 
   def about

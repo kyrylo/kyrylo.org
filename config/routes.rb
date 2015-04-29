@@ -58,6 +58,7 @@ Kyrylo::Application.routes.draw do
   #   end
 
   resources :posts
+  resources :trips
   get '/about', to: 'pages#about'
   get '/acknowledgements', to: 'pages#acknowledgements'
   get '/public_accounts', to: 'pages#public_accounts'

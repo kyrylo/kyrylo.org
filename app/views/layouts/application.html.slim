@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title = content_for(:title) || 'Kyrylo Silin: Only Black and White'
+    title = generate_title(content_for(:title))
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

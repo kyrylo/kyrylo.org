@@ -1,20 +1,26 @@
 $ ->
+  # ACE editor
+  #
   if $('#ace').length
     editor = ace.edit('ace')
-    $post_markdown = $('#post_markdown')
-    editor.setTheme('ace/theme/github')
-    MarkdownMode = require('ace/mode/markdown').Mode
-    editor.getSession().setMode(new MarkdownMode())
-    editor.setValue($post_markdown.text(), -1)
+    if ($markdown = $('#post_markdown')).length ||
+      ($markdown = $('#trip_markdown')).length
+        console.log($markdown)
+        editor.setTheme('ace/theme/github')
+        MarkdownMode = require('ace/mode/markdown').Mode
+        editor.getSession().setMode(new MarkdownMode())
+        editor.setValue($markdown.text(), -1)
 
   $('.submit-btn').click ->
-    $post_markdown.text(editor.getValue())
+    $markdown.text(editor.getValue())
 
   $('.spoiler').spoiler()
   $('.spoiler').each (_, spoiler) ->
     title = $(spoiler).data('spoiler-title')
     $(spoiler).prevAll('.btn-spoiler:first').text(title)
 
+  # Cut
+  #
   if window.location.pathname is '/articles'
     $('.post-content .cut').parent().each (i, cut) ->
       $cut = $(cut)

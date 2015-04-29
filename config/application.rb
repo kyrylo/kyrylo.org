@@ -25,5 +25,9 @@ module Kyrylo
     # ]
     #
     # config.i18n.default_locale = :de
+
+    # Propagate errors within `#after_rollback` or `#after_commit`.
+    # See #14488 and #16537 for more details.
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
