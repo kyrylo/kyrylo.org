@@ -1,6 +1,6 @@
 $ ->
   $('.date').each (idx, date) ->
-    published = moment($(date).text()).fromNow()
+    published = moment($(date).text().trim()).fromNow()
     $(this).text(published)
 
   hljs.initHighlightingOnLoad()
