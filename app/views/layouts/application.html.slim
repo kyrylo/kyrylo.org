@@ -24,12 +24,12 @@ html
                     i[class="fa fa-sign-out"]
           nav
             ul
-              li = link_to 'Articles', '/articles'
-              li = link_to 'Designs', '/designs'
-              li = link_to 'Projects', '/projects'
-              li = link_to 'Trips', '/trips'
-              li = link_to 'Translations', '/translations'
-              li = link_to 'Personal Wiki', 'http://wiki.kyrylo.org'
+              li = link_to_unless_current 'Articles', '/articles'
+              li = link_to_unless_current 'Designs', '/designs'
+              li = link_to_unless_current 'Projects', '/projects'
+              li = link_to_unless_current 'Trips', '/trips'
+              li = link_to_unless_current 'Translations', '/translations'
+              li = link_to_unless_current 'Personal Wiki', 'http://wiki.kyrylo.org'
           #content
             == yield
       .push
