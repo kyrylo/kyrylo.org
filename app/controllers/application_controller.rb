@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
         footnotes: true,
         no_intra_emphasis: true,
         lax_html_blocks: true,
-        autolink: true,
         tables: true,
         autolink: true,
         strikethrough: true
