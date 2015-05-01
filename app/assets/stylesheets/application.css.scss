@@ -70,10 +70,6 @@
     overflow: hidden;
 }
 
-#footer-menu {
-    max-width: 370px;
-}
-
 @media screen and (max-width: 965px) {
     #sticky-footer {
 	min-height: 100%;
@@ -81,11 +77,6 @@
 	height: 100%;
 	margin: 0 auto -210px;
 	overflow: hidden;
-    }
-
-    #footer-menu {
-	margin: 0 auto;
-	max-width: 100%;
     }
 }
 
