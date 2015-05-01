@@ -42,8 +42,16 @@ class PagesController < ApplicationController
     render_markdown('public_accounts.md')
   end
 
-  def tag
+  def cv
+    @title = 'Curriculum Vitae'
 
+    cv_path = Rails.root + 'public/cv.pdf'
+    raw_pdf_size = File.size(cv_path).to_f / 2**20
+    @pdf_size = '(%.2f MiB)' % raw_pdf_size
+
+    mp3_path = Rails.root + 'public/kyrylo.mp3'
+    raw_mp3_size = File.size(mp3_path).to_f / 2**20
+    @mp3_size = '(%.3f MiB)' % raw_mp3_size
   end
 
   private

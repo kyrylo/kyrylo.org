@@ -15,6 +15,12 @@ html
             #site-logo
               = link_to_unless_current image_tag('logo.svg', height: 64), root_path
               = link_to_unless_current site_title, root_path, class: 'header-link'
+            #mega
+              = image_tag 'phonograph.jpg'
+              h3 Important notification
+              .message
+                | I'm available for&nbsp;
+                = link_to_unless_current 'hire', '/cv'
             - if current_user
               #admin-bar[class="adm"]
                 ul

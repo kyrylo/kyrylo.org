@@ -1,3 +1,33 @@
+#mega {
+    color: black;
+    float: right;
+    border-left: 1px solid #eeeeee;
+    padding-left: 15px;
+
+    img {
+	float: left;
+	margin-right: 1em;
+    }
+
+    h3 {
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+	font-family: Yeseva One, Georgia, serif;
+	font-size: 108%;
+	float: left;
+    }
+
+    .message a {
+	color: #586c71;
+	border-bottom: 1px solid rgba(113, 113, 113, 0.4);
+
+	&:hover {
+	    color: #ee5a83;
+	    border-bottom: 1px solid rgba(238, 90, 131, 0.4);
+	}
+    }
+}
+
 #banner {
     background-color: #f6f6f6;
     margin: 0 -25px;
@@ -160,5 +190,153 @@
 		border-bottom: 1px solid rgba(26, 26, 26, 0.3);
 	    }
 	}
+    }
+}
+
+#cv-block {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+#cv-wrap {
+    width: 62%;
+    float: left;
+}
+
+#cv-download-wrap {
+    width: 38%;
+    float: left;
+}
+
+@media screen and (max-width: 965px) {
+    #cv-wrap {
+	width: 100%;
+	#cv { margin-right: 0; }
+    }
+
+    #cv-download-wrap {
+	width: 100%;
+
+	#cv-download {
+	    max-width: none;
+	}
+    }
+}
+
+
+#cv {
+    color: #0a313a;;
+    background: image-url('notebook.png') #dfdfdf;
+    border: 1px solid #bababa;
+    border-top: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+    box-shadow: 2px 2px 3px #b5b5b5;
+    max-width: 960px;
+    padding: 0 25px;
+    padding-bottom: 1.1em;
+    margin-bottom: 1.5em;
+    margin-right: 2em;
+
+    div {
+	line-height: 170%;
+    }
+
+    a {
+	color: #242424;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .head {
+	margin-bottom: 25px;
+
+	h2 {
+	    font-family: Cookie;
+	    font-size: 270%;
+	    margin-top: 17px;
+	    margin-bottom: 0px;
+	    text-align: center;
+	}
+
+	.contacts {
+	    line-height: 167%;
+	    text-align: center;
+
+	    dd {
+		margin: 0;
+	    }
+	}
+    }
+
+    .year {
+	float: right;
+	text-align: right;
+    }
+
+    .exp {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+	div {
+	    width: 100%;
+	}
+
+	.position {
+	    font-weight: 700;
+	}
+    }
+}
+
+#cv-download {
+    max-width: 506px;
+
+    h3 {
+	margin-top: 0;
+    }
+
+    .link {
+	clear: both;
+	margin-bottom: 1.4em;
+    }
+
+    a span, .size {
+	position: relative;
+	top: 9px;
+	white-space: nowrap;
+    }
+
+    a {
+	line-height: 1;
+
+	img {
+	    float: left;
+	    margin-right: 5px;
+	}
+
+	span {
+	    float: left;
+	    border-bottom: 1px solid rgba(90, 179, 238, 0.4);
+	    @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
+	    color: #5ab3ee;
+	    text-decoration: none;
+	    border-bottom: 1px solid rgba(90, 179, 238, 0.4);
+
+	    &:hover, &:visited {
+		color: #ee5a83;
+		border-bottom: 1px solid rgba(238, 90, 131, 0.4);
+	    }
+	}
+    }
+
+    .size {
+	font-style: italic;
+	margin-left: 5px;
+	top: 7px;
+    }
+
+    #map {
+	width: 100%;
     }
 }
