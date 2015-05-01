@@ -70,7 +70,7 @@
     overflow: hidden;
 }
 
-#footer-menu {
+footer #footer-menu {
     max-width: 370px;
 }
 
@@ -83,8 +83,8 @@
 	overflow: hidden;
     }
 
-    #footer-menu {
-	margin: 0 auto;
+    footer #footer-menu {
+    	margin: 0 auto;
 	max-width: 100%;
     }
 }
