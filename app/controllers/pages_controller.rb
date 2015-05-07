@@ -58,6 +58,8 @@ class PagesController < ApplicationController
     timeline_records.sort_by do |record|
       if record.is_a?(Trip)
         record.when_start
+      elsif record.is_a?(Project)
+        record.release_date
       else
         record.created_at
       end
@@ -68,6 +70,8 @@ class PagesController < ApplicationController
     sorted_timeline_records.group_by do |record|
       if record.is_a?(Trip)
         record.when_start.year
+      elsif record.is_a?(Project)
+        record.release_date.year
       else
         record.created_at.year
       end
