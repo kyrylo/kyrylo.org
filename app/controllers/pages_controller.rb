@@ -1,23 +1,8 @@
 class PagesController < ApplicationController
-
   def home
-    records = (Post.all + Trip.all + Project.all).sort_by do |record|
-      if record.is_a?(Trip)
-        record.when_start
-      else
-        record.created_at
-      end
-    end
+    posts = grouped_timeline_records
 
-    posts = records.group_by do |record|
-      if record.is_a?(Trip)
-        record.when_start.year
-      else
-        record.created_at.year
-      end
-    end
-
-    posts.each do |year, post|
+    grouped_timeline_records.each do |year, post|
       posts[year] = post.group_by do |p|
         if p.is_a?(Trip)
           'trip'
@@ -63,5 +48,29 @@ class PagesController < ApplicationController
     headers = parse_markdown_headers(markdown)
     @title = headers['title']
     @about = renderer.render(strip_header(markdown)).html_safe
+  end
+
+  def timeline_records
+    Post.all + Trip.all + Project.all
+  end
+
+  def sorted_timeline_records
+    timeline_records.sort_by do |record|
+      if record.is_a?(Trip)
+        record.when_start
+      else
+        record.created_at
+      end
+    end
+  end
+
+  def grouped_timeline_records
+    sorted_timeline_records.group_by do |record|
+      if record.is_a?(Trip)
+        record.when_start.year
+      else
+        record.created_at.year
+      end
+    end
   end
 end

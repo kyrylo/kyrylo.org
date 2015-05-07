@@ -15,10 +15,13 @@
 @import 'normalize-rails';
 @import 'fotorama';
 
+@import 'variables';
 @import 'mixins';
 @import 'fonts';
 @import 'tags';
 @import 'github';
+@import 'header';
+@import 'footer';
 
 #contact-info {
     span {

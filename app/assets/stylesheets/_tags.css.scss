@@ -2,14 +2,13 @@ html, body {
     height: 100%;
 }
 
-
 body {
-    font-family: Times New Roman, serif;
+    font-family: $default-font-stack;
     color: #2c2c2c;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Minion Pro, Georgia, Times New Roman, serif;
+    font-family: $header-font-stack;
     font-weight: normal;
 }
 
@@ -43,25 +42,25 @@ h6 {
 
 a {
     @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
-    color: #5ab3ee;
+    color: $default-link-colour;
     text-decoration: none;
-    border-bottom: 1px solid rgba(90, 179, 238, 0.4);
+    border-bottom: $default-link-border;
 
     &:visited {
-	color: #702ead;
-	border-bottom: 1px solid rgba(112, 46, 173, 0.4);
+	color: $default-visited-link-colour;
+	border-bottom: $default-visited-link-border;
     }
 
     &:hover {
-	color: #ee5a83;
-	border-bottom: 1px solid rgba(238, 90, 131, 0.4);
+	color: $default-hover-link-colour;
+	border-bottom: $default-hover-link-border;
     }
 }
 
 nav {
-    font-family: Oranienbaum, Georgia, Times New Roman, serif;
+    font-family: $nav-font-stack;
     font-weight: 700;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid $border-colour;
     text-align: center;
     margin-top: 16px;
     margin-bottom: 35px;
@@ -70,19 +69,18 @@ nav {
     clear: both;
 
     a {
-	color: #444444;
-	border-bottom: 1px solid rgba(68, 68, 68, 0.6);
+	color: $nav-link-colour;
+	border-bottom: $nav-link-border;
 
 	&:visited {
-	    color: #444444;
-	    border-bottom: 1px solid rgba(68, 68, 68, 0.6);
+	    color: $nav-visited-link-colour;
+	    border-bottom: $nav-visited-link-border;
 	}
 
 	&:hover {
-	    color: #eb5353;
-	    border-bottom: 1px solid #eb5353;
+	    color: $nav-hover-link-colour;
+	    border-bottom: $nav-hover-link-border;
 	}
-
     }
 
     ul {
@@ -117,33 +115,6 @@ p {
 header {
     margin-top: 11px;
 
-    #site-logo {
-	overflow: hidden;
-	float: left;
-	margin-bottom: 16px;
-	height: 68px;
-
-	img {
-	    float: left;
-	    margin-right: 10px;
-	}
-
-	#site-title {
-	    @include transition(color 0.25s ease-out);
-	    font-family: Playfair Display SC, Georgia, serif;
-	    font-size: 175%;
-	    letter-spacing: 1px;
-	    line-height: 120%;
-	    color: #2c2c2c;
-	    float: left;
-
-	    .author {
-		position: relative;
-		left: 14px;
-	    }
-	}
-    }
-
     a, a:hover {
 	border-bottom: none;
     }
@@ -153,108 +124,35 @@ footer, .push {
     height: 120px;
 }
 
-@media screen and (max-width: 965px) {
+@media screen and (max-width: $medium-screen) {
     footer, .push {
 	height: 210px;
     }
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
 footer {
     background-color: #fff;
 
-    .rainbow {
-	height: 4px;
-	width: 100%;
-	.gradient {
-	    width: 14.28%;
-	    height: 1px;
-	    float: left;
-	    position: relative;
-	    z-index: -1;
-	}
-	.yellow .right {
-	    width: 50%;
-	    height: 2px;
-	    float: right;
+    ul {
+	padding: 0 25px;
+	float: left;
+
+	li {
+	    display: inline-block;
 	}
     }
-    .content {
-	max-width: 1033px;
-	margin: 0 auto;
-	padding-top: 26px;
-	line-height: 150%;
 
-	a {
-	    color: #888888;
-	    border-bottom: 1px solid rgba(136, 136, 136, 0.4);
-	    &:hover {
-		color: black;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-	    }
-	}
-
-	#footer-menu {
-	    max-width: 370px;
-	}
-	@media screen and (max-width: 965px) {
-	    #footer-menu {
-		margin: 0 auto;
-		max-width: 100%;
-	    }
-	}
-
+    @media screen and (max-width: $medium-screen) {
 	ul {
-	    margin: 0;
-	    padding: 0 25px;
-	    list-style-type: none;
-	    float: left;
-	    li {
-		display: inline-block;
-		margin-right: 23px;
-		white-space: nowrap;
-	    }
-	}
-	@media screen and (max-width: 965px) {
-	    ul {
-		float: none;
-		text-align: center;
-		margin-bottom: 25px;
-	    }
-	}
-
-	#powered-by {
+	    float: none;
 	    text-align: center;
-	    width: 30%;
-	    margin: 0 auto;
-	    float: left;
-	}
-
-	@media screen and (max-width: 965px) {
-	    #powered-by {
-		float: none;
-		width: 100%;
-		margin-bottom: 25px;
-	    }
-	}
-
-	#contact-info {
-	    float: right;
-	    padding-right: 25px;
-	    .left {
-		text-align: right;
-		padding-right: 15px;
-	    }
-	    .right {
-		text-align: left;
-	    }
-	}
-	@media screen and (max-width: 965px) {
-	    #contact-info {
-		width: 100%;
-		table {
-		    margin: 0 auto;
-		}
-	    }
+	    margin-bottom: 25px;
 	}
     }
 }
@@ -270,11 +168,12 @@ pre {
 
 pre code, code {
     font-size: 75%;
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: $code-font-stack;
 }
 
 blockquote {
-    font-family: Oranienbaum, serif;
+    font-family: $nav-font-stack;
+
     p {
 	margin-bottom: 5px;
     }

@@ -1,0 +1,35 @@
+$medium-screen: 965px;
+
+$border-colour: #eee;
+
+$default-font-stack: Times New Roman, serif;
+$header-font-stack: Minion Pro, Georgia, Times New Roman, serif;
+$code-font-stack: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$nav-font-stack: Oranienbaum, Georgia, Times New Roman, serif;
+
+$default-link-colour: #5ab3ee;
+$default-link-border: 1px solid rgba(90, 179, 238, 0.4);
+
+$default-visited-link-colour: #702ead;
+$default-visited-link-border: 1px solid rgba(112, 46, 173, 0.4);
+
+$default-hover-link-colour: #ee5a83;
+$default-hover-link-border: 1px solid rgba(238, 90, 131, 0.4);
+
+$nav-link-colour: #444;
+$nav-link-border: 1px solid rgba(68, 68, 68, 0.6);
+
+$nav-visited-link-colour: $nav-link-colour;
+$nav-visited-link-border: $nav-link-border;
+
+$nav-hover-link-colour: #eb5353;
+$nav-hover-link-border: 1px solid #eb5353;
+
+$footer-link-colour: #888;
+$footer-link-border: 1px solid rgba(136, 136, 136, 0.4);
+
+$footer-visited-link-colour: $footer-link-colour;
+$footer-visited-link-border: $footer-link-border;
+
+$footer-hover-link-colour: #000;
+$footer-hover-link-border: 1px solid rgba(0, 0, 0, 0.4);

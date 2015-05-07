@@ -1,0 +1,29 @@
+#controls
+  - if @prev
+    #prev
+      #larrow.arrow &#8592;
+      .note = "Note #{@prev.id}"
+      br
+      .title
+        | &ldquo;
+        = link_to @prev.title, devlog_entry_project_devlog_path(@project, @prev)
+        | &rdquo;
+  - else
+    #empty-prev
+
+  #devlog-link = link_to 'Development Log', project_devlog_path(@devlog.project)
+
+  - if @next
+    #next
+      .note = "Note #{@next.id}"
+      br
+      .title
+        | &ldquo;
+        = link_to @next.title, devlog_entry_project_devlog_path(@project, @next)
+        | &rdquo;
+      #rarrow.arrow &#8594;
+  - else
+    #empty-next
+
+  #anvil
+    = image_tag('anvil.gif')

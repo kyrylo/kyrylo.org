@@ -34,4 +34,8 @@ class ApplicationController < ActionController::Base
     return markdown unless content
     content[2].strip
   end
+
+  def iso_date(date)
+    date.to_datetime.iso8601
+  end
 end

@@ -13,7 +13,7 @@ html
         #main
           header
             #site-logo
-              = link_to_unless_current image_tag('logo.svg', height: 64), root_path
+              = link_to_unless_current image_tag('logo.svg', height: 64, id: 'logotype'), root_path
               = link_to_unless_current site_title, root_path, class: 'header-link'
             #mega
               = image_tag 'phonograph.jpg'

@@ -61,12 +61,12 @@ Kyrylo::Application.routes.draw do
   resources :trips
 
   resources :projects do
-    resource :devlog, except: [:index, :create] do
+    resource :devlog, only: [:launch, :show, :destroy] do
       collection do
         post :launch
       end
 
-      resources :devlog_entries, except: [:show, :index]
+      resources :devlog_entries, except: [:show, :index], shallow: true
       get ':id', to: 'devlog_entries#show', as: :devlog_entry
     end
   end

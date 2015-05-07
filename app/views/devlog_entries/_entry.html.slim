@@ -1,0 +1,10 @@
+.post
+  h1 == display_title(@note)
+  - if current_user
+    = render 'admin_controls'
+
+  .published_at
+    i[class="fa fa-clock-og"]
+    .date[title="#{@date}"] = @date
+  .post-content
+    == @devlog_entry.html

@@ -16,6 +16,12 @@
     max-width: 930px;
     margin: 0 auto;
 
+    ul {
+	list-style-type: disc;
+	margin: 16px 0;
+	padding-left: 40px;
+    }
+
     img {
 	max-width: 100%;
     }

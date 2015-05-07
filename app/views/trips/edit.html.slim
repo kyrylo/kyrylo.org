@@ -1,34 +1,35 @@
 h1 Edit Trip
 
-= form_for @trip, url: { controller: 'trips', action: 'update' } do |f|
-  = f.label 'Title:'
-  = f.text_field :title
+== render 'form'
+/ = form_for @trip, url: { controller: 'trips', action: 'update' } do |f|
+/   = f.label 'Title:'
+/   = f.text_field :title
 
-  br
+/   br
 
-  = f.label 'Where:'
-  = f.text_field :where
+/   = f.label 'Where:'
+/   = f.text_field :where
 
-  br
+/   br
 
-  = f.label 'When (start):'
-  = f.date_select :when_start, order: [:day, :month, :year]
+/   = f.label 'When (start):'
+/   = f.date_select :when_start, order: [:day, :month, :year]
 
-  br
+/   br
 
-  = f.label 'When (end):'
-  = f.date_select :when_end, order: [:day, :month, :year]
+/   = f.label 'When (end):'
+/   = f.date_select :when_end, order: [:day, :month, :year]
 
-  br
+/   br
 
-  = f.label 'Thumbnail:'
-  = f.file_field :thumb
+/   = f.label 'Thumbnail:'
+/   = f.file_field :thumb
 
-  br
+/   br
 
-  #ace
-  = f.text_area :markdown
+/   #ace
+/   = f.text_area :markdown
 
-  br
+/   br
 
-  = f.submit class: 'submit-btn'
+/   = f.submit class: 'submit-btn'

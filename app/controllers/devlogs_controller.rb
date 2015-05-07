@@ -1,7 +1,7 @@
 class DevlogsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_project, only: [:launch]
-  before_action :set_devlog, only: [:show, :edit, :update, :destroy]
+  before_action :set_devlog, only: [:show, :destroy]
 
   def show
     respond_to do |format|
@@ -13,27 +13,14 @@ class DevlogsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def launch
     @devlog = Devlog.new(project: @project)
 
     respond_to do |format|
       if @devlog.save
-        format.html { redirect_to project_devlog_path(@project), notice: 'Devlog was successfully created.' }
+        format.html { redirect_to project_devlog_url(@project) }
       else
-        format.html { redirect_to @project, notice: 'Failed' }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @devlog.update(devlog_params)
-        format.html { redirect_to project_devlog(@devlog), notice: 'Devlog was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
+        format.html { redirect_to @project }
       end
     end
   end
@@ -41,8 +28,7 @@ class DevlogsController < ApplicationController
   def destroy
     @devlog.destroy
     respond_to do |format|
-      format.html { redirect_to devlogs_url }
-      format.json { head :no_content }
+      format.html { redirect_to @devlog.project }
     end
   end
 
