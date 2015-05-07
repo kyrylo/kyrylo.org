@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    records = (Post.all + Trip.all).sort_by do |record|
+    records = (Post.all + Trip.all + Project.all).sort_by do |record|
       if record.is_a?(Trip)
         record.when_start
       else
@@ -21,6 +21,8 @@ class PagesController < ApplicationController
       posts[year] = post.group_by do |p|
         if p.is_a?(Trip)
           'trip'
+        elsif p.is_a?(Project)
+          'project'
         else
           p.type
         end

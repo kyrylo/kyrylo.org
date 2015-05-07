@@ -59,6 +59,18 @@ Kyrylo::Application.routes.draw do
 
   resources :posts
   resources :trips
+
+  resources :projects do
+    resource :devlog, except: [:index, :create] do
+      collection do
+        post :launch
+      end
+
+      resources :devlog_entries, except: [:show, :index]
+      get ':id', to: 'devlog_entries#show', as: :devlog_entry
+    end
+  end
+
   get '/cv', to: 'pages#cv'
   get '/about', to: 'pages#about'
   get '/acknowledgements', to: 'pages#acknowledgements'

@@ -1,4 +1,9 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :devlog_entry do
+    devlog nil
+html "MyText"
+markdown "MyText"
+  end
+
   sequence :project_title, aliases: [:name] do
     Faker::Commerce.product_name
   end

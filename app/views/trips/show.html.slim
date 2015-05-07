@@ -23,4 +23,4 @@
       | –
       = @trip.when_end.strftime('%d, %Y')
   .post-content
-    = @trip.html.html_safe
+    == @trip.html

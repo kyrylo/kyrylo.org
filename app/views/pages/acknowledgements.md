@@ -11,6 +11,8 @@ However, I'd like to personally thank these people:
 
 * Alexey \<[gas13](http://gas13.ru/en_index.php)\> Garkushin --- for my avatar
 * Ivan \<[Jovanny Lemonad](http://jovanny.ru/)\> Gladkikh --- for the Oranienbaum
+* [FablePaint](http://fablepaint.deviantart.com/) --- for the animation of the cat
+* [Nebelstern](http://nebelstern.deviantart.com/) --- for the animation of the anvil
 font
 
 I also would like to thank the people that played a significant role in my life:

@@ -146,6 +146,22 @@
 
 }
 
+.pseudo {
+    border-bottom-style: dashed;
+
+    &:visited {
+	color: #5ab3ee;
+	border-bottom: 1px solid rgba(90, 179, 238, 0.4);
+    }
+
+    &:hover {
+	border-bottom-style: dashed;
+    }
+}
+
 @import 'pages';
 @import 'posts';
 @import 'trips';
+@import 'projects';
+@import 'devlogs';
+@import 'devlog_entries';

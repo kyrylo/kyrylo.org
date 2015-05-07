@@ -1,0 +1,12 @@
+= form_for @devlog_entry, url: @devlog_entry.new_record? ? project_devlog_devlog_entries_path : project_devlog_devlog_entry_path(@devlog_entry.devlog.project, @devlog_entry) do |f|
+  = f.label 'Title:'
+  = f.text_field :title
+
+  br
+
+  #ace
+  = f.text_area :markdown
+
+  br
+
+  = f.submit class: 'submit-btn'

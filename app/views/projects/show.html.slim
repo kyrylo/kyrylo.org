@@ -1,0 +1,45 @@
+- content_for :title
+  = @project.title
+
+#project-layout
+  #project-sidebar-wrap
+    #project-sidebar
+      h3 Release Date
+      - if @project.released
+        div = @project.release_date.strftime('%B %d, %Y')
+      - else
+        div &#9773; Still in development
+
+      - if @project.project_links.any?
+        h3 External References
+        ul
+          - @project.project_links.each do |pl|
+            li = link_to pl.name, pl.href
+
+      - if @project.devlog
+        h3 = link_to 'Development Log', project_devlog_path(@project)
+        ul
+          - @project.devlog.devlog_entries.each.with_index do |entry, idx|
+            li
+              = "##{idx+1}"
+              |  &mdash;&nbsp;
+              = link_to entry.title.truncate(18), devlog_entry_project_devlog_path(@project, entry)
+
+      - elsif current_user
+        .adm
+          ul[class="post-control"]
+            li
+              = button_to 'Create Devlog', launch_project_devlog_path(@project), method: :post
+
+  #project-block-wrap
+    #project-block.post
+      h1 = @project.title
+      - if current_user
+        .adm
+          ul[class="post-control"]
+            li
+              = link_to edit_project_path(@project) do
+                i class="fa fa-pencil-square-o"
+            li
+              = link_to "delete", @trip, method: :delete, data: {confirm: "Are you sure?"}
+      == @project.html

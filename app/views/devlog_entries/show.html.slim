@@ -1,0 +1,59 @@
+- content_for :title
+  = "devlog##{@note} — " + @devlog_entry.title
+
+#devlog-entry
+  .shading-top.shading
+  #devlog-banner
+    h1
+      = link_to @project.title, project_path(@project)
+      |  Development Log
+
+  .post
+    h1
+      = "Note #{@devlog_entry.id}"
+      |  &mdash;&nbsp;
+      = link_to_unless_current @devlog_entry.title, devlog_entry_project_devlog_path(@project, @devlog_entry)
+    - if current_user
+      .adm
+        ul[class="post-control"]
+          li
+            = link_to edit_project_devlog_devlog_entry_path(@project, @devlog_entry) do
+              i class="fa fa-pencil-square-o"
+          li
+            = link_to "delete", project_devlog_devlog_entry_path(@project, @devlog_entry), method: :delete, data: {confirm: "Are you sure?"}
+    .published_at
+      i[class="fa fa-clock-o"]
+      .date[title="#{@devlog_entry.created_at}"] = @devlog_entry.created_at.to_datetime.iso8601
+    .post-content
+      == @devlog_entry.html
+  .shading-bottom.shading
+
+#controls
+  - if @prev
+    #prev
+      #larrow.arrow &#8592;
+      .note = "Note #{@prev.id}"
+      br
+      .title
+        | &ldquo;
+        = link_to @prev.title, devlog_entry_project_devlog_path(@project, @prev)
+        | &rdquo;
+  - else
+    #empty-prev
+
+  #devlog-link = link_to 'Development Log', project_devlog_path(@devlog.project)
+
+  - if @next
+    #next
+      .note = "Note #{@next.id}"
+      br
+      .title
+        | &ldquo;
+        = link_to @next.title, devlog_entry_project_devlog_path(@project, @next)
+        | &rdquo;
+      #rarrow.arrow &#8594;
+  - else
+    #empty-next
+
+  #anvil
+    = image_tag('anvil.gif')

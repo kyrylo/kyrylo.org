@@ -31,5 +31,7 @@
                 = link_to post.title, post_path(post)
                 span.tag_list
                   = render_inner_tags(post.tag_list, tag)
-              - else
+              - elsif post.is_a?(Trip)
                 = link_to post.title, trip_path(post)
+              - elsif post.is_a?(Project)
+                = link_to post.title, project_path(post)

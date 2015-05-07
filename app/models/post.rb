@@ -6,8 +6,6 @@ class Post < ActiveRecord::Base
   KNOWN_TAGS = [
     'article',
     'translation',
-    'project',
-    'trip',
     'design'
   ]
 

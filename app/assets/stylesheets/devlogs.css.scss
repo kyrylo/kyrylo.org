@@ -1,0 +1,117 @@
+#devlog-entry {
+    background: image-url('geometry-pattern.png') #f9fafb;
+    border-left: 25px solid #f9fafb;
+    margin-left: -25px;
+    border-right: 25px solid #f9fafb;
+    margin-right: -25px;
+
+    #devlog-banner {
+	width: 100%;
+	text-align: center;
+	border-radius: 4px;
+    }
+
+    ul {
+	line-height: 150%;
+	list-style-type: none;
+	padding: 0;
+
+	.timestamp {
+	    color: #797979;
+	    margin-right: 0.6em;
+	    padding-right: 0.6em;
+	    border-right: 1px solid #e8e8e8;
+	}
+    }
+
+    h1 {
+	text-shadow: 2px 2px 2px white;
+	padding-top: 1em;
+	text-align: left;
+    }
+
+    .shading {
+	height: 4px;
+	background: #fff;
+
+    }
+
+    .shading-top {
+	left: 0;
+	width: 100%;
+	position: absolute;
+	margin-bottom: 20px;
+	box-shadow: 0px 2px 4px white;
+    }
+
+    .shading-bottom {
+	margin-top: 20px;
+	border-left: 25px solid #fff;
+	margin-left: -25px;
+	border-right: 25px solid #fff;
+	margin-right: -25px;
+	box-shadow: 0px -2px 4px white;
+    }
+
+    .post-content {
+	background: #f9fafb;
+    }
+
+    pre {
+	background-color: #fafafa;
+    }
+}
+
+#controls {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.5em;
+
+    .arrow {
+	font-size: 150%;
+	position: absolute;
+	top: 13px;
+    }
+
+    #devlog-link {
+	margin: 0 1.8em;
+	padding: 0 1.8em;
+	border-right: 1px solid #eee;
+	border-left: 1px solid #eee;
+    }
+
+    #prev, #next {
+	position: relative;
+	line-height: 85%;
+    }
+
+    #larrow {
+	left: -35px;
+    }
+
+    #rarrow {
+	right: 20px;
+	left: 115%;
+    }
+
+    .note, .arrow {
+	color: #6c6c6c;
+    }
+
+    .title {
+	line-height: 150%;
+    }
+}
+
+#anvil {
+    float: right;
+    position: absolute;
+    right: 0;
+
+    img {
+	position: relative;
+	top: 5em;
+    }
+}
