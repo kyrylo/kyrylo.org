@@ -3,18 +3,19 @@
 
 h1 Projects
 
-div.programmer = image_tag 'programmer.gif'
+.programmer = image_tag 'programmer.gif'
 
-- @projects.each do |project|
-  .project
-    dl
-      dt
-        = link_to project.title, project_path(project)
-        | &nbsp;
-        span.release-date
-          - if project.released
-            | released on&nbsp;
-            = project.release_date.strftime('%B %d, %Y')
-          - else
-            | work in progress...
-      dd = project.description
+.project-list
+  - @projects.each do |project|
+    .project
+      dl
+        dt
+          = link_to project.title, project_path(project)
+          | &nbsp;
+          span.release-date
+            - if project.released
+              | released on&nbsp;
+              = project.release_date.strftime('%B %d, %Y')
+            - else
+              | work in progress...
+        dd = project.description
