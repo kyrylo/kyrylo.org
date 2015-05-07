@@ -32,7 +32,10 @@ class ProjectsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @project.update(project_params)
+      html = {html: renderer.render(project_params['markdown'])}
+      new_params = html.merge(project_params)
+
+      if @project.update(new_params)
         format.html { redirect_to @project }
       else
         format.html { render action: 'edit' }

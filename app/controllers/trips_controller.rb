@@ -31,11 +31,11 @@ class TripsController < ApplicationController
   end
 
   def update
-    @trip.update(trip_params)
-    @trip.html = renderer.render(trip_params['markdown'])
-
     respond_to do |format|
-      if @trip.save
+      html = {html: renderer.render(trip_params['markdown'])}
+      new_params = html.merge(trip_params)
+
+      if @trip.update(new_params)
         format.html { redirect_to @trip }
       else
         format.html { render action: 'edit' }
