@@ -5,8 +5,11 @@ module PagesHelper
   end
 
   def fresh_post?(post)
+    #require 'pry'; binding.pry
     diff = if post.is_a?(Trip)
              Time.diff(Time.now, post.when_start)
+           elsif post.is_a?(Project)
+             Time.diff(Time.now, post.release_date)
            else
              Time.diff(Time.now, post.created_at)
            end
