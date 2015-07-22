@@ -9,16 +9,14 @@
       .head
         h2 Kyrylo Silin
         dl.contacts
-          dd Kharkiv, Ukraine 61168
+          dd Kharkiv, Ukraine
           dd = link_to 'silin@kyrylo.org', 'mailto:silin@kyrylo.org'
           dd +380 63 254-60-65
           dd +380 98 909-30-34
       .body
         h3 JOB OBJECTIVE
         div
-          | An internship or employment in the United States of America that will
-          |  use my computer programming skills. I also consider remote jobs.
-
+          | Not searching for a job at the moment. Thanks for taking the interest!
         h3 EDUCATION
         div.year January 2015
         div
@@ -38,21 +36,30 @@
 
         h3 EXPERIENCE
         div.exp
+          div.position Software Engineer
+          div.location
+            div = link_to 'Airbrake', 'https://airbrake.io'
+            div Remote
+          div.year July-... 2015
+        div
+          | Still working there...
+
+        div.exp
           div.position Software Engineer (intern)
           div.location
             div = link_to 'Bugsnag', 'https://bugsnag.com'
             div San Francisco, United States
           div.year July-September 2014
         div
-          | Helped maintaining and improving Bugsnag’s notification&nbsp;
+          ' Helped maintaining and improving Bugsnag’s notifier
           = link_to 'libraries', 'https://github.com/bugsnag'
-          | . Provided customer support for Bugsnag’s customers that were using
-            the libraries. Expanded the number of example applications for
+          ' . Provided customer support for Bugsnag’s customers that were using
+            the notifiers. Expanded the number of example applications for
             various programming languages that demonstrate customers how to
-            integrate the product.&nbsp;
+            integrate the product.
           = link_to 'Improved', 'https://bugsnag.com/blog/javascript-notifier-upgrade'
-          |  the quality of JavaScript support. Built an internal framework for
-            integration testing of the Bugsnag libraries.
+          '  the quality of JavaScript errors monitoring. Built an internal
+            framework for integration testing of the Bugsnag notifiers.
         div.exp
           div.position Software Engineer
           div.location
@@ -60,46 +67,36 @@
             div Kharkiv, Ukraine
           div.year Summer-Autumn 2013
         div
-          | Worked on improving quality and fixing bugs of&nbsp;
+          ' Worked on improving quality and fixing bugs of
           = link_to 'OnAir Player', 'http://www.onairplayer.com/'
-          | (the front-end part written in JavaScript), a distributed music
-            player. Was outstaffed to a San Francisco based company called&nbsp;
+          '  (the front-end part written in JavaScript), a
+            distributed music player. Was outstaffed to a San Francisco based
+            company called
           = link_to 'Iskra Dev', 'http://www.iskradev.com/'
-          |  and worked for them remotely, where developed a&nbsp;
+          '  and worked for them remotely, where developed a
           = link_to 'demo application', 'http://insuranceapp.herokuapp.com/'
-          |  for iPad (front-end, JS) and scaffolded the Salesforce
+          '  for iPad (front-end, JS) and scaffolded the Salesforce
             infrastructure for it (back-end, Apex).
         div.exp
           div.position Software Engineer (Freelance)
           div.location
-            div = link_to 'DJ TechTools', 'http://www.djtechtools.com/'
-            div Remote
-          div.year Spring 2013
-        div
-          | Programmed so-called “trending” mappings, improved many other sections of the website.
-        div.exp
-          div.position Software Engineer (Freelance)
-          div.location
-            div = link_to 'Primate Inc.', 'http://www.primateinc.com/'
-            div Remote
-          div.year Autumn 2012
-        div
-          | Helped building user surveys for job applicants and improved other key features of the website.
-        div.exp
-          div.position Web Developer (Freelance)
-          div.location
             div Various clients
             div Remote
-          div.year Summer-Autumn 2010
+          div.year Summer 2010 - Autumn 2013
         div
-          | Duties included web design, administration and programming a number of
-          |  websites such as the website for a Ukrainian travel agency&nbsp;
+          ' Worked for various clients such as
+          = link_to 'DJ TechTools', 'http://djtechtools.com/'
+          ' ,
+          = link_to 'Primate Inc.', 'http://primateinc.com/'
+          ' ,
           = link_to 'Riviera', 'http://riviera.kharkov.ua/'
-          | , a Russian factory of concrete blocks&nbsp;
+          ' ,
           = link_to 'Aerobel', 'http://aerobel.ru/'
-          | , an internet shop of mobile gadgets&nbsp;
+          '  and
           = link_to 'Smart Gadget', 'http://smartgadget.com.ua/'
-          |  and others.
+          ' .
+          | Duties included Rails programming, web design, administration and
+            others.
         div.exp
           div.position Web Developer
           div.location
@@ -107,7 +104,8 @@
             div Kharkiv, Ukraine
           div.year Summer 2010
         div
-          | Designed and programmed the website for a dealer of the Ukrainian factory called Kredmash.
+          | Designed and programmed the website for a dealer of the Ukrainian
+            factory called Kredmash.
         div.exp
           div.position Web Developer
           div.location
@@ -115,7 +113,8 @@
             div Kharkiv, Ukraine
           div.year Spring 2010
         div
-          | Designed and programmed the website of the Ukrainian department of the French comsetics company.
+          | Designed and programmed the website of the Ukrainian department of
+            the French comsetics company.
 
         h3 PUBLICATIONS
         ul
@@ -133,61 +132,59 @@
         dl
           dt = link_to 'kyrylo.org', 'http://kyrylo.org'
           dd
-            | Personal website written in Ruby on Rails.
+            | Personal website, written in Ruby on Rails.
+
           dt = link_to 'Pry Theme', 'https://github.com/kyrylo/pry-theme'
           dd
             | A plugin for the Pry REPL for the Ruby programming language, which
               allows to customise Pry colors via prytheme.rb files.
+
           dt = link_to 'rmarshal', 'https://github.com/kyrylo/rmarshal'
           dd
             | An Erlang library for deserialising Ruby objects dumped by
               Marshal.dump into Erlang terms.
 
-          dt = link_to 'latest_ruby', 'https://github.com/kyrylo/latest_ruby'
+          dt = link_to 'fast_method_source', 'https://github.com/kyrylo/fast_method_source'
           dd
-            | A library for the Ruby programming language that helps to determine
-              the latest Ruby version programmatically. Knows about MRI, Rubinius,
-              JRuby, MagLev and MacRuby.
+            | A Ruby C extension for querying methods, procs and lambdas for
+              their source code and comments. Extremely fast.
 
-          dt = link_to 'system-navigation', 'https://github.com/kyrylo/system-navigation'
+          dt = link_to 'system_navigation', 'https://github.com/kyrylo/system_navigation'
           dd
             | A library for the Ruby programming language that provides navigation and
               introspection capabilities for Ruby programs.
 
-          dt = link_to 'repetitive-countdown', 'https://github.com/kyrylo/repetitive-countdown'
+          dt = link_to 'system_browser_client', 'https://github.com/kyrylo/system_browser_client'
           dd
-            | A Google Chrome extension written in JavaScript, which helps to keep
-              track of time.
+            | A desktop app for browsing Ruby code. Just click to get details
+              about a module or class and explore its namespace or see the
+              source of a method.
 
         h3 OPEN SOURCE CONTRIBUTIONS
         dl
           dt = link_to 'Pry commits', 'https://github.com/pry/pry/commits?author=kyrylo'
           dd
-            | I am a core team member of the Pry REPL project for the Ruby programming
-              language and some of its auxiliary projects like Pry Doc, Interception
-              and others. I've also contributed to the website, the wiki, the IRC
-              channel and in any other possible way. I've been spreading the Pry
-              stickers at conferences.
-          dt = link_to 'The Ruby language pull request', 'https://github.com/ruby/ruby/pull/395'
-          dd
-            | Makes the prepend keyword work on the top level.
-          dt = link_to 'Foreman pull request', 'https://github.com/ddollar/foreman/pull/536/files'
-          dd
-            | Improves Pry integration with Foreman.
-          dt = link_to 'YARD pull request', 'https://github.com/lsegal/yard/pull/668'
-          dd
-            | Fixes for the parser, so it could parse some docs that were unparsed before.
+            | I am a core team member of the Pry REPL project for the Ruby
+              programming language and some of its auxiliary projects like
+            = link_to 'Pry Doc', 'https://github.com/pry/pry-doc'
+            ' ,
+            = link_to 'Interception', 'https://github.com/ConradIrwin/interception'
+            ' Interception and others. I've also contributed to the website, the
+              wiki, the IRC channel and in any other possible way. I've been
+              spreading the Pry stickers at Ruby conferences and meetups.
 
         h3 COMPUTER SKILLS
         div
-          | Proficient programming skills in Ruby and JavaScript. Good knowledge of
-            GNU/Linux and Shell. Experience with Erlang, C, Smalltalk, Python, Go, Perl,
-            PHP, Java, Apex, Haskell, SQL and Lisp.
+          | Proficient programming skills in Ruby and JavaScript. Good knowledge
+            of GNU/Linux and Shell. Experience with Erlang, C, Smalltalk,
+            Python, Go, Perl, PHP, Java, Apex, Haskell, SQL and ELisp. Knowledge
+            of JavaScript frameworks such as Backbone, Marionette and Angular,
+            including Node.js.
 
         h3 HOBBIES
         div
-          | Learning in general, football, computer games, web design, typography, open
-            source, bicycles.
+          | Learning in general, football, computer games, web design, typography,
+            open source, bicycles.
 
   #cv-download-wrap
     #cv-download
