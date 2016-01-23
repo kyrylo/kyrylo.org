@@ -1,180 +1,182 @@
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font-family: $default-font-stack;
-    color: #2c2c2c;
+  font-family: $default-font-stack;
+  color: #2c2c2c;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font-stack;
-    font-weight: normal;
+  font-family: $header-font-stack;
+  font-weight: normal;
 }
 
 h1 {
-    font-size: 200%;
-    margin-top: 11px;
-    margin-bottom: 12px;
+  font-size: 200%;
+  margin-top: 11px;
+  margin-bottom: 12px;
 }
 
 h2 {
-    font-size: 180%;
-    margin-top: 1em;
-    margin-bottom: 0.3em;
+  font-size: 180%;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
 }
 
 h3 {
-    font-size: 130%;
+  font-size: 130%;
 }
 
 h4 {
-    font-size: 115%;
+  font-size: 115%;
 }
 
 h5 {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 h6 {
-    font-size: 70%;
+  font-size: 70%;
 }
 
 a {
-    @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
-    color: $default-link-colour;
-    text-decoration: none;
-    border-bottom: $default-link-border;
+  @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
+  color: $default-link-colour;
+  text-decoration: none;
+  border-bottom: $default-link-border;
 
-    &:visited {
+  &:visited {
 	color: $default-visited-link-colour;
 	border-bottom: $default-visited-link-border;
-    }
+  }
 
-    &:hover {
+  &:hover {
 	color: $default-hover-link-colour;
 	border-bottom: $default-hover-link-border;
-    }
+  }
 }
 
 nav {
-    font-family: $nav-font-stack;
-    font-weight: 700;
-    border-top: 1px solid $border-colour;
-    text-align: center;
-    margin-top: 16px;
-    margin-bottom: 35px;
-    padding-top: 6px;
-    text-transform: uppercase;
-    clear: both;
+  font-family: $nav-font-stack;
+  font-weight: 700;
+  border-top: 1px solid $border-colour;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 35px;
+  padding-top: 6px;
+  text-transform: uppercase;
+  clear: both;
 
-    a {
+  a {
 	color: $nav-link-colour;
 	border-bottom: $nav-link-border;
 
 	&:visited {
-	    color: $nav-visited-link-colour;
-	    border-bottom: $nav-visited-link-border;
+	  color: $nav-visited-link-colour;
+	  border-bottom: $nav-visited-link-border;
 	}
 
 	&:hover {
-	    color: $nav-hover-link-colour;
-	    border-bottom: $nav-hover-link-border;
+	  color: $nav-hover-link-colour;
+	  border-bottom: $nav-hover-link-border;
 	}
-    }
+  }
 
-    ul {
+  ul {
 	list-style-type: none;
 	margin: 0 auto;
 	padding: 0;
 
 	li {
-	    font-size: 95%;
-	    letter-spacing: 1px;
-	    display: inline-block;
-	    margin: 0 5px;
+	  font-size: 95%;
+	  letter-spacing: 1px;
+	  display: inline-block;
+	  margin: 0 5px;
 
-	    a {
+	  a {
 		text-decoration: none;
 		font-weight: normal;
-	    }
+	  }
 	}
-    }
+  }
 }
 
 figcaption {
-    font-style: italic;
-    text-align: center;
+  font-family: $caption-font-stack;
+  font-size: 90%;
+  font-style: italic;
+  text-align: center;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 1.25em;
+  margin-top: 0;
+  margin-bottom: 1.25em;
 }
 
 header {
-    margin-top: 11px;
+  margin-top: 11px;
 
-    a, a:hover {
-	border-bottom: none;
-    }
+  a, a:hover {
+	   border-bottom: none;
+     }
 }
 
 footer, .push {
-    height: 120px;
+  height: 120px;
 }
 
 @media screen and (max-width: $medium-screen) {
-    footer, .push {
+  footer, .push {
 	height: 210px;
-    }
+  }
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 footer {
-    background-color: #fff;
+  background-color: #fff;
 
-    ul {
+  ul {
 	padding: 0 25px;
 	float: left;
 
 	li {
-	    display: inline-block;
+	  display: inline-block;
 	}
-    }
+  }
 
-    @media screen and (max-width: $medium-screen) {
+  @media screen and (max-width: $medium-screen) {
 	ul {
-	    float: none;
-	    text-align: center;
-	    margin-bottom: 25px;
+	  float: none;
+	  text-align: center;
+	  margin-bottom: 25px;
 	}
-    }
+  }
 }
 
 pre {
-    background-color: #fffffa;
-    padding: 1em;
+  background-color: #fffffa;
+  padding: 1em;
 
-    code {
+  code {
 	line-height: 1.4;
-    }
+  }
 }
 
 pre code, code {
-    font-size: 75%;
-    font-family: $code-font-stack;
+  font-size: 75%;
+  font-family: $code-font-stack;
 }
 
 blockquote {
-    font-family: $nav-font-stack;
+  font-family: $nav-font-stack;
 
-    p {
+  p {
 	margin-bottom: 5px;
-    }
+  }
 }
