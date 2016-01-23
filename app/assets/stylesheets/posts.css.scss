@@ -1,153 +1,157 @@
 #ace {
-    height: 490px;
+  height: 490px;
 }
 
 
 #post_markdown {
-    display: none;
+  display: none;
 }
 
 .submit-btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .post {
-    line-height: 1.45;
-    max-width: 930px;
-    margin: 0 auto;
+  line-height: 1.45;
+  max-width: 930px;
+  margin: 0 auto;
 
-    ul {
+  ul {
 	list-style-type: disc;
 	margin: 16px 0;
 	padding-left: 40px;
-    }
+  }
 
-    img {
+  img {
 	max-width: 100%;
-    }
+  }
 
-    pre {
+  pre {
 	clear: both;
-    }
+  }
 
-    p {
+  p {
 	font-size: 105%;
-        max-width: 700px;
-    }
+    max-width: 800px;
+  }
 
-    #disqus_thread {
+  code.hljs {
+    font-family: $post-code-font-stack;
+  }
+
+  #disqus_thread {
 	margin-top: 3em;
-    }
+  }
 
-    .post-content {
+  .post-content {
 	margin-top: 1em;
 	clear: both;
 
 	h2, h3, h4 {
-	    clear: both;
+	  clear: both;
 	}
-    }
+  }
 
-    .figure {
+  .figure {
 	margin-bottom: 3em;
 	text-align: center;
 
 	img {
-	    padding: 1px;
-	    border: 1px solid #dddddd;
-	    @include box-shadow(1px 1px 2px #c7c6c6);
+	  padding: 1px;
+	  border: 1px solid #dddddd;
+	  @include box-shadow(1px 1px 2px #c7c6c6);
 	}
 	.caption {
-	    margin-top: 9px;
-	    font-style: italic;
+	  margin-top: 9px;
+	  font-style: italic;
 	}
-    }
+  }
 
-    .video {
+  .video {
 	margin-bottom: 25px;
-    }
+  }
 
-    .center {
+  .center {
 	text-align: center;
 	img {
-	    max-width: 85%;
+	  max-width: 85%;
 	}
-    }
+  }
 
-    .right {
+  .right {
 	float: right;
 	margin-left: 25px;
-    }
+  }
 
-    .left {
+  .left {
 	float: left;
 	margin-right: 25px;
-    }
+  }
 
-    .borderless {
+  .borderless {
 	img {
-	    border: none !important;
-	    box-shadow: none !important;
+	  border: none !important;
+	  box-shadow: none !important;
 	}
-    }
+  }
 
-    .published_at {
+  .published_at {
 	float: left;
 	margin-right: 2em;
 	&:hover {
-	    cursor: help;
+	  cursor: help;
 	}
 
 	.date {
-	    overflow: hidden;
-	    float: left;
+	  overflow: hidden;
+	  float: left;
 	}
-    }
-    .published_at, .tags {
+  }
+  .published_at, .tags {
 	color: #747474;
 	font-size: 85%;
-    }
+  }
 
-    .published_at i, .tags i {
+  .published_at i, .tags i {
 	float: left;
 	position: relative;
 	top: 2px;
 	margin-right: 5px;
-    }
+  }
 
-    .tags {
+  .tags {
 	a {
-	    color: #747474;
-	    border-bottom: 1px solid rgba(116, 116, 116, 0.25);
-	    &:hover {
+	  color: #747474;
+	  border-bottom: 1px solid rgba(116, 116, 116, 0.25);
+	  &:hover {
 		color: #000;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-	    }
+	  }
 	}
-    }
+  }
 
-    .footnotes {
+  .footnotes {
 	font-size: 95%;
-    }
+  }
 
-    .btn-spoiler {
+  .btn-spoiler {
 	color: #5ab3ee;
 	float: left;
 	border-bottom: 1px dashed #5ab3ee;
 	margin-bottom: 25px;
 
 	&:hover {
-	    cursor: pointer;
+	  cursor: pointer;
 	}
-    }
+  }
 
-    .spoiler-visible {
+  .spoiler-visible {
 	background-color: #fffedf;
 	padding: 20px;
 	clear: both;
-    }
+  }
 
-    .continue-reading {
+  .continue-reading {
 	@include transition((box-shadow 0.5s, background 0.5s));
 	@include box-shadow((0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1)));
 	@include border-radius(4px);
@@ -160,18 +164,18 @@
 	border: 1px solid #e0e0e0;
 
 	&:hover {
-	    @include transition((background 0.5s, box-shadow 0.5s));
-	    @include box-shadow((0px 2px 1px white inset, 0px -2px 20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1)));
-	    background: #fcfcfc;
+	  @include transition((background 0.5s, box-shadow 0.5s));
+	  @include box-shadow((0px 2px 1px white inset, 0px -2px 20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1)));
+	  background: #fcfcfc;
 	}
 
 	&:active {
-	    @include box-shadow((0px 1px 2px rgba(0, 0, 0, 0.5) inset, 0px -2px 20px white, 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1)));
-	    background: -webkit-linear-gradient(top, #d1d1d1 0%,#ececec 100%);
+	  @include box-shadow((0px 1px 2px rgba(0, 0, 0, 0.5) inset, 0px -2px 20px white, 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1)));
+	  background: -webkit-linear-gradient(top, #d1d1d1 0%,#ececec 100%);
 	}
 
 	.fa-long-arrow-right {
-	    font-size: 80%;
+	  font-size: 80%;
 	}
-    }
+  }
 }
