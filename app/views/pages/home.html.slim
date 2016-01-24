@@ -26,8 +26,8 @@
                   ' new
               - if post.is_a?(Post)
                 = link_to post.title, post_path(post)
-                span.tag_list
-                  = render_inner_tags(post.tag_list, tag)
+                / span.tag_list
+                /   = render_inner_tags(post.tag_list, tag)
               - elsif post.is_a?(Trip)
                 = link_to post.title, trip_path(post)
               - elsif post.is_a?(Project)
