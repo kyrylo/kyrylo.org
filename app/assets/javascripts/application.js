@@ -18,7 +18,7 @@
 //= require turbolinks
 //= require moment
 //= require highlight.pack
-//= require ace/ace
+//= require ace-rails-ap
 //= require ace/mode-markdown
 //= require fotorama
 //= require jquery.spoiler
