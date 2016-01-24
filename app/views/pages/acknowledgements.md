@@ -4,20 +4,17 @@ title: Acknowledgements
 
 I want to thank everyone who allowed me to use their work both directly (by
 personal consent) or indirectly (by means of a non-restricting licence). This
-includes software, third-party libraries, fonts images and any other
+includes software, third-party libraries, fonts, images and any other
 intellectual work I used for building this website.
 
 However, I'd like to personally thank these people:
 
 * Alexey \<[gas13](http://gas13.ru/en_index.php)\> Garkushin --- for my avatar
-* Ivan \<[Jovanny Lemonad](http://jovanny.ru/)\> Gladkikh --- for the Oranienbaum
 * [FablePaint](http://fablepaint.deviantart.com/) --- for the animation of the cat
-* [Nebelstern](http://nebelstern.deviantart.com/) --- for the animation of the anvil
-font
+* Jaimie \<[Siren](http://8siren.deviantart.com/)\> --- for the horse that you see here
 
 I also would like to thank the people that played a significant role in my life:
 
-* My family
 * Alexander Barkov
 * [Conrad Irwin](http://cirw.in/)
 * Mikhail Fedak
@@ -25,3 +22,8 @@ I also would like to thank the people that played a significant role in my life:
 * [Simon Maynard](http://snmaynard.com/)
 
 All the lists are in the alphabetical order.
+
+<div class="figure borderless">
+<img src="/images/bowing-horse.png"/>
+<div class="caption">I'm taking a bow</div>
+</div>
