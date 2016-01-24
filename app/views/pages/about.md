@@ -1,5 +1,5 @@
 ---
-title: The history instead of the about
+title: About? The site history instead of the about!
 ---
 
 It's quite amusing: although this site was launched in 2014, its story has
