@@ -24,142 +24,114 @@
 @import 'footer';
 
 #contact-info {
-    span {
+  span {
 	font-size: 9px;
-    }
-}
-
-.rainbow {
-    @include linear-gradient((left, red, orange, yellow, green, cyan, blue, purple));
-    .red {
-	@include box-shadow(0px -1px 6px red);
-    }
-    .orange {
-	@include box-shadow(0px -1px 6px orange);
-    }
-    .yellow {
-	@include box-shadow(0px -1px 6px yellow);
-	.right {
-	    @include box-shadow(0px -1px 6px rgba(53, 151, 14, 0.47));
-	}
-    }
-    .green {
-	@include box-shadow(0px -1px 6px green);
-    }
-    .cyan {
-	@include box-shadow(0px -1px 6px cyan);
-    }
-    .blue {
-	@include box-shadow(0px -1px 6px blue);
-    }
-    .violet {
-	@include box-shadow(0px -1px 6px violet);
-    }
+  }
 }
 
 #layout {
-    background-color: white;
-    max-width: 100%;
-    margin: 0px auto 65px auto;
-    margin-top: 0px;
-    overflow: hidden;
+  background-color: white;
+  max-width: 1033px;
+  margin: 0px auto 65px auto;
+  margin-top: 0px;
+  overflow: hidden;
 }
 
 #sticky-footer {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -120px;
-    overflow: hidden;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -120px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 965px) {
-    #sticky-footer {
+  #sticky-footer {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -210px;
 	overflow: hidden;
-    }
+  }
 }
 
 #main {
-    padding: 25px;
-    padding-top: 10px;
+  padding: 25px;
+  padding-top: 10px;
 }
 
 .fotorama {
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
 .hr {
-    clear: both;
-    text-align: center;
-    margin: 2.5em 0;
-    i {
+  clear: both;
+  text-align: center;
+  margin: 2.5em 0;
+  i {
 	margin: 0 10px;
-    }
+  }
 }
 
 .pagination {
-    padding-top: 20px;
-    margin-top: 5em;
-    span {
+  padding-top: 20px;
+  margin-top: 5em;
+  span {
 	margin: 0 2px;
-    }
+  }
 }
 
 #admin-bar {
-    float: right;
-    li {
+  float: right;
+  li {
 	margin-left: 10px;
-    }
+  }
 }
 
 .adm {
-    .post-control {
+  .post-control {
 	margin-bottom: 10px;
 	li {
-	    margin-right: 10px;
+	  margin-right: 10px;
 	}
-    }
+  }
 
-    ul {
+  ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 
 	li {
-	    display: inline;
+	  display: inline;
 	}
-    }
-    a {
+  }
+  a {
 	color: #c58d94;
 	text-decoration: none;
 	border-bottom: none;
 
 	&:visited {
-	    color: #c58d94;
-	    text-decoration: none;
+	  color: #c58d94;
+	  text-decoration: none;
 	}
 	&:hover {
-	    color: #ce5160;
+	  color: #ce5160;
 	}
-    }
+  }
 
 }
 
 .pseudo {
-    border-bottom-style: dashed;
+  border-bottom-style: dashed;
 
-    &:visited {
+  &:visited {
 	color: #5ab3ee;
 	border-bottom: 1px solid rgba(90, 179, 238, 0.4);
-    }
+  }
 
-    &:hover {
+  &:hover {
 	border-bottom-style: dashed;
-    }
+  }
 }
 
 @import 'pages';

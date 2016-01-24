@@ -28,14 +28,6 @@ html
                     i[class="fa fa-file-powerpoint-o"]
                   li = link_to destroy_user_session_path, method: :delete do
                     i[class="fa fa-sign-out"]
-          nav
-            ul
-              li = link_to_unless_current 'Articles', '/articles'
-              li = link_to_unless_current 'Designs', '/designs'
-              li = link_to_unless_current 'Projects', '/projects'
-              li = link_to_unless_current 'Trips', '/trips'
-              li = link_to_unless_current 'Translations', '/translations'
-              li = link_to_unless_current 'Personal Wiki', 'http://wiki.kyrylo.org'
           #content
             == yield
       .push

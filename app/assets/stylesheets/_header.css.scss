@@ -1,15 +1,14 @@
 #site-logo {
-    overflow: hidden;
-    float: left;
-    margin-bottom: 16px;
-    height: 68px;
+  overflow: hidden;
+  height: 68px;
+  width: 460px;
 
-    #logotype {
+  #logotype {
 	float: left;
 	margin-right: 10px;
-    }
+  }
 
-    #site-title {
+  #site-title {
 	@include transition(color 0.25s ease-out);
 	font-family: Playfair Display SC, Georgia, serif;
 	font-size: 175%;
@@ -19,8 +18,8 @@
 	float: left;
 
 	.author {
-	    position: relative;
-	    left: 14px;
+	  position: relative;
+	  left: 14px;
 	}
-    }
+  }
 }

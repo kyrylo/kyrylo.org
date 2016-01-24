@@ -1,47 +1,46 @@
 #trip_markdown {
-    display: none;
+  display: none;
 }
 
 #timespan {
-    color: #747474;
+  color: #747474;
 }
 
 .trip-post {
-    max-width: 1000px;
+  max-width: 1000px;
 }
 
 .trip-thumbnails {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: left;
-    justify-content: space-around;
-    width: 100%;
-    text-align: center;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: left;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
 
-    .trip-thumb {
+  .trip-thumb {
 	max-width: 350px;
 	min-width: 250px;
 	margin-bottom: 2.5em;
 
 	img {
-	    cursor: pointer;
-	    border: 1px solid #444444;
+	  cursor: pointer;
+	  border: 1px solid #444444;
 
-	    &:hover {
+	  &:hover {
 		@include transition((border 0.25s ease-out));
 		border: 1px solid #ce5160;
-	    }
+	  }
 	}
 
 	.caption {
-	    margin-top: 5px;
-	    font-family: Oranienbaum, Georgia, Times New Roman, serif;
+	  margin-top: 5px;
 
-	    .highlighted {
+	  .highlighted {
 		color: #ee5a83;
 		border-bottom: 1px solid rgba(238, 90, 131, 0.4);
-	    }
+	  }
 	}
-    }
+  }
 }

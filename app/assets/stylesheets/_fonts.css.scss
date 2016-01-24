@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Noticia+Text");
-
-@font-face {
-    font-family: "Oranienbaum";
-    src: url(font-path("Oranienbaum.eot"));
-    src: url(font-path("Oranienbaum.eot?#iefix")) format("embedded-opentype"),
-         url(font-path("Oranienbaum.svg#oranienbaum")) format("svg"),
-         url(font-path("Oranienbaum.woff")) format("woff"),
-         url(font-path("Oranienbaum.ttf")) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC");
 
 @font-face {
     font-family: "Minion Pro";
@@ -18,39 +8,6 @@
          url(font-path("Minion Pro.svg#minionpro")) format("svg"),
          url(font-path("Minion Pro.woff")) format("woff"),
          url(font-path("Minion Pro.ttf")) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Yeseva One";
-    src: url(font-path("Yeseva One.eot"));
-    src: url(font-path("Yeseva One.eot?#iefix")) format("embedded-opentype"),
-         url(font-path("Yeseva One.svg#yesevaone")) format("svg"),
-         url(font-path("Yeseva One.woff")) format("woff"),
-         url(font-path("Yeseva One.ttf")) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Playfair Display SC";
-    src: url(font-path("PlayfairDisplaySC.eot"));
-    src: url(font-path("PlayfairDisplaySC.eot?#iefix")) format("embedded-opentype"),
-         url(font-path("PlayfairDisplaySC.svg#yesevaone")) format("svg"),
-         url(font-path("PlayfairDisplaySC.woff")) format("woff"),
-         url(font-path("PlayfairDisplaySC.ttf")) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Cookie";
-    src: url(font-path("Cookie.eot"));
-    src: url(font-path("Cookie.eot?#iefix")) format("embedded-opentype"),
-         url(font-path("Cookie.svg#yesevaone")) format("svg"),
-         url(font-path("Cookie.woff")) format("woff"),
-         url(font-path("Cookie.ttf")) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -67,7 +24,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Latin Modern Mono';
   src: url('lmmono9-regular-webfont.eot');
@@ -78,5 +34,4 @@
        url('lmmono9-regular-webfont.svg#latin_modern_mono9_regular') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }

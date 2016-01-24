@@ -57,51 +57,6 @@ a {
   }
 }
 
-nav {
-  font-family: $nav-font-stack;
-  font-weight: 700;
-  border-top: 1px solid $border-colour;
-  text-align: center;
-  margin-top: 16px;
-  margin-bottom: 35px;
-  padding-top: 6px;
-  text-transform: uppercase;
-  clear: both;
-
-  a {
-	color: $nav-link-colour;
-	border-bottom: $nav-link-border;
-
-	&:visited {
-	  color: $nav-visited-link-colour;
-	  border-bottom: $nav-visited-link-border;
-	}
-
-	&:hover {
-	  color: $nav-hover-link-colour;
-	  border-bottom: $nav-hover-link-border;
-	}
-  }
-
-  ul {
-	list-style-type: none;
-	margin: 0 auto;
-	padding: 0;
-
-	li {
-	  font-size: 95%;
-	  letter-spacing: 1px;
-	  display: inline-block;
-	  margin: 0 5px;
-
-	  a {
-		text-decoration: none;
-		font-weight: normal;
-	  }
-	}
-  }
-}
-
 figcaption {
   font-family: $caption-font-stack;
   font-size: 90%;
@@ -116,10 +71,12 @@ p {
 
 header {
   margin-top: 11px;
+  float: left;
+  width: 100%;
 
   a, a:hover {
-	   border-bottom: none;
-     }
+    border-bottom: none;
+  }
 }
 
 footer, .push {
@@ -176,7 +133,7 @@ pre code, code {
 }
 
 blockquote {
-  font-family: $nav-font-stack;
+  font-family: $code-font-stack;
 
   p {
 	margin-bottom: 5px;

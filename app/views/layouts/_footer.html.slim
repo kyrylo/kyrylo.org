@@ -1,19 +1,21 @@
 footer#footer
-  = render 'shared/rainbow'
-
   .content
-    #footer-menu
-      ul
-        li.item: a href="/about" About
-        li.item: a href="/acknowledgements" Acknowledgements
-        li.item: a href="/public_accounts" Public accounts
-        li.item: a href="/cv" Curriculum Vitae
+    .extra-links
+      #footer-menu
+        ul
+          li.item: a href="/about" About
+          li.item: a href="/acknowledgements" Acknowledgements
+          li.item: a href="/public_accounts" Public accounts
+          li.item: a href="/cv" Curriculum Vitae
 
-    #powered-by
-      div
-        a> href="https://github.com/kyrylo/kyrylo.org" This website
-        ' is open source software
-      div Available since August 2014
+      #powered-by
+        ul
+          li.item
+            a> href="https://github.com/kyrylo/kyrylo.org" kyrylo.org
+            ' is open source software. Available since August 2014
+          li.item
+            | This content is licensed under the&nbsp;
+            a href="https://creativecommons.org/licenses/by/4.0/" CC BY 4.0 licence
 
     #contact-info
       table
