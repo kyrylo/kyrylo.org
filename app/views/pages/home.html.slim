@@ -17,18 +17,33 @@
     h2 = year
     - tags.sort.each do |tag, posts|
       .section
-        h4 = tag.capitalize.pluralize
         ul
-          - posts.sort_by(&:title).each do |post|
+          - posts.sort_by(&:created_at).reverse_each do |post|
             li
-              - if fresh_post?(post)
-                span.new-badge
-                  ' new
               - if post.is_a?(Post)
+                span.post-date
+                  = post.created_at.strftime('%d %b')
+                  | &nbsp;&nbsp;
                 = link_to post.title, post_path(post)
-                / span.tag_list
-                /   = render_inner_tags(post.tag_list, tag)
+                - if fresh_post?(post)
+                  span.new-badge
+                    ' new
               - elsif post.is_a?(Trip)
-                = link_to post.title, trip_path(post)
+                .trip-thumbnails
+                  .trip-thumb
+                    = image_tag post.thumb.url(:thumb)
+                    .caption
+                      = link_to post.where, trip_path(post)
+                      | ,&nbsp;
+                      span class='when'
+                        - if post.when_start.month == post.when_end.month
+                          = post.when_start.strftime('%B')
+                        - else
+                          = post.when_start.strftime('%B')
+                          | –
+                          = post.when_end.strftime('%B')
               - elsif post.is_a?(Project)
+                span.post-date
+                  = post.created_at.strftime('%d %b')
+                  | &nbsp;&nbsp;
                 = link_to post.title, project_path(post)
