@@ -134,7 +134,13 @@ pre code, code {
 }
 
 blockquote {
-  font-family: $code-font-stack;
+  font-family: $caption-font-stack;
+  font-style: italic;
+  font-size: 90%;
+  max-width: 450px;
+  padding: 20px;
+  background-color: whitesmoke;
+  margin-left: 20px;
 
   p {
 	margin-bottom: 5px;
