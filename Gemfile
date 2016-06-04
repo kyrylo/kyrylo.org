@@ -51,8 +51,8 @@ gem 'cancancan'
 gem 'devise'
 gem 'paperclip'
 gem 'capistrano', '~> 3.2.0'
-gem 'bugsnag'
 gem 'time_diff'
+gem 'airbrake', '~> 5.2'
 
 group :development, :test do
   # A testing framework.
