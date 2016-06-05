@@ -52,7 +52,8 @@ gem 'devise'
 gem 'paperclip'
 gem 'capistrano', '~> 3.2.0'
 gem 'time_diff'
-gem 'airbrake', '~> 5.2'
+gem 'airbrake', '~> 5.3'
+gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
 
 group :development, :test do
   # A testing framework.

@@ -1,21 +1,21 @@
 .description
   h1 Greetings, stranger
   p
-    | Welcome to the personal site of Kyrylo Silin. I am a programmer, who
-      currently works at&nbsp;
+    | Welcome to the personal site of Kyrylo Silin. I am a programmer who
+      works at&nbsp;
     = link_to "Airbrake", "https://airbrake.io"
-    | . I am located in Kharkiv, Ukraine.
-  p
-    | I mostly write about programming. I am an admirer of the open source
-      culture and I regularly contribute. I&#8217;m a core team member of
-      the&nbsp;
-    = link_to "Pry REPL", "http://pryrepl.org/"
-    |  project for Ruby.
+    | . I live in the city of Kharkiv, Ukraine. When I write something here, it's
+      probably about programming. I am an admirer of the open source culture,
+      therefore I regularly contribute. I&#8217;m a core team member of&nbsp;
+    = link_to "Pry", "http://pryrepl.org/"
+    | , a popular Ruby project.
   p
     | My credo is this famous quote by Alan Kay:
       &#8220;The best way to predict the future is to invent it&#8221;.
   p
-    | P.S. The wolf is clickable.
+    | P.S. The&nbsp;
+    = image_tag_with_at2x 'wolf-emoji.png', class: 'wolf-emoji'
+    | &nbsp;&nbsp;is clickable.
 .avatar
   .front
     = figure_tag('avatar.png', size: '158x180', title: "Kyrylo's avatar", figcaption: 'Me on the internet')

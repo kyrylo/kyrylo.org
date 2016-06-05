@@ -79,6 +79,8 @@
 
     .description {
       font-size: 105%;
+      font-family: $default-font-stack;
+      line-height: 170%;
       width: 70%;
       float: left;
     }
@@ -87,6 +89,10 @@
     }
     .flip .back {
       @include transform(0, 0);
+    }
+
+    .wolf-emoji {
+      cursor: pointer;
     }
   }
 }

@@ -30,13 +30,18 @@ module ApplicationHelper
 
       concat(content_tag(:div, class: "author #{oddlink}") { 'Kyrylo Silin' })
       concat(content_tag(:div, class: "slogan #{oddlink}") do
-          'Only Black and White'.html_safe
+          'Black &amp; White'.html_safe
         end)
     end
   end
 
   def generate_title(str)
-    motto = 'Kyrylo Silin: Only Black and White'
+    motto = 'Kyrylo Silin: Black & White'
     str && str + " — #{motto}" || motto
+  end
+
+  def image_tag_with_at2x(name_at_1x, options={})
+    name_at_2x = name_at_1x.gsub(%r{\.\w+$}, '@2x\0')
+    image_tag(name_at_1x, options.merge("data-at2x" => asset_path(name_at_2x)))
   end
 end

@@ -10,6 +10,8 @@ $ ->
   , (event) ->
     $(event.currentTarget).find('.oddlink').removeClass('oddlink--highlighted')
 
+  $('.wolf-emoji').on 'click', ->
+    $('.avatar').click()
 
 $(document).on 'page:change', ->
   $('pre code').each (i, e) -> hljs.highlightBlock(e)

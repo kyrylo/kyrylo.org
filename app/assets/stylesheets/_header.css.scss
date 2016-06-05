@@ -33,14 +33,14 @@
     }
 
     .slogan {
-      margin-left: 10px;
+      margin-left: 14px;
       margin-top: 5px;
     }
 
     .slogan::before {
       content: '\201C';
       position: absolute;
-      left: -2px;
+      left: 2px;
     }
 
     .slogan::after {
