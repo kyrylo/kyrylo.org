@@ -26,9 +26,11 @@ module ApplicationHelper
 
   def site_title
     content_tag(:div, id: 'site-title') do
-      concat(content_tag(:div, class: 'author oddlink') { 'Kyrylo Silin' })
-      concat(content_tag(:div, class: 'oddlink') do
-          '&ldquo;Only Black and White&rdquo;'.html_safe
+      oddlink = current_page?(root_url) ? '' : 'oddlink'
+
+      concat(content_tag(:div, class: "author #{oddlink}") { 'Kyrylo Silin' })
+      concat(content_tag(:div, class: "slogan #{oddlink}") do
+          'Only Black and White'.html_safe
         end)
     end
   end
