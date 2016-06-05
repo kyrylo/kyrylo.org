@@ -21,10 +21,6 @@ class PagesController < ApplicationController
     render_markdown('about.md')
   end
 
-  def acknowledgements
-    render_markdown('acknowledgements.md')
-  end
-
   def cv
     @title = 'Curriculum Vitae'
 

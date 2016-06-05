@@ -73,6 +73,5 @@ Kyrylo::Application.routes.draw do
 
   get '/cv', to: 'pages#cv'
   get '/about', to: 'pages#about'
-  get '/acknowledgements', to: 'pages#acknowledgements'
   get ':tag', to: 'posts#index', as: :tag
 end
