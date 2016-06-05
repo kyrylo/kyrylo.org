@@ -15,6 +15,7 @@ class PagesController < ApplicationController
     end
 
     @grouped_posts = Array(posts).sort.reverse
+    @projects = Project::PROJECT_LIST.sort_by { |k, v| v[:date] }
   end
 
   def about

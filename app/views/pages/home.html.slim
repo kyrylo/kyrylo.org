@@ -10,6 +10,22 @@
         ' &#8220;The bad news is time flies.
         br
         ' &nbsp;The good news is you&#8217;re the pilot&#8221;
+.projects
+  h2 Projects
+  .programmer = image_tag 'programmer.gif'
+
+  .project-list
+    - @projects.each do |name, info|
+      .project
+        dl
+          dt
+            = link_to name, info[:link]
+            | &nbsp;
+            span.release-date
+              | released on&nbsp;
+              = info[:date]
+          dd = info[:desc]
+
 #timeline
   h1 Timeline
 
