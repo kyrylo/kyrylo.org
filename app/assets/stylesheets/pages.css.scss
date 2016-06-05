@@ -343,3 +343,32 @@
     width: 100%;
   }
 }
+
+.public-accounts {
+  clear: both;
+  margin: 0;
+  border-top: 1px solid whitesmoke;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.public-accounts__picture {
+  padding: 1px;
+  border: 1px solid #dddddd;
+  -o-box-shadow: 1px 1px 2px #c7c6c6;
+  -ms-box-shadow: 1px 1px 2px #c7c6c6;
+  -moz-box-shadow: 1px 1px 2px #c7c6c6;
+  -webkit-box-shadow: 1px 1px 2px #c7c6c6;
+  box-shadow: 1px 1px 2px #c7c6c6;
+}
+
+.surfing {
+  text-align: left;
+  line-height: 1.6;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.surfing__key {
+  padding-right: 20px;
+}

@@ -47,3 +47,17 @@
                   = post.created_at.strftime('%d %b')
                   | &nbsp;&nbsp;
                 = link_to post.title, project_path(post)
+
+.public-accounts
+  h1 Hit me up
+  = image_tag 'o_o.gif', class: 'public-accounts__picture'
+  table.surfing
+    tr
+      td.surfing__key GitHub
+      td.surfing__val = link_to 'kyrylo', 'https://github.com/kyrylo'
+    tr
+      td.surfing__key Twitter
+      td.surfing__val = link_to 'kyrylosilin', 'https://twitter.com/kyrylosilin'
+    tr
+      td.surfing__key IRC
+      td.surfing__val = link_to 'irc.freenode.net/kyrylo', 'irc://irc.freenode.net/#pry'
