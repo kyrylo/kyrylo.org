@@ -16,6 +16,7 @@ class PagesController < ApplicationController
 
     @grouped_posts = Array(posts).sort.reverse
     @projects = Project::PROJECT_LIST.sort_by { |k, v| v[:date] }
+    @trips = Trip.all.sort_by(&:when_end).reverse
   end
 
   def about
@@ -44,7 +45,7 @@ class PagesController < ApplicationController
   end
 
   def timeline_records
-    Post.all + Trip.all + Project.all
+    Post.all
   end
 
   def sorted_timeline_records

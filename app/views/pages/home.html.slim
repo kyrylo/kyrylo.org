@@ -27,7 +27,7 @@
           dd = info[:desc]
 
 #timeline
-  h1 Timeline
+  h1 Articles
 
   - @grouped_posts.each do |year, tags|
     h2 = year
@@ -44,25 +44,25 @@
                 - if fresh_post?(post)
                   span.new-badge
                     ' new
-              - elsif post.is_a?(Trip)
-                .trip-thumbnails
-                  .trip-thumb
-                    = image_tag post.thumb.url(:thumb)
-                    .caption
-                      = link_to post.where, trip_path(post)
-                      | ,&nbsp;
-                      span class='when'
-                        - if post.when_start.month == post.when_end.month
-                          = post.when_start.strftime('%B')
-                        - else
-                          = post.when_start.strftime('%B')
-                          | –
-                          = post.when_end.strftime('%B')
-              - elsif post.is_a?(Project)
-                span.post-date
-                  = post.created_at.strftime('%d %b')
-                  | &nbsp;&nbsp;
-                = link_to post.title, project_path(post)
+
+.trips
+  h1 Trips
+
+  .trip-thumbnails
+    - @trips.each do |trip|
+      .trip-thumb
+        = image_tag trip.thumb.url(:thumb)
+        .caption
+          = link_to trip.where, trip_path(trip)
+          | ,&nbsp;
+          span class='when'
+            - if trip.when_start.month == trip.when_end.month
+              = trip.when_start.strftime('%B %Y')
+            - else
+              = trip.when_start.strftime('%B')
+              | –
+              = trip.when_end.strftime('%B %Y')
+
 
 .public-accounts
   h1 Hit me up

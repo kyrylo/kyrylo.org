@@ -135,12 +135,10 @@
 #timeline {
   overflow: hidden;
   line-height: 150%;
-  float: left;
-  width: 70%;
-  margin-left: 5%;
+  width: 100%;
 
   h2 {
-    border-bottom: 1px solid rgba(206, 206, 206, 0.21);
+    font-size: 150%;
   }
 
   h4 {
@@ -350,6 +348,7 @@
   border-top: 1px solid whitesmoke;
   text-align: center;
   padding-top: 15px;
+  margin-top: 50px;
 }
 
 .public-accounts__picture {
@@ -376,4 +375,8 @@
 .projects {
   margin-left: 5%;
   float: left;
+}
+
+.trips {
+  margin-top: 50px;
 }
