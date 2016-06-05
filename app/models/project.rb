@@ -19,6 +19,11 @@ class Project < ActiveRecord::Base
       link: 'https://github.com/kyrylo/fast_method_source',
       date: 'June 18, 2015',
       desc: 'A Ruby library for source code extraction from methods & procs'
+    },
+    'System Browser' => {
+      link: 'https://github.com/kyrylo/system_browser_client',
+      date: 'July 21, 2015',
+      desc: 'A Ruby code browser'
     }
   }
 
