@@ -31,9 +31,25 @@
 #banner {
   margin-bottom: 2em;
   float: left;
+  padding: 20px 50px 0;
+  background: #69cfbc;
+  background: -moz-linear-gradient(-45deg, #69cfbc 0%, #ffc1c1 50%, #ffc093 51%, #c3d16a 100%);
+  background: -webkit-linear-gradient(-45deg, #69cfbc 0%,#ffc1c1 50%,#ffc093 51%,#c3d16a 100%);
+  background: linear-gradient(135deg, #69cfbc 0%,#ffc1c1 50%,#ffc093 51%,#c3d16a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69cfbc', endColorstr='#c3d16a',GradientType=1 );
 
   .content {
     margin: 0 auto;
+
+    a {
+      color: #5757ff;
+      border-bottom: 1px solid rgba(87, 87, 255, 0.4);
+
+      &:hover {
+        color: #9a421d;
+        border-bottom: 1px solid rgba(154, 66, 29, 0.4);
+      }
+    }
 
     .avatar {
       margin-left: 36px;
@@ -112,7 +128,6 @@
     text-align: center;
     font-family: $caption-font-stack;
     font-size: 85%;
-    padding: 0 23px;
 
     @media screen and (max-width: 815px) {
       img {
@@ -345,20 +360,25 @@
 .public-accounts {
   clear: both;
   margin: 0;
-  border-top: 1px solid whitesmoke;
   text-align: center;
-  padding-top: 15px;
+  padding: 15px 0;
   margin-top: 50px;
+  background: #ac712b;
+  background: linear-gradient(135deg, #ac712b 0%,#0b674b 49%,#17543e 50%,#e0db86 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac712b', endColorstr='#e0db86',GradientType=1 );
+}
+
+.public-accounts__title {
+  color: #f9ffda;
 }
 
 .public-accounts__picture {
   padding: 1px;
-  border: 1px solid #dddddd;
-  -o-box-shadow: 1px 1px 2px #c7c6c6;
-  -ms-box-shadow: 1px 1px 2px #c7c6c6;
-  -moz-box-shadow: 1px 1px 2px #c7c6c6;
-  -webkit-box-shadow: 1px 1px 2px #c7c6c6;
-  box-shadow: 1px 1px 2px #c7c6c6;
+  -o-box-shadow: 0 0 2px #afde96;
+  -ms-box-shadow: 0 0 2px #afde96;
+  -moz-box-shadow: 0 0 2px #afde96;
+  -webkit-box-shadow: 0 0 2px #afde96;
+  box-shadow: 0 0 2px #afde96;
 }
 
 .surfing {
@@ -370,6 +390,18 @@
 
 .surfing__key {
   padding-right: 20px;
+  color: #f9ffda;
+}
+
+.surfing__val a {
+  color: #c4e7ff;
+  border-bottom: 1px solid rgba(180, 225, 255, 0.4);
+
+  &:hover {
+    color: #ffddc4;
+    border-bottom: 1px solid rgba(255, 221, 196, 0.4);
+
+  }
 }
 
 .projects {

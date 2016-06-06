@@ -12,7 +12,6 @@
         ' &nbsp;The good news is you&#8217;re the pilot&#8221;
 .projects
   h2 Projects
-  .programmer = image_tag 'programmer.gif'
 
   .project-list
     - @projects.each do |name, info|
@@ -28,6 +27,7 @@
 
 #timeline
   h1 Articles
+  .programmer = image_tag 'programmer.gif'
 
   - @grouped_posts.each do |year, tags|
     h2 = year
@@ -65,7 +65,7 @@
 
 
 .public-accounts
-  h1 Hit me up
+  h1.public-accounts__title Hit me up
   = image_tag 'o_o.gif', class: 'public-accounts__picture'
   table.surfing
     tr

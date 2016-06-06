@@ -36,7 +36,7 @@ module ApplicationHelper
   end
 
   def generate_title(str)
-    motto = 'Kyrylo Silin: Black & White'
+    motto = 'Kyrylo Silin &mdash; Black & White'.html_safe
     str && str + " — #{motto}" || motto
   end
 
