@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     end
 
     @grouped_posts = Array(posts).sort.reverse
-    @projects = Project::PROJECT_LIST.sort_by { |k, v| v[:date] }
+    @projects = Project::PROJECT_LIST.sort_by { |k, v| Date.parse(v[:date]) }.reverse
     @trips = Trip.all.sort_by(&:when_end).reverse
   end
 
