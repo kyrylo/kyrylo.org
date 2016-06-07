@@ -29,15 +29,17 @@ module ApplicationHelper
       oddlink = current_page?(root_url) ? '' : 'oddlink'
 
       concat(content_tag(:div, class: "author #{oddlink}") { 'Kyrylo Silin' })
-      concat(content_tag(:div, class: "slogan #{oddlink}") do
+      concat(
+        content_tag(:div, class: "slogan #{oddlink}") do
           'Black &amp; White'.html_safe
-        end)
+        end
+      )
     end
   end
 
   def generate_title(str)
-    motto = 'Kyrylo Silin &mdash; Black & White'.html_safe
-    str && str + " — #{motto}" || motto
+    motto = 'Kyrylo Silin &middot; Black & White'.html_safe
+    str && str.html_safe + " &mdash; #{motto}".html_safe || motto.html_safe
   end
 
   def image_tag_with_at2x(name_at_1x, options={})
