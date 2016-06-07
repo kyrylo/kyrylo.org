@@ -117,12 +117,13 @@
   }
 }
 
-#sidebar {
+.sidebar {
   width: 25%;
   float: left;
   font-style: italic;
 
   .timequote {
+    margin-top: 30px;
     text-align: center;
     font-family: $caption-font-stack;
     font-size: 85%;
@@ -148,7 +149,9 @@
 #timeline {
   overflow: hidden;
   line-height: 150%;
-  width: 100%;
+  margin-left: 5%;
+  margin-bottom: 50px;
+  float: left;
 
   h2 {
     font-size: 150%;
@@ -406,8 +409,10 @@
 .projects {
   margin-left: 5%;
   float: left;
+  margin-bottom: 50px;
 }
 
 .trips {
   margin-top: 50px;
+  clear: both;
 }

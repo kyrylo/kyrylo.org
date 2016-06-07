@@ -2,7 +2,7 @@
   .content
     = render 'banner'
 
-#sidebar
+.sidebar
   .timequote
     = image_tag "clock#{rand(1..12)}.jpg"
     .text
@@ -25,10 +25,11 @@
               = info[:date]
           dd = info[:desc]
 
-#timeline
-  h1 Articles
+.sidebar
   .programmer = image_tag 'programmer.gif'
 
+#timeline
+  h1 Articles
   - @grouped_posts.each do |year, tags|
     h2 = year
     - tags.sort.each do |tag, posts|
