@@ -52,7 +52,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'capistrano', '~> 3.2.0'
 gem 'time_diff'
-gem 'airbrake', '~> 5.3'
+gem 'airbrake', '~> 5.5'
 gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
 gem 'autoprefixer-rails'
 
