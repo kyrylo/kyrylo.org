@@ -8,7 +8,6 @@ role :app, %w{kyrylo@162.243.144.213}
 role :web, %w{kyrylo@162.243.144.213}
 role :db,  %w{kyrylo@162.243.144.213}
 
-
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
@@ -16,7 +15,6 @@ role :db,  %w{kyrylo@162.243.144.213}
 # used to set extended properties on the server.
 
 server '162.243.144.213', user: 'kyrylo', roles: %w{web app}, my_property: :my_value
-
 
 # Custom SSH Options
 # ==================
