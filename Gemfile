@@ -57,9 +57,7 @@ gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
 gem 'autoprefixer-rails'
 
 group :development, :test do
-  # A testing framework.
-  # https://github.com/rspec/rspec-core
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
 
   # An IRB alternative and runtime developer console
   # https://github.com/pry/pry
