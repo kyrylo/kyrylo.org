@@ -11,42 +11,25 @@ AllCops:
 Rails:
   Enabled: true
 
-LineLength:
+Metrics/LineLength:
   Max: 80
   Exclude:
     - db/seeds/**
     - config/initializers/secret_token.rb
 
-MethodLength:
+Metrics/MethodLength:
   Max: 15
 
-Documentation:
-  Enabled: true
-  Exclude:
-    - app/helpers/**
-    - app/models/**
-    - app/controllers/**
-    - db/migrate/**
+Style/Documentation:
+  Enabled: false
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
   Exclude:
     - '**/*_spec.rb'
 
-Blocks:
+Style/Blocks:
   Enabled: false
 
-LineEndConcatenation:
+Style/LineEndConcatenation:
   Enabled: false
-
-PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%':  '||'
-    '%i': '||'
-    '%q': '||'
-    '%Q': '||'
-    '%r': '{}'
-    '%s': '||'
-    '%w': '||'
-    '%W': '||'
-    '%x': '||'
