@@ -1,4 +1,4 @@
-FactoryGirl.define do 
+FactoryGirl.define do
   factory :devlog_entry do
     devlog nil
     html 'MyText'
