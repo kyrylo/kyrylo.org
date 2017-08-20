@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ApplicationHelper do
-
   describe "#figure_tag" do
     let(:source) { 'avatar.png' }
     let(:figcaption) { 'My Avatar' }
@@ -22,5 +21,4 @@ describe ApplicationHelper do
       expect(figure_tag(source).to_s).to eq(without_figcaption_html)
     end
   end
-
 end
