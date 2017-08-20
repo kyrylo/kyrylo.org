@@ -17,9 +17,6 @@
               = info[:date]
           dd = info[:desc]
 
-.sidebar
-  .programmer = image_tag 'programmer.gif'
-
 #timeline
   h1 Articles
   - @grouped_posts.each do |year, tags|
