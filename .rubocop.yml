@@ -1,15 +1,15 @@
 inherit_from: rubocop-todo.yml
 
 AllCops:
-  Include:
-    - Gemfile
-    - Rakefile
-    - config.ru
+  TargetRubyVersion: 2.1
   Exclude:
+    - vendor/**/*
     - db/schema.rb
-    - tmp/**
-    - bin/**
-  RunRailsCops: true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+Rails:
+  Enabled: true
 
 LineLength:
   Max: 80
