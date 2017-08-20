@@ -28,10 +28,10 @@ Documentation:
     - app/controllers/**
     - db/migrate/**
 
-StringLiterals:
-  Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
   Exclude:
-    - spec/**
+    - '**/*_spec.rb'
 
 Blocks:
   Enabled: false
