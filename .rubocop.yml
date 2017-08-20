@@ -12,13 +12,13 @@ Rails:
   Enabled: true
 
 Metrics/LineLength:
-  Max: 80
+  Max: 90
   Exclude:
     - db/seeds/**
     - config/initializers/secret_token.rb
 
 Metrics/MethodLength:
-  Max: 15
+  Max: 25
 
 Style/Documentation:
   Enabled: false
