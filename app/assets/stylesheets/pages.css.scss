@@ -358,54 +358,6 @@
   }
 }
 
-.public-accounts {
-  clear: both;
-  margin: 0;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 50px;
-  background: #ac712b;
-  background: linear-gradient(135deg, #ac712b 0%,#0b674b 49%,#17543e 50%,#e0db86 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac712b', endColorstr='#e0db86',GradientType=1 );
-}
-
-.public-accounts__title {
-  color: #f9ffda;
-}
-
-.public-accounts__picture {
-  padding: 1px;
-  -o-box-shadow: 0 0 2px #afde96;
-  -ms-box-shadow: 0 0 2px #afde96;
-  -moz-box-shadow: 0 0 2px #afde96;
-  -webkit-box-shadow: 0 0 2px #afde96;
-  box-shadow: 0 0 2px #afde96;
-}
-
-.surfing {
-  text-align: left;
-  line-height: 1.6;
-  margin: 0 auto;
-  margin-top: 15px;
-}
-
-.surfing__key {
-  padding-right: 1px;
-  color: #f9ffda;
-  float: right;
-}
-
-.surfing__val a {
-  color: #c4e7ff;
-  border-bottom: 1px solid rgba(180, 225, 255, 0.4);
-
-  &:hover {
-    color: #ffddc4;
-    border-bottom: 1px solid rgba(255, 221, 196, 0.4);
-
-  }
-}
-
 .projects {
   margin-left: 5%;
   float: left;

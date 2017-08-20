@@ -63,18 +63,3 @@
               = trip.when_start.strftime('%B')
               | –
               = trip.when_end.strftime('%B %Y')
-
-
-.public-accounts
-  h1.public-accounts__title Hit me up
-  = image_tag 'o_o.gif', class: 'public-accounts__picture'
-  table.surfing
-    tr
-      td.surfing__key github.com/
-      td.surfing__val = link_to 'kyrylo', 'https://github.com/kyrylo'
-    tr
-      td.surfing__key twitter.com/
-      td.surfing__val = link_to 'kyrylosilin', 'https://twitter.com/kyrylosilin'
-    tr
-      td.surfing__key irc://
-      td.surfing__val = link_to 'irc.freenode.net/kyrylo', 'irc://irc.freenode.net/#pry'
