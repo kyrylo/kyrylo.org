@@ -143,7 +143,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    pg (0.18.4)
+    pg (0.21.0)
     pkg-config (1.1.7)
     poltergeist (1.8.1)
       capybara (~> 2.1)
@@ -296,7 +296,7 @@ DEPENDENCIES
   momentjs-rails
   normalize-rails
   paperclip
-  pg
+  pg (~> 0.21)
   poltergeist
   pry-doc (~> 0.6)
   pry-rails (~> 0.3)
@@ -317,4 +317,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.12.5
+   1.14.6
