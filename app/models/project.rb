@@ -45,8 +45,8 @@ class Project < ActiveRecord::Base
   before_destroy { project_links.destroy_all if ProjectLink.table_exists? }
   accepts_nested_attributes_for(
     :project_links,
-    reject_if: lambda {
-      |attributes| attributes['href'].blank?
+    reject_if: lambda { |attributes|
+                 attributes['href'].blank?
     }
   )
 end
