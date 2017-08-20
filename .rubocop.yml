@@ -1,52 +1,35 @@
 inherit_from: rubocop-todo.yml
 
 AllCops:
-  Include:
-    - Gemfile
-    - Rakefile
-    - config.ru
+  TargetRubyVersion: 2.1
   Exclude:
+    - vendor/**/*
     - db/schema.rb
-    - tmp/**
-    - bin/**
-  RunRailsCops: true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
 
-LineLength:
-  Max: 80
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 90
   Exclude:
     - db/seeds/**
     - config/initializers/secret_token.rb
 
-MethodLength:
-  Max: 15
+Metrics/MethodLength:
+  Max: 25
 
-Documentation:
-  Enabled: true
-  Exclude:
-    - app/helpers/**
-    - app/models/**
-    - app/controllers/**
-    - db/migrate/**
-
-StringLiterals:
-  Enabled: true
-  Exclude:
-    - spec/**
-
-Blocks:
+Style/Documentation:
   Enabled: false
 
-LineEndConcatenation:
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  Exclude:
+    - '**/*_spec.rb'
+
+Style/Blocks:
   Enabled: false
 
-PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%':  '||'
-    '%i': '||'
-    '%q': '||'
-    '%Q': '||'
-    '%r': '{}'
-    '%s': '||'
-    '%w': '||'
-    '%W': '||'
-    '%x': '||'
+Style/LineEndConcatenation:
+  Enabled: false

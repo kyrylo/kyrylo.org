@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 describe ApplicationHelper do
-
   describe "#figure_tag" do
     let(:source) { 'avatar.png' }
     let(:figcaption) { 'My Avatar' }
-    let(:with_figcaption_html) {
+    let(:with_figcaption_html) do
       "<figure><img alt=\"Avatar\" src=\"/images/avatar.png\" />" +
         "<figcaption>My Avatar</figcaption></figure>"
-    }
-    let(:without_figcaption_html) {
+    end
+    let(:without_figcaption_html) do
       "<figure><img alt=\"Avatar\" src=\"/images/avatar.png\" /></figure>"
-    }
+    end
 
     subject { figure_tag(source, figcaption: figcaption) }
     it "creates a safe buffer with a figcaption" do
@@ -22,5 +21,4 @@ describe ApplicationHelper do
       expect(figure_tag(source).to_s).to eq(without_figcaption_html)
     end
   end
-
 end

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_post, only: %i[show edit update destroy]
 
   def index
     if params[:tag]
@@ -66,7 +66,7 @@ class PostsController < ApplicationController
     @post.html = renderer.render(strip_header(markdown))
     @post.title = headers['title']
     @post.tag_list = headers['tags']
-    @post.created_at = Date.strptime(headers['publish_date'], "%d %b %Y") rescue Time.now
+    @post.created_at = Date.strptime(headers['publish_date'], '%d %b %Y') rescue Time.now
     @post.markdown = markdown
   end
 

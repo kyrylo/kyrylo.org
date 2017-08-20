@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
     )
   end
 
-
   def parse_markdown_headers(markdown)
     m = Metadown.render(markdown)
     m.metadata

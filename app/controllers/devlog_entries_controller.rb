@@ -1,7 +1,7 @@
 class DevlogEntriesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :set_devlog_entry, only: [:show, :edit, :update, :destroy]
-  before_action :set_project, only: [:new, :create]
+  before_action :set_devlog_entry, only: %i[show edit update destroy]
+  before_action :set_project, only: %i[new create]
 
   def show
     @title = @devlog_entry.title

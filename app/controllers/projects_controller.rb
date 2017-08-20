@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_project, only: %i[show edit update destroy]
 
   def index
     @projects = Project.all.sort_by(&:release_date).reverse
@@ -62,6 +62,6 @@ class ProjectsController < ApplicationController
                                     :title,
                                     :markdown,
                                     :description,
-                                    project_links_attributes: [:id, :name, :href])
+                                    project_links_attributes: %i[id name href])
   end
 end

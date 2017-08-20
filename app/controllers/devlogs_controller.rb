@@ -1,7 +1,7 @@
 class DevlogsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_project, only: [:launch]
-  before_action :set_devlog, only: [:show, :destroy]
+  before_action :set_devlog, only: %i[show destroy]
 
   def show
     respond_to do |format|
