@@ -28,8 +28,5 @@ Style/StringLiterals:
   Exclude:
     - '**/*_spec.rb'
 
-Style/Blocks:
-  Enabled: false
-
 Style/LineEndConcatenation:
   Enabled: false
