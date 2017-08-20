@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_trip, only: %i[show edit update destroy]
 
   def index
     @trips = Trip.all.sort_by(&:when_end).reverse

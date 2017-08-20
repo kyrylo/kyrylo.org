@@ -38,7 +38,7 @@ class Project < ActiveRecord::Base
   }
 
   extend FriendlyId
-  friendly_id :title, use: [:slugged, :history, :finders]
+  friendly_id :title, use: %i[slugged history finders]
 
   has_one :devlog
   has_many :project_links
