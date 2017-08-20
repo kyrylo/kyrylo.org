@@ -117,35 +117,6 @@
   }
 }
 
-.sidebar {
-  width: 25%;
-  float: left;
-  font-style: italic;
-
-  .timequote {
-    margin-top: 30px;
-    text-align: center;
-    font-family: $caption-font-stack;
-    font-size: 85%;
-
-    @media screen and (max-width: 815px) {
-      img {
-        width: 100%;
-      }
-    }
-
-    .text {
-      padding-top: 10px;
-      text-align: left;
-
-      .quote {
-        margin: 0 auto;
-        max-width: 230px;
-      }
-    }
-  }
-}
-
 #timeline {
   overflow: hidden;
   line-height: 150%;
