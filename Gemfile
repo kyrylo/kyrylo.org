@@ -107,14 +107,3 @@ group :development, :test do
   # https://github.com/jonleighton/spring-commands-rspec
   gem 'spring-commands-rspec'
 end
-
-group :doc do
-  # YARD is a documentation generation tool for the Ruby programming language.
-  # https://github.com/lsegal/yard
-  gem 'yard', require: false
-
-  # RDoc generator to build searchable HTML documentation for Ruby code.
-  # bundle exec rake doc:rails generates the API under doc/api.
-  # https://github.com/voloko/sdoc
-  gem 'sdoc', '~> 0.4', require: false
-end
