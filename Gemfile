@@ -106,4 +106,6 @@ group :development, :test do
   # Implements the rspec command for Spring.
   # https://github.com/jonleighton/spring-commands-rspec
   gem 'spring-commands-rspec'
+
+  gem 'rubocop', '~> 0.49'
 end
