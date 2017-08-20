@@ -1,4 +1,4 @@
-inherit_from: rubocop-todo.yml
+inherit_from: .rubocop_todo.yml
 
 AllCops:
   TargetRubyVersion: 2.1
@@ -27,9 +27,6 @@ Style/StringLiterals:
   EnforcedStyle: single_quotes
   Exclude:
     - '**/*_spec.rb'
-
-Style/Blocks:
-  Enabled: false
 
 Style/LineEndConcatenation:
   Enabled: false
