@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :post do
-    title "MyText"
-    markdown "MyText"
+    title 'MyText'
+    markdown 'MyText'
   end
 end

@@ -29,8 +29,8 @@ set :linked_files, %w{config/database.yml}# config/config.yml}
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-SSHKit.config.command_map[:rake]  = "bundle exec rake" #8
-SSHKit.config.command_map[:rails] = "bundle exec rails"
+SSHKit.config.command_map[:rake]  = 'bundle exec rake' #8
+SSHKit.config.command_map[:rails] = 'bundle exec rails'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
