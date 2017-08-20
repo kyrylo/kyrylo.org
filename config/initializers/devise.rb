@@ -1,11 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'b4f61b6b6cbf3e61ef368300526ece3e8dc18dc16ea41175f482210dad53815aaa57e29f6eb8b15883bc305e0f4dddbb56fdbe5fca96e720f38c07206b405b4e'
-
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -95,9 +90,6 @@ Devise.setup do |config|
   # encryptor), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 10
-
-  # Setup a pepper to generate the encrypted password.
-  # config.pepper = '79e7911752d5a1a497b7a716b29ecf1499fa917793db72b0ed1518f25cc92b84af994b695dd73becc8739a0b05e44bcb64a573c77f800a0ebc129008d5410b8c'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
