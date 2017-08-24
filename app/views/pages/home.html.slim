@@ -29,11 +29,11 @@
               li
                 - if post.is_a?(Post)
                   - if fresh_post?(post)
-                    span.new-badge new
+                    span.new-badge
+                      span.new-badge__label new
                   - else
-                    span.post-date
-                      = post.created_at.strftime('%d %b')
-                  = link_to post.title, post_path(post)
+                    span.post-date = post.created_at.strftime('%d %b')
+                  span = link_to post.title, post_path(post)
 
 .trips
   h1 Trips
