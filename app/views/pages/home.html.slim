@@ -2,38 +2,38 @@
   .content
     = render 'banner'
 
-.projects
-  h2 Projects
+.activity
+  .activity__projects
+    h1 Projects
 
-  .project-list
-    - @projects.each do |name, info|
-      .project
-        dl
-          dt
-            = link_to name, info[:link]
-            | &nbsp;
-            span.release-date
-              | released on&nbsp;
-              = info[:date]
-          dd = info[:desc]
+    .project-list
+      - @projects.each do |name, info|
+        .project
+          dl
+            dt
+              = link_to name, info[:link]
+              | &nbsp;
+              span.release-date
+                | released on&nbsp;
+                = info[:date]
+            dd = info[:desc]
 
-#timeline
-  h1 Articles
-  - @grouped_posts.each do |year, tags|
-    h2 = year
-    - tags.sort.each do |tag, posts|
-      .section
-        ul
-          - posts.sort_by(&:created_at).reverse_each do |post|
-            li
-              - if post.is_a?(Post)
-                span.post-date
-                  = post.created_at.strftime('%d %b')
-                  | &nbsp;&nbsp;
-                = link_to post.title, post_path(post)
-                - if fresh_post?(post)
-                  span.new-badge
-                    ' new
+  .activity__timeline
+    h1 Articles
+    - @grouped_posts.each do |year, tags|
+      h2 = year
+      - tags.sort.each do |tag, posts|
+        .section
+          ul
+            - posts.sort_by(&:created_at).reverse_each do |post|
+              li
+                - if post.is_a?(Post)
+                  - if fresh_post?(post)
+                    span.new-badge new
+                  - else
+                    span.post-date
+                      = post.created_at.strftime('%d %b')
+                  = link_to post.title, post_path(post)
 
 .trips
   h1 Trips
