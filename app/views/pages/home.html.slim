@@ -18,10 +18,10 @@
                 = info[:date]
             dd = info[:desc]
 
-  .activity__timeline
+  .article-timeline
     h1 Articles
     - @grouped_posts.each do |year, tags|
-      h2 = year
+      h2.article-timeline__year = year
       - tags.sort.each do |tag, posts|
         .section
           ul

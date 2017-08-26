@@ -100,13 +100,9 @@
   }
 }
 
-.activity__timeline {
+.article-timeline {
   padding-left: 5%;
   overflow: hidden;
-
-  h2 {
-    font-size: 150%;
-  }
 
   h4 {
     font-variant: small-caps;
@@ -319,4 +315,8 @@
 
 .activity__projects {
   margin-bottom: 50px;
+}
+
+.article-timeline__year {
+  font-size: 110%;
 }
