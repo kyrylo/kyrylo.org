@@ -11,29 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505170411) do
+ActiveRecord::Schema.define(version: 20170826220339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "devlog_entries", force: :cascade do |t|
-    t.integer  "devlog_id"
-    t.text     "title"
-    t.text     "html"
-    t.text     "markdown"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "devlog_entries", ["devlog_id"], name: "index_devlog_entries_on_devlog_id", using: :btree
-
-  create_table "devlogs", force: :cascade do |t|
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "devlogs", ["project_id"], name: "index_devlogs_on_project_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -137,5 +118,4 @@ ActiveRecord::Schema.define(version: 20150505170411) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "devlog_entries", "devlogs"
 end

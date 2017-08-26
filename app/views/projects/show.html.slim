@@ -16,21 +16,6 @@
           - @project.project_links.each do |pl|
             li = link_to pl.name, pl.href
 
-      - if @project.devlog
-        h3 = link_to 'Development Log', project_devlog_path(@project)
-        ul
-          - @project.devlog.devlog_entries.each.with_index do |entry, idx|
-            li
-              = "##{idx+1}"
-              |  &mdash;&nbsp;
-              = link_to entry.title.truncate(18), devlog_entry_project_devlog_path(@project, entry)
-
-      - elsif current_user
-        .adm
-          ul[class="post-control"]
-            li
-              = button_to 'Create Devlog', launch_project_devlog_path(@project), method: :post
-
   #project-block-wrap
     #project-block.post
       h1 = @project.title

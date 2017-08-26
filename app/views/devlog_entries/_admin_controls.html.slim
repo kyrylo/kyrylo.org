@@ -1,7 +1,0 @@
-.adm
-  ul[class="post-control"]
-    li
-      = link_to edit_devlog_entry_path(@devlog_entry) do
-        i class="fa fa-pencil-square-o"
-    li
-      = link_to "delete", devlog_entry_path(@devlog_entry), method: :delete, data: {confirm: "Are you sure?"}
