@@ -1,36 +1,23 @@
 $medium-screen: 810px;
 
-$border-colour: #eee;
-
 $default-font-stack: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
-$caption-font-stack: Noticia Text, Times New Roman, serif;
-$header-font-stack: Minion Pro, Georgia, Times New Roman, serif;
 $code-font-stack: Monaco, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 $post-code-font-stack: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 $default-link-colour: #5ab3ee;
-$default-link-border: 1px solid rgba(90, 179, 238, 0.4);
+$default-link-border: 1px solid rgba(90, 179, 238, 0.2);
 
 $default-visited-link-colour: #702ead;
-$default-visited-link-border: 1px solid rgba(112, 46, 173, 0.4);
+$default-visited-link-border: 1px solid rgba(112, 46, 173, 0.2);
 
 $default-hover-link-colour: #ee5a83;
-$default-hover-link-border: 1px solid rgba(238, 90, 131, 0.4);
-
-$nav-link-colour: #444;
-$nav-link-border: 1px solid rgba(68, 68, 68, 0.6);
-
-$nav-visited-link-colour: $nav-link-colour;
-$nav-visited-link-border: $nav-link-border;
-
-$nav-hover-link-colour: #eb5353;
-$nav-hover-link-border: 1px solid #eb5353;
+$default-hover-link-border: 1px solid rgba(238, 90, 131, 0.2);
 
 $footer-link-colour: #888;
-$footer-link-border: 1px solid rgba(136, 136, 136, 0.4);
+$footer-link-border: 1px solid rgba(136, 136, 136, 0.2);
 
 $footer-visited-link-colour: $footer-link-colour;
 $footer-visited-link-border: $footer-link-border;
 
 $footer-hover-link-colour: #000;
-$footer-hover-link-border: 1px solid rgba(0, 0, 0, 0.4);
+$footer-hover-link-border: 1px solid rgba(0, 0, 0, 0.2);

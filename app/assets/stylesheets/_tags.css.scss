@@ -8,7 +8,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $header-font-stack;
   font-weight: normal;
 }
 
@@ -42,9 +41,9 @@ h6 {
 
 a {
   @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
+  border-bottom: $default-link-border;
   color: $default-link-colour;
   text-decoration: none;
-  border-bottom: $default-link-border;
 
   &:visited {
 	color: $default-visited-link-colour;
@@ -58,7 +57,6 @@ a {
 }
 
 figcaption {
-  font-family: $caption-font-stack;
   font-size: 90%;
   font-style: italic;
   text-align: center;
@@ -75,7 +73,6 @@ header {
   padding-bottom: 18px;
   float: left;
   width: 100%;
-  border-bottom: 1px solid whitesmoke;
 
   a, a:hover {
     border-bottom: none;
@@ -100,8 +97,6 @@ ul {
 
 footer {
   background-color: #fff;
-  font-family: $caption-font-stack;
-  font-size: 90%;
 
   ul {
 	padding: 0 25px;
@@ -136,7 +131,6 @@ pre code, code {
 }
 
 blockquote {
-  font-family: $caption-font-stack;
   font-style: italic;
   font-size: 90%;
   max-width: 450px;
