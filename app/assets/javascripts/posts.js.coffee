@@ -5,8 +5,7 @@ $ ->
     editor = ace.edit('ace')
     if ($markdown = $('#post_markdown')).length ||
       ($markdown = $('#trip_markdown')).length ||
-      ($markdown = $('#project_markdown')).length ||
-      ($markdown = $('#devlog_entry_markdown')).length
+      ($markdown = $('#project_markdown')).length
         editor.setTheme('ace/theme/github')
         MarkdownMode = require('ace/mode/markdown').Mode
         editor.getSession().setMode(new MarkdownMode())
