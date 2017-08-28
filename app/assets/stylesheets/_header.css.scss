@@ -1,10 +1,4 @@
 #site-logo {
-  #logotype {
-    float: left;
-    margin-right: 10px;
-    margin-top: 8px;
-  }
-
   #site-title {
     @include transition(color 0.25s ease-out);
     position: relative;
@@ -24,7 +18,6 @@
     .author {
       display: inline;
       position: relative;
-      left: 14px;
     }
 
     .oddlink {
@@ -33,14 +26,13 @@
     }
 
     .slogan {
-      margin-left: 14px;
       margin-top: 5px;
     }
 
     .slogan::before {
       content: '\201C';
       position: absolute;
-      left: 2px;
+      left: -12px;
     }
 
     .slogan::after {
