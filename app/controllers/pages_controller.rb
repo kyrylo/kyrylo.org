@@ -6,16 +6,13 @@ class PagesController < ApplicationController
       posts[year] = post.group_by do |p|
         if p.is_a?(Trip)
           'trip'
-        elsif p.is_a?(Project)
-          'project'
         else
-          p.type
+          'article'
         end
       end
     end
 
     @grouped_posts = Array(posts).sort.reverse
-    @projects = Project::PROJECT_LIST.sort_by { |k, v| Date.parse(v[:date]) }.reverse
     @trips = Trip.all.sort_by(&:when_end).reverse
   end
 
@@ -52,8 +49,6 @@ class PagesController < ApplicationController
     timeline_records.sort_by do |record|
       if record.is_a?(Trip)
         record.when_start
-      elsif record.is_a?(Project)
-        record.release_date
       else
         record.created_at
       end
@@ -64,8 +59,6 @@ class PagesController < ApplicationController
     sorted_timeline_records.group_by do |record|
       if record.is_a?(Trip)
         record.when_start.year
-      elsif record.is_a?(Project)
-        record.release_date.year
       else
         record.created_at.year
       end
