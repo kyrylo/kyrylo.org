@@ -5,98 +5,16 @@
 <div class="activity">
   <div class="activity__projects">
     <h1>Projects</h1>
-
-    <div class="project-list">
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'System Browser', 'https://github.com/kyrylo/system_browser_client' %>
-            <span class="release-date">released on July 21, 2015</span>
-          </dt>
-          <dd>
-            A desktop app for browsing Ruby code. Just click to get details
-            about a module or class and explore its namespace or see the source
-            of a method.
-          </dd>
-        </dl>
-      </div>
-
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'Fast Method Source', 'https://github.com/kyrylo/fast_method_source' %>
-            <span class="release-date">released on June 18, 2015</span>
-          </dt>
-          <dd>
-            A Ruby C extension for querying methods, procs and lambdas for their
-            source code and comments. Extremely fast.
-          </dd>
-        </dl>
-      </div>
-
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'System Navigation', 'https://github.com/kyrylo/system_navigation' %>
-            <span class="release-date">released on June 11, 2015</span>
-          </dt>
-          <dd>
-            A library for the Ruby programming language that provides navigation
-            and introspection capabilities for Ruby programs.
-          </dd>
-        </dl>
-      </div>
-
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'RMarshal', 'https://github.com/kyrylo/rmarshal' %>
-            <span class="release-date">released on December 18, 2014</span>
-          </dt>
-          <dd>
-            An Erlang library for deserialising Ruby objects dumped by
-            Marshal.dump into Erlang terms.
-          </dd>
-        </dl>
-      </div>
-
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'Pry Theme', 'https://github.com/kyrylo/pry-theme' %>
-            <span class="release-date">released on June 26, 2012</span>
-          </dt>
-          <dd>
-            A plugin for the Pry REPL for the Ruby programming language, which
-            allows to customise Pry colors via prytheme.rb files.
-          </dd>
-        </dl>
-      </div>
-
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'Entooru', 'https://github.com/kyrylo/entooru' %>
-            <span class="release-date">released on April 16, 2012</span>
-          </dt>
-          <dd>
-            A collection of my translations of various Ruby articles into the
-            Russian language.
-          </dd>
-        </dl>
-      </div>
-
-      <div class="project">
-        <dl>
-          <dt>
-            <%= link_to 'Patience', 'https://github.com/kyrylo/patience' %>
-            <span class="release-date">released on March 8, 2012</span>
-          </dt>
-          <dd>
-            Solitaire card game implemented in Ruby using the Gosu framework.
-          </dd>
-        </dl>
-      </div>
-    </div>
+    <%= render 'project_list' %>
   </div>
+
+  <div class="article-timeline">
+    <h1>Articles</h1>
+   <%= render 'article_list' %>
+  </div>
+</div>
+
+<div class="trips">
+  <h1>Trips</h1>
+  <%= render 'trip_list' %>
 </div>

@@ -1,0 +1,22 @@
+<% @grouped_posts.each do |year, tags| %>
+  <h2 class="article-timeline__year"><%= year %></h2>
+
+  <% tags.sort.each do |tag, posts| %>
+    <div class="section">
+      <ul>
+        <% posts.sort_by(&:created_at).reverse_each do |p| %>
+          <li>
+            <% if p.is_a?(Post) %>
+              <% if fresh_post?(p) %>
+                <span class="new-badge"><span class="new-badge__label">new</span></span>
+              <% else %>
+                <span class="post-date"><%= p.created_at.strftime('%d %b') %></span>
+              <% end %>
+              <span><%= link_to p.title, post_path(p) %></span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
