@@ -16,10 +16,6 @@ class PagesController < ApplicationController
     @trips = Trip.all.sort_by(&:when_end).reverse
   end
 
-  def about
-    render_markdown('about.md')
-  end
-
   def cv
     @title = 'Curriculum Vitae'
 
@@ -33,13 +29,6 @@ class PagesController < ApplicationController
   end
 
   private
-
-  def render_markdown(file)
-    markdown = File.read(File.expand_path('app/views/pages/' + file))
-    headers = parse_markdown_headers(markdown)
-    @title = headers['title']
-    @about = renderer.render(strip_header(markdown)).html_safe
-  end
 
   def timeline_records
     Post.all
