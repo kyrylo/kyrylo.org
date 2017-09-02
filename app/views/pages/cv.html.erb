@@ -1,0 +1,76 @@
+<%= content_for(:title) { @title } %>
+
+<div id="cv-block">
+  <h1>Curriculum Vitae</h1>
+
+  <div id="cv-wrap">
+    <div id="cv">
+      <div class="head">
+        <%= render 'pages/cv/contacts' %>
+
+        <div class="body">
+          <h3>Job objective</h3>
+          <div>Not searching for a job at the moment. Thanks for taking the interest!</div>
+
+          <h3>Education</h3>
+          <%= render 'pages/cv/education' %>
+
+          <h3>Experience</h3>
+          <%= render 'pages/cv/experience' %>
+
+          <h3>Publications</h3>
+          <%= render 'pages/cv/publications' %>
+
+          <h3>Personal projects</h3>
+          <%= render 'pages/cv/personal_projects' %>
+
+          <h3>Open source contributions</h3>
+          <%= render 'pages/cv/open_source_contributions' %>
+
+          <h3>Computer skills</h3>
+          <div>
+            Proficient programming skills in Ruby and JavaScript. Good knowledge
+            of GNU/Linux and Shell. Experience with Erlang, C, Smalltalk,
+            Python, Go, Perl, PHP, Java, Apex, Haskell, SQL and ELisp. Knowledge
+            of JavaScript frameworks such as Backbone, Marionette and Angular,
+            including Node.js.
+          </div>
+
+          <h3>Hobbies</h3>
+          <div>Computer games, bicycles, football.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cv-download-wrap">
+    <div id="cv-download">
+      <h3>Downloads</h3>
+
+      <div id="pdf" class="link">
+        <%= link_to 'cv.pdf' do %>
+          <%= image_tag 'pdficon.png' %>
+          <span>CV.pdf</span>
+        <% end %>
+        <span class="size"><%= @pdf_size %></span>
+      </div>
+
+      <div id="mp3" class="link">
+        <%= link_to 'kyrylo.mp3' do %>
+          <%= image_tag 'mp3icon.png' %>
+          <span>&ldquo;Kyrylo&rdquo; pronunciation.mp3</span>
+        <% end %>
+        <span class="size"><%= @mp3_size %></span>
+      </div>
+
+      <h3 style="margin-top: 2em">My location</h3>
+      <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d164103.1329065939!2d36.32839681881804!3d50.009266221010954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a09f63ab0f8b%3A0x2d4c18681aa4be0a!2sKharkiv%2C+Kharkiv+Oblast!5e0!3m2!1sen!2sua!4v1430398277215"
+                width="400"
+                height="300"
+                frameborder="0"
+                style="border:1px solid #cbcbcb; width: 100%"
+      </div>
+    </div>
+  </div>
+</div>
