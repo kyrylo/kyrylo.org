@@ -1,0 +1,6 @@
+<div id="ace"></div>
+
+<%= form_for @post, url: { controller: 'posts', action: 'update' } do |f| %>
+  <%= f.text_area :markdown %>
+  <%= f.subdmit :update, class: 'submit-btn' %>
+<% end %>

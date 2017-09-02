@@ -1,0 +1,59 @@
+<% if current_page? post_path(post) %>
+  <%= content_for(:title) { post.title } %>
+<% end %>
+
+<div class="post">
+  <h1><%= link_to_unless_current post.title, post %></h1>
+
+  <% if current_user %>
+    <div class="adm">
+      <ul class="post-control">
+        <li>
+          <%= link_to edit_post_path(post) do %>
+            <i class="fa fa-pencil-square-o">
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="published_at">
+    <i class="fa fa-clock-o"></i>
+    <div class="date" title="#{post.created_at}">
+      <%= post.created_at.to_datetime.iso8601 %>
+    </div>
+  </div>
+
+  <div class="tags">
+    <i class="fa fa-tags"></i>
+    <%= render_tags post.tags %>
+  </div>
+
+  <div class="post-content">
+    <%= post.html.html_safe %>
+    <% if @disqus %>
+      <div id="disqus_thread">
+        <script>
+          var disqus_shortname = 'kyrylo';
+            (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
+    <% end %>
+
+    <% if post_counter + 1 < count %>
+      <div class="hr">
+        <i class="fa fa-scissors"></i>
+        <i class="fa fa-scissors"></i>
+        <i class="fa fa-scissors"></i>
+      </div>
+    <% end %>
+  </div>
+</div>
