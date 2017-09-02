@@ -63,10 +63,6 @@ group :development, :test do
   # https://github.com/pry/pry
   gem 'pry-rails', '~> 0.3'
 
-  # Provides extended documentation support for Pry.
-  # https://github.com/pry/pry-doc
-  gem 'pry-doc', '~> 0.6'
-
   # Tests web applications by simulating how a real user would interact with
   # an application.
   # https://github.com/jnicklas/capybara
