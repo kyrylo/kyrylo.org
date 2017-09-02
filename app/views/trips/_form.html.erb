@@ -1,0 +1,33 @@
+<%= form_for @trip, url: trips_form_path, html: { multipart: true } do |f| %>
+  <%= f.label 'Title:' %>
+  <%= f.text_field :title %>
+
+  <br>
+
+  <%= f.label 'Where:' %>
+  <%= f.text_field :where %>
+
+  <br>
+
+  <%= f.label 'When (start):' %>
+  <%= f.date_select :when_start, order: [:day, :month, :year] %>
+
+  <br>
+
+  <%= f.label 'When (end):' %>
+  <%= f.date_select :when_end, order: [:day, :month, :year] %>
+
+  <br>
+
+  <%= f.label 'Thumbnail:' %>
+  <%= f.file_field :thumb %>
+
+  <br>
+
+  <div id="ace"></div>
+  <%= f.text_area :markdown %>
+
+  <br>
+
+  <%= f.submit class: 'subdmit-btn' %>
+<% end %>
