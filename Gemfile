@@ -29,11 +29,6 @@ gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# A template language whose goal is to reduce the view syntax to the essential
-# parts without becoming cryptic.
-# https://github.com/slim-template/slim
-gem 'slim-rails'
-
 # A customisable CSS file that makes browsers render all elements more
 # consistently and in line with modern standards.
 # https://github.com/markmcconachie/normalize-rails

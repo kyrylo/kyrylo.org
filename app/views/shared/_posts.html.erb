@@ -1,0 +1,4 @@
+<div id="posts">
+  <%= render partial: @posts, locals: { count: @count } %>
+  <%= paginate @posts %>
+</div>
