@@ -63,10 +63,6 @@ group :development, :test do
   # https://github.com/pry/pry
   gem 'pry-rails', '~> 0.3'
 
-  # An easy way to customize Pry colors via theme files
-  # https://github.com/kyrylo/pry-theme
-  gem 'pry-theme', '~> 1.0'
-
   # Provides extended documentation support for Pry.
   # https://github.com/pry/pry-doc
   gem 'pry-doc', '~> 0.6'
