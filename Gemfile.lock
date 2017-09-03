@@ -274,7 +274,6 @@ DEPENDENCIES
   cancancan
   capistrano (~> 3.2.0)
   capybara
-  coffee-rails (~> 4.0.0)
   devise
   factory_girl_rails (~> 4.4)
   faker (~> 1.3)
