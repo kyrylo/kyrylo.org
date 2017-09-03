@@ -48,6 +48,10 @@ gem 'airbrake', '~> 5.5'
 gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
 gem 'autoprefixer-rails'
 
+group :development do
+  gem 'rubocop', '~> 0.49', require: false
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
 
@@ -88,6 +92,4 @@ group :development, :test do
   # Implements the rspec command for Spring.
   # https://github.com/jonleighton/spring-commands-rspec
   gem 'spring-commands-rspec'
-
-  gem 'rubocop', '~> 0.49'
 end
