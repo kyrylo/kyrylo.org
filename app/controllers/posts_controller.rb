@@ -14,9 +14,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    if @post.tags.map(&:name).any? { |name| name == 'article' || name == 'translation'}
-      @disqus = true
-    end
   end
 
   def new

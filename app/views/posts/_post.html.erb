@@ -35,18 +35,6 @@
 
   <div class="post-content">
     <%= post.html.html_safe %>
-    <% if @disqus %>
-      <div id="disqus_thread">
-        <script>
-          var disqus_shortname = 'kyrylo';
-            (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-      </div>
-    <% end %>
 
     <% if post_counter + 1 < count %>
       <div class="hr">
