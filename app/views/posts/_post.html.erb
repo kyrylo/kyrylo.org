@@ -23,7 +23,7 @@
 
   <div class="published_at">
     <i class="fa fa-clock-o"></i>
-    <div class="date" title="#{post.created_at}">
+    <div class="date" title="<%= post.created_at %>">
       <%= post.created_at.to_datetime.iso8601 %>
     </div>
   </div>
