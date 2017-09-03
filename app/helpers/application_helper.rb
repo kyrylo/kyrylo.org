@@ -18,12 +18,6 @@ module ApplicationHelper
     end
   end
 
-  def render_tags(tags)
-    tags.map(&:to_s).sort.map do |tag|
-      link_to(tag, "/#{tag}")
-    end.join(', ').html_safe
-  end
-
   def site_title
     content_tag(:div, id: 'site-title') do
       oddlink = current_page?(root_url) ? '' : 'oddlink'

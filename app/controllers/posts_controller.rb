@@ -62,7 +62,6 @@ class PostsController < ApplicationController
     headers = parse_markdown_headers(markdown)
     @post.html = renderer.render(strip_header(markdown))
     @post.title = headers['title']
-    @post.tag_list = headers['tags']
     @post.created_at = Date.strptime(headers['publish_date'], '%d %b %Y') rescue Time.now
     @post.markdown = markdown
   end

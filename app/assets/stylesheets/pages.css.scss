@@ -138,22 +138,6 @@
     min-width: 60px;
     float: left;
   }
-
-  .tag_list {
-    font-size: 70%;
-    margin-left: 0.7em;
-    color: #cacaca;
-
-    a {
-      color: #cacaca;
-      border-bottom: 1px solid rgba(202, 202, 202, 0.5);
-
-      &:hover {
-        color: #1a1a1a;
-        border-bottom: 1px solid rgba(26, 26, 26, 0.3);
-      }
-    }
-  }
 }
 
 #cv-block {
