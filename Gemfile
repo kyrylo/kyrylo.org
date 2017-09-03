@@ -29,7 +29,6 @@ gem 'jquery-turbolinks'
 gem 'normalize-rails'
 
 gem 'redcarpet'
-gem 'acts-as-taggable-on'
 gem 'metadown'
 gem 'momentjs-rails'
 gem 'friendly_id'
