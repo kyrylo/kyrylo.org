@@ -26,9 +26,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
 # A customisable CSS file that makes browsers render all elements more
 # consistently and in line with modern standards.
 # https://github.com/markmcconachie/normalize-rails
