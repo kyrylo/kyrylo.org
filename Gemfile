@@ -47,36 +47,15 @@ group :development do
   gem 'rubocop', '~> 0.49', require: false
 end
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.6'
-
-  # An IRB alternative and runtime developer console
-  # https://github.com/pry/pry
-  gem 'pry-rails', '~> 0.3'
-
-  # Tests web applications by simulating how a real user would interact with
-  # an application.
-  # https://github.com/jnicklas/capybara
-  gem 'capybara'
-
-  # A driver for Capybara. It allows to run Capybara tests on a headless WebKit
-  # browser, provided by PhantomJS.
-  # https://github.com/jonleighton/poltergeist
-  gem 'poltergeist'
-
-  # A fixtures replacement with a straightforward definition syntax, support for
-  # multiple build strategies.
-  # https://github.com/thoughtbot/factory_girl_rails
-  gem 'factory_girl_rails', '~> 4.4'
-
-  # A library for generating fake data such as names, addresses, and phone
-  # numbers.
-  # https://github.com/stympy/faker
+group :test do
+  gem 'factory_girl_rails', '~> 4.8'
   gem 'faker', '~> 1.3'
+  gem 'poltergeist', '~> 1.16'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'shoulda-matchers', '~> 2.8'
+  gem 'site_prism', '~> 2.9'
+end
 
-  # Provides Test::Unit- and RSpec-compatible one-liners that test common Rails
-  # functionality. These tests would otherwise be much longer, more complex, and
-  # error-prone.
-  # https://github.com/thoughtbot/shoulda-matchers
-  gem 'shoulda-matchers', require: false
+group :development, :test do
+  gem 'pry-rails', '~> 0.3'
 end
