@@ -15,6 +15,5 @@ class DropTaggings < ActiveRecord::Migration
       t.string   'context', limit: 128
       t.datetime 'created_at'
     end
-
   end
 end
