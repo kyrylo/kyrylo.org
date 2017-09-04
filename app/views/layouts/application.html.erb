@@ -3,7 +3,6 @@
   <head>
     <title><%= generate_title content_for(:title) %></title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.gif' %>
@@ -29,16 +28,10 @@
             <% if current_user %>
               <div id="admin-bar" class="adm">
                 <ul>
+                  <li><%= link_to '[new post]', new_post_path %></li>
+                  <li><%= link_to '[new trip]', new_trip_path %></li>
                   <li>
-                    <%= link_to new_post_path do %>
-                      <i class="fa fa-file-powerpoint-o"></i>
-                    <% end %>
-                  </li>
-
-                  <li>
-                    <%= link_to destroy_user_session_path, method: :delete do %>
-                      <i class="fa fa-sign-out"></i>
-                    <% end %>
+                    <%= link_to '[sign out]', destroy_user_session_path, method: :delete %>
                   </li>
                 </ul>
               </div>

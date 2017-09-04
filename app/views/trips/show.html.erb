@@ -6,14 +6,9 @@
   <% if current_user %>
     <div class="adm">
       <ul class="post-control">
+        <li><%= link_to '[edit]', edit_trip_path(@trip) %></li>
         <li>
-          <%= link_to edit_trip_path(@trip) do %>
-            <i class="fa fa-pencil-square-o"></i>
-          <% end %>
-        </li>
-
-        <li>
-          <%= link_to 'delete', @trip, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '[delete]', @trip, method: :delete, data: { confirm: 'Are you sure?' } %>
         </li>
       </ul>
     </div>
@@ -25,7 +20,7 @@
     <% elsif @trip.when_start.month != @trip.when_end.month %>
       <%= @trip.when_start.strftime('%B %d, %Y') %>&hellip;<%= @trip.when_end.strftime('%B %d') %>
     <% else %>
-      <%= @trip.when_end.stftime('%d, %Y') %>
+      <%= @trip.when_end.strftime('%d, %Y') %>
     <% end %>
   </div>
 
