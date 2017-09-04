@@ -80,12 +80,4 @@ group :development, :test do
   # error-prone.
   # https://github.com/thoughtbot/shoulda-matchers
   gem 'shoulda-matchers', require: false
-
-  # A Rails application preloader.
-  # https://github.com/rails/spring
-  gem 'spring', '~> 1.1'
-
-  # Implements the rspec command for Spring.
-  # https://github.com/jonleighton/spring-commands-rspec
-  gem 'spring-commands-rspec'
 end
