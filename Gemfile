@@ -41,7 +41,7 @@ gem 'capistrano', '~> 3.2.0'
 gem 'time_diff'
 gem 'airbrake', '~> 6.2'
 gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '~> 7.1'
 
 group :development do
   gem 'rubocop', '~> 0.49', require: false
