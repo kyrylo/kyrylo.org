@@ -92,41 +92,6 @@
 	}
   }
 
-  .published_at {
-	float: left;
-	margin-right: 2em;
-	&:hover {
-	  cursor: help;
-	}
-
-	.date {
-	  overflow: hidden;
-	  float: left;
-	}
-  }
-  .published_at, .tags {
-	color: #747474;
-	font-size: 85%;
-  }
-
-  .published_at i, .tags i {
-	float: left;
-	position: relative;
-	top: 2px;
-	margin-right: 5px;
-  }
-
-  .tags {
-	a {
-	  color: #747474;
-	  border-bottom: 1px solid rgba(116, 116, 116, 0.25);
-	  &:hover {
-		color: #000;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	  }
-	}
-  }
-
   .footnotes {
 	font-size: 95%;
   }
@@ -175,4 +140,8 @@
 	  font-size: 80%;
 	}
   }
+}
+
+.published_at {
+  color: #747474;
 }

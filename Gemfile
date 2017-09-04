@@ -30,7 +30,6 @@ gem 'normalize-rails'
 
 gem 'redcarpet'
 gem 'metadown'
-gem 'momentjs-rails'
 gem 'friendly_id'
 gem 'ace-rails-ap'
 gem 'fotoramajs'

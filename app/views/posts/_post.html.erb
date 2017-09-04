@@ -21,12 +21,7 @@
     </div>
   <% end %>
 
-  <div class="published_at">
-    <i class="fa fa-clock-o"></i>
-    <div class="date" title="<%= post.created_at %>">
-      <%= post.created_at.to_datetime.iso8601 %>
-    </div>
-  </div>
+  <div class="published_at"><%= post.created_at.strftime('%B %d, %Y') %></div>
 
   <div class="post-content">
     <%= post.html.html_safe %>

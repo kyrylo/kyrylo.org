@@ -17,7 +17,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require moment
 //= require highlight.pack
 //= require ace-rails-ap
 //= require ace/mode-markdown

@@ -1,10 +1,4 @@
 $(function() {
-  $('.date').each(function(idx, date) {
-    var published = moment($(date).text().trim()).fromNow();
-    $(this).text(published);
-  });
-
-
   $('#site-logo').hover(function(event) {
     $(event.currentTarget).find('.oddlink').addClass('oddlink--highlighted');
   }, function(event) {

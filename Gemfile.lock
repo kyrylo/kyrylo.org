@@ -122,8 +122,6 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
-    momentjs-rails (2.11.0)
-      railties (>= 3.1)
     multi_json (1.12.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -277,7 +275,6 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   metadown
-  momentjs-rails
   normalize-rails
   paperclip
   pg
