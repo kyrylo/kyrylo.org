@@ -18,8 +18,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require highlight.pack
-//= require ace-rails-ap
-//= require ace/mode-markdown
 //= require fotorama
 //= require main
 //= require_tree .
