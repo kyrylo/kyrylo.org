@@ -8,15 +8,7 @@ $(function() {
   $('.wolf-emoji').on('click', function() {
     $('.avatar').click();
   });
-});
 
-$(document).on('page:change', function() {
-  $('pre code').each(function(_i, e) {
-    hljs.highlightBlock(e);
-  });
-});
-
-$(document).on('page:restore', function() {
   $('pre code').each(function(_i, e) {
     hljs.highlightBlock(e);
   });

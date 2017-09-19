@@ -14,9 +14,7 @@
 //
 //= require retina.js
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require highlight.pack
 //= require fotorama
 //= require main
