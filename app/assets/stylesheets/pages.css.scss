@@ -274,3 +274,19 @@
 .article-timeline__year {
   font-size: 110%;
 }
+
+.project-list {
+  .project {
+	line-height: 150%;
+	max-width: 500px;
+
+	dd {
+	  margin: 0;
+	}
+
+	.release-date {
+	  font-size: 90%;
+	  color: #797979;
+	}
+  }
+}
