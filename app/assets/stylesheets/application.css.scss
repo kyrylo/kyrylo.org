@@ -13,7 +13,6 @@
  */
 
 @import 'normalize-rails';
-@import 'fotorama';
 
 @import 'variables';
 @import 'mixins';
@@ -58,10 +57,6 @@
 #main {
   padding: 25px;
   padding-top: 10px;
-}
-
-.fotorama {
-  margin-bottom: 3em;
 }
 
 .pagination {
