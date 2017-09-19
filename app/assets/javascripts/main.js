@@ -97,9 +97,6 @@ ready(function() {
     }
   }
 
-  //
-  // Trips
-  //
   if (document.querySelectorAll('.trip-thumbnails').length) {
     var thumbs = document.querySelectorAll('.trip-thumbnails .trip-thumb img');
     Array.prototype.forEach.call(thumbs, function(el, _i) {
