@@ -14,9 +14,11 @@
 
 @import 'normalize-rails';
 
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC");
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700");
+
 @import 'variables';
 @import 'mixins';
-@import 'fonts';
 @import 'tags';
 @import 'github';
 @import 'header';
