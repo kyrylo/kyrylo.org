@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "avatar", js: true do
-  let(:classname) { '#banner .avatar' }
+  let(:classname) { '.banner .avatar' }
 
   before do
     visit root_path

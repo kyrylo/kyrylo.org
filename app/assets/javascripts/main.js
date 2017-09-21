@@ -56,7 +56,7 @@ ready(function() {
   //
   // Home
   //
-  var avatar = document.querySelector('.avatar');
+  var avatar = document.querySelector('.banner__avatar');
   if (avatar) {
     avatar.onclick = function() {
       toggleClass(this, 'flip');
