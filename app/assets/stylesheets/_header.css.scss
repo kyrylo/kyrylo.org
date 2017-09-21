@@ -2,7 +2,7 @@
   @include transition(color 0.25s ease-out);
   position: relative;
   font-family: Playfair Display SC, Georgia, serif;
-  font-size: 175%;
+  font-size: $fontXLarge;
   letter-spacing: 1px;
   line-height: 120%;
   color: #2c2c2c;
@@ -31,7 +31,7 @@
   .slogan::before {
     content: '\201C';
     position: absolute;
-    left: -12px;
+    left: -14px;
   }
 
   .slogan::after {

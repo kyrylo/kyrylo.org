@@ -1,6 +1,4 @@
 .banner {
-  font-size: 105%;
-  font-family: $default-font-stack;
   line-height: 170%;
   float: left;
 
@@ -94,7 +92,7 @@
         padding: 1px 6px;
         border-radius: 2px;
         background-color: #2c2c2c;
-        font-size: 14px;
+        font-size: $fontSmall;
         color: #fff;
       }
     }
@@ -163,7 +161,7 @@
     margin-bottom: 25px;
 
     h2 {
-      font-size: 270%;
+      font-size: $fontXXLarge;
       margin-top: 28px;
       margin-bottom: 30px;
       text-align: center;
@@ -269,7 +267,7 @@
 }
 
 .article-timeline__year {
-  font-size: 110%;
+  font-size: $fontLarge;
 }
 
 .project-list {
@@ -282,7 +280,7 @@
 	}
 
 	.release-date {
-	  font-size: 90%;
+	  font-size: $fontSmall;
 	  color: #797979;
 	}
   }

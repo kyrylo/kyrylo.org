@@ -1,4 +1,6 @@
 #footer {
+  font-size: $fontSmall;
+
   .content {
 	max-width: 1033px;
 	margin: 0 auto;
@@ -88,4 +90,10 @@
 
 .contact-info__social-icon {
   width: 18px;
+}
+
+#contact-info {
+  span {
+	font-size: $fontXXSmall;
+  }
 }
