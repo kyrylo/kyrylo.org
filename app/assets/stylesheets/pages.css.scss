@@ -1,66 +1,62 @@
 #banner {
-  .content {
-    margin: 0 auto;
+  .avatar {
+    margin-left: 20px;
+    float: left;
+    margin-top: 8px;
+    position: relative;
+    cursor: pointer;
+    figure {
+      margin: 0;
+      img {
+        @include box-shadow(2px 2px 2px #3a3a3a);
+        @include transition(box-shadow 0.2s);
+        border-top: 1px solid #302e2e;
+        border-left: 1px solid #302e2e;
+        border-right: 1px solid #666666;
+        border-bottom: 1px solid #666666;
+      }
+      img.hovered {
+        @include box-shadow(5px 5px 16px #313131);
+        @include transition(box-shadow 0.2s);
+        @include filter(brightness(110%));
+        border-right: 1px solid #888888;
+        border-bottom: 1px solid #888888;
+        position: relative;
+        left: -1px;
+        top: -1px;
+      }
+    }
+    .front, .back {
+      @include transition-ease-in-out(0.2s);
+      @include backface-visibility(hidden);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .front {
+      @include transform-preserve-3d(0, 0);
+    }
+    .back {
+      @include transform-preserve-3d(0, -180deg);
+    }
+  }
 
-    .avatar {
-      margin-left: 20px;
-      float: left;
-      margin-top: 8px;
-      position: relative;
-      cursor: pointer;
-      figure {
-        margin: 0;
-        img {
-          @include box-shadow(2px 2px 2px #3a3a3a);
-          @include transition(box-shadow 0.2s);
-          border-top: 1px solid #302e2e;
-          border-left: 1px solid #302e2e;
-          border-right: 1px solid #666666;
-          border-bottom: 1px solid #666666;
-        }
-        img.hovered {
-          @include box-shadow(5px 5px 16px #313131);
-          @include transition(box-shadow 0.2s);
-          @include filter(brightness(110%));
-          border-right: 1px solid #888888;
-          border-bottom: 1px solid #888888;
-          position: relative;
-          left: -1px;
-          top: -1px;
-        }
-      }
-      .front, .back {
-        @include transition-ease-in-out(0.2s);
-        @include backface-visibility(hidden);
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      .front {
-        @include transform-preserve-3d(0, 0);
-      }
-      .back {
-        @include transform-preserve-3d(0, -180deg);
-      }
-    }
+  .description {
+    font-size: 105%;
+    font-family: $default-font-stack;
+    line-height: 170%;
+    width: 60%;
+    float: left;
+  }
+  .flip .front {
+    @include transform(0, 180deg);
+  }
+  .flip .back {
+    @include transform(0, 0);
+  }
 
-    .description {
-      font-size: 105%;
-      font-family: $default-font-stack;
-      line-height: 170%;
-      width: 60%;
-      float: left;
-    }
-    .flip .front {
-      @include transform(0, 180deg);
-    }
-    .flip .back {
-      @include transform(0, 0);
-    }
-
-    .wolf-emoji {
-      cursor: pointer;
-    }
+  .wolf-emoji {
+    cursor: pointer;
   }
 }
 
