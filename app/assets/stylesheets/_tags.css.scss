@@ -13,18 +13,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: $fontXLarge;
+  font-size: $fontXXLarge;
   margin-top: 11px;
   margin-bottom: 20px;
 }
 
 h2 {
-  font-size: $fontLarge;
+  font-size: $fontXLarge;
   margin-top: 1em;
   margin-bottom: 0.3em;
 }
 
-h3,
+h3 {
+  font-size: $fontLarge;
+}
+
 h4,
 h5,
 h6 {
@@ -61,7 +64,7 @@ p {
 
 .header {
   float: left;
-  margin: 11px 0 18px;
+  margin: 11px 0 30px;
   width: 100%;
 
   a, a:hover {
