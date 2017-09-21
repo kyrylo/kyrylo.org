@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def site_title
-    content_tag(:div, class: 'header__link') do
+    content_tag(:div, class: 'header__logo') do
       oddlink = current_page?(root_url) ? '' : 'oddlink'
 
       concat(content_tag(:div, class: "author #{oddlink}") { 'Kyrylo Silin' })
