@@ -38,24 +38,6 @@
   overflow: hidden;
 }
 
-#sticky-footer {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -120px;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 965px) {
-  #sticky-footer {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -210px;
-	overflow: hidden;
-  }
-}
-
 #main {
   padding: 25px;
   padding-top: 10px;

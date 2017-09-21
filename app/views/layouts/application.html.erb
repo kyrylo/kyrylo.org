@@ -9,34 +9,30 @@
   </head>
 
   <body>
-    <div id="sticky-footer">
-      <div id="layout">
-        <div id="main">
-          <header class="header">
-            <div class="header__logo">
-              <%= link_to_unless_current site_title, root_path %>
-            </div>
-
-            <% if current_user %>
-              <div id="admin-bar" class="adm">
-                <ul>
-                  <li><%= link_to '[new post]', new_post_path %></li>
-                  <li><%= link_to '[new trip]', new_trip_path %></li>
-                  <li>
-                    <%= link_to '[sign out]', destroy_user_session_path, method: :delete %>
-                  </li>
-                </ul>
-              </div>
-            <% end %>
-          </header>
-
-          <div id="content">
-            <%= yield %>
+    <div id="layout">
+      <div id="main">
+        <header class="header">
+          <div class="header__logo">
+            <%= link_to_unless_current site_title, root_path %>
           </div>
+
+          <% if current_user %>
+            <div id="admin-bar" class="adm">
+              <ul>
+                <li><%= link_to '[new post]', new_post_path %></li>
+                <li><%= link_to '[new trip]', new_trip_path %></li>
+                <li>
+                  <%= link_to '[sign out]', destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+        </header>
+
+        <div id="content">
+          <%= yield %>
         </div>
       </div>
-
-      <div class="push"></div>
     </div>
 
     <%= render 'layouts/footer' %>

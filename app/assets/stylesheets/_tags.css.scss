@@ -77,12 +77,12 @@ p {
   }
 }
 
-footer, .push {
+footer {
   height: 120px;
 }
 
 @media screen and (max-width: $medium-screen) {
-  footer, .push {
+  footer {
 	height: 210px;
   }
 }
