@@ -76,7 +76,7 @@ ready(function() {
   if (wolfEmoji && avatar) {
     wolfEmoji.onclick = function() {
       avatar.click();
-    }
+    };
   }
 
   if (document.querySelectorAll('.trip-thumbnails').length) {
@@ -88,11 +88,11 @@ ready(function() {
 
       el.onclick = function() {
         link.click();
-      }
+      };
 
       var hover = function() {
         toggleClass(link, 'highlighted');
-      }
+      };
       el.onmouseenter = hover;
       el.onmouseleave = hover;
     });
