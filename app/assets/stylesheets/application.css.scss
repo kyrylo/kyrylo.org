@@ -16,14 +16,6 @@
   max-width: 983px;
 }
 
-.pagination {
-  padding-top: 20px;
-  margin-top: 5em;
-  span {
-	margin: 0 2px;
-  }
-}
-
 #admin-bar {
   float: right;
   li {
@@ -62,19 +54,6 @@
 	}
   }
 
-}
-
-.pseudo {
-  border-bottom-style: dashed;
-
-  &:visited {
-	color: #5ab3ee;
-	border-bottom: 1px solid rgba(90, 179, 238, 0.2);
-  }
-
-  &:hover {
-	border-bottom-style: dashed;
-  }
 }
 
 @import 'pages';
