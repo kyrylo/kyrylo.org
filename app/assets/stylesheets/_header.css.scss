@@ -1,43 +1,41 @@
-#site-logo {
-  #site-title {
-    @include transition(color 0.25s ease-out);
+.header__link {
+  @include transition(color 0.25s ease-out);
+  position: relative;
+  font-family: Playfair Display SC, Georgia, serif;
+  font-size: 175%;
+  letter-spacing: 1px;
+  line-height: 120%;
+  color: #2c2c2c;
+  float: left;
+
+  div.oddlink--highlighted {
+    color: #ee5a83;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(238, 90, 131, 0.2);
+  }
+
+  .author {
+    display: inline;
     position: relative;
-    font-family: Playfair Display SC, Georgia, serif;
-    font-size: 175%;
-    letter-spacing: 1px;
-    line-height: 120%;
-    color: #2c2c2c;
-    float: left;
+  }
 
-    div.oddlink--highlighted {
-      color: #ee5a83;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(238, 90, 131, 0.2);
-    }
+  .oddlink {
+    @include transition((color 0.25s ease-in-out, border-bottom 0.25s ease-in-out));
+    border-bottom: 1px solid rgba(44, 44, 44, 0.2);
+  }
 
-    .author {
-      display: inline;
-      position: relative;
-    }
+  .slogan {
+    margin-top: 5px;
+  }
 
-    .oddlink {
-      @include transition((color 0.25s ease-in-out, border-bottom 0.25s ease-in-out));
-      border-bottom: 1px solid rgba(44, 44, 44, 0.2);
-    }
+  .slogan::before {
+    content: '\201C';
+    position: absolute;
+    left: -12px;
+  }
 
-    .slogan {
-      margin-top: 5px;
-    }
-
-    .slogan::before {
-      content: '\201C';
-      position: absolute;
-      left: -12px;
-    }
-
-    .slogan::after {
-      content: '\201D';
-      position: absolute;
-    }
+  .slogan::after {
+    content: '\201D';
+    position: absolute;
   }
 }

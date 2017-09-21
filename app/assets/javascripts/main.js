@@ -26,7 +26,7 @@ ready(function() {
   //
   // Global
   //
-  document.querySelector('#site-logo').onmouseenter = function(event) {
+  document.querySelector('.header__logo').onmouseenter = function(event) {
     var oddlinks = event.currentTarget.querySelectorAll('.oddlink');
     if (!oddlinks.length) {
       return;
@@ -45,8 +45,8 @@ ready(function() {
       toggleClass(el, 'oddlink--highlighted');
     });
   };
-  document.querySelector('#site-logo').onmouseenter = onLogoHover;
-  document.querySelector('#site-logo').onmouseleave = onLogoHover;
+  document.querySelector('.header__logo').onmouseenter = onLogoHover;
+  document.querySelector('.header__logo').onmouseleave = onLogoHover;
 
   var codeBlocks = document.querySelectorAll('pre code');
   Array.prototype.forEach.call(codeBlocks, function(el, _i) {

@@ -12,9 +12,9 @@
     <div id="sticky-footer">
       <div id="layout">
         <div id="main">
-          <header>
-            <div id="site-logo">
-              <%= link_to_unless_current site_title, root_path, class: 'header-link' %>
+          <header class="header">
+            <div class="header__logo">
+              <%= link_to_unless_current site_title, root_path %>
             </div>
 
             <% if current_user %>

@@ -67,11 +67,9 @@ p {
   margin-bottom: 1.25em;
 }
 
-header {
-  margin-top: 11px;
-  margin-bottom: 18px;
-  padding-bottom: 18px;
+.header {
   float: left;
+  margin: 11px 0 18px;
   width: 100%;
 
   a, a:hover {
