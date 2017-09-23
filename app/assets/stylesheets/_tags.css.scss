@@ -78,26 +78,6 @@ ul {
   list-style-type: none;
 }
 
-footer {
-  background-color: #fff;
-
-  ul {
-	float: left;
-
-	li {
-	  display: inline-block;
-	}
-  }
-
-  @media screen and (max-width: $medium-screen) {
-	ul {
-	  float: none;
-	  text-align: center;
-	  margin-bottom: 25px;
-	}
-  }
-}
-
 pre {
   background-color: #fffffa;
   padding: 1em;

@@ -1,93 +1,83 @@
-#footer {
-  font-size: $fontSmall;
+.footer {
+  display: flex;
   margin: 48px 0 0;
+  line-height: 32px;
+}
 
-  a {
-	color: $footer-link-colour;
-	border-bottom: $footer-link-border;
+.footer__left,
+.footer__right {
+  width: 50%;
+}
 
-	&:visited {
-	  color: $footer-visited-link-colour;
-	  border-bottom: $footer-visited-link-border;
-	}
+.footer__link {
+  color: $grey-400;
+  border-bottom: 1px solid $greya-400;
 
-	&:hover {
-	  color: $footer-hover-link-colour;
-	  border-bottom: $footer-hover-link-border;
-	}
+  &:visited {
+	color: $grey-400;
+	border-bottom: 1px solid $greya-400;
   }
 
-  .extra-links {
-    float: left;
-
-    @media screen and (max-width: $medium-screen) {
-      float: none;
-    }
-
-    .item {
-	  margin-right: 23px;
-	  white-space: nowrap;
-	}
-  }
-
-  #footer-menu, #powered-by, #contact-info {
-    line-height: 2;
-  }
-
-  #powered-by {
-    li {
-      display: block;
-    }
-  }
-
-  #contact-info {
-	float: right;
-
-	.left {
-	  text-align: right;
-	  padding-right: 15px;
-	}
-
-	.right {
-	  text-align: left;
-	}
-  }
-
-  @media screen and (max-width: $medium-screen) {
-    #footer-menu {
-	  margin: 0 auto;
-	  max-width: 100%;
-	}
-
-	#powered-by {
-	  float: none;
-	  width: 100%;
-	  margin-bottom: 25px;
-	}
-
-
-	#contact-info {
-	  width: 100%;
-
-	  table {
-		margin: 0 auto;
-	  }
-	}
+  &:hover {
+	color: $black;
+	border-bottom: 1px solid $blacka;
   }
 }
-.contact-info__icon-link {
+
+.footer-menu__item {
+  display: inline;
+}
+
+.siteinfo__item {
+  display: list-item;
+}
+
+.contacts {
+  float: right;
+}
+
+.contacts__label {
+  display: inline-block;
+  padding: 0 15px 0;
+  width: 140px;
+  text-align: right;
+}
+
+.contacts__icon-link {
   position: relative;
   top: 3px;
   border: 0 !important;
   margin-right: 8px;
 }
 
-.contact-info__social-icon {
+.contacts__social-icon {
   width: 18px;
 }
 
-#contact-info {
-  span {
-	font-size: $fontXXSmall;
+.small-xx {
+  font-size: $fontXXSmall;
+}
+
+@media screen and (max-width: $medium-screen) {
+  .footer {
+    display: block;
+  }
+
+  .footer__left,
+  .footer__right {
+    width: 100%;
+  }
+
+  .footer__left {
+    text-align: center;
+  }
+
+  .footer__right {
+    margin: 0 auto;
+    width: 320px;
+  }
+
+  .contacts {
+    float: none;
   }
 }

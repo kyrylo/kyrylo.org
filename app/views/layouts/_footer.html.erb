@@ -1,74 +1,71 @@
-<footer id="footer">
-  <div class="extra-links">
-    <div id="footer-menu">
-      <ul><li class="item"><a href="/cv">Curriculum vitae</a></li></ul>
-    </div>
+<footer class="footer">
+  <div class="footer__left">
+    <ul class="footer-menu">
+      <li class="footer-menu__item">
+        <a href="/cv" class="footer__link">Curriculum vit&aelig;</a>
+      </li>
+    </ul>
 
-    <div id="powered-by">
-      <ul>
-        <li class="item">
-          <a href="https://github.com/kyrylo/kyrylo.org">kyrylo.org</a> is
-          open source Software. Available since August 2014
-        </li>
-
-        <li class="item">
-          This content is licenced under the
-          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a>
-        </li>
-      </ul>
-    </div>
+    <ul class="siteinfo">
+      <li class="siteinfo__item">
+        <a href="https://github.com/kyrylo/kyrylo.org" class="footer__link">kyrylo.org</a> is
+        open source software. Launched in August 2014
+      </li>
+      <li class="siteinfo__item">
+        This content is licenced under the
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a>
+      </li>
+    </ul>
   </div>
 
-  <div id="contact-info">
-    <div id="contact-info">
-      <table>
-        <tr>
-          <td class="left">Email:</td>
-          <td class="right">
-            <span>&lt;</span><a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a><span>&gt;</span>
-          </td>
-        </tr>
+  <div class="footer__right">
+    <ul class="contacts">
+      <li>
+        <span class="contacts__label">Email:</span>
+        <span>
+          <span class="small-xx">&lt;</span><a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a><span class="small-xx">&gt;</span>
+        </span>
+      </li>
 
-        <tr>
-          <td class="left">Ring-a-Ding-Ding:</td>
-          <td class="right">+380 98 909-30-34</td>
-        </tr>
+      <li>
+        <span class="contacts__label">Ring-a-Ding-Ding:</span>
+        <span>+380 98 909-30-34</span>
+      </li>
 
-        <tr>
-          <td class="left">Elsewhere:</td>
-          <td class="right">
-            <a class="contact-info__icon-link"
-               href="https://github.com/kyrylo"
-               title="GitHub profile - kyrylo">
-              <%= image_tag 'github.svg', class: 'contact-info__social-icon', alt: 'GitHub profile - kyrylo' %>
-            </a>
+      <li>
+        <span class="contacts__label">Elsewhere:</span>
+        <span>
+          <a class="contacts__icon-link"
+             href="https://github.com/kyrylo"
+             title="GitHub profile - kyrylo">
+            <%= image_tag 'github.svg', class: 'contacts__social-icon', alt: 'GitHub profile - kyrylo' %>
+          </a>
 
-            <a class="contact-info__icon-link"
-               href="https://twitter.com/kyrylosilin"
-               title="Twitter profile - kyrylosilin">
-              <%= image_tag 'twitter.svg', class: 'contact-info__social-icon', alt: 'Twitter profile - kyrylosilin' %>
-            </a>
+          <a class="contacts__icon-link"
+             href="https://twitter.com/kyrylosilin"
+             title="Twitter profile - kyrylosilin">
+            <%= image_tag 'twitter.svg', class: 'contacts__social-icon', alt: 'Twitter profile - kyrylosilin' %>
+          </a>
 
-            <a class="contact-info__icon-link"
-               href="https://facebook.com/kyrylo.silin"
-               title="Facebook profile - kyrylo.silin">
-              <%= image_tag 'facebook.svg', class: 'contact-info__social-icon', alt: 'Facebook profile - kyrylo.silin' %>
-            </a>
+          <a class="contacts__icon-link"
+             href="https://facebook.com/kyrylo.silin"
+             title="Facebook profile - kyrylo.silin">
+            <%= image_tag 'facebook.svg', class: 'contacts__social-icon', alt: 'Facebook profile - kyrylo.silin' %>
+          </a>
 
-            <a class="contact-info__icon-link"
-               href="https://telegram.me/kyrylosilin"
-               title="Telegram profile - kyrylosilin">
-              <%= image_tag 'telegram.svg', class: 'contact-info__social-icon', alt: 'Telegram profile - kyrylo' %>
-            </a>
+          <a class="contacts__icon-link"
+             href="https://telegram.me/kyrylosilin"
+             title="Telegram profile - kyrylosilin">
+            <%= image_tag 'telegram.svg', class: 'contacts__social-icon', alt: 'Telegram profile - kyrylo' %>
+          </a>
 
-            <a class="contact-info__icon-link"
-               href="https://foursquare.com/user/343625183"
-               title="Foursquare profile - 343625183">
-              <%= image_tag 'foursquare.svg', class: 'contact-info__social-icon', alt: 'Foursquare profile - kyrylo' %>
-            </a>
-          </td>
-        </tr>
-      </table>
-    </div>
+          <a class="contacts__icon-link"
+             href="https://foursquare.com/user/343625183"
+             title="Foursquare profile - 343625183">
+            <%= image_tag 'foursquare.svg', class: 'contacts__social-icon', alt: 'Foursquare profile - kyrylo' %>
+          </a>
+        </span>
+      </li>
+    </ul>
   </div>
 </footer>
