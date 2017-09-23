@@ -6,7 +6,6 @@ gem 'autoprefixer-rails', '~> 7.1'
 gem 'pg', '~> 0.21'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 3.2.0'
-gem 'normalize-rails', '~> 4.1'
 gem 'redcarpet', '~> 3.4'
 gem 'metadown', '~> 1.0'
 gem 'friendly_id', '~> 5.2'
@@ -18,7 +17,6 @@ gem 'capistrano', '~> 3.2.0'
 gem 'time_diff', '~> 0.3'
 gem 'airbrake', '~> 6.2'
 gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
-gem 'autoprefixer-rails', '~> 7.1'
 
 group :development do
   gem 'rubocop', '~> 0.49', require: false
