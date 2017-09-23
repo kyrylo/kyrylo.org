@@ -19,12 +19,14 @@ module ApplicationHelper
   end
 
   def site_title
-    content_tag(:div, class: 'header__logo') do
-      oddlink = current_page?(root_url) ? '' : 'oddlink'
+    content_tag(:div, class: 'header-logo') do
+      link = current_page?(root_url) ? '' : 'header-logo__link'
 
-      concat(content_tag(:div, class: "author #{oddlink}") { 'Kyrylo Silin' })
       concat(
-        content_tag(:div, class: "slogan #{oddlink}") do
+        content_tag(:div, class: "header-logo__author #{link}") { 'Kyrylo Silin' }
+      )
+      concat(
+        content_tag(:div, class: "header-logo__slogan #{link}") do
           'Black &amp; White'.html_safe
         end
       )

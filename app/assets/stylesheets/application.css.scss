@@ -7,9 +7,9 @@
 @import 'mixins';
 @import 'tags';
 @import 'github';
-@import 'header';
 @import 'footer';
-@import 'modules/admin_panel';
+@import 'modules/admin-panel';
+@import 'modules/header-logo';
 
 #layout {
   margin: 0px auto 65px auto;

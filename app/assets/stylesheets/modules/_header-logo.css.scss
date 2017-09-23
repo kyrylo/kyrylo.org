@@ -1,0 +1,41 @@
+.header-logo {
+  position: relative;
+  float: left;
+  font-family: Playfair Display SC, Georgia, serif;
+  font-size: $fontXXLarge;
+  letter-spacing: 1px;
+  line-height: 120%;
+  color: #2c2c2c;
+  @include transition(color 0.25s ease-out);
+}
+
+.header-logo__link {
+  border-bottom: 1px solid rgba(44, 44, 44, 0.2);
+  @include transition((color 0.25s ease-in-out, border-bottom 0.25s ease-in-out));
+}
+
+.header-logo__link--highlighted {
+  border-bottom: 1px solid rgba(238, 90, 131, 0.2);
+  color: #ee5a83;
+  cursor: pointer;
+}
+
+.header-logo__author {
+  display: inline;
+  position: relative;
+}
+
+.header-logo__slogan {
+  margin: 5px 0 0;
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    left: -14px;
+  }
+
+  &::after {
+    content: '\201D';
+    position: absolute;
+  }
+}

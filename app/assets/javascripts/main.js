@@ -26,27 +26,27 @@ ready(function() {
   //
   // Global
   //
-  document.querySelector('.header__logo').onmouseenter = function(event) {
-    var oddlinks = event.currentTarget.querySelectorAll('.oddlink');
-    if (!oddlinks.length) {
+  document.querySelector('.header-logo').onmouseenter = function(event) {
+    var links = event.currentTarget.querySelectorAll('.header-logo__link');
+    if (!links.length) {
       return;
     }
-    Array.prototype.forEach.call(oddlinks, function(el, _i) {
-      addClass(el, 'oddlink--highlighted');
+    Array.prototype.forEach.call(links, function(el, _i) {
+      addClass(el, 'header-logo__link--highlighted');
     });
   };
 
   var onLogoHover = function(event) {
-    var oddlinks = event.currentTarget.querySelectorAll('.oddlink');
-    if (!oddlinks.length) {
+    var links = event.currentTarget.querySelectorAll('.header-logo__link');
+    if (!links.length) {
       return;
     }
-    Array.prototype.forEach.call(oddlinks, function(el, _i) {
-      toggleClass(el, 'oddlink--highlighted');
+    Array.prototype.forEach.call(links, function(el, _i) {
+      toggleClass(el, 'header-logo__link--highlighted');
     });
   };
-  document.querySelector('.header__logo').onmouseenter = onLogoHover;
-  document.querySelector('.header__logo').onmouseleave = onLogoHover;
+  document.querySelector('.header-logo').onmouseenter = onLogoHover;
+  document.querySelector('.header-logo').onmouseleave = onLogoHover;
 
   var codeBlocks = document.querySelectorAll('pre code');
   Array.prototype.forEach.call(codeBlocks, function(el, _i) {
