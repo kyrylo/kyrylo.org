@@ -72,16 +72,6 @@ p {
   }
 }
 
-footer {
-  height: 120px;
-}
-
-@media screen and (max-width: $medium-screen) {
-  footer {
-	height: 210px;
-  }
-}
-
 ul {
   margin: 0;
   padding: 0;
