@@ -2,12 +2,16 @@
   <%= link_to_unless_current site_title, root_path %>
 
   <% if current_user %>
-    <div id="admin-bar" class="adm">
-      <ul>
-        <li><%= link_to '[new post]', new_post_path %></li>
-        <li><%= link_to '[new trip]', new_trip_path %></li>
-        <li>
-          <%= link_to '[sign out]', destroy_user_session_path, method: :delete %>
+    <div class="admin-panel">
+      <ul class="admin-panel__list">
+        <li class="admin-panel__item">
+          <%= link_to '[new post]', new_post_path, class: 'admin-panel__link' %>
+        </li>
+        <li class="admin-panel__item">
+          <%= link_to '[new trip]', new_trip_path, class: 'admin-panel__link' %>
+        </li>
+        <li class="admin-panel__item">
+          <%= link_to '[sign out]', destroy_user_session_path, method: :delete, class: 'admin-panel__link' %>
         </li>
       </ul>
     </div>

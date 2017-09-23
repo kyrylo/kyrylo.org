@@ -9,51 +9,12 @@
 @import 'github';
 @import 'header';
 @import 'footer';
+@import 'modules/admin_panel';
 
 #layout {
   margin: 0px auto 65px auto;
   padding: 10px 25px;
   max-width: 983px;
-}
-
-#admin-bar {
-  float: right;
-  li {
-	margin-left: 10px;
-  }
-}
-
-.adm {
-  .post-control {
-	margin-bottom: 10px;
-	li {
-	  margin-right: 10px;
-	}
-  }
-
-  ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-
-	li {
-	  display: inline;
-	}
-  }
-  a {
-	color: #c58d94;
-	text-decoration: none;
-	border-bottom: none;
-
-	&:visited {
-	  color: #c58d94;
-	  text-decoration: none;
-	}
-	&:hover {
-	  color: #ce5160;
-	}
-  }
-
 }
 
 @import 'pages';

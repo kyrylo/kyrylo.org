@@ -1,0 +1,28 @@
+.admin-panel {
+  float: right;
+}
+
+.admin-panel__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.admin-panel__item {
+  display: inline;
+  margin-left: 10px;
+}
+
+.admin-panel__link {
+  color: #c58d94;
+  text-decoration: none;
+  border-bottom: none;
+
+  &:visited {
+	color: #c58d94;
+	text-decoration: none;
+  }
+  &:hover {
+	color: #ce5160;
+  }
+}
