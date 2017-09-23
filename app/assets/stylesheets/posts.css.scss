@@ -44,7 +44,7 @@
 	img {
 	  padding: 1px;
 	  border: 1px solid #dddddd;
-	  @include box-shadow(1px 1px 2px #c7c6c6);
+	  box-shadow: 1px 1px 2px #c7c6c6;
 	}
 	.caption {
 	  margin-top: 9px;

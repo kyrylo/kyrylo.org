@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2'
+
+gem 'autoprefixer-rails', '~> 7.1'
 gem 'pg', '~> 0.21'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 3.2.0'

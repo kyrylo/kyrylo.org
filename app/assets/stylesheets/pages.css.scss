@@ -3,10 +3,10 @@
   float: left;
 
   .flip .front {
-    @include transform(0, 180deg);
+    transform: rotateX(0) rotateY(180deg);
   }
   .flip .back {
-    @include transform(0, 0);
+    transform: rotateX(0) rotateY(0);
   }
 
   .wolf-emoji {
@@ -22,17 +22,17 @@
   figure {
     margin: 0;
     img {
-      @include box-shadow(2px 2px 2px #3a3a3a);
-      @include transition(box-shadow 0.2s);
+      box-shadow: 2px 2px 2px #3a3a3a;
+      transition: box-shadow 0.2s;
       border-top: 1px solid #302e2e;
       border-left: 1px solid #302e2e;
       border-right: 1px solid #666666;
       border-bottom: 1px solid #666666;
     }
     img.hovered {
-      @include box-shadow(5px 5px 16px #313131);
-      @include transition(box-shadow 0.2s);
-      @include filter(brightness(110%));
+      box-shadow: 5px 5px 16px #313131;
+      transition: box-shadow 0.2s;
+      filter: brightness(110%);
       border-right: 1px solid #888888;
       border-bottom: 1px solid #888888;
       position: relative;
@@ -41,17 +41,19 @@
     }
   }
   .front, .back {
-    @include transition-ease-in-out(0.2s);
-    @include backface-visibility(hidden);
+    transition: ease-in-out 0.2s;
+    backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
   }
   .front {
-    @include transform-preserve-3d(0, 0);
+    transform: rotateX(0) rotateY(0);
+    transform-style: preserve-3d;
   }
   .back {
-    @include transform-preserve-3d(0, -180deg);
+    transform: rotateX(0) rotateY(-180deg);
+    transform-style: preserve-3d;
   }
 }
 
@@ -232,7 +234,7 @@
     span {
       float: left;
       border-bottom: 1px solid rgba(90, 179, 238, 0.2);
-      @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
+      transition: color 0.25s ease-out, border-bottom 0.25s ease-out;
       color: #5ab3ee;
       text-decoration: none;
       border-bottom: 1px solid rgba(90, 179, 238, 0.2);

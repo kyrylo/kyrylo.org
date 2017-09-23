@@ -26,7 +26,7 @@
 	  border: 1px solid #444444;
 
 	  &:hover {
-		@include transition((border 0.25s ease-out));
+		transition: border 0.25s ease-out;
 		border: 1px solid #ce5160;
 	  }
 	}

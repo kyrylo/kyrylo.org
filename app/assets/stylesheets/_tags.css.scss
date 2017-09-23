@@ -35,10 +35,10 @@ h6 {
 }
 
 a {
-  @include transition((color 0.25s ease-out, border-bottom 0.25s ease-out));
   border-bottom: $default-link-border;
   color: $default-link-colour;
   text-decoration: none;
+  transition: color 0.25s ease-out, border-bottom 0.25s ease-out;
 
   &:visited {
 	color: $default-visited-link-colour;

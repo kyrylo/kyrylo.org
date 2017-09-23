@@ -6,12 +6,12 @@
   letter-spacing: 1px;
   line-height: 120%;
   color: #2c2c2c;
-  @include transition(color 0.25s ease-out);
+  transition: color 0.25s ease-out;
 }
 
 .header-logo__link {
   border-bottom: 1px solid rgba(44, 44, 44, 0.2);
-  @include transition((color 0.25s ease-in-out, border-bottom 0.25s ease-in-out));
+  transition: color 0.25s ease-in-out, border-bottom 0.25s ease-in-out;
 }
 
 .header-logo__link--highlighted {
