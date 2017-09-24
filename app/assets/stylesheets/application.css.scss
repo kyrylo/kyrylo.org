@@ -4,24 +4,17 @@
 @import 'utils/colors';
 @import 'variables';
 @import 'tags';
-@import 'github';
 @import 'footer';
+@import 'pages';
+@import 'posts';
+@import 'trips';
 
+// Modules
+@import 'modules/layout';
 @import 'modules/admin-panel';
 @import 'modules/header-logo';
 @import 'modules/banner';
 @import 'modules/cv';
 
-.layout {
-  margin: 0px auto 25px auto;
-  padding: 10px 25px;
-  max-width: 960px;
-  line-height: 27px;
-  font-family: $default-font-stack;
-  font-size: $fontDefault;
-  color: $black;
-}
-
-@import 'pages';
-@import 'posts';
-@import 'trips';
+// highlight.js style
+@import 'github';

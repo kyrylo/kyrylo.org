@@ -58,7 +58,7 @@
   font-size: $fontXXSmall;
 }
 
-@media screen and (max-width: $medium-screen) {
+@media screen and (max-width: $viewportSmall) {
   .footer {
     display: block;
   }
