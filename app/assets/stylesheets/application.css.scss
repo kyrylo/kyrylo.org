@@ -4,10 +4,12 @@
 @import 'utils/colors';
 @import 'variables';
 @import 'tags';
-@import 'footer';
 @import 'pages';
 @import 'posts';
 @import 'trips';
+
+// Layout
+@import 'layout/footer';
 
 // Modules
 @import 'modules/layout';
