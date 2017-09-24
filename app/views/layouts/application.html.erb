@@ -8,11 +8,9 @@
     <%= favicon_link_tag '/favicon.gif' %>
   </head>
 
-  <body>
-    <div class="layout">
-      <%= render 'layouts/header' %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    </div>
+  <body class="layout">
+    <%= render 'layouts/header' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
