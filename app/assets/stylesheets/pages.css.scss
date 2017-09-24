@@ -37,158 +37,6 @@
   }
 }
 
-#cv-block {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-#cv-wrap {
-  width: 62%;
-  float: left;
-}
-
-#cv-download-wrap {
-  width: 38%;
-  float: left;
-}
-
-@media screen and (max-width: 965px) {
-  #cv-wrap {
-    width: 100%;
-    #cv { margin-right: 0; }
-  }
-
-  #cv-download-wrap {
-    width: 100%;
-
-    #cv-download {
-      max-width: none;
-    }
-  }
-}
-
-
-#cv {
-  color: #0a313a;;
-  border: 1px solid #bababa;
-  border-top: 1px solid #cdcdcd;
-  border-left: 1px solid #cdcdcd;
-  box-shadow: 2px 2px 3px #b5b5b5;
-  max-width: 960px;
-  padding: 0 25px;
-  padding-bottom: 1.1em;
-  margin-bottom: 1.5em;
-  margin-right: 2em;
-
-  div {
-    line-height: 170%;
-  }
-
-  a {
-    color: #242424;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  }
-
-  .head {
-    margin-bottom: 25px;
-
-    h2 {
-      font-size: $fontXXLarge;
-      margin-top: 28px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .contacts {
-      line-height: 167%;
-      text-align: center;
-
-      dd {
-        margin: 0;
-      }
-    }
-  }
-
-  .year {
-    float: right;
-    text-align: right;
-  }
-
-  .exp {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-    div {
-      width: 100%;
-    }
-
-    .position {
-      font-weight: 700;
-    }
-  }
-
-  ul li {
-    margin-bottom: 1em;
-  }
-}
-
-#cv-download {
-  max-width: 506px;
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .link {
-    clear: both;
-    margin-bottom: 1.4em;
-  }
-
-  a span, .size {
-    position: relative;
-    top: 9px;
-    white-space: nowrap;
-  }
-
-  a {
-    line-height: 1;
-
-    img {
-      float: left;
-      margin-right: 5px;
-    }
-
-    span {
-      float: left;
-      border-bottom: 1px solid rgba(90, 179, 238, 0.2);
-      transition: color 0.25s ease-out, border-bottom 0.25s ease-out;
-      color: #5ab3ee;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(90, 179, 238, 0.2);
-
-      &:hover,
-      &:visited {
-        color: #ee5a83;
-        border-bottom: 1px solid rgba(238, 90, 131, 0.2);
-      }
-    }
-  }
-
-  .size {
-    font-style: italic;
-    margin-left: 5px;
-    top: 7px;
-  }
-
-  #map {
-    width: 100%;
-  }
-}
-
-
 .activity {
   display: flex;
   width: 100%;
@@ -200,15 +48,15 @@
 
 .project-list {
   .project {
-	max-width: 500px;
+    max-width: 500px;
 
-	dd {
-	  margin: 0;
-	}
+    dd {
+      margin: 0;
+    }
 
-	.release-date {
-	  font-size: $fontSmall;
-	  color: #797979;
-	}
+    .release-date {
+      font-size: $fontSmall;
+      color: #797979;
+    }
   }
 }

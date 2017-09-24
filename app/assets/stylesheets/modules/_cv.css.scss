@@ -1,0 +1,44 @@
+.cv {
+  padding: 0 25px 25px;
+  border: 1px solid #bababa;
+  border-top: 1px solid #cdcdcd;
+  border-left: 1px solid #cdcdcd;
+  max-width: 810px;
+  box-shadow: 2px 2px 3px #b5b5b5;
+}
+
+.cv__header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cv__name {
+  font-size: $fontXXLarge;
+  text-align: center;
+}
+
+.cv__contacts {
+  text-align: center;
+}
+
+.cv__year {
+  flex: 1;
+  float: right;
+  text-align: right;
+}
+
+.cv-exp {
+  display: flex;
+  margin: 20px 0 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cv-exp__position {
+  flex: 1;
+  font-weight: 700;
+}
+
+.cv-exp__location {
+  flex: 0 0 220px;
+}
