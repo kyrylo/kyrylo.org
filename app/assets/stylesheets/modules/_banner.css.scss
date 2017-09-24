@@ -1,0 +1,63 @@
+.banner {
+  float: left;
+
+  .flip .front {
+    transform: rotateX(0) rotateY(180deg);
+  }
+  .flip .back {
+    transform: rotateX(0) rotateY(0);
+  }
+
+  .wolf-emoji {
+    cursor: pointer;
+  }
+}
+
+.banner__avatar {
+  position: relative;
+  top: 6px;
+  cursor: pointer;
+
+  figure {
+    margin: 0;
+    img {
+      box-shadow: 2px 2px 2px #3a3a3a;
+      transition: box-shadow 0.2s;
+      border-top: 1px solid #302e2e;
+      border-left: 1px solid #302e2e;
+      border-right: 1px solid #666666;
+      border-bottom: 1px solid #666666;
+    }
+    img.hovered {
+      box-shadow: 5px 5px 16px #313131;
+      transition: box-shadow 0.2s;
+      filter: brightness(110%);
+      border-right: 1px solid #888888;
+      border-bottom: 1px solid #888888;
+      position: relative;
+      left: -1px;
+      top: -1px;
+    }
+  }
+  .front, .back {
+    transition: ease-in-out 0.2s;
+    backface-visibility: hidden;
+  }
+  .front {
+    float: left;
+    transform: rotateX(0) rotateY(0);
+    transform-style: preserve-3d;
+  }
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateX(0) rotateY(-180deg);
+    transform-style: preserve-3d;
+  }
+}
+
+.banner__text {
+  padding: 0 0 0 183px;
+  max-width: 580px;
+}
