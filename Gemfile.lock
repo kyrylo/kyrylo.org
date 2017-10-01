@@ -239,9 +239,6 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (1.4.1)
-    time_diff (0.3.0)
-      activesupport
-      i18n
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -281,7 +278,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   shoulda-matchers (~> 2.8)
   site_prism (~> 2.9)
-  time_diff (~> 0.3)
   uglifier (~> 3.2.0)
 
 BUNDLED WITH

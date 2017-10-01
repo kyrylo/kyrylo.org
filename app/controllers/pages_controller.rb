@@ -1,18 +1,6 @@
 class PagesController < ApplicationController
   def home
-    posts = grouped_timeline_records
-
-    grouped_timeline_records.each do |year, post|
-      posts[year] = post.group_by do |p|
-        if p.is_a?(Trip)
-          'trip'
-        else
-          'article'
-        end
-      end
-    end
-
-    @grouped_posts = Array(posts).sort.reverse
+    @posts = Post.all.order(created_at: :desc)
     @trips = Trip.all.sort_by(&:when_end).reverse
   end
 

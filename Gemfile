@@ -14,7 +14,6 @@ gem 'cancancan', '~> 2.0.0'
 gem 'devise', '~> 4.3'
 gem 'paperclip', '~> 5.1'
 gem 'capistrano', '~> 3.2.0'
-gem 'time_diff', '~> 0.3'
 gem 'airbrake', '~> 6.2'
 gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
 
