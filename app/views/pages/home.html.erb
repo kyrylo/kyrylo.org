@@ -1,6 +1,8 @@
 <div class="banner">
   <div class="banner__avatar">
-    <div class="front"><%= figure_tag 'avatar.png', size: '158x180', title: 'Avatar' %></div>
+    <div class="front">
+      <%= figure_tag 'avatar.png', size: '158x180', title: 'Avatar', data: { 'no-retina' => true } %>
+    </div>
     <div class="back">
       <figure>
         <%= image_tag_with_at2x 'me.jpg', size: '158x180', title: 'Photograph' %>
