@@ -47,4 +47,6 @@ RSpec.configure do |config|
   # users so from RSpec 3 onwards this behaviour must be explicitly opted into
   # with.
   config.infer_spec_type_from_file_location!
+
+  config.order = 'random'
 end
