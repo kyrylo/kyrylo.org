@@ -1,45 +1,45 @@
-.article-timeline {
-  padding-left: 5%;
-  overflow: hidden;
-
-  ul {
-    li {
-      display: flex;
-    }
-  }
-
-  .post-date {
-    color: #656565;
-    min-width: 94px;
-    float: left;
-    font-size: $fontSmall;
-  }
-}
-
-.activity {
-  display: flex;
-  width: 100%;
-}
-
-.activity__projects {
-  margin-bottom: 50px;
-}
-
 .project-list {
-  .project {
-    max-width: 500px;
-
-    dd {
-      margin: 0;
-    }
-
-    .release-date {
-      font-size: $fontSmall;
-      color: #797979;
-    }
-  }
+  padding: 0 30px 0 0;
 }
 
-.section {
+.project__release-date {
+  font-size: $fontSmall;
+  color: #797979;
+}
+
+.project {
+  margin-bottom: 27px;
+}
+
+.article-list {
   line-height: 27px;
+}
+
+.article-list__item {
+  display: flex;
+}
+
+.article-list__post-date {
+  float: left;
+  min-width: 94px;
+  color: #656565;
+  font-size: $fontSmall;
+}
+
+.project-list,
+.article-list {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+}
+
+@media screen and (max-width: $viewportLarge) {
+  .project-list {
+    padding: 0;
+  }
+
+  .project-list,
+  .article-list {
+    width: 100%;
+  }
 }
