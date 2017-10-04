@@ -2,20 +2,9 @@
   padding-left: 5%;
   overflow: hidden;
 
-  h4 {
-    font-variant: small-caps;
-    margin-bottom: 0;
-  }
-
   ul {
-    list-style-type: none;
-    margin-top: 0.2em;
-    line-height: 200%;
-
     li {
-      position: relative;
       display: flex;
-      line-height: 27px;
     }
   }
 
@@ -49,4 +38,8 @@
       color: #797979;
     }
   }
+}
+
+.section {
+  line-height: 27px;
 }
