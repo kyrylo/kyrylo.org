@@ -1,0 +1,9 @@
+.spoiler {
+  background-color: $black;
+  transition: background-color .25s ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    transition: background-color .25s ease-in-out;
+  }
+}
