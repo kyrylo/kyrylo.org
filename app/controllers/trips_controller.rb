@@ -52,11 +52,13 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:thumb,
-                                 :where,
-                                 :title,
-                                 :when_start,
-                                 :when_end,
-                                 :markdown)
+    params.require(:trip).permit(
+      :thumb,
+      :where,
+      :title,
+      :when_start,
+      :when_end,
+      :markdown
+    )
   end
 end

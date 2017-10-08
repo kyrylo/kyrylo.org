@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
   end
 
   def renderer
-    @renderer ||= Redcarpet::Markdown.new(SmartHTML, {
+    @renderer ||= Redcarpet::Markdown.new(
+      SmartHTML,
+      {
         fenced_code_blocks: true,
         superscript: true,
         footnotes: true,
