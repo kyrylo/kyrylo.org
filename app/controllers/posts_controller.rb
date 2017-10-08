@@ -1,17 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
-  before_action :set_post, only: %i[show edit update destroy]
-
-  def index
-    if params[:tag]
-      @posts = Post.tagged_with(params[:tag].singularize)
-    else
-      @posts = Post.all
-    end
-    @posts = @posts.order('created_at DESC').page(params[:page]).per(10)
-    @count = @posts.count
-    @title = "All #{params[:tag]} - kyrylo.org"
-  end
+  before_action :authenticate_user!, except: %i[show]
+  before_action :set_post, except: %i[new]
 
   def show
   end

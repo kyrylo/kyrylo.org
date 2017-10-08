@@ -1,4 +1,3 @@
-<%= form_for @post, url: { controller: 'posts', action: 'update' } do |f| %>
-  <%= f.text_area :markdown, class: 'post__textarea' %>
-  <%= f.submit :update, class: 'submit-btn' %>
-<% end %>
+<h1>Edit Post</h1>
+
+<%= render 'form' %>
