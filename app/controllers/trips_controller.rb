@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_trip, except: %i[new]
+  before_action :set_trip, except: %i[new trips]
 
   def show
   end

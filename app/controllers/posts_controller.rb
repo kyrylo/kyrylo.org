@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[show]
-  before_action :set_post, except: %i[new]
+  before_action :set_post, except: %i[new create]
 
   def show
   end
