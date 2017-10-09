@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-  <div id="timespan">
+  <div class="timespan">
     <% if @trip.when_start == @trip.when_end %>
       <%= @trip.when_start.strftime('%B %d, %Y') %>
     <% elsif @trip.when_start.month != @trip.when_end.month %>
