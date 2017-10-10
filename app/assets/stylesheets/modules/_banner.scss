@@ -61,3 +61,10 @@
   padding: 0 0 0 183px;
   max-width: 580px;
 }
+
+@media screen and (max-width: $viewportTiny) {
+  .banner__text {
+    clear: both;
+    padding: 25px 0 0;
+  }
+}
