@@ -1,11 +1,11 @@
 <div class="banner">
   <div class="banner__avatar">
     <div class="front">
-      <%= figure_tag 'avatar.png', size: '158x180', title: 'Avatar', data: { 'no-retina' => true } %>
+      <%= figure_tag 'avatar.png', size: '158x180', title: 'Avatar' %>
     </div>
     <div class="back">
       <figure>
-        <%= image_tag_with_at2x 'me.jpg', size: '158x180', title: 'Photograph' %>
+        <%= retina_img 'me.jpg', size: '158x180', title: 'Photograph' %>
       </figure>
     </div>
   </div>
@@ -27,7 +27,7 @@
       the future is to invent it&#8221;.
     </p>
     <p>
-      P.S. The <%= image_tag_with_at2x 'wolf-emoji.png', class: 'wolf-emoji' %>
+      P.S. The <%= retina_img 'wolf-emoji.png', class: 'wolf-emoji' %>
       &nbsp;is clickable.
     </p>
   </div>

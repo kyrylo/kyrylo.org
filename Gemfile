@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2'
+gem 'rails', '= 5.1.4'
 
 gem 'autoprefixer-rails', '~> 7.1'
 gem 'pg', '~> 0.21'
@@ -15,7 +15,6 @@ gem 'devise', '~> 4.3'
 gem 'paperclip', '~> 5.1'
 gem 'capistrano', '~> 3.2.0'
 gem 'airbrake', '~> 6.2'
-gem 'rails-assets-retina.js', source: 'https://rails-assets.org'
 
 group :development do
   gem 'rubocop', '~> 0.49', require: false
