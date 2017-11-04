@@ -1,9 +1,6 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_trip, except: %i[new trips]
-
-  def show
-  end
+  before_action :set_trip, only: %i[show edit update destroy]
 
   def new
     @trip = Trip.new
@@ -20,9 +17,6 @@ class TripsController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-  end
-
-  def edit
   end
 
   def update
@@ -53,12 +47,7 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(
-      :thumb,
-      :where,
-      :title,
-      :when_start,
-      :when_end,
-      :markdown
+      %i[thumb where title when_start when_end markdown]
     )
   end
 end
