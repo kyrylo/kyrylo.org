@@ -25,3 +25,8 @@ end
 group :development, :test do
   gem 'pry-rails', '~> 0.3'
 end
+
+group :staging, :production do
+  gem 'rack', '~> 2.0'
+  gem 'unicorn', '~> 5.3'
+end
