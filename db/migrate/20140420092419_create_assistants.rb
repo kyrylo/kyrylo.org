@@ -1,4 +1,4 @@
-class CreateAssistants < ActiveRecord::Migration
+class CreateAssistants < ActiveRecord::Migration[4.2]
   def change
     create_table :assistants do |t|
       t.text :full_name, null: false

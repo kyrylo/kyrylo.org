@@ -1,4 +1,4 @@
-class AddPictureToThumbnails < ActiveRecord::Migration
+class AddPictureToThumbnails < ActiveRecord::Migration[4.2]
   def self.up
     add_attachment :thumbnails, :picture
   end

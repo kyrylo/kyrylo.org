@@ -1,4 +1,4 @@
-class DropTags < ActiveRecord::Migration
+class DropTags < ActiveRecord::Migration[4.2]
   def change
     remove_index 'tags', :name
 

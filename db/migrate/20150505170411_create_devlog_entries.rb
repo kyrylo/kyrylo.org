@@ -1,4 +1,4 @@
-class CreateDevlogEntries < ActiveRecord::Migration
+class CreateDevlogEntries < ActiveRecord::Migration[4.2]
   def change
     create_table :devlog_entries do |t|
       t.belongs_to :devlog, index: true, foreign_key: true

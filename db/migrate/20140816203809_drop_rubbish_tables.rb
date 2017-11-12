@@ -1,4 +1,4 @@
-class DropRubbishTables < ActiveRecord::Migration
+class DropRubbishTables < ActiveRecord::Migration[4.2]
   def up
     drop_table :acknowledgements
     drop_table :assistants

@@ -1,4 +1,4 @@
-class DropProjectStatuses < ActiveRecord::Migration
+class DropProjectStatuses < ActiveRecord::Migration[4.2]
   def up
     remove_column :projects, :project_status_id
 

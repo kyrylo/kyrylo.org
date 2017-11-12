@@ -1,4 +1,4 @@
-class DropTaggings < ActiveRecord::Migration
+class DropTaggings < ActiveRecord::Migration[4.2]
   def change
     remove_index(
       'taggings',

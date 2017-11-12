@@ -1,4 +1,4 @@
-class CreateProjectLinks < ActiveRecord::Migration
+class CreateProjectLinks < ActiveRecord::Migration[4.2]
   def change
     create_table :project_links do |t|
       t.text :name

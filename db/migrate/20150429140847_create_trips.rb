@@ -1,4 +1,4 @@
-class CreateTrips < ActiveRecord::Migration
+class CreateTrips < ActiveRecord::Migration[4.2]
   def up
     create_table :trips do |t|
       t.text :where

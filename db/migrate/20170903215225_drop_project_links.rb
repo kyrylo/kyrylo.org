@@ -1,4 +1,4 @@
-class DropProjectLinks < ActiveRecord::Migration
+class DropProjectLinks < ActiveRecord::Migration[4.2]
   def change
     remove_index 'project_links', :project_id
 

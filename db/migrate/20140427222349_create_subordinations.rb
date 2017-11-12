@@ -1,4 +1,4 @@
-class CreateSubordinations < ActiveRecord::Migration
+class CreateSubordinations < ActiveRecord::Migration[4.2]
   def change
     create_table :subordinations do |t|
       t.references :project, index: true

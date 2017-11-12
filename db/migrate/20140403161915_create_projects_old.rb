@@ -1,4 +1,4 @@
-class CreateProjectsOld < ActiveRecord::Migration
+class CreateProjectsOld < ActiveRecord::Migration[4.2]
   def change
     create_table :projects do |t|
       t.text :title, null: false

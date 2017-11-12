@@ -1,4 +1,4 @@
-class DropDevlogs < ActiveRecord::Migration
+class DropDevlogs < ActiveRecord::Migration[4.2]
   def change
     drop_table :devlogs do |t|
       t.integer  'project_id'

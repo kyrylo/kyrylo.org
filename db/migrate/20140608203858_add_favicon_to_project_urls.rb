@@ -1,4 +1,4 @@
-class AddFaviconToProjectUrls < ActiveRecord::Migration
+class AddFaviconToProjectUrls < ActiveRecord::Migration[4.2]
   def self.up
     add_attachment :project_urls, :favicon
   end

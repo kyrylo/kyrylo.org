@@ -1,4 +1,4 @@
-class CreateThumbnails < ActiveRecord::Migration
+class CreateThumbnails < ActiveRecord::Migration[4.2]
   def change
     create_table :thumbnails, comment: 'Every project has 1 thumbnail ' \
       'that is shown on the index page' do |t|
