@@ -13,17 +13,6 @@ class CreateProjects < ActiveRecord::Migration[4.2]
     end
 
     add_index :projects, :slug, unique: true
-
-    Post.tagged_with('project').each do |post|
-      r = Project.new
-      r.title = post.title
-      r.release_date = post.created_at
-      r.html = post.html
-      r.markdown = post.markdown
-
-      r.save!
-      post.destroy!
-    end
   end
 
   def down

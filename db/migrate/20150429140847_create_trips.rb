@@ -13,20 +13,6 @@ class CreateTrips < ActiveRecord::Migration[4.2]
     end
 
     add_attachment :trips, :thumb
-
-    Post.tagged_with('trip').each do |post|
-      t = Trip.new
-
-      t.where = post.title
-      t.title = post.title
-      t.when_start = post.created_at
-      t.when_end = post.created_at
-      t.html = post.html
-      t.markdown = post.markdown
-
-      t.save!
-      post.destroy!
-    end
   end
 
   def down
