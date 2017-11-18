@@ -12,6 +12,7 @@ gem 'friendly_id', '~> 5.2'
 gem 'cancancan', '~> 2.0.0'
 gem 'devise', '~> 4.3'
 gem 'paperclip', '~> 5.1'
+gem 'paperclip-imgur', '~> 0.2'
 gem 'airbrake', '~> 6.2'
 
 group :development do
