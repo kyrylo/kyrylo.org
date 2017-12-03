@@ -33,8 +33,8 @@ module ApplicationHelper
   end
 
   def generate_title(str)
-    motto = 'Kyrylo Silin &middot; Black & White'.html_safe
-    str&.html_safe + " &mdash; #{motto}".html_safe || motto.html_safe
+    motto = 'Kyrylo Silin &middot; Black & White'
+    ((str || '') + (" &mdash; #{motto}" || motto)).html_safe
   end
 
   def retina_img(filename, *args)
