@@ -51,7 +51,9 @@ class PostsController < ApplicationController
     headers = parse_markdown_headers(markdown)
     @post.html = renderer.render(strip_header(markdown))
     @post.title = headers['title']
+    # rubocop:disable Lint/RescueWithoutErrorClass
     @post.created_at = Date.strptime(headers['publish_date'], '%d %b %Y') rescue Time.now
+    # rubocop:enable Lint/RescueWithoutErrorClass
     @post.markdown = markdown
   end
 

@@ -30,3 +30,7 @@ Style/StringLiterals:
 
 Style/LineEndConcatenation:
   Enabled: false
+
+# TODO: enable this when Ruby 3.0 is out.
+Style/FrozenStringLiteralComment:
+  Enabled: false
