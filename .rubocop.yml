@@ -1,7 +1,7 @@
 inherit_from: .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.4
   Exclude:
     - vendor/**/*
     - db/schema.rb
@@ -29,4 +29,8 @@ Style/StringLiterals:
     - '**/*_spec.rb'
 
 Style/LineEndConcatenation:
+  Enabled: false
+
+# TODO: enable this when Ruby 3.0 is out.
+Style/FrozenStringLiteralComment:
   Enabled: false

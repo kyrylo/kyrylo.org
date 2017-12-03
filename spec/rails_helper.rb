@@ -2,11 +2,6 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-require 'shoulda/matchers'
-require 'capybara/rails'
-require 'capybara/poltergeist'
-
-Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -37,10 +32,6 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
-
-  # If you do not include FactoryGirl::Syntax::Methods in your test suite, then
-  # all factory_girl methods will need to be prefaced with FactoryGirl.
-  config.include FactoryGirl::Syntax::Methods
 
   # Previously we automatically inferred spec type from a file location, this
   # was a surprising behaviour for new users and undesirable for some veteran
