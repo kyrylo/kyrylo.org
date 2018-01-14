@@ -1,4 +1,6 @@
 module ApplicationHelper
+  MOTTO = 'Kyrylo Silin &middot; Black & White'.freeze
+
   # Creates the HTML element &lt;figure&gt; with an optional <figcaption>.
   # @example
   #   figure_tag('avatar.png', size: '50x50', figcaption: 'Avatar')
@@ -32,9 +34,9 @@ module ApplicationHelper
     end
   end
 
-  def generate_title(str)
-    motto = 'Kyrylo Silin &middot; Black & White'
-    ((str || '') + (" &mdash; #{motto}" || motto)).html_safe
+  def generate_title(title)
+    return raw(MOTTO) unless title
+    raw("#{title} &mdash; #{MOTTO}")
   end
 
   def retina_img(filename, *args)
