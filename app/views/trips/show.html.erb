@@ -19,8 +19,10 @@
       <%= @trip.when_start.strftime('%B %d, %Y') %>
     <% elsif @trip.when_start.month != @trip.when_end.month %>
       <%= @trip.when_start.strftime('%B %d, %Y') %> &hellip; <%= @trip.when_end.strftime('%B %d') %>
+    <% elsif @trip.when_start.month == @trip.when_end.month && @trip.when_start.day != @trip.when_end.day  %>
+      <%= @trip.when_start.strftime('%B %d') %>&ndash;<%= @trip.when_end.strftime('%d, %Y') %>
     <% else %>
-      <%= @trip.when_end.strftime('%d, %Y') %>
+      <%= @trip.when_end.strftime('%B %d, %Y') %>
     <% end %>
   </div>
 
