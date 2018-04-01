@@ -1,7 +1,7 @@
 <div class="trip-thumbnails">
   <% @trips.each do |t| %>
     <div class="trip-thumb">
-      <%= image_tag t.thumb.url(:thumb) %>
+      <%= image_tag t.thumb_url || image_path('missing.png') %>
       <div class="caption">
         <%= link_to t.where, trip_path(t) %>,
         <span class="when">
