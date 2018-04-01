@@ -48,9 +48,6 @@ GEM
     bcrypt (3.1.11)
     builder (3.2.3)
     cancancan (2.0.0)
-    climate_control (0.2.0)
-    cocaine (0.5.8)
-      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
@@ -81,19 +78,12 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.2)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    paperclip (5.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (~> 0.3.0)
     parallel (1.12.0)
     parser (2.4.0.0)
       ast (~> 2.2)
@@ -211,7 +201,6 @@ DEPENDENCIES
   devise (~> 4.3)
   friendly_id (~> 5.2)
   metadown (~> 1.0)
-  paperclip (~> 5.1)
   pg (~> 0.21)
   pry-rails (~> 0.3)
   rack (~> 2.0)
@@ -224,4 +213,4 @@ DEPENDENCIES
   unicorn (~> 5.3)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

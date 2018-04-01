@@ -47,7 +47,7 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(
-      %i[thumb where title when_start when_end markdown]
+      %i[thumb_url where title when_start when_end markdown]
     )
   end
 end

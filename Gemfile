@@ -11,7 +11,6 @@ gem 'metadown', '~> 1.0'
 gem 'friendly_id', '~> 5.2'
 gem 'cancancan', '~> 2.0.0'
 gem 'devise', '~> 4.3'
-gem 'paperclip', '~> 5.1'
 gem 'airbrake', '~> 6.2'
 
 group :development do
