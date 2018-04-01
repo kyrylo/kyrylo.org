@@ -35,7 +35,7 @@ class TripsController < ApplicationController
   def destroy
     @trip.destroy
     respond_to do |format|
-      format.html { redirect_to trips_url }
+      format.html { redirect_to root_url }
     end
   end
 

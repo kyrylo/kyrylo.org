@@ -9,8 +9,7 @@
     <div class="adm">
       <ul class="post-control">
         <li><%= link_to '[edit]', edit_post_path(post) %></li>
-        <li>
-          <%= link_to '[delete]', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <li><%= button_to 'delete', post, method: :delete %>
         </li>
       </ul>
     </div>

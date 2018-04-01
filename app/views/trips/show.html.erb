@@ -7,9 +7,7 @@
     <div class="adm">
       <ul class="post-control">
         <li><%= link_to '[edit]', edit_trip_path(@trip) %></li>
-        <li>
-          <%= link_to '[delete]', @trip, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </li>
+        <li><%= button_to 'delete', @trip, method: :delete %></li>
       </ul>
     </div>
   <% end %>
