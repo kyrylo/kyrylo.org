@@ -1,5 +1,5 @@
-Kyrylo Silin: "Black & White"
-=============================
+kyrylo.org
+==========
 
 [![Build Status](https://travis-ci.org/kyrylo/kyrylo.org.svg?branch=master)](https://travis-ci.org/kyrylo/kyrylo.org)
 
