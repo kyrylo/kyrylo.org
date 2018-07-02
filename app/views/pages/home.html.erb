@@ -1,38 +1,3 @@
-<div class="banner">
-  <div class="banner__avatar">
-    <div class="front">
-      <%= figure_tag 'avatar.png', size: '158x180', title: 'Avatar' %>
-    </div>
-    <div class="back">
-      <figure>
-        <%= retina_img 'me.jpg', size: '158x180', title: 'Photograph' %>
-      </figure>
-    </div>
-  </div>
-
-  <div class="banner__text">
-    <p>
-      Welcome to the personal site of Kyrylo Silin. I&#8217;m a
-      programmer who works at <a href="https://airbrake.io">Airbrake</a>. My
-      passion is building tools that help other programmers understand and debug
-      their own programs.
-    </p>
-    <p>
-      I am an admirer of the open source culture, therefore I regularly
-      contribute. I&#8217;m a core team member of <a href="http://pryrepl.org">Pry</a>,
-      a popular Ruby project.
-    </p>
-    <p>
-      My credo is this famous quote by Alan Kay: &#8220;The best way to predict
-      the future is to invent it&#8221;.
-    </p>
-    <p>
-      P.S. The <%= retina_img 'wolf-emoji.png', class: 'wolf-emoji' %>
-      &nbsp;is clickable.
-    </p>
-  </div>
-</div>
-
 <div class="project-list">
   <h1>Projects</h1>
   <%= render 'project_list' %>

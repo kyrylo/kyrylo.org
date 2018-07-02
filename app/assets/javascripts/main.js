@@ -26,58 +26,23 @@ ready(function() {
   //
   // Global
   //
-  document.querySelector('.header-logo').onmouseenter = function(event) {
-    var links = event.currentTarget.querySelectorAll('.header-logo__link');
-    if (!links.length) {
-      return;
-    }
-    Array.prototype.forEach.call(links, function(el, _i) {
-      addClass(el, 'header-logo__link--highlighted');
-    });
-  };
-
-  var onLogoHover = function(event) {
-    var links = event.currentTarget.querySelectorAll('.header-logo__link');
-    if (!links.length) {
-      return;
-    }
-    Array.prototype.forEach.call(links, function(el, _i) {
-      toggleClass(el, 'header-logo__link--highlighted');
-    });
-  };
-  document.querySelector('.header-logo').onmouseenter = onLogoHover;
-  document.querySelector('.header-logo').onmouseleave = onLogoHover;
-
   var codeBlocks = document.querySelectorAll('pre code');
   Array.prototype.forEach.call(codeBlocks, function(el, _i) {
     hljs.highlightBlock(el);
   });
 
-  //
-  // Home
-  //
   var avatar = document.querySelector('.banner__avatar');
-  if (avatar) {
-    avatar.onclick = function() {
-      toggleClass(this, 'flip');
-    };
+  var onAvatarHover = function() {
+    var link = document.querySelector('.header-title a');
+    if (!link) { return; }
+    toggleClass(link, 'header-title--highlighted');
+  };
+  avatar.onmouseenter = onAvatarHover;
+  avatar.onmouseleave = onAvatarHover;
 
-    var onAvatarHover = function() {
-      var imgs = this.querySelectorAll('img');
-      Array.prototype.forEach.call(imgs, function(el, _i) {
-        toggleClass(el, 'hovered');
-      });
-    };
-    avatar.onmouseenter = onAvatarHover;
-    avatar.onmouseleave = onAvatarHover;
-  }
-
-  var wolfEmoji = document.querySelector('.wolf-emoji');
-  if (wolfEmoji && avatar) {
-    wolfEmoji.onclick = function() {
-      avatar.click();
-    };
-  }
+  document.querySelector('.wolf-emoji').onclick = function() {
+    toggleClass(avatar, 'flip');
+  };
 
   if (document.querySelectorAll('.trip-thumbnails').length) {
     var thumbs = document.querySelectorAll('.trip-thumbnails .trip-thumb img');

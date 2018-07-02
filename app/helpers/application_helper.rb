@@ -19,21 +19,6 @@ module ApplicationHelper
     end
   end
 
-  def site_title
-    content_tag(:div, class: 'header-logo') do
-      link = current_page?(root_url) ? '' : 'header-logo__link'
-
-      concat(
-        content_tag(:div, class: "header-logo__author #{link}") { 'Kyrylo Silin' }
-      )
-      concat(
-        content_tag(:div, class: "header-logo__slogan #{link}") do
-          'Black &amp; White'.html_safe
-        end
-      )
-    end
-  end
-
   def generate_title(title)
     return raw(MOTTO) unless title
     raw("#{title} &mdash; #{MOTTO}")

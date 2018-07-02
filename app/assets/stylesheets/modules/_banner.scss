@@ -1,9 +1,8 @@
 .banner {
-  float: left;
-
   .flip .front {
     transform: rotateX(0) rotateY(180deg);
   }
+
   .flip .back {
     transform: rotateX(0) rotateY(0);
   }
@@ -15,8 +14,6 @@
 
 .banner__avatar {
   position: relative;
-  top: 6px;
-  cursor: pointer;
 
   figure {
     margin: 0;
@@ -54,17 +51,9 @@
     left: 0;
     transform: rotateX(0) rotateY(-180deg);
     transform-style: preserve-3d;
-  }
-}
 
-.banner__text {
-  padding: 0 0 0 183px;
-  max-width: 580px;
-}
-
-@media screen and (max-width: $viewportTiny) {
-  .banner__text {
-    clear: both;
-    padding: 25px 0 0;
+    a {
+      border-bottom: none;
+    }
   }
 }

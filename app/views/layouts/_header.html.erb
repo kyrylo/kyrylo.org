@@ -1,5 +1,57 @@
 <header class="header">
-  <%= link_to_unless_current site_title, root_path %>
+  <div class="banner">
+    <div class="banner__avatar">
+      <div class="front">
+        <%= link_to_unless_current(figure_tag('avatar.png', size: '77x88', title: 'Avatar'), root_url) %>
+      </div>
+      <div class="back">
+        <figure>
+          <%= link_to_unless_current(retina_img('me.jpg', size: '77x88', title: 'Photograph'), root_url) %>
+        </figure>
+      </div>
+    </div>
+
+    <div class="header__text">
+      <h1 class="header-title">
+        <%= link_to_unless_current 'Kyrylo Silin', root_path, class: 'header-title__link' %>
+      </h1>
+
+      <ul class="social-media">
+        <li class="contacts__item">
+          <span>
+            <a class="contacts__icon-link"
+               href="https://github.com/kyrylo"
+               title="GitHub profile - kyrylo">
+              <%=
+              image_tag 'github.svg',
+              class: 'contacts__social-icon',
+                  alt: 'GitHub profile - kyrylo',
+                  data: { 'no-retina' => true }
+              %>
+            </a>
+
+            <a class="contacts__icon-link"
+               href="https://twitter.com/kyrylosilin"
+               title="Twitter profile - kyrylosilin">
+              <%=
+              image_tag 'twitter.svg',
+              class: 'contacts__social-icon',
+                  alt: 'Twitter profile - kyrylosilin',
+                  data: { 'no-retina' => true }
+              %>
+            </a>
+          </span>
+        </li>
+      </ul>
+
+      <p class="float-left">
+        Full-stack developer at <%= link_to 'Airbrake.io', 'https://airbrake.io' %>.
+        Core team <a href="http://pryrepl.org">@pryrepl</a>. Interested in
+        development of tools that help debugging software.
+        <%= retina_img 'wolf-emoji.png', class: 'wolf-emoji' %>
+      </p>
+    </div>
+  </div>
 
   <% if current_user %>
     <div class="admin-panel">
