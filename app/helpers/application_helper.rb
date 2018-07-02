@@ -1,5 +1,5 @@
 module ApplicationHelper
-  MOTTO = 'Kyrylo Silin &middot; Black & White'.freeze
+  MOTTO = 'Kyrylo Silin'.freeze
 
   # Creates the HTML element &lt;figure&gt; with an optional <figcaption>.
   # @example
