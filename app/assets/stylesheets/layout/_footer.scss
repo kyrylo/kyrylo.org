@@ -1,12 +1,14 @@
 .footer {
-  display: flex;
   margin: 48px 0 0;
   line-height: 32px;
 }
 
-.footer__left,
-.footer__right {
-  width: 50%;
+.float-right {
+  float: right;
+}
+
+.footer__rabbit {
+  padding: 45px 0 0 12px;
 }
 
 .footer__link {
@@ -24,21 +26,6 @@
   }
 }
 
-.siteinfo__item {
-  display: list-item;
-}
-
-.contacts {
-  float: right;
-}
-
-.contacts__label {
-  display: inline-block;
-  padding: 0 15px 0;
-  width: 140px;
-  text-align: right;
-}
-
 .contacts__icon-link {
   position: relative;
   top: 3px;
@@ -52,32 +39,4 @@
 
 .small-xx {
   font-size: $fontXXSmall;
-}
-
-@media screen and (max-width: $viewportSmall) {
-  .footer {
-    display: block;
-  }
-
-  .footer__left,
-  .footer__right {
-    width: 100%;
-  }
-
-  .footer__left {
-    text-align: center;
-  }
-
-  .footer__right {
-    margin: 0 auto;
-    width: 320px;
-  }
-
-  .contacts {
-    float: none;
-  }
-
-  .contacts__item {
-    min-width: 400px;
-  }
 }
