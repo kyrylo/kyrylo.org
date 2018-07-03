@@ -1,0 +1,14 @@
+.black-link {
+  color: $grey-400;
+  border-bottom: 1px solid $greya-400;
+
+  &:visited {
+    color: $grey-400;
+    border-bottom: 1px solid $greya-400;
+  }
+
+  &:hover {
+    color: $black;
+    border-bottom: 1px solid $blacka;
+  }
+}
