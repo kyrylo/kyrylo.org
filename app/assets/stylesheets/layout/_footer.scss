@@ -11,21 +11,6 @@
   padding: 45px 0 0 12px;
 }
 
-.footer__link {
-  color: $grey-400;
-  border-bottom: 1px solid $greya-400;
-
-  &:visited {
-	color: $grey-400;
-	border-bottom: 1px solid $greya-400;
-  }
-
-  &:hover {
-	color: $black;
-	border-bottom: 1px solid $blacka;
-  }
-}
-
 .contacts__icon-link {
   position: relative;
   top: 3px;
