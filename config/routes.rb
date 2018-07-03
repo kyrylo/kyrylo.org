@@ -5,6 +5,4 @@ Kyrylo::Application.routes.draw do
 
   resources :posts, except: %i[index]
   resources :trips, except: %i[index]
-
-  get '/cv', to: 'pages#cv'
 end
