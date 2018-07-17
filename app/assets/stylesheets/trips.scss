@@ -7,35 +7,26 @@
 }
 
 .trip-thumbnails {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: left;
-  justify-content: space-around;
-  width: 100%;
-  text-align: center;
-
   .trip-thumb {
-	max-width: 350px;
-	min-width: 250px;
-    margin-top: 40px;
-    line-height: 1.3;
+    display: inline-block;
+    margin: 0 75px 20px 0;
+    line-height: 22px;
 
-	img {
-	  cursor: pointer;
-	  border: 1px solid #444444;
+    img {
+      cursor: pointer;
+      border: 1px solid #444444;
 
-	  &:hover {
-		transition: border 0.25s ease-out;
-		border: 1px solid #ce5160;
-	  }
-	}
+      &:hover {
+        transition: border 0.25s ease-out;
+        border: 1px solid #ce5160;
+      }
+    }
 
-	.caption {
-	  .highlighted {
-		color: #ee5a83;
-		border-bottom: 1px solid rgba(238, 90, 131, 0.2);
-	  }
-	}
+    .caption {
+      .highlighted {
+        color: #ee5a83;
+        border-bottom: 1px solid rgba(238, 90, 131, 0.2);
+      }
+    }
   }
 }
