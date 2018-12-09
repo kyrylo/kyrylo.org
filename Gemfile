@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '= 5.1.4'
+gem 'rails', '= 5.2.2'
 
 gem 'autoprefixer-rails', '~> 7.1'
 gem 'pg', '~> 0.21'
