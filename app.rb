@@ -33,3 +33,5 @@ get '/:year/:month/:day/:title' do
 
   erb :post, locals: { post: post }
 end
+
+run Sinatra::Application.run!
