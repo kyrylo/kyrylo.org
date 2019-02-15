@@ -17,16 +17,20 @@ here to earn money.
 
 Another day you go to some other part of the city and see people are doing
 absolutely nothing.
-<img src="https://i.imgur.com/iyM2QSk.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/iyM2QSk.jpg">
+<noscript><img src="https://i.imgur.com/iyM2QSk.jpg"></noscript>
 
 Those people...
-<img src="https://i.imgur.com/b367JdD.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/b367JdD.jpg">
+<noscript><img src="https://i.imgur.com/b367JdD.jpg"></noscript>
 
 ...never go to these buildings.
-<img src="https://i.imgur.com/ruOsSYg.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/ruOsSYg.jpg">
+<noscript><img src="https://i.imgur.com/ruOsSYg.jpg"></noscript>
 
 Manila is also the city of malls.
-<img src="https://i.imgur.com/AYW1KOn.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/AYW1KOn.jpg">
+<noscript><img src="https://i.imgur.com/AYW1KOn.jpg"></noscript>
 
 One of the biggest malls in Asia is here. It occupies two big buildings
 connected by a sky bridge. The inside looks like a small town.
@@ -40,22 +44,27 @@ and pistols.
 
 There's no shortage of food in Manila. Food is everywhere. Start with something
 familiar first.
-<img src="https://i.imgur.com/r8qh2c3.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/r8qh2c3.jpg">
+<noscript><img src="https://i.imgur.com/r8qh2c3.jpg"></noscript>
 
 When you feel brave enough, try something you'd never normally eat.
-<img src="https://i.imgur.com/IHxRTiO.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/IHxRTiO.jpg">
+<noscript><img src="https://i.imgur.com/IHxRTiO.jpg"></noscript>
 
 Finally, try some street food.
-<img src="https://i.imgur.com/9yIhp3N.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/9yIhp3N.jpg">
+<noscript><img src="https://i.imgur.com/9yIhp3N.jpg"></noscript>
 
 You'd be surprised that some things are edible. How about duck fetus?
-<img src="https://i.imgur.com/44SdoQ7.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/44SdoQ7.jpg">
+<noscript><img src="https://i.imgur.com/44SdoQ7.jpg"></noscript>
 
 I was disappointed to know that vegetables are expensive and not that tasty in
 general. The situation reminded me of USA. However, the abundance of fruits
 fully compensates for it. I saw a lot of fruits in the Philippines that I'd
 never heard of.
-<img src="https://i.imgur.com/2AoK7ar.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/2AoK7ar.jpg">
+<noscript><img src="https://i.imgur.com/2AoK7ar.jpg"></noscript>
 
 In Ukraine, avocados, pineapples, coconuts, and other tropical goodies are not
 that tasty. In addition to that, they're also overpriced. In the Philippines
@@ -63,44 +72,54 @@ they're cheap, they look great, and they taste amazing.
 
 Finally, seafood is a major plus. My jaw dropped when I saw these juicy shrimps.
 Not only were they huge, they were also cheap.
-<img src="https://i.imgur.com/kzZkv76.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/kzZkv76.jpg">
+<noscript><img src="https://i.imgur.com/kzZkv76.jpg"></noscript>
 
 Interestingly enough, people don't use sunflower oil there. They use anything
 but! I thought the only oils that exist were olive and sunflower. I managed to
 find sunflower oil and guess what? It was produced in my country!
-<img src="https://i.imgur.com/nxtBAkk.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/nxtBAkk.jpg">
+<noscript><img src="https://i.imgur.com/nxtBAkk.jpg"></noscript>
 
 While worldwide, the presence of Ukraine is barely noticeable, I somehow managed
 to find a Ukrainian toy there. It is made in Ukraine, but I've never seen it
 here.
-<img src="https://i.imgur.com/8IPJlr0.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/8IPJlr0.jpg">
+<noscript><img src="https://i.imgur.com/8IPJlr0.jpg"></noscript>
 
 Anyway, I hope you're not hungry anymore after all of the food I showed. Let's
 take a walk to let the food settle.
-<img src="https://i.imgur.com/AdCchzN.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/AdCchzN.jpg">
+<noscript><img src="https://i.imgur.com/AdCchzN.jpg"></noscript>
 
 We walk-walk-walk and see... a coin operated phone charger stand. Quite a find,
 I don't think I'd ever stumbled upon this until then.
-<img src="https://i.imgur.com/sBvqAKK.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/sBvqAKK.jpg">
+<noscript><img src="https://i.imgur.com/sBvqAKK.jpg"></noscript>
 
 I didn't notice a lot of wild dogs on the streets, but the cat invasion is a
 thing. They chill along the streets and enjoy doing cat things.
 
 Despite all the pollution from the high volume of traffic, wildlife is still
 present.
-<img src="https://i.imgur.com/qukiXY4.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/qukiXY4.jpg">
+<noscript><img src="https://i.imgur.com/qukiXY4.jpg"></noscript>
 
 Yeah, small lizards are everywhere. I really wanted to catch one, but they were
 too fast for me. If I wanted, I could catch a frog and cook an elixir.
-<img src="https://i.imgur.com/T2zyjpP.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/T2zyjpP.jpg">
+<noscript><img src="https://i.imgur.com/T2zyjpP.jpg"></noscript>
 
 I'm quite happy that some of the cats can only be seen inside a cage. I wouldn't
 want to stumble upon these kittens while walking to a sari-sari store.
-<img src="https://i.imgur.com/pzRlGcY.jpg">
-<img src="https://i.imgur.com/vJ89DBC.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/pzRlGcY.jpg">
+<noscript><img src="https://i.imgur.com/pzRlGcY.jpg"></noscript>
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/vJ89DBC.jpg">
+<noscript><img src="https://i.imgur.com/vJ89DBC.jpg"></noscript>
 
 Some wild flowers looked incredible.
-<img src="https://i.imgur.com/k6HL0Ht.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/k6HL0Ht.jpg">
+<noscript><img src="https://i.imgur.com/k6HL0Ht.jpg"></noscript>
 
 I also saw some hibiscus. We drink it here, but in the Philippines nobody knows
 it's drinkable. The tea situation is tough there, so no wonder people prefer
@@ -109,84 +128,108 @@ dust in tea bags.
 
 A rare find. This plant can actually fold its leaves once it's touched. The name
 is "makahiya", which means "to be shy". It's not poisonous.
-<img src="https://i.imgur.com/U1j9AQI.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/U1j9AQI.jpg">
+<noscript><img src="https://i.imgur.com/U1j9AQI.jpg"></noscript>
 
 In Manila, cars rule the streets.
-<img src="https://i.imgur.com/uR6MqfY.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/uR6MqfY.jpg">
+<noscript><img src="https://i.imgur.com/uR6MqfY.jpg"></noscript>
 
 Pedestrians are not respected. Technically, you can't respect someone who
 doesn't exist: there are almost no sidewalks.
-<img src="https://i.imgur.com/lSyQfiO.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/lSyQfiO.jpg">
+<noscript><img src="https://i.imgur.com/lSyQfiO.jpg"></noscript>
 
 If you don't own a car, you're not screwed, but it'd be hard to navigate around
 the city barefoot. Your best bet is to take a bus with hundreds of people...
-<img src="https://i.imgur.com/CDnubAs.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/CDnubAs.jpg">
+<noscript><img src="https://i.imgur.com/CDnubAs.jpg"></noscript>
 
 ...or a jeepney.
-<img src="https://i.imgur.com/Qt7HD8w.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/Qt7HD8w.jpg">
+<noscript><img src="https://i.imgur.com/Qt7HD8w.jpg"></noscript>
 
 Inside a jeepney you're stuffed like canned fish.
-<img src="https://i.imgur.com/ClHSDBM.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/ClHSDBM.jpg">
+<noscript><img src="https://i.imgur.com/ClHSDBM.jpg"></noscript>
 
 Some people have extremely expensive cars. I wonder what the point is. You can't
 speed up even if you wanted to: there are too many cars.
-<img src="https://i.imgur.com/2YjXagL.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/2YjXagL.jpg">
+<noscript><img src="https://i.imgur.com/2YjXagL.jpg"></noscript>
 
 Maybe buy a heavy vehicle and ram your way through?
-<img src="https://i.imgur.com/6Law7gf.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/6Law7gf.jpg">
+<noscript><img src="https://i.imgur.com/6Law7gf.jpg"></noscript>
 
 Some places like BGC have lesser traffic, though.
-<img src="https://i.imgur.com/8HMz7O0.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/8HMz7O0.jpg">
+<noscript><img src="https://i.imgur.com/8HMz7O0.jpg"></noscript>
 
 You may think that getting a bamboo bike would be stylish and practical, but I
 assure you, it's better not to cycle here as it imposes a serious safety risk.
-<img src="https://i.imgur.com/bdSJ5A3.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/bdSJ5A3.jpg">
+<noscript><img src="https://i.imgur.com/bdSJ5A3.jpg"></noscript>
 
 Another interesting fact is that Manila barely has any public parks. If you look
 at the map, you will see a lot of green "islands". At first, I confused them as
 parks. When you zoom in, quite often it turns out to be a golf course. See the
 fenced off area on the right?
-<img src="https://i.imgur.com/QPk453S.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/QPk453S.jpg">
+<noscript><img src="https://i.imgur.com/QPk453S.jpg"></noscript>
 
 Real parks are tiny.
-<img src="https://i.imgur.com/uhSVyCx.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/uhSVyCx.jpg">
+<noscript><img src="https://i.imgur.com/uhSVyCx.jpg"></noscript>
 
 Some parks don't have enough trees (and a lot of them don't have enough
 benches). There's a good reason to have them: the sun burns you alive.
-<img src="https://i.imgur.com/GuQrhi2.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/GuQrhi2.jpg">
+<noscript><img src="https://i.imgur.com/GuQrhi2.jpg"></noscript>
 
 This sign protects a piece of untrimmed grass pretending to be a mini park area.
-<img src="https://i.imgur.com/iwQEvJA.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/iwQEvJA.jpg">
+<noscript><img src="https://i.imgur.com/iwQEvJA.jpg"></noscript>
 
 Speaking of signs, what I like about them is that they're handmade. Unlike in
 Ukraine where everyone just prints an A4 paper with a sign, people in Manila
 actually use paint.
-<img src="https://i.imgur.com/ptWA9gy.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/ptWA9gy.jpg">
+<noscript><img src="https://i.imgur.com/ptWA9gy.jpg"></noscript>
 
 Even printed papers try to be legible.
-<img src="https://i.imgur.com/o1CDSwU.jpg">
-<img src="https://i.imgur.com/UCJcdVC.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/o1CDSwU.jpg">
+<noscript><img src="https://i.imgur.com/o1CDSwU.jpg"></noscript>
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/UCJcdVC.jpg">
+<noscript><img src="https://i.imgur.com/UCJcdVC.jpg"></noscript>
 
 Speaking of history, the Philippines had strong American influence in the past.
-<img src="https://i.imgur.com/G8EAYs1.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/G8EAYs1.jpg">
+<noscript><img src="https://i.imgur.com/G8EAYs1.jpg"></noscript>
 
 Spain also left its imprint: catholicism.
 
 Catholic wedding.
-<img src="https://i.imgur.com/5R2zrQZ.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/5R2zrQZ.jpg">
+<noscript><img src="https://i.imgur.com/5R2zrQZ.jpg"></noscript>
 
 When Rodrigo Duterte came to power, Philippines seeks for other allies, so don't
 expect something like this to happen any time soon.
-<img src="https://i.imgur.com/7EEbeV3.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/7EEbeV3.jpg">
+<noscript><img src="https://i.imgur.com/7EEbeV3.jpg"></noscript>
 
 Albeit the influence, it's still a part of Asia with Asian toilets.
-<img src="https://i.imgur.com/3275Q6B.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/3275Q6B.jpg">
+<noscript><img src="https://i.imgur.com/3275Q6B.jpg"></noscript>
 
 The story of how the country has passed is long.
-<img src="https://i.imgur.com/cnhDw5J.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/cnhDw5J.jpg">
+<noscript><img src="https://i.imgur.com/cnhDw5J.jpg"></noscript>
 
 But the wheel of history never stops spinning.
-<img src="https://i.imgur.com/60Wzd69.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/60Wzd69.jpg">
+<noscript><img src="https://i.imgur.com/60Wzd69.jpg"></noscript>
 
 Now the country is independent.
-<img src="https://i.imgur.com/DA5v0g6.jpg">
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/DA5v0g6.jpg">
+<noscript><img src="https://i.imgur.com/DA5v0g6.jpg"></noscript>
