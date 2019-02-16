@@ -1,4 +1,4 @@
-kyrylo.org
+kyryl(O.o)rg
 ==========
 
 http://kyrylo.org
