@@ -43,7 +43,7 @@ was kind enough to show some secret passages inside the house and share
 fascinating stories of the history of the place. He's been the guide there for
 decades and he actually *has* witnessed Emilio Aguinaldo himself.
 
-Unfortunately, the history has concealed the pictures of the shrine. Here's a
-picture of a Kawit church during a mass, instead.
+Unfortunately, lady History preferred not to reveal the pictures of the shrine.
+Here's a picture of a Kawit church during a mass, instead.
 <img class="lazy" src="/images/i.png" data-src="https://imgur.com/s7Y79YU.jpg"/>
 <noscript><img src="https://imgur.com/s7Y79YU.jpg"></noscript>
