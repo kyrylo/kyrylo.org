@@ -1,7 +1,5 @@
 body {
-  margin: 30px auto;
-  padding: 0 10px;
-  max-width: 815px;
+  padding: 20px 10px;
   line-height: 1.6;
   font-size: 18px;
   color: #000;
@@ -19,7 +17,9 @@ a:focus, a:active { color: #008000; }
 .static-link:hover { color: #ee5a83; }
 .static-link:focus, .static-link:active { color: #008000; }
 
-header { font-family: Palatino Linotype, Book Antiqua, Palatino, serif; }
+header {
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+}
 
 pre {
   padding: 1em;
@@ -83,7 +83,7 @@ time,
 .world__item {
   display: inline-block;
   margin: 0 auto;
-  padding: 0 12px 35px 12px;
+  padding: 0 24px 35px 0;
 }
 .world__thumb {
   width: 240px;
@@ -121,7 +121,7 @@ only screen and (min-device-pixel-ratio: 2) {
   font-size: 12px;
 }
 
-.section-thumb { padding: 0 28px 0 13px; }
+.section-thumb { padding: 0 28px 0 0; }
 
 .speech-bubble {
   float: left;
@@ -164,24 +164,38 @@ only screen and (min-device-pixel-ratio: 2) {
   width: 96px;
 }
 
-.posts {
+.posts__list {
   display: inline-block;
   overflow: hidden;
   margin: 0;
+  padding: 0;
+  line-height: 32px;
 }
 
-.projects {
+.projects__list {
   overflow: hidden;
   margin-left: 12px;
+  max-width: 640px;
 }
 @media only screen and (max-width: 800px) {
-  .projects {
+  .projects__list {
     display: inline-block;
   }
 }
 
+header,
+footer,
+.projects,
+.posts,
+.post {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.post p, pre { max-width: 640px; }
 .post img { max-width: 100%; }
-.post p { max-width: 740px; }
+.post h1 { margin-bottom: 0; }
+.post p:first { margin: 0; }
 .center { text-align: center; }
 .left { float: left; }
 .right { float: right; }

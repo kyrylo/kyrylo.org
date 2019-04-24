@@ -66,9 +66,7 @@ The Donetsk Copacabana.
 <img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/sA8EItZ.jpg"/>
 <noscript><img src="https://i.imgur.com/sA8EItZ.jpg"/></noscript>
 
-<div class="center video">
 <iframe width="640" height="480" src="//www.youtube.com/embed/ffot6IoSP8k" frameborder="0" allowfullscreen></iframe>
-</div>
 
 We had 10 spare hours before the match so we figured that it would be nice to
 eat something. We visited some restaruant with delicious food. After the
@@ -118,9 +116,7 @@ Meanwhile some people appeared on the stage and started dancing.
 <noscript><img src="https://i.imgur.com/07olMJZ.jpg"/></noscript>
 
 The match was going to start soon.
-<div class="center video">
 <iframe width="640" height="480" src="//www.youtube.com/embed/p9cEU3XYVDk" frameborder="0" allowfullscreen></iframe>
-</div>
 
 We met a few more Englishmen. They were pretty drunk.
 <img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/BMRAyIR.jpg"/>

@@ -88,9 +88,7 @@ At the sea port. Try to find me.
 On the plaza at the sea station there was a fountain with a levitating
 tap. Serhii has shared the secret of the levitation with the rest of us.
 
-<div class="center video">
 <iframe width="640" height="480" src="//www.youtube.com/embed/xLMonGxUjy0?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
 
 Nearby there was a monument with an egg and a well-built toddler inside it. Not
 impressive. I wasn't even impressed by old cannons with cannonballs lying next
@@ -298,9 +296,7 @@ The conference is over. But only for us.
 On our way to the train station I decided to record a quick interview with us
 about the impressions from the conference.
 
-<div class="center video">
 <iframe width="640" height="480" src="//www.youtube.com/embed/EOyV3UQnim8?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
 
 I also took a couple of photos of some Odesa's pearls. It's not a trip to Odesa
 if you don't photograph the Potemkin Stairs.
