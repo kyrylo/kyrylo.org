@@ -1,7 +1,7 @@
 Pulling through a Ruby exception
 ================================
 
-<time datetime="2013-07-03">Jul 3, 2013</time>
+<p class="post__date"><time datetime="2013-07-03">Jul 3, 2013</time></p>
 
 Pry and IRB both have an interesting property. In these consoles, there's a
 possibility to correctly define a method or a class and get an exception. All in

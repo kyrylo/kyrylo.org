@@ -1,7 +1,7 @@
 Why I am not a fan of Google Analytics
 ======================================
 
-<time datetime="2014-01-17">Jan 17, 2014</time>
+<p class="post__date"><time datetime="2014-01-17">Jan 17, 2014</time></p>
 
 > “Integrating your search and social efforts brings better brand visibility and
 > higher conversion rates.”
@@ -131,7 +131,7 @@ everyone: choose wisely what you share with unknown people and random web sites.
 Wrapping up
 -----------
 
-<div class="figure left">
+<div class="figure center">
 <img src="https://imgur.com/gfh9HAX.gif"/>
 </div>
 

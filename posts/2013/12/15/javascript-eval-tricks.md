@@ -1,7 +1,7 @@
 JavaScript eval tricks
 ======================
 
-<time datetime="2013-12-15">Dec 15, 2013</time>
+<p class="post__date"><time datetime="2013-12-15">Dec 15, 2013</time></p>
 
 By default, `eval` evaluates code in the current context.
 

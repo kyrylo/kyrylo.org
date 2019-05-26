@@ -1,7 +1,7 @@
 How to say “I love you” in Ruby
 ===============================
 
-<time datetime="2013-07-15">Jul 15, 2013</time>
+<p class="post__date"><time datetime="2013-07-15">Jul 15, 2013</time></p>
 
 Can you untangle this?
 

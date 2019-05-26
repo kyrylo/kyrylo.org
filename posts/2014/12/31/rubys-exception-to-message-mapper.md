@@ -1,7 +1,7 @@
 Ruby's exception to message mapper
 ==================================
 
-<time datetime="2014-12-31">Dec 31, 2014</time>
+<p class="post__date"><time datetime="2014-12-31">Dec 31, 2014</time></p>
 
 Exception to message mapper is a Ruby library bundled with the standard Ruby library distribution since Ruby 1.1 (released in the 20th century). It was written by Keiju ISHITSUKA and apparently meant to be used internally, to simplify Ruby's stdlib source code. But since it's available in the stdlib, it's also available for us. You may be wondering what this library is about. Well, guess what?.. It maps messages to exceptions!
 

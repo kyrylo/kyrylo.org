@@ -24,12 +24,17 @@ header {
 pre {
   padding: 1em;
   font-size: 13px;
+  line-height: 18px;
   background-color: #fffffa;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   overflow-x: auto;
 }
 
 code { font-size: 14px; }
+
+blockquote {
+  font-style: italic;
+}
 
 .no-underline { text-decoration: none; }
 
@@ -186,16 +191,55 @@ only screen and (min-device-pixel-ratio: 2) {
 header,
 footer,
 .projects,
-.posts,
-.post {
+.posts {
   margin: 0 auto;
   max-width: 640px;
 }
 
-.post p, pre { max-width: 640px; }
-.post img { max-width: 100%; }
-.post h1 { margin-bottom: 0; }
+.post p,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post div,
+.post ul,
+pre {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.post h1 {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
+  text-align: center;
+  font-size: 37px;
+}
+
 .post p:first { margin: 0; }
+
+.post figure {
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.post {
+  line-height: 28px;
+  font-size: 20px;
+}
+
+.post__date {
+  margin-top: 8px;
+  text-align: center;
+}
+
 .center { text-align: center; }
 .left { float: left; }
 .right { float: right; }

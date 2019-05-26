@@ -1,7 +1,7 @@
 How to safely enter passwords in a terminal
 ===========================================
 
-<time datetime="2013-08-02">Aug 2, 2013</time>
+<p class="post__date"><time datetime="2013-08-02">Aug 2, 2013</time></p>
 
 Sometimes command line programs allow you to pass passwords to switches. For
 example, MySQL: `mysql -u user -p password`. However, if your shell records

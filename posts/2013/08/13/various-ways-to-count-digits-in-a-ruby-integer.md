@@ -1,7 +1,7 @@
 Various ways to count digits in a Ruby integer
 ==============================================
 
-<time datetime="2013-08-13">Aug 13, 2013</time>
+<p class="post__date"><time datetime="2013-08-13">Aug 13, 2013</time></p>
 
 The most obvious solution is to convert it to string and count characters.
 Boring.

@@ -1,7 +1,7 @@
 How I cycled to a football match between Metalist and ETM in Vysoky
 ===================================================================
 
-<time datetime="2013-04-12">April 12, 2013</time>
+<p class="post__date"><time datetime="2013-04-12">April 12, 2013</time></p>
 
 ## Almost prelude
 
@@ -51,7 +51,7 @@ half of the match.
 I started cycling about 15:10. The distance to Vysoky was 25km. So I needed to
 cycle 50 kilometers in total.
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m21!1m8!1m3!1d82158.9131589308!2d36.29608140847471!3d49.94635972703536!3m2!1i1024!2i768!4f13.1!4m10!1i0!3e6!4m3!3m2!1d50.018642!2d36.330455!4m3!3m2!1d49.883348!2d36.160308!5e0!3m2!1sen!2sua!4v1412971628936" width="600" height="450" frameborder="0" style="border:0"></iframe>
+<figure><iframe src="https://www.google.com/maps/embed?pb=!1m21!1m8!1m3!1d82158.9131589308!2d36.29608140847471!3d49.94635972703536!3m2!1i1024!2i768!4f13.1!4m10!1i0!3e6!4m3!3m2!1d50.018642!2d36.330455!4m3!3m2!1d49.883348!2d36.160308!5e0!3m2!1sen!2sua!4v1412971628936" width="600" height="450" frameborder="0" style="border:0"></iframe></figure>
 
 Obviously, I decided to use pavements, because neither me nor my bicycle is not
 prepared for the road. Why? Firstly, I didn't know traffic code good enough (I
@@ -71,7 +71,7 @@ dirty. It also became cold and I was in shorts.
 
 This is how far I managed to cycle.
 
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ua/maps?cbll=49.905117,36.169823&amp;layer=c&amp;panoid=TUnPgHHkXlcN0ehswAbh9w&amp;cbp=12,251.07,,0,9.59&amp;ie=UTF8&amp;ll=49.905117,36.169823&amp;spn=0.264899,0.2005&amp;t=m&amp;z=11&amp;source=embed&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.com.ua/maps?cbll=49.905117,36.169823&amp;layer=c&amp;panoid=TUnPgHHkXlcN0ehswAbh9w&amp;cbp=12,251.07,,0,9.59&amp;ie=UTF8&amp;ll=49.905117,36.169823&amp;spn=0.264899,0.2005&amp;t=m&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+<figure><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ua/maps?cbll=49.905117,36.169823&amp;layer=c&amp;panoid=TUnPgHHkXlcN0ehswAbh9w&amp;cbp=12,251.07,,0,9.59&amp;ie=UTF8&amp;ll=49.905117,36.169823&amp;spn=0.264899,0.2005&amp;t=m&amp;z=11&amp;source=embed&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.com.ua/maps?cbll=49.905117,36.169823&amp;layer=c&amp;panoid=TUnPgHHkXlcN0ehswAbh9w&amp;cbp=12,251.07,,0,9.59&amp;ie=UTF8&amp;ll=49.905117,36.169823&amp;spn=0.264899,0.2005&amp;t=m&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small></figure>
 
 Cycling back was tough. I was pretty tired. I already had my second wind and I
 started experiencing my third wind. Suddenly, bad transmission reminded me of

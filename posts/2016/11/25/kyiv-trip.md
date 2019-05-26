@@ -1,11 +1,11 @@
 Kyiv trip
 =========
 
-<time datetime="2016-11-25">November 25&ndash;28, 2016</time>
+<p class="post__date"><time datetime="2016-11-25">November 25&ndash;28, 2016</time></p>
 
 Kyiv is big.
-<img src="http://imgur.com/HsM9Gi1.jpg"/>
+<figure><img src="http://imgur.com/HsM9Gi1.jpg"/></figure>
 
 Kiev is barren.
-<img src="http://imgur.com/UWSkHrD.jpg">
-<img src="http://imgur.com/qy1N6iI.jpg">
+<figure><img src="http://imgur.com/UWSkHrD.jpg"></figure>
+<figure><img src="http://imgur.com/qy1N6iI.jpg"></figure>
