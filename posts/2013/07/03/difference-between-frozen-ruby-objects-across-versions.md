@@ -1,7 +1,7 @@
 Difference between frozen Ruby objects across versions
 ======================================================
 
-<time datetime="2013-06-03">3 Jul 2013</time>
+<p class="post__date"><time datetime="2013-06-03">3 Jul 2013</time></p>
 
 Users of `Object#freeze` should know that the behaviour of this method has been
 changing over the Ruby versions. Let's compare it.

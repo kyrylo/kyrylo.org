@@ -1,7 +1,7 @@
 Blocks in Ruby are always there
 ===============================
 
-<time datetime="2013-08-09">Aug 9, 2013</time>
+<p class="post__date"><time datetime="2013-08-09">Aug 9, 2013</time></p>
 
 You probably know that even if your method doesn't accept blocks, you still can
 pass them.

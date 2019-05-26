@@ -1,11 +1,9 @@
 So what is “binding.pry” exactly?
 =================================
 
-<time datetime="2013-05-30">May 30, 2013</time>
+<p class="post__date"><time datetime="2013-05-30">May 30, 2013</time></p>
 
-<div class="figure center">
-<img src="https://imgur.com/uxHPVG0.gif"/>
-</div>
+<p class="center"><img src="https://imgur.com/uxHPVG0.gif"/></p>
 
 Yui-knk has translated this article into [Japanese][japanese].
 
@@ -23,7 +21,7 @@ features of Pry.
 The story of a little expression with incredible power
 ------------------------------------------------------
 
-<div class="figure right">
+<div class="figure">
 <img src="https://imgur.com/WRNWYXI.gif"/>
 <div class="caption">Ground control to Major Tom...</div>
 </div>
@@ -140,7 +138,7 @@ bedroom.window.eval('@items') #=> [:teddy_bear]
 
 ### “pry”
 
-<div class="figure left borderless">
+<div class="figure">
 <img src="https://imgur.com/RMzmI9o.gif"/>
 </div>
 
@@ -326,7 +324,7 @@ from (pry):8:in `__pry__'
 “binding” and “pry” pulled together
 -----------------------------------
 
-<div class="figure right">
+<div class="figure">
 <img src="https://imgur.com/RnLRxrb.gif"/>
 </div>
 

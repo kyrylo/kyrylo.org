@@ -1,7 +1,7 @@
 “Hello World” with recursive arrays in Ruby
 ===========================================
 
-<time datetime="2014-05-18">May 18, 2014</time>
+<p class="post__date"><time datetime="2014-05-18">May 18, 2014</time></p>
 
 It doesn't mean anything. Just an interesting observation.
 

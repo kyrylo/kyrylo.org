@@ -1,10 +1,10 @@
 Untangling the "love" Ruby tongue twister
 =========================================
 
-<time datetime="2018-06-21">June 21, 2018</time>
+<p class="post__date"><time datetime="2018-06-21">June 21, 2018</time></p>
 
-I found an interesting Ruby tongue twister:
-https://twitter.com/josh_cheek/status/1008910880761761792
+I found an interesting [Ruby tongue
+twister](https://twitter.com/josh_cheek/status/1008910880761761792):
 
 ```
 ruby -e '

@@ -1,7 +1,7 @@
 Ruby eval tricks
 ================
 
-<time datetime="2013-08-24">Aug 24, 2013</time>
+<p class="post__date"><time datetime="2013-08-24">Aug 24, 2013</time></p>
 
 Greetings upon thee! Let's evaluate some code for breakfast, cousins.
 
