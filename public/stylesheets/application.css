@@ -84,7 +84,9 @@ time,
   margin-right: 2px;
 }
 
-.world { min-width: 537px; }
+.world {
+  text-align: center;
+}
 .world__item {
   display: inline-block;
   margin: 0 auto;
@@ -104,7 +106,13 @@ only screen and (min-device-pixel-ratio: 2) {
   }
 }
 .world__thumb:hover { border: 1px solid #ee5a83; }
-.world__desc { line-height: 21px; }
+.world__desc {
+  line-height: 21px;
+  text-align: left;
+}
+.world__date {
+  text-align: left;
+}
 .world__flag {
   display: block;
   float: left;
@@ -170,7 +178,6 @@ only screen and (min-device-pixel-ratio: 2) {
 }
 
 .posts__list {
-  display: inline-block;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -179,8 +186,6 @@ only screen and (min-device-pixel-ratio: 2) {
 
 .projects__list {
   overflow: hidden;
-  margin-left: 12px;
-  max-width: 640px;
 }
 @media only screen and (max-width: 800px) {
   .projects__list {
@@ -188,11 +193,50 @@ only screen and (min-device-pixel-ratio: 2) {
   }
 }
 
+.projects__item {
+  margin: 0 0 15px 0;
+}
+
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.posts_h1 {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.posts_h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.posts__item {
+  margin-bottom: 14px;
+  line-height: 20px;
+}
+
+.posts__section {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
 header,
 footer,
 .projects,
 .posts {
   margin: 0 auto;
+  max-width: 640px;
+}
+
+.world__h1 {
+  margin: 20px auto;
   max-width: 640px;
 }
 
