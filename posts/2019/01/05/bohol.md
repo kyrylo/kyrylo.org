@@ -1,7 +1,7 @@
 Bohol province
 ==============
 
-<p class="post__date"><time datetime="2018-09-30">January 5&ndash;8, 2019</time></p>
+<p class="post__date"><time datetime="2019-01-05">January 5&ndash;8, 2019</time></p>
 
 Bohol... what a wonderful island. With each visit I get to know the Philippines
 better and better. It's interesting that I've never managed to leave Luzon (the
