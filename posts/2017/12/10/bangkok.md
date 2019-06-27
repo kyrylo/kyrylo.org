@@ -432,7 +432,7 @@ these wrist bands: the "Long live the King" band neighbours with "Mad cunt".
 
 My face after reading the whole board.
 <figure>
-<img src="https://imgur/.com/GMDVXIb.jpg">
+<img src="https://imgur.com/GMDVXIb.jpg">
 </figure>
 <noscript>
 <figure><img src="https://imgur.com/GMDVXIb.jpg"></figure>
