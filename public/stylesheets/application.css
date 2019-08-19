@@ -139,9 +139,8 @@ only screen and (min-device-pixel-ratio: 2) {
 .speech-bubble {
   float: left;
   position: absolute;
-  left: 120px;
+  left: 105px;
   padding: 15px;
-  max-width: 390px;
   border: 1px solid #a7a7a7;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -149,7 +148,7 @@ only screen and (min-device-pixel-ratio: 2) {
 
 .speech-bubble-arrow {
   position: absolute;
-  bottom: 38px;
+  bottom: 4px;
   border-right: 21px solid transparent;
 }
 
@@ -173,7 +172,7 @@ only screen and (min-device-pixel-ratio: 2) {
 
 .rabbit {
   float: left;
-  margin-top: 70px;
+  margin-top: 12px;
   width: 96px;
 }
 
