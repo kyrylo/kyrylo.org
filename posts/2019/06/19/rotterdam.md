@@ -1,7 +1,7 @@
 Rotterdam
 =========
 
-<p class="post__date"><time datetime="2019-07-19">June 19&ndash;22, 2019</time></p>
+<p class="post__date"><time datetime="2019-06-19">June 19&ndash;22, 2019</time></p>
 
 The Netherlands is a country that I had always wanted to visit. In my head it
 was a little paradise, where people follow the rules, nobody knows trouble and

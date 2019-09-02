@@ -118,6 +118,13 @@
   <div class="world">
     <%
     [{
+        href: '/2019/06/23/amsterdam',
+        caption: 'Amsterdam',
+        date: 'June 2019',
+        flag: 22*5,
+        coords: '52.3667,4.8945',
+        sprite: 160*17
+    }, {
         href: '/2019/06/19/rotterdam',
         caption: 'Rotterdam',
         date: 'June 2019',
@@ -238,12 +245,12 @@
         sprite: 160*10
     }].each do |a|
     %>
-    <figure class="world__item">
-      <a href="<%= a[:href] %>">
-        <img class="world__thumb" style="background-position-y: -<%= a[:sprite] %>px"></img>
-        <figcaption class="world__desc">
-          <span class="world__flag" style="background-position-y: -<%= a[:flag]%>px"></span>
-          <span><%= a[:caption] %></span><a href="http://www.google.com/maps/place/<%= a[:coords]%>" class="world__coords static-link" title="<%= a[:caption] %> on the map"><%= a[:coords].split(',').first[0...5] %>&deg; N, <%= a[:coords].split(',').last[0...5] %>&deg; E
+      <figure class="world__item">
+        <a href="<%= a[:href] %>">
+          <img class="world__thumb" style="background-position-y: -<%= a[:sprite] %>px"></img>
+          <figcaption class="world__desc">
+            <span class="world__flag" style="background-position-y: -<%= a[:flag]%>px"></span>
+            <span><%= a[:caption] %></span><a href="http://www.google.com/maps/place/<%= a[:coords]%>" class="world__coords static-link" title="<%= a[:caption] %> on the map"><%= a[:coords].split(',').first[0...5] %>&deg; N, <%= a[:coords].split(',').last[0...5] %>&deg; E
           </a>
         </figcaption>
       </a>
