@@ -10,7 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
       setTimeout(function() {
         lazyImages.forEach(function(lazyImage) {
-          if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+          if (
+            // 2 times innerHeight so the user doesn't see loading because we
+            // preload 2 images at a time.
+            (lazyImage.getBoundingClientRect().top <= 2*window.innerHeight &&
+             lazyImage.getBoundingClientRect().bottom >= 0) &&
+              getComputedStyle(lazyImage).display !== "none"
+          ) {
             lazyImage.src = lazyImage.dataset.src;
             lazyImage.classList.remove("lazy");
 
