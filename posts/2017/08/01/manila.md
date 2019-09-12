@@ -4,7 +4,7 @@ Manila
 <p class="post__date"><time datetime="2017-08-01">June 1, 2017 &hellip; August 1</time></p>
 
 Manila is truly a city of contrasts. Posh tall buildings border with shabby
-huts. I turn my head to the right only see how actively the city is being
+huts. I turn my head to the right only to see how actively the city is being
 built. Construction never stops, so does progress.
 <figure><img src="https://i.imgur.com/ikcJ4FC.jpg"></figure>
 
