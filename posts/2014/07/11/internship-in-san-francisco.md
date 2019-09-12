@@ -437,11 +437,11 @@ houses see the ocean every day.
 
 I noticed people prefer not to use curtains.
 <figure>
-<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/0koKlP3.jpg"/>
+<img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/0koKlP3.jpg">
 </figure>
-<noscirpt>
-<figure><img src="https://i.imgur.com/0koKlP3.jpg"/></figure>
-</noscirpt>
+<noscript>
+<figure><img src="https://i.imgur.com/0koKlP3.jpg"></figure>
+</noscript>
 
 Apparently people don't litter in this neighbourhood. It is really clean.
 <figure>
