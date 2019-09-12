@@ -365,8 +365,8 @@ Catholic wedding.
 <figure><img src="https://i.imgur.com/5R2zrQZ.jpg"></figure>
 </noscript>
 
-When Rodrigo Duterte came to power, Philippines seeks for other allies, so don't
-expect something like this to happen any time soon.
+When Rodrigo Duterte came to power, Philippines started seeking for other
+allies, so don't expect something like this to happen any time soon.
 <figure>
 <img class="lazy" src="/images/i.png" data-src="https://i.imgur.com/7EEbeV3.jpg">
 </figure>
