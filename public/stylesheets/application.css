@@ -219,13 +219,6 @@ only screen and (min-device-pixel-ratio: 2) {
   line-height: 20px;
 }
 
-.posts__section {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-}
-
 header,
 footer,
 .projects,
@@ -236,7 +229,7 @@ footer,
 
 .world__h1 {
   margin: 20px auto;
-  max-width: 640px;
+  max-width: 510px;
 }
 
 .post p,
