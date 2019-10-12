@@ -245,6 +245,10 @@ pre {
   margin-right: auto;
 }
 
+.post p {
+  clear: both;
+}
+
 .post img {
   max-width: 100%;
 }
@@ -253,16 +257,22 @@ pre {
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  max-width: 860px;
+  max-width: 640px;
   text-align: center;
   font-size: 37px;
 }
+
+.post h1 span {
+  font-weight: normal;
+}
+
 
 .post p:first { margin: 0; }
 
 .post figure {
   margin: 0 auto;
   max-width: 1000px;
+  overflow: hidden;
   text-align: center;
 }
 
@@ -274,6 +284,29 @@ pre {
 .post__date {
   margin-top: 8px;
   text-align: center;
+}
+
+.post__lead {
+  font-family: Proxima Nova, Arial, Helvetica Neue, sans-serif;
+}
+
+.post__lead-border {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 45px auto;
+}
+
+.post__left-img,
+.post__right-img {
+  max-width: 49%;
+}
+
+.post__left-img {
+  float: left;
+}
+
+.post__right-img {
+  float: right;
 }
 
 .center { text-align: center; }

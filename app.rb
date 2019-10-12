@@ -30,7 +30,7 @@ class App < Sinatra::Base
     pass unless File.exist?(file)
 
     post = File.read(file)
-    @title = "#{post.lines.first.chomp} &mdash; Kyrylo Silin"
+    @title = "#{post.lines.first.chomp.gsub(/<[^>]*>/ui,'')} &mdash; Kyrylo Silin"
 
     erb :post, locals: { post: post }
   end
