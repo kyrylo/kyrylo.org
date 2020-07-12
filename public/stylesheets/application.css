@@ -21,6 +21,11 @@ header {
   font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
 }
 
+footer,
+.world {
+  padding-top: 40px;
+}
+
 pre {
   padding: 1em;
   font-size: 13px;
@@ -85,6 +90,7 @@ time,
 }
 
 .world {
+  padding-top: 40px;
   text-align: center;
 }
 .world__item {
@@ -176,6 +182,29 @@ only screen and (min-device-pixel-ratio: 2) {
   width: 96px;
 }
 
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.projects {
+  width: 48%;
+  margin-right: 15px;
+}
+
+.posts { width: 50%; }
+
+@media only screen and (max-width: 800px) {
+  .projects {
+    width: 100%;
+    margin-right: 0;
+  }
+  .posts { width: 100%; }
+}
+
 .posts__list {
   overflow: hidden;
   margin: 0;
@@ -196,13 +225,6 @@ only screen and (min-device-pixel-ratio: 2) {
   margin: 0 0 15px 0;
 }
 
-.posts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
 .posts_h1 {
   width: 100%;
   margin-top: 0;
@@ -220,9 +242,7 @@ only screen and (min-device-pixel-ratio: 2) {
 }
 
 header,
-footer,
-.projects,
-.posts {
+footer {
   margin: 0 auto;
   max-width: 510px;
 }
