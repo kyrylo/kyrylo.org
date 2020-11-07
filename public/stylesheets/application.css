@@ -296,6 +296,10 @@ pre {
   text-align: center;
 }
 
+.post sup {
+  line-height: 0;
+}
+
 .post {
   line-height: 28px;
   font-size: 20px;
