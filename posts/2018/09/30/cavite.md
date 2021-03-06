@@ -11,7 +11,7 @@ Ukrainian vibes (check the flags).
 <figure><img src="https://imgur.com/ci7OGvC.jpg"/></figure>
 
 The main point of interest in Marogondon is Bonifacio Shrine. The road to it
-sinous and thorny.
+sinuous and thorny.
 <figure><img src="https://imgur.com/MrJUU0K.jpg"/></figure>
 
 If you find yourself vulnerable, lost and stuck...
