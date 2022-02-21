@@ -25,8 +25,8 @@ class App < Sinatra::Base
     erb :index
   end
 
-  get '/:year/:month/:day/:title' do
-    file = "#{File.dirname(__FILE__)}/posts/#{params.values.join('/')}.md"
+  get '/:year/:month/:day/:title' do |year, month, day, title|
+    file = "#{File.dirname(__FILE__)}/posts/#{year}/#{month}/#{day}/#{title}.md"
     pass unless File.exist?(file)
 
     post = File.read(file)
