@@ -56,3 +56,5 @@ plugins:
 # https://github.com/jekyll/minima/issues/709
 sass:
   quiet_deps: true
+
+google_analytics: G-HWC9SW2R8S
