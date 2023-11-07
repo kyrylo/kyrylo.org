@@ -5,8 +5,6 @@ date: 2013-04-12 00:23:44 +0200
 categories: travel ukraine
 ---
 
-## Almost prelude
-
 A month ago I bought a cheap used mountain bike. I've already cycled two times
 (to be more precise, three times, including the time I tested it after the
 purchase). Why did I buy a cheap bicycle? The thing is that I wasn't sure if I

@@ -5,8 +5,6 @@ date: 2014-08-24 00:23:44 +0200
 categories: travel usa
 ---
 
-<p class="post__date"><time datetime="2014-07-11">July 11, 2014 &hellip; September 24</time></p>
-
 During my internship at Bugsnag I took some pictures of the city. My bicycle was
 my companion. I cycled through many neighbourhoods of San Francisco and even
 managed to cycle to neighbouring towns. The quality of the photos isn't

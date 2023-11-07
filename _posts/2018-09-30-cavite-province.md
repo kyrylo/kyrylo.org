@@ -5,11 +5,11 @@ date: 2018-09-30 00:23:44 +0200
 categories: travel philippines
 ---
 
+Cavite is a big province in Luzon, Philippines. During this trip I was lucky
+enough to visit Bacoor, Maragondon & Kawit.
 <img src="https://imgur.com/J3JnrGo.jpg"/>
 
-Cavite is a big province in Luzon, Philippines. During this trip I was lucky
-enough to visit Bacoor, Maragondon & Kawit. Somehow, Maragondon gave me
-Ukrainian vibes (check the flags).
+Somehow, Maragondon gave me Ukrainian vibes (check the flags).
 <img src="https://imgur.com/ci7OGvC.jpg"/>
 
 The main point of interest in Marogondon is Bonifacio Shrine. The road to it

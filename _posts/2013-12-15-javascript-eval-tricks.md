@@ -7,7 +7,7 @@ categories: programming javascript
 
 By default, `eval` evaluates code in the current context.
 
-```js
+```javascript
 var x = 0;
 
 function foo() {
@@ -22,8 +22,6 @@ x; // 0
 ```
 
 However, there's a trick to confuse everyone.
-
-<span class="cut"></span>
 
 If we assign the `eval` function to a variable, the function inside that
 variable "detaches" from the current context: `this` becomes the global object.

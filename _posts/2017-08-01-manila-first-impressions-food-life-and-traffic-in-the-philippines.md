@@ -5,13 +5,10 @@ date: 2017-08-01 00:23:44 +0200
 categories: travel philippines
 ---
 
-<p class="post__date"><time datetime="2017-08-01">June 1, 2017 &hellip; August 1</time></p>
-
-<img src="https://imgur.com/WrCxLwb.jpg">
-
 Manila is truly a city of contrasts. Posh tall buildings border with shabby
 huts. I turn my head to the right only to see how actively the city is being
 built. Construction never stops, so does progress.
+<img src="https://imgur.com/WrCxLwb.jpg">
 
 I turn my head to the left and see a stinky river. This makes you think that
 the place has absolutely no prospects. I turn my head to the right and see

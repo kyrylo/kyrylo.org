@@ -8,8 +8,8 @@ categories: travel netherlands
 Amsterdam feels like Asia without steroids. I didn't realise it when I was there
 but it becomes more evident as I'm typing this post. Let's analyse why that is
 so.
-
 <img src="https://imgur.com/x695oFf.jpg"/>
+
 Firstly, you have water canals for trading. Just like in Bangkok (and probably
 many other places in Asia). But here in Amsterdam the canals are used for
 tourists.

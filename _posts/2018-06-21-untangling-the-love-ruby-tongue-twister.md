@@ -7,7 +7,6 @@ categories: programming ruby
 
 I found an interesting [Ruby tongue
 twister](https://twitter.com/josh_cheek/status/1008910880761761792):
-
 ```
 ruby -e '
 %%%%%%%%%%%%%%%%%%%%%%%

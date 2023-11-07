@@ -5,8 +5,6 @@ date: 2016-09-19 00:23:44 +0200
 categories: travel portugal
 ---
 
-<p class="post__date"><time>September 12&ndash;19, 2016</time></p>
-
 I haven’t travelled for a while. However this year is lucky for me so far: I
 travelled to Lisbon.
 <img src="http://imgur.com/6iKv36p.jpg"/>

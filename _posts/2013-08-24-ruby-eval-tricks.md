@@ -6,7 +6,6 @@ categories: programming ruby
 ---
 
 Greetings upon thee! Let's evaluate some code for breakfast, cousins.
-
 ```ruby
 eval "100 + 1\n (42 + 100)"   #=> 142
 eval "100 + 1\n + (42 + 100)" #=> 142

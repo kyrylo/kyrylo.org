@@ -8,7 +8,6 @@ categories: travel philippines
 As you might have noticed, I've been a frequent visitor to Manila. In fact,
 every year I spend more and more time in the Philippines. One might think that
 there's not much to speak about anymore. Wrong.
-
 This time I've gotten to experience a beautiful holiday called
 [Paskó](https://en.wikipedia.org/wiki/Christmas_in_the_Philippines) (Christmas).
 <img src="https://imgur.com/S0d6geg.jpg"/>

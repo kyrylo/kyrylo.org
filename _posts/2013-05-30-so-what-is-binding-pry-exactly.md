@@ -5,10 +5,6 @@ date: 2013-04-12 00:23:44 +0200
 categories: programming ruby
 ---
 
-<p class="center"><img src="https://imgur.com/uxHPVG0.gif"/></p>
-
-Yui-knk has translated this article into [Japanese][japanese].
-
 The very first feature that you learn about Pry is undoubtedly
 “binding.pry”. You put it here, there and everywhere; you’re happier than you’ve
 ever been before. In simple words: “binding.pry” makes your life a lot
@@ -19,6 +15,7 @@ sorcery. Obviously, that’s not true, but when you learn something new things
 always appear more mysterious than they really are. By the end of this article
 you should have a solid understanding of one of the oldest and most interesting
 features of Pry.
+<img src="https://imgur.com/uxHPVG0.gif"/>
 
 ## The story of a little expression with incredible power
 
@@ -566,6 +563,8 @@ criticism. I love to be criticised and Duncan is very sincere.
 
     Binding is somewhat similar to Symbol: there is no need in their
     instantiation. A binding, just like a symbol is already here, ready at hand.
+
+Yui-knk has translated this article into [Japanese][japanese].
 
 [japanese]: http://qiita.com/yui-knk/items/63a511d243323bec6fb8
 [old-pry]: https://github.com/pry/pry/blob/4fcf81b97601945945f43311532c164a93b44d7c/lib/pry.rb
