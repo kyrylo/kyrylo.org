@@ -3,6 +3,7 @@ layout: post
 title: "🇵🇭 Manila. Chrismas and my future prospects"
 date: 2019-01-26 00:23:44 +0200
 categories: travel philippines
+image: https://imgur.com/S0d6geg.jpg
 ---
 
 As you might have noticed, I've been a frequent visitor to Manila. In fact,

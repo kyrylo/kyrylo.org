@@ -3,6 +3,7 @@ layout: post
 title: "🇵🇹 Lisbon business trip"
 date: 2016-09-19 00:23:44 +0200
 categories: travel portugal
+image: http://imgur.com/6iKv36p.jpg
 ---
 
 I haven’t travelled for a while. However this year is lucky for me so far: I

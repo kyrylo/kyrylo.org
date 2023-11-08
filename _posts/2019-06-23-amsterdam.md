@@ -3,6 +3,7 @@ layout: post
 title: "🇳🇱 Amsterdam"
 date: 2019-06-23 00:23:44 +0200
 categories: travel netherlands
+image: https://imgur.com/x695oFf.jpg
 ---
 
 Amsterdam feels like Asia without steroids. I didn't realise it when I was there

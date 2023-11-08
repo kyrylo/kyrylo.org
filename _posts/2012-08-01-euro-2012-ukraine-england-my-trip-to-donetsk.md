@@ -3,6 +3,7 @@ layout: post
 title: "🇺🇦 Euro 2012. Ukraine – England. My trip to Donetsk"
 date: 2012-08-01 00:23:44 +0200
 categories: travel ukraine
+images: https://i.imgur.com/qmA35OU.jpg
 ---
 
 I was lucky to visit Donetsk on the 19th of June. I went to a Euro 2012 football

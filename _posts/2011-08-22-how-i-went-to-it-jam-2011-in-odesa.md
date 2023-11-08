@@ -3,6 +3,7 @@ layout: post
 title: "🇺🇦 How I went to IT Jam 2011 in Odesa"
 date: 2011-08-22 00:23:44 +0200
 categories: travel ukraine
+image: https://i.imgur.com/8WLMnp2.jpg
 ---
 
 I would like to say sorry in advance for the poor quality of the photos,

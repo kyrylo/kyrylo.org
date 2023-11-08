@@ -3,6 +3,7 @@ layout: post
 title: "🇵🇭 Cebu. My longest journey abroad so far"
 date: 2019-08-24 00:23:44 +0200
 categories: travel philippines
+image: https://i.imgur.com/ByRpAVB.jpg
 ---
 
 Cebu City is the 2nd largest city of the Philippines. It is located on Cebu

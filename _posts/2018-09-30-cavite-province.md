@@ -3,6 +3,7 @@ layout: post
 title: "🇵🇭 Cavite province"
 date: 2018-09-30 00:23:44 +0200
 categories: travel philippines
+image: https://imgur.com/J3JnrGo.jpg
 ---
 
 Cavite is a big province in Luzon, Philippines. During this trip I was lucky
