@@ -36,7 +36,7 @@ permalink: /about/
 
 <div class="about-section">
 
-<img src="/assets/images/me.jpg" class="about-image">
+<img src="/assets/images/me.png" class="about-image">
 
 <div class="about-text">
   <p>

@@ -38,6 +38,7 @@ minima:
   social_links:
     - { platform: github, user_url: "https://github.com/kyrylo" }
     - { platform: x, user_url: "https://x.com/kyrylosilin" }
+  skin: auto
 
 # Build settings
 remote_theme: jekyll/minima
@@ -74,10 +75,12 @@ twitter:
   username: kyrylosilin
   card: summary
 
-logo: /assets/images/me.jpg
+logo: /assets/images/me.png
 
 social:
   name: Kyrylo Silin
   links:
     - https://twitter.com/kyrylosilin
     - https://github.com/kyrylo
+
+google_site_verification: ""
