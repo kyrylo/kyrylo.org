@@ -24,6 +24,8 @@ layout: base
       {%- if forloop.last == false %}, {% endif -%}
       {% endfor %}
       {%- endif -%}
+      &middot;
+      {{ content | reading_time }}
     </p>
   </header>
 
