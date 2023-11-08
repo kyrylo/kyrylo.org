@@ -33,9 +33,12 @@ minima:
     - { platform: x, user_url: "https://x.com/kyrylosilin" }
 
 # Build settings
-theme: minima
+remote_theme: jekyll/minima
+# theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
