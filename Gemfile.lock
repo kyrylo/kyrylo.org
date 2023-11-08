@@ -78,7 +78,6 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
-  jekyll (~> 4.3.2)
   jekyll-feed (~> 0.12)
   minima!
 
