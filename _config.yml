@@ -19,14 +19,21 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Kyrylo Silin
+author: Kyrylo Silin
+
 author:
   name: Kyrylo Silin
   email: kyrylosilin@gmail.com
+
+tagline: Indie developer building in public
+
 description: >- # this means to ignore newlines until "baseurl:"
   Indie developer building in public. One line of code at a time. Join me on my
   journey to become a better developer.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. http://example.com
+
 minima:
   social_links:
     - { platform: github, user_url: "https://github.com/kyrylo" }
@@ -34,6 +41,7 @@ minima:
 
 # Build settings
 remote_theme: jekyll/minima
+
 # theme: minima
 plugins:
   - jekyll-feed
@@ -61,3 +69,15 @@ plugins:
 
 google_analytics: G-HWC9SW2R8S
 show_excerpts: true
+
+twitter:
+  username: kyrylosilin
+  card: summary
+
+logo: /assets/images/me.jpg
+
+social:
+  name: Kyrylo Silin
+  links:
+    - https://twitter.com/kyrylosilin
+    - https://github.com/kyrylo
