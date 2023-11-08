@@ -30,7 +30,7 @@ url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. htt
 minima:
   social_links:
     - { platform: github, user_url: "https://github.com/kyrylo" }
-    - { platform: twitter, user_url: "https://twitter.com/kyrylosilin" }
+    - { platform: x, user_url: "https://x.com/kyrylosilin" }
 
 # Build settings
 theme: minima
