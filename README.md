@@ -1,3 +1,6 @@
+> **Warning**
+> This repository is deprecated. It is replaced by https://github.com/kyrylo/kyrylo.github.io/
+
 kyryl(O.o)rg
 ==========
 
