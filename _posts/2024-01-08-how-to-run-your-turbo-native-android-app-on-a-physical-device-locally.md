@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to run your Turbo Native Android app on a physical device locally"
-date: 2023-11-09 00:23:44 +0200
+date: 2024-01-08 00:23:44 +0200
 categories: android turbo-native rails
 image: https://imgur.com/zuNW2bk.png
 ---
