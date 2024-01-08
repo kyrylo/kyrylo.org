@@ -53,7 +53,7 @@ The solution is to change the `startLocation` of your
 `SessionNavHostFragment` from `http://10.0.2.2:3000` to your local network
 address.
 
-On macOS, you can find the address via `ipconfig getifaddr en1` of `ipconfig
+On macOS, you can find the address via `ipconfig getifaddr en1` or `ipconfig
 getifaddr en0`. Then use the address as your start location.
 
 ```kotlin
