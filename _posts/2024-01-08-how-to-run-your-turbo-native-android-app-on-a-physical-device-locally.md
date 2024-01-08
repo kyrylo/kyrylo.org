@@ -7,12 +7,10 @@ image: https://imgur.com/zuNW2bk.png
 ---
 
 <img src="https://imgur.com/zuNW2bk.png">
-
 While working on the Android app for [Synonym Sprint][synonym-sprint] using
-[turbo-android][turbo-android], I hit a problem.
-
-My app would load in the Android Studio emulator just fine, but when I connected
-my Android phone via USB, the WebView wouldn't load my web page.
+[turbo-android][turbo-android], I hit a problem. My app would load in the
+Android Studio emulator just fine, but when I connected my Android phone via USB,
+the WebView wouldn't load my web page.
 
 <img src="https://imgur.com/pQHoN24.png">
 
