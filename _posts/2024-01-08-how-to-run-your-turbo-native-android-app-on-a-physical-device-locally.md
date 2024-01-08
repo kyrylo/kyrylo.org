@@ -18,14 +18,8 @@ my Android phone via USB, the WebView wouldn't load my web page.
 
 Here's what I did.
 
-I inspected the Turbo Android logs via Logcat and found the following output:
-
-```
-TurboLog . onPageStarted   [session: tab_play, location: http://10.0.2.2:3000/play]
-TurboLog . onReceivedError [session: tab_play, errorCode: -8]
-```
-
-You can enable the logging in your `MainActivity` like this:
+I enabled the logging for Turbo Android. You can do it in your `MainActivity`
+like this:
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +29,16 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-Then I connected to my app via Chrome's remote browser (`chrome://inspect`) by
-finding my remote target and clicking on the `inspect` link:
+Then I inspected the logs via Logcat and found the following output:
+
+```
+TurboLog . onPageStarted   [session: tab_play, location: http://10.0.2.2:3000/play]
+TurboLog . onReceivedError [session: tab_play, errorCode: -8]
+```
+
+I had no clue what `-8` meant, so I connected to my app via Chrome's remote
+browser (`chrome://inspect`). Then I found my remote target and clicked on the
+`inspect` link:
 
 <img src="https://imgur.com/nvQ4vLG.png">
 
