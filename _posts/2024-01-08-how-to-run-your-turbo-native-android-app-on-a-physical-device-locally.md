@@ -83,7 +83,8 @@ bin/rails server -p 3000 -b 192.168.0.3
 
 Rebuild your app for your physical device, and voilà! Everything should work now.
 
-You can discuss this article on X:
+You can discuss this article on X/Twitter:
+https://twitter.com/kyrylosilin/status/1744384157390606396
 
 [synonym-sprint]: https://synonymsprint.com
 [turbo-android]: https://github.com/hotwired/turbo-android
