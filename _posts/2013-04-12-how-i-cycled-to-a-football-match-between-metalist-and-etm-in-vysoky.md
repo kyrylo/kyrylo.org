@@ -3,6 +3,8 @@ layout: post
 title: "🇺🇦 How I cycled to a football match between Metalist and ETM in Vysoky"
 date: 2013-04-12 00:23:44 +0200
 categories: travel ukraine
+redirect_from:
+  - /2013/04/12/how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysoky
 ---
 
 A month ago I bought a cheap used mountain bike. I've already cycled two times

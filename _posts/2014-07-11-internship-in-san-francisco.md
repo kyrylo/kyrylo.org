@@ -4,6 +4,8 @@ title: "🇺🇸 Internship in San Francisco"
 date: 2014-08-24 00:23:44 +0200
 categories: travel usa
 image: https://i.imgur.com/ORoe2Pc.jpg
+redirect_from:
+  - /2014/07/11/internship-in-san-francisco
 ---
 
 During my internship at Bugsnag I took some pictures of the city. My bicycle was

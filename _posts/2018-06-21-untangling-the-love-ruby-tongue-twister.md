@@ -3,6 +3,8 @@ layout: post
 title: "Untangling the “love” Ruby tongue twister"
 date: 2018-06-21 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2018/06/21/untangling-the-love-ruby-tongue-twister
 ---
 
 I found an interesting [Ruby tongue

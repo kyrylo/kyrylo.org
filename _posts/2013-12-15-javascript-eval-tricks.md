@@ -3,6 +3,8 @@ layout: post
 title: "JavaScript eval tricks"
 date: 2013-08-24 00:23:44 +0200
 categories: programming javascript
+redirect_from:
+  - /2013/12/15/javascript-eval-tricks
 ---
 
 By default, `eval` evaluates code in the current context.

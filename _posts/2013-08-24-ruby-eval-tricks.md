@@ -3,6 +3,8 @@ layout: post
 title: "Ruby eval tricks"
 date: 2013-08-24 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2013/08/24/ruby-eval-tricks
 ---
 
 Greetings upon thee! Let's evaluate some code for breakfast, cousins.

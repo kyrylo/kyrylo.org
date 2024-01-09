@@ -4,6 +4,8 @@ title: "🇳🇱 Rotterdam"
 date: 2019-06-19 00:23:44 +0200
 categories: travel netherlands
 image: https://imgur.com/Zdeuw2O.jpg
+redirect_from:
+  - /2019/06/19/rotterdam
 ---
 
 The Netherlands is a country that I had always wanted to visit. In my head it
