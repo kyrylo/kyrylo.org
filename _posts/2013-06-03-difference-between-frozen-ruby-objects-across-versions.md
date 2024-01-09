@@ -3,6 +3,8 @@ layout: post
 title: "Difference between frozen Ruby objects across versions"
 date: 2013-06-03 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2013/07/03/difference-between-frozen-ruby-objects-across-versions
 ---
 
 Users of `Object#freeze` should know that the behaviour of this method has been
