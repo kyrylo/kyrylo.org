@@ -6,7 +6,7 @@ categories: turbo-native android
 image: https://imgur.com/zuNW2bk.png
 ---
 
-<img src="https://imgur.com/zuNW2bk.png">
+<img src="https://imgur.com/zuNW2bk.png" style="margin-bottom: 1rem;">
 <br>
 While working on the Android app for [Synonym Sprint][synonym-sprint] using
 [turbo-android][turbo-android], I hit a problem. My app would load in the

@@ -5,7 +5,8 @@ date: 2023-11-09 00:23:44 +0200
 image: https://i.imgur.com/kTXN5lf.png
 ---
 
-<img src="https://i.imgur.com/kTXN5lf.png">
+<img src="https://i.imgur.com/kTXN5lf.png" style="margin-bottom: 1rem;">
+<br>
 My 10-year professional programming career has entered a new chapter. Getting
 laid off not once, but twice in the first half of 2023 was a wakeup call.
 It made me realize that I want to be the captain of my own ship.
