@@ -35,36 +35,37 @@ permalink: /about/
 </style>
 
 <div class="about-section">
+  <img src="/assets/images/me.png" class="about-image">
 
-<img src="/assets/images/me.png" class="about-image">
+  <div class="about-text">
+    <p>
+      Hey there 👋
+    </p>
 
-<div class="about-text">
-  <p>
-    Hey there 👋
-  </p>
+    <p>
+      I'm Kyrylo Silin, and I've had my fair share of ups and downs in the
+      professional world. Getting laid off not once, but twice in the first half of
+      2023 was a wakeup call 📞😰. It made me realize that I want to be the captain of my
+      own ship.
+    </p>
 
-  <p>
-    I'm Kyrylo Silin 🇺🇦, and I've had my fair share of ups and downs in the
-    professional world. Getting laid off not once, but twice in the first half of
-    2023 was a wakeup call 📞😰. It made me realize that I want to be the captain 👨‍✈️ of my
-    own ship ⛴️
-  </p>
+    <p>
+      For over a decade, I've been immersed in the world of Ruby programming. It's not
+      just a skill for me, it's a passion that's been brewing for years. I want to put
+      out as many products as I can until something clicks and starts making waves.
+    </p>
 
-  <p>
-    For over a decade, I've been immersed in the world of Ruby programming. It's not
-    just a skill for me, it's a passion that's been brewing 🍺 for years. I want to put
-    out as many products as I can until something clicks and starts making waves 🌊
-  </p>
+    <p>
+      When I'm not knee-deep in Ruby code, you'll find me exploring new corners of
+      the world. My wife, a native of the Philippines 🇵🇭, has opened my eyes to the
+      wonders of her homeland. I've even managed to pick up a bit of Tagalog and
+      Cebuano along the way.
+    </p>
 
-  <p>
-    When I'm not knee-deep in Ruby code, you'll find me exploring new corners of
-    the world. My wife, a native of the Philippines 🇵🇭, has opened my eyes to the
-    wonders of her homeland. I've even managed to pick up a bit of Tagalog and
-    Cebuano along the way.
-  </p>
+    <p>
+      [Follow me on X](https://twitter.com/kyrylosilin), where I post daily about my work.
+      I'd be thrilled if you joined me on this journey!
+    </p>
 
-  <p>
-  I'd be thrilled if you joined me on this journey. Let's build something amazing ✨ together.
-  </p>
   </div>
 </div>
