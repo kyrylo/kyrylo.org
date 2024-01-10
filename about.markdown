@@ -63,7 +63,7 @@ permalink: /about/
     </p>
 
     <p>
-      [Follow me on X](https://twitter.com/kyrylosilin), where I post daily about my work.
+      <a href="https://twitter.com/kyrylosilin">Follow me on X</a>, where I post daily about my work.
       I'd be thrilled if you joined me on this journey!
     </p>
 
