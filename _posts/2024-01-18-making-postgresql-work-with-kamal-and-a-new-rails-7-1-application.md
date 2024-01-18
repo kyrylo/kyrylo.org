@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configuring PostgreSQL for Kamal and a new Rails 7.1 app"
+title: "Making PostgreSQL work with Kamal and a new Rails 7.1 app"
 date: 2024-01-18 00:23:44 +0200
 categories: rails kamal
 image: https://imgur.com/WqXJ5lf.png
@@ -14,6 +14,7 @@ because of the following error with the pg gem: `Can't find
 the 'libpq-fe.h header`.
 
 Here's the full log output when I ran `kamal setup`:
+
 ```
 % kamal setup
 # .......
@@ -39,6 +40,7 @@ Here's the full log output when I ran `kamal setup`:
 
 Rails 7.1 apps are generated with a standard Dockerfile. Find the following
 section that installs default OS dependencies:
+
 ```sh
 # Install packages needed to build gems
 RUN apt-get update -qq && \
@@ -46,6 +48,7 @@ RUN apt-get update -qq && \
 ```
 
 All you need to do is to add `libpq-dev` to the list of dependencies.
+
 ```
 # Install packages needed to build gems
 RUN apt-get update -qq && \
@@ -55,11 +58,13 @@ RUN apt-get update -qq && \
 ```
 
 Then, make sure to kill your currently running DB container with:
+
 ```sh
 kamal accessory remove db
 ```
 
 Then re-run `kamal setup` again and the blocker will go away!
+
 ```
 kamal setup
 ```
