@@ -47,14 +47,41 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev
 ```
 
-All you need to do is to add `libpq-dev` to the list of dependencies.
+All you need to do is add `libpq-dev` to the list of Ubuntu dependencies needed
+for building gems and also to the list of packages needed for deployment. Other
+distros will have their own packages.
+
+If you add `libpq-dev` to the list of deps needed for building gems but omit
+it from the list of packages needed for deployment, your app container won't
+start.
+
+It will fail with:
 
 ```
+LoadError: libpq.so.5: cannot open shared object file:
+No such file or directory - /usr/local/bundle/ruby/3.2.0/gems/pg-1.5.4/lib/pg_ext.so (LoadError)
+```
+
+Therefore, make sure to add `libpq-dev` to both places.
+
+```dockerfile
+# Dockerfile
+
+# ...
+
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev \
     libpq-dev
 #   ^^^ NEW DEPENDENCY
+
+# ...
+
+# Install packages needed for deployment
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq-dev && \
+# -----------------------------------------------------------------------^^^ NEW DEPENDENCY
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 ```
 
 Then, make sure to kill your currently running DB container with:
