@@ -84,8 +84,8 @@ Rebuild your app for your physical device, and voilà! Everything should work no
 
 You can discuss this article on X/Twitter:
 <br>
-[https://twitter.com/kyrylosilin/status/1747921861210513422][twitter]
+[https://twitter.com/kyrylosilin/status/1744384157390606396][twitter]
 
 [synonym-sprint]: https://synonymsprint.com
 [turbo-android]: https://github.com/hotwired/turbo-android
-[twitter]: https://twitter.com/kyrylosilin/status/1747921861210513422
+[twitter]: https://twitter.com/kyrylosilin/status/1744384157390606396

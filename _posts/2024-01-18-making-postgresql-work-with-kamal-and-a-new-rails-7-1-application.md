@@ -71,8 +71,8 @@ kamal setup
 
 You can discuss this article on X/Twitter:
 <br>
-[https://twitter.com/kyrylosilin/status/1744384157390606396][twitter]
+[https://twitter.com/kyrylosilin/status/1747921861210513422][twitter]
 
 [synonym-sprint]: https://synonymsprint.com
-[twitter]: https://twitter.com/kyrylosilin/status/1744384157390606396
+[twitter]: https://twitter.com/kyrylosilin/status/1747921861210513422
 [kamal]: https://kamal-deploy.org
