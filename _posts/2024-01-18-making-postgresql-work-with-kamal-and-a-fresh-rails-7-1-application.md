@@ -3,10 +3,10 @@ layout: post
 title: "Configuring PostgreSQL for Kamal and a new Rails 7.1 app"
 date: 2024-01-18 00:23:44 +0200
 categories: rails kamal
-image: https://imgur.com/QXZ4UJG.png
+image: https://imgur.com/WqXJ5lf.png
 ---
 
-<img src="https://imgur.com/QXZ4UJG.png" style="margin-bottom: 1rem;">
+<img src="https://imgur.com/WqXJ5lf.png" style="margin-bottom: 1rem;">
 <br>
 While working on provisioning [Synonym Sprint][synonym-sprint], a Rails 7.1
 app, with [Kamal][kamal], I hit a problem. Bundler wouldn't let me deploy
