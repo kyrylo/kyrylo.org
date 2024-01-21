@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to opt out of the cache with Hotwire's Turbo Drive in Rails"
-date: 2024-01-21 00:23:44 +0200
+date: 2024-01-21 12:00:00 +0200
 categories: rails turbo
 ---
 
