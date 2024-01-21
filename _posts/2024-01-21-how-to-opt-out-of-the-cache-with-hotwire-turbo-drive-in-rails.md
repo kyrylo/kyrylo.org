@@ -138,8 +138,8 @@ TL;DR. Use `<meta name="turbo-cache-control" content="no-cache">` with
 
 You can discuss this article on X/Twitter:
 <br>
-[https://twitter.com/kyrylosilin/status/1747921861210513422][twitter]
+[https://twitter.com/kyrylosilin/status/1749041960638165025][twitter]
 
 [synonym-sprint]: https://synonymsprint.com
-[twitter]: https://twitter.com/kyrylosilin/status/1747921861210513422
+[twitter]: https://twitter.com/kyrylosilin/status/1749041960638165025
 [cache]: https://turbo.hotwired.dev/handbook/building#opting-out-of-caching
