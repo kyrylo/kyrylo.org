@@ -45,7 +45,7 @@ permalink: /about/
     <p>
       I'm Kyrylo Silin, and I've had my fair share of ups and downs in the
       professional world. Getting laid off not once, but twice in the first half of
-      2023 was a wakeup call 📞😰. It made me realize that I want to be the captain of my
+      2023 was a wakeup call. It made me realize that I want to be the captain of my
       own ship.
     </p>
 
@@ -57,7 +57,7 @@ permalink: /about/
 
     <p>
       When I'm not knee-deep in Ruby code, you'll find me exploring new corners of
-      the world. My wife, a native of the Philippines 🇵🇭, has opened my eyes to the
+      the world. My wife, a native of the Philippines, has opened my eyes to the
       wonders of her homeland. I've even managed to pick up a bit of Tagalog and
       Cebuano along the way.
     </p>

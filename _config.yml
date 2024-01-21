@@ -26,11 +26,11 @@ author:
   email: silin@kyrylo.org
   url: https://kyrylo.org/
 
-tagline: Indie developer building in public
+tagline: I build projects with Rails and Turbo Native
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Indie developer building in public. One line of code at a time. Join me on my
-  journey to become a better developer.
+  I build projects with Rails and Turbo Native. I write about Rails, Ruby, and
+  my travel adventures.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. http://example.com
