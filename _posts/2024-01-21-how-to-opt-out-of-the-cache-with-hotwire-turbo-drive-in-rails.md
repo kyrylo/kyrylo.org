@@ -3,6 +3,8 @@ layout: post
 title: "How to opt out of the cache with Hotwire's Turbo Drive in Rails"
 date: 2024-01-21 12:00:00 +0200
 categories: rails turbo
+redirect_from:
+  - https://kyrylo.org/rails/turbo/2024/01/20/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html
 ---
 
 When using [Turbo Drive](https://turbo.hotwired.dev/handbook/introduction) and
