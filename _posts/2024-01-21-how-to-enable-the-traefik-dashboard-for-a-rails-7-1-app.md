@@ -37,7 +37,7 @@ It shows your app's running routes, services, entrypoints, features, and more.
 The official Kamal docs provide an
 [example](https://kamal-deploy.org/docs/configuration) of how you can enable the
 dashboard, but they are not complete, and they don't make it obvious that the
-presented YAML configures the Traefik dashboard, and they don't go into details
+presented YAML configures the Traefik dashboard. They also don't go into details
 about what the dashboard is.
 
 <img src="https://imgur.com/s1eEWFF.png">
