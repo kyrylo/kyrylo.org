@@ -85,6 +85,26 @@ Let's break it down:
   admin:$apr1$Jeizsy9/$KODzNFPDnNLdKSeXqupWI.
   ```
 
+  I like to keep this information in my Rails credentials so that I can always
+  find it later.
+
+  Run:
+
+  ```sh
+  rails credentials:edit
+  ```
+
+  Add your credentials:
+
+  ```yaml
+  # Used to sign into the Traefik dashboard.
+  traefik:
+    username: admin
+    password: password
+  ```
+
+  Your Rails app doesn't care about that, it's just a reminder for you.
+
 Finally, reboot your Traefik container:
 
 ```sh
