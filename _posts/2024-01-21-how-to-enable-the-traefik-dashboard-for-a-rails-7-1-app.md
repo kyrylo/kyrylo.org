@@ -111,8 +111,9 @@ Finally, reboot your Traefik container:
 kamal traefik reboot
 ```
 
-Now, the dashboard should be live at **https://traefik.example.com**! Sign in using
-your credentials, and you're done.
+Now, the dashboard should be live at **https://traefik.example.com**!
+
+Sign in using your credentials, and you're done.
 
 <img src="https://imgur.com/ah9ebVO.png">
 
