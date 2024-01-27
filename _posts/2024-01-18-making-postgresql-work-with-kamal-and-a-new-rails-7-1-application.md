@@ -8,7 +8,7 @@ image: https://imgur.com/WqXJ5lf.png
 
 <img src="https://imgur.com/WqXJ5lf.png" style="margin-bottom: 1rem;">
 <br>
-While working on provisioning [Synonym Sprint][synonym-sprint], a Rails 7.1
+While working on provisioning [matcharoo][matcharoo], a Rails 7.1
 app, with [Kamal][kamal], I hit a problem. Bundler wouldn't let me deploy
 because of the following error with the pg gem: `Can't find
 the 'libpq-fe.h header`.
@@ -91,6 +91,6 @@ You can discuss this article on X/Twitter:
 <br>
 [https://twitter.com/kyrylosilin/status/1747921861210513422][twitter]
 
-[synonym-sprint]: https://synonymsprint.com
+[matcharoo]: https://matcharoo.app
 [twitter]: https://twitter.com/kyrylosilin/status/1747921861210513422
 [kamal]: https://kamal-deploy.org

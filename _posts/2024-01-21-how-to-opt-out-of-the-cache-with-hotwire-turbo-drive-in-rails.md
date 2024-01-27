@@ -12,7 +12,7 @@ clicking a link, sometimes you don't want that link to be pushed onto the
 navigation stack. Modals, slideovers, and temporary screens require this kind of
 behavior. With just a few lines of code, Turbo Drive makes this a reality.
 
-In [Synonym Sprint][synonym-sprint], when I start a new game, the game state is
+In [Matcharoo][matcharoo], when I start a new game, the game state is
 loaded, and the UI changes its look to show the user that they transitioned to
 the game mode. Here we make a URL click:
 
@@ -142,6 +142,6 @@ You can discuss this article on X/Twitter:
 <br>
 [https://twitter.com/kyrylosilin/status/1749041960638165025][twitter]
 
-[synonym-sprint]: https://synonymsprint.com
+[matcharoo]: https://matcharoo.app
 [twitter]: https://twitter.com/kyrylosilin/status/1749041960638165025
 [cache]: https://turbo.hotwired.dev/handbook/building#opting-out-of-caching

@@ -8,7 +8,7 @@ image: https://imgur.com/zuNW2bk.png
 
 <img src="https://imgur.com/zuNW2bk.png" style="margin-bottom: 1rem;">
 <br>
-While working on the Android app for [Synonym Sprint][synonym-sprint] using
+While working on the Android app for [matcharoo][matcharoo] using
 [turbo-android][turbo-android], I hit a problem. My app would load in the
 Android Studio emulator just fine, but when I connected my Android phone via USB,
 the WebView wouldn't load my web page.
@@ -86,6 +86,6 @@ You can discuss this article on X/Twitter:
 <br>
 [https://twitter.com/kyrylosilin/status/1744384157390606396][twitter]
 
-[synonym-sprint]: https://synonymsprint.com
+[matcharoo]: https://matcharoo.app
 [turbo-android]: https://github.com/hotwired/turbo-android
 [twitter]: https://twitter.com/kyrylosilin/status/1744384157390606396
