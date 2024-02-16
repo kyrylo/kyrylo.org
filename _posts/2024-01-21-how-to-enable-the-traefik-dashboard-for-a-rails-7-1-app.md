@@ -121,7 +121,6 @@ You can discuss this article on X/Twitter:
 <br>
 [https://twitter.com/kyrylosilin/status/1749375421370466344][twitter]
 
-[synonym-sprint]: https://synonymsprint.com
 [twitter]: https://twitter.com/kyrylosilin/status/1749375421370466344
 [kamal]: https://kamal-deploy.org
 [traefik]: https://traefik.io
