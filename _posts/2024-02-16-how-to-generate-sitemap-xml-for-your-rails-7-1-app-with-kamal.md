@@ -228,7 +228,12 @@ entries to the sitemap, your changes will automatically be published under
 
 Good job!
 
+You can discuss this article on X/Twitter:
+<br>
+[https://twitter.com/kyrylosilin/status/1758463466665377958][twitter]
+
 [matcharoo]: https://matcharoo.app
 [kamal]: https://kamal-deploy.org
 [sitemaps]: https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
 [sitemap_generator]: https://github.com/kjvarga/sitemap_generator
+[twitter]: https://twitter.com/kyrylosilin/status/1758463466665377958
