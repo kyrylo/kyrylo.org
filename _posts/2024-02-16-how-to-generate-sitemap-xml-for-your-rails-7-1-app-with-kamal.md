@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How generate sitemap.xml for your Rails 7.1+ app with Kamal"
+title: "How to generate sitemap.xml for your Rails 7.1+ app with Kamal"
 date: 2024-02-16 12:00:00 +0200
 categories: rails kamal
 image: https://imgur.com/FXsJinY.png
