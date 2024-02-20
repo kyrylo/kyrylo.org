@@ -31,10 +31,10 @@ recommend it to anyone starting a new Rails project.
 
 ### Installation
 
-Install Overmind:
+Install Overmind (macOS):
 
 ```sh
-gem install overmind
+brew install overmind
 ```
 
 Note: you _don't_ need to add it to your Gemfile.
