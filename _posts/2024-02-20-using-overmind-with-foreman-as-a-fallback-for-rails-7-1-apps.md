@@ -37,7 +37,7 @@ Install Overmind (macOS):
 brew install overmind
 ```
 
-Note: you _don't_ need to add it to your Gemfile.
+Note: you _don't_ need to add anything to your Gemfile.
 
 ### Tweak `bin/dev`
 
