@@ -6,6 +6,7 @@ categories: programming ruby
 image: https://imgur.com/uxHPVG0.gif
 redirect_from:
   - /posts/so-what-is-binding-pry-exactly
+  - /2013/05/30/so-what-is-binding-pry-exactly
 ---
 
 The very first feature that you learn about Pry is undoubtedly
