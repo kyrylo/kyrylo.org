@@ -47,7 +47,8 @@ following content:
 ```sh
 #!/usr/bin/env sh
 
-# bin/dev
+# Default to port 3000 if not specified
+export PORT="${PORT:-3000}"
 
 if command -v overmind &> /dev/null
 then
