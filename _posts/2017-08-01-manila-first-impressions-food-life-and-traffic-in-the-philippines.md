@@ -4,6 +4,8 @@ title: "🇵🇭 Manila. First impressions. Food, life and traffic in the Philip
 date: 2017-08-01 00:23:44 +0200
 categories: travel philippines
 image: https://imgur.com/WrCxLwb.jpg
+redirect_from:
+  - /2017/08/01/manila
 ---
 
 Manila is truly a city of contrasts. Posh tall buildings border with shabby

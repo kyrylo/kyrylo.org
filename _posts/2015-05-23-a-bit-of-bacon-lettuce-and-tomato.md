@@ -3,6 +3,8 @@ layout: post
 title: "A bit of bacon, lettuce and tomato"
 date: 2015-05-23 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2015/05/23/a-bit-of-bacon-lettuce-and-tomato
 ---
 
 While browsing the source code of the Ruby's virtual machine I stumbled upon an

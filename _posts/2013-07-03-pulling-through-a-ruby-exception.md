@@ -3,6 +3,8 @@ layout: post
 title: "Pulling through a Ruby exception"
 date: 2013-07-03 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2013/07/03/pulling-through-a-ruby-exception
 ---
 
 Pry and IRB both have an interesting property. In these consoles, there's a
