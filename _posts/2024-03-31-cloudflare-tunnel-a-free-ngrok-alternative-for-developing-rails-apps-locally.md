@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Cloudflare Tunnel: a free ngrok alternative for exposing local Rails apps to the internet"
-date: 2024-03-31 00:00:01 +0200
+date: 2024-03-31 12:00:00 +0200
 categories: rails
+redirect_from:
+  - /rails/2024/03/30/cloudflare-tunnel-a-free-ngrok-alternative-for-developing-rails-apps-locally.html
 ---
 
 Imagine you want to test a new page that you just wrote the code for against a
