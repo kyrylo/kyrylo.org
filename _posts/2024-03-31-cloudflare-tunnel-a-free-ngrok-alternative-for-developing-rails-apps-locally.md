@@ -33,7 +33,7 @@ There are a bunch of problems with localtunnel, though:
 2. [Downtimes do happen](https://github.com/localtunnel/localtunnel/issues/619)
 3. Sometimes, the tunnel just crashes, or your [subdomain doesn't get bound](https://github.com/localtunnel/localtunnel/issues/248)
 
-   To address the latter, I wrapped my localtunnel in a `while` loop like this:
+   To address the former, I wrapped my localtunnel in a `while` loop like this:
 
    ```sh
    while true; do lt --port 3000 --subdomain=telebugs --print-requests; sleep 1; done
@@ -58,7 +58,7 @@ Without further ado, let's replace ngrok/localtunnel with
 
 ### Installation
 
-First, we must [install](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) the `cloudflared` CLI app. On macOS, it's as simple as:
+Let's [install](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) the `cloudflared` CLI app. On macOS, it's as simple as:
 
 ```sh
 brew install cloudflared
@@ -90,7 +90,7 @@ If you wish to copy your credentials to a server, they have been saved to:
 
 Choose the domain for your Rails app and click "Authorize". That's all!
 
-<img src="https://imgur.com/dkBJM0X.png" style="height: 500px" alt="Authorize Cloudflare Tunnel">
+<img src="https://imgur.com/Ao4vTap.png" style="height: 500px" alt="Authorize Cloudflare Tunnel">
 
 Now, you need to create a named tunnel. I will name my tunnel `telebugs`:
 
@@ -166,6 +166,10 @@ ingress:
   - service: http_status:404
 ```
 
+```sh
+git add config/clouflare-tunnel.yml.example
+```
+
 One last thing we need to do is add `localhost.telebugs.com` to the list of
 allowed domains so that Rack doesn't block it:
 
@@ -197,7 +201,7 @@ HTTP/2 200
 
 Nice! We're almost done!
 
-Starting the tunnel every time is a hassle, so add it to the Procfile, so that
+Starting the tunnel every time is a hassle, so add it to the `Procfile`, so that
 it is started automatically every time you launch your Rails app locally.
 
 Edit `Procfile` and add the following:
