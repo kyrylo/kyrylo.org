@@ -218,8 +218,7 @@ internet. For free!
 Was the article helpful? [Follow me on X/Twitter](https://x.com/kyrylosilin)
 where I post daily about my indie hacking journey and the projects I work on.
 You can discuss this article on X/Twitter, too:
-
-<link>
+[https://twitter.com/kyrylosilin/status/1774406300295717101](https://twitter.com/kyrylosilin/status/1774406300295717101)
 
 [ngrok]: https://ngrok.com
 [localtunnel]: https://github.com/localtunnel/localtunnel
