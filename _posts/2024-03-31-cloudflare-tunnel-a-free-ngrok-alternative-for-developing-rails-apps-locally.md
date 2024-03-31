@@ -193,7 +193,7 @@ Awesome! We can now start using our tunnel. Let's confirm that it works:
 ```
 
 Now, make sure your local Rails app is running, navigate to
-`https://localhost.telebugs.com` (use your own domain), and verify that your
+[`https://localhost.telebugs.com`](https://telebugs.com) (use your own domain), and verify that your
 local Rails server gets hit.
 
 ```sh
