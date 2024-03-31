@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cloudflare Tunnel: a free ngrok alternative for exposing local Rails apps to the internet"
-date: 2024-03-31 00:00:00 +0200
+date: 2024-03-31 00:00:01 +0200
 categories: rails
 ---
 
