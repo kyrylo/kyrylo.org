@@ -63,7 +63,7 @@ Therefore, make sure to add `libpq-dev` to both places:
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev \
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config \
     libpq-dev
 #   ^^^ NEW DEPENDENCY
 
