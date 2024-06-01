@@ -379,11 +379,11 @@ Our echo bot is successfully deployed! But does it actually work?
 Go to Telegram and search for your bot's username. In my case, it's
 `@Echo12485853Bot`.
 
-![](https://imgur.com/cOBm1eU.png)
+<img style="max-width: 350px" src="https://imgur.com/cOBm1eU.png">
 
 Press `Start` and type something. You will the bot echo back at you:
 
-![](https://imgur.com/0uBHqAc.png)
+<img style="max-width: 350px" src="https://imgur.com/0uBHqAc.png">
 
 Congratulations! You deployed your Telegram bot to a VPS with Kamal 🎉
 
