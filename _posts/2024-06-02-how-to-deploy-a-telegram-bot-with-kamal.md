@@ -383,7 +383,7 @@ do that, we need to visit
 `https://api.telegram.org/bot<telegram_bot_token>/getWebhookInfo`.
 
 Substitute your bot token. In my case, the URL was the following:
-https://api.telegram.org/bot7473228208:AAFcsA8_g6twHICkBJtnAnWITZNKy26lj1w/getWebhookInfo
+[https://api.telegram.org/bot7473228208:AAFcsA8_g6twHICkBJtnAnWITZNKy26lj1w/getWebhookInfo][getwebhookinfo]
 
 The response should look like this:
 
@@ -424,3 +424,4 @@ Yes, it was that easy 😎
 [webhooks]: https://core.telegram.org/bots/webhooks
 [docker-hub]: https://hub.docker.com
 [update]: https://core.telegram.org/bots/api#update
+[getwebhookinfo]: https://api.telegram.org/bot7473228208:AAFcsA8_g6twHICkBJtnAnWITZNKy26lj1w/getWebhookInfo
