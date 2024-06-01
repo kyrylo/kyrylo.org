@@ -376,16 +376,44 @@ Our echo bot is successfully deployed! But does it actually work?
 
 ## Testing the echo bot
 
-Go to Telegram and search for your bot's username. In my case, it's
+First, we want to verify that the webhook for the bot was set successfully. To
+do that, we need to visit
+`https://api.telegram.org/bot<telegram_bot_token>/getWebhookInfo`.
+
+Substitute your bot token. In my case, the URL was the following:
+https://api.telegram.org/bot7473228208:AAFcsA8_g6twHICkBJtnAnWITZNKy26lj1w/getWebhookInfo
+
+The response should look like this:
+
+```sh
+ curl -s https://api.telegram.org/bot7473228208:AAFcsA8_g6twHICkBJtnAnWITZNKy26lj1w/getWebhookInfo | jq
+```
+
+```json
+{
+  "ok": true,
+  "result": {
+    "url": "https://telegram.example.com/",
+    "has_custom_certificate": false,
+    "pending_update_count": 0,
+    "max_connections": 40,
+    "ip_address": "104.21.14.82"
+  }
+}
+```
+
+Next, go to Telegram and search for your bot's username. In my case, it's
 `@Echo12485853Bot`.
 
 <img style="max-width: 350px" src="https://imgur.com/cOBm1eU.png">
 
-Press `Start` and type something. You will the bot echo back at you:
+Now you can press `Start` and type something. You will see the bot echoing back
+at you your own messages:
 
 <img style="max-width: 350px" src="https://imgur.com/0uBHqAc.png">
 
 Congratulations! You deployed your Telegram bot to a VPS with Kamal 🎉
+Yes, it was that easy 😎
 
 [bot-api]: https://core.telegram.org/bots/api
 [kamal]: https://kamal-deploy.org
