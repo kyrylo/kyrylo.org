@@ -346,7 +346,7 @@ kamal setup
 ```
 
 When the setup is done (it may take a couple of minutes), we want to ensure that
-everything is up and running:
+everything is up and running. Let's check if the bot is running:
 
 ```sh
 kamal app details
@@ -359,6 +359,8 @@ App Host: your-vps-ip
 CONTAINER ID   IMAGE                                                               COMMAND        CREATED         STATUS                   PORTS      NAMES
 50e9eed6da21   kyrylo/telegram-echo-bot:2289664e47cbd4927baf3f5d9d0070601cc039bc   "./echo-bot"   3 minutes ago   Up 3 minutes (healthy)   3000/tcp   telegram-echo-bot-web-2289664e47cbd4927baf3f5d9d0070601cc039bc
 ```
+
+All good. Now, let's check if traefik is running:
 
 ```sh
 kamal traefik details
