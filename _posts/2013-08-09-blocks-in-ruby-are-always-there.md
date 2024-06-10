@@ -3,6 +3,8 @@ layout: post
 title: "Blocks in Ruby are always there"
 date: 2013-08-09 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2013/08/09/blocks-in-ruby-are-always-there
 ---
 
 You probably know that even if your method doesn't accept blocks, you still can
