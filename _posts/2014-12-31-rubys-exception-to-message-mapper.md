@@ -3,6 +3,8 @@ layout: post
 title: "Ruby's exception to message mapper"
 date: 2014-12-31 00:23:44 +0200
 categories: programming ruby
+redirect_from:
+  - /2014/12/31/rubys-exception-to-message-mapper
 ---
 
 Exception to message mapper is a Ruby library bundled with the standard Ruby
