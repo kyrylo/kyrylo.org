@@ -94,6 +94,9 @@ Choose the domain for your Rails app and click "Authorize". That's all!
 
 <img src="https://imgur.com/Ao4vTap.png" style="height: 500px" alt="Authorize Cloudflare Tunnel">
 
+If `cloudflared tunnel login` didn't print a link, don't worry. Just continue
+reading.
+
 Now, you need to create a named tunnel. I will name my tunnel `telebugs`:
 
 ```sh
@@ -113,6 +116,15 @@ needs.
 % cloudflared tunnel route dns telebugs localhost.telebugs.com
 2024-03-31T09:59:33Z INF Added CNAME localhost.telebugs.com which will route to this tunnel tunnelID=3de42678-313b-4801-bd71-1e4dda81880b
 ```
+
+Go to your DNS settings for the Cloudflare domain you use and verify that the
+Tunnel CNAME record was added.
+
+If not, then add a new `CNAME` record manually. The target should be the tunnel
+ID you received when you created the tunnel plus `.cfargotunnel.com`. In my
+case, it's `3de42678-313b-4801-bd71-1e4dda81880b.cfargotunnel.com`:
+
+<img src="https://imgur.com/DQDGKaV.png" style="height: 500px" alt="DNS settings. Adding the Cloudflare Tunnel CNAME">
 
 ### Configure your Rails app to use the tunnel
 
