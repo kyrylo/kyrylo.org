@@ -124,7 +124,7 @@ If not, then add a new `CNAME` record manually. The target should be the tunnel
 ID you received when you created the tunnel plus `.cfargotunnel.com`. In my
 case, it's `3de42678-313b-4801-bd71-1e4dda81880b.cfargotunnel.com`:
 
-<img src="https://imgur.com/DQDGKaV.png" style="height: 500px" alt="DNS settings. Adding the Cloudflare Tunnel CNAME">
+<img src="https://imgur.com/DQDGKaV.png" alt="DNS settings. Adding the Cloudflare Tunnel CNAME">
 
 ### Configure your Rails app to use the tunnel
 
