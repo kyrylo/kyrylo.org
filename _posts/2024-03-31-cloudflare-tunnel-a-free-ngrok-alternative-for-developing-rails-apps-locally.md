@@ -210,7 +210,7 @@ Edit `Procfile` and add the following:
 
 ```sh
 # Procfile
-tunnel: cloudflared tunnel --url localhost:3000 --config config/cloudflared-tunnel.yml run telebugs
+tunnel: cloudflared tunnel --url localhost:3000 --config config/cloudflare-tunnel.yml run telebugs
 ```
 
 Now, every time you run `bin/dev`, your Rails 7 application will start the
