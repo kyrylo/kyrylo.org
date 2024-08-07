@@ -92,8 +92,9 @@ bin/rails credentials:edit
 Then, add the following to your `config/credentials.yml.enc`:
 
 ```yml
-mission_control_username: admin
-mission_control_password: admin
+mission_control:
+  username: admin
+  password: admin
 ```
 
 And update your `MissionControlController` to use these credentials:
@@ -101,8 +102,8 @@ And update your `MissionControlController` to use these credentials:
 ```rb
 class MissionControlController < ApplicationController
   http_basic_authenticate_with(
-    name: Rails.application.credentials.mission_control_username,
-    password: Rails.application.credentials.mission_control_password
+    name: Rails.application.credentials.mission_control[:username],
+    password: Rails.application.credentials.mission_control[:password]
   )
 end
 ```
