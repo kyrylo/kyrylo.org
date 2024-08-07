@@ -46,7 +46,7 @@ authentication, **anyone can access** [`/jobs`](http://localhost:3000/jobs). To
 secure this, you can specify a different base controller class that includes
 authentication.
 
-First, create an `MissionControlController` with basic authentication:
+First, create an `MissionControlController` with [basic authentication](https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html):
 
 ```rb
 # app/controllers/mission_control_controller.rb
