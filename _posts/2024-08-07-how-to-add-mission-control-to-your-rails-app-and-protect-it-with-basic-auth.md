@@ -101,10 +101,16 @@ And update your `MissionControlController` to use these credentials:
 
 ```rb
 class MissionControlController < ApplicationController
-  http_basic_authenticate_with(
-    name: Rails.application.credentials.mission_control[:username],
-    password: Rails.application.credentials.mission_control[:password]
-  )
+
+  # When you deploy to production, the `assets:precompile` step will fail
+  # without this check.
+  # https://fly.io/docs/rails/getting-started/existing/#access-to-environment-variables-at-build-time
+  if Rails.application.credentials.mission_control
+    http_basic_authenticate_with(
+      name: Rails.application.credentials.mission_control[:username],
+      password: Rails.application.credentials.mission_control[:password]
+    )
+  end
 end
 ```
 
