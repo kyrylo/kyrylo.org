@@ -8,7 +8,7 @@ image: https://i.imgur.com/J4NqLEq.png
 
 <img src="https://i.imgur.com/J4NqLEq.png" style="margin-bottom: 1rem; width: 75%;" alt="DHH giving a talk at Rails World 2024">
 <br>
-During DHH's Opening Keynote of Rails World 2024 in Toronto, Rails 8 beta was
+During [DHH's Opening Keynote of Rails World 2024](https://www.youtube.com/watch?v=-cEn_83zRFw) in Toronto, Rails 8 beta was
 shipped with Authentication, Propshaft, Solid Cache, Solid Queue, Solid Cable,
 Kamal 2, and Thruster.
 
