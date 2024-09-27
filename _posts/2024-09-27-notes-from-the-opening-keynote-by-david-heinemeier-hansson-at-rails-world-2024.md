@@ -78,7 +78,7 @@ Kamal 2, and Thruster.
   - Rails won’t ship with Devise, but it will generate authentication code for you.
   - The code is an extraction from 37signals’ apps. You can learn it and level up.
 - **Propshaft**:
-  - Propshaft simplifies the old ACID pipeline.
+  - Propshaft simplifies the old asset pipeline.
   - It solves for today’s context without old baggage.
   - Propshaft is easy to understand, unlike Sprockets.
   - It’s based on the idea that modern browsers allow us to ship code directly to the user.
