@@ -29,10 +29,5 @@ You can’t predict exactly how the jam will spread. It follows the path of
 least resistance, dictated by gravity. You can’t defy gravity. Don’t try to
 control how the jam spreads - just let it do what it’s going to do.
 
-Usually, it's the path of the least resistance. Gravity is what dictates the way
-for the jam. You can
-not defy the gravity. Don't put obstacles for the jam, just
-let it do what it always does.
-
 Writing software is like spreading butter on bread. Don’t aim for perfect
 sandwiches - just make them good enough to enjoy.
