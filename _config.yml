@@ -26,11 +26,10 @@ author:
   email: silin@kyrylo.org
   url: https://kyrylo.org/
 
-tagline: I build projects with Rails and Turbo Native
+tagline: Entrepreneur, software engineer, and lifelong learner.
 
 description: >- # this means to ignore newlines until "baseurl:"
-  I build projects with Rails and Turbo Native. I write about Rails, Ruby, and
-  my travel adventures.
+  Entrepreneur, software engineer, and lifelong learner. I write about software engineering.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. http://example.com
