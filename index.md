@@ -4,17 +4,18 @@
 
 layout: home
 redirect_from: "/about/"
+image: assets/images/web-app-manifest-512x512.png
 ---
 
 <section>
   <h2>About me</h2>
 
   <ul>
-    <li>Software engineer, web developer, budding entrepreneur, loving father, and husband.</li>
+    <li>Software engineer, web developer, and budding entrepreneur.</li>
     <li>
       From Kharkiv, Ukraine 🇺🇦
     </li>
-    <li>Get in touch: <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a></li>
+    <li>Get in touch: <a href="mailto:silin@kyrylo.org">silin@kyryl(o.o)rg</a></li>
   </ul>
 </section>
 

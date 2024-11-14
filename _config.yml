@@ -26,10 +26,10 @@ author:
   email: silin@kyrylo.org
   url: https://kyrylo.org/
 
-tagline: Kyrylo Silin — software engineer, web developer, budding entrepreneur, loving father, and husband.
+tagline: Software engineer, web developer, budding entrepreneur
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Kyrylo Silin — software engineer, web developer, budding entrepreneur, loving father, and husband.
+  Software engineer, web developer, budding entrepreneur
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. http://example.com
@@ -40,7 +40,6 @@ url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. htt
 # theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-seo-tag
@@ -67,4 +66,10 @@ plugins:
 #   - vendor/ruby/
 
 google_analytics: G-HWC9SW2R8S
+
+image:
+  path: /assets/images/web-app-manifest-512x512.png
+twitter:
+  username: kyrylosilin
+  card: summary
 
