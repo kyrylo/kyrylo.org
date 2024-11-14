@@ -26,17 +26,17 @@ layout: base
     </p>
   </header>
 
-  <div itemprop="articleBody">
+  <div class="article" itemprop="articleBody">
     {{ content }}
   </div>
 </article>
 
 <p>
   {% if page.previous %}
-  <a href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title }}">&larr; {{ page.previous.title | truncate: 35 }}</a> &middot;
+  <a href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title }}">&larr; {{ page.previous.title | truncate: 30 }}</a> &middot;
   {% endif %}
   <a href="{{ '/' | relative_url }}">Home</a>
   {% if page.next %}
-    &middot; <a href="{{ page.next.url | relative_url }}" title="{{ page.next.title }}">{{ page.next.title | truncate: 35 }} &rarr;</a>
+    &middot; <a href="{{ page.next.url | relative_url }}" title="{{ page.next.title }}">{{ page.next.title | truncate: 30 }} &rarr;</a>
   {% endif %}
 </p>

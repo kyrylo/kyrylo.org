@@ -379,8 +379,11 @@ Our echo bot is successfully deployed! But does it actually work?
 ## Testing the echo bot
 
 First, we want to verify that the webhook for the bot was set successfully. To
-do that, we need to visit
-`https://api.telegram.org/bot<telegram_bot_token>/getWebhookInfo`.
+do that, we need to visit:
+
+```
+https://api.telegram.org/bot<telegram_bot_token>/getWebhookInfo
+```
 
 Substitute your bot token. In my case, the URL was the following:
 [https://api.telegram.org/bot7473228208:AAFcsA8_g6twHICkBJtnAnWITZNKy26lj1w/getWebhookInfo][getwebhookinfo]
