@@ -63,7 +63,7 @@ image: assets/images/web-app-manifest-512x512.png
       <a href="https://pry.github.io/">Pry REPL</a>: The featureful development console for Ruby.
     </li>
     <li>
-      <a href="https://github.com/kyrylo/system_browser">System browser</a>: A desktop app for browsing Ruby code, inspired by Smalltalk. Click to view details about a module or class, explore its namespace, or see the source of a method.
+      <a href="https://github.com/kyrylo/system_browser_client">System Browser</a>: A desktop app for browsing Ruby code, inspired by Smalltalk. Click to view details about a module or class, explore its namespace, or see the source of a method.
     </li>
     <li>
       <a href="https://github.com/kyrylo/fast_method_source">Fast Method Source</a>: An extremely fast Ruby C extension for querying methods, procs, and lambdas for their source code and comments.
