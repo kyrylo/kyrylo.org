@@ -57,10 +57,28 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
-      <a href="https://matcharoo.app">Matcharoo</a>: A word association game where you match similar words, learn new words easily, and have a blast with friends as you discover who knows the most.
+      <a href="https://matcharoo.app">Matcharoo</a>: A word association game where you match similar words, learn new words easily, and have a blast with friends as you discover who knows the most (<a href="{% post_url 2024-02-21-i-built-a-word-matching-game-called-matcharoo %}">blog post</a>).
     </li>
     <li>
       <a href="https://pry.github.io/">Pry REPL</a>: The featureful development console for Ruby.
+    </li>
+    <li>
+      <a href="https://github.com/kyrylo/system_browser">System browser</a>: A desktop app for browsing Ruby code, inspired by Smalltalk. Click to view details about a module or class, explore its namespace, or see the source of a method.
+    </li>
+    <li>
+      <a href="https://github.com/kyrylo/fast_method_source">Fast Method Source</a>: An extremely fast Ruby C extension for querying methods, procs, and lambdas for their source code and comments.
+    </li>
+    <li>
+      <a href="https://github.com/kyrylo/system_navigation">System Navigation</a>: A Ruby library that provides navigation and introspection capabilities for Ruby programs, similar to those in Smalltalk.
+    </li>
+    <li>
+      <a href="https://github.com/kyrylo/rmarshal">RMarshal</a>: An Erlang library for deserializing Ruby objects dumped by Marshal.dump into Erlang terms.
+    </li>
+    <li>
+      <a href="https://github.com/kyrylo/pry-theme">Pry Theme</a>: A plugin for the Pry REPL in Ruby that allows customizing Pry colors using prytheme.rb files.
+    </li>
+    <li>
+      <a href="https://github.com/kyrylo/patience">Patience</a>: Solitaire card game built in Ruby with the Gosu framework.
     </li>
   </ul>
 </section>
