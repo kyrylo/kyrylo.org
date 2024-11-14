@@ -1,7 +1,13 @@
 <hr>
-
 <footer>
   <p>
-    Last updated: November 14, 2024
+    Kyrylo Silin: software engineer, web developer, budding entrepreneur, loving father, and husband.
+  </p>
+  <p>
+    There is <a href="{{ "/feed.xml" | relative_url }}">ATOM</a> feed (it's like RSS, but better).
+  </p>
+
+  <p>
+    Last modified: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %d, %Y" }}</time>
   </p>
 </footer>
