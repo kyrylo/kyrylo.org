@@ -46,7 +46,7 @@ breakfast place.
 
 Investigating the city map and the possible routes.
 
-<img src="https://i.imgur.com/0UnswWP.jpg">
+<img src="https://i.imgur.com/0UnswWP.jpg" loading="lazy">
 
 The place where the conference had been taking place, the sea station, was in a
 walking distance from the train station (where we was). Suddenly, out of thin
@@ -61,10 +61,10 @@ we joked that we should visit all those dubious places instead of the
 conference.
 
 Pushkinska St from a sidewalk.
-<img src="https://i.imgur.com/HIXNA1c.jpg">
+<img src="https://i.imgur.com/HIXNA1c.jpg" loading="lazy">
 
 The intersection between Pushkinska St and a Random St. The Random St view.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/iFQw2Gj.jpg">
+<img src="https://i.imgur.com/iFQw2Gj.jpg" loading="lazy">
 
 As a result of a mental unspoken voting we agreed on the best place for
 breakfast, which was McDonald's. It's fast and convenient in our situation. I'm
@@ -78,13 +78,13 @@ time to get to the sea port in time. At first glance the streets of Odesa were
 empty. But when we reached the Potemkin Stairs everything fell into place.
 
 The view on the beautiful sea port and the ugly ads banner.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/2yAGQdk.jpg">
+<img src="https://i.imgur.com/2yAGQdk.jpg" loading="lazy">
 
 It's still not too late to jump into a wagon and ride home.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/cWlTuHq.jpg">
+<img src="https://i.imgur.com/cWlTuHq.jpg" loading="lazy">
 
 At the sea port. Try to find me.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/yPUShhN.jpg">
+<img src="https://i.imgur.com/yPUShhN.jpg" loading="lazy">
 
 Nearby there was a monument with an egg and a well-built toddler inside it. Not
 impressive. I wasn't even impressed by old cannons with cannonballs lying next
@@ -92,11 +92,11 @@ to them, by many yachts and ships, by shipyards... What did impress me was the s
 of the queue.
 
 Wow... Quite a queue.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/7uuxKJM.jpg">
+<img src="https://i.imgur.com/7uuxKJM.jpg" loading="lazy">
 
 The ship's name is Amerigo Vespucci. It was built by Italians in 1931. Used by
 Ukrainians in 2011.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/7kYKzbZ.jpg">
+<img src="https://i.imgur.com/7kYKzbZ.jpg" loading="lazy">
 
 ## At the conference
 
@@ -107,13 +107,13 @@ food such as various kinds of cookies, tea, coffee, water, sandwiches. Needless
 to say the food was eaten very fast.
 
 There were many people to sign up.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/2cy79HB.jpg">
+<img src="https://i.imgur.com/2cy79HB.jpg" loading="lazy">
 
 It was a good idea to have a snack before the opening. The ones who weren't
 hungry could read various information about the conference.
 
 Spectacular Sasha, one of the presenters, opens the conference.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/ZGfRT7Y.jpg">
+<img src="https://i.imgur.com/ZGfRT7Y.jpg" loading="lazy">
 
 ## About the conference
 
@@ -143,7 +143,7 @@ trying to configure my photo camera. The room where we were was dark, so it
 wasn't the simplest task. I remember, though, that I didn't like the style of
 speech of the speaker. Although occasionally he had been trying to joke, in
 general he was boring.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/aGCSxQX.jpg">
+<img src="https://i.imgur.com/aGCSxQX.jpg" loading="lazy">
 
 Fortunately, the second talk was about Rails. Initially I had planned to visit
 the talk by Peter Afanasiev on "Archinecture of online payments" , but I changed
@@ -151,12 +151,12 @@ my plans, beacuse I was really eager to check out the Rails talk. That's why I
 stayed in the same room.
 
 Serhii and Sasha. Sasha announces Serhii.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/SlCrhGm.jpg">
+<img src="https://i.imgur.com/SlCrhGm.jpg" loading="lazy">
 
 This time Serhii explained that he had been experiencing issues with his
 computer. From what I understood, to resolve the problem, he borrowed a laptop
 from the previous speaker.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/7uuxKJM.jpg">
+<img src="https://i.imgur.com/7uuxKJM.jpg" loading="lazy">
 
 There was installed latest version of Ubuntu on the
 laptop. To my surprise Parizhsky couldn't figure out what to do with it. The
@@ -164,7 +164,7 @@ laptop's display was blocked and he was seeking for the password to unlock
 it. Then he compared Gedit (which can be improved by extensions) with
 Notepad. Then he was trying to find a way to create a new file in
 Nautilus.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/EgXt6HY.jpg">
+<img src="https://i.imgur.com/EgXt6HY.jpg" loading="lazy">
 
 Eventually he typed into the terminal the cherished command "rails new
 appname" (I don't remember the actual name of the application). Someone from the
@@ -180,17 +180,17 @@ web-application. Structure, clien-side and server-side", but then changed my
 mind and went to this talk with Serhii, my fellow student). After the talk, some
 silver-haired man came up to Dmytro with some deal. Apparently, he had been
 impressed by the talk.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/zv6GHZA.jpg">
+<img src="https://i.imgur.com/zv6GHZA.jpg" loading="lazy">
 
 The fourth talk was about leadership. Dmytro Mindra spoke about the role of a
 leader in a team: why such a person is needed and what types of leaders there
 exist. I enjoyed the talk, because the speaker was good, his speech was vivid
 and the topic wasn't complex.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/8NtX1LS.jpg">
+<img src="https://i.imgur.com/8NtX1LS.jpg" loading="lazy">
 
 The next, fifth talk by a Dutch specialist Naos Wilbrink was about data privacy.
 The talk was completely in English.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/Kd7scHS.jpg">
+<img src="https://i.imgur.com/Kd7scHS.jpg" loading="lazy">
 
 The speaker had perfect English. Every word was spoken legibly and neatly. Naos
 taught us that each bit of inromation is important. He showed us that there is
@@ -199,7 +199,7 @@ language barrier didn't exist. The listeners asked a lot of questions. All of
 the Q's received their A's.
 
 "Crotches".
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/j4fjQys.jpg">
+<img src="https://i.imgur.com/j4fjQys.jpg" loading="lazy">
 
 By the way, it was me who had conviced Serhii to go
 with me. Initially, he wanted to listen to a talk about freelance. I think it
@@ -210,7 +210,7 @@ isn't an exceptionally good speaker, but his talk was decent. He spoke about
 online and desktop tools for load testing and compared them to each other. I
 doubt the knowledge is applicable to me, but it's still useful to know about
 other things in the industry just to broaden your view.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/iAyufaY.jpg">
+<img src="https://i.imgur.com/iAyufaY.jpg" loading="lazy">
 
 When I was in Kharkiv I had planned which talks I want to listen. The last talk
 from my list was called "Using neural networks and fuzzy logic in e-commerce". I
@@ -224,7 +224,7 @@ each other, I enjoyed the talk. He spoke about motivation and other abstract
 tech-related things.
 
 Rework is a nice book, but it's too abstract, just like the talk.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/7pO6kQu.jpg">
+<img src="https://i.imgur.com/7pO6kQu.jpg" loading="lazy">
 
 The talks part was over. The next part of the conference was coffee-break. I
 remember there was a TV-set hanging on the wall displaying the tweets containing
@@ -236,7 +236,7 @@ After the break there was a lottery where the prizes were tickets to various
 conferences. One of those tickets was a ticket to RubyShift in Dnipropetrovsk,
 which I was secretly hoping to win. I must admit that I didn't win one, but don't
 tell anyone.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/dRCKFtR.jpg">
+<img src="https://i.imgur.com/dRCKFtR.jpg" loading="lazy">
 
 The next part of the conference was an interview with "big bosses" of Ukrainian
 software companies. I didn't memorise their names, but I do remember that their
@@ -246,7 +246,7 @@ They are all Ukrainians (except one), so why did they do that? I can only let
 some big nub from Denmark off, because he was speaking in English.
 
 Question: "Do you use any math in your company?". Answer: "We do. We play poker!"
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/XxSrYik.jpg">
+<img src="https://i.imgur.com/XxSrYik.jpg" loading="lazy">
 
 ## Impressions and criticism
 
@@ -270,11 +270,11 @@ the conference organisers decided to make everything in English is quite
 obsure. What for? To brag?
 
 The conference is over. But only for us.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/ybRNPKS.jpg">
+<img src="https://i.imgur.com/ybRNPKS.jpg" loading="lazy">
 
 I also took a couple of photos of some Odesa's pearls. It's not a trip to Odesa
 if you don't photograph the Potemkin Stairs.
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/oEmKtOp.jpg">
+<img src="https://i.imgur.com/oEmKtOp.jpg" loading="lazy">
 
 Odesa is a cool city. Goodbye, Odesa!
-<img src="/assets/images/i.png" alt="" data-echo="https://i.imgur.com/VK2qJGS.jpg">
+<img src="https://i.imgur.com/VK2qJGS.jpg" loading="lazy">

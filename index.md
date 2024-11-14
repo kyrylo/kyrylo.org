@@ -136,7 +136,7 @@ redirect_from: "/about/"
       2019 &ndash; <a href="{% post_url 2019-01-05-bohol %}">Bohol, Philippines</a> 🇵🇭
     </li>
     <li>
-      2018 &ndash; <a href="{% post_url 2018-09-30-cavite-province %}">Kawit, Philippines</a> 🇵🇭
+      2018 &ndash; <a href="{% post_url 2018-09-30-cavite-province %}">Cavite, Philippines</a> 🇵🇭
     </li>
     <li>
       2018 &ndash; <a href="{% post_url 2018-09-01-baguio %}">Baguio, Philippines</a> 🇵🇭
