@@ -40,14 +40,14 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
-      <a href="https://telebugs.com">Telebugs</a>: refreshingly simple error tracking. Catch production errors automatically and instantly
+      <a href="https://telebugs.com">Telebugs</a>: Refreshingly simple error tracking. Catch production errors automatically and instantly
       report them to Telegram.
     </li>
     <li>
-      <a href="https://flagmatch.com">Flag Match</a>: a fun and educational game to learn flags of countries and their capitals.
+      <a href="https://flagmatch.com">Flag Match</a>: A fun and educational game to learn flags of countries and their capitals.
     </li>
     <li>
-      <a href="https://coffeeworldrush.com">Coffee World Rush</a>: track your coffee consumption and help bring your country to the top of the leaderboard.
+      <a href="https://coffeeworldrush.com">Coffee World Rush</a>: Track your coffee consumption and help bring your country to the top of the leaderboard.
     </li>
   </ul>
 </section>
@@ -57,7 +57,10 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
-      <a href="https://matcharoo.app">Matcharoo</a>: a word association game where you match similar words, learn new words easily, and have a blast with friends as you discover who knows the most.
+      <a href="https://matcharoo.app">Matcharoo</a>: A word association game where you match similar words, learn new words easily, and have a blast with friends as you discover who knows the most.
+    </li>
+    <li>
+      <a href="https://pry.github.io/">Pry REPL</a>: The featureful development console for Ruby.
     </li>
   </ul>
 </section>
