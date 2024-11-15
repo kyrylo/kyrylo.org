@@ -6,7 +6,7 @@ categories: kamal
 image: assets/images/kyrylo-silin@2x.webp
 redirect_from:
   - /kamal/2024/10/29/how-to-self-host-plausible-tanalytics-with-kamal.html
-  - /kamal/2024/11/14/how-to-self-host-plausible-tanalytics-with-kamal.html
+  - /kamal/2024/11/14/how-to-self-host-plausible-analytics-with-kamal.html
 ---
 
 In this article, I'll guide you through the process of self-hosting [Plausible
