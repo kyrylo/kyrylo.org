@@ -1,64 +1,56 @@
 ---
 layout: post
-title: "🇺🇦 How I went to IT Jam 2011 in Odesa"
+title: "How I went to IT Jam 2011 in Odesa 🇺🇦"
 date: 2011-08-22 00:23:44 +0200
 categories: travel ukraine
 image: https://i.imgur.com/8WLMnp2.jpg
 ---
 
-I would like to say sorry in advance for the poor quality of the photos,
-inadvertent canted angles and other possible bloopers. To begin with, I don't
-have the skill to take good quality photos. Secondly, I haven't had any
-experience with the photo camera I brought with me (as the result, I had no idea
-how to configure it). Thirdly, the photo camera leaves a lot to be desired. An
-important notice: it's better to prepare a cup or two of your favourite drink
-before reading this, because it's a long story.
+Apologies in advance for the photo quality, tilted angles, and other possible
+mishaps. First, I’m no photographer. Second, I was inexperienced with the camera
+I brought, and as a result, had no idea how to set it up. Lastly, the camera
+itself wasn’t top-notch. You might want to grab a cup or two of your favorite
+drink before diving in—this is a long one.
 
-## Preamble. Kharkiv
+## The journey begins. Kharkiv
 
-One fine evening a fellow student, Serhii, rang me and offered a serious deal:
-he wanted to visit a conference for software developers and people who work in the IT
-sector. Without even thinking I immediately responded with a strong consent: we
-are going there. My reasoning was simple: I have never ever been to a conference
-and I wanted to discover what it's like. I was going there not for the sake of
-acquiring some special knowledge, but for the sake of new feelings. Because I
-think that the benefits from watching a talk remain the same no matter how you
-consume information, either through a video or from a live performance. So, our
-group consisted of four people. Each of us needed to register his email on the
-conference's website. We also needed to buy two-way train tickets. The
-conference itself was completely free, so each student could afford it.
+One fine evening, my friend [Serhii](https://github.com/serhiip) called with a
+plan: he wanted to attend a conference ([IT Jam](https://www.youtube.com/watch?v=ZWG0FQBRfcc))
+for software developers and IT professionals. Without hesitation, I was in. My
+reasoning was simple: I’d never been to a conference, and I wanted to see what
+it was all about—not for knowledge, but for the experience. After all, I believe
+the benefits of watching a talk are the same whether it’s live or on video.
 
-It's high time to depature. Goodbye, Kharkiv!
+So, we formed a group of four, each of us registered online, and bought
+round-trip train tickets. Since the conference was free, it was affordable for
+any student.
+
+Farewell, Kharkiv!
 
 <img src="https://i.imgur.com/8WLMnp2.jpg">
 
-## Odesa
+## Arrival in Odesa
 
-I've been to Odesa before once, but in transit. Me and my football team were
-travelling to Illichivsk, to a training camp. At the Odesa train station, we have
-been packed in a tiny yellow bus, so I didn't remember anything about the city,
-because my only concern was how to survive inside the bus.
+I’d been to Odesa before, but only in passing. My football team was once en
+route to Illichivsk for training, and we were packed into a tiny yellow bus at
+the Odesa train station, so I remembered little beyond surviving that cramped
+ride.
 
-We arrived in Odesa at half past eight in the morning. The weather was
-magnificent: not too warm and not too cold. We've had two spare hours before the
-conference's opening. We've decided to walk around the city and to find a
-breakfast place.
+This time, we arrived at Odesa at 8:30 a.m. to perfect weather—not too warm, not
+too cold. With a couple of hours to spare before the conference began, we
+decided to wander around and find breakfast.
 
-Investigating the city map and the possible routes.
-
+Here we are, inspecting the map and planning our route.
 <img src="https://i.imgur.com/0UnswWP.jpg" loading="lazy">
 
-The place where the conference had been taking place, the sea station, was in a
-walking distance from the train station (where we was). Suddenly, out of thin
-air a man with keys in his hand approached to us, while we were exploring the
-map. He offered to pick up us. Apparently, he was an illegal taxi driver, so we
-refused from his help.
+The sea station, where the conference was held, was within walking distance from
+the train station. Suddenly, a man with keys in hand approached us as we studied
+the map. He offered us a ride, clearly as an unlicensed taxi driver, so we
+declined.
 
-It's worth mentioning that our path passed through the most famous street of
-Odesa, Deribasivska St. We also passed through a similar by its look street
-called Pushkinska St. When we were passing by more or less important buildings
-we joked that we should visit all those dubious places instead of the
-conference.
+Our route took us down Odesa’s most famous street, Deribasivska, and then onto
+Pushkinska St., which has a similar feel. Passing several notable buildings, we
+joked that we should visit those instead of the conference.
 
 Pushkinska St from a sidewalk.
 <img src="https://i.imgur.com/HIXNA1c.jpg" loading="lazy">
@@ -66,214 +58,155 @@ Pushkinska St from a sidewalk.
 The intersection between Pushkinska St and a Random St. The Random St view.
 <img src="https://i.imgur.com/iFQw2Gj.jpg" loading="lazy">
 
-As a result of a mental unspoken voting we agreed on the best place for
-breakfast, which was McDonald's. It's fast and convenient in our situation. I'm
-not a frequent visitor of this restaurant, so I always prefer to order the Big
-Mac menu. Unfortunately, the McD's people didn't have it, because it is not
-included in the McD's breakfast menu. The choice was hard, so I ordered some
-fancy omelette with latte. It was the first time when I tasted this drink.
+After some unspoken consensus, we ended up at McDonald's for breakfast. Fast and
+convenient. I’m not a frequent visitor, so I defaulted to the Big Mac menu, but
+it wasn’t available on the breakfast menu. After some tough deliberation, I
+ordered a fancy omelette with a latte—my first-ever latte.
 
-Having finished our breakfast feast, we had exactly the minimal needed amount of
-time to get to the sea port in time. At first glance the streets of Odesa were
-empty. But when we reached the Potemkin Stairs everything fell into place.
+With breakfast done, we had just enough time to reach the sea port. The streets
+of Odesa seemed deserted—until we reached the
+[Potemkin Stairs](https://en.wikipedia.org/wiki/Potemkin_Stairs), where everything
+clicked into place.
 
-The view on the beautiful sea port and the ugly ads banner.
+The view of the beautiful sea port, and an ugly ads banner.
 <img src="https://i.imgur.com/2yAGQdk.jpg" loading="lazy">
 
-It's still not too late to jump into a wagon and ride home.
+Still not too late to hop on a train home.
 <img src="https://i.imgur.com/cWlTuHq.jpg" loading="lazy">
 
-At the sea port. Try to find me.
+At the sea port. Try to spot me.
 <img src="https://i.imgur.com/yPUShhN.jpg" loading="lazy">
 
-Nearby there was a monument with an egg and a well-built toddler inside it. Not
-impressive. I wasn't even impressed by old cannons with cannonballs lying next
-to them, by many yachts and ships, by shipyards... What did impress me was the size
-of the queue.
+Nearby, there was a monument with an egg and a well-built toddler inside.
+Unimpressive. Not even the cannons, yachts, shipyards, or various ships caught
+my attention as much as the sheer length of the queue.
 
-Wow... Quite a queue.
+Whoa... Quite a line.
 <img src="https://i.imgur.com/7uuxKJM.jpg" loading="lazy">
 
-The ship's name is Amerigo Vespucci. It was built by Italians in 1931. Used by
+The ship's name is _Amerigo Vespucci_. Built by Italians in 1931. Used by
 Ukrainians in 2011.
 <img src="https://i.imgur.com/7kYKzbZ.jpg" loading="lazy">
 
-## At the conference
+## The conference begins
 
-Having finished our walk, we finally went to the conference. We needed to sign
-up. I immediately was pleasantly astonished by the great number of women at the
-conference. One interesting thing about the conference was that they had free
-food such as various kinds of cookies, tea, coffee, water, sandwiches. Needless
-to say the food was eaten very fast.
+After our walk, we headed to the conference and signed in. To my pleasant
+surprise, there were quite a few women attending. One perk was the free food:
+cookies, tea, coffee, water, sandwiches—you name it. Naturally, it disappeared
+fast.
 
-There were many people to sign up.
+Quite the line to sign in.
 <img src="https://i.imgur.com/2cy79HB.jpg" loading="lazy">
 
-It was a good idea to have a snack before the opening. The ones who weren't
-hungry could read various information about the conference.
+A snack before the opening was a good idea. For those who weren’t hungry, there
+was info about the conference to read.
 
-Spectacular Sasha, one of the presenters, opens the conference.
+The spectacular Sasha, one of the presenters, opens the conference.
 <img src="https://i.imgur.com/ZGfRT7Y.jpg" loading="lazy">
 
 ## About the conference
 
-I need to pause for a while and tell you about the conference on the whole. The
-conference consisted of 42 talks. Each talk was 30 minutes long and the break
-between the talks was 10 minutes long. The talks were divided by topics: mobile
-technologies, Java, web-development, .NET, Quality Assurance and General
-(various topics). So every 40 minutes, between 11:10 AM and 15:40 PM there had
-been happening 7 talks, all at the same time. A conference's attender had to
-choose between these 7 talks every time. Unfortunately, only Spiderman can
-simultaneously be everywhere at the same time, so I listened only to seven talks.
+A quick overview: the conference had 42 talks, each 30 minutes long with
+10-minute breaks between. Topics included mobile tech, Java, web dev, .NET,
+Quality Assurance, and general tech. Every 40 minutes, from 11:10 a.m. to 3:40
+p.m., attendees chose from seven simultaneous talks. Unfortunately, only
+Spider-Man can be in seven places at once, so I only managed to attend seven
+talks.
 
 ## The talks
 
-The first talk I chose was the most interesting to me: development of a simple
-Rails 3 application using Git and GitHub and deploying it to Heroku. Although I
-had already known something about this topic, I still was curious to see how an
-experienced programmer does it.
+The first talk I attended was on building a simple Rails 3 app using Git and
+GitHub, and deploying it to Heroku. Even though I was familiar with the topic, I
+was curious to see it done by an expert.
 
-Unfortunately, Serhii Parizhsky, the speaker I wanted to listen to, had some
-problems, so he yielded to another speaker Andriy Mykhailov, whose talk was on
-Puppet. A couple of attendands, who had evidenced this, pretentiously left the
-room.
+However, the speaker, Serhii Parizhsky, had technical issues and was replaced by
+Andriy Mykhailov, whose topic was Puppet. A few attendees walked out in protest.
 
-To be fair, I missed a lot of information from the Puppet talk, because I was
-trying to configure my photo camera. The room where we were was dark, so it
-wasn't the simplest task. I remember, though, that I didn't like the style of
-speech of the speaker. Although occasionally he had been trying to joke, in
-general he was boring.
+I missed most of the Puppet talk while fiddling with my camera in the dark room,
+but the speaker’s style wasn’t particularly engaging.
 <img src="https://i.imgur.com/aGCSxQX.jpg" loading="lazy">
 
-Fortunately, the second talk was about Rails. Initially I had planned to visit
-the talk by Peter Afanasiev on "Archinecture of online payments" , but I changed
-my plans, beacuse I was really eager to check out the Rails talk. That's why I
-stayed in the same room.
+Fortunately, the second talk was about Rails. Originally, I planned to attend a
+talk on online payment architecture but switched because I was eager to see the
+Rails talk. So I stayed put.
 
 Serhii and Sasha. Sasha announces Serhii.
 <img src="https://i.imgur.com/SlCrhGm.jpg" loading="lazy">
 
-This time Serhii explained that he had been experiencing issues with his
-computer. From what I understood, to resolve the problem, he borrowed a laptop
-from the previous speaker.
-<img src="https://i.imgur.com/7uuxKJM.jpg" loading="lazy">
+Serhii had issues with his computer, so he borrowed a laptop running Ubuntu from
+the previous speaker. To my surprise, he struggled to use it—couldn’t unlock the
+screen, compared Gedit to Notepad, and struggled to create a new file.
 
-There was installed latest version of Ubuntu on the
-laptop. To my surprise Parizhsky couldn't figure out what to do with it. The
-laptop's display was blocked and he was seeking for the password to unlock
-it. Then he compared Gedit (which can be improved by extensions) with
-Notepad. Then he was trying to find a way to create a new file in
-Nautilus.
+Eventually, he typed "rails new appname" (or something similar) into the
+terminal. A reasonable question from the audience—"What are you even
+doing?"—sums up this talk. I was disappointed.
 <img src="https://i.imgur.com/EgXt6HY.jpg" loading="lazy">
 
-Eventually he typed into the terminal the cherished command "rails new
-appname" (I don't remember the actual name of the application). Someone from the
-audience reasonably asked about what he had been doing, because everyone had
-been confused. The long and the short of it is that the talk was wasted and I
-was disappointed.
-
-The third talk was about Agile software development methods. Although the
-speaker, Dmytro Lapshyn, was very confident and demonstrated solid knowing of
-the topic, the Agile stuff wasn't very interesting to me, because I had no
-previous knowledge about it. I wanted to listen to a talk called "Designing a
-web-application. Structure, clien-side and server-side", but then changed my
-mind and went to this talk with Serhii, my fellow student). After the talk, some
-silver-haired man came up to Dmytro with some deal. Apparently, he had been
-impressed by the talk.
+The third talk covered Agile development methods, presented by Dmytro Lapshyn.
+He was confident and knowledgeable, but Agile didn’t resonate much with me.
+After the talk, a silver-haired gentleman struck a deal with Dmytro, apparently
+impressed.
 <img src="https://i.imgur.com/zv6GHZA.jpg" loading="lazy">
 
-The fourth talk was about leadership. Dmytro Mindra spoke about the role of a
-leader in a team: why such a person is needed and what types of leaders there
-exist. I enjoyed the talk, because the speaker was good, his speech was vivid
-and the topic wasn't complex.
+The fourth talk on leadership by Dmytro Mindra explored the role and types of
+leaders in a team. It was engaging, well-presented, and straightforward.
 <img src="https://i.imgur.com/8NtX1LS.jpg" loading="lazy">
 
-The next, fifth talk by a Dutch specialist Naos Wilbrink was about data privacy.
-The talk was completely in English.
+Next, Naos Wilbrink, a Dutch specialist, spoke in impeccable English about data
+privacy. His clear and precise talk was my favorite, as he emphasized the value
+of every bit of information. The audience was lively, with plenty of questions.
 <img src="https://i.imgur.com/Kd7scHS.jpg" loading="lazy">
-
-The speaker had perfect English. Every word was spoken legibly and neatly. Naos
-taught us that each bit of inromation is important. He showed us that there is
-an equal amount of iPhone and Android users. The talk was mercurial. The
-language barrier didn't exist. The listeners asked a lot of questions. All of
-the Q's received their A's.
 
 "Crotches".
 <img src="https://i.imgur.com/j4fjQys.jpg" loading="lazy">
 
-By the way, it was me who had conviced Serhii to go
-with me. Initially, he wanted to listen to a talk about freelance. I think it
-was the right choice. In my opinion it was the best talk.
-
-The penultimate talk, by Yevhen Dmytrychenko, was about load testing. Yevhen
-isn't an exceptionally good speaker, but his talk was decent. He spoke about
-online and desktop tools for load testing and compared them to each other. I
-doubt the knowledge is applicable to me, but it's still useful to know about
-other things in the industry just to broaden your view.
+The penultimate talk by Yevhen Dmytrychenko was on load testing tools. Not the
+most applicable topic for me, but interesting nonetheless.
 <img src="https://i.imgur.com/iAyufaY.jpg" loading="lazy">
 
-When I was in Kharkiv I had planned which talks I want to listen. The last talk
-from my list was called "Using neural networks and fuzzy logic in e-commerce". I
-was prepared for this talk, as I had read a book (but not finished) on this
-topic (unfortunately, I don't remember the name of the book). Much to my regret,
-when I read the schedule in Odesa, I discovered that this talk was absent. They
-had replaced it with another semi-self-promotional talk by Leonid Bugaev. So, I
-had decided to check it out, because the other 6 talks at that time seemed to me
-boring. Although his claimed topic and his actual talk were very different from
-each other, I enjoyed the talk. He spoke about motivation and other abstract
-tech-related things.
+I had hoped to attend a talk on neural networks in e-commerce, but it was
+replaced with Leonid Bugaev’s semi-promotional session on motivation. Despite
+the shift, I enjoyed it.
 
-Rework is a nice book, but it's too abstract, just like the talk.
+_Rework_ is a nice book, but it’s too abstract—just like the talk.
 <img src="https://i.imgur.com/7pO6kQu.jpg" loading="lazy">
 
-The talks part was over. The next part of the conference was coffee-break. I
-remember there was a TV-set hanging on the wall displaying the tweets containing
-the tag #itjam live. Also, for some strange reason there were easels with paper
-and pens everywhere. Someone wrote a "Hello World" program in Java and someone
-even managed to draw someone's portrait.
+After the talks, there was a break, with tweets tagged #itjam displayed live on
+a TV. Easels with paper and pens were scattered about, and someone even sketched
+a Java "Hello World" program.
 
-After the break there was a lottery where the prizes were tickets to various
-conferences. One of those tickets was a ticket to RubyShift in Dnipropetrovsk,
-which I was secretly hoping to win. I must admit that I didn't win one, but don't
-tell anyone.
+Then came a lottery with conference tickets as prizes, including one for
+RubyShift in Dnipropetrovsk, which I was secretly hoping to win. Sadly, no luck.
 <img src="https://i.imgur.com/dRCKFtR.jpg" loading="lazy">
 
-The next part of the conference was an interview with "big bosses" of Ukrainian
-software companies. I didn't memorise their names, but I do remember that their
-style of talking was all the same. It was horrific. They spoke not Russian, nor
-Ukrainian, nor even English. It was a nuclear mix of all these three languages.
-They are all Ukrainians (except one), so why did they do that? I can only let
-some big nub from Denmark off, because he was speaking in English.
+The next part of the conference was an interview with the "big bosses" of
+Ukrainian software companies. I didn’t catch their names, but I do remember
+their way of speaking—it was all the same. And it was horrific. They weren’t
+speaking Russian, nor Ukrainian, nor even English. It was a nuclear mix of all
+three languages.
 
-Question: "Do you use any math in your company?". Answer: "We do. We play poker!"
+They’re all Ukrainians (except one), so why on earth were they doing that? I’ll
+cut the big nub from Denmark some slack—at least he was speaking English.
+
+Question: "Do you use any math in your company?"
+Answer: "We do. We play poker!"
 <img src="https://i.imgur.com/XxSrYik.jpg" loading="lazy">
 
-## Impressions and criticism
+## Wrapping up
 
-It was time to go for us. In general, the bosses' speeches were boring. There
-were a lot of advertisements and other unrelated information. One of the bosses
-said that they use PHP as their main language, while the majority of the
-audience were Javaists. The most memorable phrase that was retweeted countless
-number of times was: "The best programmers are in the USA. And... they are
-Russians". Although this phrase was praised among the audience with applauses,
-the author of this website strongly disagrees with it. The conference continued,
-and we had to hurry up to catch a train.
+It was time to leave. In general, the “big bosses” panel was underwhelming,
+loaded with ads and irrelevant content. One boss proclaimed, “The best
+programmers are in the USA. And... they are Russians.” It was a popular line,
+but I strongly disagree.
 
-I really enjoyed IT Jam. It was an interesting experience to be a visitor of
-such a conference. It was also interesting to explore the city. I wouldn't mind
-visiting the conference the next year. However, there were some minor
-downsides. Although the conference was by Ukrainians and for Ukrainians, all the
-printed information was in English. Some speakers had their slides completely in
-English for no good reason. Even the conference's website was in English
-_without_ an option to choose the Russian or the Ukrainian language. The reason
-the conference organisers decided to make everything in English is quite
-obsure. What for? To brag?
+Despite a few downsides, like English-only materials, I enjoyed IT Jam. The
+conference was informative, and I’d gladly attend next year. But really—why no
+Ukrainian or Russian option? A bit pretentious, perhaps?
 
 The conference is over. But only for us.
 <img src="https://i.imgur.com/ybRNPKS.jpg" loading="lazy">
 
-I also took a couple of photos of some Odesa's pearls. It's not a trip to Odesa
-if you don't photograph the Potemkin Stairs.
+No trip to Odesa is complete without a shot of the famous Potemkin Stairs.
 <img src="https://i.imgur.com/oEmKtOp.jpg" loading="lazy">
 
 Odesa is a cool city. Goodbye, Odesa!
