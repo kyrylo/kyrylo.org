@@ -1,11 +1,12 @@
 ---
 layout: post
 title: How to self-host Plausible Analytics with Kamal
-date: 2024-11-15 00:00:00 +0200
+date: 2024-11-15 12:00:00 +0200
 categories: kamal
 image: assets/images/kyrylo-silin@2x.webp
 redirect_from:
-  - /kamal/2024/10/29/how-to-self-host-plausible-analytics-with-kamal.html
+  - /kamal/2024/10/29/how-to-self-host-plausible-tanalytics-with-kamal.html
+  - /kamal/2024/11/15/how-to-self-host-plausible-tanalytics-with-kamal.html
 ---
 
 In this article, I'll guide you through the process of self-hosting [Plausible
