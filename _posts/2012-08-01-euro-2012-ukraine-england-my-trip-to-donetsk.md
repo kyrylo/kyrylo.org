@@ -1,181 +1,173 @@
 ---
 layout: post
-title: "🇺🇦 Euro 2012. Ukraine – England. My trip to Donetsk"
+title: "Euro 2012. Ukraine – England. My trip to Donetsk 🇺🇦"
 date: 2012-08-01 00:23:44 +0200
 categories: travel ukraine
 images: https://i.imgur.com/qmA35OU.jpg
 ---
 
-I was lucky to visit Donetsk on the 19th of June. I went to a Euro 2012 football
-match between the Ukrainian and the English national football teams. I went to
-the match with Kyrylo (namesake), a friend of mine.
+I was lucky to visit Donetsk on the 19th of June. I went to a [Euro 2012](https://www.uefa.com/uefaeuro/history/seasons/2012/)
+football match between the Ukrainian and the English national football teams. I
+went to the match with Kyrylo (namesake), a friend of mine.
 
 ## Day 1. The match
 
-A trip between Kharkiv and Donetsk takes about three and a half hours by
-train. We used a modern train officially called HRCS2, unofficially also known
-as "Hyundai".
+The train journey from Kharkiv to Donetsk takes about three and a half hours. We
+took a modern train officially called HRCS2, but everyone calls it the
+"Hyundai."
 <img src="https://i.imgur.com/ffsY3Nf.jpg">
 
-I wasn't impressed by Donetsk. The first scene you see when you leave the
-Donetsk railway station is an ugly market.
+Donetsk didn't impress me at first. The first thing you see when you exit the
+railway station is an ugly market.
 
-It's interesting that almost all the banners are in Russian language, while in
-my city they are all mostly in Ukrainian.
+What caught my attention was the prevalence of Russian-language banners, which
+was quite a contrast to my city, where most signs are in Ukrainian.
 <img src="https://i.imgur.com/0F21Zti.jpg">
 
-We found a hostel that we had planned to rent for 1 day. The hostel was a
-decrepit old building with a bad smell inside.
+We found a hostel to rent for the night. It was an old, run-down building with a
+strange smell inside.
 
-Such a lovely view in the backyard.
+Here’s the view from the backyard.
 <img src="https://i.imgur.com/iAcsF88.jpg">
 
-Well, the good news is that the rent of a "luxurious" room with a broken TV-set
-and a flying fly costed us only 5 euro.
+The good news? The "luxurious" room, complete with a broken TV and a fly flying
+around, cost us only 5 euros.
 
-Waiting for the receptionist to bring us the keys from our room, watching a soap
-opera.
+While waiting for the receptionist to bring the keys, we entertained ourselves
+by watching a soap opera.
 <img src="https://i.imgur.com/uVrrV8I.jpg" loading="lazy">
 
-Got the keys. Kyrylo is trying to fix the TV-set (why on Earth? We didn't even
-watch it).
+Got the keys. Kyrylo is trying to fix the TV (for some reason—it's not like we
+were going to watch it).
 <img src="https://i.imgur.com/5uotEkU.jpg" loading="lazy">
 
-After we moved in, we decided to go to the Donbas Arena stadium and check it
-out. We've also got a couple of maps of Donetsk at a Euro 2012 help booth.
+After settling in, we decided to head over to the
+[Donbas Arena](https://en.wikipedia.org/wiki/Donbas_Arena)
+to check it out. We picked up a couple of maps at the Euro 2012 help booth.
 
-A tram was the most optimal choice.
+We decided the tram was the best way to get there.
 <img src="https://i.imgur.com/51vVa9r.jpg" loading="lazy">
 
-On our way to Donbas Arena we've been feasting our eyes on the miners'
-land. Donetsk felt like a huge village. The streets were grim. The atmosphere
-was depressing. There were almost no buildings. Only a lot of grass and trees.
+On the way, we passed through the miners’ land. Donetsk felt like a giant
+village. The streets were gloomy, the atmosphere was depressing, and there
+weren’t many buildings—just grass and trees.
 
-However, the stadium and its surroundings deeply impressed me. The lawn was
-accurately shaved, the flowers pleasingly blossomed and the fountains were
-merrily splashing water.
+But when we reached the stadium, everything changed. The lawn was perfectly
+manicured, the flowers were in full bloom, and the fountains were sparkling with
+water.
 <img src="https://i.imgur.com/rZCx8kV.jpg" loading="lazy">
 
-I have a hunch that Shakhtar's brazilians live inside those blue containers. Why
-not, it's not far from the stadium.
+I had a hunch that Shakhtar's Brazilian players live in those blue containers.
+Why not? They're not far from the stadium.
 <img src="https://i.imgur.com/KsXl5ub.jpg" loading="lazy">
 
 The Donetsk Copacabana.
 <img src="https://i.imgur.com/sA8EItZ.jpg" loading="lazy">
 
-We had 10 spare hours before the match so we figured that it would be nice to
-eat something. We visited some restaruant with delicious food. After the
-breakfast we decided to visit so-called fan zone. Since we had football tickets,
-all public transport was free for us. We took a bus. The fan zone was in a park
-in a couple of kilometers from the restaurant.
+With 10 hours to kill before the match, we decided to grab a bite. We found a
+great restaurant with delicious food. After breakfast, we made our way to the
+so-called "fan zone." Since we had football tickets, all public transport was
+free. We took a bus, and the fan zone was just a couple of kilometers away.
 
-This bridge connects the park with the rest of the city.
+This bridge connects the park to the rest of the city.
 <img src="https://i.imgur.com/tQ0bPM7.jpg" loading="lazy">
 
-It was really hot outside. I haven't had a cap, so it was really necessary to
-cool my head down.
+It was scorching hot, and I didn’t have a cap, so I had to find a way to cool my
+head down.
 <img src="https://i.imgur.com/YoKFTCK.jpg" loading="lazy">
 
-The fan zone was quite big. As big as it was boring there. So the only fun thing
-was to take pictures.
+The fan zone was large, but honestly, it was a bit dull. The only fun part was taking photos.
 
-To take pictures with some guys promoting Carlsberg.
+We posed with some folks promoting Carlsberg.
 <img src="https://i.imgur.com/rQ0YycP.jpg" loading="lazy">
 
-To take pictures with fans.
+Took a picture with some fans.
 <img src="https://i.imgur.com/t3vaEUy.jpg" loading="lazy">
 
-Or take pictures with Englishmen.
+And with some Englishmen.
 <img src="https://i.imgur.com/DY5rysE.jpg" loading="lazy">
 
-Englishmen were extremely popular at that day. Everyone wanted to have a photo
-with them, so there was a queue. The Englishmen were happy about that, too. If
-you ask me, I don't quite understand the hype. Why would you want to take photos
-of some random men?
+The English were super popular that day. Everyone wanted a photo with them, so
+there was a bit of a queue. The English were happy to oblige, but I couldn’t
+understand the fascination. Why take photos with random strangers?
 
-Our guys were unpopular at that day. No-one wanted to take pictures with them.
+On the other hand, nobody seemed interested in taking photos with us.
 <img src="https://i.imgur.com/D0GK35Q.jpg" loading="lazy">
 
-Out of thin air a man approached us. He wanted to take a picture of me and
-Kyrylo and send it to my email. No idea why he wanted that, but he didn't send
-us anything.
+Out of nowhere, a guy approached us asking to take a picture of me and Kyrylo
+and send it to my email. Not sure why, but he never did.
 
-Meanwhile some people appeared on the stage and started dancing.
+Some people began dancing on stage.
 <img src="https://i.imgur.com/07olMJZ.jpg" loading="lazy">
 
-We met a few more Englishmen. They were pretty drunk.
+We ran into a few more Englishmen, some of whom were pretty drunk.
 <img src="https://i.imgur.com/BMRAyIR.jpg" loading="lazy">
 
-One of the guys said that the English fans will be louder than the whole
-stadium of Ukrainians. I said that that was the biggest bollocks I've ever heard.
-However, he didn't lie. They were louder.
+One of them claimed that the English fans would be louder than the entire
+Ukrainian crowd. I thought it was nonsense, but... he wasn’t lying. They were
+louder.
 
-The fan zone was nice, but we were running late for the match. So, we had to go.
-We wanted to pee and the loo was very close.
+The fan zone was fun, but we were running late for the match, so we had to
+leave. A quick stop at the bathroom before heading to the stadium.
 <img src="https://i.imgur.com/GMaEDHl.jpg" loading="lazy">
 
-Finally, we are at the stadium. Donbas Arena is amazing. We managed to be in
-time.
+Finally, we arrived at the stadium. Donbas Arena is breathtaking. We managed to
+get there just in time.
 <img src="https://i.imgur.com/qmA35OU.jpg" loading="lazy">
 
-I was really impressed by the atmosphere.
-There were many empty seats. Unfortunately, the tickets were expensive, so
-probably not everyone could afford them.
+I was blown away by the atmosphere. There were many empty seats, though. Sadly,
+the tickets were expensive, and not everyone could afford them.
 <img src="https://i.imgur.com/TKVt6mX.jpg" loading="lazy">
 
-It was the last game of Andriy Shevchenko, our best footballer. When I was at
-the stadium, it seemed to me that we were immensely loud. But when I watched a
-TV recording of this game, it turned out we were relatively silent. Illusion at
-its best.
+It was [Andriy Shevchenko’s](https://en.wikipedia.org/wiki/Andriy_Shevchenko)
+final game—our best footballer. At the stadium, we
+felt like we were incredibly loud, but when I watched the game on TV later, it
+seemed much quieter. The illusion of sound.
 <img src="https://i.imgur.com/Yti2ewy.jpg" loading="lazy">
 
-Ukraine lost the game and didn't qualify to the next round, so everyone was
-upset. Initially we wanted to return to the fan zone after the match, but then
-we decided to go to the hostel and have some rest.
+Ukraine lost, and we didn’t qualify for the next round, so everyone was
+disappointed. We initially planned to return to the fan zone after the match,
+but we decided to head back to the hostel to rest instead.
 
 ## Day 2. Aftermatch
 
-On the next day we had our train at 19:00, and we woke up around 11:00. We had
-plenty of time to explore the city. It was almost lunch time and we could
-eat a whole elephant. I suggested to visit the same restaurant we've been at on
-day one, but Kyrylo wanted to visit McDonald's. I didn't really want to eat
-there, so we decided that I eat first and then we go to McD's. While I was
-eating, Kyrylo explored more of the city.
+The next day, our train was at 19:00, so we woke up around 11:00, giving us
+plenty of time to explore the city. It was nearly lunchtime, and we were hungry
+enough to eat a whole elephant. I suggested we visit the same restaurant from
+the day before, but Kyrylo wanted McDonald’s. I wasn’t too keen on that, so I
+ate first, and then we’d go to McD’s. While I ate, Kyrylo ventured out to
+explore more of the city.
 
-Donetsk is known for its mafia and we were constantly joking about it. However,
-it probably exists. When I finished eating, walked outside and started waiting
-for Kyrylo, I accidentally became involved in someone's conflict. I appeared
-straight in the centre of it. According to the media, some random guy wanted to
-kill another "big guy" with a screwdriver. I think this is lies, but
-whatever. You can
-[read about it](http://podrobnosti.ua/criminal/2012/06/21/843068.html) in
-Russian.
+Donetsk is known for its mafia, and we joked about it constantly. But honestly,
+it probably does exist. When I finished my meal and stepped outside to wait for
+Kyrylo, I inadvertently got caught up in a conflict. Apparently, a guy tried to
+kill another "big guy" with a screwdriver. I doubt that’s entirely true, but you
+can [read about it](http://podrobnosti.ua/criminal/2012/06/21/843068.html) here
+(in Russian).
 
 ### Afterlunch
 
-We figured that we want to explore the centre of the city. It turned out that
-the area nearby Donbas Arena isn't the centre at all. However, a McDonald's,
-where Kyrylo had his lunch was.
+We decided to explore the city center. It turned out the area around Donbas
+Arena isn’t really the center at all, but there was a McDonald's where Kyrylo
+had his meal.
 
-Donetsk has a cool boulevard. They made it cool specifically for Euro 2012.
-We've been wandering there and then came to a park. The park is very beautiful
-and large, containing multiple sections. One disappointing thing about it was
-that there was lots of ads of McD's.
+Donetsk has a cool boulevard, which was specifically built for Euro 2012. We
+wandered down it and found a beautiful, expansive park. However, there were tons
+of McDonald's ads everywhere, which was a little disappointing.
 <img src="https://i.imgur.com/AMP0qNp.jpg" loading="lazy">
 
-Kyrylo is trying not to cry because of the defeat of our team (in reality this
-is a good illustration for children books for the term "hangover").
+Kyrylo, trying not to cry over our team's defeat (though it was probably more of
+a hangover situation).
 <img src="https://i.imgur.com/qenNj2P.jpg" loading="lazy">
 
-It was time to go to the railway station. We took a bus with a crazy driver. It
-looked like he forgot to turn his iron off in his apartment, so he was rushing
-like a madman to turn it off.
+Time to head to the train station. We took a bus with a crazy driver who seemed
+to be in a rush to get home and turn off his iron.
 
-The good thing was that we were on time. Goodbye, Donetsk.
+The good news was, we were on time. Goodbye, Donetsk.
 <img src="https://i.imgur.com/mSY2QHB.jpg" loading="lazy">
 
-The centre of Donestk is much better than the centre of Kharkiv, but my city is
-better in general. I can't say that I enjoyed Donetsk, but I cannot say I didn't
-either.
+The city center of Donetsk is definitely better than Kharkiv’s, but overall, I
+still prefer my own city. I wouldn’t say I enjoyed Donetsk, but I can’t say I
+didn’t either.
 
-I'm happy that I participated in Euro 2012.
+I’m just glad I had the chance to be part of Euro 2012.
