@@ -127,6 +127,9 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
+      Nov 15, 2024 &ndash; <a href="{% post_url 2024-11-15-how-to-self-host-plausible-analytics-with-kamal %}">How to self-host Plausible Analytics with Kamal</a>
+    </li>
+    <li>
       Nov 7, 2024 &ndash; <a href="{% post_url 2024-10-30-theres-no-place-for-test-driven-development-tdd %}">There's no place for Test-Driven Development (TDD)</a>
     </li>
     <li>
