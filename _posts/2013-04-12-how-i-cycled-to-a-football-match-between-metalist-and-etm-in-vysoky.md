@@ -6,7 +6,6 @@ categories: travel ukraine
 image: /assets/images/web-app-manifest-512x512.png
 redirect_from:
   - /2013/04/12/how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysoky
-  - /travel/ukraine/2013/04/11/how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysoky
 ---
 
 A month ago, I bought a cheap, used mountain bike. I’ve ridden it twice since
@@ -30,8 +29,8 @@ And besides, it’s _much_ faster to ride on roads.
 
 Thursday was a perfect day for cycling—10°C, clear skies, and a mild breeze. My
 route was from home to the township of
-[Vysoky](https://en.wikipedia.org/wiki/Vysokyi). Why Vysoky? I wanted to catch a
-football match between [Metalist](https://fcmetalist.com.ua/) and ETM. Vysoky is
+[Vysokyi](https://en.wikipedia.org/wiki/Vysokyi). Why Vysokyi? I wanted to catch a
+football match between [Metalist](https://fcmetalist.com.ua/) and ETM. Vysokyi is
 where Metalist’s training camp is located.
 
 Two days before the game, I’d taken a ride around Kharkiv and noticed my bike
@@ -47,7 +46,7 @@ chain and felt nearly ready to go, but... I realized the transmission was still
 acting up. Bloody buggering hell! I gave it a third try, and finally, it worked.
 The time was 3 p.m.—no problem; I could still catch the second half.
 
-## The journey: cycling to Vysoky (almost)
+## The journey: cycling to Vysokyi (almost)
 
 I started cycling around 3:10. The distance to Vysoky was 25 km, so the round
 trip would be 50 km.
