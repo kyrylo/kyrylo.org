@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to self-host Plausible Analytics with Kamal
-date: 2024-10-30 00:00:00 +0200
+date: 2024-11-15 00:00:00 +0200
 categories: kamal
 image: assets/images/kyrylo-silin@2x.webp
 ---
