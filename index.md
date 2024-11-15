@@ -221,7 +221,7 @@ image: assets/images/web-app-manifest-512x512.png
       2014 &ndash; <a href="{% post_url 2014-07-11-internship-in-san-francisco %}">San Francisco, United States</a> 🇺🇸
     </li>
     <li>
-      2013 &ndash; <a href="{% post_url 2013-04-12-how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysoky %}">Kharkiv, Ukraine</a> 🇺🇦
+      2013 &ndash; <a href="{% post_url 2013-04-12-how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysokyi %}">Kharkiv, Ukraine</a> 🇺🇦
     </li>
     <li>
       2012 &ndash; <a href="{% post_url 2012-08-01-euro-2012-ukraine-england-my-trip-to-donetsk %}">Donetsk, Ukraine</a> 🇺🇦
