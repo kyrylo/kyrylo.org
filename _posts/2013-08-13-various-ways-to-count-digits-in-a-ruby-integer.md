@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Various ways to count digits in a Ruby integer"
-date: 2013-08-13 00:23:44 +0200
+date: 2013-08-13 12:00:00 +0200
 categories: programming ruby
+redirect_from:
+  - /programming/ruby/2013/08/12/various-ways-to-count-digits-in-a-ruby-integer.html
 ---
 
 The most obvious solution is to convert it to string and count characters.

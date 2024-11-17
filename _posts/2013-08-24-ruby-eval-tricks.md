@@ -1,13 +1,15 @@
 ---
 layout: post
 title: "Ruby eval tricks"
-date: 2013-08-24 00:23:44 +0200
+date: 2013-08-24 12:00:00 +0200
 categories: programming ruby
 redirect_from:
   - /2013/08/24/ruby-eval-tricks
+  - /programming/ruby/2013/08/23/ruby-eval-tricks.html
 ---
 
 Greetings upon thee! Let's evaluate some code for breakfast, cousins.
+
 ```ruby
 eval "100 + 1\n (42 + 100)"   #=> 142
 eval "100 + 1\n + (42 + 100)" #=> 142
