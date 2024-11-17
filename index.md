@@ -127,6 +127,9 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
+      Nov 17, 2024 &ndash; <a href="{% post_url 2024-11-17-hyperlinks-existed-before-the-web %}">Hyperlinks existed before the web</a>
+    </li>
+    <li>
       Nov 15, 2024 &ndash; <a href="{% post_url 2024-11-15-how-to-self-host-plausible-analytics-with-kamal %}">How to self-host Plausible Analytics with Kamal</a>
     </li>
     <li>
