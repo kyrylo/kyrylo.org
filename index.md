@@ -127,6 +127,9 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
+      Nov 17, 2024 &ndash; <a href="{% post_url 2024-11-17-how-counter-strike-introduced-me-to-the-world-of-programming %}">How Counter-Strike introduced me to the world of programming</a>
+    </li>
+    <li>
       Nov 17, 2024 &ndash; <a href="{% post_url 2024-11-17-hyperlinks-existed-before-the-web %}">Hyperlinks existed before the web</a>
     </li>
     <li>
@@ -144,7 +147,7 @@ image: assets/images/web-app-manifest-512x512.png
     <li>
       Sep 27, 2024 &ndash; <a href="{% post_url 2024-09-27-notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024 %}">Notes from the opening keynote by David Heinemeier Hansson at Rails World 2024</a>
     </li>
-    <li>Aug 7, 2024 &ndash; <a href="{% post_url 2024-08-07-how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth %}">How to add mission control to your Rails app and protect it with basic auth</a></li>
+    <li>Aug 7, 2024 &ndash; <a href="{% post_url 2024-08-07-how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth %}">How to add Mission Control to your Rails app and protect it with basic auth</a></li>
     <li>Jul 18, 2024 &ndash; <a href="{% post_url 2024-07-18-i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks %}">I built a flag-matching game in 6 days, and it was played more than 45 times in 2 weeks</a></li>
     <li>Jun 2, 2024 &ndash; <a href="{% post_url 2024-06-02-how-to-deploy-a-telegram-bot-with-kamal %}">How to deploy a Telegram bot with Kamal</a></li>
     <li>Mar 31, 2024 &ndash; <a href="{% post_url 2024-03-31-cloudflare-tunnel-a-free-ngrok-alternative-for-developing-rails-apps-locally %}">Cloudflare Tunnel: a free Ngrok alternative for developing Rails apps locally</a></li>
