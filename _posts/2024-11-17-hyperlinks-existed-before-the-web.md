@@ -13,6 +13,8 @@ As a teenager, I loved renting Goosebumps books from a local market. I’d race
 home, eager to dive into their spooky stories. One day, I stumbled upon a
 gamebook version. It was unlike anything I’d read before.
 
+![A Goosebumps gamebook](https://cdn.kyrylo.org/images/2024-11-17-1.webp)
+
 [Gamebooks](https://en.wikipedia.org/wiki/Gamebook) aren’t linear. They let you
 shape the story by making choices. I remember deciding whether to enter a creepy
 basement or explore dark woods. Both sounded terrifying, but each choice led to
