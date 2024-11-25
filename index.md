@@ -127,6 +127,11 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
+      Nov 25, 2024 &ndash; <a href="{% post_url 2024-11-25-how-to-build-a-dropdown-menu-with-just-html %}">
+        How to build a dropdown menu with just HTML
+      </a>
+    </li>
+    <li>
       Nov 17, 2024 &ndash; <a href="{% post_url 2024-11-17-how-counter-strike-introduced-me-to-the-world-of-programming %}">How Counter-Strike introduced me to the world of programming</a>
     </li>
     <li>
