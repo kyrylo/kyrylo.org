@@ -261,6 +261,17 @@ One caveat: this approach doesn’t automatically close the dropdown when clicki
 outside of it—a common feature in JavaScript-based menus. If you need this,
 you’ll have to add JavaScript.
 
+Also, note that `<details>` and `<summary>` aren’t intended for this purpose,
+though there’s no penalty for using them this way. The HTML specification
+discourages their use as dropdown menus:
+
+<blockquote cite="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">
+  <p>
+    As with all HTML elements, it is not conforming to use the <code>details</code> element when attempting to represent another type of control. For example, tab widgets and menu widgets are not disclosure widgets, so abusing the <code>details</code> element to implement these patterns is incorrect.
+  </p>
+  <p>&mdash; <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element" target="_blank">4.11.1 The details element</a></p>
+</blockquote>
+
 ## Conclusion
 
 Creating a dropdown menu without JavaScript is entirely possible with `<details>`
