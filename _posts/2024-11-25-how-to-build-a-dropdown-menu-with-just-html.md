@@ -259,7 +259,7 @@ styles further to match your design.
 
 One caveat: this approach doesn’t automatically close the dropdown when clicking
 outside of it—a common feature in JavaScript-based menus. If you need this,
-you’ll have to add JavaScript.
+you’ll have to [add JavaScript](https://gist.github.com/kyrylo/1265f012a1913d873b345746153b5b45).
 
 Also, note that `<details>` and `<summary>` aren’t intended for this purpose,
 though there’s no penalty for using them this way. The HTML specification
