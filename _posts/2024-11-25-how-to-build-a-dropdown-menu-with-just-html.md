@@ -274,6 +274,8 @@ discourages their use as dropdown menus:
 
 ## Conclusion
 
+<img src="https://cdn.kyrylo.org/images/2024-11-25-2.gif" width="600" height="352" alt="Changing languages on Flag Match" loading="lazy">
+
 Creating a dropdown menu without JavaScript is entirely possible with `<details>`
 and `<summary>`. This approach is simple, clean, and accessible, with built-in
 browser support.
