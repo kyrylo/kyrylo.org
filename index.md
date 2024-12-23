@@ -50,6 +50,9 @@ image: assets/images/web-app-manifest-512x512.png
       <a href="https://flagmatch.com">Flag Match</a>: A fun and educational game to learn flags of countries and their capitals.
     </li>
     <li>
+      <a href="https://weuserails.com">We Use Rails</a>: Discover companies using Ruby on Rails.
+    </li>
+    <li>
       <a href="https://coffeeworldrush.com">Coffee World Rush</a>: Track your coffee consumption and help bring your country to the top of the leaderboard.
     </li>
   </ul>
