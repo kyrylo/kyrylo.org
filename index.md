@@ -34,7 +34,6 @@ image: assets/images/web-app-manifest-512x512.png
     <li>X &mdash; <a href="https://x.com/kyrylosilin">@kyrylosilin</a></li>
     <li>Bluesky &mdash; <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
     <li>LinkedIn &mdash; <a href="https://www.linkedin.com/in/kyrylo-silin/">Kyrylo Silin</a></li>
-    <li>ProductHunt &mdash; <a href="https://www.producthunt.com/@kyrylosilin">@kyrylosilin</a></li>
   </ul>
 </section>
 
