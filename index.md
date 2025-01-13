@@ -42,8 +42,7 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
-      <a href="https://telebugs.com">Telebugs</a>: Refreshingly simple error tracking. Catch production errors automatically and instantly
-      report them to Telegram.
+      <a href="https://telebugs.com">Telebugs</a>: self-hosted, subscription-free, refreshingly simple error tracking.
     </li>
     <li>
       <a href="https://flagmatch.com">Flag Match</a>: A fun and educational game to learn flags of countries and their capitals.
