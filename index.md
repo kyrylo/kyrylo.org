@@ -128,6 +128,11 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
+      Jan 22, 2025 &ndash; <a href="{% post_url 2025-01-22-the-vertical-bar-is-the-best-html-page-title-separator %}">
+        The vertical bar (|) is the best HTML page title separator
+      </a>
+    </li>
+    <li>
       Nov 25, 2024 &ndash; <a href="{% post_url 2024-11-25-how-to-build-a-dropdown-menu-with-just-html %}">
         How to build a dropdown menu with just HTML
       </a>
