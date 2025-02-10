@@ -17,7 +17,7 @@ available as CSS variables.
 I took the original Tailwind RGB colors and converted them to
 [OKLCH](https://www.w3.org/TR/css-color-4/#ok-lab) using the [OKLCH color
 converter](https://oklch.com/). Below is a comprehensive list of Tailwind v4
-colors as OKLCH CSS variables
+colors as OKLCH CSS variables.
 
 You can copy the entire list and paste it into your project:
 
