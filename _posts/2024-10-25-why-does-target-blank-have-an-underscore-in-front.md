@@ -24,8 +24,9 @@ for example, would load the content in the content frame:
 
 Now, if you had a frame named "blank" and used `<a href="/" target="blank">`,
 the content would load in that frame. But if no such frame existed, the browser
-would create a new tab and assign it the "blank" name. Clicking the same link
-again wouldn’t open another tab.
+would create a new window (not a tab, as browsers didn't support tabs at the
+time) and assign it the "blank" name. Clicking the same link again wouldn’t open
+another tab.
 
 So why the underscore in `target="_blank"`?
 
