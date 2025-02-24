@@ -11,7 +11,7 @@ a new tab?
 Before HTML5, developers used
 [`<frameset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frameset)
 for SPA-like functionality, dividing the window into multiple frames, each with
-its own unique ID. For example, the left frame might be `name="sidebar"`, and the
+its own unique `name`. For example, the left frame might be `name="sidebar"`, and the
 right frame could be `name="content"`.
 
 When clicking a link, the browser needed to know which frame to load the content
