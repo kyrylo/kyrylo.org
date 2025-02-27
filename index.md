@@ -128,6 +128,11 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
+      Feb 27, 2025 &ndash; <a href="{% post_url 2025-02-27-you-know-how-it-ends %}">
+        You know how it ends
+      </a>
+    </li>
+    <li>
       Feb 10, 2025 &ndash; <a href="{% post_url 2025-02-10-oklch-css-variables-for-tailwind-v4-colors %}">
         OKLCH CSS variables for Tailwind v4 colors
       </a>
