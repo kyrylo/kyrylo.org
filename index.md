@@ -102,7 +102,7 @@ Without some dirt beneath your feet.</pre>
       <a href="https://github.com/kyrylo/pry-theme">Pry Theme</a>: A plugin for the <a href="https://pry.github.io">Pry REPL</a> in Ruby that allows customizing Pry colors using prytheme.rb files.
     </li>
     <li>
-      <a href="https://github.com/kyrylo/patience">Patience</a>: Solitaire card game built in Ruby with the <a href="https://www.libgosu.org/">Gosu</a> framework.
+      <a href="https://github.com/kyrylo/patience">Patience</a>: Solitaire card game built in Ruby with the <a href="https://github.com/Mon-Ouie/ray">Ray</a> library.
     </li>
     <li>
       <a href="https://store.kde.org/p/1106257">Pixelate</a> and <a href="https://store.kde.org/p/1106254">Pixelnine</a>: Skins for the KDE terminal emulator, <a class="https://apps.kde.org/yakuake/">Yakuake</a>.
