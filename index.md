@@ -136,6 +136,11 @@ Without some dirt beneath your feet.</pre>
 
   <ul>
     <li>
+      Mar 28, 2025 &ndash; <a href="{% post_url 2025-03-28-learn-to-code-ignore-ai-then-use-ai-to-code-even-better %}">
+        Learn to code, ignore AI, then use AI to code even better
+      </a>
+    </li>
+    <li>
       Feb 27, 2025 &ndash; <a href="{% post_url 2025-02-27-you-know-how-it-ends %}">
         You know how it ends
       </a>
