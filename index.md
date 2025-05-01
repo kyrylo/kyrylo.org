@@ -136,6 +136,12 @@ Without some dirt beneath your feet.</pre>
 
   <ul>
     <li>
+      May 1, 2025 &ndash;
+      <a href="{% post_url 2025-05-01-how-the-pay-once-business-model-saved-my-*aas %}">
+        How the pay-once business model saved my *aaS
+      </a>
+    </li>
+    <li>
       Mar 28, 2025 &ndash; <a href="{% post_url 2025-03-28-learn-to-code-ignore-ai-then-use-ai-to-code-even-better %}">
         Learn to code, ignore AI, then use AI to code even better
       </a>
