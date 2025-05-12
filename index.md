@@ -50,6 +50,9 @@ Without some dirt beneath your feet.</pre>
 
   <ul>
     <li>
+      <a href="https://justfuckingusehtml.com">JustFuckingUseHTML.com</a>: My take on complexity in modern web development.
+    </li>
+    <li>
       <a href="https://telebugs.com">Telebugs</a>: Self-hosted, subscription-free, refreshingly simple error tracking.
     </li>
     <li>
