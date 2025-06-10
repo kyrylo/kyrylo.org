@@ -41,6 +41,7 @@ Without some dirt beneath your feet.</pre>
     <li>X &mdash; <a href="https://x.com/kyrylosilin">@kyrylosilin</a></li>
     <li>Bluesky &mdash; <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
     <li>Mastodon &mdash; <a href="https://mastodon.social/@kyrylosilin">@kyrylosilin</a></li>
+    <li>Threads &mdash; <a href="https://www.threads.com/@kyrylo.silin">@kyrylo.silin</a></li>
     <li>LinkedIn &mdash; <a href="https://www.linkedin.com/in/kyrylo-silin/">Kyrylo Silin</a></li>
   </ul>
 </section>
@@ -51,6 +52,9 @@ Without some dirt beneath your feet.</pre>
   <ul>
     <li>
       <a href="https://telebugs.com">Telebugs</a>: A lightweight, self-hosted Sentry alternative without a subscription.
+    </li>
+     <li>
+      <a href="https://the-em-dash.com">The Em Dash</a>: Supercharging your game-changing posts and comments since 2022.
     </li>
     <li>
       <a href="https://justfuckingusehtml.com">Just **** Use HTML</a>: My take on complexity in modern web development.
