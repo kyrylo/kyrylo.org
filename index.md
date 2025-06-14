@@ -146,6 +146,12 @@ Without some dirt beneath your feet.</pre>
 
   <ul>
     <li>
+      June 15, 2025 &ndash;
+      <a href="{% post_url 2025-06-15-your-idea-probably-sucks %}">
+        Your idea probably sucks
+      </a>
+    </li>
+    <li>
       May 1, 2025 &ndash;
       <a href="{% post_url 2025-05-01-how-the-pay-once-business-model-saved-my-*aas %}">
         How the pay-once business model saved my *aaS
