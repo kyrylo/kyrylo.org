@@ -147,7 +147,7 @@ Without some dirt beneath your feet.</pre>
   <ul>
     <li>
       June 15, 2025 &ndash;
-      <a href="{% post_url 2025-06-15-your-idea-probably-sucks %}">
+      <a href="{% post_url 2025-06-15-your-idea-probably-sucls %}">
         Your idea probably sucks
       </a>
     </li>
