@@ -10,7 +10,7 @@ If you think you have a brilliant idea, I have bad news: your idea probably suck
 
 I get "brilliant" ideas almost every day.
 
-They feel like intrusive thoughts. I call them derails, because I can’t afford
+They feel like intrusive thoughts. I call them **derails**, because I can’t afford
 to jump into a new big project.
 
 Derails usually hit me in the shower or right before sleep.
@@ -31,10 +31,10 @@ Because you didn’t give it time to rot. Initial excitement blinds you. You onl
 see the potential, not the flaws.
 
 That’s why your idea sucks: you’re too close to it. But while you're still
-excited, simplify it. Because almost certainly, it’s way too complex.
+excited, **simplify** it. Because almost certainly, it’s way too complex.
 
 So next time you think you’ve struck gold, sit with it. Let it cool. Let it rot
-a bit. Let it earn your attention.
+a bit. Let it _earn_ your attention.
 
 Because a good idea survives boredom. A bad one needs excitement to stay alive.
-And if it does survive? Well, now you have something worth building.
+And if it _does_ survive? Well, now you have something worth building.
