@@ -31,12 +31,15 @@ layout: base
   </div>
 </article>
 
-<p>
-  {% if page.previous %}
-  <a href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title }}">&larr; {{ page.previous.title | truncate: 30 }}</a> &middot;
-  {% endif %}
-  <a href="{{ '/' | relative_url }}">Home</a>
+<div>
   {% if page.next %}
-    &middot; <a href="{{ page.next.url | relative_url }}" title="{{ page.next.title }}">{{ page.next.title | truncate: 30 }} &rarr;</a>
+    <div>
+      Next: <a href="{{ page.next.url | relative_url }}" rel="next" title="{{ page.next.title }}">{{ page.next.title }}</a>
+    </div>
   {% endif %}
-</p>
+  {% if page.previous %}
+    <div>
+      Previous: <a href="{{ page.previous.url | relative_url }}" rel="prev" title="{{ page.previous.title }}">{{ page.previous.title }}</a>
+    </div>
+  {% endif %}
+</div>
