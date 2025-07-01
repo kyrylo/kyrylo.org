@@ -53,7 +53,10 @@ Without some dirt beneath your feet.</pre>
     <li>
       <a href="https://telebugs.com">Telebugs</a>: A lightweight, self-hosted Sentry alternative without a subscription.
     </li>
-     <li>
+    <li>
+      <a href="https://techdebtgame.com">Tech Debt</a>: A fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.
+    </li>
+    <li>
       <a href="https://the-em-dash.com">The Em Dash</a>: Supercharging your game-changing posts and comments since 2022.
     </li>
     <li>
