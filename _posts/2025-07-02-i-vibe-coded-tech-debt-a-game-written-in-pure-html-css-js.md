@@ -80,13 +80,13 @@ anything like it existed. When Grok said it hadn't, I knew I was onto something.
 
 ![Me asking Grok about the existence of my idea](/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/05.webp)
 
-Grok produced a rough demo — version 0.0.1 — even though it was a bad artifact,
-it proved the concept.
+Grok produced a rough demo (call it version 0.0.1) even though it was a bad
+artifact, it proved the concept.
 
 ![Grok-coded Tech Debt](/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/06.webp)
 
 A month later, I began building the real game. I quickly realized I could borrow
-some ideas from Plants vs Zombies — a timeless classic — because its lane
+some ideas from Plants vs Zombies (a timeless classic) because its lane
 mechanics were very similar.
 
 That’s where the idea for huge wave announcements came from (in Tech Debt,
