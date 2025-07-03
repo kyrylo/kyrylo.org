@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS"
-date: 2025-06-15
+date: 2025-07-02
 categories: projects
 image: assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/01.png
 ---
