@@ -82,7 +82,7 @@ Without some dirt beneath your feet.</pre>
 
   <ul>
     <li>
-      June 15, 2025 &ndash;
+      July 2, 2025 &ndash;
       <a href="{% post_url 2025-07-02-i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js %}">
         I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS
       </a>
