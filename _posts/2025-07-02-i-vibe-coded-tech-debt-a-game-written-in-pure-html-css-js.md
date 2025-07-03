@@ -169,6 +169,6 @@ I’m really happy with how the game turned out. In my opinion, it came out
 brilliantly well. There are a few rough edges, but they don’t affect the
 gameplay, and honestly, I don’t care enough to fix them.
 
-Now go and <a href="https://techdebtgame.com">pay your tech debt</a>!
+Time to <a href="https://techdebtgame.com">pay your tech debt</a>!
 
 P.S. The game has an easter egg.
