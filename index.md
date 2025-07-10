@@ -82,6 +82,11 @@ Without some dirt beneath your feet.</pre>
 
   <ul>
     <li>
+      July 10, 2025 &ndash; <a href="{% post_url 2025-07-10-ai-will-take-your-job-and-your-bosses-job-too %}">
+        AI will take your job (and your boss's job too)
+      </a>
+    </li>
+    <li>
       July 2, 2025 &ndash;
       <a href="{% post_url 2025-07-02-i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js %}">
         I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS
