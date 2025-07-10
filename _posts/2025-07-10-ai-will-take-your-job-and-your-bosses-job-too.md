@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "I will take your job (and your boss’s job too)"
+title: "AI will take your job (and your boss’s job too)"
 date: 2025-07-10
 categories: software
 image: assets/images/kyrylo-silin@2x.webp
