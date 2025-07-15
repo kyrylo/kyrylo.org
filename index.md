@@ -41,7 +41,6 @@ Without some dirt beneath your feet.</pre>
     <li>X &mdash; <a href="https://x.com/kyrylosilin">@kyrylosilin</a></li>
     <li>Bluesky &mdash; <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
     <li>Mastodon &mdash; <a href="https://mastodon.social/@kyrylosilin">@kyrylosilin</a></li>
-    <li>Threads &mdash; <a href="https://www.threads.com/@kyrylo.silin">@kyrylo.silin</a></li>
     <li>LinkedIn &mdash; <a href="https://www.linkedin.com/in/kyrylo-silin/">Kyrylo Silin</a></li>
   </ul>
 </section>
