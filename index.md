@@ -25,6 +25,10 @@ As years of practice will confirm.
 That's how it goes — you can't succeed,
 Without some dirt beneath your feet.</pre>
     </li>
+    <li>
+      <pre>simple ≠ dumbed-down
+simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
+</li>
 
   </ul>
 </section>
