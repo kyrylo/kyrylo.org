@@ -57,6 +57,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
       <a href="https://telebugs.com">Telebugs</a>: A lightweight, self-hosted Sentry alternative without a subscription.
     </li>
     <li>
+      <a href="https://fuckthispage.com">F**k This Page</a>: Take revenge on any website you dislike.
+    </li>
+    <li>
       <a href="https://htmlmaze.com">The HTML Maze</a>: Explore the HTML maze, leave drawings and messages, and find your way out. A playful, interactive web experiment.
     </li>
     <li>
