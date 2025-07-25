@@ -87,6 +87,16 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 </section>
 
 <section>
+  <h2>My chest of drawers</h2>
+
+  <ul>
+    <li>
+      <a href="https://kyrylo.org/the-catipede">The Catipede</a>: An emoji-based online game inspired by Tamagotchi.
+    </li>
+  </ul>
+</section>
+
+<section>
   <h2>What I write about</h2>
 
   <ul>
