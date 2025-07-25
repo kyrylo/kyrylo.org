@@ -240,6 +240,7 @@
     let isDead = false;
     let isSick = false;
     let draggedElement = null;
+    let dragClone = null;
 
     function initializeCatBody() {
       const existingSegments = catContainer.querySelectorAll('.body-segment');
@@ -298,6 +299,9 @@
           span.draggable = true;
           foodList.appendChild(span);
         });
+        foodList.style.display = 'flex';
+        foodList.style.justifyContent = 'center';
+        foodList.style.alignItems = 'center';
         setFoodEvents();
         const button = document.createElement('button');
         button.textContent = 'Continue';
@@ -310,6 +314,7 @@
           catTail.setAttribute('ondragover', "event.preventDefault()");
           catTail.setAttribute('ondrop', "handleButtDrop(event)");
           foodList.innerHTML = originalFoodHTML;
+          foodList.style.display = 'grid';
           shuffleFoodList();
           setFoodEvents();
           digesting = false;
@@ -350,29 +355,48 @@
     function handleTouchStart(e) {
       e.preventDefault();
       draggedElement = e.target;
-      if (isDead) return;
-      const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
-      const funnyFoods = ['💩'];
-      const catnipFoods = ['🌿'];
-      let face = '🙀';
-      if (likedFoods.includes(draggedElement.textContent)) {
-        face = '😸';
-      } else if (funnyFoods.includes(draggedElement.textContent)) {
-        face = '😹';
-      } else if (catnipFoods.includes(draggedElement.textContent)) {
-        face = '😻';
-      } else if (draggedElement.textContent === '✨') {
-        face = '😼';
+      dragClone = draggedElement.cloneNode(true);
+      dragClone.style.position = 'absolute';
+      dragClone.style.pointerEvents = 'none';
+      dragClone.style.zIndex = '1001';
+      dragClone.style.opacity = '0.7';
+      const touch = e.touches[0];
+      dragClone.style.left = (touch.clientX - dragClone.offsetWidth / 2) + 'px';
+      dragClone.style.top = (touch.clientY - dragClone.offsetHeight / 2) + 'px';
+      document.body.appendChild(dragClone);
+      if (!isDead) {
+        const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+        const funnyFoods = ['💩'];
+        const catnipFoods = ['🌿'];
+        let face = '🙀';
+        if (likedFoods.includes(draggedElement.textContent)) {
+          face = '😸';
+        } else if (funnyFoods.includes(draggedElement.textContent)) {
+          face = '😹';
+        } else if (catnipFoods.includes(draggedElement.textContent)) {
+          face = '😻';
+        } else if (draggedElement.textContent === '✨') {
+          face = '😼';
+        }
+        catHead.textContent = face;
       }
-      catHead.textContent = face;
     }
 
     function handleTouchMove(e) {
       e.preventDefault();
+      if (dragClone) {
+        const touch = e.touches[0];
+        dragClone.style.left = (touch.clientX - dragClone.offsetWidth / 2) + 'px';
+        dragClone.style.top = (touch.clientY - dragClone.offsetHeight / 2) + 'px';
+      }
     }
 
     function handleTouchEnd(e) {
       e.preventDefault();
+      if (dragClone) {
+        dragClone.remove();
+        dragClone = null;
+      }
       if (!draggedElement) return;
 
       const touch = e.changedTouches[0];
@@ -395,21 +419,22 @@
       document.querySelectorAll('.food').forEach(el => {
         el.ondragstart = ev => {
           ev.dataTransfer.setData("text/plain", el.textContent);
-          if (isDead) return;
-          const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
-          const funnyFoods = ['💩'];
-          const catnipFoods = ['🌿'];
-          let face = '🙀';
-          if (likedFoods.includes(el.textContent)) {
-            face = '😸';
-          } else if (funnyFoods.includes(el.textContent)) {
-            face = '😹';
-          } else if (catnipFoods.includes(el.textContent)) {
-            face = '😻';
-          } else if (el.textContent === '✨') {
-            face = '😼';
+          if (!isDead) {
+            const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+            const funnyFoods = ['💩'];
+            const catnipFoods = ['🌿'];
+            let face = '🙀';
+            if (likedFoods.includes(el.textContent)) {
+              face = '😸';
+            } else if (funnyFoods.includes(el.textContent)) {
+              face = '😹';
+            } else if (catnipFoods.includes(el.textContent)) {
+              face = '😻';
+            } else if (el.textContent === '✨') {
+              face = '😼';
+            }
+            catHead.textContent = face;
           }
-          catHead.textContent = face;
         };
         el.ondragend = ev => {
           if (isDead) return;
@@ -418,7 +443,6 @@
           }
         };
 
-        // Touch events for mobile
         el.addEventListener('touchstart', handleTouchStart, { passive: false });
         el.addEventListener('touchmove', handleTouchMove, { passive: false });
         el.addEventListener('touchend', handleTouchEnd, { passive: false });
@@ -451,7 +475,7 @@
           easing: "ease-in"
         }).onfinish = () => {
           foodEl.remove();
-          const numRain = 10;
+          const numRain = 30; // Increased for fuller effect
           for (let i = 0; i < numRain; i++) {
             const rainEl = document.createElement("span");
             rainEl.textContent = foodChar;
@@ -460,19 +484,20 @@
             const size = Math.random() * 20 + 30;
             rainEl.style.fontSize = size + "px";
             const startX = targetCenterX + (Math.random() - 0.5) * 300;
-            const startY = targetCenterY - 300 - Math.random() * 300;
+            let startY = targetCenterY - 200 - Math.random() * 200;
+            startY = Math.max(0, startY);
             rainEl.style.left = startX + "px";
             rainEl.style.top = startY + "px";
             rainEl.style.opacity = "1";
             document.body.appendChild(rainEl);
-            const endX = targetCenterX + (Math.random() - 0.5) * 50;
-            const endY = targetCenterY + (Math.random() - 0.5) * 50;
+            const endX = startX + (Math.random() - 0.5) * 100;
+            const endY = startY + 200 + Math.random() * 100; // Reduced distance for gentler fall
             rainEl.animate([
               { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-              { transform: `translate(${endX - startX} px, ${endY - startY}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+              { transform: `translate(${endX - startX}px, ${endY - startY}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
             ], {
-              duration: 2000 + Math.random() * 1000,
-              easing: "ease-in",
+              duration: 3000 + Math.random() * 2000, // Slower: 3-5 seconds
+              easing: "ease-out", // Softer deceleration
               fill: "forwards"
             }).onfinish = () => {
               rainEl.remove();
