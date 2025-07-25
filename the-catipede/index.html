@@ -38,16 +38,18 @@
   <style>
     :root {
       --size-multiplier: 1;
-      --fixed-base-emoji-size: clamp(5rem, 12vw, 8rem);
+      --fixed-base-emoji-size: clamp(4rem, 10vw, 6rem);
       --base-emoji-size: calc(var(--fixed-base-emoji-size) * var(--size-multiplier));
       --bg-color: #f0f0f0;
-      --text-color: #000000;
+      --text-color: #000;
+      --header-bg: rgba(255, 255, 255, 0.8);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-color: #121212;
-        --text-color: #ffffff;
+        --bg-color: #1a1a1a;
+        --text-color: #fff;
+        --header-bg: rgba(0, 0, 0, 0.8);
       }
     }
 
@@ -55,51 +57,69 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: "Winky Rough", sans-serif;
-      margin: 0.5rem;
-      padding: 0;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      margin: 0;
+      padding: 0.5rem;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      height: calc(100vh - 1rem);
-      font-size: clamp(1rem, 3vw, 1.5rem);
+      height: 100vh;
+      font-size: clamp(0.8rem, 2.5vw, 1.2rem);
       position: relative;
+      box-sizing: border-box;
     }
 
     .author {
       font-size: 130%;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .author:visited {
+      color: var(--text-color);
+    }
+
+    .author:hover {
+      color: red;
     }
 
     header {
       position: absolute;
-      top: 0;
-      left: 0;
-      font-size: clamp(0.75rem, 2vw, 1rem);
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+      background: var(--header-bg);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      z-index: 1000;
     }
 
     #food-list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-      margin: 20px 0;
+      gap: 3px;
+      margin: 0.5rem 0;
       width: 100%;
-      max-width: 800px;
+      max-width: 600px;
     }
 
     @media (min-width: 768px) {
       #food-list {
-        gap: 0px;
+        gap: 5px;
       }
     }
 
     .food {
-      font-size: calc(var(--fixed-base-emoji-size) * 0.5);
+      font-size: calc(var(--fixed-base-emoji-size) * 0.4);
       cursor: grab;
       user-select: none;
       text-align: center;
       touch-action: none;
+    }
+
+    .food:active {
+      cursor: grabbing;
     }
 
     #cat-container {
@@ -110,6 +130,7 @@
       width: 100%;
       height: auto;
       position: relative;
+      margin: 0.5rem 0;
     }
 
     #cat-head {
@@ -130,7 +151,7 @@
 
     .body-segment {
       display: inline-block;
-      margin: 0 -10px;
+      margin: 0 -8px;
       font-size: calc(var(--base-emoji-size) * 0.5);
       transform-origin: center;
       transition: opacity 0.5s ease-in-out;
@@ -141,18 +162,39 @@
     }
 
     h1 {
-      font-size: clamp(32px, 10vw, 64px);
+      font-size: clamp(24px, 8vw, 48px);
+      margin: 7rem 0 0.5rem 0;
+      text-align: center;
     }
 
     p {
-      margin: 0;
-      max-width: 800px;
+      margin: 0 0 0.5rem 0;
+      max-width: 600px;
       text-align: center;
-      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-size: clamp(0.8rem, 2.5vw, 1.2rem);
     }
 
-    a {
-      color: var(--text-color);
+    button {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      button {
+        background-color: var(--text-color);
+        color: var(--bg-color);
+      }
     }
   </style>
 </head>
@@ -197,6 +239,7 @@
     let consecutiveLiked = 0;
     let isDead = false;
     let isSick = false;
+    let draggedElement = null;
 
     function initializeCatBody() {
       const existingSegments = catContainer.querySelectorAll('.body-segment');
@@ -247,7 +290,7 @@
         const p = document.querySelector('p');
         p.textContent = "You've killed the catipede. Drop flowers on the grave.";
         foodList.innerHTML = '';
-        const flowers = ['🌸', '💐', '🌺', '🌼'];
+        const flowers = ['💐'];
         flowers.forEach(flower => {
           const span = document.createElement('span');
           span.className = 'food';
@@ -258,9 +301,6 @@
         setFoodEvents();
         const button = document.createElement('button');
         button.textContent = 'Continue';
-        button.style.color = getComputedStyle(document.body).getPropertyValue('--text-color');
-        button.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--bg-color');
-        button.style.border = '1px solid ' + getComputedStyle(document.body).getPropertyValue('--text-color');
         button.onclick = () => {
           p.textContent = "Feed the catipede by dragging food into its mouth.";
           initializeCatBody();
@@ -302,120 +342,98 @@
       const foods = Array.from(foodList.children);
       for (let i = foods.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [foods[i], foods[j] = [foods[j], foods[i]];
+        [foods[i], foods[j]] = [foods[j], foods[i]];
       }
       foods.forEach(food => foodList.appendChild(food));
     }
 
-    function setFaceForFood(foodChar) {
+    function handleTouchStart(e) {
+      e.preventDefault();
+      draggedElement = e.target;
       if (isDead) return;
       const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
       const funnyFoods = ['💩'];
       const catnipFoods = ['🌿'];
       let face = '🙀';
-      if (likedFoods.includes(foodChar)) {
+      if (likedFoods.includes(draggedElement.textContent)) {
         face = '😸';
-      } else if (funnyFoods.includes(foodChar)) {
+      } else if (funnyFoods.includes(draggedElement.textContent)) {
         face = '😹';
-      } else if (catnipFoods.includes(foodChar)) {
+      } else if (catnipFoods.includes(draggedElement.textContent)) {
         face = '😻';
-      } else if (foodChar === '✨') {
+      } else if (draggedElement.textContent === '✨') {
         face = '😼';
       }
       catHead.textContent = face;
+    }
+
+    function handleTouchMove(e) {
+      e.preventDefault();
+    }
+
+    function handleTouchEnd(e) {
+      e.preventDefault();
+      if (!draggedElement) return;
+
+      const touch = e.changedTouches[0];
+      const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      if (elementBelow === catHead || (elementBelow && elementBelow.closest('#cat-head'))) {
+        handleFoodDrop(draggedElement.textContent, touch.clientX, touch.clientY, catHead);
+      } else if (elementBelow === catTail || (elementBelow && elementBelow.closest('#cat-tail'))) {
+        handleButtFoodDrop(draggedElement.textContent, touch.clientX, touch.clientY);
+      } else {
+        if (!isDead && !digesting) {
+          resetHead();
+        }
+      }
+
+      draggedElement = null;
     }
 
     function setFoodEvents() {
       document.querySelectorAll('.food').forEach(el => {
         el.ondragstart = ev => {
           ev.dataTransfer.setData("text/plain", el.textContent);
-          setFaceForFood(el.textContent);
+          if (isDead) return;
+          const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+          const funnyFoods = ['💩'];
+          const catnipFoods = ['🌿'];
+          let face = '🙀';
+          if (likedFoods.includes(el.textContent)) {
+            face = '😸';
+          } else if (funnyFoods.includes(el.textContent)) {
+            face = '😹';
+          } else if (catnipFoods.includes(el.textContent)) {
+            face = '😻';
+          } else if (el.textContent === '✨') {
+            face = '😼';
+          }
+          catHead.textContent = face;
         };
         el.ondragend = ev => {
+          if (isDead) return;
           if (!digesting) {
             resetHead();
           }
         };
-        el.addEventListener('touchstart', handleTouchStart, {passive: false});
+
+        // Touch events for mobile
+        el.addEventListener('touchstart', handleTouchStart, { passive: false });
+        el.addEventListener('touchmove', handleTouchMove, { passive: false });
+        el.addEventListener('touchend', handleTouchEnd, { passive: false });
       });
-    }
-
-    function handleTouchStart(ev) {
-      ev.preventDefault();
-      const el = ev.target;
-      const foodChar = el.textContent;
-      setFaceForFood(foodChar);
-      el.style.opacity = '0.4';
-
-      const clone = el.cloneNode(true);
-      clone.style.position = 'absolute';
-      clone.style.pointerEvents = 'none';
-      clone.style.zIndex = '1001';
-      document.body.appendChild(clone);
-
-      const touch = ev.touches[0];
-      clone.style.left = (touch.clientX - clone.offsetWidth / 2) + 'px';
-      clone.style.top = (touch.clientY - clone.offsetHeight / 2) + 'px';
-
-      function moveClone(e) {
-        e.preventDefault();
-        const t = e.touches[0];
-        clone.style.left = (t.clientX - clone.offsetWidth / 2) + 'px';
-        clone.style.top = (t.clientY - clone.offsetHeight / 2) + 'px';
-      }
-
-      document.addEventListener('touchmove', moveClone, {passive: false});
-
-      function endTouch(e) {
-        e.preventDefault();
-        document.removeEventListener('touchmove', moveClone);
-        document.removeEventListener('touchend', endTouch);
-        clone.remove();
-        el.style.opacity = '1';
-
-        const t = e.changedTouches[0];
-        const target = document.elementFromPoint(t.clientX, t.clientY);
-
-        if (target) {
-          const dropEv = {
-            preventDefault: function() {},
-            dataTransfer: {
-              getData: function(type) {
-                return type === 'text/plain' ? foodChar : '';
-              }
-            },
-            clientX: t.clientX,
-            clientY: t.clientY
-          };
-
-          if (target.id === 'cat-head') {
-            handleDrop(dropEv);
-          } else if (target.id === 'cat-tail') {
-            handleButtDrop(dropEv);
-          }
-        }
-
-        if (!digesting) {
-          resetHead();
-        }
-      }
-
-      document.addEventListener('touchend', endTouch, {passive: false});
     }
 
     initializeCatBody();
     shuffleFoodList();
     setFoodEvents();
 
-    function handleDrop(ev) {
-      ev.preventDefault();
-      const foodChar = ev.dataTransfer.getData("text/plain");
+    function handleFoodDrop(foodChar, dropX, dropY, target) {
       if (isDead) {
-        const dropX = ev.clientX;
-        const dropY = ev.clientY;
-        const headRect = catHead.getBoundingClientRect();
-        const headCenterX = headRect.left + headRect.width / 2;
-        const headCenterY = headRect.top + headRect.height / 2;
+        const targetRect = target.getBoundingClientRect();
+        const targetCenterX = targetRect.left + targetRect.width / 2;
+        const targetCenterY = targetRect.top + targetRect.height / 2;
         const foodEl = document.createElement("span");
         foodEl.textContent = foodChar;
         foodEl.style.position = "absolute";
@@ -427,7 +445,7 @@
         document.body.appendChild(foodEl);
         foodEl.animate([
           { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
-          { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
+          { left: targetCenterX + "px", top: targetCenterY + "px", fontSize: "0px" }
         ], {
           duration: 1000,
           easing: "ease-in"
@@ -441,17 +459,17 @@
             rainEl.style.zIndex = "900";
             const size = Math.random() * 20 + 30;
             rainEl.style.fontSize = size + "px";
-            const startX = headCenterX + (Math.random() - 0.5) * 300;
-            const startY = headCenterY - 300 - Math.random() * 300;
+            const startX = targetCenterX + (Math.random() - 0.5) * 300;
+            const startY = targetCenterY - 300 - Math.random() * 300;
             rainEl.style.left = startX + "px";
             rainEl.style.top = startY + "px";
             rainEl.style.opacity = "1";
             document.body.appendChild(rainEl);
-            const endX = headCenterX + (Math.random() - 0.5) * 50;
-            const endY = headCenterY + (Math.random() - 0.5) * 50;
+            const endX = targetCenterX + (Math.random() - 0.5) * 50;
+            const endY = targetCenterY + (Math.random() - 0.5) * 50;
             rainEl.animate([
               { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-              { transform: `translate(${ endX - startX }px, ${ endY - startY }px) rotate(${ Math.random() * 360 }deg)`, opacity: 0 }
+              { transform: `translate(${endX - startX} px, ${endY - startY}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
             ], {
               duration: 2000 + Math.random() * 1000,
               easing: "ease-in",
@@ -463,6 +481,7 @@
         };
         return;
       }
+
       const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
       const veggieFoods = ['🥕', '🍫'];
       const funnyFoods = ['💩'];
@@ -477,424 +496,7 @@
       const isCatnip = catnipFoods.includes(foodChar);
       const isMagic = foodChar === '✨';
       const isPill = foodChar === '💊';
-      const dropX = ev.clientX;
-      const dropY = ev.clientY;
-      const headRect = catHead.getBoundingClientRect();
-      const headCenterX = headRect.left + headRect.width / 2;
-      const headCenterY = headRect.top + headRect.height / 2;
 
-      const foodEl = document.createElement("span");
-      foodEl.textContent = foodChar;
-      foodEl.style.position = "absolute";
-      foodEl.style.zIndex = "1000";
-      foodEl.style.fontSize = "50px";
-      const initialHalf = 25;
-      foodEl.style.left = (dropX - initialHalf) + "px";
-      foodEl.style.top = (dropY - initialHalf) + "px";
-      document.body.appendChild(foodEl);
-
-      foodEl.animate([
-        { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
-        { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
-      ], {
-        duration: 1000,
-        easing: "ease-in"
-      }).onfinish = () => {
-        foodEl.remove();
-        digesting = true;
-        let digestFace = '😾';
-        if (isLiked) {
-          digestFace = '😻';
-        } else if (isSpicy) {
-          digestFace = '👿';
-        }
-        catHead.textContent = digestFace;
-
-        if (isSick && !isPill) {
-          catHead.textContent = '🙀';
-          if (foodChar === '🦀') {
-            adjustCatLength(-999);
-            digesting = false;
-            return;
-          }
-          const vomitEl = document.createElement("span");
-          vomitEl.textContent = foodChar;
-          vomitEl.style.position = "absolute";
-          vomitEl.style.zIndex = "1000";
-          vomitEl.style.fontSize = "0px";
-          vomitEl.style.left = headCenterX + "px";
-          vomitEl.style.top = headCenterY + "px";
-          document.body.appendChild(vomitEl);
-
-          const finalSize = 100;
-          const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
-          const screenHeight = window.innerHeight - 4 * remPx;
-          vomitEl.animate([
-            { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
-            { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
-          ], {
-            duration: 2000,
-            easing: "ease-out"
-          }).onfinish = () => {
-            vomitEl.remove();
-            digesting = false;
-            resetHead();
-          };
-          return;
-        }
-
-        if (isLiked) {
-          consecutiveLiked++;
-        } else {
-          consecutiveLiked = 0;
-        }
-
-        if (isCatnip) {
-          catHead.textContent = '😻';
-          const animations = [];
-          for (let i = 0; i < 3; i++) {
-            const heartEl = document.createElement("span");
-            heartEl.textContent = "❤️";
-            heartEl.style.position = "absolute";
-            heartEl.style.zIndex = "1000";
-            heartEl.style.fontSize = "0px";
-            heartEl.style.left = headCenterX + "px";
-            heartEl.style.top = headCenterY + "px";
-            document.body.appendChild(heartEl);
-
-            const finalSize = 50;
-            const offsetX = (i - 1) * 20; // -20, 0, 20
-            const anim = heartEl.animate([
-              { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
-              { left: (headCenterX + offsetX) + "px", top: (headCenterY - 100) + "px", fontSize: finalSize + "px", opacity: 0 }
-            ], {
-              duration: 1500,
-              easing: "ease-out",
-              delay: i * 200
-            });
-            anim.onfinish = () => {
-              heartEl.remove();
-            };
-            animations.push(anim.finished);
-          }
-          Promise.all(animations).then(() => {
-            digesting = false;
-            resetHead();
-          });
-          return;
-        }
-
-        if (isMagic) {
-          catHead.textContent = '🦁';
-          setTimeout(() => {
-            digesting = false;
-            resetHead();
-          }, 3000);
-          return;
-        }
-
-        if (isPill) {
-          if (isSick) {
-            isSick = false;
-            catHead.textContent = '😻';
-            setTimeout(() => {
-              digesting = false;
-              resetHead();
-            }, 1000);
-          } else {
-            adjustCatLength(-999);
-            digesting = false;
-          }
-          return;
-        }
-
-        const segments = Array.from(catContainer.querySelectorAll('.body-segment'));
-        let index = 0;
-        let direction = 1;
-        const midPoint = Math.floor(segments.length / 2);
-
-        function bulgeNext() {
-          if (isObject) {
-            if (direction === 1 && index >= midPoint) {
-              direction = -1;
-              index = midPoint - 1;
-              catHead.textContent = '🙀';
-            } else if (direction === -1 && index < 0) {
-              if (foodChar === '🦀') {
-                isSick = true;
-                digesting = false;
-                resetHead();
-                return;
-              } else {
-                const vomitEl = document.createElement("span");
-                vomitEl.textContent = "🦠";
-                vomitEl.style.position = "absolute";
-                vomitEl.style.zIndex = "1000";
-                vomitEl.style.fontSize = "0px";
-                vomitEl.style.left = headCenterX + "px";
-                vomitEl.style.top = headCenterY + "px";
-                document.body.appendChild(vomitEl);
-
-                const finalSize = 100;
-                const finalHalf = finalSize / 2;
-                const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
-                const screenHeight = window.innerHeight - 4 * remPx;
-                vomitEl.animate([
-                  { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
-                  { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
-                ], {
-                  duration: 2000,
-                  easing: "ease-out"
-                }).onfinish = () => {
-                  vomitEl.remove();
-                  digesting = false;
-                  resetHead();
-                };
-                return;
-              }
-            }
-          } else {
-            if (index >= segments.length) {
-              const tailRect = catTail.getBoundingClientRect();
-              const tailCenterX = tailRect.left + tailRect.width / 2;
-              const tailCenterY = tailRect.top + tailRect.height / 2;
-
-              let poopChar = '💩';
-              if (isVeggie) {
-                poopChar = '💨';
-              } else if (isSpicy) {
-                poopChar = '', '🌺', '🌼'];
-        flowers.forEach(flower => {
-          const span = document.createElement('span');
-          span.className = 'food';
-          span.textContent = flower;
-          span.draggable = true;
-          foodList.appendChild(span);
-        });
-        setFoodEvents();
-        const button = document.createElement('button');
-        button.textContent = 'Continue';
-        button.style.color = getComputedStyle(document.body).getPropertyValue('--text-color');
-        button.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--bg-color');
-        button.style.border = '1px solid ' + getComputedStyle(document.body).getPropertyValue('--text-color');
-        button.onclick = () => {
-          p.textContent = "Feed the catipede by dragging food into its mouth.";
-          initializeCatBody();
-          catTail.textContent = '🍑';
-          catHead.setAttribute('ondragover', "event.preventDefault()");
-          catHead.setAttribute('ondrop', "handleDrop(event)");
-          catTail.setAttribute('ondragover', "event.preventDefault()");
-          catTail.setAttribute('ondrop', "handleButtDrop(event)");
-          foodList.innerHTML = originalFoodHTML;
-          shuffleFoodList();
-          setFoodEvents();
-          digesting = false;
-          isDead = false;
-          isSick = false;
-          document.documentElement.style.setProperty('--size-multiplier', 1);
-          resetHead();
-          button.remove();
-        };
-        p.after(button);
-      }
-    }
-
-    function adjustSize(change) {
-      let sizeMultiplier = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--size-multiplier'));
-      sizeMultiplier += change;
-      if (sizeMultiplier < 0.5) sizeMultiplier = 0.5;
-      document.documentElement.style.setProperty('--size-multiplier', sizeMultiplier);
-    }
-
-    function resetHead() {
-      if (isDead) {
-        catHead.textContent = '🪦';
-        return;
-      }
-      catHead.textContent = isSick ? '🤕' : '😺';
-    }
-
-    function shuffleFoodList() {
-      const foods = Array.from(foodList.children);
-      for (let i = foods.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [foods[i], foods[j] = [foods[j], foods[i]];
-      }
-      foods.forEach(food => foodList.appendChild(food));
-    }
-
-    function setFaceForFood(foodChar) {
-      if (isDead) return;
-      const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
-      const funnyFoods = ['💩'];
-      const catnipFoods = ['🌿'];
-      let face = '🙀';
-      if (likedFoods.includes(foodChar)) {
-        face = '😸';
-      } else if (funnyFoods.includes(foodChar)) {
-        face = '😹';
-      } else if (catnipFoods.includes(foodChar)) {
-        face = '😻';
-      } else if (foodChar === '✨') {
-        face = '😼';
-      }
-      catHead.textContent = face;
-    }
-
-    function setFoodEvents() {
-      document.querySelectorAll('.food').forEach(el => {
-        el.ondragstart = ev => {
-          ev.dataTransfer.setData("text/plain", el.textContent);
-          setFaceForFood(el.textContent);
-        };
-        el.ondragend = ev => {
-          if (!digesting) {
-            resetHead();
-          }
-        };
-        el.addEventListener('touchstart', handleTouchStart, {passive: false});
-      });
-    }
-
-    function handleTouchStart(ev) {
-      ev.preventDefault();
-      const el = ev.target;
-      const foodChar = el.textContent;
-      setFaceForFood(foodChar);
-      el.style.opacity = '0.4';
-
-      const clone = el.cloneNode(true);
-      clone.style.position = 'absolute';
-      clone.style.pointerEvents = 'none';
-      clone.style.zIndex = '1001';
-      document.body.appendChild(clone);
-
-      const touch = ev.touches[0];
-      clone.style.left = (touch.clientX - clone.offsetWidth / 2) + 'px';
-      clone.style.top = (touch.clientY - clone.offsetHeight / 2) + 'px';
-
-      function moveClone(e) {
-        e.preventDefault();
-        const t = e.touches[0];
-        clone.style.left = (t.clientX - clone.offsetWidth / 2) + 'px';
-        clone.style.top = (t.clientY - clone.offsetHeight / 2) + 'px';
-      }
-
-      document.addEventListener('touchmove', moveClone, {passive: false});
-
-      function endTouch(e) {
-        e.preventDefault();
-        document.removeEventListener('touchmove', moveClone);
-        document.removeEventListener('touchend', endTouch);
-        clone.remove();
-        el.style.opacity = '1';
-
-        const t = e.changedTouches[0];
-        const target = document.elementFromPoint(t.clientX, t.clientY);
-
-        if (target) {
-          const dropEv = {
-            preventDefault: function() {},
-            dataTransfer: {
-              getData: function(type) {
-                return type === 'text/plain' ? foodChar : '';
-              }
-            },
-            clientX: t.clientX,
-            clientY: t.clientY
-          };
-
-          if (target.id === 'cat-head') {
-            handleDrop(dropEv);
-          } else if (target.id === 'cat-tail') {
-            handleButtDrop(dropEv);
-          }
-        }
-
-        if (!digesting) {
-          resetHead();
-        }
-      }
-
-      document.addEventListener('touchend', endTouch, {passive: false});
-    }
-
-    initializeCatBody();
-    shuffleFoodList();
-    setFoodEvents();
-
-    function handleDrop(ev) {
-      ev.preventDefault();
-      const foodChar = ev.dataTransfer.getData("text/plain");
-      if (isDead) {
-        const dropX = ev.clientX;
-        const dropY = ev.clientY;
-        const headRect = catHead.getBoundingClientRect();
-        const headCenterX = headRect.left + headRect.width / 2;
-        const headCenterY = headRect.top + headRect.height / 2;
-        const foodEl = document.createElement("span");
-        foodEl.textContent = foodChar;
-        foodEl.style.position = "absolute";
-        foodEl.style.zIndex = "1000";
-        foodEl.style.fontSize = "50px";
-        const initialHalf = 25;
-        foodEl.style.left = (dropX - initialHalf) + "px";
-        foodEl.style.top = (dropY - initialHalf) + "px";
-        document.body.appendChild(foodEl);
-        foodEl.animate([
-          { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
-          { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
-        ], {
-          duration: 1000,
-          easing: "ease-in"
-        }).onfinish = () => {
-          foodEl.remove();
-          const numRain = 10;
-          for (let i = 0; i < numRain; i++) {
-            const rainEl = document.createElement("span");
-            rainEl.textContent = foodChar;
-            rainEl.style.position = "absolute";
-            rainEl.style.zIndex = "900";
-            const size = Math.random() * 20 + 30;
-            rainEl.style.fontSize = size + "px";
-            const startX = headCenterX + (Math.random() - 0.5) * 300;
-            const startY = headCenterY - 300 - Math.random() * 300;
-            rainEl.style.left = startX + "px";
-            rainEl.style.top = startY + "px";
-            rainEl.style.opacity = "1";
-            document.body.appendChild(rainEl);
-            const endX = headCenterX + (Math.random() - 0.5) * 50;
-            const endY = headCenterY + (Math.random() - 0.5) * 50;
-            rainEl.animate([
-              { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-              { transform: `translate(${ endX - startX }px, ${ endY - startY }px) rotate(${ Math.random() * 360 }deg)`, opacity: 0 }
-            ], {
-              duration: 2000 + Math.random() * 1000,
-              easing: "ease-in",
-              fill: "forwards"
-            }).onfinish = () => {
-              rainEl.remove();
-            };
-          }
-        };
-        return;
-      }
-      const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
-      const veggieFoods = ['🥕', '🍫'];
-      const funnyFoods = ['💩'];
-      const objectFoods = ['🎾', '🦋', '🦀'];
-      const spicyFoods = ['🌶️'];
-      const catnipFoods = ['🌿'];
-      const isLiked = likedFoods.includes(foodChar);
-      const isVeggie = veggieFoods.includes(foodChar);
-      const isFunny = funnyFoods.includes(foodChar);
-      const isObject = objectFoods.includes(foodChar);
-      const isSpicy = spicyFoods.includes(foodChar);
-      const isCatnip = catnipFoods.includes(foodChar);
-      const isMagic = foodChar === '✨';
-      const isPill = foodChar === '💊';
-      const dropX = ev.clientX;
-      const dropY = ev.clientY;
       const headRect = catHead.getBoundingClientRect();
       const headCenterX = headRect.left + headRect.width / 2;
       const headCenterY = headRect.top + headRect.height / 2;
@@ -1148,13 +750,16 @@
       };
     }
 
-    function handleButtDrop(ev) {
+    function handleDrop(ev) {
       ev.preventDefault();
-      if (isDead) return;
       const foodChar = ev.dataTransfer.getData("text/plain");
+      handleFoodDrop(foodChar, ev.clientX, ev.clientY, catHead);
+    }
+
+    function handleButtFoodDrop(foodChar, dropX, dropY) {
+      if (isDead) return;
       if (foodChar !== '🌶️') return;
-      const dropX = ev.clientX;
-      const dropY = ev.clientY;
+
       const tailRect = catTail.getBoundingClientRect();
       const tailCenterX = tailRect.left + tailRect.width / 2;
       const tailCenterY = tailRect.top + tailRect.height / 2;
@@ -1228,7 +833,7 @@
               { transform: 'scale(1)' }
             ], {
               duration: 300,
-              easing: "ease-in-out"
+              easing: 'ease-in-out'
             });
           }
 
@@ -1238,6 +843,12 @@
 
         bulgeNext();
       };
+    }
+
+    function handleButtDrop(ev) {
+      ev.preventDefault();
+      const foodChar = ev.dataTransfer.getData("text/plain");
+      handleButtFoodDrop(foodChar, ev.clientX, ev.clientY);
     }
   </script>
 </body>
