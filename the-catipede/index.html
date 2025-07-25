@@ -40,64 +40,52 @@
       --size-multiplier: 1;
       --fixed-base-emoji-size: clamp(5rem, 12vw, 8rem);
       --base-emoji-size: calc(var(--fixed-base-emoji-size) * var(--size-multiplier));
-    }
-
-    body {
-      background-color: #f0f0f0;
-      color: black;
-      font-family: "Winky Rough", sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      height: 100vh;
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      position: relative;
+      --bg-color: #f0f0f0;
+      --text-color: #000000;
     }
 
     @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #121212;
-        color: white;
+      :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
       }
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Winky Rough", sans-serif;
+      margin: 0.5rem;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: calc(100vh - 1rem);
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      position: relative;
     }
 
     .author {
       font-size: 130%;
     }
 
-    a {
-      color: currentColor;
-      text-decoration: none;
-    }
-
     header {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
+      top: 0;
+      left: 0;
       font-size: clamp(0.75rem, 2vw, 1rem);
     }
 
     #food-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 5px;
       margin: 20px 0;
       width: 100%;
       max-width: 800px;
-    }
-
-    @media (max-width: 600px) {
-      :root {
-        --fixed-base-emoji-size: clamp(3rem, 10vw, 5rem);
-      }
-
-      #food-list {
-        gap: 2px;
-      }
     }
 
     @media (min-width: 768px) {
@@ -111,6 +99,7 @@
       cursor: grab;
       user-select: none;
       text-align: center;
+      touch-action: none;
     }
 
     #cat-container {
@@ -121,7 +110,6 @@
       width: 100%;
       height: auto;
       position: relative;
-      flex: 1;
     }
 
     #cat-head {
@@ -161,6 +149,10 @@
       max-width: 800px;
       text-align: center;
       font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    a {
+      color: var(--text-color);
     }
   </style>
 </head>
@@ -266,6 +258,9 @@
         setFoodEvents();
         const button = document.createElement('button');
         button.textContent = 'Continue';
+        button.style.color = getComputedStyle(document.body).getPropertyValue('--text-color');
+        button.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--bg-color');
+        button.style.border = '1px solid ' + getComputedStyle(document.body).getPropertyValue('--text-color');
         button.onclick = () => {
           p.textContent = "Feed the catipede by dragging food into its mouth.";
           initializeCatBody();
@@ -341,7 +336,7 @@
             resetHead();
           }
         };
-        el.addEventListener('touchstart', handleTouchStart, { passive: false });
+        el.addEventListener('touchstart', handleTouchStart, {passive: false});
       });
     }
 
@@ -369,7 +364,7 @@
         clone.style.top = (t.clientY - clone.offsetHeight / 2) + 'px';
       }
 
-      document.addEventListener('touchmove', moveClone, { passive: false });
+      document.addEventListener('touchmove', moveClone, {passive: false});
 
       function endTouch(e) {
         e.preventDefault();
@@ -383,9 +378,9 @@
 
         if (target) {
           const dropEv = {
-            preventDefault: function () { },
+            preventDefault: function() {},
             dataTransfer: {
-              getData: function (type) {
+              getData: function(type) {
                 return type === 'text/plain' ? foodChar : '';
               }
             },
@@ -405,7 +400,7 @@
         }
       }
 
-      document.addEventListener('touchend', endTouch, { passive: false });
+      document.addEventListener('touchend', endTouch, {passive: false});
     }
 
     initializeCatBody();
@@ -456,7 +451,423 @@
             const endY = headCenterY + (Math.random() - 0.5) * 50;
             rainEl.animate([
               { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-              { transform: `translate(${endX - startX}px, ${endY - startY}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+              { transform: `translate(${ endX - startX }px, ${ endY - startY }px) rotate(${ Math.random() * 360 }deg)`, opacity: 0 }
+            ], {
+              duration: 2000 + Math.random() * 1000,
+              easing: "ease-in",
+              fill: "forwards"
+            }).onfinish = () => {
+              rainEl.remove();
+            };
+          }
+        };
+        return;
+      }
+      const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+      const veggieFoods = ['🥕', '🍫'];
+      const funnyFoods = ['💩'];
+      const objectFoods = ['🎾', '🦋', '🦀'];
+      const spicyFoods = ['🌶️'];
+      const catnipFoods = ['🌿'];
+      const isLiked = likedFoods.includes(foodChar);
+      const isVeggie = veggieFoods.includes(foodChar);
+      const isFunny = funnyFoods.includes(foodChar);
+      const isObject = objectFoods.includes(foodChar);
+      const isSpicy = spicyFoods.includes(foodChar);
+      const isCatnip = catnipFoods.includes(foodChar);
+      const isMagic = foodChar === '✨';
+      const isPill = foodChar === '💊';
+      const dropX = ev.clientX;
+      const dropY = ev.clientY;
+      const headRect = catHead.getBoundingClientRect();
+      const headCenterX = headRect.left + headRect.width / 2;
+      const headCenterY = headRect.top + headRect.height / 2;
+
+      const foodEl = document.createElement("span");
+      foodEl.textContent = foodChar;
+      foodEl.style.position = "absolute";
+      foodEl.style.zIndex = "1000";
+      foodEl.style.fontSize = "50px";
+      const initialHalf = 25;
+      foodEl.style.left = (dropX - initialHalf) + "px";
+      foodEl.style.top = (dropY - initialHalf) + "px";
+      document.body.appendChild(foodEl);
+
+      foodEl.animate([
+        { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
+        { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
+      ], {
+        duration: 1000,
+        easing: "ease-in"
+      }).onfinish = () => {
+        foodEl.remove();
+        digesting = true;
+        let digestFace = '😾';
+        if (isLiked) {
+          digestFace = '😻';
+        } else if (isSpicy) {
+          digestFace = '👿';
+        }
+        catHead.textContent = digestFace;
+
+        if (isSick && !isPill) {
+          catHead.textContent = '🙀';
+          if (foodChar === '🦀') {
+            adjustCatLength(-999);
+            digesting = false;
+            return;
+          }
+          const vomitEl = document.createElement("span");
+          vomitEl.textContent = foodChar;
+          vomitEl.style.position = "absolute";
+          vomitEl.style.zIndex = "1000";
+          vomitEl.style.fontSize = "0px";
+          vomitEl.style.left = headCenterX + "px";
+          vomitEl.style.top = headCenterY + "px";
+          document.body.appendChild(vomitEl);
+
+          const finalSize = 100;
+          const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+          const screenHeight = window.innerHeight - 4 * remPx;
+          vomitEl.animate([
+            { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+            { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
+          ], {
+            duration: 2000,
+            easing: "ease-out"
+          }).onfinish = () => {
+            vomitEl.remove();
+            digesting = false;
+            resetHead();
+          };
+          return;
+        }
+
+        if (isLiked) {
+          consecutiveLiked++;
+        } else {
+          consecutiveLiked = 0;
+        }
+
+        if (isCatnip) {
+          catHead.textContent = '😻';
+          const animations = [];
+          for (let i = 0; i < 3; i++) {
+            const heartEl = document.createElement("span");
+            heartEl.textContent = "❤️";
+            heartEl.style.position = "absolute";
+            heartEl.style.zIndex = "1000";
+            heartEl.style.fontSize = "0px";
+            heartEl.style.left = headCenterX + "px";
+            heartEl.style.top = headCenterY + "px";
+            document.body.appendChild(heartEl);
+
+            const finalSize = 50;
+            const offsetX = (i - 1) * 20; // -20, 0, 20
+            const anim = heartEl.animate([
+              { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+              { left: (headCenterX + offsetX) + "px", top: (headCenterY - 100) + "px", fontSize: finalSize + "px", opacity: 0 }
+            ], {
+              duration: 1500,
+              easing: "ease-out",
+              delay: i * 200
+            });
+            anim.onfinish = () => {
+              heartEl.remove();
+            };
+            animations.push(anim.finished);
+          }
+          Promise.all(animations).then(() => {
+            digesting = false;
+            resetHead();
+          });
+          return;
+        }
+
+        if (isMagic) {
+          catHead.textContent = '🦁';
+          setTimeout(() => {
+            digesting = false;
+            resetHead();
+          }, 3000);
+          return;
+        }
+
+        if (isPill) {
+          if (isSick) {
+            isSick = false;
+            catHead.textContent = '😻';
+            setTimeout(() => {
+              digesting = false;
+              resetHead();
+            }, 1000);
+          } else {
+            adjustCatLength(-999);
+            digesting = false;
+          }
+          return;
+        }
+
+        const segments = Array.from(catContainer.querySelectorAll('.body-segment'));
+        let index = 0;
+        let direction = 1;
+        const midPoint = Math.floor(segments.length / 2);
+
+        function bulgeNext() {
+          if (isObject) {
+            if (direction === 1 && index >= midPoint) {
+              direction = -1;
+              index = midPoint - 1;
+              catHead.textContent = '🙀';
+            } else if (direction === -1 && index < 0) {
+              if (foodChar === '🦀') {
+                isSick = true;
+                digesting = false;
+                resetHead();
+                return;
+              } else {
+                const vomitEl = document.createElement("span");
+                vomitEl.textContent = "🦠";
+                vomitEl.style.position = "absolute";
+                vomitEl.style.zIndex = "1000";
+                vomitEl.style.fontSize = "0px";
+                vomitEl.style.left = headCenterX + "px";
+                vomitEl.style.top = headCenterY + "px";
+                document.body.appendChild(vomitEl);
+
+                const finalSize = 100;
+                const finalHalf = finalSize / 2;
+                const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+                const screenHeight = window.innerHeight - 4 * remPx;
+                vomitEl.animate([
+                  { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+                  { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
+                ], {
+                  duration: 2000,
+                  easing: "ease-out"
+                }).onfinish = () => {
+                  vomitEl.remove();
+                  digesting = false;
+                  resetHead();
+                };
+                return;
+              }
+            }
+          } else {
+            if (index >= segments.length) {
+              const tailRect = catTail.getBoundingClientRect();
+              const tailCenterX = tailRect.left + tailRect.width / 2;
+              const tailCenterY = tailRect.top + tailRect.height / 2;
+
+              let poopChar = '💩';
+              if (isVeggie) {
+                poopChar = '💨';
+              } else if (isSpicy) {
+                poopChar = '', '🌺', '🌼'];
+        flowers.forEach(flower => {
+          const span = document.createElement('span');
+          span.className = 'food';
+          span.textContent = flower;
+          span.draggable = true;
+          foodList.appendChild(span);
+        });
+        setFoodEvents();
+        const button = document.createElement('button');
+        button.textContent = 'Continue';
+        button.style.color = getComputedStyle(document.body).getPropertyValue('--text-color');
+        button.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--bg-color');
+        button.style.border = '1px solid ' + getComputedStyle(document.body).getPropertyValue('--text-color');
+        button.onclick = () => {
+          p.textContent = "Feed the catipede by dragging food into its mouth.";
+          initializeCatBody();
+          catTail.textContent = '🍑';
+          catHead.setAttribute('ondragover', "event.preventDefault()");
+          catHead.setAttribute('ondrop', "handleDrop(event)");
+          catTail.setAttribute('ondragover', "event.preventDefault()");
+          catTail.setAttribute('ondrop', "handleButtDrop(event)");
+          foodList.innerHTML = originalFoodHTML;
+          shuffleFoodList();
+          setFoodEvents();
+          digesting = false;
+          isDead = false;
+          isSick = false;
+          document.documentElement.style.setProperty('--size-multiplier', 1);
+          resetHead();
+          button.remove();
+        };
+        p.after(button);
+      }
+    }
+
+    function adjustSize(change) {
+      let sizeMultiplier = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--size-multiplier'));
+      sizeMultiplier += change;
+      if (sizeMultiplier < 0.5) sizeMultiplier = 0.5;
+      document.documentElement.style.setProperty('--size-multiplier', sizeMultiplier);
+    }
+
+    function resetHead() {
+      if (isDead) {
+        catHead.textContent = '🪦';
+        return;
+      }
+      catHead.textContent = isSick ? '🤕' : '😺';
+    }
+
+    function shuffleFoodList() {
+      const foods = Array.from(foodList.children);
+      for (let i = foods.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [foods[i], foods[j] = [foods[j], foods[i]];
+      }
+      foods.forEach(food => foodList.appendChild(food));
+    }
+
+    function setFaceForFood(foodChar) {
+      if (isDead) return;
+      const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+      const funnyFoods = ['💩'];
+      const catnipFoods = ['🌿'];
+      let face = '🙀';
+      if (likedFoods.includes(foodChar)) {
+        face = '😸';
+      } else if (funnyFoods.includes(foodChar)) {
+        face = '😹';
+      } else if (catnipFoods.includes(foodChar)) {
+        face = '😻';
+      } else if (foodChar === '✨') {
+        face = '😼';
+      }
+      catHead.textContent = face;
+    }
+
+    function setFoodEvents() {
+      document.querySelectorAll('.food').forEach(el => {
+        el.ondragstart = ev => {
+          ev.dataTransfer.setData("text/plain", el.textContent);
+          setFaceForFood(el.textContent);
+        };
+        el.ondragend = ev => {
+          if (!digesting) {
+            resetHead();
+          }
+        };
+        el.addEventListener('touchstart', handleTouchStart, {passive: false});
+      });
+    }
+
+    function handleTouchStart(ev) {
+      ev.preventDefault();
+      const el = ev.target;
+      const foodChar = el.textContent;
+      setFaceForFood(foodChar);
+      el.style.opacity = '0.4';
+
+      const clone = el.cloneNode(true);
+      clone.style.position = 'absolute';
+      clone.style.pointerEvents = 'none';
+      clone.style.zIndex = '1001';
+      document.body.appendChild(clone);
+
+      const touch = ev.touches[0];
+      clone.style.left = (touch.clientX - clone.offsetWidth / 2) + 'px';
+      clone.style.top = (touch.clientY - clone.offsetHeight / 2) + 'px';
+
+      function moveClone(e) {
+        e.preventDefault();
+        const t = e.touches[0];
+        clone.style.left = (t.clientX - clone.offsetWidth / 2) + 'px';
+        clone.style.top = (t.clientY - clone.offsetHeight / 2) + 'px';
+      }
+
+      document.addEventListener('touchmove', moveClone, {passive: false});
+
+      function endTouch(e) {
+        e.preventDefault();
+        document.removeEventListener('touchmove', moveClone);
+        document.removeEventListener('touchend', endTouch);
+        clone.remove();
+        el.style.opacity = '1';
+
+        const t = e.changedTouches[0];
+        const target = document.elementFromPoint(t.clientX, t.clientY);
+
+        if (target) {
+          const dropEv = {
+            preventDefault: function() {},
+            dataTransfer: {
+              getData: function(type) {
+                return type === 'text/plain' ? foodChar : '';
+              }
+            },
+            clientX: t.clientX,
+            clientY: t.clientY
+          };
+
+          if (target.id === 'cat-head') {
+            handleDrop(dropEv);
+          } else if (target.id === 'cat-tail') {
+            handleButtDrop(dropEv);
+          }
+        }
+
+        if (!digesting) {
+          resetHead();
+        }
+      }
+
+      document.addEventListener('touchend', endTouch, {passive: false});
+    }
+
+    initializeCatBody();
+    shuffleFoodList();
+    setFoodEvents();
+
+    function handleDrop(ev) {
+      ev.preventDefault();
+      const foodChar = ev.dataTransfer.getData("text/plain");
+      if (isDead) {
+        const dropX = ev.clientX;
+        const dropY = ev.clientY;
+        const headRect = catHead.getBoundingClientRect();
+        const headCenterX = headRect.left + headRect.width / 2;
+        const headCenterY = headRect.top + headRect.height / 2;
+        const foodEl = document.createElement("span");
+        foodEl.textContent = foodChar;
+        foodEl.style.position = "absolute";
+        foodEl.style.zIndex = "1000";
+        foodEl.style.fontSize = "50px";
+        const initialHalf = 25;
+        foodEl.style.left = (dropX - initialHalf) + "px";
+        foodEl.style.top = (dropY - initialHalf) + "px";
+        document.body.appendChild(foodEl);
+        foodEl.animate([
+          { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
+          { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
+        ], {
+          duration: 1000,
+          easing: "ease-in"
+        }).onfinish = () => {
+          foodEl.remove();
+          const numRain = 10;
+          for (let i = 0; i < numRain; i++) {
+            const rainEl = document.createElement("span");
+            rainEl.textContent = foodChar;
+            rainEl.style.position = "absolute";
+            rainEl.style.zIndex = "900";
+            const size = Math.random() * 20 + 30;
+            rainEl.style.fontSize = size + "px";
+            const startX = headCenterX + (Math.random() - 0.5) * 300;
+            const startY = headCenterY - 300 - Math.random() * 300;
+            rainEl.style.left = startX + "px";
+            rainEl.style.top = startY + "px";
+            rainEl.style.opacity = "1";
+            document.body.appendChild(rainEl);
+            const endX = headCenterX + (Math.random() - 0.5) * 50;
+            const endY = headCenterY + (Math.random() - 0.5) * 50;
+            rainEl.animate([
+              { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+              { transform: `translate(${ endX - startX }px, ${ endY - startY }px) rotate(${ Math.random() * 360 }deg)`, opacity: 0 }
             ], {
               duration: 2000 + Math.random() * 1000,
               easing: "ease-in",
