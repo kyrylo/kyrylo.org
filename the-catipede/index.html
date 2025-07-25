@@ -53,6 +53,10 @@
       }
     }
 
+    html, body {
+      overflow: hidden;
+    }
+
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -356,10 +360,11 @@
       e.preventDefault();
       draggedElement = e.target;
       dragClone = draggedElement.cloneNode(true);
-      dragClone.style.position = 'absolute';
+      dragClone.style.position = 'fixed';
       dragClone.style.pointerEvents = 'none';
       dragClone.style.zIndex = '1001';
       dragClone.style.opacity = '0.7';
+      dragClone.style.fontSize = 'calc(var(--fixed-base-emoji-size) * 0.8)';
       const touch = e.touches[0];
       dragClone.style.left = (touch.clientX - dragClone.offsetWidth / 2) + 'px';
       dragClone.style.top = (touch.clientY - dragClone.offsetHeight / 2) + 'px';
@@ -460,7 +465,7 @@
         const targetCenterY = targetRect.top + targetRect.height / 2;
         const foodEl = document.createElement("span");
         foodEl.textContent = foodChar;
-        foodEl.style.position = "absolute";
+        foodEl.style.position = "fixed";
         foodEl.style.zIndex = "1000";
         foodEl.style.fontSize = "50px";
         const initialHalf = 25;
@@ -475,11 +480,11 @@
           easing: "ease-in"
         }).onfinish = () => {
           foodEl.remove();
-          const numRain = 30; // Increased for fuller effect
+          const numRain = 30;
           for (let i = 0; i < numRain; i++) {
             const rainEl = document.createElement("span");
             rainEl.textContent = foodChar;
-            rainEl.style.position = "absolute";
+            rainEl.style.position = "fixed";
             rainEl.style.zIndex = "900";
             const size = Math.random() * 20 + 30;
             rainEl.style.fontSize = size + "px";
@@ -491,13 +496,13 @@
             rainEl.style.opacity = "1";
             document.body.appendChild(rainEl);
             const endX = startX + (Math.random() - 0.5) * 100;
-            const endY = startY + 200 + Math.random() * 100; // Reduced distance for gentler fall
+            const endY = startY + 200 + Math.random() * 100;
             rainEl.animate([
               { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
               { transform: `translate(${endX - startX}px, ${endY - startY}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
             ], {
-              duration: 3000 + Math.random() * 2000, // Slower: 3-5 seconds
-              easing: "ease-out", // Softer deceleration
+              duration: 3000 + Math.random() * 2000,
+              easing: "ease-out",
               fill: "forwards"
             }).onfinish = () => {
               rainEl.remove();
@@ -528,7 +533,7 @@
 
       const foodEl = document.createElement("span");
       foodEl.textContent = foodChar;
-      foodEl.style.position = "absolute";
+      foodEl.style.position = "fixed";
       foodEl.style.zIndex = "1000";
       foodEl.style.fontSize = "50px";
       const initialHalf = 25;
@@ -562,7 +567,7 @@
           }
           const vomitEl = document.createElement("span");
           vomitEl.textContent = foodChar;
-          vomitEl.style.position = "absolute";
+          vomitEl.style.position = "fixed";
           vomitEl.style.zIndex = "1000";
           vomitEl.style.fontSize = "0px";
           vomitEl.style.left = headCenterX + "px";
@@ -671,7 +676,7 @@
               } else {
                 const vomitEl = document.createElement("span");
                 vomitEl.textContent = "🦠";
-                vomitEl.style.position = "absolute";
+                vomitEl.style.position = "fixed";
                 vomitEl.style.zIndex = "1000";
                 vomitEl.style.fontSize = "0px";
                 vomitEl.style.left = headCenterX + "px";
@@ -713,12 +718,29 @@
 
               const poopEl = document.createElement("span");
               poopEl.textContent = poopChar;
-              poopEl.style.position = "absolute";
+              poopEl.style.position = "fixed";
               poopEl.style.zIndex = "1000";
               poopEl.style.fontSize = "0px";
               poopEl.style.left = tailCenterX + "px";
               poopEl.style.top = tailCenterY + "px";
               document.body.appendChild(poopEl);
+
+              let lengthChange = 0;
+              if (foodChar === '🍔') {
+                // no segments change, but grow the overall size
+                lengthChange = 0;
+                adjustSize(0.1);
+              } else if (foodChar === '🥛') {
+                lengthChange = 0;
+                adjustSize(-0.1);
+              } else if (foodChar === '🌶️') {
+                lengthChange = 1 - segments.length;
+              } else if (isLiked) {
+                lengthChange = 1;
+              } else if (isVeggie || isSpicy || isFunny) {
+                lengthChange = -1;
+              }
+              adjustCatLength(lengthChange);
 
               const finalSize = 100;
               const finalHalf = finalSize / 2;
@@ -735,22 +757,6 @@
                 digesting = false;
                 resetHead();
               };
-
-              let lengthChange = 0;
-              if (foodChar === '🍔') {
-                lengthChange = 0;
-                adjustSize(0.1);
-              } else if (foodChar === '🥛') {
-                lengthChange = 0;
-                adjustSize(-0.1);
-              } else if (foodChar === '🌶️') {
-                lengthChange = 1 - segments.length;
-              } else if (isLiked) {
-                lengthChange = 1;
-              } else if (isVeggie || isSpicy || isFunny) {
-                lengthChange = -1;
-              }
-              adjustCatLength(lengthChange);
               return;
             }
           }
@@ -791,7 +797,7 @@
 
       const foodEl = document.createElement("span");
       foodEl.textContent = foodChar;
-      foodEl.style.position = "absolute";
+      foodEl.style.position = "fixed";
       foodEl.style.zIndex = "1000";
       foodEl.style.fontSize = "50px";
       const initialHalf = 25;
@@ -822,7 +828,7 @@
             const headCenterY = headRect.top + headRect.height / 2;
             const burpEl = document.createElement("span");
             burpEl.textContent = "🌶️";
-            burpEl.style.position = "absolute";
+            burpEl.style.position = "fixed";
             burpEl.style.zIndex = "1000";
             burpEl.style.fontSize = "0px";
             burpEl.style.left = headCenterX + "px";
@@ -843,10 +849,9 @@
               burpEl.remove();
               digesting = false;
               resetHead();
+              const lengthChange = 1 - segments.length;
+              adjustCatLength(lengthChange);
             };
-
-            const lengthChange = 1 - segments.length;
-            adjustCatLength(lengthChange);
             return;
           }
 
