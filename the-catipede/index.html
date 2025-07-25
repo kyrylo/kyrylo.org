@@ -75,6 +75,26 @@
       font-size: clamp(0.8rem, 2.5vw, 1.2rem);
       position: relative;
       box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .no-select {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+    }
+
+    h1,
+    p,
+    #cat-container {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
     .author {
@@ -109,6 +129,10 @@
       margin: 0.5rem 0;
       width: 100%;
       max-width: 600px;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
     @media (min-width: 768px) {
@@ -363,13 +387,14 @@
 
     function handleTouchStart(e) {
       e.preventDefault();
+      document.body.classList.add('no-select');
       draggedElement = e.target;
       dragClone = draggedElement.cloneNode(true);
       dragClone.style.position = 'fixed';
       dragClone.style.pointerEvents = 'none';
       dragClone.style.zIndex = '1001';
       dragClone.style.opacity = '0.7';
-       dragClone.style.fontSize = 'calc(var(--base-emoji-size) * 1.2)';
+      dragClone.style.fontSize = 'calc(var(--base-emoji-size) * 1.2)';
       const touch = e.touches[0];
       dragClone.style.left = (touch.clientX - dragClone.offsetWidth / 2) + 'px';
       dragClone.style.top = (touch.clientY - dragClone.offsetHeight / 2) + 'px';
@@ -403,6 +428,7 @@
 
     function handleTouchEnd(e) {
       e.preventDefault();
+      document.body.classList.remove('no-select');
       if (dragClone) {
         dragClone.remove();
         dragClone = null;
@@ -428,6 +454,8 @@
     function setFoodEvents() {
       document.querySelectorAll('.food').forEach(el => {
         el.ondragstart = ev => {
+          ev.preventDefault();
+          document.body.classList.add('no-select');
           ev.dataTransfer.setData("text/plain", el.textContent);
           if (!isDead) {
             const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
@@ -447,6 +475,7 @@
           }
         };
         el.ondragend = ev => {
+          document.body.classList.remove('no-select');
           if (isDead) return;
           if (!digesting) {
             resetHead();
@@ -787,6 +816,7 @@
 
     function handleDrop(ev) {
       ev.preventDefault();
+      document.body.classList.remove('no-select');
       const foodChar = ev.dataTransfer.getData("text/plain");
       handleFoodDrop(foodChar, ev.clientX, ev.clientY, catHead);
     }
@@ -881,6 +911,7 @@
 
     function handleButtDrop(ev) {
       ev.preventDefault();
+      document.body.classList.remove('no-select');
       const foodChar = ev.dataTransfer.getData("text/plain");
       handleButtFoodDrop(foodChar, ev.clientX, ev.clientY);
     }
