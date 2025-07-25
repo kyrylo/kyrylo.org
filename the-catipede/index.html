@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>The Catipede</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Feed the catipede by giving it food. The Catipede is an emoji-based online game inspired by Tamagotchi.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="The Catipede">
+  <meta property="og:title" content="The Catipede | Feed the catipede by giving it food">
+  <meta property="og:description" content="Emoji-based online game inspired by Tamagotchi.">
+  <meta property="og:image" content="https://kyrylo.org/assets/images/the-catipede/og.png?v=5b60bed">
+  <meta property="og:url" content="https://kyrylo.org/the-catipede/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="The Catipede | Feed the catipede by giving it food">
+  <meta name="twitter:description" content="Emoji-based online game inspired by Tamagotchi.">
+  <meta name="twitter:image" content="https://kyrylo.org/assets/images/the-catipede/og.png?v=5b60bed">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+
+  <link rel="canonical" href="https://kyrylo.org/the-catipede/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/the-catipede/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/the-catipede/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/the-catipede/favicons/apple-touch-icon.png" />
+
+  <style>
+    :root {
+      --size-multiplier: 1;
+      --fixed-base-emoji-size: clamp(5rem, 12vw, 8rem);
+      --base-emoji-size: calc(var(--fixed-base-emoji-size) * var(--size-multiplier));
+    }
+
+    body {
+      background-color: #f0f0f0;
+      font-family: "Winky Rough", sans-serif;
+      margin: 0.5rem;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: calc(100vh - 4rem);
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      position: relative;
+    }
+
+    .author {
+      font-size: 130%;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: clamp(0.75rem, 2vw, 1rem);
+    }
+
+    #food-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin: 20px 0;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    @media (min-width: 768px) {
+      #food-list {
+        gap: 0px;
+      }
+    }
+
+    .food {
+      font-size: calc(var(--fixed-base-emoji-size) * 0.5);
+      cursor: grab;
+      user-select: none;
+      text-align: center;
+    }
+
+    #cat-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    #cat-head {
+      font-size: var(--base-emoji-size);
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #cat-tail {
+      font-size: var(--base-emoji-size);
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .body-segment {
+      display: inline-block;
+      margin: 0 -10px;
+      font-size: calc(var(--base-emoji-size) * 0.5);
+      transform-origin: center;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .butthole {
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(32px, 10vw, 64px);
+    }
+
+    p {
+      margin: 0;
+      max-width: 800px;
+      text-align: center;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+  </style>
+</head>
+
+<body>
+  <header><a href="/" class="author">Kyrylo Silin</a></header>
+  <h1>The Catipede</h1>
+  <div id="cat-container">
+    <span id="cat-head" ondragover="event.preventDefault()" ondrop="handleDrop(event)">😺</span>
+    <span class="body-segment">🐱</span>
+    <span id="cat-tail" class="butthole" ondragover="event.preventDefault()" ondrop="handleButtDrop(event)">🍑</span>
+  </div>
+  <p>
+    Feed the catipede by dragging food into its mouth.
+  </p>
+  <div id="food-list">
+    <span class="food" draggable="true">🍖</span>
+    <span class="food" draggable="true">💊</span>
+    <span class="food" draggable="true">🥕</span>
+    <span class="food" draggable="true">🍔</span>
+    <span class="food" draggable="true">🐟</span>
+    <span class="food" draggable="true">🍫</span>
+    <span class="food" draggable="true">✨</span>
+    <span class="food" draggable="true">💩</span>
+    <span class="food" draggable="true">🎾</span>
+    <span class="food" draggable="true">🌶️</span>
+    <span class="food" draggable="true">🐭</span>
+    <span class="food" draggable="true">🥛</span>
+    <span class="food" draggable="true">🦀</span>
+    <span class="food" draggable="true">🐦</span>
+    <span class="food" draggable="true">🦋</span>
+    <span class="food" draggable="true">🌿</span>
+  </div>
+
+  <script>
+    const catContainer = document.getElementById('cat-container');
+    const catHead = document.getElementById('cat-head');
+    const catTail = document.getElementById('cat-tail');
+    const foodList = document.getElementById('food-list');
+    const originalFoodHTML = foodList.innerHTML;
+    let digesting = false;
+    let consecutiveLiked = 0;
+    let isDead = false;
+    let isSick = false;
+
+    function initializeCatBody() {
+      const existingSegments = catContainer.querySelectorAll('.body-segment');
+      existingSegments.forEach(seg => catContainer.removeChild(seg));
+      const segment = document.createElement('span');
+      segment.className = 'body-segment';
+      segment.textContent = '🐱';
+      catContainer.insertBefore(segment, catTail);
+    }
+
+    function adjustCatLength(change) {
+      if (change > 0) {
+        for (let i = 0; i < change; i++) {
+          const segment = document.createElement('span');
+          segment.className = 'body-segment';
+          segment.textContent = '🐱';
+          segment.style.opacity = '0';
+          catContainer.insertBefore(segment, catTail);
+          requestAnimationFrame(() => {
+            segment.style.opacity = '1';
+          });
+        }
+      } else if (change < 0) {
+        let numToRemove = Math.min(-change, catContainer.querySelectorAll('.body-segment').length);
+        const insta = -change >= 999;
+        for (let i = 0; i < numToRemove; i++) {
+          const segment = catTail.previousElementSibling;
+          if (insta) {
+            catContainer.removeChild(segment);
+          } else {
+            segment.style.opacity = '0';
+            setTimeout(() => {
+              if (segment.parentNode) {
+                segment.parentNode.removeChild(segment);
+              }
+            }, 500);
+          }
+        }
+      }
+
+      const remainingSegments = catContainer.querySelectorAll('.body-segment').length;
+      if (remainingSegments === 0) {
+        isDead = true;
+        catHead.textContent = '🪦';
+        catTail.textContent = '';
+        catTail.removeAttribute('ondragover');
+        catTail.removeAttribute('ondrop');
+        const p = document.querySelector('p');
+        p.textContent = "You've killed the catipede. Drop flowers on the grave.";
+        foodList.innerHTML = '';
+        const flowers = ['🌸', '💐', '🌺', '🌼'];
+        flowers.forEach(flower => {
+          const span = document.createElement('span');
+          span.className = 'food';
+          span.textContent = flower;
+          span.draggable = true;
+          foodList.appendChild(span);
+        });
+        setFoodEvents();
+        const button = document.createElement('button');
+        button.textContent = 'Continue';
+        button.onclick = () => {
+          p.textContent = "Feed the catipede by dragging food into its mouth.";
+          initializeCatBody();
+          catTail.textContent = '🍑';
+          catHead.setAttribute('ondragover', "event.preventDefault()");
+          catHead.setAttribute('ondrop', "handleDrop(event)");
+          catTail.setAttribute('ondragover', "event.preventDefault()");
+          catTail.setAttribute('ondrop', "handleButtDrop(event)");
+          foodList.innerHTML = originalFoodHTML;
+          shuffleFoodList();
+          setFoodEvents();
+          digesting = false;
+          isDead = false;
+          isSick = false;
+          document.documentElement.style.setProperty('--size-multiplier', 1);
+          resetHead();
+          button.remove();
+        };
+        p.after(button);
+      }
+    }
+
+    function adjustSize(change) {
+      let sizeMultiplier = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--size-multiplier'));
+      sizeMultiplier += change;
+      if (sizeMultiplier < 0.5) sizeMultiplier = 0.5;
+      document.documentElement.style.setProperty('--size-multiplier', sizeMultiplier);
+    }
+
+    function resetHead() {
+      if (isDead) {
+        catHead.textContent = '🪦';
+        return;
+      }
+      catHead.textContent = isSick ? '🤕' : '😺';
+    }
+
+    function shuffleFoodList() {
+      const foods = Array.from(foodList.children);
+      for (let i = foods.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [foods[i], foods[j]] = [foods[j], foods[i]];
+      }
+      foods.forEach(food => foodList.appendChild(food));
+    }
+
+    function setFoodEvents() {
+      document.querySelectorAll('.food').forEach(el => {
+        el.ondragstart = ev => {
+          ev.dataTransfer.setData("text/plain", el.textContent);
+          if (isDead) return;
+          const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+          const funnyFoods = ['💩'];
+          const catnipFoods = ['🌿'];
+          let face = '🙀';
+          if (likedFoods.includes(el.textContent)) {
+            face = '😸';
+          } else if (funnyFoods.includes(el.textContent)) {
+            face = '😹';
+          } else if (catnipFoods.includes(el.textContent)) {
+            face = '😻';
+          } else if (el.textContent === '✨') {
+            face = '😼';
+          }
+          catHead.textContent = face;
+        };
+        el.ondragend = ev => {
+          if (isDead) return;
+          if (!digesting) {
+            resetHead();
+          }
+        };
+      });
+    }
+
+    initializeCatBody();
+    shuffleFoodList();
+    setFoodEvents();
+
+    function handleDrop(ev) {
+      ev.preventDefault();
+      const foodChar = ev.dataTransfer.getData("text/plain");
+      if (isDead) {
+        const dropX = ev.clientX;
+        const dropY = ev.clientY;
+        const headRect = catHead.getBoundingClientRect();
+        const headCenterX = headRect.left + headRect.width / 2;
+        const headCenterY = headRect.top + headRect.height / 2;
+        const foodEl = document.createElement("span");
+        foodEl.textContent = foodChar;
+        foodEl.style.position = "absolute";
+        foodEl.style.zIndex = "1000";
+        foodEl.style.fontSize = "50px";
+        const initialHalf = 25;
+        foodEl.style.left = (dropX - initialHalf) + "px";
+        foodEl.style.top = (dropY - initialHalf) + "px";
+        document.body.appendChild(foodEl);
+        foodEl.animate([
+          { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
+          { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
+        ], {
+          duration: 1000,
+          easing: "ease-in"
+        }).onfinish = () => {
+          foodEl.remove();
+          const numRain = 10;
+          for (let i = 0; i < numRain; i++) {
+            const rainEl = document.createElement("span");
+            rainEl.textContent = foodChar;
+            rainEl.style.position = "absolute";
+            rainEl.style.zIndex = "900";
+            const size = Math.random() * 20 + 30;
+            rainEl.style.fontSize = size + "px";
+            const startX = headCenterX + (Math.random() - 0.5) * 300;
+            const startY = headCenterY - 300 - Math.random() * 300;
+            rainEl.style.left = startX + "px";
+            rainEl.style.top = startY + "px";
+            rainEl.style.opacity = "1";
+            document.body.appendChild(rainEl);
+            const endX = headCenterX + (Math.random() - 0.5) * 50;
+            const endY = headCenterY + (Math.random() - 0.5) * 50;
+            rainEl.animate([
+              { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+              { transform: `translate(${ endX - startX} px, ${ endY - startY }px) rotate(${ Math.random() * 360 }deg)`, opacity: 0 }
+            ], {
+              duration: 2000 + Math.random() * 1000,
+              easing: "ease-in",
+              fill: "forwards"
+            }).onfinish = () => {
+              rainEl.remove();
+            };
+          }
+        };
+        return;
+      }
+      const likedFoods = ['🍖', '🍔', '🐟', '🐭', '🥛', '🐦'];
+      const veggieFoods = ['🥕', '🍫'];
+      const funnyFoods = ['💩'];
+      const objectFoods = ['🎾', '🦋', '🦀'];
+      const spicyFoods = ['🌶️'];
+      const catnipFoods = ['🌿'];
+      const isLiked = likedFoods.includes(foodChar);
+      const isVeggie = veggieFoods.includes(foodChar);
+      const isFunny = funnyFoods.includes(foodChar);
+      const isObject = objectFoods.includes(foodChar);
+      const isSpicy = spicyFoods.includes(foodChar);
+      const isCatnip = catnipFoods.includes(foodChar);
+      const isMagic = foodChar === '✨';
+      const isPill = foodChar === '💊';
+      const dropX = ev.clientX;
+      const dropY = ev.clientY;
+      const headRect = catHead.getBoundingClientRect();
+      const headCenterX = headRect.left + headRect.width / 2;
+      const headCenterY = headRect.top + headRect.height / 2;
+
+      const foodEl = document.createElement("span");
+      foodEl.textContent = foodChar;
+      foodEl.style.position = "absolute";
+      foodEl.style.zIndex = "1000";
+      foodEl.style.fontSize = "50px";
+      const initialHalf = 25;
+      foodEl.style.left = (dropX - initialHalf) + "px";
+      foodEl.style.top = (dropY - initialHalf) + "px";
+      document.body.appendChild(foodEl);
+
+      foodEl.animate([
+        { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
+        { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px" }
+      ], {
+        duration: 1000,
+        easing: "ease-in"
+      }).onfinish = () => {
+        foodEl.remove();
+        digesting = true;
+        let digestFace = '😾';
+        if (isLiked) {
+          digestFace = '😻';
+        } else if (isSpicy) {
+          digestFace = '👿';
+        }
+        catHead.textContent = digestFace;
+
+        if (isSick && !isPill) {
+          catHead.textContent = '🙀';
+          if (foodChar === '🦀') {
+            adjustCatLength(-999);
+            digesting = false;
+            return;
+          }
+          const vomitEl = document.createElement("span");
+          vomitEl.textContent = foodChar;
+          vomitEl.style.position = "absolute";
+          vomitEl.style.zIndex = "1000";
+          vomitEl.style.fontSize = "0px";
+          vomitEl.style.left = headCenterX + "px";
+          vomitEl.style.top = headCenterY + "px";
+          document.body.appendChild(vomitEl);
+
+          const finalSize = 100;
+          const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+          const screenHeight = window.innerHeight - 4 * remPx;
+          vomitEl.animate([
+            { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+            { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
+          ], {
+            duration: 2000,
+            easing: "ease-out"
+          }).onfinish = () => {
+            vomitEl.remove();
+            digesting = false;
+            resetHead();
+          };
+          return;
+        }
+
+        if (isLiked) {
+          consecutiveLiked++;
+        } else {
+          consecutiveLiked = 0;
+        }
+
+        if (isCatnip) {
+          catHead.textContent = '😻';
+          const animations = [];
+          for (let i = 0; i < 3; i++) {
+            const heartEl = document.createElement("span");
+            heartEl.textContent = "❤️";
+            heartEl.style.position = "absolute";
+            heartEl.style.zIndex = "1000";
+            heartEl.style.fontSize = "0px";
+            heartEl.style.left = headCenterX + "px";
+            heartEl.style.top = headCenterY + "px";
+            document.body.appendChild(heartEl);
+
+            const finalSize = 50;
+            const offsetX = (i - 1) * 20; // -20, 0, 20
+            const anim = heartEl.animate([
+              { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+              { left: (headCenterX + offsetX) + "px", top: (headCenterY - 100) + "px", fontSize: finalSize + "px", opacity: 0 }
+            ], {
+              duration: 1500,
+              easing: "ease-out",
+              delay: i * 200
+            });
+            anim.onfinish = () => {
+              heartEl.remove();
+            };
+            animations.push(anim.finished);
+          }
+          Promise.all(animations).then(() => {
+            digesting = false;
+            resetHead();
+          });
+          return;
+        }
+
+        if (isMagic) {
+          catHead.textContent = '🦁';
+          setTimeout(() => {
+            digesting = false;
+            resetHead();
+          }, 3000);
+          return;
+        }
+
+        if (isPill) {
+          if (isSick) {
+            isSick = false;
+            catHead.textContent = '😻';
+            setTimeout(() => {
+              digesting = false;
+              resetHead();
+            }, 1000);
+          } else {
+            adjustCatLength(-999);
+            digesting = false;
+          }
+          return;
+        }
+
+        const segments = Array.from(catContainer.querySelectorAll('.body-segment'));
+        let index = 0;
+        let direction = 1;
+        const midPoint = Math.floor(segments.length / 2);
+
+        function bulgeNext() {
+          if (isObject) {
+            if (direction === 1 && index >= midPoint) {
+              direction = -1;
+              index = midPoint - 1;
+              catHead.textContent = '🙀';
+            } else if (direction === -1 && index < 0) {
+              if (foodChar === '🦀') {
+                isSick = true;
+                digesting = false;
+                resetHead();
+                return;
+              } else {
+                const vomitEl = document.createElement("span");
+                vomitEl.textContent = "🦠";
+                vomitEl.style.position = "absolute";
+                vomitEl.style.zIndex = "1000";
+                vomitEl.style.fontSize = "0px";
+                vomitEl.style.left = headCenterX + "px";
+                vomitEl.style.top = headCenterY + "px";
+                document.body.appendChild(vomitEl);
+
+                const finalSize = 100;
+                const finalHalf = finalSize / 2;
+                const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+                const screenHeight = window.innerHeight - 4 * remPx;
+                vomitEl.animate([
+                  { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+                  { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
+                ], {
+                  duration: 2000,
+                  easing: "ease-out"
+                }).onfinish = () => {
+                  vomitEl.remove();
+                  digesting = false;
+                  resetHead();
+                };
+                return;
+              }
+            }
+          } else {
+            if (index >= segments.length) {
+              const tailRect = catTail.getBoundingClientRect();
+              const tailCenterX = tailRect.left + tailRect.width / 2;
+              const tailCenterY = tailRect.top + tailRect.height / 2;
+
+              let poopChar = '💩';
+              if (isVeggie) {
+                poopChar = '💨';
+              } else if (isSpicy) {
+                poopChar = '🔥';
+              } else if (consecutiveLiked >= 3) {
+                poopChar = '💕';
+              }
+
+              const poopEl = document.createElement("span");
+              poopEl.textContent = poopChar;
+              poopEl.style.position = "absolute";
+              poopEl.style.zIndex = "1000";
+              poopEl.style.fontSize = "0px";
+              poopEl.style.left = tailCenterX + "px";
+              poopEl.style.top = tailCenterY + "px";
+              document.body.appendChild(poopEl);
+
+              const finalSize = 100;
+              const finalHalf = finalSize / 2;
+              const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+              const screenHeight = window.innerHeight - 4 * remPx;
+              poopEl.animate([
+                { left: tailCenterX + "px", top: tailCenterY + "px", fontSize: "0px", opacity: 1 },
+                { left: tailCenterX + "px", top: Math.min(tailCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
+              ], {
+                duration: 2000,
+                easing: "ease-out"
+              }).onfinish = () => {
+                poopEl.remove();
+                digesting = false;
+                resetHead();
+              };
+
+              let lengthChange = 0;
+              if (foodChar === '🍔') {
+                lengthChange = 0;
+                adjustSize(0.1);
+              } else if (foodChar === '🥛') {
+                lengthChange = 0;
+                adjustSize(-0.1);
+              } else if (foodChar === '🌶️') {
+                lengthChange = 1 - segments.length;
+              } else if (isLiked) {
+                lengthChange = 1;
+              } else if (isVeggie || isSpicy || isFunny) {
+                lengthChange = -1;
+              }
+              adjustCatLength(lengthChange);
+              return;
+            }
+          }
+
+          if (index >= 0 && index < segments.length) {
+            const seg = segments[index];
+            seg.animate([
+              { transform: 'scale(1)' },
+              { transform: 'scale(1.4)' },
+              { transform: 'scale(1)' }
+            ], {
+              duration: 300,
+              easing: 'ease-in-out'
+            });
+          }
+
+          index += direction;
+          setTimeout(bulgeNext, 50);
+        }
+
+        bulgeNext();
+      };
+    }
+
+    function handleButtDrop(ev) {
+      ev.preventDefault();
+      if (isDead) return;
+      const foodChar = ev.dataTransfer.getData("text/plain");
+      if (foodChar !== '🌶️') return;
+      const dropX = ev.clientX;
+      const dropY = ev.clientY;
+      const tailRect = catTail.getBoundingClientRect();
+      const tailCenterX = tailRect.left + tailRect.width / 2;
+      const tailCenterY = tailRect.top + tailRect.height / 2;
+
+      const foodEl = document.createElement("span");
+      foodEl.textContent = foodChar;
+      foodEl.style.position = "absolute";
+      foodEl.style.zIndex = "1000";
+      foodEl.style.fontSize = "50px";
+      const initialHalf = 25;
+      foodEl.style.left = (dropX - initialHalf) + "px";
+      foodEl.style.top = (dropY - initialHalf) + "px";
+      document.body.appendChild(foodEl);
+
+      foodEl.animate([
+        { left: (dropX - initialHalf) + "px", top: (dropY - initialHalf) + "px", fontSize: "50px" },
+        { left: tailCenterX + "px", top: tailCenterY + "px", fontSize: "0px" }
+      ], {
+        duration: 1000,
+        easing: "ease-in"
+      }).onfinish = () => {
+        foodEl.remove();
+        digesting = true;
+        catHead.textContent = '👹';
+        consecutiveLiked = 0;
+
+        const segments = Array.from(catContainer.querySelectorAll('.body-segment'));
+        let index = segments.length - 1;
+        let direction = -1;
+
+        function bulgeNext() {
+          if (index < 0) {
+            const headRect = catHead.getBoundingClientRect();
+            const headCenterX = headRect.left + headRect.width / 2;
+            const headCenterY = headRect.top + headRect.height / 2;
+            const burpEl = document.createElement("span");
+            burpEl.textContent = "🌶️";
+            burpEl.style.position = "absolute";
+            burpEl.style.zIndex = "1000";
+            burpEl.style.fontSize = "0px";
+            burpEl.style.left = headCenterX + "px";
+            burpEl.style.top = headCenterY + "px";
+            document.body.appendChild(burpEl);
+
+            const finalSize = 100;
+            const finalHalf = finalSize / 2;
+            const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const screenHeight = window.innerHeight - 4 * remPx;
+            burpEl.animate([
+              { left: headCenterX + "px", top: headCenterY + "px", fontSize: "0px", opacity: 1 },
+              { left: headCenterX + "px", top: Math.min(headCenterY + 200, screenHeight - finalSize) + "px", fontSize: finalSize + "px", opacity: 0 }
+            ], {
+              duration: 2000,
+              easing: "ease-out"
+            }).onfinish = () => {
+              burpEl.remove();
+              digesting = false;
+              resetHead();
+            };
+
+            const lengthChange = 1 - segments.length;
+            adjustCatLength(lengthChange);
+            return;
+          }
+
+          if (index >= 0 && index < segments.length) {
+            const seg = segments[index];
+            seg.animate([
+              { transform: 'scale(1)' },
+              { transform: 'scale(1.4)' },
+              { transform: 'scale(1)' }
+            ], {
+              duration: 300,
+              easing: 'ease-in-out'
+            });
+          }
+
+          index += direction;
+          setTimeout(bulgeNext, 50);
+        }
+
+        bulgeNext();
+      };
+    }
+  </script>
+</body>
+
+</html>
+
