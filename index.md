@@ -90,7 +90,10 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
-      <a href="/the-catipede">The Catipede</a>: An emoji-based online game inspired by Tamagotchi.
+      <a href="/the-catipede/">The Catipede</a>: An emoji-based online game inspired by Tamagotchi.
+    </li>
+    <li>
+      <a href="/css-color-names-reference/">CSS Color Names Reference</a>: Complete reference of all 147 standard CSS color names with hex codes, RGB values, OKLCH, and HSL values.
     </li>
   </ul>
 </section>
