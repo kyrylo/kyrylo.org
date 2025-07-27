@@ -95,6 +95,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     <li>
       <a href="/css-color-names-reference/">CSS Color Names Reference</a>: Complete reference of all 147 standard CSS color names with hex codes, RGB values, OKLCH, and HSL values.
     </li>
+    <li>
+      <a href="/tailwind-css-v4-color-palette-reference/">Tailwind CSS v4 Color Palette Reference</a>: Complete reference of all default Tailwind CSS v4 colors with hex, RGB, HSL, and OKLCH values.
+    </li>
   </ul>
 </section>
 
