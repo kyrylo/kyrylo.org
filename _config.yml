@@ -26,10 +26,10 @@ author:
   email: silin@kyrylo.org
   url: https://kyrylo.org/
 
-tagline: Software engineer, web developer, budding entrepreneur
+tagline: Software engineer, web developer, entrepreneur
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Software engineer, web developer, budding entrepreneur
+  Software engineer, web developer, entrepreneur
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kyrylo.org" # the base hostname & protocol for your site, e.g. http://example.com

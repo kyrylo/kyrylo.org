@@ -1,14 +1,8 @@
 <footer>
   <hr>
-
-  <p>
-    <a href="{{ '/' | relative_url }}">Kyrylo Silin</a> &mdash; budding entrepreneur, software engineer, and web developer.
-  </p>
-  <p>
-    <a href="{{ "/feed.xml" | relative_url }}">ATOM/RSS site feed</a>
-  </p>
-
-  <p>
-    Last modified: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %d, %Y" }}</time>
-  </p>
+  <small>
+    <p><a href="{{ '/' | relative_url }}">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="{{ " /feed.xml" | relative_url }}">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %d, %Y" }}</time></p>
+  </small>
 </footer>
