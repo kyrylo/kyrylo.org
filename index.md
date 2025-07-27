@@ -29,7 +29,6 @@ Without some dirt beneath your feet.</pre>
       <pre>simple ≠ dumbed-down
 simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 </li>
-
   </ul>
 </section>
 
