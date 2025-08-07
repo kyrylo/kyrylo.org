@@ -8,7 +8,7 @@ image: assets/images/kyrylo-silin@2x.webp
 
 During lunch today, I watched a review of Syphon Filter: a PS1 game that left
 such a mark on my childhood that I used to design levels for it on paper when I
-was six.
+was eight.
 
 ![Syphon Filter main menu](/assets/images/posts/not-everything-needs-an-update/01.webp)
 
