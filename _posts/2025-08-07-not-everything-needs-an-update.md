@@ -32,3 +32,5 @@ There’s no single snapshot we all share.
 With [Telebugs](https://telebugs.com), I want to bring that magic back. I want
 to build something that, like a butterfly, grows to completion - and then stays
 that way. Something people can point to and say: yes, that’s the one.
+
+P.S. This was the review: https://www.youtube.com/watch?v=MJ0YN2Go2Tw
