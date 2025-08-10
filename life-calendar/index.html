@@ -158,19 +158,19 @@
 
     .calendar-with-labels {
       display: grid;
-      grid-template-columns: auto 1fr;
-      grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 1fr auto;
       width: fit-content;
       margin: 0 auto 20px;
     }
 
     .y-axis-container {
-      grid-column: 1;
-      grid-row: 2;
+      grid-column: 2;
+      grid-row: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-self: end;
+      justify-self: start;
       height: 100%;
       justify-content: center;
     }
@@ -193,8 +193,8 @@
     }
 
     .x-axis-container {
-      grid-column: 2;
-      grid-row: 1;
+      grid-column: 1;
+      grid-row: 2;
       display: flex;
       align-items: center;
       justify-self: center;
@@ -218,8 +218,8 @@
     }
 
     .grid-container {
-      grid-column: 2;
-      grid-row: 2;
+      grid-column: 1;
+      grid-row: 1;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -390,6 +390,7 @@
       padding: 5px;
       border-radius: 0px 0px 8px 8px;
     }
+
     .author {
       text-decoration: none;
     }
@@ -415,7 +416,7 @@
     </header>
     <section id="description">
       <p>
-        <strong>Your Life in Weeks:</strong> This visualization represents 90 years of life, with each row as a year and each column as a week. The colored squares show weeks you've lived, each age painted in its own hue representing different life stages. Light squares show your remaining time - your future canvas waiting to be painted.
+        <strong>Your Life in Weeks:</strong> This visualization represents 90 years of life, with each row as a week and each column as a year. The colored squares show weeks you've lived, each age painted in its own hue representing different life stages. Light squares show your remaining time - your future canvas waiting to be painted.
       </p>
     </section>
     <blockquote class="quote">
@@ -459,11 +460,11 @@
     </ul>
     <figure class="calendar-with-labels">
       <div class="y-axis-container">
-        <div class="y-axis-label">Age (Years)</div>
+        <div class="y-axis-label">Weeks in Year</div>
         <div class="y-axis-arrow"></div>
       </div>
       <div class="x-axis-container">
-        <div class="x-axis-label">Weeks in Year</div>
+        <div class="x-axis-label">Age (Years)</div>
         <div class="x-axis-arrow"></div>
       </div>
       <div class="grid-container">
@@ -537,7 +538,7 @@
       </p>
       <h2>How to Use Our Life Calendar Tool</h2>
       <p>
-        Our interactive life calendar is designed for simplicity and impact. Start by entering your name, birthdate, and desired life expectancy (default is 90 years, but adjustable from 50 to 120). The tool automatically calculates weeks lived and remaining, displaying them in a colorful grid. Each row represents a year, with columns for weeks, color-coded by life stage: soft greens for childhood, blues for adolescence and young adulthood, purples for middle age, and indigos for senior years.
+        Our interactive life calendar is designed for simplicity and impact. Start by entering your name, birthdate, and desired life expectancy (default is 90 years, but adjustable from 50 to 120). The tool automatically calculates weeks lived and remaining, displaying them in a colorful grid. Each row represents a week, with columns for years, color-coded by life stage: soft greens for childhood, blues for adolescence and young adulthood, purples for middle age, and indigos for senior years.
       </p>
       <p>
         Key features include real-time stats on weeks lived, remaining, life percentage, and current age. Hover over squares for tooltips showing specific year and week. When ready, click "Save Calendar" to generate a high-quality PNG screenshot - perfect for printing as a poster or sharing on social media. For best results, use it weekly to mark progress and set intentions. Customize expectancy based on factors like gender, location, or health; for example, global averages hover around 72-80 years, but optimists might aim higher.
@@ -592,27 +593,27 @@
       const winWidth = window.innerWidth;
       let cellWidth = 5;
       let cellHeight = 5;
-      let rowLabelWidth = 30;
-      let headerHeight = 20;
-      let fontSizeHeader = 8;
-      let fontSizeLabel = 10;
+      let rowLabelWidth = 50;
+      let headerHeight = 30;
+      let fontSizeHeader = 10;
+      let fontSizeLabel = 12;
 
       if (winWidth <= 768) {
-        rowLabelWidth = 25;
-        headerHeight = 15;
-        fontSizeHeader = 6;
-        fontSizeLabel = 8;
-        cellWidth = Math.max(3, (winWidth - 100 - rowLabelWidth) / 52);
+        rowLabelWidth = 40;
+        headerHeight = 20;
+        fontSizeHeader = 8;
+        fontSizeLabel = 10;
+        cellWidth = Math.max(3, (winWidth - 100 - rowLabelWidth) / lifeExpectancy);
         cellHeight = cellWidth;
       }
 
       if (winWidth <= 480) {
-        rowLabelWidth = 20;
-        fontSizeHeader = 5;
-        fontSizeLabel = 7;
-        cellWidth = Math.max(2.5, (winWidth - 80 - rowLabelWidth) / 52);
+        rowLabelWidth = 30;
+        headerHeight = 15;
+        fontSizeHeader = 6;
+        fontSizeLabel = 8;
+        cellWidth = Math.max(2.5, (winWidth - 80 - rowLabelWidth) / lifeExpectancy);
         cellHeight = cellWidth;
-        headerHeight = 12;
       }
 
       return { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel };
@@ -621,9 +622,9 @@
     function calculateScreenshotDimensions() {
       const cellWidth = 15;
       const cellHeight = 15;
-      const rowLabelWidth = 60;
-      const headerHeight = 40;
-      const fontSizeHeader = 20;
+      const rowLabelWidth = 100;
+      const headerHeight = 60;
+      const fontSizeHeader = 24;
       const fontSizeLabel = 24;
       return { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel };
     }
@@ -643,7 +644,7 @@
       let { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel } = dims;
       const dpr = window.devicePixelRatio || 1;
       const bottomHeaderHeight = isHorizontal ? headerHeight : 0;
-      const paddingRight = isScreenshot ? 0 : 0;
+      const paddingRight = isScreenshot ? 20 : 20;
       const weekDimIsX = !isHorizontal;
       const yearDimIsX = isHorizontal;
       const rows = weekDimIsX ? lifeExpectancy : 52;
@@ -745,27 +746,15 @@
         }
       }
 
-      // Draw left labels (for y dimension)
-      const isYearY = !isHorizontal;
-      const labelStep = isYearY ? 5 : 10;
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'middle';
-      for (let i = 0; i < rows; i += labelStep) {
-        const isDecade = isYearY && (i % 10 === 0);
-        ctx.font = isDecade ? `bold ${fontSizeLabel}px Arial` : `${fontSizeLabel}px Arial`;
-        ctx.fillStyle = isDecade ? '#333' : '#667eea';
-        ctx.fillText(i, rowLabelWidth - 3, headerHeight + i * cellHeight + cellHeight / 2);
-      }
-
-      // Draw top headers if weeks on x (Q1-Q4)
-      if (weekDimIsX) {
+      // Draw quarter labels on left if weeks on y (horizontal mode)
+      if (isHorizontal) {
         ctx.fillStyle = '#667eea';
         ctx.font = `bold ${fontSizeHeader}px Arial`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
         for (let q = 1; q <= 4; q++) {
-          const x = rowLabelWidth + (q - 1) * 13 * cellWidth + 6.5 * cellWidth;
-          ctx.fillText(`Q${q}`, x, headerHeight - 3);
+          const y = headerHeight + (q - 1) * 13 * cellHeight + 6.5 * cellHeight;
+          ctx.fillText(`Q${q}`, rowLabelWidth - 10, y);
         }
       }
 
@@ -807,7 +796,7 @@
       canvas = document.createElement('canvas');
       ctx = canvas.getContext('2d');
       document.getElementById('grid').appendChild(canvas);
-      drawGrid();
+      drawGrid(false, true);
 
       // Enhanced tooltip
       canvas.addEventListener('mousemove', (e) => {
@@ -816,16 +805,16 @@
         const rect = canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        if (x > rowLabelWidth && x < rowLabelWidth + 52 * cellWidth && y > headerHeight && y < headerHeight + lifeExpectancy * cellHeight) {
-          const week = Math.floor((x - rowLabelWidth) / cellWidth) + 1;
-          const year = Math.floor((y - headerHeight) / cellHeight);
+        if (x > rowLabelWidth && x < rowLabelWidth + lifeExpectancy * cellWidth && y > headerHeight && y < headerHeight + 52 * cellHeight) {
+          const week = Math.floor((y - headerHeight) / cellHeight) + 1;
+          const year = Math.floor((x - rowLabelWidth) / cellWidth);
           canvas.title = `Year ${year}, Week ${week}`;
         } else {
           canvas.title = '';
         }
       });
 
-      window.addEventListener('resize', debounce(() => drawGrid(), 200));
+      window.addEventListener('resize', debounce(() => drawGrid(false, true), 200));
     };
 
     function updateTitle() {
@@ -849,7 +838,7 @@
       const weeksLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
       fullYears = Math.floor(weeksLived / 52);
       extraWeeks = weeksLived % 52;
-      drawGrid();
+      drawGrid(false, true);
       updateStats();
     }
 
@@ -870,208 +859,217 @@
     }
 
     function takeScreenshot() {
-        const btn = document.getElementById('screenshot-btn');
-        const successMsg = document.getElementById('success-message');
-        const inputs = document.querySelector('.inputs');
-        const description = document.getElementById('description');
-        const quote = document.querySelector('.quote');
-        const subtitle = document.querySelector('.subtitle');
-        const seoSection = document.getElementById('seo-section');
-        const container = document.querySelector('.container');
-        const authorBlock = document.querySelector('.author-block');
-        const screenshotFooter = document.getElementById('screenshot-footer');
-        const yAxis = document.querySelector('.y-axis-container');
-        const xAxis = document.querySelector('.x-axis-container');
-        const stats = document.getElementById('stats');
-        const colorLegend = document.getElementById('color-legend');
-        const titleElem = document.getElementById('title');
-        const logoImg = document.querySelector('#title img');
-        const useHorizontal = true;
+      const btn = document.getElementById('screenshot-btn');
+      const successMsg = document.getElementById('success-message');
+      const inputs = document.querySelector('.inputs');
+      const description = document.getElementById('description');
+      const quote = document.querySelector('.quote');
+      const subtitle = document.querySelector('.subtitle');
+      const seoSection = document.getElementById('seo-section');
+      const container = document.querySelector('.container');
+      const authorBlock = document.querySelector('.author-block');
+      const screenshotFooter = document.getElementById('screenshot-footer');
+      const yAxis = document.querySelector('.y-axis-container');
+      const xAxis = document.querySelector('.x-axis-container');
+      const stats = document.getElementById('stats');
+      const colorLegend = document.getElementById('color-legend');
+      const titleElem = document.getElementById('title');
+      const logoImg = document.querySelector('#title img');
+      const yAxisLabel = document.querySelector('.y-axis-label');
+      const xAxisLabel = document.querySelector('.x-axis-label');
+      const useHorizontal = true;
 
-        btn.disabled = true;
-        btn.innerHTML = '<span class="loading"></span>Generating...';
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span>Generating...';
 
-        // Save original styles
-        const originalStyles = {
-          inputsDisplay: inputs.style.display,
-          descriptionDisplay: description.style.display,
-          quoteDisplay: quote.style.display,
-          subtitleMargin: subtitle.style.marginBottom,
-          seoDisplay: seoSection.style.display,
-          containerWidth: container.style.width,
-          containerPadding: container.style.padding,
-          authorDisplay: authorBlock.style.display,
-          footerDisplay: screenshotFooter.style.display,
-          footerMargin: screenshotFooter.style.margin,
-          yAxisDisplay: yAxis.style.display,
-          xAxisDisplay: xAxis.style.display,
-          statsMargin: stats.style.marginBottom,
-          colorLegendMargin: colorLegend.style.marginTop,
-          titleMargin: titleElem.style.marginBottom,
-          titleFont: titleElem.style.fontSize,
-          subtitleFont: subtitle.style.fontSize,
-          footerFont: screenshotFooter.style.fontSize,
-          footerColor: screenshotFooter.style.color,
-          logoHeight: logoImg.style.height,
-          containerMaxWidth: container.style.maxWidth,
-          containerBoxSizing: container.style.boxSizing,
-          legendItemFonts: [],
-          statNumberFonts: [],
-          statLabelFonts: []
-        };
+      // Save original styles
+      const originalStyles = {
+        inputsDisplay: inputs.style.display,
+        descriptionDisplay: description.style.display,
+        quoteDisplay: quote.style.display,
+        subtitleMargin: subtitle.style.marginBottom,
+        seoDisplay: seoSection.style.display,
+        containerWidth: container.style.width,
+        containerPadding: container.style.padding,
+        authorDisplay: authorBlock.style.display,
+        footerDisplay: screenshotFooter.style.display,
+        footerMargin: screenshotFooter.style.margin,
+        yAxisDisplay: yAxis.style.display,
+        xAxisDisplay: xAxis.style.display,
+        statsMargin: stats.style.marginBottom,
+        colorLegendMargin: colorLegend.style.marginTop,
+        titleMargin: titleElem.style.marginBottom,
+        titleFont: titleElem.style.fontSize,
+        subtitleFont: subtitle.style.fontSize,
+        footerFont: screenshotFooter.style.fontSize,
+        footerColor: screenshotFooter.style.color,
+        logoHeight: logoImg.style.height,
+        containerMaxWidth: container.style.maxWidth,
+        containerBoxSizing: container.style.boxSizing,
+        yAxisLabelFont: yAxisLabel.style.fontSize,
+        xAxisLabelFont: xAxisLabel.style.fontSize,
+        legendItemFonts: [],
+        statNumberFonts: [],
+        statLabelFonts: []
+      };
 
-        document.querySelectorAll('.legend-item').forEach(item => {
-          originalStyles.legendItemFonts.push(item.style.fontSize);
-          item.style.fontSize = '24px';
-        });
+      document.querySelectorAll('.legend-item').forEach(item => {
+        originalStyles.legendItemFonts.push(item.style.fontSize);
+        item.style.fontSize = '24px';
+      });
 
-        document.querySelectorAll('.stat-number').forEach(num => {
-          originalStyles.statNumberFonts.push(num.style.fontSize);
-          num.style.fontSize = '4em';
-        });
+      document.querySelectorAll('.stat-number').forEach(num => {
+        originalStyles.statNumberFonts.push(num.style.fontSize);
+        num.style.fontSize = '4em';
+      });
 
-        document.querySelectorAll('.stat-label').forEach(label => {
-          originalStyles.statLabelFonts.push(label.style.fontSize);
-          label.style.fontSize = '2em';
-        });
+      document.querySelectorAll('.stat-label').forEach(label => {
+        originalStyles.statLabelFonts.push(label.style.fontSize);
+        label.style.fontSize = '2em';
+      });
 
-        // Apply fixed styles for screenshot
-        inputs.style.display = 'none';
-        description.style.display = 'none';
-        quote.style.display = 'none';
-        seoSection.style.display = 'none';
-        authorBlock.style.display = 'none';
-        screenshotFooter.style.display = 'block';
-        screenshotFooter.style.margin = '0';
-        screenshotFooter.style.color = '#666666';
-        screenshotFooter.style.fontSize = '1.2em';
-        yAxis.style.display = 'none';
-        xAxis.style.display = 'none';
-        stats.style.display = 'flex';
-        stats.style.marginBottom = '10px';
-        colorLegend.style.display = 'flex';
-        colorLegend.style.marginTop = '10px';
-        container.style.width = '1100px';
-        container.style.maxWidth = '1100px';
-        container.style.padding = '20px';
-        container.style.boxSizing = 'border-box';
-        subtitle.style.marginBottom = '10px';
-        subtitle.style.fontSize = '3em';
-        titleElem.style.marginBottom = '10px';
-        titleElem.style.fontSize = '6em';
-        logoImg.style.height = '120px';
+      // Apply fixed styles for screenshot
+      inputs.style.display = 'none';
+      description.style.display = 'none';
+      quote.style.display = 'none';
+      seoSection.style.display = 'none';
+      authorBlock.style.display = 'none';
+      screenshotFooter.style.display = 'block';
+      screenshotFooter.style.margin = '0';
+      screenshotFooter.style.color = '#666666';
+      screenshotFooter.style.fontSize = '1.4em';
+      yAxis.style.display = 'flex';
+      xAxis.style.display = 'flex';
+      yAxisLabel.style.fontSize = '24px';
+      xAxisLabel.style.fontSize = '24px';
+      stats.style.display = 'flex';
+      stats.style.marginBottom = '10px';
+      colorLegend.style.display = 'flex';
+      colorLegend.style.marginTop = '10px';
+      container.style.width = '1500px';
+      container.style.maxWidth = '1500px';
+      container.style.padding = '20px';
+      container.style.boxSizing = 'border-box';
+      subtitle.style.marginBottom = '10px';
+      subtitle.style.fontSize = '3em';
+      titleElem.style.marginBottom = '10px';
+      titleElem.style.fontSize = '6em';
+      logoImg.style.height = '120px';
 
-        // Set fixed canvas dimensions
-        const dims = calculateScreenshotDimensions();
-        const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
-        const cols = useHorizontal ? lifeExpectancy : 52;
-        const rows = useHorizontal ? 52 : lifeExpectancy;
-        const canvasWidth = rowLabelWidth + cols * cellWidth;
-        const canvasHeight = headerHeight + rows * cellHeight;
+      // Set fixed canvas dimensions
+      const dims = calculateScreenshotDimensions();
+      const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
+      const cols = useHorizontal ? lifeExpectancy : 52;
+      const rows = useHorizontal ? 52 : lifeExpectancy;
+      const canvasWidth = rowLabelWidth + cols * cellWidth + 20;
+      const canvasHeight = headerHeight + rows * cellHeight + (useHorizontal ? headerHeight : 0);
 
-        canvas.style.width = `${canvasWidth}px`;
-        canvas.style.height = `${canvasHeight}px`;
-        canvas.width = canvasWidth * 2;
-        canvas.height = canvasHeight * 2;
+      canvas.style.width = `${canvasWidth}px`;
+      canvas.style.height = `${canvasHeight}px`;
+      canvas.width = canvasWidth * 2;
+      canvas.height = canvasHeight * 2;
 
-        // Redraw grid with fixed dimensions
-        drawGrid(true, useHorizontal);
+      // Redraw grid with fixed dimensions
+      drawGrid(true, useHorizontal);
 
-        // Capture screenshot
-        htmlToImage.toPng(container, { quality: 1.0, pixelRatio: 2, backgroundColor: 'white' })
-          .then(function (dataUrl) {
-            const img = new Image();
-            img.src = dataUrl;
-            img.onload = () => {
-              // Add consistent padding (25% on each side)
-              const paddingRatio = 0.25;
-              const sidePadding = img.width * paddingRatio;
-              const newWidth = img.width + 2 * sidePadding;
-              const newHeight = img.height;
-              const newCanvas = document.createElement('canvas');
-              newCanvas.width = newWidth;
-              newCanvas.height = newHeight;
-              const newCtx = newCanvas.getContext('2d');
-              newCtx.fillStyle = 'white';
-              newCtx.fillRect(0, 0, newWidth, newHeight);
-              newCtx.drawImage(img, sidePadding, 0, img.width, img.height);
-              const newDataUrl = newCanvas.toDataURL('image/png', 1.0);
+      // Capture screenshot
+      htmlToImage.toPng(container, { quality: 1.0, pixelRatio: 2, backgroundColor: 'white' })
+        .then(function (dataUrl) {
+          const img = new Image();
+          img.src = dataUrl;
+          img.onload = () => {
+            // Add consistent padding (25% on each side)
+            const paddingRatio = 0.25;
+            const sidePadding = img.width * paddingRatio;
+            const newWidth = img.width + 2 * sidePadding;
+            const newHeight = img.height;
+            const newCanvas = document.createElement('canvas');
+            newCanvas.width = newWidth;
+            newCanvas.height = newHeight;
+            const newCtx = newCanvas.getContext('2d');
+            newCtx.fillStyle = 'white';
+            newCtx.fillRect(0, 0, newWidth, newHeight);
+            newCtx.drawImage(img, sidePadding, 0, img.width, img.height);
+            const newDataUrl = newCanvas.toDataURL('image/png', 1.0);
 
-              const name = document.getElementById('name').value.trim() || 'Life';
-              const filename = `${name}-Calendar-${new Date().getFullYear()}.png`;
+            const name = document.getElementById('name').value.trim() || 'Life';
+            const filename = `${name}-Calendar-${new Date().getFullYear()}.png`;
 
-              if (isMobile() && 'share' in navigator) {
-                const blob = dataURLtoBlob(newDataUrl);
-                const file = new File([blob], filename, { type: 'image/png' });
-                navigator.share({ files: [file], title: 'Life Calendar', text: 'My Life Calendar' })
-                  .then(() => {
-                    successMsg.classList.add('show');
-                    setTimeout(() => successMsg.classList.remove('show'), 4000);
-                  })
-                  .catch((error) => {
-                    console.error('Share failed:', error);
-                    const link = document.createElement('a');
-                    link.download = filename;
-                    link.href = newDataUrl;
-                    link.click();
-                    successMsg.classList.add('show');
-                    setTimeout(() => successMsg.classList.remove('show'), 4000);
-                  });
-              } else {
-                const link = document.createElement('a');
-                link.download = filename;
-                link.href = newDataUrl;
-                link.click();
-                successMsg.classList.add('show');
-                setTimeout(() => successMsg.classList.remove('show'), 4000);
-              }
-            };
-          })
-          .catch(function (error) {
-            console.error('Screenshot failed:', error);
-            alert('Failed to save screenshot. Please try again.');
-          })
-          .finally(function () {
-            // Restore original styles
-            inputs.style.display = originalStyles.inputsDisplay;
-            description.style.display = originalStyles.descriptionDisplay;
-            quote.style.display = originalStyles.quoteDisplay;
-            subtitle.style.marginBottom = originalStyles.subtitleMargin;
-            seoSection.style.display = originalStyles.seoDisplay;
-            container.style.width = originalStyles.containerWidth;
-            container.style.maxWidth = originalStyles.containerMaxWidth;
-            container.style.padding = originalStyles.containerPadding;
-            container.style.boxSizing = originalStyles.containerBoxSizing;
-            authorBlock.style.display = originalStyles.authorDisplay;
-            screenshotFooter.style.display = originalStyles.footerDisplay;
-            screenshotFooter.style.margin = originalStyles.footerMargin;
-            screenshotFooter.style.color = originalStyles.footerColor;
-            screenshotFooter.style.fontSize = originalStyles.footerFont;
-            yAxis.style.display = originalStyles.yAxisDisplay;
-            xAxis.style.display = originalStyles.xAxisDisplay;
-            stats.style.marginBottom = originalStyles.statsMargin;
-            colorLegend.style.marginTop = originalStyles.colorLegendMargin;
-            titleElem.style.marginBottom = originalStyles.titleMargin;
-            titleElem.style.fontSize = originalStyles.titleFont;
-            subtitle.style.fontSize = originalStyles.subtitleFont;
-            logoImg.style.height = originalStyles.logoHeight;
+            if (isMobile() && 'share' in navigator) {
+              const blob = dataURLtoBlob(newDataUrl);
+              const file = new File([blob], filename, { type: 'image/png' });
+              navigator.share({ files: [file], title: 'Life Calendar', text: 'My Life Calendar' })
+                .then(() => {
+                  successMsg.classList.add('show');
+                  setTimeout(() => successMsg.classList.remove('show'), 4000);
+                })
+                .catch((error) => {
+                  console.error('Share failed:', error);
+                  const link = document.createElement('a');
+                  link.download = filename;
+                  link.href = newDataUrl;
+                  link.click();
+                  successMsg.classList.add('show');
+                  setTimeout(() => successMsg.classList.remove('show'), 4000);
+                });
+            } else {
+              const link = document.createElement('a');
+              link.download = filename;
+              link.href = newDataUrl;
+              link.click();
+              successMsg.classList.add('show');
+              setTimeout(() => successMsg.classList.remove('show'), 4000);
+            }
+          };
+        })
+        .catch(function (error) {
+          console.error('Screenshot failed:', error);
+          alert('Failed to save screenshot. Please try again.');
+        })
+        .finally(function () {
+          // Restore original styles
+          inputs.style.display = originalStyles.inputsDisplay;
+          description.style.display = originalStyles.descriptionDisplay;
+          quote.style.display = originalStyles.quoteDisplay;
+          subtitle.style.marginBottom = originalStyles.subtitleMargin;
+          seoSection.style.display = originalStyles.seoDisplay;
+          container.style.width = originalStyles.containerWidth;
+          container.style.maxWidth = originalStyles.containerMaxWidth;
+          container.style.padding = originalStyles.containerPadding;
+          container.style.boxSizing = originalStyles.containerBoxSizing;
+          authorBlock.style.display = originalStyles.authorDisplay;
+          screenshotFooter.style.display = originalStyles.footerDisplay;
+          screenshotFooter.style.margin = originalStyles.footerMargin;
+          screenshotFooter.style.color = originalStyles.footerColor;
+          screenshotFooter.style.fontSize = originalStyles.footerFont;
+          yAxis.style.display = originalStyles.yAxisDisplay;
+          xAxis.style.display = originalStyles.xAxisDisplay;
+          yAxisLabel.style.fontSize = originalStyles.yAxisLabelFont;
+          xAxisLabel.style.fontSize = originalStyles.xAxisLabelFont;
+          stats.style.marginBottom = originalStyles.statsMargin;
+          colorLegend.style.marginTop = originalStyles.colorLegendMargin;
+          titleElem.style.marginBottom = originalStyles.titleMargin;
+          titleElem.style.fontSize = originalStyles.titleFont;
+          subtitle.style.fontSize = originalStyles.subtitleFont;
+          logoImg.style.height = originalStyles.logoHeight;
 
-            document.querySelectorAll('.legend-item').forEach((item, index) => {
-              item.style.fontSize = originalStyles.legendItemFonts[index];
-            });
-            document.querySelectorAll('.stat-number').forEach((num, index) => {
-              num.style.fontSize = originalStyles.statNumberFonts[index];
-            });
-            document.querySelectorAll('.stat-label').forEach((label, index) => {
-              label.style.fontSize = originalStyles.statLabelFonts[index];
-            });
-
-            btn.disabled = false;
-            btn.innerHTML = 'Save Calendar';
-            drawGrid(false, false);
+          document.querySelectorAll('.legend-item').forEach((item, index) => {
+            item.style.fontSize = originalStyles.legendItemFonts[index];
           });
-      }
+          document.querySelectorAll('.stat-number').forEach((num, index) => {
+            num.style.fontSize = originalStyles.statNumberFonts[index];
+          });
+          document.querySelectorAll('.stat-label').forEach((label, index) => {
+            label.style.fontSize = originalStyles.statLabelFonts[index];
+          });
+
+          btn.disabled = false;
+          btn.innerHTML = 'Save Calendar';
+          drawGrid(false, true);
+        });
+    }
   </script>
 </body>
 
 </html>
+
