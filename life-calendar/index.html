@@ -488,7 +488,9 @@
         <span>Senior Years (65+)</span>
       </li>
     </ul>
-    <p id="screenshot-footer" style="display: none; text-align: center; color: #cccccc; font-size: 0.8em; margin: 20px 0 10px;">Created with kyrylo.org/life-calendar</p>
+    <p id="screenshot-footer" style="display: none; text-align: center; color: #cccccc; font-size: 0.1em; margin: 20px 0 10px;">
+      Created with www.kyrylo.org/life-calendar
+    </p>
     <section id="seo-section">
       <h2>What is a Life Calendar?</h2>
       <p>
@@ -930,14 +932,14 @@
         screenshotFooter.style.display = 'block';
         screenshotFooter.style.margin = '0';
         screenshotFooter.style.color = '#666666';
-        screenshotFooter.style.fontSize = '2em';
+        screenshotFooter.style.fontSize = '1.2em';
         yAxis.style.display = 'none';
         xAxis.style.display = 'none';
         stats.style.display = 'flex';
         stats.style.marginBottom = '10px';
         colorLegend.style.display = 'flex';
         colorLegend.style.marginTop = '10px';
-        container.style.width = '1100px'; // Fixed width for consistency
+        container.style.width = '1100px';
         container.style.maxWidth = '1100px';
         container.style.padding = '20px';
         container.style.boxSizing = 'border-box';
@@ -949,7 +951,7 @@
 
         // Set fixed canvas dimensions
         const dims = calculateScreenshotDimensions();
-        const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims; // Added cellHeight
+        const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
         const cols = useHorizontal ? lifeExpectancy : 52;
         const rows = useHorizontal ? 52 : lifeExpectancy;
         const canvasWidth = rowLabelWidth + cols * cellWidth;
@@ -957,7 +959,7 @@
 
         canvas.style.width = `${canvasWidth}px`;
         canvas.style.height = `${canvasHeight}px`;
-        canvas.width = canvasWidth * 2; // Fixed pixel ratio of 2
+        canvas.width = canvasWidth * 2;
         canvas.height = canvasHeight * 2;
 
         // Redraw grid with fixed dimensions
@@ -969,8 +971,8 @@
             const img = new Image();
             img.src = dataUrl;
             img.onload = () => {
-              // Add consistent padding (15% on each side)
-              const paddingRatio = 0.15;
+              // Add consistent padding (25% on each side)
+              const paddingRatio = 0.25;
               const sidePadding = img.width * paddingRatio;
               const newWidth = img.width + 2 * sidePadding;
               const newHeight = img.height;
@@ -1054,7 +1056,7 @@
 
             btn.disabled = false;
             btn.innerHTML = 'Save Calendar';
-            drawGrid(false, false); // Restore original grid
+            drawGrid(false, false);
           });
       }
   </script>
