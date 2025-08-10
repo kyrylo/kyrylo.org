@@ -412,7 +412,7 @@
       text-decoration: underline;
     }
   </style>
-  <script src="/assets/javascripts/html-to-image/1.11.13/html-to-image.min.js"></script>
+  <script src="/assets/javascripts/html2canvas-pro/1.5.8/html2canvas-pro.min.js"></script>
 </head>
 
 <body>
@@ -730,6 +730,7 @@
           ctx.lineTo(x, headerHeight + rows * cellHeight);
           ctx.stroke();
         } else {
+          // Horizontal line
           const y = headerHeight + midPos * cellHeight;
           ctx.beginPath();
           ctx.moveTo(rowLabelWidth, y);
@@ -913,10 +914,19 @@
         colorLegendMargin: colorLegend.style.marginTop,
         titleMargin: titleElem.style.marginBottom,
         titleFont: titleElem.style.fontSize,
+        titleBackground: titleElem.style.background,
+        titleWebkitBackgroundClip: titleElem.style['-webkit-background-clip'],
+        titleBackgroundClip: titleElem.style.backgroundClip,
+        titleWebkitTextFillColor: titleElem.style['-webkit-text-fill-color'],
+        titleTextShadow: titleElem.style.textShadow,
+        titleDisplay: titleElem.style.display,
+        titleAlignItems: titleElem.style.alignItems,
+        titleJustifyContent: titleElem.style.justifyContent,
         subtitleFont: subtitle.style.fontSize,
         footerFont: screenshotFooter.style.fontSize,
         footerColor: screenshotFooter.style.color,
         logoHeight: logoImg.style.height,
+        logoVerticalAlign: logoImg.style.verticalAlign,
         containerMaxWidth: container.style.maxWidth,
         containerBoxSizing: container.style.boxSizing,
         yAxisLabelFont: yAxisLabel.style.fontSize,
@@ -967,7 +977,16 @@
       subtitle.style.fontSize = '3em';
       titleElem.style.marginBottom = '10px';
       titleElem.style.fontSize = '6em';
+      titleElem.style.background = 'none';
+      titleElem.style['-webkit-background-clip'] = 'none';
+      titleElem.style.backgroundClip = 'none';
+      titleElem.style['-webkit-text-fill-color'] = '#333';
+      titleElem.style.textShadow = 'none';
+      titleElem.style.display = 'flex';
+      titleElem.style.alignItems = 'center';
+      titleElem.style.justifyContent = 'center';
       logoImg.style.height = '120px';
+      logoImg.style.verticalAlign = 'unset';
 
       // Set fixed canvas dimensions
       const dims = calculateScreenshotDimensions();
@@ -986,8 +1005,9 @@
       drawGrid(true, useHorizontal);
 
       // Capture screenshot
-      htmlToImage.toPng(container, { quality: 1.0, pixelRatio: 2, backgroundColor: 'white' })
-        .then(function (dataUrl) {
+      html2canvas(container, { scale: 2, backgroundColor: 'white' })
+        .then(function (canvas) {
+          const dataUrl = canvas.toDataURL('image/png', 1.0);
           const img = new Image();
           img.src = dataUrl;
           img.onload = () => {
@@ -1063,8 +1083,17 @@
           colorLegend.style.marginTop = originalStyles.colorLegendMargin;
           titleElem.style.marginBottom = originalStyles.titleMargin;
           titleElem.style.fontSize = originalStyles.titleFont;
+          titleElem.style.background = originalStyles.titleBackground;
+          titleElem.style['-webkit-background-clip'] = originalStyles.titleWebkitBackgroundClip;
+          titleElem.style.backgroundClip = originalStyles.titleBackgroundClip;
+          titleElem.style['-webkit-text-fill-color'] = originalStyles.titleWebkitTextFillColor;
+          titleElem.style.textShadow = originalStyles.titleTextShadow;
+          titleElem.style.display = originalStyles.titleDisplay;
+          titleElem.style.alignItems = originalStyles.titleAlignItems;
+          titleElem.style.justifyContent = originalStyles.titleJustifyContent;
           subtitle.style.fontSize = originalStyles.subtitleFont;
           logoImg.style.height = originalStyles.logoHeight;
+          logoImg.style.verticalAlign = originalStyles.logoVerticalAlign;
 
           document.querySelectorAll('.legend-item').forEach((item, index) => {
             item.style.fontSize = originalStyles.legendItemFonts[index];
