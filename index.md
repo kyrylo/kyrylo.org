@@ -90,6 +90,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      <a href="/life-calendar/">Life Calendar</a>: Every week is a gift. Make them count.
+    </li>
+    <li>
       <a href="/the-catipede/">The Catipede</a>: An emoji-based online game inspired by Tamagotchi.
     </li>
     <li>
