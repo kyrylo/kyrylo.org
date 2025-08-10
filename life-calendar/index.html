@@ -2,13 +2,45 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life Calendar</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Every week is a gift. Make them count.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Life Calendar">
+  <meta property="og:title" content="Life Calendar">
+  <meta property="og:description" content="Every week is a gift. Make them count.">
+  <meta property="og:image" content="https://kyrylo.org/assets/images/life-calendar/og.png?v=149ed35">
+  <meta property="og:url" content="https://kyrylo.org/life-calendar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Life Calendar">
+  <meta name="twitter:description" content="Every week is a gift. Make them count.">
+  <meta name="twitter:image" content="https://kyrylo.org/assets/images/life-calendar/og.png?v=149ed35">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+
+  <link rel="canonical" href="https://kyrylo.org/life-calendar/">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/life-calendar/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/life-calendar/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/life-calendar/favicons/apple-touch-icon.png" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
+    }
+
+    main {
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -274,6 +306,39 @@
       margin: 2rem 0;
     }
 
+    #seo-section {
+      max-width: 800px;
+      margin: 40px auto 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    #seo-section h2 {
+      color: #333;
+      margin-top: 40px;
+      font-size: 1.8em;
+    }
+
+    #seo-section h3 {
+      color: #444;
+      margin-top: 30px;
+      font-size: 1.4em;
+    }
+
+    #seo-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    #seo-section blockquote {
+      border-left: 4px solid #667eea;
+      padding-left: 20px;
+      font-style: italic;
+      color: #666;
+      margin: 20px 0;
+    }
+
     /* Mobile adjustments */
     @media (max-width: 768px) {
       body {
@@ -308,19 +373,45 @@
         width: 100%;
       }
     }
+
+    header {
+      width: 100%;
+    }
+
+    .author-block {
+      padding: 5px;
+    }
+
+    .author {
+      text-decoration: none;
+    }
+
+    .author:hover {
+      text-decoration: underline;
+    }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+  <script src="/assets/javascripts/html-to-image/1.11.13/html-to-image.min.js"></script>
 </head>
 
 <body>
+  <header class="author-block">by <a href="/" class="author">Kyrylo Silin</a></header>
   <main class="container">
     <header>
-      <h1 id="title">Life Calendar</h1>
+      <h1 id="title">
+        <img src="/assets/images/life-calendar/logo.svg" alt="Life Calendar Logo" style="height: 50px; vertical-align: middle;">
+        <span id="title-text">Life Calendar</span>
+      </h1>
       <p class="subtitle">Every week is a gift. Make them count.</p>
     </header>
 
     <section id="description">
-      <p><strong>Your Life in Weeks:</strong> This visualization represents 90 years of life, with each row as a year and each column as a week. The colored squares show weeks you've lived, each age painted in its own hue representing different life stages. Light squares show your remaining time - your future canvas waiting to be painted.</p>
+      <p>
+        <strong>Your Life in Weeks:</strong> This visualization represents 90
+        years of life, with each row as a year and each column as a week. The
+        colored squares show weeks you've lived, each age painted in its own hue
+        representing different life stages. Light squares show your remaining
+        time - your future canvas waiting to be painted.
+      </p>
     </section>
 
     <blockquote class="quote">
@@ -412,6 +503,180 @@
         <span>Senior Years (65+)</span>
       </li>
     </ul>
+
+    <section id="seo-section">
+      <h2>What is a Life Calendar?</h2>
+      <p>
+        A life calendar, also known as a "your life in weeks" chart or memento
+        mori calendar, is a powerful visualization tool that represents an
+        individual's entire lifespan in terms of weeks. Typically assuming a
+        life expectancy of 90 years, the calendar displays 4,680 squares (90
+        years x 52 weeks), each representing one week of life. This simple yet
+        profound grid helps people grasp the finite nature of time, encouraging
+        mindfulness and intentional living. By coloring in the weeks already
+        lived based on different life stages - such as early childhood in light
+        green or adulthood in purple - the life calendar provides a stark reminder
+        of how much time has passed and how much remains. It's not just a chart;
+        it's a philosophical tool rooted in stoicism, reminding us that every
+        week is a gift to be cherished and utilized wisely.
+      </p>
+
+      <p>
+        The concept of visualizing life in weeks has gained popularity in recent
+        years as people seek ways to combat procrastination and live more
+        purposefully. Whether you're in your 20s planning your career or in your
+        50s reflecting on achievements, a life calendar offers a unique
+        perspective on time management. It transforms abstract notions of years
+        and decades into tangible, bite-sized units, making it easier to
+        appreciate the passage of time and prioritize what truly matters.
+      </p>
+
+      <h2>The Inspiration Behind the Life Calendar</h2>
+
+      <p>
+        The modern life calendar draws inspiration from various sources, most
+        notably Tim Urban's influential blog post "Your Life in Weeks" on Wait
+        But Why. Published in 2014, Urban's article presented a similar grid to
+        illustrate how limited our time on Earth really is. He broke down
+        average lifespans into weeks, showing how activities like vacations or
+        time with family occupy surprisingly few squares. This visualization
+        struck a chord with millions, sparking a movement toward greater
+        awareness of mortality.
+      </p>
+
+      <p>
+        Historically, the idea ties back to ancient philosophies. The Stoics,
+        including Seneca and Marcus Aurelius, emphasized memento mori -
+        "remember that you must die" - as a way to live virtuously. Seneca's
+        essay "On the Shortness of Life" argues that life isn't short; we just
+        waste much of it. A life calendar embodies this by making waste visible.
+        In contemporary times, tools like this have been adapted into apps,
+        posters, and interactive websites, allowing users to customize based on
+        their birthdate and expected lifespan. Our life calendar tool builds on
+        this tradition, adding interactive features like color-coded stages and
+        screenshot capabilities for easy sharing and reflection.
+      </p>
+
+      <p>
+        Beyond Urban, influencers like Kurzgesagt and productivity experts such
+        as Ali Abdaal have popularized similar concepts, often linking them to
+        goal-setting and habit formation. By seeing your life laid out in weeks,
+        you're motivated to fill those squares with meaningful experiences
+        rather than regrets.
+      </p>
+
+      <h2>Benefits of Using a Life Calendar</h2>
+      <p>
+        Incorporating a life calendar into your routine offers numerous
+        psychological and practical benefits. First and foremost, it fosters
+        gratitude. Seeing the colored squares of lived weeks reminds you of
+        accomplishments and memories, while the blank ones ahead inspire hope
+        and planning. This duality combats anxiety about aging by reframing time
+        as an opportunity rather than a loss.
+      </p>
+      <ul>
+        <li><strong>Improved Time Management:</strong> Visualizing weeks makes it clear how habits add up. For instance, dedicating just one square per week to learning a skill could lead to mastery over years.</li>
+        <li><strong>Reduced Procrastination:</strong> The finite grid discourages putting off dreams, as you see how few weeks remain for certain pursuits.</li>
+        <li><strong>Enhanced Goal Setting:</strong> Break long-term goals into weekly actions, aligning them with life stages like young adulthood or senior years.</li>
+        <li><strong>Mindfulness and Reflection:</strong> Regularly updating your calendar encourages journaling or meditation on past weeks, promoting personal growth.</li>
+        <li><strong>Motivation for Healthy Living:</strong> Adjusting life expectancy based on lifestyle choices highlights the impact of diet, exercise, and stress management on longevity.</li>
+      </ul>
+      <p>
+        Studies in positive psychology support these benefits. Research from the
+        Journal of Personality and Social Psychology shows that mortality
+        awareness can lead to more prosocial behaviors and life satisfaction. A
+        life calendar serves as a daily nudge toward these outcomes, helping
+        users live with intention.
+      </p>
+
+      <h2>How to Use Our Life Calendar Tool</h2>
+      <p>
+        Our interactive life calendar is designed for simplicity and impact.
+        Start by entering your name, birthdate, and desired life expectancy
+        (default is 90 years, but adjustable from 50 to 120). The tool
+        automatically calculates weeks lived and remaining, displaying them in a
+        colorful grid. Each row represents a year, with columns for weeks,
+        color-coded by life stage: soft greens for childhood, blues for
+        adolescence and young adulthood, purples for middle age, and indigos for
+        senior years.
+      </p>
+
+      <p>
+        Key features include real-time stats on weeks lived, remaining, life
+        percentage, and current age. Hover over squares for tooltips showing
+        specific year and week. When ready, click "Save Calendar" to generate a
+        high-quality PNG screenshot - perfect for printing as a poster or sharing
+        on social media. For best results, use it weekly to mark progress and
+        set intentions. Customize expectancy based on factors like gender,
+        location, or health; for example, global averages hover around 72-80
+        years, but optimists might aim higher.
+      </p>
+
+      <p>
+        This tool isn't just for individuals - families can create shared
+        calendars, businesses might use them for project timelines, and
+        educators for teaching time concepts. Experiment with different
+        expectancies to see how lifestyle changes could add weeks.
+      </p>
+
+      <h3>Life Expectancy Considerations</h3>
+      <p>
+        Choosing a life expectancy is personal and influential. Factors include
+        genetics, environment, and habits. According to the World Health
+        Organization, global life expectancy rose to 73 years in 2019, with
+        variations by country - e.g., 82 in Japan vs. 63 in some African nations.
+        Women typically outlive men by 5-7 years. Health choices matter: smoking
+        can subtract 10 years, while exercise and diet add them. Our tool
+        defaults to 90 for aspiration, encouraging users to strive for longevity
+        through wellness. Consult actuarial tables or apps like those from the
+        Social Security Administration for personalized estimates. Remember,
+        it's an average; many live beyond 90 with advances in medicine.
+      </p>
+
+      <h2>Quotes About Time and Life</h2>
+      <p>Throughout history, thinkers have pondered time's fleeting nature, inspiring the life calendar concept.</p>
+      <blockquote>"Life is not short at all; it is we who make it short by wasting time." – Seneca</blockquote>
+      <blockquote>"You could leave life right now. Let that determine what you do and say and think." – Marcus Aurelius</blockquote>
+      <blockquote>"The days are long, but the years are short." – Gretchen Rubin</blockquote>
+      <blockquote>"Time is the most valuable thing a man can spend." – Theophrastus</blockquote>
+
+      <p>
+        These quotes reinforce the calendar's message: treat each week as precious. Incorporate them into your reflections for deeper insight.
+      </p>
+
+      <h2>Making the Most of Your Weeks: Tips and Strategies</h2>
+      <p>
+        To maximize your life calendar's value, integrate it with productivity
+        systems. Use the Eisenhower Matrix to prioritize tasks weekly, ensuring
+        squares aren't wasted on urgencies over importances. Adopt the 80/20
+        rule - focus 80% of efforts on 20% of activities yielding most joy or
+        impact. Track habits with apps like Habitica, marking progress on your
+        calendar.
+      </p>
+      <p>
+        For long-term planning, divide remaining weeks into phases: career
+        building in adulthood, travel in middle age, legacy in seniors. Set
+        milestones every 520 weeks (10 years), reviewing achievements. Combat
+        time thieves like excessive social media by allocating specific squares
+        to leisure. Practice gratitude journaling each week, noting what made it
+        meaningful.
+      </p>
+      <p>
+        Psychologically, embrace "temporal scarcity" - the awareness that boosts
+        appreciation. Studies from Harvard show this mindset increases
+        happiness. Share your calendar with loved ones for accountability and
+        connection. Finally, remember flexibility: life isn't linear, and
+        unexpected events add color. The goal is presence, not perfection.
+      </p>
+
+      <p>
+        In conclusion, a life calendar isn't morbid; it's empowering. By
+        visualizing your life in weeks, you gain clarity to live fully. Whether
+        discovering it today or revisiting annually, let it guide you toward a
+        life of purpose, where every square tells a story worth remembering.
+        Start now - your weeks await.
+      </p>
+    </section>
   </main>
 
   <script>
@@ -608,7 +873,7 @@
 
     function updateTitle() {
       const name = document.getElementById('name').value.trim();
-      document.getElementById('title').textContent = name ? `${name}'s Life Calendar` : 'Life Calendar';
+      document.getElementById('title-text').textContent = name ? `${name}'s Life Calendar` : 'Life Calendar';
     }
 
     function updateCalendar() {
@@ -643,6 +908,7 @@
       const description = document.getElementById('description');
       const quote = document.querySelector('.quote');
       const subtitle = document.querySelector('.subtitle');
+      const seoSection = document.getElementById('seo-section');
       const container = document.querySelector('.container');
 
       btn.disabled = true;
@@ -652,11 +918,13 @@
       const originalDescriptionDisplay = description.style.display;
       const originalQuoteDisplay = quote.style.display;
       const originalSubtitleMargin = subtitle.style.marginBottom;
+      const originalSeoDisplay = seoSection.style.display;
 
       inputs.style.display = 'none';
       description.style.display = 'none';
       quote.style.display = 'none';
-      subtitle.style.marginBottom = '40px';
+      subtitle.style.marginBottom = '80px';
+      seoSection.style.display = 'none';
 
       htmlToImage.toPng(container, {
         quality: 1.0,
@@ -684,6 +952,7 @@
           description.style.display = originalDescriptionDisplay;
           quote.style.display = originalQuoteDisplay;
           subtitle.style.marginBottom = originalSubtitleMargin;
+          seoSection.style.display = originalSeoDisplay;
           btn.disabled = false;
           btn.innerHTML = 'Save Calendar';
         });
