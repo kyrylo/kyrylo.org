@@ -673,9 +673,9 @@
       // Draw future weeks (gradient background for entire grid area)
       const gradient = ctx.createLinearGradient(
         isHorizontal ? rowLabelWidth : 0,
-        isHorizontal ? 0 : headerHeight,
+        isHorizontal ? headerHeight : headerHeight,
         isHorizontal ? rowLabelWidth + cols * cellWidth : 0,
-        isHorizontal ? 0 : headerHeight + rows * cellHeight
+        isHorizontal ? headerHeight : headerHeight + rows * cellHeight
       );
       gradient.addColorStop(0, '#f8f9fa');
       gradient.addColorStop(1, '#e9ecef');
