@@ -762,6 +762,7 @@
       canvas.height = (headerHeight + rows * cellHeight + bottomHeaderHeight) * dpr;
 
       ctx.scale(dpr, dpr);
+      ctx.imageSmoothingEnabled = false;
       ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
       // Draw future weeks (gradient background for entire grid area)
@@ -896,7 +897,7 @@
       if (!birthdateValue) return;
 
       const birthDate = new Date(birthdateValue);
-      const currentDate = new Date(2025, 7, 10);
+      const currentDate = new Date();
       const timeDiff = currentDate - birthDate;
       const weeksLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
       const totalWeeks = lifeExpectancy * 52;
@@ -953,7 +954,7 @@
       }
 
       const birthDate = new Date(birthdateValue);
-      const currentDate = new Date(2025, 7, 10); // August 10, 2025
+      const currentDate = new Date();
       const timeDiff = currentDate - birthDate;
 
       if (timeDiff < 0) {
@@ -1058,27 +1059,27 @@
 
       htmlToImage.toPng(container, {
         quality: 1.0,
-        pixelRatio: 4,
+        pixelRatio: 3,
         backgroundColor: 'white'
       })
         .then(function (dataUrl) {
           const img = new Image();
           img.src = dataUrl;
           img.onload = () => {
-            const targetWidth = 1600;
-            const targetHeight = 900;
-            const scale = Math.min(targetWidth / img.width, targetHeight / img.height);
-            const scaledWidth = img.width * scale;
-            const scaledHeight = img.height * scale;
-            const offsetX = (targetWidth - scaledWidth) / 2;
-            const offsetY = (targetHeight - scaledHeight) / 2;
+            const originalWidth = img.width;
+            const originalHeight = img.height;
+            // Add whitespace to left and right: make width 1.5 times original for desktop-like aspect
+            const paddingRatio = 0.25; // 25% padding on each side (total 50% wider)
+            const sidePadding = originalWidth * paddingRatio;
+            const newWidth = originalWidth + 2 * sidePadding;
+            const newHeight = originalHeight;
             const newCanvas = document.createElement('canvas');
-            newCanvas.width = targetWidth;
-            newCanvas.height = targetHeight;
+            newCanvas.width = newWidth;
+            newCanvas.height = newHeight;
             const newCtx = newCanvas.getContext('2d');
             newCtx.fillStyle = 'white';
-            newCtx.fillRect(0, 0, targetWidth, targetHeight);
-            newCtx.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
+            newCtx.fillRect(0, 0, newWidth, newHeight);
+            newCtx.drawImage(img, sidePadding, 0, originalWidth, originalHeight);
             const newDataUrl = newCanvas.toDataURL('image/png', 1.0);
             const name = document.getElementById('name').value.trim() || 'Life';
             const link = document.createElement('a');
