@@ -213,6 +213,7 @@
 
     #grid canvas {
       display: block;
+      backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
 
@@ -828,10 +829,6 @@
       const birthDate = new Date(birthdateValue);
       const currentDate = new Date();
       const timeDiff = currentDate - birthDate;
-      if (timeDiff < 0) {
-        alert('Birthdate cannot be in the future.');
-        return;
-      }
       const weeksLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
       fullYears = Math.floor(weeksLived / 52);
       extraWeeks = weeksLived % 52;
