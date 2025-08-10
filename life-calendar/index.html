@@ -378,10 +378,6 @@
       width: 100%;
     }
 
-    .author-block {
-      padding: 5px;
-    }
-
     .author {
       text-decoration: none;
     }
@@ -394,8 +390,8 @@
 </head>
 
 <body>
-  <header class="author-block">by <a href="/" class="author">Kyrylo Silin</a></header>
   <main class="container">
+    <header class="author-block">by <a href="/" class="author">Kyrylo Silin</a></header>
     <header>
       <h1 id="title">
         <img src="/assets/images/life-calendar/logo.svg" alt="Life Calendar Logo" style="height: 50px; vertical-align: middle;">
@@ -503,6 +499,8 @@
         <span>Senior Years (65+)</span>
       </li>
     </ul>
+
+    <p id="screenshot-footer" style="display: none; text-align: center; color: #cccccc; font-size: 0.8em; margin: 20px 0 10px;">Created with kyrylo.org/life-calendar</p>
 
     <section id="seo-section">
       <h2>What is a Life Calendar?</h2>
@@ -724,6 +722,17 @@
       return { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel };
     }
 
+    function calculateScreenshotDimensions() {
+      let cellWidth = 15;
+      let cellHeight = 15;
+      let rowLabelWidth = 60;
+      let headerHeight = 40;
+      let fontSizeHeader = 16;
+      let fontSizeLabel = 18;
+
+      return { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel };
+    }
+
     function getColorForAge(year) {
       if (year < 6) return '#d4edda';
       if (year < 13) return '#a8e6cf';
@@ -734,92 +743,151 @@
       return '#7986cb';
     }
 
-    function drawGrid() {
-      const dims = calculateDimensions();
-      const { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel } = dims;
+    function drawGrid(isScreenshot = false, isHorizontal = false) {
+      const dims = isScreenshot ? calculateScreenshotDimensions() : calculateDimensions();
+      let { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel } = dims;
       const dpr = window.devicePixelRatio || 1;
+      const bottomHeaderHeight = isHorizontal ? headerHeight : 0;
+      const paddingRight = isScreenshot ? 40 : 0;
 
-      canvas.style.width = `${rowLabelWidth + 52 * cellWidth}px`;
-      canvas.style.height = `${headerHeight + lifeExpectancy * cellHeight}px`;
+      const weekDimIsX = !isHorizontal;
+      const yearDimIsX = isHorizontal;
+      const rows = weekDimIsX ? lifeExpectancy : 52;
+      const cols = weekDimIsX ? 52 : lifeExpectancy;
 
-      canvas.width = (rowLabelWidth + 52 * cellWidth) * dpr;
-      canvas.height = (headerHeight + lifeExpectancy * cellHeight) * dpr;
+      canvas.style.width = `${rowLabelWidth + cols * cellWidth + paddingRight}px`;
+      canvas.style.height = `${headerHeight + rows * cellHeight + bottomHeaderHeight}px`;
+
+      canvas.width = (rowLabelWidth + cols * cellWidth + paddingRight) * dpr;
+      canvas.height = (headerHeight + rows * cellHeight + bottomHeaderHeight) * dpr;
 
       ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
-      // Draw future weeks (gradient background)
-      for (let year = 0; year < lifeExpectancy; year++) {
-        for (let week = 0; week < 52; week++) {
-          const gradient = ctx.createLinearGradient(0, 0, 0, lifeExpectancy * cellHeight);
-          gradient.addColorStop(0, '#f8f9fa');
-          gradient.addColorStop(1, '#e9ecef');
-          ctx.fillStyle = gradient;
-          ctx.fillRect(rowLabelWidth + week * cellWidth, headerHeight + year * cellHeight, cellWidth, cellHeight);
+      // Draw future weeks (gradient background for entire grid area)
+      const gradient = ctx.createLinearGradient(
+        isHorizontal ? rowLabelWidth : 0,
+        isHorizontal ? 0 : headerHeight,
+        isHorizontal ? rowLabelWidth + cols * cellWidth : 0,
+        isHorizontal ? 0 : headerHeight + rows * cellHeight
+      );
+      gradient.addColorStop(0, '#f8f9fa');
+      gradient.addColorStop(1, '#e9ecef');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(rowLabelWidth, headerHeight, cols * cellWidth, rows * cellHeight);
+
+      // Draw lived weeks with age-based colors
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const year = isHorizontal ? c : r;
+          const week = isHorizontal ? r : c;
+          if (year < fullYears || (year === fullYears && week < extraWeeks)) {
+            ctx.fillStyle = getColorForAge(year);
+            ctx.fillRect(rowLabelWidth + c * cellWidth, headerHeight + r * cellHeight, cellWidth, cellHeight);
+          }
         }
       }
 
-      // Draw lived weeks with age-based colors
-      for (let year = 0; year < fullYears; year++) {
-        ctx.fillStyle = getColorForAge(year);
-        ctx.fillRect(rowLabelWidth, headerHeight + year * cellHeight, 52 * cellWidth, cellHeight);
-      }
-      if (fullYears < lifeExpectancy) {
-        ctx.fillStyle = getColorForAge(fullYears);
-        ctx.fillRect(rowLabelWidth, headerHeight + fullYears * cellHeight, extraWeeks * cellWidth, cellHeight);
-      }
-
-      // Draw grid lines with subtle styling
+      // Draw grid lines
+      // Week dimension lines (quarters)
       ctx.strokeStyle = 'rgba(0,0,0,0.1)';
       ctx.lineWidth = 0.5;
-
-      // Vertical lines (quarters)
       for (let q = 1; q < 4; q++) {
-        const x = rowLabelWidth + q * 13 * cellWidth;
-        ctx.beginPath();
-        ctx.moveTo(x, headerHeight);
-        ctx.lineTo(x, headerHeight + lifeExpectancy * cellHeight);
-        ctx.stroke();
+        const pos = q * 13;
+        if (pos >= (weekDimIsX ? cols : rows)) continue;
+        if (weekDimIsX) {
+          // Vertical line
+          const x = rowLabelWidth + pos * cellWidth;
+          ctx.beginPath();
+          ctx.moveTo(x, headerHeight);
+          ctx.lineTo(x, headerHeight + rows * cellHeight);
+          ctx.stroke();
+        } else {
+          // Horizontal line
+          const y = headerHeight + pos * cellHeight;
+          ctx.beginPath();
+          ctx.moveTo(rowLabelWidth, y);
+          ctx.lineTo(rowLabelWidth + cols * cellWidth, y);
+          ctx.stroke();
+        }
       }
 
-      // Mid-year line
+      // Mid-year line for week dim
       ctx.strokeStyle = 'rgba(0,0,0,0.2)';
-      const monthX = rowLabelWidth + 26 * cellWidth;
-      ctx.beginPath();
-      ctx.moveTo(monthX, headerHeight);
-      ctx.lineTo(monthX, headerHeight + lifeExpectancy * cellHeight);
-      ctx.stroke();
+      const midPos = 26;
+      if (midPos < (weekDimIsX ? cols : rows)) {
+        if (weekDimIsX) {
+          const x = rowLabelWidth + midPos * cellWidth;
+          ctx.beginPath();
+          ctx.moveTo(x, headerHeight);
+          ctx.lineTo(x, headerHeight + rows * cellHeight);
+          ctx.stroke();
+        } else {
+          const y = headerHeight + midPos * cellHeight;
+          ctx.beginPath();
+          ctx.moveTo(rowLabelWidth, y);
+          ctx.lineTo(rowLabelWidth + cols * cellWidth, y);
+          ctx.stroke();
+        }
+      }
 
-      // Decade lines
+      // Decade lines for year dim
       ctx.strokeStyle = 'rgba(0,0,0,0.3)';
       ctx.lineWidth = 1;
-      for (let d = 10; d < lifeExpectancy; d += 10) {
-        const yPos = headerHeight + d * cellHeight;
-        ctx.beginPath();
-        ctx.moveTo(rowLabelWidth, yPos);
-        ctx.lineTo(rowLabelWidth + 52 * cellWidth, yPos);
-        ctx.stroke();
+      for (let d = 10; d < (yearDimIsX ? cols : rows); d += 10) {
+        if (yearDimIsX) {
+          // Vertical line
+          const x = rowLabelWidth + d * cellWidth;
+          ctx.beginPath();
+          ctx.moveTo(x, headerHeight);
+          ctx.lineTo(x, headerHeight + rows * cellHeight);
+          ctx.stroke();
+        } else {
+          // Horizontal line
+          const y = headerHeight + d * cellHeight;
+          ctx.beginPath();
+          ctx.moveTo(rowLabelWidth, y);
+          ctx.lineTo(rowLabelWidth + cols * cellWidth, y);
+          ctx.stroke();
+        }
       }
 
-      // Headers and labels with improved styling
-      ctx.fillStyle = '#667eea';
-      ctx.font = `bold ${fontSizeHeader}px Arial`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'bottom';
-      for (let q = 1; q <= 4; q++) {
-        const x = rowLabelWidth + (q - 1) * 13 * cellWidth + 6.5 * cellWidth;
-        ctx.fillText(`Q${q}`, x, headerHeight - 3);
-      }
-
-      // Age labels
-      ctx.font = `${fontSizeLabel}px Arial`;
+      // Draw left labels (for y dimension)
+      const isYearY = !isHorizontal;
+      const labelStep = isYearY ? 5 : 10;
       ctx.textAlign = 'right';
       ctx.textBaseline = 'middle';
-      for (let year = 0; year < lifeExpectancy; year += 5) {
-        const isDecade = year % 10 === 0;
+      for (let i = 0; i < rows; i += labelStep) {
+        const isDecade = isYearY && (i % 10 === 0);
         ctx.font = isDecade ? `bold ${fontSizeLabel}px Arial` : `${fontSizeLabel}px Arial`;
         ctx.fillStyle = isDecade ? '#333' : '#667eea';
-        ctx.fillText(year, rowLabelWidth - 3, headerHeight + year * cellHeight + cellHeight / 2);
+        ctx.fillText(i, rowLabelWidth - 3, headerHeight + i * cellHeight + cellHeight / 2);
+      }
+
+      // Draw top headers if weeks on x (Q1-Q4)
+      if (weekDimIsX) {
+        ctx.fillStyle = '#667eea';
+        ctx.font = `bold ${fontSizeHeader}px Arial`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        for (let q = 1; q <= 4; q++) {
+          const x = rowLabelWidth + (q - 1) * 13 * cellWidth + 6.5 * cellWidth;
+          ctx.fillText(`Q${q}`, x, headerHeight - 3);
+        }
+      }
+
+      // Draw bottom labels if years on x (every 5 years)
+      if (isHorizontal) {
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        for (let year = 0; year < lifeExpectancy; year += 5) {
+          const isDecade = year % 10 === 0;
+          ctx.font = isDecade ? `bold ${fontSizeLabel}px Arial` : `${fontSizeLabel}px Arial`;
+          ctx.fillStyle = isDecade ? '#333' : '#667eea';
+          const x = rowLabelWidth + year * cellWidth + cellWidth / 2;
+          const y = headerHeight + rows * cellHeight + 5;
+          ctx.fillText(year, x, y);
+        }
       }
     }
 
@@ -868,7 +936,7 @@
         }
       });
 
-      window.addEventListener('resize', debounce(drawGrid, 200));
+      window.addEventListener('resize', debounce(() => drawGrid(), 200));
     };
 
     function updateTitle() {
@@ -910,6 +978,12 @@
       const subtitle = document.querySelector('.subtitle');
       const seoSection = document.getElementById('seo-section');
       const container = document.querySelector('.container');
+      const authorBlock = document.querySelector('.author-block');
+      const screenshotFooter = document.getElementById('screenshot-footer');
+      const yAxis = document.querySelector('.y-axis-container');
+      const xAxis = document.querySelector('.x-axis-container');
+
+      const useHorizontal = true;
 
       btn.disabled = true;
       btn.innerHTML = '<span class="loading"></span>Generating...';
@@ -919,12 +993,26 @@
       const originalQuoteDisplay = quote.style.display;
       const originalSubtitleMargin = subtitle.style.marginBottom;
       const originalSeoDisplay = seoSection.style.display;
+      const originalContainerWidth = container.style.width;
+      const originalContainerPadding = container.style.padding;
+      const originalAuthorDisplay = authorBlock.style.display;
+      const originalFooterDisplay = screenshotFooter.style.display;
+      const originalYAxisDisplay = yAxis.style.display;
+      const originalXAxisDisplay = xAxis.style.display;
 
       inputs.style.display = 'none';
       description.style.display = 'none';
       quote.style.display = 'none';
-      subtitle.style.marginBottom = '80px';
       seoSection.style.display = 'none';
+      authorBlock.style.display = 'none';
+      screenshotFooter.style.display = 'block';
+      yAxis.style.display = 'none';
+      xAxis.style.display = 'none';
+      container.style.width = 'fit-content';
+      container.style.padding = '10px 20px';
+      subtitle.style.marginBottom = '40px';
+
+      drawGrid(true, useHorizontal);
 
       htmlToImage.toPng(container, {
         quality: 1.0,
@@ -953,8 +1041,15 @@
           quote.style.display = originalQuoteDisplay;
           subtitle.style.marginBottom = originalSubtitleMargin;
           seoSection.style.display = originalSeoDisplay;
+          container.style.width = originalContainerWidth;
+          container.style.padding = originalContainerPadding;
+          authorBlock.style.display = originalAuthorDisplay;
+          screenshotFooter.style.display = originalFooterDisplay;
+          yAxis.style.display = originalYAxisDisplay;
+          xAxis.style.display = originalXAxisDisplay;
           btn.disabled = false;
           btn.innerHTML = 'Save Calendar';
+          drawGrid(false, false);
         });
     }
   </script>
