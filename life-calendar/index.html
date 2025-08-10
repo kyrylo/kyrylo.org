@@ -380,6 +380,16 @@
       width: 100%;
     }
 
+    .author-block {
+      position: absolute;
+      top: -1px;
+      left: 15px;
+      font-weight: 700;
+      border: 1px solid gray;
+      display: inline;
+      padding: 5px;
+      border-radius: 0px 0px 8px 8px;
+    }
     .author {
       text-decoration: none;
     }
@@ -392,8 +402,10 @@
 </head>
 
 <body>
+  <nav class="author-block">
+    by <a href="/" class="author">Kyrylo Silin</a>
+  </nav>
   <main class="container">
-    <header class="author-block">by <a href="/" class="author">Kyrylo Silin</a></header>
     <header>
       <h1 id="title">
         <img src="/assets/images/life-calendar/logo.svg" alt="Life Calendar Logo" style="height: 50px; vertical-align: middle;">
