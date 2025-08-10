@@ -228,6 +228,8 @@
 
     #grid canvas {
       display: block;
+      max-width: 100%;
+      height: auto !important;
     }
 
     #description {
@@ -662,21 +664,19 @@
       const rows = weekDimIsX ? lifeExpectancy : 52;
       const cols = weekDimIsX ? 52 : lifeExpectancy;
 
-      canvas.style.width = `${rowLabelWidth + cols * cellWidth + paddingRight}px`;
-      canvas.style.height = `${headerHeight + rows * cellHeight + bottomHeaderHeight}px`;
-      canvas.width = (rowLabelWidth + cols * cellWidth + paddingRight) * dpr;
-      canvas.height = (headerHeight + rows * cellHeight + bottomHeaderHeight) * dpr;
+      // Ensure canvas has a minimum size for iOS Safari
+      const minWidth = rowLabelWidth + cols * cellWidth + paddingRight;
+      const minHeight = headerHeight + rows * cellHeight + bottomHeaderHeight;
+      canvas.width = Math.max(minWidth * dpr, 300 * dpr); // Minimum 300px width
+      canvas.height = Math.max(minHeight * dpr, 200 * dpr); // Minimum 200px height
+      canvas.style.width = `${minWidth}px`;
+      canvas.style.height = `${minHeight}px`;
       ctx.scale(dpr, dpr);
       ctx.imageSmoothingEnabled = false;
       ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
       // Draw future weeks (gradient background for entire grid area)
-      const gradient = ctx.createLinearGradient(
-        isHorizontal ? rowLabelWidth : 0,
-        isHorizontal ? headerHeight : headerHeight,
-        isHorizontal ? rowLabelWidth + cols * cellWidth : 0,
-        isHorizontal ? headerHeight : headerHeight + rows * cellHeight
-      );
+      const gradient = ctx.createLinearGradient(rowLabelWidth, headerHeight, rowLabelWidth + cols * cellWidth, headerHeight);
       gradient.addColorStop(0, '#f8f9fa');
       gradient.addColorStop(1, '#e9ecef');
       ctx.fillStyle = gradient;
@@ -695,21 +695,18 @@
       }
 
       // Draw grid lines
-      // Week dimension lines (quarters)
       ctx.strokeStyle = 'rgba(0,0,0,0.1)';
       ctx.lineWidth = 0.5;
       for (let q = 1; q < 4; q++) {
         const pos = q * 13;
         if (pos >= (weekDimIsX ? cols : rows)) continue;
         if (weekDimIsX) {
-          // Vertical line
           const x = rowLabelWidth + pos * cellWidth;
           ctx.beginPath();
           ctx.moveTo(x, headerHeight);
           ctx.lineTo(x, headerHeight + rows * cellHeight);
           ctx.stroke();
         } else {
-          // Horizontal line
           const y = headerHeight + pos * cellHeight;
           ctx.beginPath();
           ctx.moveTo(rowLabelWidth, y);
@@ -718,7 +715,6 @@
         }
       }
 
-      // Mid-year line for week dim
       ctx.strokeStyle = 'rgba(0,0,0,0.2)';
       const midPos = 26;
       if (midPos < (weekDimIsX ? cols : rows)) {
@@ -737,19 +733,16 @@
         }
       }
 
-      // Decade lines for year dim
       ctx.strokeStyle = 'rgba(0,0,0,0.3)';
       ctx.lineWidth = 1;
       for (let d = 10; d < (yearDimIsX ? cols : rows); d += 10) {
         if (yearDimIsX) {
-          // Vertical line
           const x = rowLabelWidth + d * cellWidth;
           ctx.beginPath();
           ctx.moveTo(x, headerHeight);
           ctx.lineTo(x, headerHeight + rows * cellHeight);
           ctx.stroke();
         } else {
-          // Horizontal line
           const y = headerHeight + d * cellHeight;
           ctx.beginPath();
           ctx.moveTo(rowLabelWidth, y);
@@ -758,7 +751,6 @@
         }
       }
 
-      // Draw quarter labels on left if weeks on y (horizontal mode)
       if (isHorizontal) {
         ctx.fillStyle = '#667eea';
         ctx.font = `bold ${fontSizeHeader}px Arial`;
@@ -770,7 +762,6 @@
         }
       }
 
-      // Draw bottom labels if years on x (every 5 years)
       if (isHorizontal) {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
@@ -807,10 +798,12 @@
     window.onload = function () {
       canvas = document.createElement('canvas');
       ctx = canvas.getContext('2d');
+      // Set initial canvas size to ensure visibility
+      canvas.width = 600; // Default width
+      canvas.height = 400; // Default height
       document.getElementById('grid').appendChild(canvas);
       drawGrid(false, true);
 
-      // Enhanced tooltip
       canvas.addEventListener('mousemove', (e) => {
         const dims = calculateDimensions();
         const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
@@ -894,7 +887,6 @@
       btn.disabled = true;
       btn.innerHTML = '<span class="loading"></span>Generating...';
 
-      // Save original styles
       const originalStyles = {
         inputsDisplay: inputs.style.display,
         descriptionDisplay: description.style.display,
@@ -940,7 +932,6 @@
         label.style.fontSize = '2em';
       });
 
-      // Apply fixed styles for screenshot
       inputs.style.display = 'none';
       description.style.display = 'none';
       quote.style.display = 'none';
@@ -968,7 +959,6 @@
       titleElem.style.fontSize = '6em';
       logoImg.style.height = '120px';
 
-      // Set fixed canvas dimensions
       const dims = calculateScreenshotDimensions();
       const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
       const cols = useHorizontal ? lifeExpectancy : 52;
@@ -980,17 +970,13 @@
       canvas.style.height = `${canvasHeight}px`;
       canvas.width = canvasWidth * 2;
       canvas.height = canvasHeight * 2;
-
-      // Redraw grid with fixed dimensions
       drawGrid(true, useHorizontal);
 
-      // Capture screenshot
       htmlToImage.toPng(container, { quality: 1.0, pixelRatio: 2, backgroundColor: 'white' })
         .then(function (dataUrl) {
           const img = new Image();
           img.src = dataUrl;
           img.onload = () => {
-            // Add consistent padding (25% on each side)
             const paddingRatio = 0.25;
             const sidePadding = img.width * paddingRatio;
             const newWidth = img.width + 2 * sidePadding;
@@ -1039,7 +1025,6 @@
           alert('Failed to save screenshot. Please try again.');
         })
         .finally(function () {
-          // Restore original styles
           inputs.style.display = originalStyles.inputsDisplay;
           description.style.display = originalStyles.descriptionDisplay;
           quote.style.display = originalStyles.quoteDisplay;
