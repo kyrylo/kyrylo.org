@@ -90,6 +90,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      <a href="/seasick-simulator/">SeaSick Simulator</a>: Experience the queasy charm of rough seas on any website.
+    </li>
+    <li>
       <a href="/life-calendar/">Life Calendar</a>: Every week is a gift. Make them count.
     </li>
     <li>
