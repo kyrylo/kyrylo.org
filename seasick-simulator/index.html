@@ -179,23 +179,6 @@
       will-change: transform, opacity;
     }
 
-    @keyframes ripple {
-      0% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-
-      50% {
-        transform: translateX(0%);
-        opacity: 0.5;
-      }
-
-      100% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-    }
-
     .bookmarklet-link:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(30, 144, 255, 0.6);
@@ -336,6 +319,14 @@
           <a href="javascript:(function(){
             if(document.getElementById('jgl-styles')){
               document.getElementById('jgl-styles').remove();
+              var elements = document.querySelectorAll('h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form');
+              elements.forEach(function(el){
+                el.style.animation = 'none';
+                if (el._pseudoStyle) {
+                  el._pseudoStyle.remove();
+                  el._pseudoStyle = null;
+                }
+              });
               var n=document.createElement('div');
               n.innerHTML='⚓ WATERS CALMED ⚓';
               n.style.cssText='position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#4682b4,#1e90ff);color:white;padding:15px 25px;border-radius:50px;font-weight:bold;z-index:999999;font-family:Arial,sans-serif;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:jglB 1.5s ease-in-out infinite;';
@@ -345,7 +336,12 @@
               return;
             }
             var css=`@keyframes jgl{0%{transform:translateY(0px) rotate(0deg) scale(1);}25%{transform:translateY(-10px) rotate(-2deg) scale(1.02);}50%{transform:translateY(8px) rotate(2deg) scale(0.98);}75%{transform:translateY(-5px) rotate(-1deg) scale(1.01);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}10%{transform:translateY(-15px) translateX(-3px) rotate(-4deg) scale(1.05);}20%{transform:translateY(12px) translateX(3px) rotate(4deg) scale(0.95);}30%{transform:translateY(-10px) translateX(-2px) rotate(-3deg) scale(1.03);}40%{transform:translateY(8px) translateX(2px) rotate(3deg) scale(0.97);}50%{transform:translateY(-6px) translateX(-1px) rotate(-2deg) scale(1.02);}60%{transform:translateY(5px) translateX(1px) rotate(2deg) scale(0.98);}70%{transform:translateY(-4px) translateX(-0.5px) rotate(-1deg) scale(1.01);}80%{transform:translateY(3px) translateX(0.5px) rotate(1deg) scale(0.99);}90%{transform:translateY(-2px) translateX(-0.2px) rotate(-0.5deg) scale(1.005);}100%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}}@keyframes jglB{0%{transform:translateY(0px) rotate(0deg) scale(1);}15%{transform:translateY(-12px) rotate(-3deg) scale(1.1);}30%{transform:translateY(10px) rotate(3deg) scale(0.9);}45%{transform:translateY(-8px) rotate(-2deg) scale(1.05);}60%{transform:translateY(6px) rotate(2deg) scale(0.95);}75%{transform:translateY(-4px) rotate(-1deg) scale(1.02);}90%{transform:translateY(2px) rotate(0.5deg) scale(0.98);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes ripple{0%{transform:translateX(-100%);opacity:0;}50%{transform:translateX(0%);opacity:0.5;}100%{transform:translateX(100%);opacity:0;}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;will-change:transform;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;will-change:transform;}img{animation:jgl 3s ease-in-out infinite !important;will-change:transform;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;will-change:transform;}p,span,div{animation:jgl 4s ease-in-out infinite !important;will-change:transform;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;will-change:transform;}form{animation:jglH 2.2s ease-in-out infinite !important;will-change:transform;}:where(h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form)::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:ripple 4s ease-in-out infinite;transform:translateX(-100%);opacity:0;animation-delay:0.5s;pointer-events:none;will-change:transform,opacity;}`;
-            var elements=document.querySelectorAll('h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form'); var delay=0; elements.forEach(function(el){ el.style.animationDelay=(delay%2)+'s'; delay+=0.1; if(delay>2) delay=0;
+            var elements=document.querySelectorAll('h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form');
+            var delay=0;
+            elements.forEach(function(el){
+              el.style.animationDelay=(delay%2)+'s';
+              delay+=0.1;
+              if(delay>2) delay=0;
             });
             var style=document.createElement('style');
             style.id='jgl-styles';
@@ -372,7 +368,8 @@
 
         <div class="step">
           <span class="step-number">4</span>
-          <strong>Watch the digital ocean churn!</ GELDClick again to calm the waters </div>
+          <strong>Watch the digital ocean churn! Click again to calm the waters</strong>
+        </div>
       </nav>
 
       <div class="warning">
@@ -407,12 +404,11 @@
   <script>
     function testJiggle() {
       if (document.getElementById('jgl-styles')) {
-        document.getElementById('jgl-styles').remove();
-        showNotification('⚓ WATERS CALMED ⚓');
+        stopJiggle();
         return;
       }
 
-      var css = `@keyframes jgl{0%{transform:translateY(0px) rotate(0deg) scale(1);}25%{transform:translateY(-10px) rotate(-2deg) scale(1.02);}50%{transform:translateY(8px) rotate(2deg) scale(0.98);}75%{transform:translateY(-5px) rotate(-1deg) scale(1.01);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}10%{transform:translateY(-15px) translateX(-3px) rotate(-4deg) scale(1.05);}20%{transform:translateY(12px) translateX(3px) rotate(4deg) scale(0.95);}30%{transform:translateY(-10px) translateX(-2px) rotate(-3deg) scale(1.03);}40%{transform:translateY(8px) translateX(2px) rotate(3deg) scale(0.97);}50%{transform:translateY(-6px) translateX(-1px) rotate(-2deg) scale(1.02);}60%{transform:translateY(5px) translateX(1px) rotate(2deg) scale(0.98);}70%{transform:translateY(-4px) translateX(-0.5px) rotate(-1deg) scale(1.01);}80%{transform:translateY(3px) translateX(0.5px) rotate(1deg) scale(0.99);}90%{transform:translateY(-2px) translateX(-0.2px) rotate(-0.5deg) scale(1.005);}100%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}}@keyframes jglB{0%{transform:translateY(0px) rotate(0deg) scale(1);}15%{transform:translateY(-12px) rotate(-3deg) scale(1.1);}30%{transform:translateY(10px) rotate(3deg) scale(0.9);}45%{transform:translateY(-8px) rotate(-2deg) scale(1.05);}60%{transform:translateY(6px) rotate(2deg) scale(0.95);}75%{transform:translateY(-4px) rotate(-1deg) scale(1.02);}90%{transform:translateY(2px) rotate(0.5deg) scale(0.98);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes ripple{0%{transform:translateX(-100%);opacity:0;}50%{transform:translateX(0%);opacity:0.5;}100%{transform:translateX(100%);opacity:0;}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;will-change:_PROMPTtransform;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;will-change:transform;}img{animation:jgl 3s ease-in-out infinite !important;will-change:transform;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;will-change:transform;}p,span,div{animation:jgl 4s ease-in-out infinite !important;will-change:transform;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;will-change:transform;}form{animation:jglH 2.2s ease-in-out infinite !important;will-change:transform;}:where(h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form)::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:ripple 4s ease-in-out infinite;transform:translateX(-100%);opacity:0;animation-delay:0.5s;pointer-events:none;will-change:transform,opacity;}`;
+      var css = `@keyframes jgl{0%{transform:translateY(0px) rotate(0deg) scale(1);}25%{transform:translateY(-10px) rotate(-2deg) scale(1.02);}50%{transform:translateY(8px) rotate(2deg) scale(0.98);}75%{transform:translateY(-5px) rotate(-1deg) scale(1.01);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}10%{transform:translateY(-15px) translateX(-3px) rotate(-4deg) scale(1.05);}20%{transform:translateY(12px) translateX(3px) rotate(4deg) scale(0.95);}30%{transform:translateY(-10px) translateX(-2px) rotate(-3deg) scale(1.03);}40%{transform:translateY(8px) translateX(2px) rotate(3deg) scale(0.97);}50%{transform:translateY(-6px) translateX(-1px) rotate(-2deg) scale(1.02);}60%{transform:translateY(5px) translateX(1px) rotate(2deg) scale(0.98);}70%{transform:translateY(-4px) translateX(-0.5px) rotate(-1deg) scale(1.01);}80%{transform:translateY(3px) translateX(0.5px) rotate(1deg) scale(0.99);}90%{transform:translateY(-2px) translateX(-0.2px) rotate(-0.5deg) scale(1.005);}100%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}}@keyframes jglB{0%{transform:translateY(0px) rotate(0deg) scale(1);}15%{transform:translateY(-12px) rotate(-3deg) scale(1.1);}30%{transform:translateY(10px) rotate(3deg) scale(0.9);}45%{transform:translateY(-8px) rotate(-2deg) scale(1.05);}60%{transform:translateY(6px) rotate(2deg) scale(0.95);}75%{transform:translateY(-4px) rotate(-1deg) scale(1.02);}90%{transform:translateY(2px) rotate(0.5deg) scale(0.98);}100%{transform: translateY(0px) rotate(0deg) scale(1);}}@keyframes ripple{0%{transform:translateX(-100%);opacity:0;}50%{transform:translateX(0%);opacity:0.5;}100%{transform:translateX(100%);opacity:0;}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;will-change:transform;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;will-change:transform;}img{animation:jgl 3s ease-in-out infinite !important;will-change:transform;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;will-change:transform;}p,span,div{animation:jgl 4s ease-in-out infinite !important;will-change:transform;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;will-change:transform;}form{animation:jglH 2.2s ease-in-out infinite !important;will-change:transform;}:where(h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form)::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:ripple 4s ease-in-out infinite;transform:translateX(-100%);opacity:0;animation-delay:0.5s;pointer-events:none;will-change:transform,opacity;}`;
 
       var elements = document.querySelectorAll('h1,h2,h3,button,input[type="button"],input[type="submit"],.btn,a[role="button"],img,nav,header,p,span,div,ul,ol,li,form');
       var delay = 0;
@@ -433,21 +429,33 @@
     function stopJiggle() {
       var style = document.getElementById('jgl-styles');
       if (style) {
+        var elements = document.querySelectorAll('h1,h2,h3,button,input[type="button"],input[type="submit"],.btn,a[role="button"],img,nav,header,p,span,div,ul,ol,li,form');
+        elements.forEach(function (el) {
+          el.style.animation = 'none';
+          if (el._pseudoStyle) {
+            el._pseudoStyle.remove();
+            el._pseudoStyle = null;
+          }
+        });
         style.remove();
         showNotification('⚓ WATERS CALMED ⚓');
       }
     }
 
     function showNotification(message) {
+      var existing = document.querySelector('[data-seasick-notification]');
+      if (existing) existing.remove();
+
       var notification = document.createElement('div');
       notification.innerHTML = message;
+      notification.setAttribute('data-seasick-notification', 'true');
       notification.style.cssText = 'position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#4682b4,#1e90ff);color:white;padding:15px 25px;border-radius:50px;font-weight:bold;z-index:999999;font-family:Arial,sans-serif;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:jglB 1.5s ease-in-out infinite;';
       notification.setAttribute('role', 'alert');
       document.body.appendChild(notification);
 
       setTimeout(function () {
         if (notification.parentNode) {
-          notification.parentNode.removeChild(notification);
+          notification.remove();
         }
       }, 3000);
     }
@@ -455,4 +463,3 @@
 </body>
 
 </html>
-
