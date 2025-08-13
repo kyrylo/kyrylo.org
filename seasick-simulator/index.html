@@ -10,7 +10,7 @@
   <meta name="robots" content="index, follow">
 
   <meta property="og:site_name" content="SeaSick Simulator">
-  <meta property="og:title" content="SeaSick Simulatorr">
+  <meta property="og:title" content="SeaSick Simulator">
   <meta property="og:description" content="Make waves on any website. Experience the queasy charm of rough seas.">
   <meta property="og:image" content="https://kyrylo.org/assets/images/seasick-simulator/og.png?v=149ed35">
   <meta property="og:url" content="https://kyrylo.org/seasick-simulator/">
@@ -54,24 +54,21 @@
       right: 0;
       bottom: 0;
       background:
-        radial-gradient(circle at 20% 80%, rgba(120, 220, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(100, 200, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(150, 230, 255, 0.05) 0%, transparent 50%);
+        linear-gradient(90deg, rgba(120, 220, 255, 0.2) 0%, transparent 50%),
+        linear-gradient(90deg, rgba(100, 200, 255, 0.15) 50%, transparent 100%),
+        linear-gradient(90deg, rgba(150, 230, 255, 0.1) 25%, transparent 75%);
       pointer-events: none;
-      animation: waveShimmer 8s ease-in-out infinite;
+      animation: waveFlow 10s linear infinite;
+      z-index: 1;
     }
 
-    @keyframes waveShimmer {
-
-      0%,
-      100% {
-        opacity: 0.3;
-        transform: translateX(0px);
+    @keyframes waveFlow {
+      0% {
+        background-position: 0% 0, 100% 0, 50% 0;
       }
 
-      50% {
-        opacity: 0.6;
-        transform: translateX(-10px);
+      100% {
+        background-position: 200% 0, 300% 0, 250% 0;
       }
     }
 
@@ -162,6 +159,41 @@
       transition: all 0.3s ease;
       margin: 10px;
       box-shadow: 0 4px 15px rgba(70, 130, 180, 0.4);
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    .bookmarklet-link::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: ripple 4s ease-in-out infinite;
+      transform: translateX(-100%);
+      opacity: 0;
+      animation-delay: 0.5s;
+      will-change: transform, opacity;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      50% {
+        transform: translateX(0%);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
     }
 
     .bookmarklet-link:hover {
@@ -222,6 +254,24 @@
       transition: all 0.3s ease;
       margin: 10px;
       box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    .demo-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: ripple 4s ease-in-out infinite;
+      transform: translateX(-100%);
+      opacity: 0;
+      animation-delay: 0.5s;
+      will-change: transform, opacity;
     }
 
     .demo-button:hover {
@@ -283,9 +333,31 @@
         </div>
 
         <div class="bookmarklet-container">
-          <a href="javascript:(function(){if(document.getElementById('jgl-styles')){document.getElementById('jgl-styles').remove();var n=document.createElement('div');n.innerHTML='⚓ WATERS CALMED ⚓';n.style.cssText='position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#4682b4,#1e90ff);color:white;padding:15px 25px;border-radius:50px;font-weight:bold;z-index:999999;font-family:Arial,sans-serif;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:jglB 1.5s ease-in-out infinite;';n.setAttribute('role','alert');document.body.appendChild(n);setTimeout(function(){if(n.parentNode){n.parentNode.removeChild(n);}},3000);return;}var css=`@keyframes jgl{0%{transform:rotate(0deg) scale(1);}25%{transform:rotate(-3deg) scale(1.02);}50%{transform:rotate(3deg) scale(0.98);}75%{transform:rotate(-2deg) scale(1.01);}100%{transform:rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:rotate(0deg) scale(1) translateX(0px);}10%{transform:rotate(-5deg) scale(1.05) translateX(-2px);}20%{transform:rotate(5deg) scale(0.95) translateX(2px);}30%{transform:rotate(-4deg) scale(1.03) translateX(-1px);}40%{transform:rotate(4deg) scale(0.97) translateX(1px);}50%{transform:rotate(-3deg) scale(1.02) translateX(-1px);}60%{transform:rotate(3deg) scale(0.98) translateX(1px);}70%{transform:rotate(-2deg) scale(1.01) translateX(-0.5px);}80%{transform:rotate(2deg) scale(0.99) translateX(0.5px);}90%{transform:rotate(-1deg) scale(1.005) translateX(-0.2px);}100%{transform:rotate(0deg) scale(1) translateX(0px);}}@keyframes jglB{0%{transform:scale(1) rotate(0deg) translateY(0px);}15%{transform:scale(1.1) rotate(-2deg) translateY(-5px);}30%{transform:scale(0.9) rotate(2deg) translateY(3px);}45%{transform:scale(1.05) rotate(-1deg) translateY(-2px);}60%{transform:scale(0.95) rotate(1deg) translateY(1px);}75%{transform:scale(1.02) rotate(-0.5deg) translateY(-1px);}90%{transform:scale(0.98) rotate(0.5deg) translateY(0.5px);}100%{transform:scale(1) rotate(0deg) translateY(0px);}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;}img{animation:jgl 3s ease-in-out infinite !important;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;}p,span,div{animation:jgl 4s ease-in-out infinite !important;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;}form{animation:jglH 2.2s ease-in-out infinite !important;}`;var elements=document.querySelectorAll('*');var delay=0;elements.forEach(function(el,index){if(el.tagName){el.style.animationDelay=(delay%2)+'s';delay+=0.1;if(delay>2)delay=0;}});var style=document.createElement('style');style.id='jgl-styles';style.innerHTML=css;document.head.appendChild(style);var notification=document.createElement('div');notification.innerHTML='🌊 ROUGH SEAS AHEAD 🌊';notification.style.cssText='position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#4682b4,#1e90ff);color:white;padding:15px 25px;border-radius:50px;font-weight:bold*z-index:999999;font-family:Arial,sans-serif;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:jglB 1.5s ease-in-out infinite;';notification.setAttribute('role','alert');document.body.appendChild(notification);setTimeout(function(){if(notification.parentNode){notification.parentNode.removeChild(notification);}},3000);})();" class="bookmarklet-link">
-            ⚓ MAKE WAVES ON THE WEB!
-          </a>
+          <a href="javascript:(function(){
+            if(document.getElementById('jgl-styles')){
+              document.getElementById('jgl-styles').remove();
+              var n=document.createElement('div');
+              n.innerHTML='⚓ WATERS CALMED ⚓';
+              n.style.cssText='position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#4682b4,#1e90ff);color:white;padding:15px 25px;border-radius:50px;font-weight:bold;z-index:999999;font-family:Arial,sans-serif;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:jglB 1.5s ease-in-out infinite;';
+              n.setAttribute('role','alert');
+              document.body.appendChild(n);
+              setTimeout(function(){if(n.parentNode){n.parentNode.removeChild(n);}},3000);
+              return;
+            }
+            var css=`@keyframes jgl{0%{transform:translateY(0px) rotate(0deg) scale(1);}25%{transform:translateY(-10px) rotate(-2deg) scale(1.02);}50%{transform:translateY(8px) rotate(2deg) scale(0.98);}75%{transform:translateY(-5px) rotate(-1deg) scale(1.01);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}10%{transform:translateY(-15px) translateX(-3px) rotate(-4deg) scale(1.05);}20%{transform:translateY(12px) translateX(3px) rotate(4deg) scale(0.95);}30%{transform:translateY(-10px) translateX(-2px) rotate(-3deg) scale(1.03);}40%{transform:translateY(8px) translateX(2px) rotate(3deg) scale(0.97);}50%{transform:translateY(-6px) translateX(-1px) rotate(-2deg) scale(1.02);}60%{transform:translateY(5px) translateX(1px) rotate(2deg) scale(0.98);}70%{transform:translateY(-4px) translateX(-0.5px) rotate(-1deg) scale(1.01);}80%{transform:translateY(3px) translateX(0.5px) rotate(1deg) scale(0.99);}90%{transform:translateY(-2px) translateX(-0.2px) rotate(-0.5deg) scale(1.005);}100%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}}@keyframes jglB{0%{transform:translateY(0px) rotate(0deg) scale(1);}15%{transform:translateY(-12px) rotate(-3deg) scale(1.1);}30%{transform:translateY(10px) rotate(3deg) scale(0.9);}45%{transform:translateY(-8px) rotate(-2deg) scale(1.05);}60%{transform:translateY(6px) rotate(2deg) scale(0.95);}75%{transform:translateY(-4px) rotate(-1deg) scale(1.02);}90%{transform:translateY(2px) rotate(0.5deg) scale(0.98);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes ripple{0%{transform:translateX(-100%);opacity:0;}50%{transform:translateX(0%);opacity:0.5;}100%{transform:translateX(100%);opacity:0;}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;will-change:transform;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;will-change:transform;}img{animation:jgl 3s ease-in-out infinite !important;will-change:transform;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;will-change:transform;}p,span,div{animation:jgl 4s ease-in-out infinite !important;will-change:transform;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;will-change:transform;}form{animation:jglH 2.2s ease-in-out infinite !important;will-change:transform;}:where(h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form)::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:ripple 4s ease-in-out infinite;transform:translateX(-100%);opacity:0;animation-delay:0.5s;pointer-events:none;will-change:transform,opacity;}`;
+            var elements=document.querySelectorAll('h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form'); var delay=0; elements.forEach(function(el){ el.style.animationDelay=(delay%2)+'s'; delay+=0.1; if(delay>2) delay=0;
+            });
+            var style=document.createElement('style');
+            style.id='jgl-styles';
+            style.innerHTML=css;
+            document.head.appendChild(style);
+            var notification=document.createElement('div');
+            notification.innerHTML='🌊 ROUGH SEAS AHEAD 🌊';
+            notification.style.cssText='position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#4682b4,#1e90ff);color:white;padding:15px 25px;border-radius:50px;font-weight:bold;z-index:999999;font-family:Arial,sans-serif;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:jglB 1.5s ease-in-out infinite;';
+            notification.setAttribute('role','alert');
+            document.body.appendChild(notification);
+            setTimeout(function(){if(notification.parentNode){notification.parentNode.removeChild(notification);}},3000);
+            })();" class="bookmarklet-link">⚓ MAKE WAVES ON THE WEB!</a>
         </div>
 
         <div class="step">
@@ -300,8 +372,7 @@
 
         <div class="step">
           <span class="step-number">4</span>
-          <strong>Watch the digital ocean churn!</strong> Click again to calm the waters
-        </div>
+          <strong>Watch the digital ocean churn!</ GELDClick again to calm the waters </div>
       </nav>
 
       <div class="warning">
@@ -321,7 +392,8 @@
       <h3>⚓ Technical Maritime Log:</h3>
       <div class="code-block">
         Captain's Notes: The bookmarklet deploys CSS wave animations across the digital seas:<br>
-        - Staggered motion creates realistic ocean chaos<br>
+        - Enhanced wave-like translations for realistic ocean motion<br>
+        - Smooth rippling effects simulate water flow (optimized with transforms for performance)<br>
         - Toggle functionality for emergency calm waters<br>
         - Visual storm warnings when seas get rough<br>
         - Compatible with all vessels (websites) that allow JavaScript navigation
@@ -340,16 +412,14 @@
         return;
       }
 
-      var css = `@keyframes jgl{0%{transform:rotate(0deg) scale(1);}25%{transform:rotate(-3deg) scale(1.02);}50%{transform:rotate(3deg) scale(0.98);}75%{transform:rotate(-2deg) scale(1.01);}100%{transform:rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:rotate(0deg) scale(1) translateX(0px);}10%{transform:rotate(-5deg) scale(1.05) translateX(-2px);}20%{transform:rotate(5deg) scale(0.95) translateX(2px);}30%{transform:rotate(-4deg) scale(1.03) translateX(-1px);}40%{transform:rotate(4deg) scale(0.97) translateX(1px);}50%{transform:rotate(-3deg) scale(1.02) translateX(-1px);}60%{transform:rotate(3deg) scale(0.98) translateX(1px);}70%{transform:rotate(-2deg) scale(1.01) translateX(-0.5px);}80%{transform:rotate(2deg) scale(0.99) translateX(0.5px);}90%{transform:rotate(-1deg) scale(1.005) translateX(-0.2px);}100%{transform:rotate(0deg) scale(1) translateX(0px);}}@keyframes jglB{0%{transform:scale(1) rotate(0deg) translateY(0px);}15%{transform:scale(1.1) rotate(-2deg) translateY(-5px);}30%{transform:scale(0.9) rotate(2deg) translateY(3px);}45%{transform:scale(1.05) rotate(-1deg) translateY(-2px);}60%{transform: scale(0.95) rotate(1deg) translateY(1px);}75%{transform:scale(1.02) rotate(-0.5deg) translateY(-1px);}90%{transform:scale(0.98) rotate(0.5deg) translateY(0.5px);}100%{transform:scale(1) rotate(0deg) translateY(0px);}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;}img{animation:jgl 3s ease-in-out infinite !important;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;}p,span,div{animation:jgl 4s ease-in-out infinite !important;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;}form{animation:jglH 2.2s ease-in-out infinite !important;}`;
+      var css = `@keyframes jgl{0%{transform:translateY(0px) rotate(0deg) scale(1);}25%{transform:translateY(-10px) rotate(-2deg) scale(1.02);}50%{transform:translateY(8px) rotate(2deg) scale(0.98);}75%{transform:translateY(-5px) rotate(-1deg) scale(1.01);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes jglH{0%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}10%{transform:translateY(-15px) translateX(-3px) rotate(-4deg) scale(1.05);}20%{transform:translateY(12px) translateX(3px) rotate(4deg) scale(0.95);}30%{transform:translateY(-10px) translateX(-2px) rotate(-3deg) scale(1.03);}40%{transform:translateY(8px) translateX(2px) rotate(3deg) scale(0.97);}50%{transform:translateY(-6px) translateX(-1px) rotate(-2deg) scale(1.02);}60%{transform:translateY(5px) translateX(1px) rotate(2deg) scale(0.98);}70%{transform:translateY(-4px) translateX(-0.5px) rotate(-1deg) scale(1.01);}80%{transform:translateY(3px) translateX(0.5px) rotate(1deg) scale(0.99);}90%{transform:translateY(-2px) translateX(-0.2px) rotate(-0.5deg) scale(1.005);}100%{transform:translateY(0px) translateX(0px) rotate(0deg) scale(1);}}@keyframes jglB{0%{transform:translateY(0px) rotate(0deg) scale(1);}15%{transform:translateY(-12px) rotate(-3deg) scale(1.1);}30%{transform:translateY(10px) rotate(3deg) scale(0.9);}45%{transform:translateY(-8px) rotate(-2deg) scale(1.05);}60%{transform:translateY(6px) rotate(2deg) scale(0.95);}75%{transform:translateY(-4px) rotate(-1deg) scale(1.02);}90%{transform:translateY(2px) rotate(0.5deg) scale(0.98);}100%{transform:translateY(0px) rotate(0deg) scale(1);}}@keyframes ripple{0%{transform:translateX(-100%);opacity:0;}50%{transform:translateX(0%);opacity:0.5;}100%{transform:translateX(100%);opacity:0;}}h1,h2,h3{animation:jglH 2.5s ease-in-out infinite !important;will-change:_PROMPTtransform;}button,input[type=button],input[type=submit],.btn,a[role=button]{animation:jglB 2s ease-in-out infinite !important;will-change:transform;}img{animation:jgl 3s ease-in-out infinite !important;will-change:transform;}nav,header{animation:jgl 2.8s ease-in-out infinite !important;will-change:transform;}p,span,div{animation:jgl 4s ease-in-out infinite !important;will-change:transform;}ul,ol,li{animation:jglB 3.2s ease-in-out infinite !important;will-change:transform;}form{animation:jglH 2.2s ease-in-out infinite !important;will-change:transform;}:where(h1,h2,h3,button,input[type=button],input[type=submit],.btn,a[role=button],img,nav,header,p,span,div,ul,ol,li,form)::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:ripple 4s ease-in-out infinite;transform:translateX(-100%);opacity:0;animation-delay:0.5s;pointer-events:none;will-change:transform,opacity;}`;
 
-      var elements = document.querySelectorAll('*');
+      var elements = document.querySelectorAll('h1,h2,h3,button,input[type="button"],input[type="submit"],.btn,a[role="button"],img,nav,header,p,span,div,ul,ol,li,form');
       var delay = 0;
-      elements.forEach(function (el, index) {
-        if (el.tagName) {
-          el.style.animationDelay = (delay % 2) + 's';
-          delay += 0.1;
-          if (delay > 2) delay = 0;
-        }
+      elements.forEach(function (el) {
+        el.style.animationDelay = (delay % 2) + 's';
+        delay += 0.1;
+        if (delay > 2) delay = 0;
       });
 
       var style = document.createElement('style');
@@ -385,3 +455,4 @@
 </body>
 
 </html>
+
