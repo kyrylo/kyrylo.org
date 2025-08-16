@@ -61,6 +61,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     <li>
       <a href="https://weuserails.com">We Use Rails</a>: Discover web apps built with Ruby on Rails.
     </li>
+    <li>
+      <a href="https://github.com/kyrylo/ablaze-theme-vscode">Ablaze:</a> A minimalist color theme for Visual Studio Code that burns softly.
+    </li>
   </ul>
 </section>
 
