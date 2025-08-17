@@ -115,6 +115,11 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      August 17, 2025 &ndash; <a href="{% post_url 2025-08-17-im-a-crud-monkey %}">
+        I'm a CRUD monkey
+      </a>
+    </li>
+    <li>
       August 7, 2025 &ndash; <a href="{% post_url 2025-08-07-not-everything-needs-an-update %}">
         Not everything needs an update
       </a>
