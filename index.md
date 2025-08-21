@@ -115,6 +115,11 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      August 21, 2025 &ndash; <a href="{% post_url 2025-08-21-why-do-software-developers-love-complexity %}">
+        Why do software developers love complexity?
+      </a>
+    </li>
+    <li>
       August 17, 2025 &ndash; <a href="{% post_url 2025-08-17-im-a-proud-crud-monkey %}">
         I'm a proud CRUD monkey
       </a>
