@@ -75,6 +75,38 @@
       opacity: 0;
     }
 
+    .author-block {
+      position: fixed;
+      top: 0;
+      left: 10px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 0px 0px 8px 8px;
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 0.6;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      text-decoration: none;
+      color: #1e3c72;
+      z-index: 20;
+    }
+
+    .author-block:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
+
+    .author {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .author:hover {
+      text-decoration: underline;
+    }
+
     @media screen and (max-width: 600px) {
       .hint {
         font-size: 12px;
@@ -85,6 +117,9 @@
 </head>
 
 <body>
+  <a href="https://kyrylo.org/" class="author-block" rel="author">
+    by <span class="author">Kyrylo Silin</span>
+  </a>
   <canvas id="canvas"></canvas>
   <h1>Don't pull my strings</h1>
   <div class="hint" id="hint">Click and drag to pull the strings</div>
