@@ -72,6 +72,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      <a href="/dont-pull-my-strings/">Don't pull my strings</a>: When puns are taken too literally.
+    </li>
+    <li>
       <a href="/seasick-simulator/">SeaSick Simulator</a>: Experience the queasy charm of rough seas on any website.
     </li>
     <li>
