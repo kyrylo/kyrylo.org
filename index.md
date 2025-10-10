@@ -64,6 +64,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     <li>
       <a href="https://github.com/kyrylo/ablaze-theme-vscode">Ablaze:</a> A minimalist color theme for Visual Studio Code that burns softly.
     </li>
+    <li>
+      <a href="https://emojiwhat.com">emojiwhat</a>: Browse, copy, and learn the meanings of thousands of Unicode and secret TikTok emojis.
+    </li>
   </ul>
 </section>
 
