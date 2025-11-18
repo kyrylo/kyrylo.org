@@ -41,7 +41,7 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     <li>
       GitHub &mdash; <a href="https://github.com/kyrylo">kyrylo</a>
     </li>
-    <li>X &mdash; <a href="https://x.com/kyrylo">@kyrylosilin</a></li>
+    <li>X &mdash; <a href="https://x.com/kyrylo">@kyrylo</a></li>
     <li>Bluesky &mdash; <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
     <li>Mastodon &mdash; <a href="https://mastodon.social/@kyrylosilin">@kyrylosilin</a></li>
     <li>LinkedIn &mdash; <a href="https://www.linkedin.com/in/kyrylo-silin/">Kyrylo Silin</a></li>
