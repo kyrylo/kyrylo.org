@@ -229,7 +229,7 @@ Now, every time you run `bin/dev`, your Rails 7 application will start the
 tunnel, and you will be able to access your local server from anywhere on the
 internet. For free!
 
-Was the article helpful? [Follow me on X/Twitter](https://x.com/kyrylosilin)
+Was the article helpful? [Follow me on X/Twitter](https://x.com/kyrylo)
 where I post daily about my indie hacking journey and the projects I work on.
 You can discuss this article on X/Twitter, too:
 [https://twitter.com/kyrylosilin/status/1774406300295717101](https://twitter.com/kyrylosilin/status/1774406300295717101)
