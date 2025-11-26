@@ -121,6 +121,11 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      November 26, 2025 &ndash; <a href="{% post_url 2025-11-26-ai-amplifies-programmers-not-replaces-them %}">
+        AI amplifies programmers, not replaces them
+      </a>
+    </li>
+    <li>
       September 27, 2025 &ndash; <a href="{% post_url 2025-09-27-a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table %}">
         A mere add_foreign_key can wipe out your whole Rails+SQLite production table
       </a>
