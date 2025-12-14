@@ -121,6 +121,11 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      December 14, 2025 &ndash; <a href="{% post_url 2025-12-14-english-is-a-poor-language-for-programming-with-ai %}">
+        English is a poor language for programming with AI
+      </a>
+    </li>
+    <li>
       November 26, 2025 &ndash; <a href="{% post_url 2025-11-26-ai-amplifies-programmers-not-replaces-them %}">
         AI amplifies programmers, not replaces them
       </a>
