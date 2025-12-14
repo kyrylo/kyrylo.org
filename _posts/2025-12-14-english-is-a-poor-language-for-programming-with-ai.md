@@ -6,8 +6,9 @@ categories: software
 image: assets/images/kyrylo-silin@2x.webp
 ---
 
-English and natural language is a bad interface for programming with AI. Not
-because it is "imperfect". But because it was never designed for precision.
+English and natural language in general is a bad interface for programming with
+AI. Not because it is "imperfect". But because it was never designed for
+precision.
 
 Natural languages evolved for persuasion, storytelling, negotiation, and
 survival in small tribes. They are optimized for social flexibility and rapid
