@@ -15,9 +15,9 @@ survival in small tribes. They are optimized for social flexibility and rapid
 communication, not exact meaning. That is why they keep failing us when we try
 to use them as the primary interface for machines.
 
-The language is full of hidden landmines. Ambiguity, implied context, emotional
-framing, and undefined terms. Humans constantly misinterpret each other. Even
-after thousands of years of practice.
+The language is full of hidden landmines: ambiguity, implied context, emotional
+framing, and undefined terms. Humans constantly misinterpret each other (even
+after thousands of years of practice).
 
 The existence of lawyers is not an accident. It is evidence.
 
