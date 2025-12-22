@@ -121,6 +121,11 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <ul>
     <li>
+      December 22, 2025 &ndash; <a href="{% post_url 2025-12-22-how-to-self-host-bearlytics-with-kamal %}">
+        How to self-host Bearlytics with Kamal
+      </a>
+    </li>
+    <li>
       December 21, 2025 &ndash; <a href="{% post_url 2025-12-21-im-back-to-open-source %}">
         I'm back to Open Source
       </a>
