@@ -1,7 +1,7 @@
 ---
 layout: post
 title: There's no place for Test-Driven Development (TDD)
-date: 2024-10-30 00:00:00 +0200
+date: 2024-10-30
 categories: software
 image: https://imgur.com/5AaV4pW.png
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hyperlinks existed before the web
-date: 2024-11-15 12:00:00 +0200
+date: 2024-11-17
 categories: software
 image: assets/images/kyrylo-silin@2x.webp
 ---

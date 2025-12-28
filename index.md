@@ -4,38 +4,43 @@ redirect_from: "/about/"
 image: assets/images/web-app-manifest-512x512.png
 ---
 
-<nav>
-  <a href="/travel/">Where I've been</a>
-</nav>
-
 <section>
-  <h2>About me</h2>
+  <h2>About Me</h2>
 
-  <ul>
-    <li>Software engineer, web developer, and entrepreneur.</li>
-    <li>
-      From Kharkiv, Ukraine 🇺🇦
-    </li>
-    <li>
-      I am an alumnus of <a href="https://nure.ua/en">Kharkiv National University of Radio Electronics</a>, in the <a href="https://nure.ua/en/department/department-of-information-control-system-ics">Department of Information Control Systems (ICS)</a>. (MSc. 2015)
-    </li>
-    <li>Get in touch: <a href="mailto:silin@kyrylo.org">silin@kyryl(o.o)rg</a></li>
-    <li>
+  <p>
+    Software engineer, web developer, and entrepreneur.<br>
+    Originally from Kharkiv, Ukraine 🇺🇦
+  </p>
+
+  <p>
+    I am an alumnus of
+    <a href="https://nure.ua/en">Kharkiv National University of Radio Electronics</a>,
+    in the <a href="https://nure.ua/en/department/department-of-information-control-system-ics">Department of Information Control Systems (ICS)</a>.
+    (MSc. 2015)
+  </p>
+
+  <p>
+    Get in touch: <a href="mailto:silin@kyrylo.org">silin@kyryl(o.o)rg</a>
+  </p>
+
+  <h3>Words of Wisdom</h3>
+
+  <p>
     <pre>Just love the craft, not what you earn,
 As years of practice will confirm.
 That's how it goes — you can't succeed,
 Without some dirt beneath your feet.</pre>
-    </li>
-    <li>
-      <pre>simple ≠ dumbed-down
+  </p>
+
+  <p>
+    <pre>simple ≠ dumbed-down
 simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
-</li>
-  </ul>
+  </p>
 </section>
 
 <section>
   <h2>
-    Where to find me online
+    Where to Find Me Online
   </h2>
 
   <ul>
@@ -46,281 +51,5 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     <li>Bluesky &mdash; <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
     <li>Mastodon &mdash; <a href="https://mastodon.social/@kyrylosilin">@kyrylosilin</a></li>
     <li>LinkedIn &mdash; <a href="https://www.linkedin.com/in/kyrylo-silin/">Kyrylo Silin</a></li>
-  </ul>
-</section>
-
-<section>
-  <h2>What I'm working on</h2>
-
-  <ul>
-    <li>
-      <a href="https://telebugs.com">Telebugs</a>: A lightweight, self-hosted Sentry alternative without a subscription.
-    </li>
-    <li>
-      <a href="https://flagmatch.com">Flag Match</a>: A fun and educational game to learn flags of countries and their capitals.
-    </li>
-    <li>
-      <a href="https://weuserails.com">We Use Rails</a>: Discover web apps built with Ruby on Rails.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/ablaze-theme-vscode">Ablaze:</a> A minimalist color theme for Visual Studio Code that burns softly.
-    </li>
-    <li>
-      <a href="https://emojiwhat.com">emojiwhat</a>: Browse, copy, and learn the meanings of thousands of Unicode and secret TikTok emojis.
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>My chest of drawers</h2>
-
-  <ul>
-    <li>
-      <a href="/dont-pull-my-strings/">Don't pull my strings</a>: When puns are taken too literally.
-    </li>
-    <li>
-      <a href="/seasick-simulator/">SeaSick Simulator</a>: Experience the queasy charm of rough seas on any website.
-    </li>
-    <li>
-      <a href="/life-calendar/">Life Calendar</a>: Every week is a gift. Make them count.
-    </li>
-    <li>
-      <a href="/the-catipede/">The Catipede</a>: An emoji-based online game inspired by Tamagotchi.
-    </li>
-    <li>
-      <a href="/css-color-names-reference/">CSS Color Names Reference</a>: Complete reference of all 147 standard CSS color names with hex codes, RGB values, OKLCH, and HSL values.
-    </li>
-    <li>
-      <a href="/tailwind-css-v4-color-palette-reference/">Tailwind CSS v4 Color Palette Reference</a>: Complete reference of all default Tailwind CSS v4 colors with hex, RGB, HSL, and OKLCH values.
-    </li>
-    <li>
-      <a href="https://fuckthispage.com">F**k This Page</a>: Take revenge on any website you dislike.
-    </li>
-    <li>
-      <a href="https://htmlmaze.com">The HTML Maze</a>: Explore the HTML maze, leave drawings and messages, and find your way out. A playful, interactive web experiment.
-    </li>
-    <li>
-      <a href="https://techdebtgame.com">Tech Debt</a>: A fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.
-    </li>
-    <li>
-      <a href="https://the-em-dash.com">The Em Dash</a>: Supercharging your game-changing posts and comments since 2022.
-    </li>
-    <li>
-      <a href="https://justfuckingusehtml.com">Just **** Use HTML</a>: My take on complexity in modern web development.
-    </li>
-    <li>
-      <a href="https://dockernamegenerator.com">Docker Name Generator</a>: Generate random Docker container-style names for any purpose.
-    </li>
-    <li>
-      <a href="https://coffeeworldrush.com">Coffee World Rush</a>: Track your coffee consumption and help bring your country to the top of the leaderboard.
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>What I write about</h2>
-
-  <ul>
-    <li>
-      December 22, 2025 &ndash; <a href="{% post_url 2025-12-22-how-to-self-host-bearlytics-with-kamal %}">
-        How to self-host Bearlytics with Kamal
-      </a>
-    </li>
-    <li>
-      December 21, 2025 &ndash; <a href="{% post_url 2025-12-21-im-back-to-open-source %}">
-        I'm back to Open Source
-      </a>
-    </li>
-    <li>
-      December 14, 2025 &ndash; <a href="{% post_url 2025-12-14-english-is-a-poor-language-for-programming-with-ai %}">
-        English is a poor language for programming with AI
-      </a>
-    </li>
-    <li>
-      November 26, 2025 &ndash; <a href="{% post_url 2025-11-26-ai-amplifies-programmers-not-replaces-them %}">
-        AI amplifies programmers, not replaces them
-      </a>
-    </li>
-    <li>
-      September 27, 2025 &ndash; <a href="{% post_url 2025-09-27-a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table %}">
-        A mere add_foreign_key can wipe out your whole Rails+SQLite production table
-      </a>
-    </li>
-    <li>
-      August 21, 2025 &ndash; <a href="{% post_url 2025-08-21-why-do-software-developers-love-complexity %}">
-        Why do software developers love complexity?
-      </a>
-    </li>
-    <li>
-      August 17, 2025 &ndash; <a href="{% post_url 2025-08-17-im-a-proud-crud-monkey %}">
-        I'm a proud CRUD monkey
-      </a>
-    </li>
-    <li>
-      August 7, 2025 &ndash; <a href="{% post_url 2025-08-07-not-everything-needs-an-update %}">
-        Not everything needs an update
-      </a>
-    </li>
-    <li>
-      July 10, 2025 &ndash; <a href="{% post_url 2025-07-10-ai-will-take-your-job-and-your-bosses-job-too %}">
-        AI will take your job (and your boss's job too)
-      </a>
-    </li>
-    <li>
-      July 2, 2025 &ndash;
-      <a href="{% post_url 2025-07-02-i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js %}">
-        I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS
-      </a>
-    </li>
-    <li>
-      June 15, 2025 &ndash;
-      <a href="{% post_url 2025-06-15-your-idea-probably-sucks %}">
-        Your idea probably sucks
-      </a>
-    </li>
-    <li>
-      May 1, 2025 &ndash;
-      <a href="{% post_url 2025-05-01-how-the-pay-once-business-model-saved-my-*aas %}">
-        How the pay-once business model saved my *aaS
-      </a>
-    </li>
-    <li>
-      Mar 28, 2025 &ndash; <a href="{% post_url 2025-03-28-learn-to-code-ignore-ai-then-use-ai-to-code-even-better %}">
-        Learn to code, ignore AI, then use AI to code even better
-      </a>
-    </li>
-    <li>
-      Feb 27, 2025 &ndash; <a href="{% post_url 2025-02-27-you-know-how-it-ends %}">
-        You know how it ends
-      </a>
-    </li>
-    <li>
-      Feb 10, 2025 &ndash; <a href="{% post_url 2025-02-10-oklch-css-variables-for-tailwind-v4-colors %}">
-        OKLCH CSS variables for Tailwind v4 colors
-      </a>
-    </li>
-    <li>
-      Jan 22, 2025 &ndash; <a href="{% post_url 2025-01-22-the-vertical-bar-is-the-best-html-page-title-separator %}">
-        The vertical bar (|) is the best HTML page title separator
-      </a>
-    </li>
-    <li>
-      Nov 25, 2024 &ndash; <a href="{% post_url 2024-11-25-how-to-build-a-dropdown-menu-with-just-html %}">
-        How to build a dropdown menu with just HTML
-      </a>
-    </li>
-    <li>
-      Nov 17, 2024 &ndash; <a href="{% post_url 2024-11-17-how-counter-strike-introduced-me-to-the-world-of-programming %}">How Counter-Strike introduced me to the world of programming</a>
-    </li>
-    <li>
-      Nov 17, 2024 &ndash; <a href="{% post_url 2024-11-17-hyperlinks-existed-before-the-web %}">Hyperlinks existed before the web</a>
-    </li>
-    <li>
-      Nov 15, 2024 &ndash; <a href="{% post_url 2024-11-15-how-to-self-host-plausible-analytics-with-kamal %}">How to self-host Plausible Analytics with Kamal</a>
-    </li>
-    <li>
-      Nov 7, 2024 &ndash; <a href="{% post_url 2024-10-30-theres-no-place-for-test-driven-development-tdd %}">There's no place for test-driven development (TDD)</a>
-    </li>
-    <li>
-      Oct 25, 2024 &ndash; <a href="{% post_url 2024-10-25-why-does-target-blank-have-an-underscore-in-front %}">Why does "target=_blank" have an underscore in front?</a>
-    </li>
-    <li>
-      Oct 23, 2024 &ndash; <a href="{% post_url 2024-10-23-writing-software-is-like-spreading-butter-on-bread %}">Writing software is like spreading butter on bread</a>
-    </li>
-    <li>
-      Sep 27, 2024 &ndash; <a href="{% post_url 2024-09-27-notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024 %}">Notes from the opening keynote by David Heinemeier Hansson at Rails World 2024</a>
-    </li>
-    <li>Aug 7, 2024 &ndash; <a href="{% post_url 2024-08-07-how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth %}">How to add Mission Control to your Rails app and protect it with basic auth</a></li>
-    <li>Jul 18, 2024 &ndash; <a href="{% post_url 2024-07-18-i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks %}">I built a flag-matching game in 6 days, and it was played more than 45k times in 2 weeks</a></li>
-    <li>Jun 2, 2024 &ndash; <a href="{% post_url 2024-06-02-how-to-deploy-a-telegram-bot-with-kamal %}">How to deploy a Telegram bot with Kamal</a></li>
-    <li>Mar 31, 2024 &ndash; <a href="{% post_url 2024-03-31-cloudflare-tunnel-a-free-ngrok-alternative-for-developing-rails-apps-locally %}">Cloudflare Tunnel: a free Ngrok alternative for developing Rails apps locally</a></li>
-    <li>Mar 20, 2024 &ndash; <a href="{% post_url 2024-03-20-coffee-world-rush-a-leaderboard-for-all-coffee-drinkers-around-the-world %}">Coffee World Rush: a leaderboard for all coffee drinkers around the world</a></li>
-    <li>Feb 21, 2024 &ndash; <a href="{% post_url 2024-02-21-i-built-a-word-matching-game-called-matcharoo %}">I built a word-matching game called Matcharoo</a></li>
-    <li>Feb 20, 2024 &ndash; <a href="{% post_url 2024-02-20-using-overmind-with-foreman-as-a-fallback-for-rails-7-1-apps %}">Using Overmind with Foreman as a fallback for Rails 7.1 apps</a></li>
-    <li>Feb 16, 2024 &ndash; <a href="{% post_url 2024-02-16-how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal %}">How to generate sitemap.xml for your Rails 7.1 app with Kamal</a></li>
-    <li>Jan 21, 2024 &ndash; <a href="{% post_url 2024-01-21-how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails %}">How to opt-out of the cache with Hotwire Turbo Drive in Rails</a></li>
-    <li>Jan 21, 2024 &ndash; <a href="{% post_url 2024-01-21-how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app %}">How to enable the Traefik dashboard for a Rails 7.1 app</a></li>
-    <li>Jan 18, 2024 &ndash; <a href="{% post_url 2024-01-18-making-postgresql-work-with-kamal-and-a-new-rails-7-1-application %}">Making PostgreSQL work with Kamal and a new Rails 7.1 application</a></li>
-    <li>Jan 8, 2024 &ndash; <a href="{% post_url 2024-01-08-how-to-run-your-turbo-native-android-app-on-a-physical-device-locally %}">How to run your Turbo Native Android app on a physical device locally</a></li>
-    <li>Nov 9, 2023 &ndash; <a href="{% post_url 2023-11-09-embarking-on-an-indie-dev-journey %}">Embarking on an indie dev journey</a></li>
-    <li>Jun 21, 2018 &ndash; <a href="{% post_url 2018-06-21-untangling-the-love-ruby-tongue-twister %}">Untangling the love Ruby tongue-twister</a></li>
-    <li>May 23, 2015 &ndash; <a href="{% post_url 2015-05-23-a-bit-of-bacon-lettuce-and-tomato %}">A bit of bacon, lettuce, and tomato</a></li>
-    <li>Dec 31, 2014 &ndash; <a href="{% post_url 2014-12-31-rubys-exception-to-message-mapper %}">Ruby's exception to message mapper</a></li>
-    <li>Dec 15, 2013 &ndash; <a href="{% post_url 2013-12-15-javascript-eval-tricks %}">JavaScript eval tricks</a></li>
-    <li>Aug 24, 2013 &ndash; <a href="{% post_url 2013-08-24-ruby-eval-tricks %}">Ruby eval tricks</a></li>
-    <li>Aug 13, 2013 &ndash; <a href="{% post_url 2013-08-13-various-ways-to-count-digits-in-a-ruby-integer %}">Various ways to count digits in a Ruby integer</a></li>
-    <li>Aug 9, 2013 &ndash; <a href="{% post_url 2013-08-09-blocks-in-ruby-are-always-there %}">Blocks in Ruby are always there</a></li>
-    <li>Aug 2, 2013 &ndash; <a href="{% post_url 2013-08-02-how-to-safely-enter-passwords-in-a-terminal %}">How to safely enter passwords in a terminal</a></li>
-    <li>Jul 15, 2013 &ndash; <a href="{% post_url 2013-07-15-how-to-say-i-love-you-in-ruby %}">How to say "I love you" in Ruby</a></li>
-    <li>Jul 3, 2013 &ndash; <a href="{% post_url 2013-07-03-pulling-through-a-ruby-exception %}">Pulling through a Ruby exception</a></li>
-    <li>Jun 3, 2013 &ndash; <a href="{% post_url 2013-06-03-difference-between-frozen-ruby-objects-across-versions %}">Difference between frozen Ruby objects across versions</a></li>
-    <li>May 30, 2013 &ndash; <a href="{% post_url 2013-05-30-so-what-is-binding-pry-exactly %}">So, what is <code>binding.pry</code> exactly?</a></li>
-  </ul>
-</section>
-
-<section>
-  <h2>Past work</h2>
-
-  <ul>
-    <li>
-      <a href="https://matcharoo.app">Matcharoo</a>: A word association game where you match similar words, learn new words easily, and have a blast with friends as you discover who knows the most (<a href="{% post_url 2024-02-21-i-built-a-word-matching-game-called-matcharoo %}">blog post</a>).
-    </li>
-    <li>
-      <a href="https://pry.github.io/">Pry REPL</a>: The featureful development console for Ruby.
-    </li>
-    <li>
-      <a href="https://github.com/airbrake/airbrake-ruby">Airbrake Ruby</a> and <a href="https://github.com/airbrake/airbrake">Airbrake</a>: The notifier libraries for the Airbrake error monitoring service, which I rewrote from scratch and maintained for many years.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/netstring">netstring</a>: A Go package for formatting byte strings using declarative notation to indicate the string's size.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/linenoise-rb">linenoise-rb</a>: A Ruby wrapper for <a href="https://github.com/antirez/linenoise">Linenoise</a>, a small self-contained alternative to Readline and libedit.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/system_browser_client">System Browser</a>: A desktop app for browsing Ruby code, inspired by Smalltalk. Click to view details about a module or class, explore its namespace, or see the source of a method.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/fast_method_source">Fast Method Source</a>: An extremely fast Ruby C extension for querying methods, procs, and lambdas for their source code and comments.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/system_navigation">System Navigation</a>: A Ruby library that provides navigation and introspection capabilities for Ruby programs, similar to those in Smalltalk.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/rmarshal">RMarshal</a>: An Erlang library for deserializing Ruby objects dumped by Marshal.dump into Erlang terms.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/multitrap">multitrap</a>: A Ruby library that allows <code>Signal.trap</code> to execute multiple callbacks
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/pry-theme">Pry Theme</a>: A plugin for the <a href="https://pry.github.io">Pry REPL</a> in Ruby that allows customizing Pry colors using prytheme.rb files.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/patience">Patience</a>: Solitaire card game built in Ruby with the <a href="https://github.com/Mon-Ouie/ray">Ray</a> library.
-    </li>
-    <li>
-      <a href="https://store.kde.org/p/1106257">Pixelate</a> and <a href="https://store.kde.org/p/1106254">Pixelnine</a>: Skins for the KDE terminal emulator, <a class="https://apps.kde.org/yakuake/">Yakuake</a>.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/oramaps">OpenRA maps</a>: A collection of maps for the <a href="https://www.openra.net/">OpenRA</a> real-time strategy game. Some of the maps were included in the official release.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/openra-microcontrol">openra-microcontrol</a>: A minigame for the <a href="https://www.openra.net/">OpenRA</a> real-time strategy game written in Lua.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/entooru">Entooru</a>: Translations of random English articles about Ruby into Russian.
-    </li>
-    <li>
-      <a href="https://store.kde.org/p/1000580">Your tea, buddy</a>: A KDE splash screen with a white background, red text, and a small loading progress bar beneath the text. Pairs well with the <a href="https://store.kde.org/p/997993">Already awake?</a> KDM4 theme.
-    </li>
-    <li>
-      <a href="https://store.kde.org/p/997993">Already awake?</a>: A <a href="https://en.wikipedia.org/wiki/KDE_Display_Manager">KDM4</a> theme with a white background and red text. Pairs well with the  <a href="https://store.kde.org/p/1000580">Already awake?</a> splash screen.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/bash-completion-subtle">bash-completion-subtle</a>: Bash completion scripts for <a href="https://subforge.org/projects/subtle">Subtle WM</a> and its tools.
-    </li>
-    <li>
-      <a href="https://github.com/kyrylo/zsh-completion-subtle">zsh-completion-subtle</a>: Z Shell completion scripts for <a href="https://subforge.org/projects/subtle">Subtle WM</a> and its tools.
-    </li>
   </ul>
 </section>

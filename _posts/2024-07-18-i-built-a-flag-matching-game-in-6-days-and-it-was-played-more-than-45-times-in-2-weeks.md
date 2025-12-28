@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "I built a flag matching game in 6 days. It was played more than 45k times in 2 weeks"
+title: "I built a flag-matching game in 6 days"
 date: 2024-07-18 12:00:00 +0200
 categories: indie-hacking
 image: https://imgur.com/32QTVqQ.jpg

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "So what is “binding.pry” exactly?"
-date: 2013-04-12 00:23:44 +0200
+date: 2013-05-30
 categories: programming ruby
 image: https://imgur.com/uxHPVG0.gif
 redirect_from:

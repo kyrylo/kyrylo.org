@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How Counter-Strike introduced me to the world of programming
-date: 2024-11-15 13:00:00 +0200
+date: 2024-11-17
 categories: software
 image: assets/images/kyrylo-silin@2x.webp
 ---

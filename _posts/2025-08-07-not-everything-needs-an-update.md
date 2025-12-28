@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Not everything needs an update"
-date: 2025-08-08
+date: 2025-08-07
 categories: software
 image: assets/images/kyrylo-silin@2x.webp
 ---
