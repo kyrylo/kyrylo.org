@@ -1,0 +1,7 @@
+[book]
+title = "Where I've been | Kyrylo Silin"
+authors = ["Kyrylo Silin"]
+language = "en"
+
+[build]
+build-dir = "../travel"

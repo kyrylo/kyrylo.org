@@ -1,6 +1,12 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'unicorn'
-gem 'sinatra'
-gem 'redcarpet'
-gem 'pry'
+gem "csv"
+gem "base64"
+
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-redirect-from"
+  gem "jekyll-last-modified-at"
+end

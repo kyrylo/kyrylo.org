@@ -1,0 +1,49 @@
+---
+layout: base
+---
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+
+    <p>
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="{{ "/assets/images/kyrylo-silin.webp" | relative_url }} 2x, {{ "/assets/images/kyrylo-silin.webp" | relative_url }} 1x" type="image/webp">
+          <img src="{{ "/assets/images/kyrylo-silin.webp" | relative_url }}" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="{{ '/' | relative_url }}">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    {{ content }}
+  </div>
+</article>
+
+<hr>
+
+<div>
+  {% if page.next %}
+    <div>
+      Next: <a href="{{ page.next.url | relative_url }}" rel="next" title="{{ page.next.title }}">{{ page.next.title }}</a>
+    </div>
+  {% endif %}
+  {% if page.previous %}
+    <div>
+      Prev: <a href="{{ page.previous.url | relative_url }}" rel="prev" title="{{ page.previous.title }}">{{ page.previous.title }}</a>
+    </div>
+  {% endif %}
+</div>
