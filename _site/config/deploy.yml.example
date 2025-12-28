@@ -1,12 +1,12 @@
-service: kyrylo
-image: kyrylo
+service: site
+image: site
 
 servers:
-  - 188.245.75.139
+  - site.example.com
 
 proxy:
   ssl: true
-  host: kyrylo.org
+  host: site.example.com
 
 env:
   secret:
