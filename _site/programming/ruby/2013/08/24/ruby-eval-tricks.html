@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ruby eval tricks | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Ruby eval tricks" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Greetings upon thee! Let’s evaluate some code for breakfast, cousins." />
+<meta property="og:description" content="Greetings upon thee! Let’s evaluate some code for breakfast, cousins." />
+<link rel="canonical" href="http://localhost:4000/programming/ruby/2013/08/24/ruby-eval-tricks.html" />
+<meta property="og:url" content="http://localhost:4000/programming/ruby/2013/08/24/ruby-eval-tricks.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-08-24T13:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ruby eval tricks" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-11-17T13:54:05+02:00","datePublished":"2013-08-24T13:00:00+03:00","description":"Greetings upon thee! Let’s evaluate some code for breakfast, cousins.","headline":"Ruby eval tricks","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/ruby/2013/08/24/ruby-eval-tricks.html"},"url":"http://localhost:4000/programming/ruby/2013/08/24/ruby-eval-tricks.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Ruby eval tricks</h1>
+
+    <p>
+      <time datetime="2013-08-24T13:00:00+03:00" itemprop="datePublished">
+        Aug 24, 2013
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>Greetings upon thee! Let’s evaluate some code for breakfast, cousins.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"100 + 1</span><span class="se">\n</span><span class="s2"> (42 + 100)"</span>   <span class="c1">#=&gt; 142</span>
+<span class="nb">eval</span> <span class="s2">"100 + 1</span><span class="se">\n</span><span class="s2"> + (42 + 100)"</span> <span class="c1">#=&gt; 142</span>
+</code></pre></div></div>
+
+<p>The first line shouldn’t be hard for understanding. We evaluate two lines of
+Ruby code. The second example does the same. The second line uses an unary
+operator: <code class="language-plaintext highlighter-rouge">+(42 + 100)</code>.</p>
+
+<p>“We demand lunch now!”</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"100 +</span><span class="se">\n</span><span class="s2"> (42 + 100)"</span>   <span class="c1">#=&gt; 242</span>
+<span class="nb">eval</span> <span class="s2">"100 +</span><span class="se">\n</span><span class="s2"> + (42 + 100)"</span> <span class="c1">#=&gt; 242</span>
+</code></pre></div></div>
+
+<p>Again, we do the same thing. Here we just sum the <code class="language-plaintext highlighter-rouge">100</code> from the first line with
+the second line. Straightforward.</p>
+
+<p>“Where is our dinner?!”</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"100.+(1</span><span class="se">\n</span><span class="s2">.+(42 + 100))"</span> <span class="c1">#=&gt; 243</span>
+<span class="nb">eval</span> <span class="s2">"100.+(1)</span><span class="se">\n</span><span class="s2"> (42 + 100)"</span>  <span class="c1">#=&gt; 142</span>
+</code></pre></div></div>
+
+<p>Brackets change the game. The first line evaluates to a different result (in
+comparison with the breakfast result). The second line is obvious.</p>
+
+<p>“But we want more!”</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"100 + (42</span><span class="se">\n</span><span class="s2">+ 100)"</span>  <span class="c1">#=&gt; 200</span>
+<span class="nb">eval</span> <span class="s2">"100 + (42 +</span><span class="se">\n</span><span class="s2"> 100)"</span> <span class="c1">#=&gt; 242</span>
+</code></pre></div></div>
+
+<p>Okay-okay! This is something unexpected. What’s going on? The first line seems
+to be illogical. Where does the <code class="language-plaintext highlighter-rouge">42</code> go? Let’s see what the VM receives.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">puts</span> <span class="no">RubyVM</span><span class="o">::</span><span class="no">InstructionSequence</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="s2">"100 + (42</span><span class="se">\n</span><span class="s2">+ 100)"</span><span class="p">).</span><span class="nf">disassemble</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>== disasm: &lt;RubyVM::InstructionSequence:&lt;compiled&gt;@&lt;compiled&gt;&gt;==========
+0000 trace            1                                               (   2)
+0002 putobject        100                                             (   1)
+0004 trace            1                                               (   2)
+0006 putobject        100
+0008 opt_send_simple  &lt;callinfo!mid:+@, argc:0, ARGS_SKIP&gt;
+0010 opt_plus         &lt;callinfo!mid:+, argc:1, ARGS_SKIP&gt;
+0012 leave
+</code></pre></div></div>
+
+<p>Where are you, <code class="language-plaintext highlighter-rouge">42</code>?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"100 + (puts 'omg'</span><span class="se">\n</span><span class="s2">+ 100)"</span>
+<span class="n">omg</span>
+<span class="c1">#=&gt; 200</span>
+</code></pre></div></div>
+
+<p>Here’s the disassembled sequence.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>== disasm: &lt;RubyVM::InstructionSequence:&lt;compiled&gt;@&lt;compiled&gt;&gt;==========
+0000 trace            1                                               (   2)
+0002 putobject        100                                             (   1)
+0004 trace            1
+0006 putself
+0007 putstring        "omg"
+0009 opt_send_without_block &lt;callinfo!mid:puts, argc:1, FCALL|ARGS_SIMPLE&gt;
+0011 pop
+0012 trace            1                                               (   2)
+0014 putobject        100
+0016 opt_send_without_block &lt;callinfo!mid:+@, argc:0, ARGS_SIMPLE&gt;
+0018 opt_plus         &lt;callinfo!mid:+, argc:1, ARGS_SIMPLE&gt;
+0020 leave
+</code></pre></div></div>
+
+<p>As some smart folks pointed out the trick is that <code class="language-plaintext highlighter-rouge">\n</code> is being replaced by <code class="language-plaintext highlighter-rouge">;</code>.
+So the following two expressions are identical.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"100 + (puts 'omg'</span><span class="se">\n</span><span class="s2">+ 100)"</span>
+<span class="nb">eval</span> <span class="s2">"100 + (puts 'omg';+ 100)"</span>
+</code></pre></div></div>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/programming/javascript/2013/12/15/javascript-eval-tricks.html" rel="next" title="JavaScript eval tricks">JavaScript eval tricks</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/programming/ruby/2013/08/13/various-ways-to-count-digits-in-a-ruby-integer.html" rel="prev" title="Various ways to count digits in a Ruby integer">Various ways to count digits in a Ruby integer</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-11-17T13:54:05+02:00">November 17, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

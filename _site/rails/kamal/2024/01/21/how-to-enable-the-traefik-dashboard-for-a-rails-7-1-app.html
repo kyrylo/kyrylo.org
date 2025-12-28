@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kamal uses Traefik as the default load balancer. Traefik comes with a default dashboard that is disabled by default. With the help of the dashboard, you can check your current active routes, enabled services and middlewares, and more." />
+<meta property="og:description" content="Kamal uses Traefik as the default load balancer. Traefik comes with a default dashboard that is disabled by default. With the help of the dashboard, you can check your current active routes, enabled services and middlewares, and more." />
+<link rel="canonical" href="http://localhost:4000/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html" />
+<meta property="og:url" content="http://localhost:4000/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://imgur.com/JFmfKEN.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-21T12:00:01+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://imgur.com/JFmfKEN.png" />
+<meta property="twitter:title" content="How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-02-16T14:05:04+02:00","datePublished":"2024-01-21T12:00:01+02:00","description":"Kamal uses Traefik as the default load balancer. Traefik comes with a default dashboard that is disabled by default. With the help of the dashboard, you can check your current active routes, enabled services and middlewares, and more.","headline":"How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal","image":"https://imgur.com/JFmfKEN.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html"},"url":"http://localhost:4000/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal</h1>
+
+    <p>
+      <time datetime="2024-01-21T12:00:01+02:00" itemprop="datePublished">
+        Jan 21, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://imgur.com/JFmfKEN.png" style="margin-bottom: 1rem;" />
+<br />
+<a href="https://kamal-deploy.org">Kamal</a> uses <a href="https://traefik.io">Traefik</a> as the default load balancer. Traefik comes
+with a default dashboard that is disabled by default. With the help of the
+dashboard, you can check your current active routes, enabled services and
+middlewares, and more.</p>
+
+<h2 id="what-is-kamal">What is Kamal?</h2>
+
+<p>Kamal is a tool for deploying Rails applications. It is based on Docker. It is
+the new way to deploy Rails 7.1+ apps.</p>
+
+<h2 id="what-is-traefik">What is Traefik?</h2>
+
+<p>Traefik is a load balancer and a router that runs in a Docker container. It
+serves as a reverse proxy. Think of it as an NGINX replacement.</p>
+
+<h2 id="what-is-the-traefik-dashboard">What is the Traefik dashboard?</h2>
+
+<p>The <a href="https://doc.traefik.io/traefik/operations/dashboard/">Traefik dashboard</a>
+provides insights into your running Traefik instance.</p>
+
+<p>It contacts the Traefik API to retrieve information about it.</p>
+
+<p>It shows your app’s running routes, services, entrypoints, features, and more.</p>
+
+<h2 id="how-to-enable-the-traefik-dashboard">How to enable the Traefik dashboard</h2>
+
+<p>The official Kamal docs provide an
+<a href="https://kamal-deploy.org/docs/configuration">example</a> of how you can enable the
+dashboard, but they are not complete, and they don’t make it obvious that the
+presented YAML configures the Traefik dashboard. They also don’t go into details
+about what the dashboard is.</p>
+
+<p><img src="https://imgur.com/s1eEWFF.png" /></p>
+
+<p>When I was new to Kamal (I started using it back when it was called MRSK), I had
+no idea what Traefik was, and I discovered that it had a dashboard by pure
+accident.</p>
+
+<p>To setup the Traefik dashboard, all you need to do is configure your
+<code class="language-plaintext highlighter-rouge">config/deploy.yml</code>, the default configuration file for Kamal.</p>
+
+<p>You want to find the <code class="language-plaintext highlighter-rouge">traefik:</code> label, uncomment it, and add the following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">traefik</span><span class="pi">:</span>
+  <span class="na">args</span><span class="pi">:</span>
+    <span class="na">api</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">traefik.http.routers.dashboard.rule</span><span class="pi">:</span> <span class="s">Host(`traefik.example.com`)</span>
+    <span class="na">traefik.http.routers.dashboard.service</span><span class="pi">:</span> <span class="s">api@internal</span>
+    <span class="na">traefik.http.routers.dashboard.middlewares</span><span class="pi">:</span> <span class="s">auth</span>
+    <span class="na">traefik.http.middlewares.auth.basicauth.users</span><span class="pi">:</span> <span class="s">admin:$apr1$Jeizsy9/$KODzNFPDnNLdKSeXqupWI.</span>
+</code></pre></div></div>
+
+<p><br />
+Let’s break it down:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">traefik.args.api=true</code> passes the <code class="language-plaintext highlighter-rouge">--api</code> flag to the Traefik CLI. It enables
+the API <em>and</em> the dashboard</li>
+  <li><code class="language-plaintext highlighter-rouge">traefik.http.routers.dashboard.rule</code> tells the Traefik router where the
+dashboard should run. In this case, I created a subdomain and pointed Traefik
+to it. It doesn’t have to be a subdomain. If you want it to be accessible
+through a path, just use a <code class="language-plaintext highlighter-rouge">PathPrefix</code>, or consult the
+<a href="https://doc.traefik.io/traefik/routing/routers/">docs</a> for advanced rules</li>
+  <li><code class="language-plaintext highlighter-rouge">traefik.http.routers.dashboard.middlewares</code> attaches the <code class="language-plaintext highlighter-rouge">auth</code> middleware to
+the router so that the dashboard is protected from insecure access</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">traefik.http.middlewares.auth.basicauth.users</code> sets the credentials for
+password access. The password is a hash that gets generated by the <code class="language-plaintext highlighter-rouge">htpasswd</code>
+command</p>
+
+    <p>This is how you can generate your password. It is safe to commit it.</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htpasswd <span class="nt">-nb</span> admin password
+admin:<span class="nv">$apr1$Jeizsy9</span>/<span class="nv">$KODzNFPDnNLdKSeXqupWI</span><span class="nb">.</span>
+</code></pre></div>    </div>
+
+    <p>I like to keep this information in my Rails credentials so that I can always
+find it later.</p>
+
+    <p>Run:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails credentials:edit
+</code></pre></div>    </div>
+
+    <p>Add your credentials:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Used to sign into the Traefik dashboard.</span>
+<span class="na">traefik</span><span class="pi">:</span>
+  <span class="na">username</span><span class="pi">:</span> <span class="s">admin</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s">password</span>
+</code></pre></div>    </div>
+
+    <p>Your Rails app doesn’t care about that, it’s just a reminder for you.</p>
+  </li>
+</ul>
+
+<p>Finally, reboot your Traefik container:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kamal traefik reboot
+</code></pre></div></div>
+
+<p>Now, the dashboard should be live at <strong>https://traefik.example.com</strong>!</p>
+
+<p>Sign in using your credentials, and you’re done.</p>
+
+<p><img src="https://imgur.com/ah9ebVO.png" /></p>
+
+<p>You can discuss this article on X/Twitter:
+<br />
+<a href="https://twitter.com/kyrylosilin/status/1749375421370466344">https://twitter.com/kyrylosilin/status/1749375421370466344</a></p>
+
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html" rel="next" title="How to generate sitemap.xml for your Rails 7.1+ app with Kamal">How to generate sitemap.xml for your Rails 7.1+ app with Kamal</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html" rel="prev" title="How to opt out of the cache with Hotwire's Turbo Drive in Rails">How to opt out of the cache with Hotwire's Turbo Drive in Rails</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-02-16T14:05:04+02:00">February 16, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

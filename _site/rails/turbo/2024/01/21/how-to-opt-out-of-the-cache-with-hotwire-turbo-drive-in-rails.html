@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to opt out of the cache with Hotwire’s Turbo Drive in Rails | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to opt out of the cache with Hotwire’s Turbo Drive in Rails" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="When using Turbo Drive and clicking a link, sometimes you don’t want that link to be pushed onto the navigation stack. Modals, slideovers, and temporary screens require this kind of behavior. With just a few lines of code, Turbo Drive makes this a reality." />
+<meta property="og:description" content="When using Turbo Drive and clicking a link, sometimes you don’t want that link to be pushed onto the navigation stack. Modals, slideovers, and temporary screens require this kind of behavior. With just a few lines of code, Turbo Drive makes this a reality." />
+<link rel="canonical" href="http://localhost:4000/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html" />
+<meta property="og:url" content="http://localhost:4000/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-21T12:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to opt out of the cache with Hotwire’s Turbo Drive in Rails" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-01-27T09:32:50+02:00","datePublished":"2024-01-21T12:00:00+02:00","description":"When using Turbo Drive and clicking a link, sometimes you don’t want that link to be pushed onto the navigation stack. Modals, slideovers, and temporary screens require this kind of behavior. With just a few lines of code, Turbo Drive makes this a reality.","headline":"How to opt out of the cache with Hotwire’s Turbo Drive in Rails","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html"},"url":"http://localhost:4000/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to opt out of the cache with Hotwire&#39;s Turbo Drive in Rails</h1>
+
+    <p>
+      <time datetime="2024-01-21T12:00:00+02:00" itemprop="datePublished">
+        Jan 21, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>When using <a href="https://turbo.hotwired.dev/handbook/introduction">Turbo Drive</a> and
+clicking a link, sometimes you don’t want that link to be pushed onto the
+navigation stack. Modals, slideovers, and temporary screens require this kind of
+behavior. With just a few lines of code, Turbo Drive makes this a reality.</p>
+
+<p>In <a href="https://matcharoo.app">Matcharoo</a>, when I start a new game, the game state is
+loaded, and the UI changes its look to show the user that they transitioned to
+the game mode. Here we make a URL click:</p>
+
+<p><img src="https://imgur.com/NYlw8qB.gif" style="height: 500px" /></p>
+
+<p>When you complete a game, a <code class="language-plaintext highlighter-rouge">Turbo.visit</code> call happens through JavaScript. It
+loads the post-game statistics. The statistics are rendered by the server as a
+Turbo Frame.</p>
+
+<p><img src="https://imgur.com/L4Zz8QG.png" style="height: 500px" /></p>
+
+<p>You can click <code class="language-plaintext highlighter-rouge">Continue</code>, and another Turbo Frame will be loaded to show your
+current leaderboard position.</p>
+
+<p><img src="https://imgur.com/VkK0Utl.png" style="height: 500px" /></p>
+
+<p>Then, you click <code class="language-plaintext highlighter-rouge">Continue</code> again and progress to the next level.</p>
+
+<p><img src="https://imgur.com/omvJWlt.png" style="height: 500px" /></p>
+
+<h2 id="problem">Problem</h2>
+
+<p>The problem appears when you press the back button when you have cleared a
+level. With normal navigation, you are redirected back to the game screen. This
+is unexpected because in the app, there’s a clear distinction between the normal
+and the game modes. You expect that going back will take you to the normal
+screen instead.</p>
+
+<p><img src="https://imgur.com/NBbds2A.png" style="height: 500px" /></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Turbo doesn’t know anything about your state. We need to help it understand. We
+are specifically interested in how Turbo deals with the cache.</p>
+
+<p>Turbo caches every visit by default.</p>
+
+<p>On the first screen, when we enter the game mode, we load the game URL
+(<code class="language-plaintext highlighter-rouge">/games/new</code>). We need to tell Turbo to exclude the game page from the cache.</p>
+
+<p>Add the <code class="language-plaintext highlighter-rouge">content_for?(:head)</code> check to your layout to be able to add new tags to
+<code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> from your views.</p>
+
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;%# app/views/layouts/application.html.erb %&gt;</span>
+
+<span class="cp">&lt;%</span> <span class="k">if</span> <span class="n">content_for?</span><span class="p">(</span><span class="ss">:head</span><span class="p">)</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="k">yield</span><span class="p">(</span><span class="ss">:head</span><span class="p">)</span> <span class="cp">%&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</code></pre></div></div>
+
+<p>Then, modify the template that loads the game state and add the
+<a href="https://turbo.hotwired.dev/handbook/building#opting-out-of-caching"><code class="language-plaintext highlighter-rouge">turbo-cache-control</code></a> directive.</p>
+
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;%# app/views/games/new.html.erb %&gt;</span>
+
+<span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:head</span> <span class="k">do</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"turbo-cache-control"</span> <span class="na">content=</span><span class="s">"no-cache"</span><span class="nt">&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</code></pre></div></div>
+
+<p>Half of the job is already done!</p>
+
+<p>This will prevent the issue that you can observe when you go back from the
+normal mode to the game mode <em>after</em> you have already completed one game (e.g.,
+loaded that screen once). For a fraction of a second, you will see the old
+screen until the new one is loaded. We don’t want that because it makes the
+experience janky.</p>
+
+<p>Here’s how it would look like <em>without</em> <code class="language-plaintext highlighter-rouge">turbo-cache-control</code>:</p>
+
+<p><img src="https://imgur.com/ieZslIm.gif" style="height: 500px" /></p>
+
+<p>And here’s how it looks with <code class="language-plaintext highlighter-rouge">no-cache</code> in place:</p>
+
+<p><img src="https://imgur.com/TvzuEhZ.gif" style="height: 500px" /></p>
+
+<p>We also no longer see the leaderboards screen when we navigate from the normal
+mode screen!</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">no-cache</code> value for the <code class="language-plaintext highlighter-rouge">turbo-cache-control</code> told Turbo Drive to ignore
+all the Turbo Frames we loaded while being on <code class="language-plaintext highlighter-rouge">/games/new</code>.</p>
+
+<p>The final half of the job is to use <code class="language-plaintext highlighter-rouge">turbo_action: "replace"</code> when we leave the
+game mode.</p>
+
+<p>The first call to <code class="language-plaintext highlighter-rouge">Continue</code> is a normal link. It loads leaderboards in a Turbo
+Frame:</p>
+
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s2">"Continue"</span><span class="p">,</span> <span class="n">leaderboards_path</span><span class="p">(</span><span class="n">game</span><span class="p">)</span> <span class="cp">%&gt;</span>
+</code></pre></div></div>
+
+<p>However, the last call to <code class="language-plaintext highlighter-rouge">Continue</code> must be performed as a <em>replace</em> visit.</p>
+
+<blockquote>
+  <p>The <code class="language-plaintext highlighter-rouge">replace</code> visit action uses
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState">history.replaceState</a>
+to discard the topmost history entry and replace it with the new location.</p>
+</blockquote>
+
+<p>As we leave the game mode, we replace the <code class="language-plaintext highlighter-rouge">/games/new</code> URL with a new one, and
+it essentially disappears from the navigation stack. I also added <code class="language-plaintext highlighter-rouge">turbo_frame:
+"_top"</code> to break out of the game statistics Turbo Frame.</p>
+
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span>
+  <span class="s2">"Continue"</span><span class="p">,</span>
+  <span class="n">next_level_path</span><span class="p">(</span><span class="vi">@game</span><span class="p">.</span><span class="nf">level</span><span class="p">),</span>
+  <span class="ss">data: </span><span class="p">{</span>
+    <span class="ss">turbo_frame: </span><span class="s2">"_top"</span><span class="p">,</span>
+    <span class="ss">turbo_action: </span><span class="s2">"replace"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">)</span> <span class="cp">%&gt;</span>
+</code></pre></div></div>
+
+<p>Now we can go back to the previous level when we press the “Back” button. The
+game screen is no longer loaded.</p>
+
+<p><img src="https://imgur.com/6yowfLE.gif" style="height: 500px" /></p>
+
+<p>Problem solved!</p>
+
+<p>TL;DR. Use <code class="language-plaintext highlighter-rouge">&lt;meta name="turbo-cache-control" content="no-cache"&gt;</code> with
+<code class="language-plaintext highlighter-rouge">turbo_action: "replace"</code>.</p>
+
+<p>You can discuss this article on X/Twitter:
+<br />
+<a href="https://twitter.com/kyrylosilin/status/1749041960638165025">https://twitter.com/kyrylosilin/status/1749041960638165025</a></p>
+
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html" rel="next" title="How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal">How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/rails/kamal/2024/01/18/making-postgresql-work-with-kamal-and-a-new-rails-7-1-application.html" rel="prev" title="Making PostgreSQL work with Kamal and a new Rails 7.1 app">Making PostgreSQL work with Kamal and a new Rails 7.1 app</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-01-27T09:32:50+02:00">January 27, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

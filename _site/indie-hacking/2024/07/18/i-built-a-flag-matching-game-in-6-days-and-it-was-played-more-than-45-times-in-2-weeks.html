@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>I built a flag-matching game in 6 days | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="I built a flag-matching game in 6 days" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I built a flag matching game called Flag Match in 6 days that was played more than 45k times in 2 weeks." />
+<meta property="og:description" content="I built a flag matching game called Flag Match in 6 days that was played more than 45k times in 2 weeks." />
+<link rel="canonical" href="http://localhost:4000/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html" />
+<meta property="og:url" content="http://localhost:4000/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://imgur.com/32QTVqQ.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-07-18T13:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://imgur.com/32QTVqQ.jpg" />
+<meta property="twitter:title" content="I built a flag-matching game in 6 days" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-12-28T12:35:36+02:00","datePublished":"2024-07-18T13:00:00+03:00","description":"I built a flag matching game called Flag Match in 6 days that was played more than 45k times in 2 weeks.","headline":"I built a flag-matching game in 6 days","image":"https://imgur.com/32QTVqQ.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html"},"url":"http://localhost:4000/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">I built a flag-matching game in 6 days</h1>
+
+    <p>
+      <time datetime="2024-07-18T13:00:00+03:00" itemprop="datePublished">
+        Jul 18, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://imgur.com/32QTVqQ.jpg" style="margin-bottom: 1rem; width: 60%;" alt="Flag Match. There are 236 countries in the world. How many can you recognize?" />
+<br />
+I built a flag matching game called <a href="https://flagmatch.com">Flag Match</a> in 6
+days that was played more than <b>45k times in 2 weeks</b>.</p>
+
+<p>It’s a simple game where you need to match the flag to the country name.
+I launched it on <a href="https://www.producthunt.com/posts/flag-match">Product Hunt</a>
+and <b>it got 150+ upvotes</b>, ranking #6 on the day of the launch. The game also
+became the <b>#1 product of the week</b> on Product Hunt in the Education category.</p>
+
+<p>It was featured in the press by <a href="https://cenital.com/segun-coninagro-hay-12-economias-regionales-en-crisis/">Cenital</a> and <a href="https://www.justgeek.fr/flag-match-jeu-deviner-pays-drapeaux-127841/">JustGeek</a>. The game was also shared
+on <a href="https://www.reddit.com/r/InternetIsBeautiful/comments/1e0k0vy/how_many_countries_can_you_recognize_by_their/">Reddit</a>, <a href="https://x.com/kyrylosilin/status/1809483713618522424">Twitter</a>, and <a href="https://news.ycombinator.com/item?id=40881016#40890298">Hacker News</a>. It received a lot of positive feedback and
+encouragement from the community.</p>
+
+<h2 id="what-is-flag-match">What is Flag Match?</h2>
+
+<p><img src="https://imgur.com/ss88S30.png" style="width: 50%" alt="Flag Match gameplay" /></p>
+
+<p>Flag Match is a simple game where you need to match the flag to the country
+name. There are 236 countries and territories in the world, and you need to
+recognize as many as you can. The game is designed to be played on mobile
+devices with multi-touch support.</p>
+
+<p>When you make a match, the matched pair disappears and you get a point. A new
+pair appears, and you need to continue matching to beat the game. If you make a
+mistake, the pair remains visible, and you lose your match streak. The game ends
+when you match all the pairs.</p>
+
+<p>There are continents that you can choose from, so you can focus on a specific
+region. When you play, you can build up a match streak for each consecutive
+correct answer. The game is timed, so you need to be quick to beat other
+players. The game tracks your matches and mismatches to calculate your match
+streak and match accuracy.</p>
+
+<p>When you finish the game, you can share your score on social media and challenge
+your friends to beat it. Your score may be shown on the leaderboard if you are
+among the top 100 players.</p>
+
+<p>The Flag Match website has a flags section where you can learn more about
+<a href="https://flagmatch.com/flags-of-the-world">the flags of the world</a>. You can see
+the flags of all countries and territories, and learn interesting facts about
+them.</p>
+
+<p>Flag Match is a fun and educational game that helps you to learn more about the
+world. It’s a great way to test your knowledge and challenge yourself to get a
+high score.</p>
+
+<h2 id="technologies-used">Technologies used</h2>
+
+<p>The game is built with Ruby on Rails 7.1 and uses the SQLite database to store all
+the information (countries, their flags, games, and scores). The front-end is
+powered by Importmaps, Stimulus.js and Tailwind CSS. I deploy it to a VPS with
+<a href="https://kamal-deploy.org">Kamal</a>.</p>
+
+<p>This is my second project that uses SQLite as a production database. I
+like it because it’s simple to set up and use. It’s also very fast and reliable.
+For my needs, it proved to be a great choice. I don’t need to scale the database
+horizontally, so SQLite is a perfect fit for me.</p>
+
+<p>I also use <a href="https://telebugs.com">Telebugs</a> to monitor the game’s errors. It’s a
+great tool that helps me to keep the game running smoothly. I get notified on
+Telegram when something goes wrong, so I can fix it quickly. Actually, <a href="https://x.com/kyrylosilin/status/1809970038872371614">I did
+catch a nasty bug</a> that
+way and fixed it before it caused any problems.</p>
+
+<h2 id="why-i-built-it">Why I built it</h2>
+
+<p>Last year, I built a similar game called <a href="https://matcharoo.app">Matcharoo</a> that
+didn’t get much traction. I wanted to try again and see if I could build
+something that people would enjoy playing. I knew that it had the potential to
+go viral, so I decided to try again.</p>
+
+<p>In June, I saw the success of <a href="https://twitter.com/itseieio/status/1805986839058079896">One Million Checkboxes</a> and it gave me the motivation to build Flag Match. Although these games are very different,
+somehow it game me the push I needed to start working on it.</p>
+
+<h2 id="technical-challenges">Technical challenges</h2>
+
+<h3 id="the-original-game-mechanics-was-broken">The original game mechanics was broken</h3>
+
+<p>I took the code from Matcharoo and adapted it to build Flag Match. I added new
+features, improved the design, and fixed some bugs. I started with the exact
+copy of the code and instead of matching English words, I changed it to match
+flags to country names.</p>
+
+<p>The game was simple to build, but I faced some challenges along the way. The
+biggest challenge was to make the game fair for everyone. When people started
+playing it, I noticed that some of them <a href="https://www.youtube.com/watch?v=8St1-UFGNJg">abused the game by memorizing the order</a> of the flags that appear.</p>
+
+<p>This revealed a problem with the original game mechanics. People who memorized
+the order of the flags could match them very quickly and get a high score. This
+was unfair to people who didn’t know about this and had to rely on their memory.</p>
+
+<p>It was a real head-scratcher for me. I didn’t know how to fix it without
+changing the game mechanics. At first, I implemented a detection mechanism that
+punished players for doing this kind of run. However, it didn’t work well and
+people complained that they were being punished for playing the game normally.</p>
+
+<p>After another day of thinking, I came up with a solution:</p>
+
+<ul>
+  <li>I added a delay between the appearance of the flags. This way, people who
+relied on the order of the flags mechanics would be slowed down. If you know
+the flags, you can match them faster than the cheating players</li>
+  <li>I randomized the order of the pairs that appear a little bit. This way, people
+who memorized the order would be thrown off</li>
+</ul>
+
+<h3 id="cheaters-found-a-way-to-cheat">Cheaters found a way to cheat</h3>
+
+<p>Someone hacked the game by using a script to show the pairs as numbers. Since
+Flag Match is mostly written in JavaScript, it was easy to do. I changed some
+things to make it harder to cheat like that, but since this is a client-side
+game, it’s impossible to prevent all cheating. However, it’s absolutely possible
+to make it harder to cheat.</p>
+
+<p>Some people figured out that they could cheat by submitting fake scores to
+the leaderboard. I added a few checks to prevent this from happening and it
+seems to be working well.</p>
+
+<h2 id="reception">Reception</h2>
+
+<p>The game was well received by the community. People liked the game and shared it
+with their friends. It was played more than 45k times in 2 weeks, which is
+amazing. I got a lot of positive feedback and encouragement from the players.</p>
+
+<p>I was especially happy to see that children enjoyed playing the game. It’s great
+to see that they are learning about the world and having fun at the same time.
+I hope that the game will inspire them to learn more about the world and explore
+new cultures.</p>
+
+<p>This is my most successful project so far. I’m proud of what I’ve accomplished.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html" rel="next" title="How to add Mission Control to your Rails app and protect it with Basic Auth">How to add Mission Control to your Rails app and protect it with Basic Auth</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/telegram/kamal/2024/06/02/how-to-deploy-a-telegram-bot-with-kamal.html" rel="prev" title="How to build and deploy a Telegram bot with Kamal">How to build and deploy a Telegram bot with Kamal</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-12-28T12:35:36+02:00">December 28, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

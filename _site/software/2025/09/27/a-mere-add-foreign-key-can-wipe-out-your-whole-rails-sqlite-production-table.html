@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A mere add_foreign_key can wipe out your whole Rails+SQLite production table | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="A mere add_foreign_key can wipe out your whole Rails+SQLite production table" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A single add_foreign_key in a Rails migration can obliterate a dependent table in your SQLite database. This is exactly what happened with my self-hosted error tracker, Telebugs." />
+<meta property="og:description" content="A single add_foreign_key in a Rails migration can obliterate a dependent table in your SQLite database. This is exactly what happened with my self-hosted error tracker, Telebugs." />
+<link rel="canonical" href="http://localhost:4000/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html" />
+<meta property="og:url" content="http://localhost:4000/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-27T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="twitter:title" content="A mere add_foreign_key can wipe out your whole Rails+SQLite production table" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-09-27T15:48:28+03:00","datePublished":"2025-09-27T00:00:00+03:00","description":"A single add_foreign_key in a Rails migration can obliterate a dependent table in your SQLite database. This is exactly what happened with my self-hosted error tracker, Telebugs.","headline":"A mere add_foreign_key can wipe out your whole Rails+SQLite production table","image":"http://localhost:4000/assets/images/kyrylo-silin@2x.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html"},"url":"http://localhost:4000/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">A mere add_foreign_key can wipe out your whole Rails+SQLite production table</h1>
+
+    <p>
+      <time datetime="2025-09-27T00:00:00+03:00" itemprop="datePublished">
+        Sep 27, 2025
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>A single <code class="language-plaintext highlighter-rouge">add_foreign_key</code> in a Rails migration can obliterate a dependent table
+in your SQLite database. This is exactly what happened with my self-hosted error
+tracker, <a href="https://telebugs.com">Telebugs</a>.</p>
+
+<p>I added a new foreign key to the error <code class="language-plaintext highlighter-rouge">groups</code> table like I normally would,
+then deployed my test instance and saw that all individual reports (those that
+belong to error groups) were gone. Completely. My face was like WTF (if that
+could be a face).</p>
+
+<p>The migration was part of a larger set, but I narrowed it down to this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddOwnerToGroups</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">8.0</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_foreign_key</span> <span class="ss">:groups</span><span class="p">,</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">column: :owner_id</span><span class="p">,</span> <span class="ss">on_delete: :nullify</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>So what’s going on? It’s all about how Rails and SQLite handle schema changes. My schema had a foreign key from <code class="language-plaintext highlighter-rouge">reports</code> to <code class="language-plaintext highlighter-rouge">groups</code> with <code class="language-plaintext highlighter-rouge">on_delete: :cascade</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_foreign_key</span> <span class="s2">"reports"</span><span class="p">,</span> <span class="s2">"groups"</span><span class="p">,</span> <span class="ss">on_delete: :cascade</span>
+</code></pre></div></div>
+
+<p>When I added the new foreign key to <code class="language-plaintext highlighter-rouge">groups</code>, SQLite (via Rails) needed to
+recreate the <code class="language-plaintext highlighter-rouge">groups</code> table because SQLite doesn’t support <code class="language-plaintext highlighter-rouge">ALTER TABLE</code> for
+adding foreign keys. The process goes like this:</p>
+
+<ol>
+  <li>Create a temporary table (<code class="language-plaintext highlighter-rouge">agroups</code>) with the new schema, including the
+foreign key.</li>
+  <li>Copy data from <code class="language-plaintext highlighter-rouge">groups</code> to <code class="language-plaintext highlighter-rouge">agroups</code>.</li>
+  <li>Drop the original <code class="language-plaintext highlighter-rouge">groups</code> table.</li>
+  <li>Recreate <code class="language-plaintext highlighter-rouge">groups</code> with the new schema.</li>
+  <li>Copy data back from <code class="language-plaintext highlighter-rouge">agroups</code> to <code class="language-plaintext highlighter-rouge">groups</code>.</li>
+</ol>
+
+<p>Do you see the problem? When the original <code class="language-plaintext highlighter-rouge">groups</code> table is dropped, the <code class="language-plaintext highlighter-rouge">reports</code>
+table’s <code class="language-plaintext highlighter-rouge">on_delete: :cascade</code> foreign key kicks in. Since <code class="language-plaintext highlighter-rouge">reports.group_id</code>
+temporarily points to non-existent <code class="language-plaintext highlighter-rouge">groups.id</code> values, SQLite deletes all reports
+records 💀</p>
+
+<h2 id="how-i-fixed-it">How I fixed it</h2>
+
+<p>I rewrote the migration to avoid <code class="language-plaintext highlighter-rouge">add_foreign_key</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddOwnerToGroups</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">8.0</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:groups</span><span class="p">,</span> <span class="ss">:owner_id</span><span class="p">,</span> <span class="ss">:integer</span>
+    <span class="n">add_index</span> <span class="ss">:groups</span><span class="p">,</span> <span class="ss">:owner_id</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This adds the <code class="language-plaintext highlighter-rouge">owner_id</code> column and index without touching the table structure,
+so no data is lost. To enforce the foreign key constraint, I added a validation
+in my <code class="language-plaintext highlighter-rouge">Group</code> model:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:owner</span><span class="p">,</span> <span class="ss">class_name: </span><span class="s1">'User'</span><span class="p">,</span> <span class="ss">optional: </span><span class="kp">true</span>
+  <span class="n">validates</span> <span class="ss">:owner_id</span><span class="p">,</span> <span class="ss">inclusion: </span><span class="p">{</span> <span class="ss">in: </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span> <span class="no">User</span><span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:id</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="kp">nil</span><span class="p">]</span> <span class="p">}</span> <span class="p">},</span> <span class="ss">allow_nil: </span><span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This ensures <code class="language-plaintext highlighter-rouge">owner_id</code> is either <code class="language-plaintext highlighter-rouge">nil</code> or a valid <code class="language-plaintext highlighter-rouge">User.id</code>, mimicking the
+database foreign key without SQLite’s pitfalls.</p>
+
+<h2 id="lessons-learned">Lessons learned</h2>
+
+<ul>
+  <li><strong>SQLite gotchas:</strong> SQLite’s table recreation for schema changes can wreak
+havoc with cascading foreign keys. Be cautious with <code class="language-plaintext highlighter-rouge">on_delete: :cascade</code> in
+migrations.</li>
+  <li><strong>Safer migrations:</strong> Use <code class="language-plaintext highlighter-rouge">add_column</code> and <code class="language-plaintext highlighter-rouge">add_index</code> for simple column
+additions, and enforce constraints at the application level when using SQLite.</li>
+  <li><strong>Avoid cascading deletes:</strong> Consider using <code class="language-plaintext highlighter-rouge">on_delete: :nullify</code> for foreign
+keys like <code class="language-plaintext highlighter-rouge">reports</code> to <code class="language-plaintext highlighter-rouge">groups</code> to prevent data loss, though you’ll need to
+handle orphaned <code class="language-plaintext highlighter-rouge">reports</code> (with <code class="language-plaintext highlighter-rouge">group_id: nil</code>) in your application logic.</li>
+  <li><strong>Test with data:</strong> Always test migrations with realistic data, including
+invalid foreign key values, to catch issues early.</li>
+  <li><strong>Backup first:</strong> Before running migrations, back up your database (<code class="language-plaintext highlighter-rouge">sqlite3
+db/production.sqlite3 ".backup backup.sqlite3"</code>) to avoid data loss.</li>
+</ul>
+
+<p>Do I still love SQLite? But of course! However it comes with gotchas that you
+must know to use it efficiently and avoid landmines.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html" rel="next" title="AI amplifies programmers, not replaces them">AI amplifies programmers, not replaces them</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/software/2025/08/21/why-do-software-developers-love-complexity.html" rel="prev" title="Why do software developers love complexity?">Why do software developers love complexity?</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-09-27T15:48:28+03:00">September 27, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

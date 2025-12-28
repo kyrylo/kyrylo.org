@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>So what is “binding.pry” exactly? | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="So what is “binding.pry” exactly?" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The very first feature that you learn about Pry is undoubtedly “binding.pry”. You put it here, there and everywhere; you’re happier than you’ve ever been before. In simple words: “binding.pry” makes your life a lot easier. But, have you ever wondered what “binding.pry” is? It appears so simple that you don’t even think of the details. When I first started to use Pry, I simply cargo-culted it. “binding.pry” seemed to me like some mysterious sorcery. Obviously, that’s not true, but when you learn something new things always appear more mysterious than they really are. By the end of this article you should have a solid understanding of one of the oldest and most interesting features of Pry." />
+<meta property="og:description" content="The very first feature that you learn about Pry is undoubtedly “binding.pry”. You put it here, there and everywhere; you’re happier than you’ve ever been before. In simple words: “binding.pry” makes your life a lot easier. But, have you ever wondered what “binding.pry” is? It appears so simple that you don’t even think of the details. When I first started to use Pry, I simply cargo-culted it. “binding.pry” seemed to me like some mysterious sorcery. Obviously, that’s not true, but when you learn something new things always appear more mysterious than they really are. By the end of this article you should have a solid understanding of one of the oldest and most interesting features of Pry." />
+<link rel="canonical" href="http://localhost:4000/programming/ruby/2013/05/30/so-what-is-binding-pry-exactly.html" />
+<meta property="og:url" content="http://localhost:4000/programming/ruby/2013/05/30/so-what-is-binding-pry-exactly.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://imgur.com/uxHPVG0.gif" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-05-30T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://imgur.com/uxHPVG0.gif" />
+<meta property="twitter:title" content="So what is “binding.pry” exactly?" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-12-28T12:35:36+02:00","datePublished":"2013-05-30T00:00:00+03:00","description":"The very first feature that you learn about Pry is undoubtedly “binding.pry”. You put it here, there and everywhere; you’re happier than you’ve ever been before. In simple words: “binding.pry” makes your life a lot easier. But, have you ever wondered what “binding.pry” is? It appears so simple that you don’t even think of the details. When I first started to use Pry, I simply cargo-culted it. “binding.pry” seemed to me like some mysterious sorcery. Obviously, that’s not true, but when you learn something new things always appear more mysterious than they really are. By the end of this article you should have a solid understanding of one of the oldest and most interesting features of Pry.","headline":"So what is “binding.pry” exactly?","image":"https://imgur.com/uxHPVG0.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/ruby/2013/05/30/so-what-is-binding-pry-exactly.html"},"url":"http://localhost:4000/programming/ruby/2013/05/30/so-what-is-binding-pry-exactly.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">So what is “binding.pry” exactly?</h1>
+
+    <p>
+      <time datetime="2013-05-30T00:00:00+03:00" itemprop="datePublished">
+        May 30, 2013
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>The very first feature that you learn about Pry is undoubtedly
+“binding.pry”. You put it here, there and everywhere; you’re happier than you’ve
+ever been before. In simple words: “binding.pry” makes your life a lot
+easier. But, have you ever wondered what “binding.pry” is? It appears so simple
+that you don’t even think of the details. When I first started to use Pry, I
+simply cargo-culted it. “binding.pry” seemed to me like some mysterious
+sorcery. Obviously, that’s not true, but when you learn something new things
+always appear more mysterious than they really are. By the end of this article
+you should have a solid understanding of one of the oldest and most interesting
+features of Pry.
+<img src="https://imgur.com/uxHPVG0.gif" /></p>
+
+<h2 id="the-story-of-a-little-expression-with-incredible-power">The story of a little expression with incredible power</h2>
+
+<p><img src="https://imgur.com/WRNWYXI.gif" /></p>
+
+<div class="caption">Ground control to Major Tom...</div>
+<p><br /></p>
+
+<p>We can use “binding.pry” almost anywhere. For instance, when you launch Pry via
+the command-line interface its default context is always “main”<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. Pry
+displays this information in the prompt (<nobr>“[1] pry(main)&gt;”</nobr>). The
+prompt is dynamic: it always displays the current context.</p>
+
+<p>The following snippets demonstrate a number possible places you can insert a
+“binding.pry”. The only difference is the context.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Song</span>
+  <span class="c1"># Pry session starts in the context of Song.</span>
+  <span class="nb">binding</span><span class="p">.</span><span class="nf">pry</span> <span class="c1"># pry(Song)</span>
+
+  <span class="k">def</span> <span class="nf">play</span>
+    <span class="nb">puts</span> <span class="s1">'Ground control to Major Tom...'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Song</span>
+  <span class="k">def</span> <span class="nf">play</span>
+    <span class="c1"># The context is an instance of Song.</span>
+    <span class="nb">binding</span><span class="p">.</span><span class="nf">pry</span> <span class="c1"># pry(#&lt;Song&gt;)</span>
+    <span class="nb">puts</span> <span class="s1">'Ground control to Major Tom...'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Song</span>
+  <span class="k">def</span> <span class="nf">play</span>
+    <span class="nb">puts</span> <span class="s1">'Ground control to Major Tom...'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># The context is main.</span>
+<span class="nb">binding</span><span class="p">.</span><span class="nf">pry</span> <span class="c1"># pry(main)</span>
+</code></pre></div></div>
+
+<h2 id="bindingpry-divided-into-binding-and-pry">“binding.pry” divided into “binding” and “pry”</h2>
+
+<p>It’s time to slightly lift the veil. I’m sure a few of you know about the
+Binding class from Ruby; but I’m also sure an even larger number have never
+heard of it. It’s not really a feature that every Ruby programmer needs to be
+familiar with — but this is exactly what powers “binding.pry”. Let’s analyse
+this further below.</p>
+
+<h3 id="binding">“binding”</h3>
+
+<p>“binding” is a method. It always returns a new instance of the Binding class.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>binding.class #=&gt; Binding
+binding #=&gt; #&lt;Binding:0xa9dcefc&gt;
+binding #=&gt; #&lt;Binding:0xa9ee490&gt;
+</code></pre></div></div>
+
+<p>You can invoke it anywhere you want, because it is a method of the Kernel module
+and Kernel methods are available on every object. One more important thing to
+know is that the Binding class can’t be instantiated directly<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>. The “binding”
+method is the only interface.</p>
+
+<p>So what exactly is a “binding”? A binding is a like a “snapshot” of everything
+available at the moment of instantiation: current value of “self”, local
+variables, methods, instance variables and more. Think of it as a room in the
+house full of items. There can be many rooms. Each room has its own set of items
+and a window. In Pry internals such a place is called a context. But foremost,
+in order to get an item from a room, we need to pry open a window and creep into
+a house, so we can see what’s available around.</p>
+
+<p>Thanks to the Binding class, the so-called window can be implemented with a
+single method call. Let’s call it “Room#window” and put a teddy bear in it. Our
+aim is to take out that bear.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Room</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@items</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:teddy_bear</span><span class="p">]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">window</span>
+    <span class="nb">binding</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">backpack</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">bedroom</span> <span class="o">=</span> <span class="no">Room</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">bedroom</span><span class="p">.</span><span class="nf">window</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="s1">'@items'</span><span class="p">)</span> <span class="c1">#=&gt; [:teddy_bear]</span>
+<span class="n">backpack</span> <span class="o">&lt;&lt;</span> <span class="n">bedroom</span><span class="p">.</span><span class="nf">window</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="s1">'@items.pop'</span><span class="p">)</span>
+<span class="n">backpack</span><span class="p">.</span><span class="nf">inspect</span> <span class="c1">#=&gt; [:teddy_bear]</span>
+<span class="n">bedroom</span><span class="p">.</span><span class="nf">window</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="s1">'@items'</span><span class="p">)</span> <span class="c1">#=&gt; []</span>
+</code></pre></div></div>
+
+<p>You can also ask Maria to take back the teddy bear. Thanks to “binding” we are
+able to evaluate Room’s code in the context of Maria, so no-one will cry later.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Maria</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">take_back</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+    <span class="nb">eval</span><span class="p">(</span><span class="s2">"@items &lt;&lt; </span><span class="si">#{</span> <span class="n">from</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">item</span><span class="p">).</span><span class="nf">inspect</span> <span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Maria</span><span class="p">.</span><span class="nf">take_back</span><span class="p">(</span><span class="ss">:teddy_bear</span><span class="p">,</span> <span class="n">backpack</span><span class="p">,</span> <span class="n">bedroom</span><span class="p">.</span><span class="nf">window</span><span class="p">)</span>
+<span class="n">backpack</span><span class="p">.</span><span class="nf">inspect</span> <span class="c1">#=&gt; []</span>
+<span class="n">bedroom</span><span class="p">.</span><span class="nf">window</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="s1">'@items'</span><span class="p">)</span> <span class="c1">#=&gt; [:teddy_bear]</span>
+</code></pre></div></div>
+
+<h3 id="pry">“pry”</h3>
+
+<p><img src="https://imgur.com/RMzmI9o.gif" /></p>
+
+<p>Onwards to the other part of “binding.pry” expression, “pry”. It turns out that
+you can invoke “pry” almost on every Ruby object. That’s possible because it is
+defined on Object, the ancestor of every Ruby class. The method being invoked on
+a random object, starts a new Pry session in the context of that object.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">'andrew'</span><span class="p">,</span> <span class="n">'alexander'</span><span class="p">,</span> <span class="n">'vladimir'</span><span class="p">]</span><span class="o">.</span><span class="n">pry</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">#&lt;</span><span class="kt">Array</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">&amp;:</span><span class="n">capitalize</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s">"Andrew"</span><span class="p">,</span> <span class="s">"Alexander"</span><span class="p">,</span> <span class="s">"Vladimir"</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">#&lt;</span><span class="kt">Array</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">exit</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="s">"do you hear me?"</span><span class="o">.</span><span class="n">pry</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="s">"do you hear me?"</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">upcase</span>
+<span class="o">=&gt;</span> <span class="s">"DO YOU HEAR ME?"</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="s">"do you hear me?"</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">exit</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Remembering the examples in the beginning of this article and looking at the
+snippet above might put an idea into your head: we can get rid of constant
+typing of “binding” and just write “pry” instead, can’t we? It turns out, we
+can. However, “binding.pry” and “pry” are not interchangeable. They start Pry
+sessions in different contexts.</p>
+
+<p>The following example uses “binding.pry”. A Pry session is started in the
+context of a Song instance and the “music” local variable is accessible.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Song</span>
+  <span class="k">def</span> <span class="nf">play</span>
+    <span class="n">music</span> <span class="o">=</span> <span class="s1">'rock &amp; roll'</span>
+    <span class="s2">"I love </span><span class="si">#{</span> <span class="nb">binding</span><span class="p">.</span><span class="nf">pry</span> <span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Song</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">play</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">#&lt;</span><span class="kt">Song</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">music</span>
+<span class="o">=&gt;</span> <span class="s">"rock &amp; roll"</span>
+</code></pre></div></div>
+
+<p>Let’s slighlty modify the “Song#play” method and use “pry” this time. Again, the
+session starts in the context of the Song instance, but things work a bit
+different, now. In this case the “music” local variable is not
+accessible. Although we invoke “pry” in the scope of “Song#play” method, the Pry
+read-eval-print-loop starts not where you might expect. The local variable is
+unreachable, because Pry does not operate on the binding of the “Song#play”
+method. Instead, it operates directly on the instance, implicitly accessible via
+“self”.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Song</span>
+  <span class="k">def</span> <span class="nf">play</span>
+    <span class="n">music</span> <span class="o">=</span> <span class="s1">'rock &amp; roll'</span>
+    <span class="s2">"I love </span><span class="si">#{</span> <span class="n">pry</span> <span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">song</span> <span class="o">=</span> <span class="no">Song</span><span class="p">.</span><span class="nf">new</span> <span class="c1">#=&gt; #&lt;Song:0x9d89588&gt;</span>
+<span class="vg">$old_id</span> <span class="o">=</span> <span class="n">song</span><span class="p">.</span><span class="nf">object_id</span> <span class="c1">#=&gt; 82594500</span>
+<span class="n">song</span><span class="p">.</span><span class="nf">play</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">#&lt;</span><span class="kt">Song</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">music</span>
+<span class="kt">NameError</span><span class="o">:</span> <span class="n">undefined</span> <span class="n">local</span> <span class="n">variable</span> <span class="n">or</span> <span class="n">method</span> <span class="p">`</span><span class="n">music'</span> <span class="n">for</span> <span class="o">#&lt;</span><span class="kt">Song</span><span class="o">:</span><span class="mh">0xbd2fe00</span><span class="o">&gt;</span>
+<span class="n">from</span> <span class="p">(</span><span class="n">pry</span><span class="p">)</span><span class="o">:</span><span class="mi">7</span><span class="o">:</span><span class="kr">in</span> <span class="p">`</span><span class="n">__pry__'</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">#&lt;</span><span class="kt">Song</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">whereami</span>
+<span class="kt">Inside</span> <span class="o">#&lt;</span><span class="kt">Song</span><span class="o">&gt;.</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">#&lt;</span><span class="kt">Song</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">object_id</span> <span class="o">==</span> <span class="o">$</span><span class="n">old_id</span>
+<span class="o">=&gt;</span> <span class="n">true</span>
+</code></pre></div></div>
+
+<p>The “self” keyword has also acquired its “pry” method from Object (not
+literally, since it’s just a placeholder for other Ruby objects that have that
+method defined). So “self.pry” and “pry” are totally equal.</p>
+
+<p>There is one minor case when you can’t invoke “#pry”, though. Unfortunately, Pry
+doesn’t support instances of BasicObject, so you can’t pry into them. The reason
+is that BasicObject is the superclass of Object, and it sits even higher in the
+ancestry chain. It means that its instances don’t have the “pry” method. We
+can’t just move “Object#pry” to “BasicObject#pry”, because BasicObject instances don’t
+have the “binding” method, on which “Object#pry” relies.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">basic</span> <span class="o">=</span> <span class="no">BasicObject</span><span class="p">.</span><span class="nf">new</span> <span class="c1">#=&gt; #&lt;BasicObject:0x512c30c&gt;</span>
+<span class="n">basic</span><span class="p">.</span><span class="nf">pry</span> <span class="c1">#=&gt; NoMethodError: undefined method `pry' for #&lt;BasicObject:...&gt;</span>
+</code></pre></div></div>
+
+<p>Remember, you get “binding” from the Kernel module and Object is the only class,
+which includes it. This is by Ruby’s
+design. <a href="http://bugs.ruby-lang.org/issues/5360">Some people want to see the binding support for BasicObject</a>,
+but this is unlikely to happen in the near future. In Pry lobby interviews
+<a href="https://github.com/pry/pry/issues/516">there were attempts to work around this</a>, but they didn’t go too
+far.</p>
+
+<p>Although Pry can’t support BasicObject instances, it supports BasicObject class
+itself, because Class instances do have bindings.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="kt">BasicObject</span><span class="o">.</span><span class="n">pry</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="kt">BasicObject</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">__id__</span>
+<span class="o">=&gt;</span> <span class="mi">81839890</span>
+</code></pre></div></div>
+
+<p>Another interesting feature of the “pry” method is that it supports
+arguments. So <code class="language-plaintext highlighter-rouge">pry</code>, <code class="language-plaintext highlighter-rouge">self.pry</code> and <code class="language-plaintext highlighter-rouge">pry(self)</code> are the exact same
+expressions. In fact, it accepts any Ruby objects, not only “self”. Just
+imagine, it’s only a one method, but how much power it is endowed with!</p>
+
+<p>In the example below you can clearly see that “pry” is not like the “cd”
+command. It doesn’t store a chain of bindings (known as a binding
+stack). Instead, it always creates a new session, with its own binding stack
+(look at the “[1]” from the prompt, it doesn’t continue the previous counter,
+but starts a new one, without modifying the existing counter).</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pry</span> <span class="mi">1337</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pry</span> <span class="n">''</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pry</span> <span class="o">:</span><span class="n">awesome</span><span class="o">!</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">awesome</span><span class="o">!</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">awesome</span><span class="o">!</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">nesting</span>
+<span class="kt">Nesting</span> <span class="n">status</span><span class="o">:</span>
+<span class="c1">--</span>
+<span class="mi">0</span><span class="o">.</span> <span class="o">:</span><span class="n">awesome</span><span class="o">!</span> <span class="p">(</span><span class="kt">Pry</span> <span class="n">top</span> <span class="n">level</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">awesome</span><span class="o">!</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">exit</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">nesting</span>
+<span class="kt">Nesting</span> <span class="n">status</span><span class="o">:</span>
+<span class="c1">--</span>
+<span class="mi">0</span><span class="o">.</span> <span class="s">""</span> <span class="p">(</span><span class="kt">Pry</span> <span class="n">top</span> <span class="n">level</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The “pry” method also accepts the second argument: a hash of options. Most of
+the time you don’t need it. However, it won’t hurt you to know slightly more
+than an average Pry user, because you’re the special one. You can check the full
+list of options in the “<a href="https://github.com/pry/pry/blob/76d20e1632ffa331536b4f3a19ff96e532e70ac3/lib/pry/pry_instance.rb#L98-L100">pry_instance.rb</a>” file (as of Pry
+v0.9.12.2). That list is quite big, so let me show you some of the insteresting
+options: “:output” and “:extra_sticky_locals”.</p>
+
+<p>In the next example I did a couple of things. Firstly, I redirected all the
+output from a nested Pry session to a local variable called “output_history” and
+then printed its contents. Secondly, I injected a new sticky local
+variable. Sticky variables are shared across all Pry sessions and they’re
+accessible in any context. Just bear in mind that since the “pry” method creates
+a new Pry session, the hash options don’t affect the parent session: they’re
+valid only for the new session.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">output_history</span> <span class="o">=</span> <span class="kt">StringIO</span><span class="o">.</span><span class="n">new</span>
+<span class="o">=&gt;</span> <span class="o">#&lt;</span><span class="kt">StringIO</span><span class="o">:</span><span class="mh">0xab8978c</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">pry</span> <span class="o">:</span><span class="n">output</span> <span class="o">=&gt;</span> <span class="n">output_history</span><span class="p">,</span> <span class="o">:</span><span class="n">extra_sticky_locals</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="o">:</span><span class="n">time</span> <span class="o">=&gt;</span> <span class="kt">Time</span><span class="o">.</span><span class="n">now</span> <span class="p">}</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">whereami</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">ls</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">time</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span> <span class="kt">Help</span> <span class="n">me</span> <span class="n">out</span><span class="o">!</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">exit</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">puts</span> <span class="n">output_history</span><span class="o">.</span><span class="n">string</span>
+<span class="kt">Inside</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span>
+<span class="kt">Comparable</span><span class="o">#</span><span class="n">methods</span><span class="o">:</span> <span class="o">&lt;</span>  <span class="o">&lt;=</span>  <span class="o">&gt;</span>  <span class="o">&gt;=</span>  <span class="n">between</span><span class="o">?</span>
+<span class="kt">Symbol</span><span class="o">#</span><span class="n">methods</span><span class="o">:</span>
+  <span class="o">&lt;=&gt;</span>  <span class="o">=~</span>       <span class="n">capitalize</span>  <span class="n">empty</span><span class="o">?</span>    <span class="n">inspect</span>  <span class="n">match</span>               <span class="n">size</span>   <span class="n">swapcase</span>  <span class="n">to_sym</span>
+  <span class="o">==</span>   <span class="kt">[]</span>       <span class="n">casecmp</span>     <span class="n">encoding</span>  <span class="n">intern</span>   <span class="n">next</span>                <span class="n">slice</span>  <span class="n">to_proc</span>   <span class="n">upcase</span>
+  <span class="o">===</span>  <span class="n">__pry__</span>  <span class="n">downcase</span>    <span class="n">id2name</span>   <span class="n">length</span>   <span class="n">pretty_print_cycle</span>  <span class="n">succ</span>   <span class="n">to_s</span>
+<span class="n">locals</span><span class="o">:</span> <span class="kr">_</span>  <span class="n">__</span>  <span class="n">_dir_</span>  <span class="n">_ex_</span>  <span class="n">_file_</span>  <span class="n">_in_</span>  <span class="n">_out_</span>  <span class="n">_pry_</span>  <span class="n">time</span>
+<span class="o">=&gt;</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">25</span> <span class="mi">14</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">34</span> <span class="o">+</span><span class="mi">0300</span>
+<span class="kt">NoMethodError</span><span class="o">:</span> <span class="n">undefined</span> <span class="n">method</span> <span class="p">`</span><span class="n">out</span><span class="o">!</span><span class="n">'</span> <span class="n">for</span> <span class="o">:</span><span class="n">universe</span><span class="o">:</span><span class="kt">Symbol</span>
+<span class="n">from</span> <span class="p">(</span><span class="n">pry</span><span class="p">)</span><span class="o">:</span><span class="mi">3</span><span class="o">:</span><span class="kr">in</span> <span class="p">`</span><span class="n">__pry__'</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">time</span>
+<span class="kt">NameError</span><span class="o">:</span> <span class="n">undefined</span> <span class="n">local</span> <span class="n">variable</span> <span class="n">or</span> <span class="n">method</span> <span class="p">`</span><span class="n">time'</span> <span class="n">for</span> <span class="n">main</span><span class="o">:</span><span class="kt">Object</span>
+<span class="n">from</span> <span class="p">(</span><span class="n">pry</span><span class="p">)</span><span class="o">:</span><span class="mi">8</span><span class="o">:</span><span class="kr">in</span> <span class="p">`</span><span class="n">__pry__'</span>
+</code></pre></div></div>
+
+<h2 id="binding-and-pry-pulled-together">“binding” and “pry” pulled together</h2>
+
+<p><img src="https://imgur.com/RnLRxrb.gif" /></p>
+
+<p>So now, since you know a lot more about bindings and prys, it’s time to answer
+the main question. How does the Pry REPL know where to start a
+read-eval-print-loop? Why does “binding.pry” work? In simple words, when you
+invoke “pry” on an object, Pry gets the binding of that object and starts a REPL
+in its context. The mechanism for retrieving a binding is simple and robust. Its
+name is “Pry.binding_for”.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span> <span class="o">=</span> <span class="no">Pry</span><span class="p">.</span><span class="nf">binding_for</span><span class="p">(</span><span class="ss">:universe</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Binding:0xb2e7ad8&gt;</span>
+<span class="n">b</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="s1">'self'</span><span class="p">)</span> <span class="c1">#=&gt; :universe</span>
+</code></pre></div></div>
+
+<p>You can pass any Ruby object to it. If you pass a Binding instance or a
+top-level binding, it returns it. But with other parameters it works a little
+bit different. It calls <code class="language-plaintext highlighter-rouge">__binding__</code> method on “:universe” and it returns the
+corresponding binding. The question is where does “:universe” obtain this
+method? It is defined on Object, too.</p>
+
+<p>Another supplementary method is used for retrieving a binding. Whenever you call
+“pry” on something, Pry internally creates a new method on that object called
+<code class="language-plaintext highlighter-rouge">__pry__</code>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">__pry__</span>
+<span class="kt">NoMethodError</span><span class="o">:</span> <span class="n">undefined</span> <span class="n">method</span> <span class="p">`</span><span class="n">__pry__'</span> <span class="n">for</span> <span class="o">:</span><span class="n">universe</span><span class="o">:</span><span class="kt">Symbol</span>
+<span class="n">from</span> <span class="p">(</span><span class="n">pry</span><span class="p">)</span><span class="o">:</span><span class="mi">1</span><span class="o">:</span><span class="kr">in</span> <span class="p">`</span><span class="n">__pry__'</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">pry</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">__pry__</span>
+<span class="o">=&gt;</span> <span class="o">#&lt;</span><span class="kt">Binding</span><span class="o">:</span><span class="mh">0xadf1a74</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="o">:</span><span class="n">universe</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">__pry__</span>
+<span class="o">=&gt;</span> <span class="o">#&lt;</span><span class="kt">Binding</span><span class="o">:</span><span class="mh">0x91a27c4</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">__pry__</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">'self'</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">:</span><span class="n">universe</span>
+</code></pre></div></div>
+
+<p>This is not a rocket science, it simply retrieves a binding of an instance
+(recall “Room#window”. “__pry__” is exactly the same). Albeit this
+method is not for public use, you can do some interesting things with help of
+it. Namely, once “__pry__” is defined, you can peek into objects without prying
+into them. It’s kind of a gateway for accessing an object’s internals.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="mi">1337</span><span class="o">.</span><span class="n">pry</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">@</span><span class="n">leet_number</span> <span class="o">=</span> <span class="o">:</span><span class="n">so_leet</span>
+<span class="o">=&gt;</span> <span class="o">:</span><span class="n">so_leet</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">exit</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="mi">1337</span><span class="o">.</span><span class="n">__pry__</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">'</span><span class="o">@</span><span class="n">leet_number'</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">:</span><span class="n">so_leet</span>
+</code></pre></div></div>
+
+<p>Additionally, as I already mentioned, Pry defines the “__binding__” method on
+every object. It’s already there, so you don’t need to call “pry” on it.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">:</span><span class="n">universe</span><span class="o">.</span><span class="n">__binding__</span><span class="o">.</span><span class="n">eval</span> <span class="n">'upcase'</span>
+<span class="o">=&gt;</span> <span class="o">:</span><span class="kt">UNIVERSE</span>
+</code></pre></div></div>
+
+<p>Why are there two exactly the same methods? Because they are not the
+same. “__pry__” is even more internal than “__binding__”, as the latter utilises
+the former. So “__binding__” is more powerful. There is no “__pry__” for classes
+an modules, but there is always “__binding__”. Do you remember that Pry can
+start its session in the context of a Class? This is exactly what “__binding__”
+is for.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">A</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">__pry__</span> <span class="c1">#=&gt; NoMethodError</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">__binding__</span> <span class="c1">#=&gt; #&lt;Binding:0xb0e8570&gt;</span>
+
+<span class="no">A</span><span class="p">.</span><span class="nf">pry</span>
+<span class="nb">exit</span> <span class="c1"># Exits from the nested session.</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">__pry__</span> <span class="c1">#=&gt; NoMethodError, still undefined.</span>
+</code></pre></div></div>
+
+<p>So “__pry__” is for instances. For the rest there’s “__binding__”. The context
+of evaluation in this case is “self“, as always. Modules also behave as Classes.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="kt">M</span> <span class="o">=</span> <span class="kt">Module</span><span class="o">.</span><span class="n">new</span>
+<span class="o">=&gt;</span> <span class="kt">M</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="kt">M</span><span class="o">.</span><span class="n">__binding__</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">'def</span> <span class="n">magnifico</span><span class="p">;</span> <span class="o">:</span><span class="n">splendid</span> <span class="n">end'</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="n">nil</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">include</span> <span class="kt">M</span>
+<span class="o">=&gt;</span> <span class="kt">Object</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">magnifico</span>
+<span class="o">=&gt;</span> <span class="o">:</span><span class="n">splendid</span>
+</code></pre></div></div>
+
+<p>This is it. Imagine a REPL. Imagine a context. Tie them together.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">loop</span> <span class="kr">do</span>
+             <span class="o">|</span>   <span class="n">print</span> <span class="n">'</span><span class="o">&gt;&gt;</span> <span class="n">'</span>
+             <span class="o">|</span>   <span class="n">puts</span> <span class="s">"=&gt; #{ TOPLEVEL_BINDING.eval(gets) }"</span>
+             <span class="o">|</span> <span class="n">end</span>
+<span class="o">&gt;&gt;</span> <span class="n">def</span> <span class="n">hello</span><span class="p">;</span> <span class="o">:</span><span class="n">hi</span> <span class="n">end</span>
+<span class="o">=&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="n">hello</span>
+<span class="o">=&gt;</span> <span class="n">hi</span>
+</code></pre></div></div>
+
+<p>Then, just spice up everything with bindings and you are ready to be famous.</p>
+
+<h2 id="a-historical-note">A historical note</h2>
+
+<p>Roughly speaking, in the early days of Pry everything worked exactly the
+same. The API was different, though. There was no “binding.pry” and you had to
+“Pry.into(object)”. Nowadays the mechanism has become more robust and easier to
+use. I encourage you to check <a href="https://github.com/pry/pry/blob/4fcf81b97601945945f43311532c164a93b44d7c/lib/pry.rb">Pry as it was 3 years ago</a>. It was only
+125 lines of code. It’s interesting that the README claimed that “Pry does not
+pretend to be a replacement for IRB”. And for the full-featured replacement it
+was recommended to use ripl.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>“binding.pry” is a very powerful expression. “binding” is powerful by itself,
+but if it is assisted with Pry, it reveals unbelievable possibilities. When Pry
+starts, it always starts in some context. The default context is “main” (just
+like in IRB). But with help of bindings it can load itself wherever a binding is
+available. It extends binding’s features with its own ones, allowing excellent
+introspection experience, and in the end you get the best Ruby debugging tool
+ever existed.</p>
+
+<h2 id="homework">Homework</h2>
+
+<p>If you want to become more advanced with Pry and bindings, I offer you three
+tasks. The first one is very simple and it’s suitable for every reader of this
+article. The next one is simple, too, but it requires some thinking. The last
+one is really hard. It’s for passionate Pry users only. It makes you to poke
+around the Pry source code, so please, value your time.</p>
+
+<h3 id="task-1">Task 1</h3>
+
+<p>Figure out why the <code class="language-plaintext highlighter-rouge">msg</code> local variable is not accessible. How to inspect its
+value?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Duck</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">quack</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">'quack, quack, quack!'</span>
+    <span class="ss">:binding</span><span class="p">.</span><span class="nf">pry</span>
+    <span class="nb">puts</span> <span class="s2">"I'm </span><span class="si">#@name</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"I </span><span class="si">#{</span> <span class="n">msg</span> <span class="si">}</span><span class="s2">."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">duck</span> <span class="o">=</span> <span class="no">Duck</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Donald'</span><span class="p">)</span>
+<span class="n">duck</span><span class="p">.</span><span class="nf">quack</span>
+</code></pre></div></div>
+
+<div class="spoiler" data-spoiler-title="The answer to Task 1">
+It is not accessible, because we're calling the `pry` method on a symbol. The
+solution is to remove the colon from `binding`.
+</div>
+
+<h3 id="task-2">Task 2</h3>
+
+<p>Run the following snippet like this: <code class="language-plaintext highlighter-rouge">ruby -rpry task2.rb</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># task2.rb</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">def</span> <span class="nf">exercise</span>
+  <span class="nb">binding</span><span class="p">.</span><span class="nf">pry</span>
+<span class="k">end</span>
+
+<span class="n">exercise</span>
+</code></pre></div></div>
+
+<p>Without using Pry commands (e.g. “cd”), how to get the value of the count local
+variable?</p>
+
+<div class="spoiler" data-spoiler-title="The answer to task 2">
+There are at least two ways. One is this: TOPLEVEL_BINDING.eval('count').
+However, it won't work in a regular Pry session. What would work is this:
+`Pry.toplevel_binding.eval('count')`
+</div>
+
+<h3 id="task-3">Task 3</h3>
+
+<p>How to swap the top-level binding with a fresh one?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">=&gt;</span> <span class="mi">1000</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="c1"># Some lines after...</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">count</span>
+<span class="no">NameError</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">local</span> <span class="n">variable</span> <span class="ow">or</span> <span class="nb">method</span> <span class="sb">`count' for main:Object
+
+</span></code></pre></div></div>
+
+<p>Note that “count = nil” is not the correct solution, as it doesn’t swap the
+current binding with a fresh one. Focus on the very bindings, not on garbage
+collection and other unrelated things that you might thought of. To complete
+this, you only need to swap the current binding object.</p>
+
+<div class="spoiler" data-spoiler-title="The answer to task 3">
+`_pry_.binding_stack[0] = __binding__` and `count` is unaccessible!
+</div>
+
+<h2 id="additional-reading">Additional reading</h2>
+
+<p>Some people can write better than me. These articles are not about Pry, but by
+reading them you’ll be able to understand “binding.pry” even deeper. I heartily
+recommend to check them out.</p>
+
+<ul>
+  <li><a href="hhttps://blog.yugui.jp/entry/846">“Three implicit contexts in Ruby” by Yuki Sonoda</a></li>
+  <li>“Variable Bindings in Ruby” by Jim Weirich (RIP Jim 🕯️ the website is down)</li>
+</ul>
+
+<h2 id="did-you-know">Did you know?</h2>
+
+<p>Did you know that IRB has basic support for bindings, too? It’s not really
+enjoyable to work with them there, though.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">:</span><span class="mi">001</span><span class="o">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">irb</span> <span class="s">"do you hear me?"</span>
+<span class="n">irb</span><span class="o">#</span><span class="mi">1</span><span class="p">(</span><span class="kr">do</span> <span class="n">you</span> <span class="n">hear</span> <span class="n">me</span><span class="o">?</span><span class="p">)</span><span class="o">:</span><span class="mi">001</span><span class="o">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">upcase</span>
+<span class="o">=&gt;</span> <span class="s">"DO YOU HEAR ME?"</span>
+</code></pre></div></div>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>Huge thanks to a friend of mine and the creator of Pry, <a href="https://twitter.com/banisterfiend">John Mair</a>, for helping me to polish my language.</p>
+
+<p>Big thanks to <a href="https://twitter.com/duncanbeevers">Duncan Beevers</a> for the
+criticism. I love to be criticised and Duncan is very sincere.</p>
+
+<p>Yui-knk has translated this article into <a href="http://qiita.com/yui-knk/items/63a511d243323bec6fb8">Japanese</a>.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>More information on “main” can be found in the “<a href="http://banisterfiend.wordpress.com/2010/11/23/what-is-the-ruby-top-level/">What is the Ruby top-level</a>” by John Mair <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+
+      <p>That is, <a href="https://github.com/ruby/ruby/blob/0d70d8864359e6d8c410dd2727de618ba7cc3dc7/proc.c#L1583-L1584">we can’t create our own Binding instances</a> using the “#new” method, like we can do it with many other Ruby standard classes.&lt;/sub&gt;</p>
+
+      <p><code class="language-plaintext highlighter-rouge">Binding.new #=&gt; NoMethodError: undefined method `new' for Binding:Class</code></p>
+
+      <p>Binding is somewhat similar to Symbol: there is no need in their
+instantiation. A binding, just like a symbol is already here, ready at hand. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/programming/ruby/2013/06/03/difference-between-frozen-ruby-objects-across-versions.html" rel="next" title="Difference between frozen Ruby objects across versions">Difference between frozen Ruby objects across versions</a>
+    </div>
+  
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-12-28T12:35:36+02:00">December 28, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

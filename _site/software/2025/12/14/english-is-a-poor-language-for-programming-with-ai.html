@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>English is a poor language for programming with AI | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="English is a poor language for programming with AI" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="English and natural language in general is a bad interface for programming with AI. Not because it is “imperfect”. But because it was never designed for precision." />
+<meta property="og:description" content="English and natural language in general is a bad interface for programming with AI. Not because it is “imperfect”. But because it was never designed for precision." />
+<link rel="canonical" href="http://localhost:4000/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html" />
+<meta property="og:url" content="http://localhost:4000/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-14T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="twitter:title" content="English is a poor language for programming with AI" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-12-15T00:32:57+02:00","datePublished":"2025-12-14T00:00:00+02:00","description":"English and natural language in general is a bad interface for programming with AI. Not because it is “imperfect”. But because it was never designed for precision.","headline":"English is a poor language for programming with AI","image":"http://localhost:4000/assets/images/kyrylo-silin@2x.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html"},"url":"http://localhost:4000/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">English is a poor language for programming with AI</h1>
+
+    <p>
+      <time datetime="2025-12-14T00:00:00+02:00" itemprop="datePublished">
+        Dec 14, 2025
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>English and natural language in general is a bad interface for programming with
+AI. Not because it is “imperfect”. But because it was never designed for
+precision.</p>
+
+<p>Natural languages evolved for persuasion, storytelling, negotiation, and
+survival in small tribes. They are optimized for social flexibility and rapid
+communication, not exact meaning. That is why they keep failing us when we try
+to use them as the primary interface for machines.</p>
+
+<p>The language is full of hidden landmines: ambiguity, implied context, emotional
+framing, and undefined terms. Humans constantly misinterpret each other (even
+after thousands of years of practice).</p>
+
+<p>The existence of lawyers is not an accident. It is evidence.</p>
+
+<p>If natural language were precise, contracts would not need to be hundreds of
+pages long. Courts would not exist to interpret intent. Disputes would not hinge
+on what someone “meant”.</p>
+
+<p>Now we take this same fuzzy medium and say: “Hey AI, do exactly what I mean”.</p>
+
+<p>That is not engineering. That is wishful thinking.</p>
+
+<h2 id="examples-of-the-problem">Examples of the problem</h2>
+
+<ul>
+  <li>
+    <p><em>“Make it faster”.</em><br />
+Faster how? CPU? Latency? Cost? Perception?</p>
+  </li>
+  <li>
+    <p><em>“Use a lightweight solution”.</em><br />
+Lightweight in memory? Dependencies? Code size?</p>
+  </li>
+  <li>
+    <p><em>“Notify me when it is ready”.</em><br />
+Ready by whose definition?</p>
+  </li>
+</ul>
+
+<p>Humans fill these gaps with intuition and shared context.<br />
+Machines cannot reliably do that. And arguably should not be expected to.</p>
+
+<h2 id="real-world-consequences">Real-world consequences</h2>
+
+<p>2025 research drives the point home. Veracode analyzed code from over 100 LLMs
+and found that 45% of samples introduced OWASP Top 10 vulnerabilities (see
+<a href="https://www.veracode.com/resources/analyst-reports/2025-genai-code-security-report">2025 GenAI Code Security Report</a>).
+A Cloud Security Alliance study
+<a href="https://cloudsecurityalliance.org/blog/2025/07/09/understanding-security-risks-in-ai-generated-code">reported</a>
+that 62% of AI-generated code contains design flaws or known security
+vulnerabilities (even with the latest models).</p>
+
+<p>Prompts rarely specify security constraints, error handling, input validation,
+or performance bounds. The model guesses. And often guesses wrong.</p>
+
+<p>To be fair, natural language prompting has been a breakthrough. It has
+democratized AI, enabling non-programmers to build complex applications quickly
+and opened up rapid prototyping in ways that traditional coding never could.
+Modern LLMs are remarkably good at resolving ambiguity using conversation
+history, context, and probabilistic reasoning. Often better than early skeptics
+predicted (see <a href="https://arxiv.org/html/2411.12395v1">research</a>).</p>
+
+<p>Yet these successes are still papering over a fundamental mismatch. Prompt
+engineering helps, but it remains an imprecise art, not a science. When outputs
+go wrong, we still end up blaming the model for “misunderstanding” us. Rather
+than recognizing the root issue. We are asking it to read our minds in a
+language built for nuance, not specification.</p>
+
+<p>Jacque Fresco, futurist and founder of the Venus Project, repeatedly argued that
+natural language is fundamentally inadequate for operating rational, technical
+systems. In his lecture
+<a href="https://www.youtube.com/watch?v=ENFMAxol4-Y">“The Inadequacy of Language” (1975)</a>,
+he emphasized that words are ambiguous, emotionally charged, and dependent on
+personal interpretation. And that truly rational systems must rely on
+measurable, objective, and instrument-based forms of communication rather than
+symbolic abstraction.</p>
+
+<p>Natural language is symbolic and expressive, not scientific.
+It describes impressions and intentions, not verifiable constraints.</p>
+
+<p>Words like “optimize”, “secure”, “simple”, “important”, and “critical” feel
+meaningful. But they carry zero measurable content unless explicitly defined.</p>
+
+<p>When we instruct AI in natural language, we are translating fuzziness into code
+and hoping it collapses into correctness.</p>
+
+<p>Sometimes it does.<br />
+Often it does not.</p>
+
+<p>The future is not just “better prompt engineering”.<br />
+It is better interfaces. Ones built on.</p>
+
+<p>Explicit constraints instead of vague adjectives.
+Measurable objectives instead of implied intentions.
+Formal definitions instead of metaphors.</p>
+
+<p>We are already seeing promising steps in this direction. Structured prompts
+using JSON schemas or YAML, formal specification tools like
+<a href="https://lamport.azurewebsites.net/tla/tla.html">TLA+</a>
+or
+<a href="https://alloytools.org/">Alloy</a>,
+visual programming environments, and agentic tools like Cursor or Replit Agent
+that let users define goals with clearer boundaries and iterative feedback
+loops.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Natural language can and should remain a conversational layer.</p>
+
+<p>A high-level UI.
+A convenience for exploration and ideation.</p>
+
+<p>But it should never be the source of truth for critical instructions.</p>
+
+<p>You do not build a bridge using poetry.<br />
+You do not govern machines using vibes.</p>
+
+<p>And expecting AI to reliably interpret natural language as precise code
+is like expecting a compiler to understand sarcasm.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2025/12/21/im-back-to-open-source.html" rel="next" title="I'm back to Open Source">I'm back to Open Source</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html" rel="prev" title="AI amplifies programmers, not replaces them">AI amplifies programmers, not replaces them</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-12-15T00:32:57+02:00">December 15, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

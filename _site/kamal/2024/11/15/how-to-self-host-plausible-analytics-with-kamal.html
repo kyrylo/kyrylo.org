@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to self-host Plausible Analytics with Kamal | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to self-host Plausible Analytics with Kamal" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this article, I’ll guide you through the process of self-hosting Plausible Analytics with Kamal. It’s a simple, lightweight alternative to Google Analytics." />
+<meta property="og:description" content="In this article, I’ll guide you through the process of self-hosting Plausible Analytics with Kamal. It’s a simple, lightweight alternative to Google Analytics." />
+<link rel="canonical" href="http://localhost:4000/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html" />
+<meta property="og:url" content="http://localhost:4000/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-15T12:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="twitter:title" content="How to self-host Plausible Analytics with Kamal" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-11-17T13:15:19+02:00","datePublished":"2024-11-15T12:00:00+02:00","description":"In this article, I’ll guide you through the process of self-hosting Plausible Analytics with Kamal. It’s a simple, lightweight alternative to Google Analytics.","headline":"How to self-host Plausible Analytics with Kamal","image":"http://localhost:4000/assets/images/kyrylo-silin@2x.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html"},"url":"http://localhost:4000/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to self-host Plausible Analytics with Kamal</h1>
+
+    <p>
+      <time datetime="2024-11-15T12:00:00+02:00" itemprop="datePublished">
+        Nov 15, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>In this article, I’ll guide you through the process of self-hosting <a href="https://plausible.io/">Plausible
+Analytics</a> with Kamal. It’s a simple, lightweight
+alternative to Google Analytics.</p>
+
+<p>I’ve been trial-running it for a while now and really like it because it’s
+straightforward and not overwhelming to use (I can now see my visitors beyond
+the 30-minute mark <code class="language-plaintext highlighter-rouge">;-)</code>). Since my trial period is ending soon, it was high
+time to decide what to do.</p>
+
+<p>You can either use Plausible in the cloud or self-host it. I chose to self-host
+it because <a href="https://kamal-deploy.org/">Kamal</a> makes it a breeze, and the
+requirements are minimal.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<h3 id="hardware">Hardware</h3>
+
+<p>We’ll be working with the <a href="https://github.com/plausible/community-edition/">Plausible Community
+Edition</a>. The hardware
+requirements are minimal. If you have modest needs like me, you can run it on
+the cheapest <a href="https://hetzner.com/cloud">Hetzner Cloud</a> instance:</p>
+
+<blockquote cite="https://github.com/plausible/community-edition/blob/v2.1.4/README.md#prerequisites">
+  <p>
+    Prerequisites:
+  </p>
+  <ul>
+    <li>CPU must support SSE 4.2 or NEON instruction set or higher (required by ClickHouse).</li>
+    <li>At least 2 GB of RAM is recommended for running ClickHouse and Plausible without fear of OOMs.</li>
+  </ul>
+</blockquote>
+
+<h3 id="subdomain">Subdomain</h3>
+
+<p>An ideal setup would involve using a subdomain for Plausible, e.g.,
+<code class="language-plaintext highlighter-rouge">plausible.example.com</code>.</p>
+
+<p>On Cloudflare, you can create an <code class="language-plaintext highlighter-rouge">A</code> record pointing to your server’s IP address. This will allow you to access Plausible at <code class="language-plaintext highlighter-rouge">https://plausible.example.com</code>.</p>
+
+<p><img src="https://cdn.kyrylo.org/images/2024-11-15-2.webp" alt="Cloudflare DNS settings" /></p>
+
+<h3 id="ghcrio-token">ghcr.io token</h3>
+
+<p>To pull the Plausible Community Edition Docker image, you’ll need a <a href="https://github.blog/news-insights/product-news/introducing-github-container-registry/">GitHub
+Container Registry (ghcr.io)</a>
+token.</p>
+
+<p>You can create one in your GitHub account settings:</p>
+
+<p><img src="https://cdn.kyrylo.org/images/2024-11-15-1.webp" alt="New fine-grained personal access token on GitHub" /></p>
+
+<ol>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Settings</code> &gt; <code class="language-plaintext highlighter-rouge">Developer settings</code> &gt; <code class="language-plaintext highlighter-rouge">Personal access tokens</code> &gt; <a href="https://github.com/settings/personal-access-tokens/new"><code class="language-plaintext highlighter-rouge">Fine-grained tokens</code></a></li>
+  <li>Keep all the default settings.</li>
+  <li>Give it a name, e.g. <code class="language-plaintext highlighter-rouge">ghcr-plausible-kamal</code>.</li>
+  <li>Make it non-expiring (I prefer this, but it’s up to you).</li>
+  <li>Hit <code class="language-plaintext highlighter-rouge">Generate token</code>.</li>
+</ol>
+
+<p>Copy the token and store it in a safe place—you’ll need it later.</p>
+
+<h2 id="step-by-step-guide">Step-by-step guide</h2>
+
+<p>To understand what we’ll be doing, let’s examine the
+<a href="https://github.com/plausible/community-edition/blob/v2.1.4/compose.yml">compose.yml</a>
+file from the Plausible Community Edition repository and translate it to a Kamal
+configuration.</p>
+
+<p>Plausible requires two dependencies (databases):</p>
+
+<ul>
+  <li>ClickHouse</li>
+  <li>PostgreSQL</li>
+</ul>
+
+<p>The main web service is Plausible itself, and we’ll pull the Docker image from
+the GitHub Container Registry.</p>
+
+<p>With that, let’s get started!</p>
+
+<h3 id="step-1-clone-plausible-config-files">Step 1: Clone Plausible config files</h3>
+
+<p>Start by cloning the repository:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">-b</span> v2.1.4 <span class="nt">--single-branch</span> https://github.com/plausible/community-edition plausible-kamal
+<span class="nb">cd </span>plausible-kamal
+</code></pre></div></div>
+
+<p>The directory name we’ll use locally is <code class="language-plaintext highlighter-rouge">plausible-kamal</code>. I recommend either
+forking the repository or creating a new one and pushing your changes there. I
+chose the latter, but it’s up to you.</p>
+
+<h3 id="step-2-update-gitignore">Step 2: Update <code class="language-plaintext highlighter-rouge">.gitignore</code></h3>
+
+<p>The repository includes a <code class="language-plaintext highlighter-rouge">.gitignore</code> file that allowlists files. We need to
+update it to commit the Kamal configuration files:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .gitignore
+!.kamal
+!.kamal/secrets
+!.config
+!config/deploy.yml
+</code></pre></div></div>
+
+<p>You can safely skip committing hooks; they’re unnecessary. While we’re here, let’s also allow the <code class="language-plaintext highlighter-rouge">Dockerfile</code>. More on that later:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .gitignore
+!Dockerfile
+</code></pre></div></div>
+
+<p>Here’s the complete <code class="language-plaintext highlighter-rouge">.gitignore</code>:</p>
+
+<pre><code class="language-gitignore">*
+!compose.yml
+!clickhouse/logs.xml
+!clickhouse/ipv4-only.xml
+!README.md
+!.gitignore
+!.kamal
+!.kamal/secrets
+!config
+!config/deploy.yml
+!Dockerfile
+</code></pre>
+
+<p>Commit these changes so the new <code class="language-plaintext highlighter-rouge">.gitignore</code> rules are applied:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .gitignore
+git commit <span class="nt">-m</span> <span class="s2">"Allow Kamal configuration files + Dockerfile"</span>
+</code></pre></div></div>
+
+<h3 id="step-3-generate-kamal-configuration">Step 3: Generate Kamal configuration</h3>
+
+<p>If you don’t have Kamal installed, you can install it via <a href="https://rubygems.org">RubyGems</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>kamal
+</code></pre></div></div>
+
+<p>Now, generate Kamal configuration:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% kamal init
+Created configuration file <span class="k">in </span>config/deploy.yml
+Created .kamal/secrets file
+Created sample hooks <span class="k">in</span> .kamal/hooks
+</code></pre></div></div>
+
+<h3 id="step-4-create-a-dummy-dockerfile">Step 4: Create a dummy Dockerfile</h3>
+
+<p>Currently, Kamal <a href="https://github.com/basecamp/kamal/issues/497">doesn’t support</a>
+deploying public Docker images directly. As a workaround, we’ll create a dummy
+Dockerfile that “wraps” the Plausible Docker image:</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% echo "FROM ghcr.io/plausible/community-edition:v2.1.4" &gt; Dockerfile
+</code></pre></div></div>
+
+<h3 id="step-5-log-into-github-container-registry">Step 5: Log into GitHub Container Registry</h3>
+
+<p>This is where the GitHub Container Registry token comes in. For my Kamal
+registry, I use Docker Hub, but Plausible is hosted on GitHub Container
+Registry, so we need to log in manually:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> &lt;github_token&gt; | docker login ghcr.io <span class="nt">-u</span> kyrylo <span class="nt">--password-stdin</span>
+</code></pre></div></div>
+
+<h3 id="step-6-setting-up-kamal-secrets">Step 6: Setting up Kamal secrets</h3>
+
+<p>Plausible requires several mandatory environment variables:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SECRET_KEY_BASE</code>: <q>Configures the secret used for sessions in the dashboard
+and for generating other secrets like TOTP Vault Key.</q></li>
+  <li><code class="language-plaintext highlighter-rouge">BASE_URL</code>: <q>Configures the base URL to use in link generation and Cross-Site
+WebSocket Hijacking (CSWSH) checks.</q></li>
+</ul>
+
+<p>We also need database passwords:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">POSTGRES_PASSWORD</code>: For PostgreSQL.</li>
+  <li><code class="language-plaintext highlighter-rouge">CLICKHOUSE_PASSWORD</code>: For ClickHouse.</li>
+</ul>
+
+<p>Finally, don’t forget to set the <code class="language-plaintext highlighter-rouge">KAMAL_REGISTRY_PASSWORD</code>. If you’re using
+GitHub Container Registry, set it to the GitHub token we used earlier.
+Otherwise, use your Docker Hub password or token.</p>
+
+<p>Here’s how your <code class="language-plaintext highlighter-rouge">config/secrets</code> should look like:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># config/secrets</span>
+<span class="nv">KAMAL_REGISTRY_PASSWORD</span><span class="o">=</span><span class="nv">$KAMAL_REGISTRY_PASSWORD</span>
+<span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="nv">$SECRET_KEY_BASE</span>
+<span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span><span class="nv">$POSTGRES_PASSWORD</span>
+<span class="nv">CLICKHOUSE_PASSWORD</span><span class="o">=</span><span class="nv">$CLICKHOUSE_PASSWORD</span>
+</code></pre></div></div>
+
+<p>For brevity, I’ll populate these secrets with values from the environment—it’s
+the easiest way. There are more options available in Kamal’s
+<a href="https://kamal-deploy.org/docs/commands/secrets/">documentation</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Somewhere in your shell configuration</span>
+<span class="nb">export </span><span class="nv">KAMAL_REGISTRY_PASSWORD</span><span class="o">=</span>&lt;your Docker registry password/token&gt;
+<span class="nb">export </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="si">$(</span>openssl rand <span class="nt">-base64</span> 48<span class="si">)</span>
+<span class="nb">export </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>postgres
+<span class="nb">export </span><span class="nv">CLICKHOUSE_PASSWORD</span><span class="o">=</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">SECRET_KEY_BASE</code> is generated randomly. Make sure not to lose it after it’s
+generated and used!</p>
+
+<p><code class="language-plaintext highlighter-rouge">CLICKHOUSE_PASSWORD</code> can be left empty; it’s not mandatory to set it.</p>
+
+<p><code class="language-plaintext highlighter-rouge">POSTGRES_PASSWORD</code> can be set to anything you like; I set it to <code class="language-plaintext highlighter-rouge">postgres</code>.</p>
+
+<p>We’re done with the secrets! Now, we just need to set some environment variables
+in the Kamal configuration.</p>
+
+<h3 id="step-7-update-kamal-configuration">Step 7: Update Kamal configuration</h3>
+
+<p>We’re almost there! Let’s update the Kamal configuration file. I’ll walk you
+through the key sections and, at the end, provide the full configuration so you
+can easily copy-paste it and adjust it to your needs.</p>
+
+<p>First, let’s set the service name and image. We’ll use the custom image we
+created in Step 4.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">service</span><span class="pi">:</span> <span class="s">plausible</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">&lt;your name&gt;/plausible</span>
+</code></pre></div></div>
+
+<p>Next, we need to define the servers. We’ll have just one server, named <code class="language-plaintext highlighter-rouge">web</code>,
+and specify the command to run, copied directly from <code class="language-plaintext highlighter-rouge">compose.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">servers</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">hosts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">&lt;your-server-ip&gt;</span>
+    <span class="na">cmd</span><span class="pi">:</span> <span class="s">sh -c "/entrypoint.sh db createdb &amp;&amp; /entrypoint.sh db migrate &amp;&amp; /entrypoint.sh run"</span>
+</code></pre></div></div>
+
+<p>Now, let’s configure the <a href="https://github.com/basecamp/kamal-proxy">kamal-proxy</a>
+settings to enable SSL for our Plausible instance. We’ll use the subdomain
+created earlier. <strong>Important:</strong> Plausible runs on port <code class="language-plaintext highlighter-rouge">8000</code>, but kamal-proxy
+expects the app to run on port <code class="language-plaintext highlighter-rouge">3000</code> by default. So, we need to set the correct
+port:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">proxy</span><span class="pi">:</span>
+  <span class="na">ssl</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">plausible.example.com</span>
+  <span class="na">app_port</span><span class="pi">:</span> <span class="m">8000</span>
+</code></pre></div></div>
+
+<p>Next, we’ll define the environment variables for the web service. We’ll set
+<code class="language-plaintext highlighter-rouge">BASE_URL</code>, <code class="language-plaintext highlighter-rouge">DATABASE_URL</code>, and <code class="language-plaintext highlighter-rouge">CLICKHOUSE_DATABASE_URL</code> as clear variables, while
+<code class="language-plaintext highlighter-rouge">SECRET_KEY_BASE</code> will be pulled from the secrets file.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> and <code class="language-plaintext highlighter-rouge">CLICKHOUSE_DATABASE_URL</code> connection strings point to
+hosts that Docker will resolve. The hostnames <code class="language-plaintext highlighter-rouge">plausible-db</code> and
+<code class="language-plaintext highlighter-rouge">plausible-events-db</code> are derived from the service name (<code class="language-plaintext highlighter-rouge">plausible</code>) and the
+accessory name (<code class="language-plaintext highlighter-rouge">db</code> or <code class="language-plaintext highlighter-rouge">events-db</code>). For example, <code class="language-plaintext highlighter-rouge">plausible-db</code> will be used
+as the host for PostgreSQL.</p>
+
+<p>Let’s set the environment variables:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">env</span><span class="pi">:</span>
+  <span class="na">clear</span><span class="pi">:</span>
+    <span class="na">BASE_URL</span><span class="pi">:</span> <span class="s">https://plausible.example.com</span>
+    <span class="na">DATABASE_URL</span><span class="pi">:</span> <span class="s">postgres://postgres:postgres@plausible-db:5432/plausible_db</span>
+    <span class="na">CLICKHOUSE_DATABASE_URL</span><span class="pi">:</span> <span class="s">http://plausible-events-db:8123/plausible_events_db</span>
+  <span class="na">secret</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">SECRET_KEY_BASE</span>
+</code></pre></div></div>
+
+<p>Now, let’s define the accessories. We need two: <code class="language-plaintext highlighter-rouge">db</code> and <code class="language-plaintext highlighter-rouge">events-db</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">db</code> accessory is a PostgreSQL database. Pay attention to the port
+declaration. Instead of <code class="language-plaintext highlighter-rouge">port: 5432</code>, we use port: <code class="language-plaintext highlighter-rouge">127.0.0.1:5432:5432</code> to
+ensure the database isn’t exposed to the outside world.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">accessories</span><span class="pi">:</span>
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">postgres:16-alpine</span>
+    <span class="na">host</span><span class="pi">:</span> <span class="s">&lt;your-ip&gt;</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="s2">"</span><span class="s">127.0.0.1:5432:5432"</span>
+    <span class="na">env</span><span class="pi">:</span>
+      <span class="na">secret</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">POSTGRES_PASSWORD</span>
+    <span class="na">directories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-data:/var/lib/postgresql/data</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">events-db</code> accessory is a ClickHouse database. We follow the same pattern
+as with PostgreSQL. Additionally, we copy configuration files to the ClickHouse
+container from the Plausible Community Edition repository.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">events-db</span><span class="pi">:</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">clickhouse/clickhouse-server:24.3.3.102-alpine</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">&lt;your-ip&gt;</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="s2">"</span><span class="s">127.0.0.1:8123:8123"</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">secret</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">CLICKHOUSE_PASSWORD</span>
+  <span class="na">directories</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">event-data:/var/lib/clickhouse</span>
+    <span class="pi">-</span> <span class="s">event-logs:/var/log/clickhouse-server</span>
+  <span class="na">files</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">./clickhouse/logs.xml:/etc/clickhouse-server/config.d/logs.xml:ro</span>
+    <span class="c1"># This makes ClickHouse bind to IPv4 only, since Docker doesn't enable IPv6 in bridge networks by default.</span>
+    <span class="c1"># Fixes "Listen [::]:9000 failed: Address family for hostname not supported" warnings.</span>
+    <span class="pi">-</span> <span class="s">./clickhouse/ipv4-only.xml:/etc/clickhouse-server/config.d/ipv4-only.xml:ro</span>
+</code></pre></div></div>
+
+<p>And we’re done! Here’s the full configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/deploy.yml</span>
+<span class="na">service</span><span class="pi">:</span> <span class="s">plausible</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">&lt;your name&gt;/plausible</span>
+
+<span class="na">servers</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">hosts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">&lt;your-ip&gt;</span>
+    <span class="na">cmd</span><span class="pi">:</span> <span class="s">sh -c "/entrypoint.sh db createdb &amp;&amp; /entrypoint.sh db migrate &amp;&amp; /entrypoint.sh run"</span>
+<span class="na">proxy</span><span class="pi">:</span>
+  <span class="na">ssl</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">plausible.&lt;example.com&gt;</span>
+  <span class="na">app_port</span><span class="pi">:</span> <span class="m">8000</span>
+
+<span class="na">registry</span><span class="pi">:</span>
+  <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;your name&gt;</span>
+  <span class="na">password</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">KAMAL_REGISTRY_PASSWORD</span>
+
+<span class="na">builder</span><span class="pi">:</span>
+  <span class="na">arch</span><span class="pi">:</span> <span class="s">amd64</span>
+
+<span class="na">env</span><span class="pi">:</span>
+  <span class="na">clear</span><span class="pi">:</span>
+    <span class="na">BASE_URL</span><span class="pi">:</span> <span class="s">https://plausible.&lt;example.com&gt;</span>
+    <span class="na">DATABASE_URL</span><span class="pi">:</span> <span class="s">postgres://postgres:postgres@plausible-db:5432/plausible_db</span>
+    <span class="na">CLICKHOUSE_DATABASE_URL</span><span class="pi">:</span> <span class="s">http://plausible-events-db:8123/plausible_events_db</span>
+  <span class="na">secret</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">SECRET_KEY_BASE</span>
+
+<span class="na">accessories</span><span class="pi">:</span>
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">postgres:16-alpine</span>
+    <span class="na">host</span><span class="pi">:</span> <span class="s">&lt;your-ip&gt;</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="s2">"</span><span class="s">127.0.0.1:5432:5432"</span>
+    <span class="na">env</span><span class="pi">:</span>
+      <span class="na">secret</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">POSTGRES_PASSWORD</span>
+    <span class="na">directories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-data:/var/lib/postgresql/data</span>
+
+  <span class="na">events-db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">clickhouse/clickhouse-server:24.3.3.102-alpine</span>
+    <span class="na">host</span><span class="pi">:</span> <span class="s">&lt;your-ip&gt;</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="s2">"</span><span class="s">127.0.0.1:8123:8123"</span>
+    <span class="na">env</span><span class="pi">:</span>
+      <span class="na">secret</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">CLICKHOUSE_PASSWORD</span>
+    <span class="na">directories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">event-data:/var/lib/clickhouse</span>
+      <span class="pi">-</span> <span class="s">event-logs:/var/log/clickhouse-server</span>
+    <span class="na">files</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">./clickhouse/logs.xml:/etc/clickhouse-server/config.d/logs.xml:ro</span>
+      <span class="c1"># This makes ClickHouse bind to IPv4 only, since Docker doesn't enable IPv6 in bridge networks by default.</span>
+      <span class="c1"># Fixes "Listen [::]:9000 failed: Address family for hostname not supported" warnings.</span>
+      <span class="pi">-</span> <span class="s">./clickhouse/ipv4-only.xml:/etc/clickhouse-server/config.d/ipv4-only.xml:ro</span>
+</code></pre></div></div>
+
+<p>To verify that the configuration is correct, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% kamal config
+</code></pre></div></div>
+
+<p>Wonderful! If everything looks good, commit your changes:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Add Kamal configuration"</span>
+</code></pre></div></div>
+
+<h3 id="step-8-deploy-plausible">Step 8: Deploy Plausible</h3>
+
+<p>I deployed Plausible on a server that had already been provisioned with Kamal.
+If you’re using a fresh server, you’ll likely want to run <code class="language-plaintext highlighter-rouge">kamal setup</code> and be
+done.</p>
+
+<p>In my case, the server was already running Kamal containers, so I needed to boot
+my accessories first. I did this with the following command<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% kamal accessory boot all
+</code></pre></div></div>
+
+<p>Then, I deployed the service:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% kamal deploy
+</code></pre></div></div>
+
+<p>This will take a minute or two to create the databases and tables, and it will
+then crash happily with the following error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: target failed to become healthy
+</code></pre></div></div>
+
+<p>Don’t panic! I’m not sure why, but if you run <code class="language-plaintext highlighter-rouge">kamal deploy</code> again, it will work
+as expected:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% kamal deploy
+</code></pre></div></div>
+
+<p>Once everything is successful, you should be able to visit
+<code>https://plausible.example.com</code> and see the Plausible sign-up page.
+Congratulations, you’ve just self-hosted Plausible Analytics with Kamal! I’m
+proud of you!</p>
+
+<p><img src="https://cdn.kyrylo.org/images/2024-11-15-3.webp" alt="Plausible sign-up page" /></p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+
+      <p>If your Kamal version is different from the one you previously used, ensure you match it. As of writing, the latest version is <code class="language-plaintext highlighter-rouge">2.3.0</code>, but my old server was provisioned with version <code class="language-plaintext highlighter-rouge">2.2.2</code>.</p>
+
+      <p>To address this, specify the version inline:</p>
+
+      <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kamal _2.2.2_ deploy
+</code></pre></div>      </div>
+      <p><a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2024/11/17/how-counter-strike-introduced-me-to-the-world-of-programming.html" rel="next" title="How Counter-Strike introduced me to the world of programming">How Counter-Strike introduced me to the world of programming</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html" rel="prev" title="There's no place for Test-Driven Development (TDD)">There's no place for Test-Driven Development (TDD)</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-11-17T13:15:19+02:00">November 17, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

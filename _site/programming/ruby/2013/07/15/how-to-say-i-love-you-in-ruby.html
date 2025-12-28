@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to say “I love you” in Ruby | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to say “I love you” in Ruby" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Can you untangle this? ?===?=??===?=:?===?=??===?=:?===?=??===?=:?===?=.iloveyou!? ?===?=:?===?=??===?=:?===?=??===?=:?===?= #=&gt; true" />
+<meta property="og:description" content="Can you untangle this? ?===?=??===?=:?===?=??===?=:?===?=??===?=:?===?=.iloveyou!? ?===?=:?===?=??===?=:?===?=??===?=:?===?= #=&gt; true" />
+<link rel="canonical" href="http://localhost:4000/programming/ruby/2013/07/15/how-to-say-i-love-you-in-ruby.html" />
+<meta property="og:url" content="http://localhost:4000/programming/ruby/2013/07/15/how-to-say-i-love-you-in-ruby.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-07-15T01:23:44+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to say “I love you” in Ruby" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-01-09T11:06:42+02:00","datePublished":"2013-07-15T01:23:44+03:00","description":"Can you untangle this? ?===?=??===?=:?===?=??===?=:?===?=??===?=:?===?=.iloveyou!? ?===?=:?===?=??===?=:?===?=??===?=:?===?= #=&gt; true","headline":"How to say “I love you” in Ruby","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/ruby/2013/07/15/how-to-say-i-love-you-in-ruby.html"},"url":"http://localhost:4000/programming/ruby/2013/07/15/how-to-say-i-love-you-in-ruby.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to say “I love you” in Ruby</h1>
+
+    <p>
+      <time datetime="2013-07-15T01:23:44+03:00" itemprop="datePublished">
+        Jul 15, 2013
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>Can you untangle this?</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">?</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">:</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">?</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">:</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">?</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">:</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">.</span><span class="nf">iloveyou!</span><span class="p">?</span> <span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">:</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">?</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">:</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">?</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span><span class="p">:</span><span class="sc">?=</span><span class="o">==</span><span class="sc">?=</span>
+<span class="c1">#=&gt; true</span>
+</code></pre></div></div>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/programming/shell/2013/08/02/how-to-safely-enter-passwords-in-a-terminal.html" rel="next" title="How to safely enter passwords in a terminal">How to safely enter passwords in a terminal</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/programming/ruby/2013/07/03/pulling-through-a-ruby-exception.html" rel="prev" title="Pulling through a Ruby exception">Pulling through a Ruby exception</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-01-09T11:06:42+02:00">January 09, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

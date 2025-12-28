@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Life Calendar</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Every week is a gift. Make them count.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Life Calendar">
+  <meta property="og:title" content="Life Calendar">
+  <meta property="og:description" content="Every week is a gift. Make them count.">
+  <meta property="og:image" content="https://kyrylo.org/assets/images/life-calendar/og.png?v=149ed35">
+  <meta property="og:url" content="https://kyrylo.org/life-calendar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Life Calendar">
+  <meta name="twitter:description" content="Every week is a gift. Make them count.">
+  <meta name="twitter:image" content="https://kyrylo.org/assets/images/life-calendar/og.png?v=149ed35">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+
+  <link rel="canonical" href="https://kyrylo.org/life-calendar/">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/life-calendar/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/life-calendar/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/life-calendar/favicons/apple-touch-icon.png" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding: 35px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    #title {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+
+    .inputs {
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .input-group input,
+    .input-group select {
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      border-color: #667eea;
+      outline: none;
+      box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+    }
+
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+
+    .stat-label {
+      font-size: 0.8em;
+      opacity: 0.9;
+    }
+
+    .calendar-with-labels {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 1fr auto;
+      width: fit-content;
+      margin: 0 auto 20px;
+    }
+
+    .y-axis-container {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: start;
+      height: 100%;
+      justify-content: center;
+      width: 5px;
+    }
+
+    .y-axis-label {
+      transform: rotate(-90deg);
+      transform-origin: center;
+      font-weight: bold;
+      color: #667eea;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .x-axis-container {
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+      justify-self: center;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .x-axis-label {
+      font-weight: bold;
+      color: #667eea;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .grid-container {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+
+    #grid canvas {
+      display: block;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    #description {
+      max-width: 500px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      margin: 0 auto;
+    }
+
+    .screenshot-btn {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .screenshot-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .success-message {
+      color: #28a745;
+      font-weight: bold;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: rgba(40, 167, 69, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .success-message.show {
+      opacity: 1;
+    }
+
+    .color-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 0;
+      justify-content: center;
+      padding: 0;
+      list-style: none;
+      max-width: 800px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .quote {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #666;
+      margin: 2rem 0;
+    }
+
+    #seo-section {
+      max-width: 800px;
+      margin: 40px auto 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    #seo-section h2 {
+      color: #333;
+      margin-top: 40px;
+      font-size: 1.8em;
+    }
+
+    #seo-section h3 {
+      color: #444;
+      margin-top: 30px;
+      font-size: 1.4em;
+    }
+
+    #seo-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    #seo-section blockquote {
+      border-left: 4px solid #667eea;
+      padding-left: 20px;
+      font-style: italic;
+      color: #666;
+      margin: 20px 0;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      #title {
+        font-size: 2em;
+      }
+
+      #description {
+        font-size: 14px;
+      }
+
+      .y-axis-label,
+      .x-axis-label {
+        font-size: 10px;
+      }
+
+      #grid canvas {
+        width: 100%;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #grid canvas {
+        width: 100%;
+      }
+    }
+
+    header {
+      width: 100%;
+    }
+
+    .author-block {
+      position: absolute;
+      top: -1px;
+      left: 15px;
+      font-weight: 700;
+      border: 1px solid rgba(128, 128, 128, 0.3);
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 0px 0px 8px 8px;
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 0.6;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .author-block:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
+
+    .author {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .author:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="/assets/javascripts/html2canvas-pro/1.5.11/html2canvas-pro.min.js"></script>
+</head>
+
+<body>
+  <a href="/" class="author-block">
+    by <span class="author">Kyrylo Silin</span>
+  </a>
+  <main class="container">
+    <header>
+      <h1 id="title">
+        <img src="/assets/images/life-calendar/logo.svg" alt="Life Calendar Logo" style="height: 50px; vertical-align: middle;">
+        <span id="title-text">Life Calendar</span>
+      </h1>
+      <p class="subtitle">Every week is a gift. Make them count.</p>
+    </header>
+    <section id="description">
+      <p>
+        <strong>Your Life in Weeks:</strong> This visualization represents 90
+        years of life, with each column as a year and each row as a week. The
+        colored squares show weeks you've lived, each age painted in its own hue
+        representing different life stages. Light squares show your remaining
+        time - your future canvas waiting to be painted.
+      </p>
+    </section>
+    <blockquote class="quote">
+      "The trouble is, you think you have time."<br>&mdash; Buddha
+    </blockquote>
+    <section class="inputs">
+      <div class="input-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" oninput="updateTitle()">
+      </div>
+      <div class="input-group">
+        <label for="birthdate">Your Birthdate:</label>
+        <input type="date" id="birthdate" onchange="updateCalendar()">
+      </div>
+      <div class="input-group">
+        <label for="life-expectancy">Life Expectancy (years):</label>
+        <input type="number" id="life-expectancy" value="90" min="50" max="120" onchange="updateCalendar()">
+      </div>
+      <button class="screenshot-btn" id="screenshot-btn" onclick="takeScreenshot()">
+        Save Calendar
+      </button>
+      <div id="success-message" class="success-message">✅ Screenshot saved successfully!</div>
+    </section>
+    <ul class="stats" id="stats" style="display: none;">
+      <li class="stat-card">
+        <div class="stat-number" id="weeks-lived">0</div>
+        <div class="stat-label">Weeks Lived</div>
+      </li>
+      <li class="stat-card">
+        <div class="stat-number" id="weeks-remaining">0</div>
+        <div class="stat-label">Weeks Remaining</div>
+      </li>
+      <li class="stat-card">
+        <div class="stat-number" id="life-percentage">0%</div>
+        <div class="stat-label">Life Lived</div>
+      </li>
+      <li class="stat-card">
+        <div class="stat-number" id="current-age">0</div>
+        <div class="stat-label">Current Age</div>
+      </li>
+    </ul>
+    <figure class="calendar-with-labels">
+      <div class="y-axis-container">
+        <div class="y-axis-label">Weeks in Year</div>
+      </div>
+      <div class="x-axis-container">
+        <div class="x-axis-label">Age (Years)</div>
+      </div>
+      <div class="grid-container">
+        <div id="grid"></div>
+      </div>
+    </figure>
+    <ul class="color-legend" id="color-legend">
+      <li class="legend-item">
+        <div class="legend-color" style="background: #d4edda;"></div>
+        <span>Early Childhood (0-5)</span>
+      </li>
+      <li class="legend-item">
+        <div class="legend-color" style="background: #a8e6cf;"></div>
+        <span>Childhood (6-12)</span>
+      </li>
+      <li class="legend-item">
+        <div class="legend-color" style="background: #81d4fa;"></div>
+        <span>Adolescence (13-17)</span>
+      </li>
+      <li class="legend-item">
+        <div class="legend-color" style="background: #64b5f6;"></div>
+        <span>Young Adult (18-24)</span>
+      </li>
+      <li class="legend-item">
+        <div class="legend-color" style="background: #ba68c8;"></div>
+        <span>Adulthood (25-39)</span>
+      </li>
+      <li class="legend-item">
+        <div class="legend-color" style="background: #9575cd;"></div>
+        <span>Middle Age (40-64)</span>
+      </li>
+      <li class="legend-item">
+        <div class="legend-color" style="background: #7986cb;"></div>
+        <span>Senior Years (65+)</span>
+      </li>
+    </ul>
+    <p id="screenshot-footer" style="display: none; text-align: center; color: #cccccc; font-size: 0.1em; margin: 20px 0 10px;">
+      Created with www.kyrylo.org/life-calendar
+    </p>
+    <section id="seo-section">
+      <h2>What is a Life Calendar?</h2>
+      <p>
+        A life calendar, also known as a "your life in weeks" chart or memento mori calendar, is a powerful visualization tool that represents an individual's entire lifespan in terms of weeks. Typically assuming a life expectancy of 90 years, the calendar displays 4,680 squares (90 years x 52 weeks), each representing one week of life. This simple yet profound grid helps people grasp the finite nature of time, encouraging mindfulness and intentional living. By coloring in the weeks already lived based on different life stages - such as early childhood in light green or adulthood in purple - the life calendar provides a stark reminder of how much time has passed and how much remains. It's not just a chart; it's a philosophical tool rooted in stoicism, reminding us that every week is a gift to be cherished and utilized wisely.
+      </p>
+      <p>
+        The concept of visualizing life in weeks has gained popularity in recent years as people seek ways to combat procrastination and live more purposefully. Whether you're in your 20s planning your career or in your 50s reflecting on achievements, a life calendar offers a unique perspective on time management. It transforms abstract notions of years and decades into tangible, bite-sized units, making it easier to appreciate the passage of time and prioritize what truly matters.
+      </p>
+      <h2>The Inspiration Behind the Life Calendar</h2>
+      <p>
+        The modern life calendar draws inspiration from various sources, most notably Tim Urban's influential blog post "Your Life in Weeks" on Wait But Why. Published in 2014, Urban's article presented a similar grid to illustrate how limited our time on Earth really is. He broke down average lifespans into weeks, showing how activities like vacations or time with family occupy surprisingly few squares. This visualization struck a chord with millions, sparking a movement toward greater awareness of mortality.
+      </p>
+      <p>
+        Historically, the idea ties back to ancient philosophies. The Stoics, including Seneca and Marcus Aurelius, emphasized memento mori - "remember that you must die" - as a way to live virtuously. Seneca's essay "On the Shortness of Life" argues that life isn't short; we just waste much of it. A life calendar embodies this by making waste visible. In contemporary times, tools like this have been adapted into apps, posters, and interactive websites, allowing users to customize based on their birthdate and expected lifespan. Our life calendar tool builds on this tradition, adding interactive features like color-coded stages and screenshot capabilities for easy sharing and reflection.
+      </p>
+      <p>
+        Beyond Urban, influencers like Kurzgesagt and productivity experts such as Ali Abdaal have popularized similar concepts, often linking them to goal-setting and habit formation. By seeing your life laid out in weeks, you're motivated to fill those squares with meaningful experiences rather than regrets.
+      </p>
+      <h2>Benefits of Using a Life Calendar</h2>
+      <p>
+        Incorporating a life calendar into your routine offers numerous psychological and practical benefits. First and foremost, it fosters gratitude. Seeing the colored squares of lived weeks reminds you of accomplishments and memories, while the blank ones ahead inspire hope and planning. This duality combats anxiety about aging by reframing time as an opportunity rather than a loss.
+      </p>
+      <ul>
+        <li><strong>Improved Time Management:</strong> Visualizing weeks makes it clear how habits add up. For instance, dedicating just one square per week to learning a skill could lead to mastery over years.</li>
+        <li><strong>Reduced Procrastination:</strong> The finite grid discourages putting off dreams, as you see how few weeks remain for certain pursuits.</li>
+        <li><strong>Enhanced Goal Setting:</strong> Break long-term goals into weekly actions, aligning them with life stages like young adulthood or senior years.</li>
+        <li><strong>Mindfulness and Reflection:</strong> Regularly updating your calendar encourages journaling or meditation on past weeks, promoting personal growth.</li>
+        <li><strong>Motivation for Healthy Living:</strong> Adjusting life expectancy based on lifestyle choices highlights the impact of diet, exercise, and stress management on longevity.</li>
+      </ul>
+      <p>
+        Studies in positive psychology support these benefits. Research from the Journal of Personality and Social Psychology shows that mortality awareness can lead to more prosocial behaviors and life satisfaction. A life calendar serves as a daily nudge toward these outcomes, helping users live with intention.
+      </p>
+      <h2>How to Use Our Life Calendar Tool</h2>
+      <p>
+        Our interactive life calendar is designed for simplicity and impact. Start by entering your name, birthdate, and desired life expectancy (default is 90 years, but adjustable from 50 to 120). The tool automatically calculates weeks lived and remaining, displaying them in a colorful grid. Each row represents a week, with columns for years, color-coded by life stage: soft greens for childhood, blues for adolescence and young adulthood, purples for middle age, and indigos for senior years.
+      </p>
+      <p>
+        Key features include real-time stats on weeks lived, remaining, life percentage, and current age. Hover over squares for tooltips showing specific year and week. When ready, click "Save Calendar" to generate a high-quality PNG screenshot - perfect for printing as a poster or sharing on social media. For best results, use it weekly to mark progress and set intentions. Customize expectancy based on factors like gender, location, or health; for example, global averages hover around 72-80 years, but optimists might aim higher.
+      </p>
+      <p>
+        This tool isn't just for individuals - families can create shared calendars, businesses might use them for project timelines, and educators for teaching time concepts. Experiment with different expectancies to see how lifestyle changes could add weeks.
+      </p>
+      <h3>Life Expectancy Considerations</h3>
+      <p>
+        Choosing a life expectancy is personal and influential. Factors include genetics, environment, and habits. According to the World Health Organization, global life expectancy rose to 73 years in 2019, with variations by country - e.g., 82 in Japan vs. 63 in some African nations. Women typically outlive men by 5-7 years. Health choices matter: smoking can subtract 10 years, while exercise and diet add them. Our tool defaults to 90 for aspiration, encouraging users to strive for longevity through wellness. Consult actuarial tables or apps like those from the Social Security Administration for personalized estimates. Remember, it's an average; many live beyond 90 with advances in medicine.
+      </p>
+      <h2>Quotes About Time and Life</h2>
+      <p>Throughout history, thinkers have pondered time's fleeting nature, inspiring the life calendar concept.</p>
+      <blockquote>"Life is not short at all; it is we who make it short by wasting time." – Seneca</blockquote>
+      <blockquote>"You could leave life right now. Let that determine what you do and say and think." – Marcus Aurelius</blockquote>
+      <blockquote>"The days are long, but the years are short." – Gretchen Rubin</blockquote>
+      <blockquote>"Time is the most valuable thing a man can spend." – Theophrastus</blockquote>
+      <p>
+        These quotes reinforce the calendar's message: treat each week as precious. Incorporate them into your reflections for deeper insight.
+      </p>
+      <h2>Making the Most of Your Weeks: Tips and Strategies</h2>
+      <p>
+        To maximize your life calendar's value, integrate it with productivity systems. Use the Eisenhower Matrix to prioritize tasks weekly, ensuring squares aren't wasted on urgencies over importances. Adopt the 80/20 rule - focus 80% of efforts on 20% of activities yielding most joy or impact. Track habits with apps like Habitica, marking progress on your calendar.
+      </p>
+      <p>
+        For long-term planning, divide remaining weeks into phases: career building in adulthood, travel in middle age, legacy in seniors. Set milestones every 520 weeks (10 years), reviewing achievements. Combat time thieves like excessive social media by allocating specific squares to leisure. Practice gratitude journaling each week, noting what made it meaningful.
+      </p>
+      <p>
+        Psychologically, embrace "temporal scarcity" - the awareness that boosts appreciation. Studies from Harvard show this mindset increases happiness. Share your calendar with loved ones for accountability and connection. Finally, remember flexibility: life isn't linear, and unexpected events add color. The goal is presence, not perfection.
+      </p>
+      <p>
+        In conclusion, a life calendar isn't morbid; it's empowering. By visualizing your life in weeks, you gain clarity to live fully. Whether discovering it today or revisiting annually, let it guide you toward a life of purpose, where every square tells a story worth remembering. Start now - your weeks await.
+      </p>
+    </section>
+  </main>
+  <script>
+    let fullYears = 0;
+    let extraWeeks = 0;
+    let canvas;
+    let ctx;
+    let lifeExpectancy = 90;
+
+    function debounce(func, delay) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+
+    function calculateDimensions() {
+      const winWidth = window.innerWidth;
+      let cellWidth = 5;
+      let cellHeight = 5;
+      let rowLabelWidth = 50;
+      let headerHeight = 30;
+      let fontSizeHeader = 10;
+      let fontSizeLabel = 12;
+
+      if (winWidth <= 768) {
+        rowLabelWidth = 40;
+        headerHeight = 20;
+        fontSizeHeader = 8;
+        fontSizeLabel = 10;
+        cellWidth = Math.max(3, (winWidth - 100 - rowLabelWidth) / lifeExpectancy);
+        cellHeight = cellWidth;
+      }
+
+      if (winWidth <= 480) {
+        rowLabelWidth = 30;
+        headerHeight = 15;
+        fontSizeHeader = 6;
+        fontSizeLabel = 8;
+        cellWidth = Math.max(2.5, (winWidth - 80 - rowLabelWidth) / lifeExpectancy);
+        cellHeight = cellWidth;
+      }
+
+      return { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel };
+    }
+
+    function calculateScreenshotDimensions() {
+      const cellWidth = 15;
+      const cellHeight = 15;
+      const rowLabelWidth = 100;
+      const headerHeight = 60;
+      const fontSizeHeader = 24;
+      const fontSizeLabel = 24;
+      return { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel };
+    }
+
+    function getColorForAge(year) {
+      if (year < 6) return '#d4edda';
+      if (year < 13) return '#a8e6cf';
+      if (year < 18) return '#81d4fa';
+      if (year < 25) return '#64b5f6';
+      if (year < 40) return '#ba68c8';
+      if (year < 65) return '#9575cd';
+      return '#7986cb';
+    }
+
+    function drawGrid(isScreenshot = false, isHorizontal = false) {
+      const dims = isScreenshot ? calculateScreenshotDimensions() : calculateDimensions();
+      let { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel } = dims;
+      const dpr = window.devicePixelRatio || 1;
+      const bottomHeaderHeight = isHorizontal ? headerHeight : 0;
+      const paddingRight = isScreenshot ? 20 : 20;
+      const weekDimIsX = !isHorizontal;
+      const yearDimIsX = isHorizontal;
+      const rows = weekDimIsX ? lifeExpectancy : 52;
+      const cols = weekDimIsX ? 52 : lifeExpectancy;
+
+      canvas.style.width = `${rowLabelWidth + cols * cellWidth + paddingRight}px`;
+      canvas.style.height = `${headerHeight + rows * cellHeight + bottomHeaderHeight}px`;
+      canvas.width = (rowLabelWidth + cols * cellWidth + paddingRight) * dpr;
+      canvas.height = (headerHeight + rows * cellHeight + bottomHeaderHeight) * dpr;
+      ctx.scale(dpr, dpr);
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+
+      // Draw future weeks (gradient background for entire grid area)
+      const gradient = ctx.createLinearGradient(
+        isHorizontal ? rowLabelWidth : 0,
+        isHorizontal ? headerHeight : headerHeight,
+        isHorizontal ? rowLabelWidth + cols * cellWidth : 0,
+        isHorizontal ? headerHeight : headerHeight + rows * cellHeight
+      );
+      gradient.addColorStop(0, '#f8f9fa');
+      gradient.addColorStop(1, '#e9ecef');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(rowLabelWidth, headerHeight, cols * cellWidth, rows * cellHeight);
+
+      // Draw lived weeks with age-based colors
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const year = isHorizontal ? c : r;
+          const week = isHorizontal ? r : c;
+          if (year < fullYears || (year === fullYears && week < extraWeeks)) {
+            ctx.fillStyle = getColorForAge(year);
+            ctx.fillRect(rowLabelWidth + c * cellWidth, headerHeight + r * cellHeight, cellWidth, cellHeight);
+          }
+        }
+      }
+
+      // Draw grid lines
+      // Week dimension lines (quarters)
+      ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+      ctx.lineWidth = 0.5;
+      for (let q = 1; q < 4; q++) {
+        const pos = q * 13;
+        if (pos >= (weekDimIsX ? cols : rows)) continue;
+        if (weekDimIsX) {
+          // Vertical line
+          const x = rowLabelWidth + pos * cellWidth;
+          ctx.beginPath();
+          ctx.moveTo(x, headerHeight);
+          ctx.lineTo(x, headerHeight + rows * cellHeight);
+          ctx.stroke();
+        } else {
+          // Horizontal line
+          const y = headerHeight + pos * cellHeight;
+          ctx.beginPath();
+          ctx.moveTo(rowLabelWidth, y);
+          ctx.lineTo(rowLabelWidth + cols * cellWidth, y);
+          ctx.stroke();
+        }
+      }
+
+      // Mid-year line for week dim
+      ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+      const midPos = 26;
+      if (midPos < (weekDimIsX ? cols : rows)) {
+        if (weekDimIsX) {
+          const x = rowLabelWidth + midPos * cellWidth;
+          ctx.beginPath();
+          ctx.moveTo(x, headerHeight);
+          ctx.lineTo(x, headerHeight + rows * cellHeight);
+          ctx.stroke();
+        } else {
+          // Horizontal line
+          const y = headerHeight + midPos * cellHeight;
+          ctx.beginPath();
+          ctx.moveTo(rowLabelWidth, y);
+          ctx.lineTo(rowLabelWidth + cols * cellWidth, y);
+          ctx.stroke();
+        }
+      }
+
+      // Decade lines for year dim
+      ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+      ctx.lineWidth = 1;
+      for (let d = 10; d < (yearDimIsX ? cols : rows); d += 10) {
+        if (yearDimIsX) {
+          // Vertical line
+          const x = rowLabelWidth + d * cellWidth;
+          ctx.beginPath();
+          ctx.moveTo(x, headerHeight);
+          ctx.lineTo(x, headerHeight + rows * cellHeight);
+          ctx.stroke();
+        } else {
+          // Horizontal line
+          const y = headerHeight + d * cellHeight;
+          ctx.beginPath();
+          ctx.moveTo(rowLabelWidth, y);
+          ctx.lineTo(rowLabelWidth + cols * cellWidth, y);
+          ctx.stroke();
+        }
+      }
+
+      // Draw quarter labels on left if weeks on y (horizontal mode)
+      if (isHorizontal) {
+        ctx.fillStyle = '#667eea';
+        ctx.font = `bold ${fontSizeHeader}px Arial`;
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        for (let q = 1; q <= 4; q++) {
+          const y = headerHeight + (q - 1) * 13 * cellHeight + 6.5 * cellHeight;
+          ctx.fillText(`Q${q}`, rowLabelWidth - 10, y);
+        }
+      }
+
+      // Draw bottom labels if years on x (every 5 years)
+      if (isHorizontal) {
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        for (let year = 0; year < lifeExpectancy; year += 5) {
+          const isDecade = year % 10 === 0;
+          ctx.font = isDecade ? `bold ${fontSizeLabel}px Arial` : `${fontSizeLabel}px Arial`;
+          ctx.fillStyle = isDecade ? '#333' : '#667eea';
+          const x = rowLabelWidth + year * cellWidth + cellWidth / 2;
+          const y = headerHeight + rows * cellHeight + 5;
+          ctx.fillText(year, x, y);
+        }
+      }
+    }
+
+    function updateStats() {
+      const birthdateValue = document.getElementById('birthdate').value;
+      if (!birthdateValue) return;
+      const birthDate = new Date(birthdateValue);
+      const currentDate = new Date();
+      const timeDiff = currentDate - birthDate;
+      const weeksLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
+      const totalWeeks = lifeExpectancy * 52;
+      const weeksRemaining = Math.max(0, totalWeeks - weeksLived);
+      const percentage = Math.min(100, Math.round((weeksLived / totalWeeks) * 100));
+      const currentAge = Math.floor(weeksLived / 52);
+
+      document.getElementById('weeks-lived').textContent = weeksLived.toLocaleString();
+      document.getElementById('weeks-remaining').textContent = weeksRemaining.toLocaleString();
+      document.getElementById('life-percentage').textContent = percentage + '%';
+      document.getElementById('current-age').textContent = currentAge;
+      document.getElementById('stats').style.display = 'flex';
+    }
+
+    window.onload = function () {
+      canvas = document.createElement('canvas');
+      ctx = canvas.getContext('2d');
+      document.getElementById('grid').appendChild(canvas);
+      drawGrid(false, true);
+
+      // Enhanced tooltip
+      canvas.addEventListener('mousemove', (e) => {
+        const dims = calculateDimensions();
+        const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x > rowLabelWidth && x < rowLabelWidth + lifeExpectancy * cellWidth && y > headerHeight && y < headerHeight + 52 * cellHeight) {
+          const week = Math.floor((y - headerHeight) / cellHeight) + 1;
+          const year = Math.floor((x - rowLabelWidth) / cellWidth);
+          canvas.title = `Year ${year}, Week ${week}`;
+        } else {
+          canvas.title = '';
+        }
+      });
+
+      window.addEventListener('resize', debounce(() => drawGrid(false, true), 200));
+    };
+
+    function updateTitle() {
+      const name = document.getElementById('name').value.trim();
+      document.getElementById('title-text').textContent = name ? `${name}'s Life Calendar` : 'Life Calendar';
+    }
+
+    function updateCalendar() {
+      const birthdateValue = document.getElementById('birthdate').value;
+      lifeExpectancy = parseInt(document.getElementById('life-expectancy').value) || 90;
+      if (!birthdateValue) {
+        return;
+      }
+      const birthDate = new Date(birthdateValue);
+      const currentDate = new Date();
+      const timeDiff = currentDate - birthDate;
+      const weeksLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
+      fullYears = Math.floor(weeksLived / 52);
+      extraWeeks = weeksLived % 52;
+      drawGrid(false, true);
+      updateStats();
+    }
+
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    function dataURLtoBlob(dataUrl) {
+      const arr = dataUrl.split(',');
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+      while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new Blob([u8arr], { type: mime });
+    }
+
+    function takeScreenshot() {
+      const btn = document.getElementById('screenshot-btn');
+      const successMsg = document.getElementById('success-message');
+      const inputs = document.querySelector('.inputs');
+      const description = document.getElementById('description');
+      const quote = document.querySelector('.quote');
+      const subtitle = document.querySelector('.subtitle');
+      const seoSection = document.getElementById('seo-section');
+      const container = document.querySelector('.container');
+      const authorBlock = document.querySelector('.author-block');
+      const screenshotFooter = document.getElementById('screenshot-footer');
+      const yAxis = document.querySelector('.y-axis-container');
+      const xAxis = document.querySelector('.x-axis-container');
+      const stats = document.getElementById('stats');
+      const colorLegend = document.getElementById('color-legend');
+      const titleElem = document.getElementById('title');
+      const logoImg = document.querySelector('#title img');
+      const yAxisLabel = document.querySelector('.y-axis-label');
+      const xAxisLabel = document.querySelector('.x-axis-label');
+      const useHorizontal = true;
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span>Generating...';
+
+      // Save original styles
+      const originalStyles = {
+        inputsDisplay: inputs.style.display,
+        descriptionDisplay: description.style.display,
+        quoteDisplay: quote.style.display,
+        subtitleMargin: subtitle.style.marginBottom,
+        seoDisplay: seoSection.style.display,
+        containerWidth: container.style.width,
+        containerPadding: container.style.padding,
+        authorDisplay: authorBlock.style.display,
+        footerDisplay: screenshotFooter.style.display,
+        footerMargin: screenshotFooter.style.margin,
+        yAxisDisplay: yAxis.style.display,
+        xAxisDisplay: xAxis.style.display,
+        statsMargin: stats.style.marginBottom,
+        colorLegendMargin: colorLegend.style.marginTop,
+        titleMargin: titleElem.style.marginBottom,
+        titleFont: titleElem.style.fontSize,
+        titleBackground: titleElem.style.background,
+        titleWebkitBackgroundClip: titleElem.style['-webkit-background-clip'],
+        titleBackgroundClip: titleElem.style.backgroundClip,
+        titleWebkitTextFillColor: titleElem.style['-webkit-text-fill-color'],
+        titleTextShadow: titleElem.style.textShadow,
+        titleDisplay: titleElem.style.display,
+        titleAlignItems: titleElem.style.alignItems,
+        titleJustifyContent: titleElem.style.justifyContent,
+        subtitleFont: subtitle.style.fontSize,
+        footerFont: screenshotFooter.style.fontSize,
+        footerColor: screenshotFooter.style.color,
+        logoHeight: logoImg.style.height,
+        logoVerticalAlign: logoImg.style.verticalAlign,
+        containerMaxWidth: container.style.maxWidth,
+        containerBoxSizing: container.style.boxSizing,
+        yAxisLabelFont: yAxisLabel.style.fontSize,
+        xAxisLabelFont: xAxisLabel.style.fontSize,
+        legendItemFonts: [],
+        statNumberFonts: [],
+        statLabelFonts: []
+      };
+
+      document.querySelectorAll('.legend-item').forEach(item => {
+        originalStyles.legendItemFonts.push(item.style.fontSize);
+        item.style.fontSize = '24px';
+      });
+
+      document.querySelectorAll('.stat-number').forEach(num => {
+        originalStyles.statNumberFonts.push(num.style.fontSize);
+        num.style.fontSize = '4em';
+      });
+
+      document.querySelectorAll('.stat-label').forEach(label => {
+        originalStyles.statLabelFonts.push(label.style.fontSize);
+        label.style.fontSize = '2em';
+      });
+
+      // Apply fixed styles for screenshot
+      inputs.style.display = 'none';
+      description.style.display = 'none';
+      quote.style.display = 'none';
+      seoSection.style.display = 'none';
+      authorBlock.style.display = 'none';
+      screenshotFooter.style.display = 'block';
+      screenshotFooter.style.margin = '0';
+      screenshotFooter.style.color = '#666666';
+      screenshotFooter.style.fontSize = '1.4em';
+      yAxis.style.display = 'flex';
+      xAxis.style.display = 'flex';
+      yAxisLabel.style.fontSize = '24px';
+      yAxisLabel.style.whiteSpace = 'nowrap';
+      xAxisLabel.style.fontSize = '24px';
+      stats.style.display = 'flex';
+      stats.style.marginBottom = '10px';
+      colorLegend.style.display = 'flex';
+      colorLegend.style.marginTop = '10px';
+      container.style.width = '1500px';
+      container.style.maxWidth = '1500px';
+      container.style.padding = '20px';
+      container.style.boxSizing = 'border-box';
+      subtitle.style.marginBottom = '10px';
+      subtitle.style.fontSize = '3em';
+      titleElem.style.marginBottom = '10px';
+      titleElem.style.fontSize = '6em';
+      titleElem.style.background = 'none';
+      titleElem.style['-webkit-background-clip'] = 'none';
+      titleElem.style.backgroundClip = 'none';
+      titleElem.style['-webkit-text-fill-color'] = '#6964c2';
+      titleElem.style.color = '#6964c2';
+      titleElem.style.textShadow = 'none';
+      titleElem.style.display = 'flex';
+      titleElem.style.gap = '15px';
+      titleElem.style.alignItems = 'center';
+      titleElem.style.justifyContent = 'center';
+      logoImg.style.height = '120px';
+      logoImg.style.verticalAlign = 'unset';
+
+      // Set fixed canvas dimensions
+      const dims = calculateScreenshotDimensions();
+      const { cellWidth, cellHeight, rowLabelWidth, headerHeight } = dims;
+      const cols = useHorizontal ? lifeExpectancy : 52;
+      const rows = useHorizontal ? 52 : lifeExpectancy;
+      const canvasWidth = rowLabelWidth + cols * cellWidth + 20;
+      const canvasHeight = headerHeight + rows * cellHeight + (useHorizontal ? headerHeight : 0);
+
+      canvas.style.width = `${canvasWidth}px`;
+      canvas.style.height = `${canvasHeight}px`;
+      canvas.width = canvasWidth * 2;
+      canvas.height = canvasHeight * 2;
+
+      // Redraw grid with fixed dimensions
+      drawGrid(true, useHorizontal);
+
+      // Capture screenshot
+      html2canvas(container, { scale: 2, backgroundColor: 'white' })
+        .then(function (canvas) {
+          const dataUrl = canvas.toDataURL('image/png', 1.0);
+          const img = new Image();
+          img.src = dataUrl;
+          img.onload = () => {
+            // Add consistent padding (25% on each side)
+            const paddingRatio = 0.25;
+            const sidePadding = img.width * paddingRatio;
+            const newWidth = img.width + 2 * sidePadding;
+            const newHeight = img.height;
+            const newCanvas = document.createElement('canvas');
+            newCanvas.width = newWidth;
+            newCanvas.height = newHeight;
+            const newCtx = newCanvas.getContext('2d');
+            newCtx.fillStyle = 'white';
+            newCtx.fillRect(0, 0, newWidth, newHeight);
+            newCtx.drawImage(img, sidePadding, 0, img.width, img.height);
+            const newDataUrl = newCanvas.toDataURL('image/png', 1.0);
+
+            const name = document.getElementById('name').value.trim() || 'Life';
+            const filename = `${name}-Calendar-${new Date().getFullYear()}.png`;
+
+            if (isMobile() && 'share' in navigator) {
+              const blob = dataURLtoBlob(newDataUrl);
+              const file = new File([blob], filename, { type: 'image/png' });
+              navigator.share({ files: [file], title: 'Life Calendar', text: 'My Life Calendar' })
+                .then(() => {
+                  successMsg.classList.add('show');
+                  setTimeout(() => successMsg.classList.remove('show'), 4000);
+                })
+                .catch((error) => {
+                  console.error('Share failed:', error);
+                  const link = document.createElement('a');
+                  link.download = filename;
+                  link.href = newDataUrl;
+                  link.click();
+                  successMsg.classList.add('show');
+                  setTimeout(() => successMsg.classList.remove('show'), 4000);
+                });
+            } else {
+              const link = document.createElement('a');
+              link.download = filename;
+              link.href = newDataUrl;
+              link.click();
+              successMsg.classList.add('show');
+              setTimeout(() => successMsg.classList.remove('show'), 4000);
+            }
+          };
+        })
+        .catch(function (error) {
+          console.error('Screenshot failed:', error);
+          alert('Failed to save screenshot. Please try again.');
+        })
+        .finally(function () {
+          // Restore original styles
+          inputs.style.display = originalStyles.inputsDisplay;
+          description.style.display = originalStyles.descriptionDisplay;
+          quote.style.display = originalStyles.quoteDisplay;
+          subtitle.style.marginBottom = originalStyles.subtitleMargin;
+          seoSection.style.display = originalStyles.seoDisplay;
+          container.style.width = originalStyles.containerWidth;
+          container.style.maxWidth = originalStyles.containerMaxWidth;
+          container.style.padding = originalStyles.containerPadding;
+          container.style.boxSizing = originalStyles.containerBoxSizing;
+          authorBlock.style.display = originalStyles.authorDisplay;
+          screenshotFooter.style.display = originalStyles.footerDisplay;
+          screenshotFooter.style.margin = originalStyles.footerMargin;
+          screenshotFooter.style.color = originalStyles.footerColor;
+          screenshotFooter.style.fontSize = originalStyles.footerFont;
+          yAxis.style.display = originalStyles.yAxisDisplay;
+          xAxis.style.display = originalStyles.xAxisDisplay;
+          yAxisLabel.style.fontSize = originalStyles.yAxisLabelFont;
+          xAxisLabel.style.fontSize = originalStyles.xAxisLabelFont;
+          stats.style.marginBottom = originalStyles.statsMargin;
+          colorLegend.style.marginTop = originalStyles.colorLegendMargin;
+          titleElem.style.marginBottom = originalStyles.titleMargin;
+          titleElem.style.fontSize = originalStyles.titleFont;
+          titleElem.style.background = originalStyles.titleBackground;
+          titleElem.style['-webkit-background-clip'] = originalStyles.titleWebkitBackgroundClip;
+          titleElem.style.backgroundClip = originalStyles.titleBackgroundClip;
+          titleElem.style['-webkit-text-fill-color'] = originalStyles.titleWebkitTextFillColor;
+          titleElem.style.textShadow = originalStyles.titleTextShadow;
+          titleElem.style.display = originalStyles.titleDisplay;
+          titleElem.style.alignItems = originalStyles.titleAlignItems;
+          titleElem.style.justifyContent = originalStyles.titleJustifyContent;
+          subtitle.style.fontSize = originalStyles.subtitleFont;
+          logoImg.style.height = originalStyles.logoHeight;
+          logoImg.style.verticalAlign = originalStyles.logoVerticalAlign;
+
+          document.querySelectorAll('.legend-item').forEach((item, index) => {
+            item.style.fontSize = originalStyles.legendItemFonts[index];
+          });
+          document.querySelectorAll('.stat-number').forEach((num, index) => {
+            num.style.fontSize = originalStyles.statNumberFonts[index];
+          });
+          document.querySelectorAll('.stat-label').forEach((label, index) => {
+            label.style.fontSize = originalStyles.statLabelFonts[index];
+          });
+
+          btn.disabled = false;
+          btn.innerHTML = 'Save Calendar';
+          drawGrid(false, true);
+        });
+    }
+  </script>
+</body>
+
+</html>

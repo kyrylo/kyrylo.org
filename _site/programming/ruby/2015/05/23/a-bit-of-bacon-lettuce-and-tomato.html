@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A bit of bacon, lettuce and tomato | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="A bit of bacon, lettuce and tomato" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="While browsing the source code of the Ruby’s virtual machine I stumbled upon an easter egg." />
+<meta property="og:description" content="While browsing the source code of the Ruby’s virtual machine I stumbled upon an easter egg." />
+<link rel="canonical" href="http://localhost:4000/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html" />
+<meta property="og:url" content="http://localhost:4000/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-05-23T01:23:44+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A bit of bacon, lettuce and tomato" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-03-10T19:05:58+02:00","datePublished":"2015-05-23T01:23:44+03:00","description":"While browsing the source code of the Ruby’s virtual machine I stumbled upon an easter egg.","headline":"A bit of bacon, lettuce and tomato","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html"},"url":"http://localhost:4000/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">A bit of bacon, lettuce and tomato</h1>
+
+    <p>
+      <time datetime="2015-05-23T01:23:44+03:00" itemprop="datePublished">
+        May 23, 2015
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>While browsing the source code of the Ruby’s virtual machine I stumbled upon an
+<a href="https://github.com/ruby/ruby/blob/7ceb9ecc31238523911b8d1c66b47a990132c0b2/compile.c#L4528">easter egg</a>.</p>
+
+<p>If you recompile your Ruby with the <code class="language-plaintext highlighter-rouge">SUPPORT_JOKE</code> setting, you’ll be able to
+call two hardcoded methods called <code class="language-plaintext highlighter-rouge">#bitblt</code> and
+<code class="language-plaintext highlighter-rouge">the_answer_to_life_the_universe_and_everything</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">bitblt</span>
+<span class="o">=&gt;</span> <span class="s2">"a bit of bacon, lettuce and tomato"</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">the_answer_to_life_the_universe_and_everything</span>
+<span class="o">=&gt;</span> <span class="mi">42</span>
+</code></pre></div></div>
+
+<p>The return values are defined in <a href="https://github.com/ruby/ruby/blob/7ceb9ecc31238523911b8d1c66b47a990132c0b2/insns.def#L2231-L2257"><code class="language-plaintext highlighter-rouge">insns.def</code></a>.</p>
+
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html" rel="next" title="Untangling the “love” Ruby tongue twister">Untangling the “love” Ruby tongue twister</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/programming/ruby/2014/12/31/rubys-exception-to-message-mapper.html" rel="prev" title="Ruby's exception to message mapper">Ruby's exception to message mapper</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-03-10T19:05:58+02:00">March 10, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

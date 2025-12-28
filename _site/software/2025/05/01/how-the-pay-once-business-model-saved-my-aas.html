@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How the pay-once business model saved my *aaS | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How the pay-once business model saved my *aaS" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Yesterday, I launched Telebugs." />
+<meta property="og:description" content="Yesterday, I launched Telebugs." />
+<link rel="canonical" href="http://localhost:4000/software/2025/05/01/how-the-pay-once-business-model-saved-my-aas.html" />
+<meta property="og:url" content="http://localhost:4000/software/2025/05/01/how-the-pay-once-business-model-saved-my-aas.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-01T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="twitter:title" content="How the pay-once business model saved my *aaS" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-05-01T17:01:35+03:00","datePublished":"2025-05-01T00:00:00+03:00","description":"Yesterday, I launched Telebugs.","headline":"How the pay-once business model saved my *aaS","image":"http://localhost:4000/assets/images/kyrylo-silin@2x.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/2025/05/01/how-the-pay-once-business-model-saved-my-aas.html"},"url":"http://localhost:4000/software/2025/05/01/how-the-pay-once-business-model-saved-my-aas.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How the pay-once business model saved my *aaS</h1>
+
+    <p>
+      <time datetime="2025-05-01T00:00:00+03:00" itemprop="datePublished">
+        May 1, 2025
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>Yesterday, I launched Telebugs.</p>
+
+<blockquote>
+  <p>Today is the day! @TelebugsHQ 1.0.0 is OUT!</p>
+  <p>Pay $299/once and get:</p>
+
+  <ul>
+    <li>unlimited error tracking</li>
+    <li>drop-in compatibility with your existing Sentry setup (just change one line)</li>
+    <li>real-time push notifications</li>
+    <li>full source code</li>
+    <li>free updates</li>
+  </ul>
+
+  <p>One command to install. You're done.</p>
+
+  <footer>
+    &mdash; <a href="https://x.com/kyrylosilin/status/1917487516212510907" target="_blank">@kyrylosilin, Apr 30, 2025</a>
+  </footer>
+</blockquote>
+
+<p>To write that simple tweet, I had to grind daily for 3½ months. The work
+involved was building the product, testing it with various SDKs, adding
+automated smoke tests, benchmarking performance under load, creating the
+marketing site, setting up the payment/license/email system, and crafting the
+CLI to control Telebugs.</p>
+
+<p>The launch sparked excitement. Tons of folks showed interest. I’d been building
+this iteration in public from day one. But the road to launch wasn’t exactly a
+straight line. Here’s my announcement tweet from earlier:</p>
+
+<blockquote id="announcement">
+  <p>
+    📣 Announcement: @TelebugsHQ is changing direction! We’re transforming into
+    a self-hosted error tracking solution that’s no longer tied to Telegram.
+  </p>
+
+  <p>Why the change?</p>
+  <ol>
+    <li>Telegram didn’t click with the audience. ✄<em>&lt;snip&gt;</em></li>
+    <li>Too much code is gatekeeping. ✄<em>&lt;snip&gt;</em></li>
+    <li>Privacy concerns. ✄<em>&lt;snip&gt;</em></li>
+    <li>It’s not competitive enough. ✄<em>&lt;snip&gt;</em></li>
+    <li>I want to explore other ideas. ✄<em>&lt;snip&gt;</em></li>
+  </ol>
+
+  <footer>
+    &mdash; <a href="https://x.com/kyrylosilin/status/1875334209344074193" target="_blank">@kyrylosilin, Jan 4, 2025</a>
+  </footer>
+</blockquote>
+
+<p>Wait, what? Telegram? Yep, it actually took me a full year to launch Telebugs.
+Caught your attention?</p>
+
+<p>Let me tell you the Telebugs story and how the pay-once business model saved my
+sanity ;-)</p>
+
+<h2 id="backstory">Backstory</h2>
+
+<p>On February 25, 2024 (my birthday btw), I texted <a href="https://x.com/charlestehio">@charlestehio</a> on Telegram:</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/01.webp" alt="telebugs.com - just registered. Can't sleep. I am too excited and keep thinking about it" /></p>
+
+<p>Back in 2022, Telegram launched <a href="https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups">topics</a>.
+I was already familiar with them, but that night, a simple idea popped into my head.</p>
+
+<p>What if we connected Telegram and error tracking? I’ve been a Telegram user
+since… heck, 2013? I can’t even remember. I’ve also been knee-deep in error
+tracking for nearly a decade — interning at Bugsnag, then spending most of my
+career at Airbrake.</p>
+
+<p>Telegram felt like a match made in heaven. Check this out:</p>
+
+<ul>
+  <li>A channel = a project</li>
+  <li>A topic = an error group</li>
+  <li>New errors bump the count in that topic</li>
+  <li>Notifications? Built‑in.</li>
+  <li>Teams? Invite people to your channel.</li>
+  <li>Discussion? Right in the chat.</li>
+</ul>
+
+<p>Nearly everything was free. Brilliant, right? So in March 2024,
+<a href="https://x.com/kyrylosilin/status/1772349259267866796">I started building it</a>.</p>
+
+<h2 id="research">Research</h2>
+
+<p>The concept was crystal clear, but the execution needed work. Too many questions:</p>
+
+<ul>
+  <li>Do we need a dashboard?</li>
+  <li>How will users manage errors?</li>
+  <li>How will they resolve them?</li>
+  <li>How will users sign up?</li>
+  <li>How do new team members onboard?</li>
+  <li>How do we create projects?</li>
+  <li>What business model fits?</li>
+  <li>How do we handle payments?</li>
+  <li>How do we bill?</li>
+  <li>Ruby’s Telegram API support is meh. What tech stack should I use?</li>
+</ul>
+
+<p>The Telegram approach was a puzzle I had to work through. It’s a powerful
+platform, but public best practices for building on it are nonexistent. So, with
+great power comes great flexibility. And with great flexibility come injuries.
+That’s how I got my first one.</p>
+
+<h2 id="telebugs-api-telebugs-cli-and-telebugs-telegram-bot">telebugs-api, telebugs-cli, and Telebugs Telegram Bot</h2>
+
+<p>I wanted to dodge a web dashboard at all costs. Users shouldn’t have to manually
+create channels. Plus, how would they get a project token to send errors? We
+needed an API.</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/02.webp" alt="Telebugs API" /></p>
+
+<p>How would users interact with it? A CLI, of course.</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/03.webp" alt="Telebugs CLI" /></p>
+
+<p>This was the rabbit hole I gleefully dove into.</p>
+
+<p>The CLI could create channels, invite users, and set everything up for you,
+thanks to <a href="https://core.telegram.org/tdlib">TDLib</a>.</p>
+
+<p>To report errors, we needed a mechanism. In Telegram land, that’s a bot. So, I
+tapped the Bot API and built one.</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/04.webp" alt="Telegram Telebugs Bot in action" /></p>
+
+<p>But soon, it was clear there was no smooth path forward. I loved working with Go
+(all the services ran on it). But the fun ended when I saw the user experience
+nightmare. Users had to download a CLI, then wrestle with Telegram’s
+APIs — grabbing <code class="language-plaintext highlighter-rouge">api_id</code> and <code class="language-plaintext highlighter-rouge">api_hash</code> that couldn’t be easily regenerated.</p>
+
+<p>Not everyone was up for that. Many didn’t even know what Telegram’s APIs were.
+On top of that, half my earlier questions still lingered, and it was obvious
+this wasn’t the industrial-grade solution I’d hoped for.</p>
+
+<h2 id="saasification">SaaSification</h2>
+
+<p>I ditched the CLI idea for a classic setup: a web dashboard <em>and</em> Telegram integration.</p>
+
+<p>Suddenly, my research-phase questions had answers:</p>
+
+<ul>
+  <li>Yes, we need a dashboard</li>
+  <li>Users manage errors there</li>
+  <li>Sign up with a Telegram account (no emails)</li>
+  <li>Errors still post via the Telegram Telebugs bot</li>
+</ul>
+
+<p>To pull this off, I swapped the CLI for a Rails app (payments, dashboard). The
+freaked-out dev in me screamed, “Build for scale!” I listened. The bot and API
+got repurposed for the new setup.</p>
+
+<p>Database? PostgreSQL? Sure, but it wasn’t enough. I hopped on the ClickHouse
+train. Now I had both. Because who doesn’t crave sub-millisecond queries? Our
+stuff’s gotta load fast.</p>
+
+<p>Toss in NATS too. How else do services talk? How does the API ping the bot about
+a new error? How does the bot update the Rails dashboard when users poke it?</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/05.webp" alt="Telebugs SaaS architecture" /></p>
+
+<p>Oh, and SDKs (libraries to send errors to my backend)? Built those from scratch!</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/06.webp" alt="Telebugs SDKs" /></p>
+
+<p>See where this is going? It got way too complex, and I hadn’t even launched.
+Cursed insanity! Still, I kept going — built a landing page and
+<a href="https://x.com/kyrylosilin/status/1830003860988944530">launched this shit</a>.</p>
+
+<p>Only now, as I type this, do I realize I’d lost my vision of a simple
+Telegram-tied error tracker. The SaaS worked, but nobody wanted it.</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/07.webp" alt="Telebugs in action" /></p>
+
+<p>While building and sharing updates, some kind folks pointed out they couldn’t
+trust an indie dev with their data. That stuck with me the whole time.</p>
+
+<p>My SaaS flopped. No clear vision, no target audience, no marketing clue.
+Disaster.</p>
+
+<p>Countless hours down the drain — but then, something great happened.
+<a href="https://once.com">Once.com</a> dropped Campfire/ONCE.</p>
+
+<h2 id="onceficiation-saved-my-sanity">ONCEficiation saved my sanity</h2>
+
+<p>ONCE cleared my blurry vision.</p>
+
+<p>I was hooked from the first glance. It reignited my love for web dev. But I was
+knee-deep in my SaaS mess with bells and subscriptions, so I couldn’t jump ship.
+Secretly, I wanted to. So, I decided I’d eventually release a ONCE-inspired
+Telebugs.</p>
+
+<p>That’s when I got my shit together, scrapped the old plan, and started saving my
+*aaS. Cue the new direction <a href="#announcement">announcement</a>.</p>
+
+<p>The puzzle pieces clicked. I knew the A-to-Z:</p>
+
+<ul>
+  <li>Data? Not my problem</li>
+  <li>Business cost? Minimal</li>
+  <li>SDKs? Use what people know</li>
+</ul>
+
+<p>The ONCE philosophy hits me on another level: simplicity. Less is more. Software
+should be leaner, faster, focused.</p>
+
+<p>The new Telebugs is built from the ground up on vanilla Rails, with the standard
+conventions. It barely has any dependencies and tries to do as little as
+possible while solving the actual problem: collecting, grouping, and notifying
+of errors.</p>
+
+<p><img src="/assets/images/posts/how-the-pay-once-business-model-saved-my-*aas/08.webp" alt="Telebugs dependencies" /></p>
+
+<p>So, 3½ months later, here I am with a product that works, kicks ass, and chews
+bubble gum.</p>
+
+<p>No upsells, no dark patterns, no shady SaaS nonsense.
+<a href="https://world.hey.com/dhh/finished-software-8ee43637">Finished software</a> is
+Telebugs’ endgame.</p>
+
+<p>Curious how simple error tracking can be? <a href="https://telebugs.com/#installation">Watch the demo</a> — <strong>spoiler alert:</strong> you’ll be up and running in minutes!</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2025/06/15/your-idea-probably-sucks.html" rel="next" title="Your idea probably sucks">Your idea probably sucks</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/software/2025/03/28/learn-to-code-ignore-ai-then-use-ai-to-code-even-better.html" rel="prev" title="Learn to code, ignore AI, then use AI to code even better">Learn to code, ignore AI, then use AI to code even better</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-05-01T17:01:35+03:00">May 01, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

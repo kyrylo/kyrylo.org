@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024 | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="During DHH’s Opening Keynote of Rails World 2024 in Toronto, Rails 8 beta was shipped with Authentication, Propshaft, Solid Cache, Solid Queue, Solid Cable, Kamal 2, and Thruster." />
+<meta property="og:description" content="During DHH’s Opening Keynote of Rails World 2024 in Toronto, Rails 8 beta was shipped with Authentication, Propshaft, Solid Cache, Solid Queue, Solid Cable, Kamal 2, and Thruster." />
+<link rel="canonical" href="http://localhost:4000/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html" />
+<meta property="og:url" content="http://localhost:4000/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://i.imgur.com/J4NqLEq.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-27T13:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://i.imgur.com/J4NqLEq.png" />
+<meta property="twitter:title" content="Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-09-28T00:12:06+03:00","datePublished":"2024-09-27T13:00:00+03:00","description":"During DHH’s Opening Keynote of Rails World 2024 in Toronto, Rails 8 beta was shipped with Authentication, Propshaft, Solid Cache, Solid Queue, Solid Cable, Kamal 2, and Thruster.","headline":"Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024","image":"https://i.imgur.com/J4NqLEq.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html"},"url":"http://localhost:4000/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024</h1>
+
+    <p>
+      <time datetime="2024-09-27T13:00:00+03:00" itemprop="datePublished">
+        Sep 27, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://i.imgur.com/J4NqLEq.png" style="margin-bottom: 1rem; width: 75%;" alt="DHH giving a talk at Rails World 2024" />
+<br />
+During <a href="https://www.youtube.com/watch?v=-cEn_83zRFw">DHH’s Opening Keynote of Rails World 2024</a> in Toronto, Rails 8 beta was
+shipped with Authentication, Propshaft, Solid Cache, Solid Queue, Solid Cable,
+Kamal 2, and Thruster.</p>
+
+<h3 id="fighting-complexity-in-the-web">Fighting Complexity in the Web:</h3>
+
+<ul>
+  <li><strong>Rails 8 is here</strong></li>
+  <li>Rails has been following the latest programming trends for a while.</li>
+  <li>DHH was never happy about this as they didn’t make sense to him.</li>
+  <li>Webpacker in Rails 7 was an example, and DHH was never excited about it.</li>
+  <li>Rails 7’s introduction of ES6, HTTP2, and Importmaps brought back the excitement.</li>
+  <li>DHH’s work on HEY made him realize that the industry is wrong.</li>
+  <li>Rails doesn’t have to follow these rules.</li>
+  <li>HEY went 100% #NOBUILD (CSS and JS served directly to the browser as written).</li>
+  <li>For 20 years, people have said that Rails doesn’t scale.</li>
+  <li><strong>@tobi</strong> proved them wrong: Shopify handled 1 million requests/second in 2023.</li>
+  <li>The argument is settled: <em>shut the fk up</em>.</li>
+  <li>JS minification killed the web as a learning platform for new developers, saving only 2-5% overhead.</li>
+  <li>We owe it to the open web to allow <em>view source</em> and be proud of it.</li>
+  <li>The trigger for DHH’s interest in #NOBUILD was when he failed to compile a JS project after leaving it alone for 5 minutes.</li>
+  <li><strong>The browser is forever</strong>. We can write CSS and markup from 30 years ago with no modifications.</li>
+  <li>Craigslist is a great example.</li>
+  <li>The more intermediaries between us and the browser we can remove, the better.</li>
+  <li>Writing without JS and CSS pipelines isn’t for everyone, and that’s okay.</li>
+  <li>DHH is still fired up after 20 years, pushing towards the <em>one-person framework</em>.</li>
+  <li>DHH read a haiku in honor of Matz:
+<em>“Progress is our path, complexity builds the bridge, simplicity waits.”</em></li>
+  <li>Complexity is necessary for progress, but we stop once we’ve made things simple.</li>
+  <li><strong>Rails 7 ethos</strong>: rely on the browser.</li>
+  <li><code class="language-plaintext highlighter-rouge">{ safari: 17.2, chrome: 120, firefox: 121, opera: 106, ie: false }</code></li>
+  <li>The brain has a budget. Simplification helps optimize our <em>limited monkey brains</em>.</li>
+  <li>DHH wants to make it easier for full-stack developers to see and keep the entire problem in their head.</li>
+  <li>The mission of Rails is to compress the complexity of modern web apps.</li>
+</ul>
+
+<h3 id="deployments">Deployments:</h3>
+
+<ul>
+  <li><strong>Ruby on Rails scales from HELLO WORLD to IPO.</strong></li>
+  <li>Rails 7 is great at HELLO WORLD, but the bridge to IPO is missing.</li>
+  <li>The first step of that bridge is <strong>deployment</strong>.</li>
+  <li>We’ve become <em>pink elephants</em>, tied down by learned helplessness when it comes to deployment.</li>
+  <li>The entire industry has cultivated a fear of touching servers or being responsible for computers.</li>
+  <li>But we’re elephants; we can break free of the tiny rope.</li>
+  <li>AWS is amazing, but most of us don’t live in Amazon’s context.</li>
+  <li>The price for AWS’s insurance policy is high, not just financially but complexity-wise.</li>
+  <li>AWS wants you to stay a pink elephant forever.</li>
+  <li><strong>Heroku</strong> was revolutionary in 2007 but hasn’t adapted to today’s context.</li>
+  <li>Heroku’s Performance M (1 core/2 threads/2.5GB RAM/$250/mo) was a good deal in 2012. In 2024, it’s ridiculous.</li>
+  <li>DHH signed up for a <strong>Hetzner hobby box</strong> (48 cores/96 threads/256GB RAM/$220/mo).</li>
+  <li>The difference is software: Heroku has nice software, but DHH prefers to make his own.</li>
+  <li><strong>Vercel</strong>: Let’s see who you really are! AWS with a 500% markup.</li>
+  <li><strong>VCs</strong>: <em>The insecurity of developers is a mass market. Let’s tap into that!</em></li>
+  <li>DHH hates software patents. They’re stupid and corrosive.</li>
+  <li>Like medicine, software patents should expire after 20 years.</li>
+  <li>Heroku commercialized deployment ergonomics, but we are overdue for generics.</li>
+  <li>It shouldn’t cost $250 for basic compute. It should be 100x cheaper, and we can achieve that with open-source.</li>
+  <li>Mission: <strong>NoBuild, NoPaaS</strong>. Rails will not require a commercial vendor for production deployment.</li>
+  <li>The main path will be deploying to any hardware in any configuration.</li>
+  <li>The cure for <em>server-phobia</em> is called <strong>LINUX</strong>.</li>
+  <li>CBT: <em>Cognitive-behavioral therapy</em>, one little exposure at a time.</li>
+  <li><strong>OMAKUB</strong>: DHH’s favorite Linux environment.</li>
+  <li><strong>90% of server security</strong> is denying password authentication with SSH.</li>
+  <li><strong>Lock the door</strong>. It’s fun to be competent and know Linux.</li>
+  <li>DHH’s favorite number is 8 because when tilted, it becomes the infinity symbol.</li>
+</ul>
+
+<h3 id="rails-8-features">Rails 8 Features:</h3>
+
+<ul>
+  <li><strong>Authentication</strong>:
+    <ul>
+      <li>Rails won’t ship with Devise, but it will generate authentication code for you.</li>
+      <li>The code is an extraction from 37signals’ apps. You can learn it and level up.</li>
+    </ul>
+  </li>
+  <li><strong>Propshaft</strong>:
+    <ul>
+      <li>Propshaft simplifies the old asset pipeline.</li>
+      <li>It solves for today’s context without old baggage.</li>
+      <li>Propshaft is easy to understand, unlike Sprockets.</li>
+      <li>It’s based on the idea that modern browsers allow us to ship code directly to the user.</li>
+    </ul>
+  </li>
+  <li><strong>Solid Adapters</strong>:
+    <ul>
+      <li>Rails 8 introduces <em>solid</em> adapters: solid_cable, solid_cache, solid_queue.</li>
+      <li>It all runs from <strong>One Ring</strong> (One database system).</li>
+      <li><strong>SQLite</strong>: Now you don’t even have to know how to set up a database.</li>
+      <li><strong>Solid Cable</strong>: A SQLite-backed adapter for Action Cable, replacing Redis.</li>
+      <li><strong>Solid Cache</strong>:
+        <ul>
+          <li>Basecamp uses it in production (10TB cache for 60 days, 96% hit rate).</li>
+          <li>It supports encryption, built on top of Active Record.</li>
+          <li><strong>Privacy</strong>: HEY deletes everything (including logs) within 60 days.</li>
+          <li>It can scale beyond 10TB.</li>
+        </ul>
+      </li>
+      <li><strong>Solid Queue</strong>:
+        <ul>
+          <li>DHH didn’t want to use 7 gems just to process jobs.</li>
+          <li>Solid Queue is highly performant, works with all 3 major DBs, and supports recurring jobs.</li>
+          <li>HEY runs 20 million jobs/day using Solid Queue.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Thruster</strong>:
+    <ul>
+      <li>Thruster replaces nginx, proxies, and other intermediaries between your app and the internet.</li>
+      <li>It brings X-Sendfile acceleration, Cache-Control, and GZip (Brotli in the works).</li>
+      <li>It’s installed by default in the Docker image.</li>
+      <li>Thruster is written in Go and can handle 60,000 RPS.</li>
+    </ul>
+  </li>
+  <li><strong>Kamal 2</strong>:
+    <ul>
+      <li>Kamal 2 helps deploy apps to the cloud or any other environment.</li>
+      <li>It includes Auto SSL via Let’s Encrypt and supports multiple apps on a single server.</li>
+      <li>The team is working to eliminate the need for Docker Hub as a requirement.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="future">Future:</h3>
+
+<ul>
+  <li><strong>Rails 8.1</strong>:
+    <ul>
+      <li><strong>Action Notifier</strong>: A framework for web push notifications to get away from needing native apps.</li>
+      <li><strong>Active Record Search</strong>: A simpler, more intuitive search framework.</li>
+      <li><strong>Action Text with Markdown Support</strong> (called House MD).</li>
+      <li><strong>Kamal 2.1</strong> and plenty of other great updates.</li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2024/10/23/writing-software-is-like-spreading-butter-on-bread.html" rel="next" title="Writing software is like spreading butter on bread">Writing software is like spreading butter on bread</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html" rel="prev" title="How to add Mission Control to your Rails app and protect it with Basic Auth">How to add Mission Control to your Rails app and protect it with Basic Auth</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-09-28T00:12:06+03:00">September 28, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

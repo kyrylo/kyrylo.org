@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>There’s no place for Test-Driven Development (TDD) | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="There’s no place for Test-Driven Development (TDD)" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Test-Driven Development (TDD) doesn’t make sense to me, especially when requirements change frequently." />
+<meta property="og:description" content="Test-Driven Development (TDD) doesn’t make sense to me, especially when requirements change frequently." />
+<link rel="canonical" href="http://localhost:4000/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html" />
+<meta property="og:url" content="http://localhost:4000/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://imgur.com/5AaV4pW.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-30T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://imgur.com/5AaV4pW.png" />
+<meta property="twitter:title" content="There’s no place for Test-Driven Development (TDD)" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-12-28T12:35:36+02:00","datePublished":"2024-10-30T00:00:00+02:00","description":"Test-Driven Development (TDD) doesn’t make sense to me, especially when requirements change frequently.","headline":"There’s no place for Test-Driven Development (TDD)","image":"https://imgur.com/5AaV4pW.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html"},"url":"http://localhost:4000/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">There&#39;s no place for Test-Driven Development (TDD)</h1>
+
+    <p>
+      <time datetime="2024-10-30T00:00:00+02:00" itemprop="datePublished">
+        Oct 30, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://imgur.com/5AaV4pW.png" style="margin-bottom: 1rem; width: 75%;" alt="A Jenga tower with some blocks labeled 'Tests' being pulled out" />
+<br />
+Test-Driven Development (TDD) <em>doesn’t make sense</em> to me, especially when
+requirements change frequently.</p>
+
+<p>In TDD, the idea is to write tests before the actual code, allowing for a cycle
+of development where the tests guide implementation. But when requirements are
+always shifting, <em>I never find a point in the development cycle where TDD feels
+useful</em>.</p>
+
+<p>When I develop a feature, I usually follow these steps:</p>
+
+<ol>
+  <li><strong>Make it work</strong>: a mandatory, crappy implementation that gets the job done.</li>
+  <li><strong>Make it right</strong>: a nice-to-have step, improving code maintainability and reusability.</li>
+  <li><strong>Make it fast</strong>: by this point, I’m already moving on to the next class or method, driven by the need for speed.</li>
+</ol>
+
+<p>When it’s time to re-assess my work, that’s when I optimize for speed and write
+tests.</p>
+
+<p>At each of these stages, TDD creates <strong>friction</strong>. And I don’t like friction.
+While tests add a valuable layer of assurance, they can also slow you down. The
+smoother the workflow, the happier we are.</p>
+
+<p>In theory, you should write tests that don’t depend on your implementation,
+allowing you to write the test once and change your implementation as needed.</p>
+
+<p><em>That’s supposed to reduce friction, right?</em></p>
+
+<p>However, in my practice, this is challenging. You end up thinking about
+abstractions instead of being productive and pushing out more customer-facing
+code. Instead of focusing on delivering features, I find myself entangled in a
+web of test cases and mock objects.</p>
+
+<p><em>So, this leads to more friction instead.</em></p>
+
+<p>I’ve tried TDD and have tested my code religiously before. Yet, I discovered
+that I spent more time in the <code class="language-plaintext highlighter-rouge">_test</code> or <code class="language-plaintext highlighter-rouge">_spec</code> files than in the files that
+actually implement a feature. It feels like running a marathon, only to find
+you’ve been looping around the same track.</p>
+
+<p>What many TDD proponents overlook is that tests can contribute to technical debt
+as well. The more tests you write, the more code you need to maintain.</p>
+
+<p>If you feel compelled to write a test every time you change a line, you could
+end up managing an Everest of tests - mountains of code that require as much
+care and attention as the features themselves.</p>
+
+<p>Ultimately, while TDD might work in stable environments, I prefer a more
+flexible approach to keep my workflow agile and responsive.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html" rel="next" title="How to self-host Plausible Analytics with Kamal">How to self-host Plausible Analytics with Kamal</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html" rel="prev" title="Why does target="_blank" have an underscore in front?">Why does target="_blank" have an underscore in front?</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-12-28T12:35:36+02:00">December 28, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

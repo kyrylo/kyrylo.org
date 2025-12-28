@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to run your Turbo Native Android app on a physical device locally | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to run your Turbo Native Android app on a physical device locally" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="While working on the Android app for matcharoo using turbo-android, I hit a problem. My app would load in the Android Studio emulator just fine, but when I connected my Android phone via USB, the WebView wouldn’t load my web page." />
+<meta property="og:description" content="While working on the Android app for matcharoo using turbo-android, I hit a problem. My app would load in the Android Studio emulator just fine, but when I connected my Android phone via USB, the WebView wouldn’t load my web page." />
+<link rel="canonical" href="http://localhost:4000/turbo-native/android/2024/01/08/how-to-run-your-turbo-native-android-app-on-a-physical-device-locally.html" />
+<meta property="og:url" content="http://localhost:4000/turbo-native/android/2024/01/08/how-to-run-your-turbo-native-android-app-on-a-physical-device-locally.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://imgur.com/zuNW2bk.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-08T00:23:44+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://imgur.com/zuNW2bk.png" />
+<meta property="twitter:title" content="How to run your Turbo Native Android app on a physical device locally" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-01-27T09:32:50+02:00","datePublished":"2024-01-08T00:23:44+02:00","description":"While working on the Android app for matcharoo using turbo-android, I hit a problem. My app would load in the Android Studio emulator just fine, but when I connected my Android phone via USB, the WebView wouldn’t load my web page.","headline":"How to run your Turbo Native Android app on a physical device locally","image":"https://imgur.com/zuNW2bk.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/turbo-native/android/2024/01/08/how-to-run-your-turbo-native-android-app-on-a-physical-device-locally.html"},"url":"http://localhost:4000/turbo-native/android/2024/01/08/how-to-run-your-turbo-native-android-app-on-a-physical-device-locally.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to run your Turbo Native Android app on a physical device locally</h1>
+
+    <p>
+      <time datetime="2024-01-08T00:23:44+02:00" itemprop="datePublished">
+        Jan 8, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://imgur.com/zuNW2bk.png" style="margin-bottom: 1rem;" />
+<br />
+While working on the Android app for <a href="https://matcharoo.app">matcharoo</a> using
+<a href="https://github.com/hotwired/turbo-android">turbo-android</a>, I hit a problem. My app would load in the
+Android Studio emulator just fine, but when I connected my Android phone via USB,
+the WebView wouldn’t load my web page.</p>
+
+<p><img src="https://imgur.com/pQHoN24.png" /></p>
+
+<p>Here’s what I did.</p>
+
+<p>I enabled the logging for Turbo Android. You can do it in your <code class="language-plaintext highlighter-rouge">MainActivity</code>
+like this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+
+    <span class="nc">Turbo</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">debugLoggingEnabled</span> <span class="p">=</span> <span class="k">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then I inspected the logs via Logcat and found the following output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TurboLog . onPageStarted   [session: tab_play, location: http://10.0.2.2:3000/play]
+TurboLog . onReceivedError [session: tab_play, errorCode: -8]
+</code></pre></div></div>
+
+<p>I had no clue what <code class="language-plaintext highlighter-rouge">-8</code> meant, so I connected to my app via Chrome’s remote
+browser (<code class="language-plaintext highlighter-rouge">chrome://inspect</code>). Then I found my remote target and clicked on the
+<code class="language-plaintext highlighter-rouge">inspect</code> link:</p>
+
+<p><img src="https://imgur.com/nvQ4vLG.png" /></p>
+
+<p>Then I found the description of the error in the HTML document.</p>
+
+<p>The error turned out to be <code class="language-plaintext highlighter-rouge">net::ERR_CONNECTION_TIMED_OUT</code>:</p>
+
+<p><img src="https://imgur.com/65QSLQr.png" /></p>
+
+<p>I immediately knew that the standard IP for accessing your local web server
+through the emulator, <code class="language-plaintext highlighter-rouge">10.0.2.2</code>, was not accessible.</p>
+
+<p>The solution is to change the <code class="language-plaintext highlighter-rouge">startLocation</code> of your
+<code class="language-plaintext highlighter-rouge">SessionNavHostFragment</code> from <code class="language-plaintext highlighter-rouge">http://10.0.2.2:3000</code> to your local network
+address.</p>
+
+<p>On macOS, you can find the address via <code class="language-plaintext highlighter-rouge">ipconfig getifaddr en1</code> or <code class="language-plaintext highlighter-rouge">ipconfig
+getifaddr en0</code>. Then use the address as your start location.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">SessionNavHostFragment</span> <span class="p">:</span> <span class="nc">TurboSessionNavHostFragment</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">var</span> <span class="py">startLocation</span> <span class="p">=</span> <span class="s">"http://192.168.0.3:3000"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You need to change your <code class="language-plaintext highlighter-rouge">network_security_config.xml</code> to allow the new domain.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;network-security-config</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;domain-config</span> <span class="na">cleartextTrafficPermitted=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;domain</span> <span class="na">includeSubdomains=</span><span class="s">"true"</span><span class="nt">&gt;</span>192.168.0.3<span class="nt">&lt;/domain&gt;</span>
+    <span class="nt">&lt;/domain-config&gt;</span>
+<span class="nt">&lt;/network-security-config&gt;</span>
+</code></pre></div></div>
+
+<p>You also need to bind your Rails server to that address:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/rails server <span class="nt">-p</span> 3000 <span class="nt">-b</span> 192.168.0.3
+</code></pre></div></div>
+
+<p>Rebuild your app for your physical device, and voilà! Everything should work now.</p>
+
+<p>You can discuss this article on X/Twitter:
+<br />
+<a href="https://twitter.com/kyrylosilin/status/1744384157390606396">https://twitter.com/kyrylosilin/status/1744384157390606396</a></p>
+
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/rails/kamal/2024/01/18/making-postgresql-work-with-kamal-and-a-new-rails-7-1-application.html" rel="next" title="Making PostgreSQL work with Kamal and a new Rails 7.1 app">Making PostgreSQL work with Kamal and a new Rails 7.1 app</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/2023/11/09/embarking-on-an-indie-dev-journey.html" rel="prev" title="Embarking on an indie dev journey">Embarking on an indie dev journey</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-01-27T09:32:50+02:00">January 27, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

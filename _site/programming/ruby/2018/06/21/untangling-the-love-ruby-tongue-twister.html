@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Untangling the “love” Ruby tongue twister | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Untangling the “love” Ruby tongue twister" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I found an interesting Ruby tongue twister: ruby -e &#39; %%%%%%%%%%%%%%%%%%%%%%% public def /*; self end public def _*; self end {}./{//}./$\,//./,//,$, $.._$,,%,?,,?,,$_,$?,?? //=~$/&amp;&amp;__=-11+_=$.+111 $&gt;&lt;&lt;&lt;&lt;-&quot;&lt;&lt;&lt;&quot;&lt;&lt;&lt;&lt;-&quot;&lt;&lt;&quot;&lt;&lt; &lt;&lt;&lt; &lt;&lt; ($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__) $&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp; %%%%%%%%%%%%%%%%%%%%%%% &#39; love" />
+<meta property="og:description" content="I found an interesting Ruby tongue twister: ruby -e &#39; %%%%%%%%%%%%%%%%%%%%%%% public def /*; self end public def _*; self end {}./{//}./$\,//./,//,$, $.._$,,%,?,,?,,$_,$?,?? //=~$/&amp;&amp;__=-11+_=$.+111 $&gt;&lt;&lt;&lt;&lt;-&quot;&lt;&lt;&lt;&quot;&lt;&lt;&lt;&lt;-&quot;&lt;&lt;&quot;&lt;&lt; &lt;&lt;&lt; &lt;&lt; ($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__) $&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp; %%%%%%%%%%%%%%%%%%%%%%% &#39; love" />
+<link rel="canonical" href="http://localhost:4000/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html" />
+<meta property="og:url" content="http://localhost:4000/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-21T01:23:44+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Untangling the “love” Ruby tongue twister" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-01-09T11:06:42+02:00","datePublished":"2018-06-21T01:23:44+03:00","description":"I found an interesting Ruby tongue twister: ruby -e &#39; %%%%%%%%%%%%%%%%%%%%%%% public def /*; self end public def _*; self end {}./{//}./$\\,//./,//,$, $.._$,,%,?,,?,,$_,$?,?? //=~$/&amp;&amp;__=-11+_=$.+111 $&gt;&lt;&lt;&lt;&lt;-&quot;&lt;&lt;&lt;&quot;&lt;&lt;&lt;&lt;-&quot;&lt;&lt;&quot;&lt;&lt; &lt;&lt;&lt; &lt;&lt; ($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__) $&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp; %%%%%%%%%%%%%%%%%%%%%%% &#39; love","headline":"Untangling the “love” Ruby tongue twister","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html"},"url":"http://localhost:4000/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Untangling the “love” Ruby tongue twister</h1>
+
+    <p>
+      <time datetime="2018-06-21T01:23:44+03:00" itemprop="datePublished">
+        Jun 21, 2018
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>I found an interesting <a href="https://twitter.com/josh_cheek/status/1008910880761761792">Ruby tongue
+twister</a>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '
+%%%%%%%%%%%%%%%%%%%%%%%
+public def /*; self end
+public def _*; self end
+{}./{//}./$\,//./,//,$,
+$.._$,,%,?,,?,,$_,$?,??
+//=~$/&amp;&amp;__=-11+_=$.+111
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+%%%%%%%%%%%%%%%%%%%%%%%
+'
+love
+</code></pre></div></div>
+
+<p>As you can see, this program prints “love\n”. At a cursory glance it’s not
+obvious what is going on here. Let’s untangle it step by step.</p>
+
+<h2 id="lines-1-12">Lines 1, 12</h2>
+
+<p>The first (and twelfth) line means nothing but an empty string.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; %%%%%%%%%%%%%%%%%%%%%%%
+=&gt; ""
+</code></pre></div></div>
+
+<p>Let’s decompose it in a more meaningful way.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; %%% % %%% % %%% % %%% % %%% % %%%
+=&gt; ""
+</code></pre></div></div>
+
+<p>How’s this more meaningful? Well, this line defines 6 Strings and merges them
+together with help of
+<a href="https://ruby-doc.org/core-2.5.0/String.html#method-i-25"><code class="language-plaintext highlighter-rouge">String#%</code></a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; %%%
+&gt;&gt; ""
+</code></pre></div></div>
+
+<p>In Ruby you can create strings like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; %(foo)
+&gt;&gt; "foo"
+</code></pre></div></div>
+
+<p>So <code class="language-plaintext highlighter-rouge">%</code> is also a valid delimiter.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; %%foo%
+&gt;&gt; "foo"
+</code></pre></div></div>
+
+<p>Therefore, <code class="language-plaintext highlighter-rouge">%%%</code> creates an empty string and calls <code class="language-plaintext highlighter-rouge">%</code> on it passing another
+<code class="language-plaintext highlighter-rouge">%%%</code>. So, this line is a mere dud. Let’s remove it from the program
+(also the last line since it does exactly the same thing).</p>
+
+<p>We’re left with this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public def /*; self end
+public def _*; self end
+{}./{//}./$\,//./,//,$,
+$.._$,,%,?,,?,,$_,$?,??
+//=~$/&amp;&amp;__=-11+_=$.+111
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+</code></pre></div></div>
+
+<h2 id="lines-2-3">Lines 2, 3</h2>
+
+<p>The next line defines the <code class="language-plaintext highlighter-rouge">/</code> method on Object, which accepts any number of
+arguments. It returns <code class="language-plaintext highlighter-rouge">self</code>. The word <code class="language-plaintext highlighter-rouge">public</code>, here, is necessary because by
+default, methods defined on <code class="language-plaintext highlighter-rouge">Object</code> are private. The program wants it to be
+public so it can use it on any object. The bonus point is that it makes the
+program look more rectangular and pretty (in its original form).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public def /(*)
+  self
+end
+</code></pre></div></div>
+
+<p>The next line does exactly the same as the previous one, so <code class="language-plaintext highlighter-rouge">_</code> is simply an
+alias for <code class="language-plaintext highlighter-rouge">/</code>. This line is an equivalent (just in case if it makes
+understanding easier for you).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alias _ /
+</code></pre></div></div>
+
+<p>This is what we are left with so far:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{}./{//}./$\,//./,//,$,
+$.._$,,%,?,,?,,$_,$?,??
+//=~$/&amp;&amp;__=-11+_=$.+111
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+</code></pre></div></div>
+
+<h2 id="line-4">Line 4</h2>
+
+<p>So the next line is actualy where it gets tricky.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; {}./{//}./$\,//./,//,$,
+=&gt; {}
+</code></pre></div></div>
+
+<p>Let’s break it down. First, we call <code class="language-plaintext highlighter-rouge">/</code> on Hash:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; {}./{//}
+=&gt; {}
+</code></pre></div></div>
+
+<p>Because we defined <code class="language-plaintext highlighter-rouge">Object#/</code>, Hash and other objects automatically get this
+method, too. So, we create an empty Hash and call <code class="language-plaintext highlighter-rouge">/</code>, and we also pass a block!
+Let me rewrite it in a more verbose manner to demonstrate the intent.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; {}./(&amp;proc { // })
+=&gt; {}
+</code></pre></div></div>
+
+<p>The block carries an empty Regexp but it’s never executed. It’s just a dud. The
+call returns <code class="language-plaintext highlighter-rouge">self</code> (hence the original hash <code class="language-plaintext highlighter-rouge">{}</code>).</p>
+
+<p>This is what’s left:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; a = {}./{//}
+=&gt; {}
+&gt;&gt; a./$\,//./,//,$,
+=&gt; {}
+</code></pre></div></div>
+
+<p>Let’s move to the next part. We can see the same trick with calling <code class="language-plaintext highlighter-rouge">/</code>, but
+there’s a twist. We pass more arguments to it. It’s hard to see what’s going on
+when everything is on one line, so splitting it into multiple lines gives a
+good overview.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a./(
+  $\,
+  //./(),
+  //,
+  $,
+)
+</code></pre></div></div>
+
+<p>Four arguments are passed here:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$\</code> is a global variable</li>
+  <li><code class="language-plaintext highlighter-rouge">//./()</code> is just a <code class="language-plaintext highlighter-rouge">/</code> call on an empty Regexp without passing any arguments</li>
+  <li><code class="language-plaintext highlighter-rouge">//</code> an empty Regexp</li>
+  <li><code class="language-plaintext highlighter-rouge">$,</code> a global variable (which is not defined by Ruby; any undefined global
+variable is <code class="language-plaintext highlighter-rouge">nil</code>)</li>
+</ul>
+
+<p>Therefore, this expression returns <code class="language-plaintext highlighter-rouge">a</code>, since <code class="language-plaintext highlighter-rouge">/</code> returns <code class="language-plaintext highlighter-rouge">self</code>. Yet another
+dud!</p>
+
+<p>We’re left with this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.._$,,%,?,,?,,$_,$?,??
+//=~$/&amp;&amp;__=-11+_=$.+111
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+</code></pre></div></div>
+
+<h2 id="line-5">Line 5</h2>
+
+<p>Let’s see what’s going on with the next line.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; $.._$,,%,?,,?,,$_,$?,??
+=&gt; 1
+</code></pre></div></div>
+
+<p>Interesting, the result is 1 this time. <code class="language-plaintext highlighter-rouge">$.</code> calls <code class="language-plaintext highlighter-rouge">_</code> (which is an alias to <code class="language-plaintext highlighter-rouge">/</code>
+and returns <code class="language-plaintext highlighter-rouge">self</code>). <code class="language-plaintext highlighter-rouge">$.</code> is the line number last read by interpreter, so in the
+context of a REPL it’s equal to 1 (this is my assistant at this job). However,
+if we execute the code directly on the Ruby interpreter, it will be equal to 0.
+Let’s keep this in mind.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '
+%%%%%%%%%%%%%%%%%%%%%%%
+public def /*; self end
+public def _*; self end
+{}./{//}./$\,//./,//,$,
+p $.._$,,%,?,,?,,$_,$?,??
+'
+0
+'
+</code></pre></div></div>
+
+<p>Presumably, it starts counting from 0 and since this is technically the only
+line to read, it stays at 0 forever if you use the <code class="language-plaintext highlighter-rouge">-e</code> flag.</p>
+
+<p>What comes after <code class="language-plaintext highlighter-rouge">$.._</code> is actually a list of arguments:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.._(
+  $,,
+  %,?,,
+  ?,,
+  $_,
+  $?,
+  ??
+)
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$,</code> is a global variable</li>
+  <li><code class="language-plaintext highlighter-rouge">%,?,,</code> is the “?” string. The string is delimited by commas (<code class="language-plaintext highlighter-rouge">%,foo,</code> is
+<code class="language-plaintext highlighter-rouge">"foo"</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">?,</code> is a single character <code class="language-plaintext highlighter-rouge">","</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$_</code> is a global variable</li>
+  <li><code class="language-plaintext highlighter-rouge">$?</code> is a global variable,</li>
+  <li><code class="language-plaintext highlighter-rouge">??</code> is a single character <code class="language-plaintext highlighter-rouge">"?"</code></li>
+</ul>
+
+<p>Onto the next line!</p>
+
+<h2 id="line-6">Line 6</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; //=~$/&amp;&amp;__=-11+_=$.+111
+=&gt; 101
+</code></pre></div></div>
+
+<p>Let’s break it down.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; // =~ $/ &amp;&amp; __ =- 11 + _ = $. + 111
+=&gt; 101
+&gt;&gt; (// =~ $/) &amp;&amp; (__ =- 11 + _ = $. + 111)
+=&gt; 101
+&gt;&gt; // =~ $/
+=&gt; 0
+</code></pre></div></div>
+
+<p>There’s no fancy stuff going on here, this is just normal Ruby packed tightly.
+We evaluated the first part, which is 0 and it’s irrelevant to the returned
+result. Let’s see what happens to the second part.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; __ =- 11 + _ = $. + 111
+=&gt; 101
+</code></pre></div></div>
+
+<p>This is where 101 is coming from. The computation is based on priority
+rules. Brackets should make this clear.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; _ = $. + 111
+&gt;&gt; p _
+=&gt; 112
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">_</code> is simply a variable name here. The last part is a little tricky because I
+formatted it incorrectly. Check this.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; __ =- 11 + 112
+=&gt; 101
+&gt;&gt; __ = -11 + 112
+=&gt; 101
+</code></pre></div></div>
+
+<p>See what I did there? <code class="language-plaintext highlighter-rouge">=-</code> can be easily confused with <code class="language-plaintext highlighter-rouge">-=</code> (a shorthand for
+subtraction). Now when this is formatted properly, it’s so easy to see that
+it’s just a simple assignment to <code class="language-plaintext highlighter-rouge">__</code>.</p>
+
+<p>One final detail that I need to mention is that 112 &amp; 101 is the result you see
+if you tinker with this in a REPL. If you run the actual program, <code class="language-plaintext highlighter-rouge">$.</code> will be 0
+instead of 1 (as I mentioned before), therefore the result of the evaluation
+will be 111 &amp; 100, respectively.</p>
+
+<p>We are left with the following code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+</code></pre></div></div>
+
+<h2 id="lines-7-8-9">Lines 7, 8, 9</h2>
+
+<p>Not much left to untangle, but we still don’t know why the program prints
+<code class="language-plaintext highlighter-rouge">love</code>. Running the next line on its own leaves us out of luck:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby -e '$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;'
+-e:1: can't find string "&lt;&lt;&lt;" anywhere before EOF
+-e:1: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+            ^
+</code></pre></div></div>
+
+<p>Actually, even if we run the whole chunk that is left, we will see that it
+doesn’t work:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+'
+-e:5:in `&lt;main&gt;': undefined method `-' for main:Object (NoMethodError)
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">NoMethodError</code> gives us a clue. Something should be defined but it’s not.
+Remember we assigned a few variables (<code class="language-plaintext highlighter-rouge">_</code> &amp; <code class="language-plaintext highlighter-rouge">__</code>) on the previous line?
+Seems like they’re important. Let’s test:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '
+//=~$/&amp;&amp;__=-11+_=$.+111
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+           &lt;&lt;&lt;
+         &lt;&lt;
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+$&lt;&amp;&amp;$&gt;&lt;&lt;$/&amp;&amp;?&amp;&amp;&amp;%&amp;&amp;&amp;&amp;?&amp;
+'
+love
+</code></pre></div></div>
+
+<p>Looks like the rest of the program relies on these variables. Let’s continue
+and analyse line <code class="language-plaintext highlighter-rouge">$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;</code>. The first two characters is a
+global variable <code class="language-plaintext highlighter-rouge">$&gt;</code>, which represents <code class="language-plaintext highlighter-rouge">STDOUT</code>. What comes next is a little
+confusing, so let’s evaluate the full line to see what happens:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;'
+-e:1: can't find string "&lt;&lt;&lt;" anywhere before EOF
+-e:1: syntax error, unexpected end-of-input, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+$&gt;&lt;&lt;&lt;&lt;-"&lt;&lt;&lt;"&lt;&lt;&lt;&lt;-"&lt;&lt;"&lt;&lt;
+            ^
+</code></pre></div></div>
+
+<p>I see, it looks like <code class="language-plaintext highlighter-rouge">&lt;&lt;&lt;</code> is a heredoc. Actually, even two heredocs!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt;(&lt;&lt;-"&lt;&lt;&lt;")&lt;&lt;(&lt;&lt;-"&lt;&lt;")&lt;&lt;
+</code></pre></div></div>
+
+<p>Now we can see that we have three <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> patterns and actually they are
+<a href="https://ruby-doc.org/core-2.5.0/IO.html#method-i-3C-3C"><code class="language-plaintext highlighter-rouge">IO#&lt;&lt;</code></a> calls.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt; (&lt;&lt;-"&lt;&lt;&lt;") &lt;&lt; (&lt;&lt;-"&lt;&lt;") &lt;&lt;
+</code></pre></div></div>
+
+<p>This line terminates with a <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> method call, which means the expression is
+still not over. Moreover, we must close two heredocs. This is precisely what
+happens on the next two lines.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt; (&lt;&lt;-"&lt;&lt;&lt;") &lt;&lt; (&lt;&lt;-"&lt;&lt;") &lt;&lt;
+            &lt;&lt;&lt;
+          &lt;&lt;
+</code></pre></div></div>
+
+<p>It’s obvious now that <code class="language-plaintext highlighter-rouge">&lt;&lt;&lt;</code> &amp; <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> close heredocs, but what do they produce?
+Well, indentation doesn’t matter here, we can easily rewrite it like this and it
+will be the same.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt; (&lt;&lt;-"&lt;&lt;&lt;") &lt;&lt; (&lt;&lt;-"&lt;&lt;") &lt;&lt;
+&lt;&lt;&lt;
+&lt;&lt;
+</code></pre></div></div>
+
+<p>So, it produces two empty strings. Let’s substitute them.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt; "" &lt;&lt; "" &lt;&lt;
+</code></pre></div></div>
+
+<p>After these permutations the code can be understood by anybody and it makes
+perfect sense why the expression isn’t over yet. We’re still appending! Let’s
+analyse what’s going on with the next line. After all, it’s still not clear
+where <code class="language-plaintext highlighter-rouge">love</code> comes from.</p>
+
+<h2 id="line-10">Line 10</h2>
+
+<p>Let’s evaluate the next line <code class="language-plaintext highlighter-rouge">($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)</code>. If you run that as is,
+it will produce an error.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '
+($`&lt;&lt;_-3&lt;&lt;_&lt;&lt;_+7&lt;&lt;-~__)
+'
+-e:2:in `&lt;main&gt;': undefined local variable or method `_' for main:Object (NameError)
+</code></pre></div></div>
+
+<p>Cor blimey! So the assignments on one of the previous lines are actually very
+relevant now (<code class="language-plaintext highlighter-rouge">//=~$/&amp;&amp;__=-11+_=$.+111</code>). Remember, <code class="language-plaintext highlighter-rouge">_</code> is 111 &amp; <code class="language-plaintext highlighter-rouge">__</code> is 100.</p>
+
+<p>Let’s substitute…</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>($`&lt;&lt;111-3&lt;&lt;111&lt;&lt;111+7&lt;&lt;-~100)
+</code></pre></div></div>
+
+<p>…calculate and format:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$` &lt;&lt; 108 &lt;&lt; 111 &lt;&lt; 118 &lt;&lt; 101
+</code></pre></div></div>
+
+<p>Simple, eh? <code class="language-plaintext highlighter-rouge">$`</code> is the string preceding the match in the last successful
+pattern match. Remember, we’ve matched an empty string? Therefore, it’s equal
+to <code class="language-plaintext highlighter-rouge">""</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; "" &lt;&lt; 108 &lt;&lt; 111 &lt;&lt; 118 &lt;&lt; 101
+=&gt; "love"
+</code></pre></div></div>
+
+<p>Now, when you evaluate that, you get <code class="language-plaintext highlighter-rouge">"love"</code>! There’s a little known gotcha
+when you use
+<a href="https://ruby-doc.org/core-2.5.0/String.html#method-i-3C-3C"><code class="language-plaintext highlighter-rouge">String#&lt;&lt;</code></a>. If
+the object you append is an Integer, then it is considered a codepoint and
+converted to a character before being appended. That’s exactly what happened
+here. <code class="language-plaintext highlighter-rouge">108, 111, 118, 101</code> are codepoints for <code class="language-plaintext highlighter-rouge">l, o, v, e</code>.</p>
+
+<p>Because this line is actually an argument to the previous line, we do need to
+wrap it in brackets.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>("love")
+</code></pre></div></div>
+
+<p>We are very close to untangling this guy. The only mystery that is left is
+where the newline is coming from.</p>
+
+<h2 id="line-11">Line 11</h2>
+
+<p>This is the last line of the program that we need to untangle. Let’s sharpen our
+keyboard and break it down.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&lt; &amp;&amp; $&gt; &lt;&lt; $/ &amp;&amp; ?&amp; &amp;&amp; %&amp;&amp; &amp;&amp; ?&amp;
+</code></pre></div></div>
+
+<p>Even after I delimited it with spaces it still looks a little cryptic. Let’s spice
+it up with some brackets.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>($&lt;) &amp;&amp; ($&gt; &lt;&lt; ($/) &amp;&amp; (?&amp; &amp;&amp; %&amp;&amp; &amp;&amp; ?&amp;))
+</code></pre></div></div>
+
+<p>So, the first part is <code class="language-plaintext highlighter-rouge">($&lt;)</code>. It’s a dud that we can ignore. What actually
+gets returned is the rest of the expression. We use <code class="language-plaintext highlighter-rouge">$&gt;</code> (STDOUT) again and
+pass it some arguments.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt; ($/) &amp;&amp; (?&amp; &amp;&amp; %&amp;&amp; &amp;&amp; ?&amp;)
+</code></pre></div></div>
+
+<p>Let’s decompose arguments. It’s not obvious, but <code class="language-plaintext highlighter-rouge">$/</code> is actually an argument of
+<code class="language-plaintext highlighter-rouge">IO#&lt;&lt;</code>. Global variable <code class="language-plaintext highlighter-rouge">$/</code> is an input record separator (defaults to <code class="language-plaintext highlighter-rouge">"\n"</code>),
+so that’s how we print the final newline. What comes after it is a dud,
+which evaluates to <code class="language-plaintext highlighter-rouge">"&amp;"</code>.</p>
+
+<p>The tricky part is the <code class="language-plaintext highlighter-rouge">%&amp;&amp;</code> empty string which is hard to see if it’s not
+delimited by spaces.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; %&amp;&amp;
+&gt;&gt; ""
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">?&amp;</code> is a character <code class="language-plaintext highlighter-rouge">&amp;</code>. Therefore, this expression evaluates to it:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; (?&amp; &amp;&amp; %&amp;&amp; &amp;&amp; ?&amp;)
+=&gt; "&amp;"
+</code></pre></div></div>
+
+<p>Let’s substitute <code class="language-plaintext highlighter-rouge">"&amp;"</code>, and this is what we have now:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt;.&lt;&lt;($/) &amp;&amp; "&amp;"
+</code></pre></div></div>
+
+<p>Because of priority rules we can safely strip it down to (the ampersand string is never evaluated):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; &lt;&lt; $/
+</code></pre></div></div>
+
+<p>But wait, how does the actual printing occur? Well, in order to print what we
+pass to STDOUT, the string must end with a newline and this is what we just did
+here. That’s why there are no <code class="language-plaintext highlighter-rouge">puts</code> calls anywhere.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Let’s run this program with all the substitutions we’ve
+made so far to verify it still produces the same result.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -e '
+""                                # line 1
+public def /(*)                   # line 2
+  self
+end
+alias _ /                         # line 3
+a = {}./(&amp;proc { // })            # line 4
+a./(
+  $\,
+  //./(),
+  //,
+  $,
+)
+$.._(                             # line 5
+  $,,
+  %,?,,
+  ?,,
+  $_,
+  $?,
+  ??
+)
+// =~ $/                          # line 6
+__ = 100
+_ = 111
+$&gt; &lt;&lt; "" &lt;&lt; "" &lt;&lt;                 # lines 7, 8, 9
+("love")                          # line 10
+$&gt; &lt;&lt; $/                          # line 11
+""                                # line 12
+'
+love
+</code></pre></div></div>
+
+<p>Looking good, still works, mystery untangled! Thanks to Josh Cheek for this Ruby
+tongue twister, I had a good brain tickling session.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/2023/11/09/embarking-on-an-indie-dev-journey.html" rel="next" title="Embarking on an indie dev journey">Embarking on an indie dev journey</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html" rel="prev" title="A bit of bacon, lettuce and tomato">A bit of bacon, lettuce and tomato</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-01-09T11:06:42+02:00">January 09, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

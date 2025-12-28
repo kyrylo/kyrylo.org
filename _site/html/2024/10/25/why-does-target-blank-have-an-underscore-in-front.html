@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Why does target=”_blank” have an underscore in front? | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Why does target=”_blank” have an underscore in front?" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ever wondered why you need the underscore in target=&quot;_blank&quot; to open a link in a new tab?" />
+<meta property="og:description" content="Ever wondered why you need the underscore in target=&quot;_blank&quot; to open a link in a new tab?" />
+<link rel="canonical" href="http://localhost:4000/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html" />
+<meta property="og:url" content="http://localhost:4000/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-25T13:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Why does target=”_blank” have an underscore in front?" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-02-24T14:04:51+02:00","datePublished":"2024-10-25T13:00:00+03:00","description":"Ever wondered why you need the underscore in target=&quot;_blank&quot; to open a link in a new tab?","headline":"Why does target=”_blank” have an underscore in front?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html"},"url":"http://localhost:4000/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Why does target=&quot;_blank&quot; have an underscore in front?</h1>
+
+    <p>
+      <time datetime="2024-10-25T13:00:00+03:00" itemprop="datePublished">
+        Oct 25, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>Ever wondered why you need the underscore in <code class="language-plaintext highlighter-rouge">target="_blank"</code> to open a link in
+a new tab?</p>
+
+<p>Before HTML5, developers used
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frameset"><code class="language-plaintext highlighter-rouge">&lt;frameset&gt;</code></a>
+for SPA-like functionality, dividing the window into multiple frames, each with
+its own unique <code class="language-plaintext highlighter-rouge">name</code>. For example, the left frame might be <code class="language-plaintext highlighter-rouge">name="sidebar"</code>, and the
+right frame could be <code class="language-plaintext highlighter-rouge">name="content"</code>.</p>
+
+<p>When clicking a link, the browser needed to know which frame to load the content
+into. That’s where the target attribute came in. Clicking a link in the sidebar,
+for example, would load the content in the content frame:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/pricing"</span> <span class="na">target=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Now, if you had a frame named “blank” and used <code class="language-plaintext highlighter-rouge">&lt;a href="/" target="blank"&gt;</code>,
+the content would load in that frame. But if no such frame existed, the browser
+would create a new window (not a tab, as browsers didn’t support tabs at the
+time) and assign it the “blank” name. Clicking the same link again wouldn’t open
+another tab.</p>
+
+<p>So why the underscore in <code class="language-plaintext highlighter-rouge">target="_blank"</code>?</p>
+
+<p>It’s simple - developers needed a way to explicitly tell the browser to open the
+link in a new tab, free of frame semantics. The underscore signifies a <strong>special
+value</strong> rather than a <strong>frame name</strong>.</p>
+
+<p>P.S. Don’t use <code class="language-plaintext highlighter-rouge">&lt;frameset&gt;</code>. It’s deprecated in HTML5.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html" rel="next" title="There's no place for Test-Driven Development (TDD)">There's no place for Test-Driven Development (TDD)</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/software/2024/10/23/writing-software-is-like-spreading-butter-on-bread.html" rel="prev" title="Writing software is like spreading butter on bread">Writing software is like spreading butter on bread</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-02-24T14:04:51+02:00">February 24, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

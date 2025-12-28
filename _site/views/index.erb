@@ -1,0 +1,278 @@
+<section class="world">
+  <%
+  [{
+      href: '/2021/02/24/dubai',
+      caption: 'Dubai',
+      date: 'February&ndash;March 2021',
+      flag: 22*6,
+      coords: '25.2048,55.2708',
+      sprite: 160*20
+  },{
+      href: '/2019/08/24/cebu',
+      caption: 'Cebu',
+      date: 'August 2019&ndash;December 2020',
+      flag: 22*4,
+      coords: '10.3157,123.8854',
+      sprite: 160*19
+  }, {
+      href: '/2019/07/21/lviv',
+      caption: 'Lviv',
+      date: 'July 2019',
+      flag: 22,
+      coords: '49.8397,24.0297',
+      sprite: 160*18
+  }, {
+      href: '/2019/06/23/amsterdam',
+      caption: 'Amsterdam',
+      date: 'June 2019',
+      flag: 22*5,
+      coords: '52.3667,4.8945',
+      sprite: 160*17
+  }, {
+      href: '/2019/06/19/rotterdam',
+      caption: 'Rotterdam',
+      date: 'June 2019',
+      flag: 22*5,
+      coords: '51.9244,4.4777',
+      sprite: 160*16
+  }, {
+      href: '/2019/01/26/manila',
+      caption: 'Manila',
+      date: 'June 2018&ndash;January 2019',
+      flag: 22*4,
+      coords: '14.5995,120.9842',
+      sprite: 160*15
+  }, {
+      href: '/2019/01/19/legazpi',
+      caption: 'Legazpi',
+      date: 'January 2019',
+      flag: 22*4,
+      coords: '13.1391,123.7438',
+      sprite: 160*14
+  }, {
+      href: '/2019/01/05/bohol',
+      caption: 'Bohol',
+      date: 'January 2019',
+      flag: 22*4,
+      coords: '9.6729,123.8730',
+      sprite: 160*13
+  }, {
+      href: '/2018/09/30/cavite',
+      caption: 'Cavite',
+      date: 'September 2018',
+      flag: 22*4,
+      coords: '14.2456,120.8786',
+      sprite: 160*12
+  }, {
+      href: '/2018/09/01/baguio-city',
+      caption: 'Baguio',
+      date: 'September 2018',
+      flag: 22*4,
+      coords: '16.4023,120.5960',
+      sprite: 160*3
+  }, {
+      href: '/2018/01/08/manila',
+      caption: 'Manila',
+      date: 'January&ndash;March 2018',
+      flag: 22*4,
+      coords: '14.5995,120.9842',
+      sprite: 160*4
+  }, {
+      href: '/2018/02/07/tagaytay',
+      caption: 'Tagaytay',
+      date: 'February 2018',
+      flag: 22*4,
+      coords: '14.1153,120.9621',
+      sprite: 160*8
+  }, {
+      href: '/2017/12/10/bangkok',
+      caption: 'Bangkok',
+      date: 'December&ndash;January 2018',
+      flag: 22*2,
+      coords: '13.7563,100.5018',
+      sprite: 160*6
+  }, {
+      href: '/2017/08/01/manila',
+      caption: 'Manila',
+      date: 'June&ndash;August 2017',
+      flag: 22*4,
+      coords: '14.5995,120.9842',
+      sprite: 0
+  }, {
+      href: '/2017/02/03/kyiv-trip',
+      caption: 'Kyiv',
+      date: 'February 2017',
+      flag: 22,
+      coords: '50.4501,30.5234',
+      sprite: 160
+  }, {
+      href: '/2016/11/25/kyiv-trip',
+      caption: 'Kyiv',
+      date: 'November 2016',
+      flag: 22,
+      coords: '50.4501,30.5234',
+      sprite: 160*5
+  }, {
+      href: '/2016/09/12/lisbon-business-trip',
+      caption: 'Lisbon',
+      date: 'September 2016',
+      flag: 22*3,
+      coords: '38.7223,9.1393',
+      sprite: 160*7
+  }, {
+      href: '/2014/07/11/internship-in-san-francisco',
+      caption: 'San Francisco',
+      date: 'July&ndash;September 2014',
+      flag: 0,
+      coords: '37.7749,122.4194',
+      sprite: 160*2
+  }, {
+      href: '/2013/04/12/how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysoky',
+      caption: 'Vysoky',
+      date: 'April 2013',
+      flag: 22,
+      coords: '49.8846,36.1180',
+      sprite: 160*9
+  }, {
+      href: '/2012/08/01/euro-2012-ukraine-england-my-trip-to-donetsk',
+      caption: 'Donetsk',
+      date: 'August 2012',
+      flag: 22,
+      coords: '48.0159,37.8028',
+      sprite: 160*11
+  }, {
+      href: '/2011/08/22/how-i-went-to-it-jam-2011-in-odesa',
+      caption: 'Odesa',
+      date: 'August 2011',
+      flag: 22,
+      coords: '46.4825,30.7233',
+      sprite: 160*10
+  }].each do |a|
+  %>
+    <figure class="world__item">
+      <a href="<%= a[:href] %>">
+        <img class="world__thumb" style="background-position-y: -<%= a[:sprite] %>px"></img>
+        <figcaption class="world__desc">
+          <span class="world__flag" style="background-position-y: -<%= a[:flag]%>px"></span>
+          <span><%= a[:caption] %></span><a href="http://www.google.com/maps/place/<%= a[:coords]%>" class="world__coords static-link" title="<%= a[:caption] %> on the map"><%= a[:coords].split(',').first[0...5] %>&deg; N, <%= a[:coords].split(',').last[0...5] %>&deg; E
+        </a>
+      </figcaption>
+    </a>
+    <figcaption class="font-smaller world__date"><%= a[:date]%></figcaption>
+    </figure>
+  <% end %>
+</section>
+
+<div class="columns">
+  <section class="projects">
+    <h1>Projects</h1>
+
+    <dl class="projects__list">
+      <dt><a href="https://github.com/kyrylo/linenoise-rb">linenoise-rb</a> <span class="timestamp">released on November 25, 2018</span></dt>
+      <dd class="projects__item">
+        A Ruby C extension that wraps a small self-contained alternative to
+        Readline and Libedit called Linenoise.
+      </dd>
+
+      <dt><a href="https://github.com/kyrylo/system_browser_client">System Browser</a> <span class="timestamp">July 21, 2015</span></dt>
+      <dd class="projects__item">A desktop app for browsing Ruby code.</dd>
+
+      <dt><a href="https://github.com/kyrylo/fast_method_source">Fast Method Source</a> <span class="timestamp">June 18, 2015</span></dt>
+      <dd class="projects__item">
+        A Ruby C extension for querying methods, procs and lambdas for their
+        source code and comments.
+      </dd>
+
+      <dt><a href="https://github.com/kyrylo/system_navigation">System Navigation</a> <span class="timestamp">June 11, 2015</span></dt>
+      <dd class="projects__item">
+        A library for the Ruby programming language that provides navigation and
+        introspection capabilities for Ruby programs.
+      </dd>
+
+      <dt><a href="https://github.com/kyrylo/rmarshal">RMarshal</a> <span class="timestamp">December 18, 2014</span></dt>
+      <dd class="projects__item">
+        An Erlang library for deserialising Ruby objects dumped by Marshal.dump
+        into Erlang terms.
+      </dd>
+
+      <dt><a href="https://github.com/kyrylo/pry-theme">Pry Theme</a> <span class="timestamp">June 26, 2012</span></dt>
+      <dd class="projects__item">
+        A plugin for the Pry REPL for the Ruby programming language, which allows
+        customising Pry colors via prytheme.rb files.
+      </dd>
+
+      <dt><a href="https://github.com/kyrylo/entooru">Entooru</a> <span class="timestamp">April 16, 2012</span></dt>
+      <dd class="projects__item">
+        A collection of my translations of various Ruby articles into the Russian
+        language.
+      </dd>
+
+      <dt><a href="https://github.com/kyrylo/patience">Patience</a> <span class="timestamp">March 8, 2012</span></dt>
+      <dd class="projects__item">Solitaire card game implemented in Ruby using the Gosu framework.</dd>
+    </dl>
+  </section>
+
+  <section class="posts">
+    <h1 class="posts_h1">Posts</h1>
+
+    <section>
+      <h3 class="posts_h3">Ruby tricks</h3>
+      <ul class="posts__list">
+        <li class="posts__item">
+          <a href="/2015/05/23/a-bit-of-bacon-lettuce-and-tomato">A bit of bacon, lettuce and tomato</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2014/05/18/hello-world-with-recursive-arrays-in-ruby">&ldquo;Hello World&rdquo; with recursive arrays in Ruby</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2013/08/24/ruby-eval-tricks">Ruby eval tricks</a>
+        </li class="posts__item">
+        <li class="posts__item">
+          <a href="/2013/08/13/various-ways-to-count-digits-in-a-ruby-integer">Various ways to count digits in a Ruby integer</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2013/08/09/blocks-in-ruby-are-always-there">Blocks in Ruby are always there</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2013/07/15/how-to-say-i-love-you-in-ruby">How to say &ldquo;I love you&rdquo; in Ruby</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2013/07/03/pulling-through-a-ruby-exception">Pulling through a Ruby exception</a>
+        </li>
+      </ul>
+
+      <h3 class="posts_h3">Ruby articles</h3>
+
+      <ul class="posts__list">
+        <li class="posts__item">
+          <a href="/2018/06/21/untangling-the-love-ruby-tongue-twister">Untangling the &ldquo;love&rdquo; Ruby tongue twister</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2014/12/31/rubys-exception-to-message-mapper">Ruby's exception to message mapper</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2013/07/03/difference-between-frozen-ruby-objects-across-versions">Difference between frozen Ruby objects across versions</a>
+        </li>
+        <li class="posts__item">
+          <a href="/2013/05/30/so-what-is-binding-pry-exactly">So what is &ldquo;binding.pry&rdquo; exactly?</a>
+        </li>
+      </ul>
+
+      <h3 class="posts_h3">JavaScript</h3>
+
+      <ul class="posts__list">
+        <li class="posts__item">
+          <a href="/2013/12/15/javascript-eval-tricks">JavaScript eval tricks</a>
+        </li>
+      </ul>
+
+      <h3 class="posts_h3">Security</h3>
+
+      <ul class="posts__list">
+        <li class="posts__item">
+          <a href="/2014/01/17/why-i-am-not-a-fan-of-google-analytics">Why I am not a fan of Google Analytics</a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>

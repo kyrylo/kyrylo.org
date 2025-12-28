@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to generate sitemap.xml for your Rails 7.1+ app with Kamal | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to generate sitemap.xml for your Rails 7.1+ app with Kamal" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Rails doesn’t offer a default solution for generating sitemaps. By using Kamal and an external dependency, it is trivial to add support for sitemaps to your Rails 7.1+ project." />
+<meta property="og:description" content="Rails doesn’t offer a default solution for generating sitemaps. By using Kamal and an external dependency, it is trivial to add support for sitemaps to your Rails 7.1+ project." />
+<link rel="canonical" href="http://localhost:4000/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html" />
+<meta property="og:url" content="http://localhost:4000/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://imgur.com/FXsJinY.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-02-16T12:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://imgur.com/FXsJinY.png" />
+<meta property="twitter:title" content="How to generate sitemap.xml for your Rails 7.1+ app with Kamal" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-02-17T10:08:25+02:00","datePublished":"2024-02-16T12:00:00+02:00","description":"Rails doesn’t offer a default solution for generating sitemaps. By using Kamal and an external dependency, it is trivial to add support for sitemaps to your Rails 7.1+ project.","headline":"How to generate sitemap.xml for your Rails 7.1+ app with Kamal","image":"https://imgur.com/FXsJinY.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html"},"url":"http://localhost:4000/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to generate sitemap.xml for your Rails 7.1+ app with Kamal</h1>
+
+    <p>
+      <time datetime="2024-02-16T12:00:00+02:00" itemprop="datePublished">
+        Feb 16, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://imgur.com/FXsJinY.png" style="margin-bottom: 1rem;" alt="Sitemap.xml generation with Rails and Kamal" />
+<br />
+Rails doesn’t offer a default solution for generating sitemaps. By using Kamal
+and an external dependency, it is trivial to add support for sitemaps to your
+Rails 7.1+ project.</p>
+
+<h2 id="what-are-sitemaps">What are sitemaps?</h2>
+
+<blockquote>
+  <p>A sitemap is a file where you provide information about the pages, videos, and
+other files on your site, and the relationships between them. Search engines
+like Google read this file to crawl your site more efficiently</p>
+
+  <p><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview">https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview</a></p>
+</blockquote>
+
+<h2 id="what-is-kamal">What is Kamal?</h2>
+
+<p><a href="https://kamal-deploy.org">Kamal</a> is a tool for deploying Rails applications. It is based on
+Docker. It is the new way to deploy Rails 7.1+ apps.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h3 id="installing-sitemap_generator">Installing sitemap_generator</h3>
+
+<p>First, we need to generate a sitemap file locally. We will use
+<a href="https://github.com/kjvarga/sitemap_generator">kjvarga/sitemap_generator</a> to add support for sitemaps to
+your Rails app. Don’t mind the date of the latest commit. The project still
+works well for Rails 7.1+ apps.</p>
+
+<p>Install the gem with Bundler:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle add sitemap_generator
+</code></pre></div></div>
+
+<p>Create the <code class="language-plaintext highlighter-rouge">config/sitemap.rb</code> file that <code class="language-plaintext highlighter-rouge">sitemap_generator</code> uses for its
+configuration:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/rails sitemap:install
+</code></pre></div></div>
+
+<h3 id="configuring-sitemap_generator">Configuring sitemap_generator</h3>
+
+<p>Now, open the <code class="language-plaintext highlighter-rouge">config/sitemap.rb</code> file and change your <code class="language-plaintext highlighter-rouge">default_host</code> to your
+host. In my case, it’s <a href="https://matcharoo.app"><code class="language-plaintext highlighter-rouge">https://matcharoo.app</code></a>:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/sitemap.rb</span>
+
+<span class="c1"># Set the host name for URL creation</span>
+<span class="no">SitemapGenerator</span><span class="o">::</span><span class="no">Sitemap</span><span class="p">.</span><span class="nf">default_host</span> <span class="o">=</span> <span class="s2">"https://matcharoo.app"</span>
+</code></pre></div></div>
+
+<p>If you don’t change it, then your sitemap will be pointing to example.com, and
+we don’t want to confuse Google’s crawler.</p>
+
+<p>Let’s add a few pages to the sitemap so that it won’t be empty (the root URL is
+added by default):</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/sitemap.rb</span>
+
+<span class="n">add</span> <span class="s2">"/terms"</span>
+<span class="n">add</span> <span class="s2">"/privacy"</span>
+</code></pre></div></div>
+
+<p>We just added the “Terms of Service” and the “Privacy Policy” pages. Feel free
+to add whatever page you want to be served on Google.</p>
+
+<p>Note: You can use URL helpers instead of hardcoded paths.</p>
+
+<h2 id="generating-your-sitemapxml">Generating your sitemap.xml</h2>
+
+<p>You can generate <code class="language-plaintext highlighter-rouge">sitemap.xml</code> with a simple task provided by the
+<code class="language-plaintext highlighter-rouge">sitemap_generator</code> gem:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% bin/rails sitemap:refresh
+In <span class="s1">'/Users/kyrylo/Code/kyrylo/matcharoo/public/'</span>:
++ sitemap.xml.gz                                           1 links /  329 Bytes
+Sitemap stats: 1 links / 1 sitemaps / 0m00s
+
+Pinging with URL <span class="s1">'https://matcharoo.app/sitemap.xml.gz'</span>:
+Ping failed <span class="k">for </span>Google: <span class="c">#&lt;OpenURI::HTTPError: 404 Sitemaps ping is deprecated. See https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping.&gt; (URL http://www.google.com/webmasters/tools/ping?sitemap=https%3A%2F%2Fmatcharoo.app%2Fsitemap.xml.gz)</span>
+</code></pre></div></div>
+
+<p>You can safely ignore the warning about the failed ping. Track the <a href="https://github.com/kjvarga/sitemap_generator/issues/428">related
+issue</a> in the
+<code class="language-plaintext highlighter-rouge">sitemap_generator</code>’s issue tracker.</p>
+
+<p><em>TL;DR:</em> Google removed that endpoint, and pinging is no longer necessary.</p>
+
+<p>The command generated a gzipped version of your sitemap at
+<code class="language-plaintext highlighter-rouge">public/sitemap.xml.gz</code>. Let’s unzip it and inspect the content:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">gunzip</span> <span class="nt">-k</span> public/sitemap.xml.gz
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xmllint <span class="nt">--format</span> public/sitemap.xml
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;urlset</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xmlns=</span><span class="s">"http://www.sitemaps.org/schemas/sitemap/0.9"</span> <span class="na">xmlns:image=</span><span class="s">"http://www.google.com/schemas/sitemap-image/1.1"</span> <span class="na">xmlns:video=</span><span class="s">"http://www.google.com/schemas/sitemap-video/1.1"</span> <span class="na">xmlns:news=</span><span class="s">"http://www.google.com/schemas/sitemap-news/0.9"</span> <span class="na">xmlns:mobile=</span><span class="s">"http://www.google.com/schemas/sitemap-mobile/1.0"</span> <span class="na">xmlns:pagemap=</span><span class="s">"http://www.google.com/schemas/sitemap-pagemap/1.0"</span> <span class="na">xmlns:xhtml=</span><span class="s">"http://www.w3.org/1999/xhtml"</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>https://matcharoo.app<span class="nt">&lt;/loc&gt;</span>
+    <span class="nt">&lt;lastmod&gt;</span>2024-02-16T13:06:13+02:00<span class="nt">&lt;/lastmod&gt;</span>
+    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
+    <span class="nt">&lt;priority&gt;</span>1.0<span class="nt">&lt;/priority&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>https://matcharoo.app/terms<span class="nt">&lt;/loc&gt;</span>
+    <span class="nt">&lt;lastmod&gt;</span>2024-02-16T13:06:13+02:00<span class="nt">&lt;/lastmod&gt;</span>
+    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
+    <span class="nt">&lt;priority&gt;</span>0.5<span class="nt">&lt;/priority&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>https://matcharoo.app/privacy<span class="nt">&lt;/loc&gt;</span>
+    <span class="nt">&lt;lastmod&gt;</span>2024-02-16T13:06:13+02:00<span class="nt">&lt;/lastmod&gt;</span>
+    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
+    <span class="nt">&lt;priority&gt;</span>0.5<span class="nt">&lt;/priority&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/urlset&gt;</span>
+</code></pre></div></div>
+
+<p>Everything worked as expected. Our app now supports sitemaps.</p>
+
+<h2 id="configuring-sitemaps-to-work-with-kamal">Configuring sitemaps to work with Kamal</h2>
+
+<p>It would be tedious to always refresh sitemaps manually with <code class="language-plaintext highlighter-rouge">bin/rails
+sitemap:refresh</code> before you deploy your app. If you deploy your app with Kamal,
+there’s a simple solution to that problem.</p>
+
+<p>Kamal supports <a href="https://kamal-deploy.org/docs/hooks">hooks</a>, and we can leverage
+them for this task. If you ran <code class="language-plaintext highlighter-rouge">kamal init</code> to set up Kamal, then the following
+sample hooks were created for you at the root of your project:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.kamal/hooks/post-deploy.sample</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.kamal/hooks/post-traefik-reboot.sample</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.kamal/hooks/pre-build.sample</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.kamal/hooks/pre-connect.sample</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.kamal/hooks/pre-deploy.sample</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.kamal/hooks/pre-traefik-reboot.sample</code></li>
+</ul>
+
+<p>We are interested in the <code class="language-plaintext highlighter-rouge">.kamal/hooks/pre-build.sample</code> hook.</p>
+
+<p>Activate the hook by changing its filename:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv</span> .kamal/hooks/pre-build.sample .kamal/hooks/pre-build
+</code></pre></div></div>
+
+<p>If you don’t have <code class="language-plaintext highlighter-rouge">.kamal/hooks/pre-build.sample</code>, then simply create it with:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> .kamal/hooks <span class="o">&amp;&amp;</span> <span class="nb">touch</span> .kamal/hooks/pre-build
+</code></pre></div></div>
+
+<p>Open the file and add the sitemap generation command there:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="nv">RAILS_MASTER_KEY</span><span class="o">=</span><span class="sb">`</span><span class="nb">cat </span>config/master.key<span class="sb">`</span> bin/rails sitemap:refresh
+</code></pre></div></div>
+
+<p>Note: We need to provide <code class="language-plaintext highlighter-rouge">RAILS_MASTER_KEY</code> because otherwise, the run will fail with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ActiveSupport::MessageEncryptor::InvalidMessage
+</code></pre></div></div>
+
+<p>Now, when you deploy your app, this line will be run before the Docker image is
+built.</p>
+
+<p>Important: Make sure your sitemap is not ignored in <code class="language-plaintext highlighter-rouge">.dockerignore</code>.</p>
+
+<h3 id="deploying-your-sitemap-to-the-server">Deploying your sitemap to the server</h3>
+
+<p>We are done with all the configuration. Deploy your app as you normally do!</p>
+
+<p>In my case, the command is the following:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kamal deploy <span class="nt">-d</span> production
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Running the pre-build hook...
+  INFO <span class="o">[</span>11d0414b] Running /usr/bin/env .kamal/hooks/pre-build as kyrylo@localhost
+ DEBUG <span class="o">[</span>11d0414b] Command: <span class="o">(</span> <span class="nb">export </span><span class="nv">KAMAL_RECORDED_AT</span><span class="o">=</span><span class="s2">"2024-02-16T11:33:05Z"</span> <span class="nv">KAMAL_PERFORMER</span><span class="o">=</span><span class="s2">"kyrylo"</span> <span class="nv">KAMAL_DESTINATION</span><span class="o">=</span><span class="s2">"production"</span> <span class="nv">KAMAL_VERSION</span><span class="o">=</span><span class="s2">"5ca783a66ab25181e3a7554ace7a81ec6fe129d7_uncommitted_6df7cbededce5a20"</span> <span class="nv">KAMAL_SERVICE_VERSION</span><span class="o">=</span><span class="s2">"matcharoo@5ca783a66ab25181e3a7554ace7a81ec6fe129d7_uncommitted_6df7cbededce5a20"</span> <span class="nv">KAMAL_HOSTS</span><span class="o">=</span><span class="s2">"x.x.x.x,x.x.x.x"</span> <span class="nv">KAMAL_COMMAND</span><span class="o">=</span><span class="s2">"deploy"</span> <span class="p">;</span> /usr/bin/env .kamal/hooks/pre-build <span class="o">)</span>
+ DEBUG <span class="o">[</span>11d0414b]       In <span class="s1">'/Users/kyrylo/Code/kyrylo/matcharoo/public/'</span>:
+ DEBUG <span class="o">[</span>11d0414b]       + sitemap.xml.gz                                        1964 links /    11.9 KB
+ DEBUG <span class="o">[</span>11d0414b]       Sitemap stats: 1,964 links / 1 sitemaps / 0m00s
+ DEBUG <span class="o">[</span>11d0414b]
+ DEBUG <span class="o">[</span>11d0414b]       Pinging with URL <span class="s1">'https://matcharoo.app/sitemap.xml.gz'</span>:
+ DEBUG <span class="o">[</span>11d0414b]       Ping failed <span class="k">for </span>Google: <span class="c">#&lt;OpenURI::HTTPError: 404 Sitemaps ping is deprecated. See https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping.&gt; (URL http://www.google.com/webmasters/tools/ping?sitemap=https%3A%2F%2Fmatcharoo.app%2Fsitemap.xml.gz)</span>
+  INFO <span class="o">[</span>11d0414b] Finished <span class="k">in </span>2.379 seconds with <span class="nb">exit </span>status 0 <span class="o">(</span>successful<span class="o">)</span><span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Now that our app is deployed, check the sitemap at <code class="language-plaintext highlighter-rouge">https://matcharoo.app/sitemap.xml.gz</code>.</p>
+
+<p>Download the file, unzip it, and make sure the content is what you expect it to
+be.</p>
+
+<h2 id="submitting-your-sitemap-to-the-google-search-console">Submitting your sitemap to the Google Search Console</h2>
+
+<p>Navigate to the Search Console, find the “Indexing / Sitemaps” section, and add
+your gzipped sitemap there:</p>
+
+<p><img src="https://imgur.com/c1Lw7up.png" alt="Submitted sitemap for matcharoo.app" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Now, whenever you deploy your app, or edit <code class="language-plaintext highlighter-rouge">config/sitemap.rb</code> to add new
+entries to the sitemap, your changes will automatically be published under
+<code class="language-plaintext highlighter-rouge">/sitemap.xml.gz</code>, and Google crawlers will be fetching them periodically.</p>
+
+<p>Good job!</p>
+
+<p>You can discuss this article on X/Twitter:
+<br />
+<a href="https://twitter.com/kyrylosilin/status/1758463466665377958">https://twitter.com/kyrylosilin/status/1758463466665377958</a></p>
+
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/rails/overmind/2024/02/20/using-overmind-with-foreman-as-a-fallback-for-rails-7-1-apps.html" rel="next" title="Using Overmind with Foreman as a fallback for Rails 7.1+ apps">Using Overmind with Foreman as a fallback for Rails 7.1+ apps</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html" rel="prev" title="How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal">How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-02-17T10:08:25+02:00">February 17, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

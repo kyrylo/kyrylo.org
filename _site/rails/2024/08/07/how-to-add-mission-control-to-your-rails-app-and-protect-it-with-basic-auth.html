@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to add Mission Control to your Rails app and protect it with Basic Auth | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="How to add Mission Control to your Rails app and protect it with Basic Auth" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mission Control is a powerful tool for monitoring and managing your Rails jobs in real-time. It offers insights into your app’s performance and errors. In this tutorial, I’ll show you how to integrate Mission Control into your Rails app and secure it with Basic Auth." />
+<meta property="og:description" content="Mission Control is a powerful tool for monitoring and managing your Rails jobs in real-time. It offers insights into your app’s performance and errors. In this tutorial, I’ll show you how to integrate Mission Control into your Rails app and secure it with Basic Auth." />
+<link rel="canonical" href="http://localhost:4000/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html" />
+<meta property="og:url" content="http://localhost:4000/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://i.imgur.com/hGcMSGV.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-08-07T13:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://i.imgur.com/hGcMSGV.png" />
+<meta property="twitter:title" content="How to add Mission Control to your Rails app and protect it with Basic Auth" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2024-08-07T18:33:06+03:00","datePublished":"2024-08-07T13:00:00+03:00","description":"Mission Control is a powerful tool for monitoring and managing your Rails jobs in real-time. It offers insights into your app’s performance and errors. In this tutorial, I’ll show you how to integrate Mission Control into your Rails app and secure it with Basic Auth.","headline":"How to add Mission Control to your Rails app and protect it with Basic Auth","image":"https://i.imgur.com/hGcMSGV.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html"},"url":"http://localhost:4000/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">How to add Mission Control to your Rails app and protect it with Basic Auth</h1>
+
+    <p>
+      <time datetime="2024-08-07T13:00:00+03:00" itemprop="datePublished">
+        Aug 7, 2024
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p><img src="https://i.imgur.com/hGcMSGV.png" style="margin-bottom: 1rem; width: 75%;" alt="Mission Control dashboard" />
+<br />
+<a href="https://github.com/rails/mission_control-jobs">Mission Control</a> is a powerful
+tool for monitoring and managing your Rails jobs in real-time. It offers
+insights into your app’s performance and errors. In this tutorial, I’ll show you
+how to integrate Mission Control into your Rails app and secure it with Basic
+Auth.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>To get started, add the Mission Control gem to your Rails application’s
+<code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle add mission_control-jobs
+</code></pre></div></div>
+
+<p>Next, you need to mount Mission Control’s engine in your routes.rb file. This
+will make the Mission Control UI accessible from your application:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
+
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">mount</span> <span class="no">MissionControl</span><span class="o">::</span><span class="no">Jobs</span><span class="o">::</span><span class="no">Engine</span><span class="p">,</span> <span class="ss">at: </span><span class="s2">"/jobs"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>With this configuration, you can now access Mission Control’s UI at <code class="language-plaintext highlighter-rouge">/jobs</code>,
+where you can browse queues, inspect jobs, and manage failed jobs.</p>
+
+<h2 id="securing-mission-control-with-basic-auth">Securing Mission Control with Basic Auth</h2>
+
+<p>To protect the Mission Control interface, it’s a good idea to add
+authentication. By default, Mission Control’s controllers extend your
+application’s <code class="language-plaintext highlighter-rouge">ApplicationController</code>. If your app doesn’t enforce
+authentication, <strong>anyone can access</strong> <a href="http://localhost:3000/jobs"><code class="language-plaintext highlighter-rouge">/jobs</code></a>. To
+secure this, you can specify a different base controller class that includes
+authentication.</p>
+
+<p>First, create an <code class="language-plaintext highlighter-rouge">MissionControlController</code> with <a href="https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html">basic authentication</a>:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/mission_control_controller.rb</span>
+
+<span class="k">class</span> <span class="nc">MissionControlController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="n">http_basic_authenticate_with</span><span class="p">(</span>
+    <span class="ss">name: </span><span class="s2">"admin"</span><span class="p">,</span>
+    <span class="ss">password: </span><span class="s2">"admin"</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Next, configure Mission Control to use this controller as its base class. Add
+the following to your <code class="language-plaintext highlighter-rouge">config/application.rb</code>:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/application.rb</span>
+
+<span class="n">config</span><span class="p">.</span><span class="nf">mission_control</span><span class="p">.</span><span class="nf">jobs</span><span class="p">.</span><span class="nf">base_controller_class</span> <span class="o">=</span> <span class="s2">"MissionControlController"</span>
+</code></pre></div></div>
+
+<p>Alternatively, you can add this configuration to a specific environment file,
+like <code class="language-plaintext highlighter-rouge">config/environments/production.rb</code>, to only enable authentication in
+production.</p>
+
+<p>Now, when you access
+<a href="`http://localhost:3000/jobs`"><code class="language-plaintext highlighter-rouge">/jobs</code></a>, you’ll be prompted
+to enter the username and password you specified in the
+<code class="language-plaintext highlighter-rouge">MissionControlController</code>.</p>
+
+<h3 id="customizing-basic-auth">Customizing Basic Auth</h3>
+
+<p>It’s recommended to use environment variables or Rails credentials for the
+username and password instead of hardcoding them in your code.</p>
+
+<p>I personally prefer using Rails credentials for this purpose. You can generate
+the credentials file by running:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/rails credentials:edit
+</code></pre></div></div>
+
+<p>Then, add the following to your <code class="language-plaintext highlighter-rouge">config/credentials.yml.enc</code>:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mission_control</span><span class="pi">:</span>
+  <span class="na">username</span><span class="pi">:</span> <span class="s">admin</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s">admin</span>
+</code></pre></div></div>
+
+<p>And update your <code class="language-plaintext highlighter-rouge">MissionControlController</code> to use these credentials:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MissionControlController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+  <span class="c1"># When you deploy to production, the `assets:precompile` step will fail</span>
+  <span class="c1"># without this check.</span>
+  <span class="c1"># https://fly.io/docs/rails/getting-started/existing/#access-to-environment-variables-at-build-time</span>
+  <span class="k">if</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">credentials</span><span class="p">.</span><span class="nf">mission_control</span>
+    <span class="n">http_basic_authenticate_with</span><span class="p">(</span>
+      <span class="ss">name: </span><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">credentials</span><span class="p">.</span><span class="nf">mission_control</span><span class="p">[</span><span class="ss">:username</span><span class="p">],</span>
+      <span class="ss">password: </span><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">credentials</span><span class="p">.</span><span class="nf">mission_control</span><span class="p">[</span><span class="ss">:password</span><span class="p">]</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Adding Mission Control to your Rails app is a great way to monitor and manage
+your background jobs. By securing it with Basic Auth, you can ensure that only
+authorized users can access the Mission Control interface. Give it a try and
+see how it can help you keep your app running smoothly!</p>
+
+<p>For more information and advanced configurations, refer to the
+<a href="https://github.com/rails/mission_control-jobs">official documentation</a>.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html" rel="next" title="Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024">Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html" rel="prev" title="I built a flag-matching game in 6 days">I built a flag-matching game in 6 days</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2024-08-07T18:33:06+03:00">August 07, 2024</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

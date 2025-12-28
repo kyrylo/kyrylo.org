@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>I’m a proud CRUD monkey | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="I’m a proud CRUD monkey" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Web pages aren’t that different from what they were in the late ’90s, early 2000s. They’re still just forms. They still just write to databases. A lot of people, I think, are very uncomfortable with the fact that they are essentially CRUD monkeys. They just make systems that create, read, update, or delete rows in a database and they have to compensate for that existential dread by over complicating things. &mdash; DHH, Lex Fridman Podcast #474 (2025)" />
+<meta property="og:description" content="Web pages aren’t that different from what they were in the late ’90s, early 2000s. They’re still just forms. They still just write to databases. A lot of people, I think, are very uncomfortable with the fact that they are essentially CRUD monkeys. They just make systems that create, read, update, or delete rows in a database and they have to compensate for that existential dread by over complicating things. &mdash; DHH, Lex Fridman Podcast #474 (2025)" />
+<link rel="canonical" href="http://localhost:4000/software/2025/08/17/im-a-proud-crud-monkey.html" />
+<meta property="og:url" content="http://localhost:4000/software/2025/08/17/im-a-proud-crud-monkey.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-17T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/kyrylo-silin@2x.webp" />
+<meta property="twitter:title" content="I’m a proud CRUD monkey" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2025-08-17T12:42:50+03:00","datePublished":"2025-08-17T00:00:00+03:00","description":"Web pages aren’t that different from what they were in the late ’90s, early 2000s. They’re still just forms. They still just write to databases. A lot of people, I think, are very uncomfortable with the fact that they are essentially CRUD monkeys. They just make systems that create, read, update, or delete rows in a database and they have to compensate for that existential dread by over complicating things. &mdash; DHH, Lex Fridman Podcast #474 (2025)","headline":"I’m a proud CRUD monkey","image":"http://localhost:4000/assets/images/kyrylo-silin@2x.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/2025/08/17/im-a-proud-crud-monkey.html"},"url":"http://localhost:4000/software/2025/08/17/im-a-proud-crud-monkey.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+  <script data-site="KDDVSIV" src="https://analytics.kyrylo.org/script.js" defer></script>
+
+  <style>
+    body {
+      font: 16px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    main,
+    footer {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    code {
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">I&#39;m a proud CRUD monkey</h1>
+
+    <p>
+      <time datetime="2025-08-17T00:00:00+03:00" itemprop="datePublished">
+        Aug 17, 2025
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+          <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+        </picture>
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      &middot;
+      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <blockquote cite="https://www.youtube.com/watch?v=vagyIcmIGOQ">
+  <p>
+    Web pages aren’t that different from what they were in the late ’90s, early
+    2000s. They’re still just forms. They still just write to databases. A lot
+    of people, I think, are very uncomfortable with the fact that they are
+    essentially CRUD monkeys. They just make systems that create, read, update,
+    or delete rows in a database and they have to compensate for that
+    existential dread by over complicating things.
+  </p>
+  <p>
+    &mdash; <a href="https://www.youtube.com/watch?v=vagyIcmIGOQ" target="_blank">
+      DHH, Lex Fridman Podcast #474 (2025)
+    </a>
+  </p>
+</blockquote>
+
+<p>When I started back in 2010, things weren’t easy. We had to:</p>
+
+<ul>
+  <li>Worry about Internet Explorer 6.</li>
+  <li>Round our corners with transparent PNGs.</li>
+  <li>Mess with floats and clearfix hacks because Flexbox and Grid didn’t exist yet.</li>
+</ul>
+
+<p>On top of that:</p>
+
+<ul>
+  <li>Vendor prefixes (<code class="language-plaintext highlighter-rouge">-moz-</code>, <code class="language-plaintext highlighter-rouge">-webkit-</code>, <code class="language-plaintext highlighter-rouge">-ms-</code>) were everywhere.</li>
+  <li>CSS couldn’t center a div.</li>
+  <li>Responsive design was just being born.</li>
+  <li>jQuery was practically mandatory.</li>
+  <li>Browsers were dumb.</li>
+</ul>
+
+<p>We squeezed every kilobyte out of spritesheets to keep pages light. And through
+it all, <a href="https://x.com/kyrylosilin/status/1817825951864000573">Chrome was the new kid on the
+block</a> - marketed as
+blazingly fast compared to the dinosaurs. We were CRUD monkeys, locked in the
+browser cage, hoping for the best.</p>
+
+<h2 id="what-weve-achieved-in-15-years">What we’ve achieved in 15 years</h2>
+
+<p>Fast forward to 2025, things are <em>a whole lot smoother</em>. We get to:</p>
+
+<ul>
+  <li>Forget about Internet Explorer entirely (<em>hello Safari, though</em>)</li>
+  <li>Round our corners with a single border-radius.</li>
+  <li>Use Flexbox and Grid instead of floats and clearfix hacks.</li>
+</ul>
+
+<p>On top of that:</p>
+
+<ul>
+  <li>Vendor prefixes are mostly history.</li>
+  <li><a href="https://lyra.horse/css-clicker/">CSS is a programming language</a>.</li>
+  <li>Responsive design is second nature with modern CSS units and container queries.</li>
+  <li>jQuery is optional - frameworks and vanilla JS handle almost everything.</li>
+  <li>Browsers are basically operating systems now.</li>
+</ul>
+
+<p>But there’s more!</p>
+
+<ul>
+  <li><a href="https://justfuckingusehtml.com">Modern HTML features</a> (native dialogs, popups, new inputs), make building interactive UIs simpler and cleaner.</li>
+  <li>WebAssembly runs high-performance code in any language.</li>
+  <li>HTTP/2 and HTTP/3 deliver assets at lightning speed.</li>
+  <li>Fast internet makes “waiting for images to load” a distant memory.</li>
+</ul>
+
+<p>Boy, that’s a lot of improvement over 15 years of web development. Heck, I can’t
+even track it all - didn’t list half the improvements. CRUD monkeys now have the
+tools to build blazingly fast websites and apps. Everything’s perfect in 2025,
+right?</p>
+
+<h2 id="the-sad-reality-of-2025">The sad reality of 2025</h2>
+
+<p>Despite all this epic progress, websites in 2025 feel <em>slower</em> than ever. It’s
+nuts - landing pages now shamelessly slurp down <a href="https://x.com/kyrylosilin/status/1956979517127360783">25 MB+ of
+data</a> like it’s no big
+deal. The browser revolution promised warp speed, but CRUD monkeys, thinking
+they’ve busted out of their cage, keep stalling the real progress that
+simplicity could bring.</p>
+
+<p>Go back to <a href="https://www.spacejam.com/">old-school websites</a> - they load in a
+blink on today’s internet and scale like a dream. Sure, those were just HTML
+pages, and now we’ve got dynamic apps that need more juice. But check this:
+SQLite in 2015 could handle <a href="https://www.sqlite.org/whentouse.html">400K to 500K HTTP requests a
+day</a>, and with a simple CPU bump that
+number could probably be <em>even</em> greater. You might not even need PostgreSQL for
+your dynamic web app! How awesome is that?</p>
+
+<p>Now, with all the compute power in the world, CRUD monkeys have turned into
+gorilla wizards, tossing CPU and GPU cycles into a black hole. Their web apps
+act like they’re the only show in town, draining your battery like a hamster
+gone wild on a wheel. The maintenance that takes a brigade of DevOps, Senior
+Frontend Router Engineers, Level 1 Build Specialists is the expected normality
+in 2025.</p>
+
+<h2 id="how-did-we-get-so-miserable">How did we get so miserable?</h2>
+
+<p>The gap between users and databases got stupidly wide. What used to be a
+straight write or read to the DB is now a maze of layers, spawning fancy job
+titles. We went from webmasters to this circus, even though our tools got <em>much</em>
+simpler. It’s absurd - name me another job that celebrates complexity like ours!</p>
+
+<p>There’s a reason to this. <strong>Simplicity is hard to sell</strong>. You can’t hawk a
+course on building a page like my homepage. It’d be a 1-hour lesson if you’re a
+total newbie. Learn HTML, and you’re done. What else is there to milk? Instead,
+we’ve cooked up complex tools that take weeks (or months) to master, promising
+we’re more than CRUD monkeys. That morning mirror flex feels good, huh?</p>
+
+<p>Now, everyone’s a prize exhibit in the FAANG zoo, because mastering this tangled
+mess is what opens their gates. Being just a CRUD monkey doesn’t feel fun
+anymore. If this is what “progress” looks like, I don’t want any part of it.</p>
+
+<h2 id="what-should-we-do-about-this">What should we do about this</h2>
+
+<p>We must fight for a fast web, or it’ll remain a total mess. But the problem is,
+you can’t just write a blog post shouting, “Yo, my site uses three CSS classes,
+and here’s why it’s awesome!” - nobody cares. Still, simplicity makes life easier,
+and if we embrace it, everyone benefits.</p>
+
+<p>There’s no universal pill to fix this. We can’t magically unlearn years of bloat
+and complexity. What we <em>can</em> do, though, is call out the bad practices that waste
+CPU cycles and leave our users in tears.</p>
+
+<p>As a developer, here are things to remember when you publish something on the
+web:</p>
+
+<ol>
+  <li>Be a CRUD monkey. Monkey see, monkey do.</li>
+  <li>Users are not hostages of your inflated dev ego. Don’t make them suffer of your choices.</li>
+  <li>There are other apps and websites running alongside yours. Don’t act like you’re the centerpiece.</li>
+  <li>Every kilobyte counts. Don’t send them on a download pilgrimage for a simple action.</li>
+  <li>Performance is a feature. Fast sites feel thoughtful; slow sites feel careless.</li>
+  <li>Mobile users exist. Treat them like humans, not afterthoughts.</li>
+  <li>Not everyone has fiber. Some are still on 2G. Respect their time.</li>
+  <li>Less is more. If you can do it with fewer libraries, fewer animations, fewer requests - do it.</li>
+  <li>Accessibility isn’t optional. If someone can’t use your site, it’s broken, not “advanced”.</li>
+  <li>Your site doesn’t need to impress Google’s Chrome DevTools. It needs to work for humans.</li>
+</ol>
+
+<p>Some people actively prove that a fast web is possible. Here are a few examples
+(I’m not affiliated):</p>
+
+<ul>
+  <li><a href="https://512kb.club/">https://512kb.club/</a></li>
+  <li><a href="https://1mb.club/about">https://1mb.club/about</a></li>
+</ul>
+
+<p>SaaS doesn’t have to feel enterprisey either. Here’s the fastest GitHub
+alternative you’ve probably never heard of:</p>
+
+<ul>
+  <li><a href="https://sr.ht/">https://sr.ht/</a></li>
+</ul>
+
+<p>The spirit of these projects deeply resonates with my values. Just because you
+have keys from the zoo doesn’t mean you need a lion to guard your mailbox.</p>
+
+<p>The web doesn’t have to be a bloated beast. <strong>Be the change</strong>. Strip it down, speed
+it up, and build something that respects users’ time and sanity. <em>I’m a proud
+CRUD monkey</em>, and I’m betting you can be too. Let’s make the web fast again - together.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+    <div>
+      Next: <a href="/software/2025/08/21/why-do-software-developers-love-complexity.html" rel="next" title="Why do software developers love complexity?">Why do software developers love complexity?</a>
+    </div>
+  
+  
+    <div>
+      Prev: <a href="/software/2025/08/07/not-everything-needs-an-update.html" rel="prev" title="Not everything needs an update">Not everything needs an update</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
+    <p><a href="/feed.xml">ATOM/RSS site feed</a></p>
+    <p>Last modified: <time datetime="2025-08-17T12:42:50+03:00">August 17, 2025</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

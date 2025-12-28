@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Don't pull my strings (literally)</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="When puns are taken too literally. Click and drag to pull the strings.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Don't pull my strings">
+  <meta property="og:title" content="Don't pull my strings">
+  <meta property="og:description" content="When puns are taken too literally. Click and drag to pull the strings.">
+  <meta property="og:image" content="https://kyrylo.org/assets/images/dont-pull-my-strings/og.png?v=149ed35">
+  <meta property="og:url" content="https://kyrylo.org/dont-pull-my-strings/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Don't pull my strings">
+  <meta name="twitter:description" content="When puns are taken too literally. Click and drag to pull the strings.">
+  <meta name="twitter:image" content="https://kyrylo.org/assets/images/dont-pull-my-strings/og.png?v=149ed35">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+
+  <link rel="canonical" href="https://kyrylo.org/dont-pull-my-strings/">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/dont-pull-my-strings/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/dont-pull-my-strings/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/dont-pull-my-strings/favicons/apple-touch-icon.png" />
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>
+    window.plausible = window.plausible || function () {
+      (window.plausible.q = window.plausible.q || []).push(arguments)
+    }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Comic Neue';
+      src: url('/assets/fonts/ComicNeue-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0064E6;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', 'Marker Felt', sans-serif;
+      font-weight: bold;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #C2F6FF;
+      font-size: 14px;
+      transition: opacity 0.5s;
+      white-space: nowrap;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .hint.hidden {
+      opacity: 0;
+    }
+
+    .author-block {
+      position: fixed;
+      top: 0;
+      left: 10px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 0px 0px 8px 8px;
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 0.6;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      text-decoration: none;
+      color: #1e3c72;
+      z-index: 20;
+    }
+
+    .author-block:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
+
+    .author {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .author:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 600px) {
+      .hint {
+        font-size: 12px;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://kyrylo.org/" class="author-block" rel="author">
+    by <span class="author">Kyrylo Silin</span>
+  </a>
+  <canvas id="canvas"></canvas>
+  <h1>Don't pull my strings</h1>
+  <div class="hint" id="hint">Click and drag to pull the strings</div>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const hint = document.getElementById('hint');
+    let width, height;
+    let mouseX = 0, mouseY = 0;
+    let isDragging = false;
+    let hasInteracted = false;
+
+    const gravity = 0.5;
+    const damping = 0.99;
+    const stiffness = 1.0;
+    const numSegments = 20;
+    const segmentLength = 10;
+    const attachOffset = 80;
+    const leftPoints = [];
+    const rightPoints = [];
+
+    let fixedY;
+    let fixedLeftX, fixedRightX;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      const centerX = width / 2;
+      fixedY = height / 2 - 250;
+      fixedLeftX = centerX - 50;
+      fixedRightX = centerX + 50;
+      initializePoints();
+    }
+
+    function initializePoints() {
+      leftPoints.length = 0;
+      rightPoints.length = 0;
+      const initLeftEndX = width / 2 - attachOffset;
+      const initRightEndX = width / 2 + attachOffset;
+      const initEndY = height / 2;
+      for (let i = 0; i < numSegments; i++) {
+        const t = i / (numSegments - 1);
+        leftPoints.push({
+          x: fixedLeftX * (1 - t) + initLeftEndX * t,
+          y: fixedY * (1 - t) + initEndY * t,
+          oldx: fixedLeftX * (1 - t) + initLeftEndX * t,
+          oldy: fixedY * (1 - t) + initEndY * t
+        });
+        rightPoints.push({
+          x: fixedRightX * (1 - t) + initRightEndX * t,
+          y: fixedY * (1 - t) + initEndY * t,
+          oldx: fixedRightX * (1 - t) + initRightEndX * t,
+          oldy: fixedY * (1 - t) + initEndY * t
+        });
+      }
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    canvas.addEventListener('mousedown', (e) => {
+      handleStart(e.clientX, e.clientY);
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      updateMouse(e.clientX, e.clientY);
+      updateCursor();
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      isDragging = false;
+      // Reset velocities to prevent jerk
+      leftPoints.forEach(p => {
+        p.oldx = p.x;
+        p.oldy = p.y;
+      });
+      rightPoints.forEach(p => {
+        p.oldx = p.x;
+        p.oldy = p.y;
+      });
+      updateCursor();
+    });
+
+    // Touch events
+    canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      handleStart(touch.clientX, touch.clientY);
+    });
+
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      if (isDragging) {
+        const touch = e.touches[0];
+        updateMouse(touch.clientX, touch.clientY);
+      }
+      updateCursor();
+    });
+
+    canvas.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      isDragging = false;
+      // Reset velocities to prevent jerk
+      leftPoints.forEach(p => {
+        p.oldx = p.x;
+        p.oldy = p.y;
+      });
+      rightPoints.forEach(p => {
+        p.oldx = p.x;
+        p.oldy = p.y;
+      });
+    });
+
+    function handleStart(clientX, clientY) {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = clientX - rect.left;
+      mouseY = clientY - rect.top;
+      // Check if near the text center
+      const center = getTextCenter();
+      const distance = Math.sqrt((mouseX - center.x) ** 2 + (mouseY - center.y) ** 2);
+      if (distance < 100) {
+        isDragging = true;
+        hasInteracted = true;
+        hint.classList.add('hidden');
+      }
+    }
+
+    function updateMouse(clientX, clientY) {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = clientX - rect.left;
+      mouseY = clientY - rect.top;
+    }
+
+    function updateCursor() {
+      const center = getTextCenter();
+      const distance = Math.sqrt((mouseX - center.x) ** 2 + (mouseY - center.y) ** 2);
+      if (distance < 100) {
+        document.body.style.cursor = isDragging ? 'grabbing' : 'grab';
+      } else {
+        document.body.style.cursor = 'default';
+      }
+    }
+
+    function updatePhysics(points) {
+      for (let i = 1; i < points.length; i++) {
+        const p = points[i];
+        const vx = (p.x - p.oldx) * damping;
+        const vy = (p.y - p.oldy) * damping;
+        p.oldx = p.x;
+        p.oldy = p.y;
+        p.x += vx;
+        p.y += vy + gravity;
+      }
+    }
+
+    function applyConstraints(points) {
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1];
+        const curr = points[i];
+        const dx = curr.x - prev.x;
+        const dy = curr.y - prev.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const diff = (segmentLength - dist) / dist * 0.5 * stiffness;
+        const offsetX = dx * diff;
+        const offsetY = dy * diff;
+        curr.x += offsetX;
+        curr.y += offsetY;
+        prev.x -= offsetX;
+        prev.y -= offsetY;
+      }
+    }
+
+    function applyBarConstraint() {
+      const leftEnd = leftPoints[leftPoints.length - 1];
+      const rightEnd = rightPoints[rightPoints.length - 1];
+      const dx = rightEnd.x - leftEnd.x;
+      const dy = rightEnd.y - leftEnd.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const targetDist = 2 * attachOffset;
+      const diff = (targetDist - dist) / dist * 0.5;
+      const offsetX = dx * diff;
+      const offsetY = dy * diff;
+      rightEnd.x += offsetX;
+      rightEnd.y += offsetY;
+      leftEnd.x -= offsetX;
+      leftEnd.y -= offsetY;
+    }
+
+    function getTextCenter() {
+      const leftEnd = leftPoints[leftPoints.length - 1];
+      const rightEnd = rightPoints[rightPoints.length - 1];
+      return {
+        x: (leftEnd.x + rightEnd.x) / 2,
+        y: (leftEnd.y + rightEnd.y) / 2
+      };
+    }
+
+    function drawRope(points) {
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1];
+        const curr = points[i];
+        const midX = (prev.x + curr.x) / 2;
+        const midY = (prev.y + curr.y) / 2;
+        ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+      }
+      ctx.stroke();
+    }
+
+    function drawAttachmentPoints() {
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(fixedLeftX, fixedY, 6, 0, Math.PI * 2);
+      ctx.arc(fixedRightX, fixedY, 6, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawStrings() {
+      drawRope(leftPoints);
+      drawRope(rightPoints);
+
+      // Draw attachment points
+      drawAttachmentPoints();
+
+      // Draw the text
+      const leftEnd = leftPoints[leftPoints.length - 1];
+      const rightEnd = rightPoints[rightPoints.length - 1];
+      const textX = (leftEnd.x + rightEnd.x) / 2;
+      const textY = (leftEnd.y + rightEnd.y) / 2;
+      const dx = rightEnd.x - leftEnd.x;
+      const dy = rightEnd.y - leftEnd.y;
+      const angle = Math.atan2(dy, dx);
+
+      // Calculate velocity for jelly effect (average of both ends)
+      const vxLeft = leftEnd.x - leftEnd.oldx;
+      const vyLeft = leftEnd.y - leftEnd.oldy;
+      const vxRight = rightEnd.x - rightEnd.oldx;
+      const vyRight = rightEnd.y - rightEnd.oldy;
+      const avgVx = (vxLeft + vxRight) / 2;
+      const avgVy = (vyLeft + vyRight) / 2;
+      const speed = Math.sqrt(avgVx * avgVx + avgVy * avgVy);
+      let scaleX = 1 + (Math.abs(avgVy) / 20) * 0.1;
+      let scaleY = 1 + (Math.abs(avgVx) / 20) * 0.1;
+      scaleX = Math.min(scaleX, 1.2);
+      scaleY = Math.min(scaleY, 1.2);
+
+      ctx.save();
+      ctx.translate(textX, textY);
+      ctx.rotate(angle);
+      ctx.scale(scaleX, scaleY);
+
+      // Text shadow
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+      ctx.font = '32px "Comic Neue", "Comic Sans MS", "Chalkboard SE", "Marker Felt", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText("don't pull my strings", 3, 3);
+
+      // Main text
+      ctx.fillStyle = '#fff';
+      ctx.fillText("don't pull my strings", 0, 0);
+
+      ctx.restore();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      if (isDragging) {
+        const leftEnd = leftPoints[leftPoints.length - 1];
+        const rightEnd = rightPoints[rightPoints.length - 1];
+        const currentCenterX = (leftEnd.x + rightEnd.x) / 2;
+        const currentCenterY = (leftEnd.y + rightEnd.y) / 2;
+        const dx = mouseX - currentCenterX;
+        const dy = mouseY - currentCenterY;
+
+        leftEnd.x += dx;
+        leftEnd.y += dy;
+        rightEnd.x += dx;
+        rightEnd.y += dy;
+        leftEnd.oldx = leftEnd.x;
+        leftEnd.oldy = leftEnd.y;
+        rightEnd.oldx = rightEnd.x;
+        rightEnd.oldy = rightEnd.y;
+
+        for (let iter = 0; iter < 10; iter++) {
+          applyConstraints(leftPoints);
+          applyConstraints(rightPoints);
+          applyBarConstraint();
+        }
+      } else {
+        updatePhysics(leftPoints);
+        updatePhysics(rightPoints);
+        for (let iter = 0; iter < 10; iter++) {
+          applyConstraints(leftPoints);
+          applyConstraints(rightPoints);
+          applyBarConstraint();
+        }
+      }
+
+      leftPoints[0].x = fixedLeftX;
+      leftPoints[0].y = fixedY;
+      rightPoints[0].x = fixedRightX;
+      rightPoints[0].y = fixedY;
+
+      drawStrings();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+
+</html>
