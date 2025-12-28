@@ -1,0 +1,19 @@
+service: site
+image: site
+
+servers:
+  - site.example.com
+
+proxy:
+  ssl: true
+  host: site.example.com
+
+env:
+  secret:
+    - GIT_URL
+
+registry:
+  server: localhost:5555
+
+builder:
+  arch: amd64
