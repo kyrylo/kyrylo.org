@@ -7,7 +7,28 @@
 
 
         <!-- Custom HTML head -->
-
+        <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+        <script>
+          window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+        </script>
+        
+        <script>
+          if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            const script = document.createElement('script');
+            script.defer = true;
+            script.src = 'https://analytics.kyrylo.org/script.js';
+            script.dataset.site = 'KDDVSIV';
+            document.head.appendChild(script);
+          }
+        </script>
+        
+        <meta property="og:title" content="🇵🇭 Manila, Philippines - Where I&#x27;ve been | Kyrylo Silin - Where I've been | Kyrylo Silin" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png" />
+        <meta property="og:image:alt" content="Kyrylo Silin" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
