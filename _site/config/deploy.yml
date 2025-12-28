@@ -1,0 +1,19 @@
+service: kyrylo.org
+image: kyrylo.org
+
+servers:
+  - 188.245.75.139
+
+proxy:
+  ssl: true
+  host: kyrylo.org
+
+env:
+  secret:
+    - GIT_URL
+
+registry:
+  server: localhost:5555
+
+builder:
+  arch: amd64

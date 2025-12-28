@@ -3,3 +3,5 @@
 .jekyll-metadata
 vendor
 .DS_Store
+.env
+/config/deploy.yml
