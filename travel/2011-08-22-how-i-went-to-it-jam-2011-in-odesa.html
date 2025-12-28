@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>🇺🇦 Odesa, Ukraine - Where I&#x27;ve been | Kyrylo Silin</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="favicon-74144e14.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-0cf84636.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ce00d83b.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Where I&#x27;ve been | Kyrylo Silin</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="-how-i-went-to-it-jam-2011-in-odesa"><a class="header" href="#-how-i-went-to-it-jam-2011-in-odesa">🇺🇦 How I went to IT Jam 2011 in Odesa</a></h1>
+<p>
+  <time datetime="2011-08-22 00:23:44 +0200" itemprop="datePublished">
+    July 22, 2011
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Apologies in advance for the photo quality, tilted angles, and other possible
+mishaps. First, I’m no photographer. Second, I was inexperienced with the camera
+I brought, and as a result, had no idea how to set it up. Lastly, the camera
+itself wasn’t top-notch. You might want to grab a cup or two of your favorite
+drink before diving in—this is a long one.</p>
+<h2 id="the-journey-begins-kharkiv"><a class="header" href="#the-journey-begins-kharkiv">The journey begins. Kharkiv</a></h2>
+<p>One fine evening, my friend <a href="https://github.com/serhiip">Serhii</a> called with a
+plan: he wanted to attend a conference (<a href="https://www.youtube.com/watch?v=ZWG0FQBRfcc">IT Jam</a>)
+for software developers and IT professionals. Without hesitation, I was in. My
+reasoning was simple: I’d never been to a conference, and I wanted to see what
+it was all about—not for knowledge, but for the experience. After all, I believe
+the benefits of watching a talk are the same whether it’s live or on video.</p>
+<p>So, we formed a group of four, each of us registered online, and bought
+round-trip train tickets. Since the conference was free, it was affordable for
+any student.</p>
+<p>Farewell, Kharkiv!</p>
+<img src="https://i.imgur.com/8WLMnp2.jpg">
+<h2 id="arrival-in-odesa"><a class="header" href="#arrival-in-odesa">Arrival in Odesa</a></h2>
+<p>I’d been to Odesa before, but only in passing. My football team was once en
+route to Illichivsk for training, and we were packed into a tiny yellow bus at
+the Odesa train station, so I remembered little beyond surviving that cramped
+ride.</p>
+<p>This time, we arrived at Odesa at 8:30 a.m. to perfect weather—not too warm, not
+too cold. With a couple of hours to spare before the conference began, we
+decided to wander around and find breakfast.</p>
+<p>Here we are, inspecting the map and planning our route.
+<img src="https://i.imgur.com/0UnswWP.jpg" loading="lazy"></p>
+<p>The sea station, where the conference was held, was within walking distance from
+the train station. Suddenly, a man with keys in hand approached us as we studied
+the map. He offered us a ride, clearly as an unlicensed taxi driver, so we
+declined.</p>
+<p>Our route took us down Odesa’s most famous street, Deribasivska, and then onto
+Pushkinska St., which has a similar feel. Passing several notable buildings, we
+joked that we should visit those instead of the conference.</p>
+<p>Pushkinska St from a sidewalk.
+<img src="https://i.imgur.com/HIXNA1c.jpg" loading="lazy"></p>
+<p>The intersection between Pushkinska St and a Random St. The Random St view.
+<img src="https://i.imgur.com/iFQw2Gj.jpg" loading="lazy"></p>
+<p>After some unspoken consensus, we ended up at McDonald’s for breakfast. Fast and
+convenient. I’m not a frequent visitor, so I defaulted to the Big Mac menu, but
+it wasn’t available on the breakfast menu. After some tough deliberation, I
+ordered a fancy omelette with a latte—my first-ever latte.</p>
+<p>With breakfast done, we had just enough time to reach the sea port. The streets
+of Odesa seemed deserted—until we reached the
+<a href="https://en.wikipedia.org/wiki/Potemkin_Stairs">Potemkin Stairs</a>, where everything
+clicked into place.</p>
+<p>The view of the beautiful sea port, and an ugly ads banner.
+<img src="https://i.imgur.com/2yAGQdk.jpg" loading="lazy"></p>
+<p>Still not too late to hop on a train home.
+<img src="https://i.imgur.com/cWlTuHq.jpg" loading="lazy"></p>
+<p>At the sea port. Try to spot me.
+<img src="https://i.imgur.com/yPUShhN.jpg" loading="lazy"></p>
+<p>Nearby, there was a monument with an egg and a well-built toddler inside.
+Unimpressive. Not even the cannons, yachts, shipyards, or various ships caught
+my attention as much as the sheer length of the queue.</p>
+<p>Whoa… Quite a line.
+<img src="https://i.imgur.com/7uuxKJM.jpg" loading="lazy"></p>
+<p>The ship’s name is <em>Amerigo Vespucci</em>. Built by Italians in 1931. Used by
+Ukrainians in 2011.
+<img src="https://i.imgur.com/7kYKzbZ.jpg" loading="lazy"></p>
+<h2 id="the-conference-begins"><a class="header" href="#the-conference-begins">The conference begins</a></h2>
+<p>After our walk, we headed to the conference and signed in. To my pleasant
+surprise, there were quite a few women attending. One perk was the free food:
+cookies, tea, coffee, water, sandwiches—you name it. Naturally, it disappeared
+fast.</p>
+<p>Quite the line to sign in.
+<img src="https://i.imgur.com/2cy79HB.jpg" loading="lazy"></p>
+<p>A snack before the opening was a good idea. For those who weren’t hungry, there
+was info about the conference to read.</p>
+<p>The spectacular Sasha, one of the presenters, opens the conference.
+<img src="https://i.imgur.com/ZGfRT7Y.jpg" loading="lazy"></p>
+<h2 id="about-the-conference"><a class="header" href="#about-the-conference">About the conference</a></h2>
+<p>A quick overview: the conference had 42 talks, each 30 minutes long with
+10-minute breaks between. Topics included mobile tech, Java, web dev, .NET,
+Quality Assurance, and general tech. Every 40 minutes, from 11:10 a.m. to 3:40
+p.m., attendees chose from seven simultaneous talks. Unfortunately, only
+Spider-Man can be in seven places at once, so I only managed to attend seven
+talks.</p>
+<h2 id="the-talks"><a class="header" href="#the-talks">The talks</a></h2>
+<p>The first talk I attended was on building a simple Rails 3 app using Git and
+GitHub, and deploying it to Heroku. Even though I was familiar with the topic, I
+was curious to see it done by an expert.</p>
+<p>However, the speaker, Serhii Parizhsky, had technical issues and was replaced by
+Andriy Mykhailov, whose topic was Puppet. A few attendees walked out in protest.</p>
+<p>I missed most of the Puppet talk while fiddling with my camera in the dark room,
+but the speaker’s style wasn’t particularly engaging.
+<img src="https://i.imgur.com/aGCSxQX.jpg" loading="lazy"></p>
+<p>Fortunately, the second talk was about Rails. Originally, I planned to attend a
+talk on online payment architecture but switched because I was eager to see the
+Rails talk. So I stayed put.</p>
+<p>Serhii and Sasha. Sasha announces Serhii.
+<img src="https://i.imgur.com/SlCrhGm.jpg" loading="lazy"></p>
+<p>Serhii had issues with his computer, so he borrowed a laptop running Ubuntu from
+the previous speaker. To my surprise, he struggled to use it—couldn’t unlock the
+screen, compared Gedit to Notepad, and struggled to create a new file.</p>
+<p>Eventually, he typed “rails new appname” (or something similar) into the
+terminal. A reasonable question from the audience—“What are you even
+doing?”—sums up this talk. I was disappointed.
+<img src="https://i.imgur.com/EgXt6HY.jpg" loading="lazy"></p>
+<p>The third talk covered Agile development methods, presented by Dmytro Lapshyn.
+He was confident and knowledgeable, but Agile didn’t resonate much with me.
+After the talk, a silver-haired gentleman struck a deal with Dmytro, apparently
+impressed.
+<img src="https://i.imgur.com/zv6GHZA.jpg" loading="lazy"></p>
+<p>The fourth talk on leadership by Dmytro Mindra explored the role and types of
+leaders in a team. It was engaging, well-presented, and straightforward.
+<img src="https://i.imgur.com/8NtX1LS.jpg" loading="lazy"></p>
+<p>Next, Naos Wilbrink, a Dutch specialist, spoke in impeccable English about data
+privacy. His clear and precise talk was my favorite, as he emphasized the value
+of every bit of information. The audience was lively, with plenty of questions.
+<img src="https://i.imgur.com/Kd7scHS.jpg" loading="lazy"></p>
+<p>“Crotches”.
+<img src="https://i.imgur.com/j4fjQys.jpg" loading="lazy"></p>
+<p>The penultimate talk by Yevhen Dmytrychenko was on load testing tools. Not the
+most applicable topic for me, but interesting nonetheless.
+<img src="https://i.imgur.com/iAyufaY.jpg" loading="lazy"></p>
+<p>I had hoped to attend a talk on neural networks in e-commerce, but it was
+replaced with Leonid Bugaev’s semi-promotional session on motivation. Despite
+the shift, I enjoyed it.</p>
+<p><em>Rework</em> is a nice book, but it’s too abstract—just like the talk.
+<img src="https://i.imgur.com/7pO6kQu.jpg" loading="lazy"></p>
+<p>After the talks, there was a break, with tweets tagged #itjam displayed live on
+a TV. Easels with paper and pens were scattered about, and someone even sketched
+a Java “Hello World” program.</p>
+<p>Then came a lottery with conference tickets as prizes, including one for
+RubyShift in Dnipropetrovsk, which I was secretly hoping to win. Sadly, no luck.
+<img src="https://i.imgur.com/dRCKFtR.jpg" loading="lazy"></p>
+<p>The next part of the conference was an interview with the “big bosses” of
+Ukrainian software companies. I didn’t catch their names, but I do remember
+their way of speaking—it was all the same. And it was horrific. They weren’t
+speaking Russian, nor Ukrainian, nor even English. It was a nuclear mix of all
+three languages.</p>
+<p>They’re all Ukrainians (except one), so why on earth were they doing that? I’ll
+cut the big nub from Denmark some slack—at least he was speaking English.</p>
+<p>Question: “Do you use any math in your company?”
+Answer: “We do. We play poker!”
+<img src="https://i.imgur.com/XxSrYik.jpg" loading="lazy"></p>
+<h2 id="wrapping-up"><a class="header" href="#wrapping-up">Wrapping up</a></h2>
+<p>It was time to leave. In general, the “big bosses” panel was underwhelming,
+loaded with ads and irrelevant content. One boss proclaimed, “The best
+programmers are in the USA. And… they are Russians.” It was a popular line,
+but I strongly disagree.</p>
+<p>Despite a few downsides, like English-only materials, I enjoyed IT Jam. The
+conference was informative, and I’d gladly attend next year. But really—why no
+Ukrainian or Russian option? A bit pretentious, perhaps?</p>
+<p>The conference is over. But only for us.
+<img src="https://i.imgur.com/ybRNPKS.jpg" loading="lazy"></p>
+<p>No trip to Odesa is complete without a shot of the famous Potemkin Stairs.
+<img src="https://i.imgur.com/oEmKtOp.jpg" loading="lazy"></p>
+<p>Odesa is a cool city. Goodbye, Odesa!
+<img src="https://i.imgur.com/VK2qJGS.jpg" loading="lazy"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="2012-08-01-euro-2012-ukraine-england-my-trip-to-donetsk.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="2012-08-01-euro-2012-ukraine-england-my-trip-to-donetsk.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

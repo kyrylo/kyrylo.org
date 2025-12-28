@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>🇦🇪 Dubai, United Arab Emirates - Where I&#x27;ve been | Kyrylo Silin</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="favicon-74144e14.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-0cf84636.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ce00d83b.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Where I&#x27;ve been | Kyrylo Silin</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="-dubai"><a class="header" href="#-dubai">🇦🇪 Dubai</a></h1>
+<p>
+  <time datetime="2021-02-24 00:23:44 +0200" itemprop="datePublished">
+    February 24, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Prior to going to Dubai, I already had certain expectations. That said, I didn’t
+expect that my first experience would be falling for a scam. Well, kind of. You
+see, as a Ukrainian citizen, I can visit the UAE without a visa. However, I was
+dumb enough to pay some agency to provide me with a tourist visa. When I had
+paid them the full amount, I realised that was a mistake. When I asked for a
+refund (30 minutes after my payment), they refused.</p>
+<p>Alas, that’s the price I had to pay for being careless. I was able to enter the
+UAE with a visa that nobody even checked.</p>
+<p>Let’s start. Dubai is the land of cars.
+<img src="https://i.imgur.com/m4xZp04.jpg" loading="lazy"></p>
+<p>When you are a pedestrian in this city, it’s considered a mishap. When you are a
+pedestrian, you wait. No, you WAIT.
+<img src="https://i.imgur.com/6VHsGBh.jpg" loading="lazy"></p>
+<p>If you don’t want to WAIT, you may go. Just don’t expect this experience to be
+safe or pleasant. Sometimes there are no sidewalks in Dubai.
+<img src="https://i.imgur.com/YyXsuSj.jpg" loading="lazy"></p>
+<p>So, if you don’t want to take a taxi, don’t expect that it’ll be free
+either. Dubai forces you to pay. The more, the better. The fine for jaywalking
+here is 400 dirhams (about $110).
+<img src="https://i.imgur.com/JGKzMkN.jpg" loading="lazy" /></p>
+<p>Without a way to cross the road, without a safe sidewalk, a daily routine such
+as going to the grocery store turns into a suicide mission that you’ll have to
+fund if the police catches you.
+<img src="https://i.imgur.com/bEpcvr2.jpg" loading="lazy" /></p>
+<p>Although I am a daring individual, I would not go beneath an overpass for no
+apparent reason. I found myself there looking for a method to go around this
+juncture. There was no such thing, as it turned out. A kilometer away was the
+nearest crossing (not just a safe crossing, but any crossing).
+<img src="https://i.imgur.com/hkcd6LO.jpg" loading="lazy" /></p>
+<p>You have no chance against this concrete jungle, even if you wish to take a
+gamble and run for your life while evading rapid cars.
+<img src="https://i.imgur.com/Jnq0RBD.jpg" loading="lazy" /></p>
+<p>Some of the crossings are not that safe. Take a look at how broad this junction
+is. You can easily erect another skyscraper here.
+<img src="https://i.imgur.com/1SuE5rM.jpg" loading="lazy" /></p>
+<p>This particular crossing has a tiny pedestrian island. I wouldn’t feel
+comfortable there waiting for my green light.
+<img src="https://i.imgur.com/k3FEfT7.jpg" loading="lazy" /></p>
+<p>Basically, everyone here screams that you’re not welcome when you transport
+yourself using something other than a wheel.
+<img src="https://i.imgur.com/t6XQyvq.jpg" loading="lazy" /></p>
+<p>It’s really surprising to me that walking in Dubai is tough. I can clearly see
+that the city invests in public transportation. Walking and public
+transportation go together (or walk together?). Dubai offers multiple ways of
+budget traveling. One is renting a bicycle. I was eager to try it out, but I
+couldn’t because I didn’t have mobile data when I was on the street. In order to
+rent a bicycle, you need an app and an internet connection.
+<img src="https://i.imgur.com/3A46y90.jpg" loading="lazy" /></p>
+<p>Cycling infrastructure does exist in Dubai, but it’s not connected together. The
+bicycle lanes here end abruptly, and you are forced to yield to cars.
+<img src="https://i.imgur.com/0KvRpcE.jpg" loading="lazy" /></p>
+<p>As a result, not many choose to cycle.
+<img src="https://i.imgur.com/NEoU9be.jpg" loading="lazy" /></p>
+<p>Those who do prefer cycling might even have no infrastructure whatsoever.
+<img src="https://i.imgur.com/FsZ0ZMZ.jpg" loading="lazy" /></p>
+<p>If you don’t yield to a car, you might bump into a road worker’s middle finger
+in the form of pavement construction.
+<img src="https://i.imgur.com/ecNdmxs.jpg" loading="lazy" /></p>
+<p>In other cases, the cycling infrastructure is there, but the cyclists have not
+yet been born in that area. And to be perfectly honest, some paint on the ground
+is not cycling infrastructure.
+<img src="https://i.imgur.com/SC8zhaU.jpg" loading="lazy" /></p>
+<p>Anyway, enough of the cycling. You can take a tram in Dubai.
+<img src="https://i.imgur.com/xXIUwwy.jpg" loading="lazy" /></p>
+<p>The only problem is that the coverage is rather poor. The tracks start from
+nowhere and lead to nowhere.
+<img src="https://i.imgur.com/dCIZZBS.jpg" loading="lazy" /></p>
+<p>A much better alternative would be the Dubai Metro, a fast and completely
+autonomous railway system covering all key destinations in the city.
+<img src="https://i.imgur.com/wW6qQu2.jpg" loading="lazy" /></p>
+<p>Every station looks identical (unlike in my city, where every station must have a
+personality).
+<img src="https://i.imgur.com/kczcz4B.jpg" loading="lazy" /></p>
+<p>The metro is also completely safe. There’s no way to fall on the tracks. What I
+love about it is that everything is automated. What I don’t love is that there
+are separate coaches for women and men. Women can go inside coaches for men, but
+men are not allowed to go to the women’s place.
+<img src="https://i.imgur.com/pspN1do.jpg" loading="lazy" /></p>
+<p>I also am not a fan of strict rules like no eating or drinking, or even chewing
+gum.
+<img src="https://i.imgur.com/ESVgVM2.jpg" loading="lazy" /></p>
+<p>No chewing gum yadda-yadda, very dangerous yadda-yadda, can cause a trainwreck
+yadda.
+<img src="https://i.imgur.com/ifoHa6q.jpg" loading="lazy" /></p>
+<p>Those four birds that are not following the leader clearly didn’t obtain their
+flying license legally. I don’t think flying like that is okay in the UAE. Does
+anyone know how many dirhams the fine is for that violation? And also, if they
+chewed bubble gum, that amount would probably be doubled.
+<img src="https://i.imgur.com/PyfPlIX.jpg" loading="lazy" /></p>
+<p>In general, most of Dubai’s life finds itself on Sheikh Zayed Road. The cars and
+the trains make this experience quite noisy. Even with your windows closed.
+<img src="https://i.imgur.com/TXpSrF5.jpg" loading="lazy" /></p>
+<p>Speaking of penalties, the signs informing us what’s not allowed are
+everywhere. I actually think some of them make sense, like this “red light
+violation” rule. However, given the technological advances Dubai has made, I
+think it’s a rather poor attempt. We can install such a sign here in Ukraine,
+but it won’t do any good. Dubai, with trillions of dollars, can develop a more
+advanced solution. An automated system that imposes certain rules on everybody
+would be perfect. The little human interaction, the better. Anyway, I’m not
+gonna solve it for you, Dubai (unless you share with me some of your
+petrodollars).
+<img src="https://i.imgur.com/X0DamYZ.jpg" loading="lazy" /></p>
+<p>If you do speed, you have no chance against the police here. By using muscle
+cars, they can chase anyone without breaking a drop of sweat.
+<img src="https://i.imgur.com/n2mNiZ1.jpg" loading="lazy" /></p>
+<p>This is probably the only place in the world where bus stations have automatic
+sliding doors and air conditioning.
+<img src="https://i.imgur.com/5IEwzOZ.jpg" loading="lazy" /></p>
+<p>Having no internet on the go, I did appreciate the detailed map of bus routes.
+<img src="https://i.imgur.com/fee5hbW.jpg" loading="lazy" /></p>
+<p>However, at a bus terminal, the stops were rather inconvenient &amp; uninformative,
+providing only a little bit of shadow.
+<img src="https://i.imgur.com/DDJF13q.jpg" loading="lazy" /></p>
+<p>The buses themselves are fairly modern and convenient to use (and
+air-conditioned as well).
+<img src="https://i.imgur.com/GlCHeaZ.jpg" loading="lazy" /></p>
+<p>Wheelchair passengers are welcome to use them as well. I didn’t spot any people
+using wheelchairs in Dubai, though.
+<img src="https://i.imgur.com/B9wpuHN.jpg" loading="lazy" /></p>
+<p>html
+Copy code
+At some metro stations, I saw a hi from the past: a payphone. In order to use
+this particular exhibit, you would need to bring some change and also wire up
+your own telephone handset (inserting the ends of the wires directly into your
+ears can be tried but is not recommended).
+<img src="https://i.imgur.com/ICCLlke.jpg" loading="lazy" /></p>
+<p>While most of the things you see in these pictures are brand new, this lamp post
+is not. I’m sure it’s new as well, but it tries to look vintage, which makes it
+look out of place.
+<img src="https://i.imgur.com/qiqO2E7.jpg" loading="lazy" /></p>
+<p>Similarly to the Philippines, the rear side of trucks mentions a number to call
+in case the driver goes bananas on the road.
+<img src="https://i.imgur.com/MQJ3bV0.jpg" loading="lazy" /></p>
+<p>In turn, if you want to go bananas, there’s a number for “Home &amp; Hotel” service
+available in town. The service can be Russian, Turkish, or Pakistani. Hmmmm…
+<img src="https://i.imgur.com/vsDhUyi.jpg" loading="lazy" /></p>
+<p>Basically, closer to the evening time, there’s someone who sows the unfertile
+soil of Dubai with these pamphlets. I was surprised to see something like that
+in a place that is protected by Sharia law.
+<img src="https://i.imgur.com/3EZZ3OU.jpg" loading="lazy" /></p>
+<p>Most of the time, the streets of Dubai look deserted. Wide highways and large
+distances between buildings with no people walking make it hard to believe that
+the city is home to 3.3 million inhabitants.
+<img src="https://i.imgur.com/7jwTr3V.jpg" loading="lazy" /></p>
+<p>Everything changes at night, when the heat is lower. Dubai is about luxury, so
+people spend their time spending.
+<img src="https://i.imgur.com/bPrAeAr.jpg" loading="lazy" /></p>
+<p>If you are from a hot climate country, or maybe you’ve been to such a country,
+you might take a guess and say that during the day there’s nobody on the streets
+because everybody is inside malls. Well, that’s a witty observation. Let’s take
+a gander at one of the malls during lunchtime.
+<img src="https://i.imgur.com/kYpmChd.jpg" loading="lazy" /></p>
+<p>Nope, nobody’s here. Maybe they went to a park for a picnic?
+<img src="https://i.imgur.com/9tgkWVh.jpg" loading="lazy" /></p>
+<p>I can see a few lost souls, but that’s not a park for a city that has such a
+high population. Maybe they are skiing?
+<img src="https://i.imgur.com/XgQrvpn.jpg" loading="lazy" /></p>
+<p>It seems like it’s almost nobody, again. Maybe the men are at work?
+<img src="https://i.imgur.com/rwDkrBv.jpg" loading="lazy" /></p>
+<p>Nope… Yo, where’s everyone in this city?
+<img src="https://i.imgur.com/eUcGucy.jpg" loading="lazy" /></p>
+<p>Dubai’s land skyline is dotted with skyscrapers. But who is this built for if
+the streets are empty?
+<img src="https://i.imgur.com/nh7ifrn.jpg" loading="lazy" /></p>
+<p>You turn your head to the left and see skyscrapers.
+<img src="https://i.imgur.com/sCZTtq5.jpg" loading="lazy" /></p>
+<p>You turn your head to the right - the sea?
+<img src="https://i.imgur.com/lTmhhmU.jpg" loading="lazy" /></p>
+<p>Most of the skyscrapers look blue.
+<img src="https://i.imgur.com/zSnDLCT.jpg" loading="lazy" /></p>
+<p>Not all of the city is like that. These barracks are for Indians or
+Pakistanis. They make up the majority of workers here in Dubai.
+<img src="https://i.imgur.com/zFrQ8pN.jpg" loading="lazy" /></p>
+<p>This is apparently a church in the same area (or a mosque?).
+<img src="https://i.imgur.com/26BRn3l.jpg" loading="lazy" /></p>
+<p>I was ignorant enough to read this as “TOILET”. To be honest, in some of the
+areas of this neighborhood, I could smell an unpleasant presence.
+<img src="https://i.imgur.com/i7wORe5.jpg" loading="lazy" /></p>
+<p>Guys, I am not lying. I’d also be remiss if I didn’t mention that this is also
+the scariest place I found in Dubai. The city feels very safe in general.
+<img src="https://i.imgur.com/zt7iZIL.jpg" loading="lazy" /></p>
+<p>Even in the worst neighborhoods of Dubai, school buses dare to go inside.
+<img src="https://i.imgur.com/7m65V9r.jpg" loading="lazy" /></p>
+<p>Sometimes there’s even fancy architecture.
+<img src="https://i.imgur.com/wI9qMGV.jpg" loading="lazy" /></p>
+<p>Being a multinational city, occasionally you will see Russian signs in Dubai.
+<img src="https://i.imgur.com/a2xQEY2.jpg" loading="lazy" /></p>
+<p>I was especially surprised to see this Russian ballet dance center on the
+outskirts of the city (and, please, don’t ask me what I was doing there. I was
+just trying to find a way to cross a road, okay?).
+<img src="https://i.imgur.com/I08Wpfw.jpg" loading="lazy" /></p>
+<p>You can also find some imported Russian products.
+<img src="https://i.imgur.com/phtV486.jpg" loading="lazy" /></p>
+<p>I was especially surprised to find Ukrainian ice cream here (which is the best
+ice cream in the world, by the way).
+<img src="https://i.imgur.com/K1B5Dfo.jpg" loading="lazy" /></p>
+<p>Speaking of other products, there were a lot of Filipino goods available
+at supermarkets.
+<img src="https://i.imgur.com/UvozFQ3.jpg" loading="lazy" /></p>
+<p>That’s not an accident. According to my personal perception, 1/3 of the country
+speaks Filipino. No matter where you go, Filipinos will be working there. It was
+fun to practice my Tagalog once again and surprise a few folks. “Kabayan” in
+Tagalog means “fellow citizen”.
+<img src="https://i.imgur.com/ZLbKGpF.jpg" loading="lazy" /></p>
+<p>There’s a Catholic church available to everyone. But I guess it exists mostly
+because of the Filipino community here.
+<img src="https://i.imgur.com/uF522PA.jpg" loading="lazy" /></p>
+<p>What I don’t get is why it looks like Alcatraz. Look at the gate and the barbed
+wire.
+<img src="https://i.imgur.com/uNDUSgT.jpg" loading="lazy" /></p>
+<p>Usually, the Catholic churches I’ve been to look very nice both inside and
+outside. This one has a 3-meter concrete wall, which can withstand a direct hit
+from a modern tank, and 3-meter screens to catch all incoming grenades. Do they
+do masses there or mass shootings? What are they hiding there? Or is it to
+protect them from the outside? There are too many questions for a church.
+<img src="https://i.imgur.com/9USQiy9.jpg" loading="lazy" /></p>
+<p>Filipinos do love their pork. I think that’s why in certain supermarkets there
+is a pork section. The sign says “for non-Muslims,” but it should really say
+“for Filipinos.”
+<img src="https://i.imgur.com/8D1FoKs.jpg" loading="lazy" /></p>
+<p>Dubai keeps erecting new condominiums. The construction is sprawling.
+<img src="https://i.imgur.com/5OoWrNy.jpg" loading="lazy" /></p>
+<p>Surprisingly, at the same time, the city feels empty.
+<img src="https://i.imgur.com/A7pBkrJ.jpg" loading="lazy" /></p>
+<p>Tolerance bridge won’t save the situation if there’s nobody who can tolerate or
+be tolerated.
+<img src="https://i.imgur.com/poAhdFw.jpg" loading="lazy" /></p>
+<p>Don’t forget that the climate here is pretty harsh. I was lucky enough to visit
+Dubai in February. People told me that the coldest season is now. All the
+bushes, all the grass, it wasn’t growing by itself.
+<img src="https://i.imgur.com/sZcp6kv.jpg" loading="lazy" /></p>
+<p>It’s all man-made. Without a man’s touch, nature will eventually restore
+everything back to how it was.
+<img src="https://i.imgur.com/Xsn4T0D.jpg" loading="lazy" /></p>
+<p>A lot of money is wasted on these green pastures. What’s the point? Nobody walks
+here, people who drive don’t care that much.
+<img src="https://i.imgur.com/LG731Ad.jpg" loading="lazy" /></p>
+<p>Moreover, to keep it green, you have to waste the most precious resource on
+our planet, water.
+<img src="https://i.imgur.com/RsByUZF.jpg" loading="lazy" /></p>
+<p>I also don’t see any cows around. Who knows, they might convert that into a cow
+field and produce some Dubalpine milk.
+<img src="https://i.imgur.com/sH3kg4C.jpg" loading="lazy" /></p>
+<p>Dubai isn’t a new city but it still lacks history. They tried to build
+“historical” places, but they look too modern.
+<img src="https://i.imgur.com/Qh5v85A.jpg" loading="lazy" /></p>
+<p>But I will admit that some of it does look very beautiful.
+<img src="https://i.imgur.com/AtrJBkn.jpg" loading="lazy"></p>
+<p>I love the idea of donating old or unused clothes. We don’t have such boxes in Ukraine, so I just donate some of my clothes to people I know. If we had these boxes, I would do that much more frequently.
+<img src="https://i.imgur.com/tlM2hX5.jpg" loading="lazy"></p>
+<p>I heard the Dubai Mall is the biggest in the world. I don’t know if that still remains true, but I do know that it’s a clever idea to denote what language every staff member can speak.
+<img src="https://i.imgur.com/tyxHRim.jpg" loading="lazy"></p>
+<p>Being the biggest mall in the world doesn’t guarantee the largest number of visitors. It was relatively empty.
+<img src="https://i.imgur.com/n5og6BB.jpg" loading="lazy"></p>
+<p>I don’t blame people. In order to get here, you need to ride the metro. When you’re at the station, it’s a 15-minute walk through an overpass tunnel going straight to the mall. Yes, there are conveyor belts to speed this up, but even with them, it’s a very uncomfortable experience because there’s not much to look at.
+<img src="https://i.imgur.com/Yqm8vTF.jpg" loading="lazy"></p>
+<p>I think people would happily use golf carts or electric scooters in order to get to the mall or back to the metro station. That’s a free business idea for you, Dubai.
+<img src="https://i.imgur.com/NfjwFaV.jpg" loading="lazy"></p>
+<p>I have a tradition: I go to McDonald’s in every country that I visit and order a Big Mac.
+<img src="https://i.imgur.com/dvdpDrc.jpg" loading="lazy"></p>
+<p>What’s cool in the UAE is that I can customize my Big Mac and literally beef it up.
+<img src="https://i.imgur.com/v7DOAVC.jpg" loading="lazy"></p>
+<p>I didn’t see any squirrels here. Who should live in that house?
+<img src="https://i.imgur.com/c7C0mkz.jpg" loading="lazy"></p>
+<p>This guy?
+<img src="https://i.imgur.com/g1mhTyM.jpg" loading="lazy"></p>
+<p>A lot of famous tech companies are located in Dubai Internet City.
+Oracle.
+<img src="https://i.imgur.com/faHyp1d.jpg" loading="lazy"></p>
+<p>Microsoft.
+<img src="https://i.imgur.com/mGop3Ge.jpg" loading="lazy"></p>
+<p>Most of the fancy buildings are built by Emaar. Their brand name is everywhere.
+<img src="https://i.imgur.com/43PQGxL.jpg" loading="lazy"></p>
+<p>Emaaaaaaar! Find it in this picture.
+<img src="https://i.imgur.com/kRaEXlq.jpg" loading="lazy"></p>
+<p>A lot of these buildings look nice, but when you build thousands of them, they start to look the same (and bland).
+<img src="https://i.imgur.com/NjLsKv5.jpg" loading="lazy"></p>
+<p>Ctrl-C, Ctrl-V.
+<img src="https://i.imgur.com/l11yYBn.jpg" loading="lazy"></p>
+<p>Despite the abundance of skyscrapers, there are also a lot of wastelands.
+<img src="https://i.imgur.com/kcF5Yr1.jpg" loading="lazy"></p>
+<p>This is still very much inside the city.
+<img src="https://i.imgur.com/mCmJiDB.jpg" loading="lazy"></p>
+<p>I don’t know any Arabic, but I found it interesting that the spelling of “men” is so long in this language.
+<img src="https://i.imgur.com/3unK1rZ.jpg" loading="lazy"></p>
+<p>Free hot drinking water is a rare find. Kudos to those who thought about it.
+<img src="https://i.imgur.com/4Ikmb7B.jpg" loading="lazy"></p>
+<p>Sharps disposal box. I had never seen anything like this before. Is this for diabetic people? How interesting.
+<img src="https://i.imgur.com/YLgAKEC.jpg" loading="lazy"></p>
+<p>This guy is likely from Yakutia, the coldest inhabited region in the world. Old habits die hard.
+<img src="https://i.imgur.com/nwZqnUB.jpg" loading="lazy"></p>
+<p>What a dynamic duo they are!
+<img src="https://i.imgur.com/XamxkGk.jpg" loading="lazy"></p>
+<p>This is a sad broadwalk if no pets are allowed. Maybe it’s okay if my doggo wears modest clothes?
+<img src="https://i.imgur.com/5TSzm70.jpg" loading="lazy"></p>
+<p>What I loved about Dubai is how clean it is. The fact that you can go outside, spend the whole day, and come back home wearing completely clean shoes is pure bliss. This is something that’s practically non-existent in my country.
+<img src="https://i.imgur.com/yi7t6Vm.jpg" loading="lazy"></p>
+<p>It’s not a capitalist country if there’s no golf course.
+<img src="https://i.imgur.com/tUiYBqg.jpg" loading="lazy"></p>
+<p>These houses are also situated on the territory of the same golf course. I guess you can live and play here.
+<img src="https://i.imgur.com/VCuo1IC.jpg" loading="lazy"></p>
+<p>In very rare cases, you can see traffic helpers, just like in some Asian countries.
+<img src="https://i.imgur.com/gd6lHEf.jpg" loading="lazy"></p>
+<p>In order to lay down a few bricks, you need nine workers. Open question: how many workers does it take to screw in a light bulb in Dubai?
+<img src="https://i.imgur.com/A7bIuvh.jpg" loading="lazy"></p>
+<p>Some of those guys could visit this place and fix it.
+<img src="https://i.imgur.com/tH8n0Fd.jpg" loading="lazy"></p>
+<p>In very rare cases, manholes can be left open.
+<img src="https://i.imgur.com/tfx7D3x.jpg" loading="lazy"></p>
+<p>Where the school buses sleep.
+<img src="https://i.imgur.com/OooNz7K.jpg" loading="lazy"></p>
+<p>Where “environmental-friendly” vehicles sleep. I’m not sure why this parking space is reserved for them. There’s no charging station here.
+<img src="https://i.imgur.com/af6rnYS.jpg" loading="lazy"></p>
+<p>Where distribution boards (?) are left in the open air. This is not typical of Dubai.
+<img src="https://i.imgur.com/pglYRZ3.jpg" loading="lazy"></p>
+<p>The gap between the rich and the poor is very evident in the UAE. I had thought that everybody in Dubai swims in luxury. It turned out that only some people really do swim in luxury. They swim their yachts.
+<img src="https://i.imgur.com/IxX5mba.jpg" loading="lazy"></p>
+<p>The rest swim in their own sweat, induced by the sun.
+<img src="https://i.imgur.com/cyy1JNq.jpg" loading="lazy"></p>
+<p>Unfortunately, similarly to many Asian megalopolises, you have to use overpasses. At least in Dubai, all of them have working elevators.
+<img src="https://i.imgur.com/CvYIscg.jpg" loading="lazy"></p>
+<p>That’s because the streets belong to cars.
+<img src="https://i.imgur.com/OwVG8Ff.jpg" loading="lazy"></p>
+<p>I really love how some malls in Dubai make the directions clear. The malls here are huge, and it’s really easy to get lost.
+<img src="https://i.imgur.com/lIlYsVI.jpg" loading="lazy"></p>
+<p>Quarantine rules due to COVID-19 are taken seriously here. If you need to wait, you need to wait.
+<img src="https://i.imgur.com/FpY7O8E.jpg" loading="lazy"></p>
+<p>That was my Dubai story.
+<img src="https://i.imgur.com/YjLtakq.jpg" loading="lazy"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="2019-08-24-cebu-my-longest-journey-abroad-so-far.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="2019-08-24-cebu-my-longest-journey-abroad-so-far.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

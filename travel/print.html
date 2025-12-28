@@ -1,0 +1,2953 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Where I&#x27;ve been | Kyrylo Silin</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="favicon-74144e14.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-0cf84636.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ce00d83b.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Where I&#x27;ve been | Kyrylo Silin</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+<p>I love walking. When I’m in an unfamiliar place, I try to explore it on foot. If
+possible, I rent a bicycle. It lets me move faster and see more. If cycling does
+not feel safe, I stick to walking.</p>
+<p>In this section, I write about places I’ve visited and how they felt to me at the
+time. Some places change between visits. Others do not. This blog is a record of
+those moments, paired with photos taken along the way.</p>
+<p><img src="assets/images/introduction/01.webp" alt="Kyrylo Silin traveling"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-dubai"><a class="header" href="#-dubai">🇦🇪 Dubai</a></h1>
+<p>
+  <time datetime="2021-02-24 00:23:44 +0200" itemprop="datePublished">
+    February 24, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Prior to going to Dubai, I already had certain expectations. That said, I didn’t
+expect that my first experience would be falling for a scam. Well, kind of. You
+see, as a Ukrainian citizen, I can visit the UAE without a visa. However, I was
+dumb enough to pay some agency to provide me with a tourist visa. When I had
+paid them the full amount, I realised that was a mistake. When I asked for a
+refund (30 minutes after my payment), they refused.</p>
+<p>Alas, that’s the price I had to pay for being careless. I was able to enter the
+UAE with a visa that nobody even checked.</p>
+<p>Let’s start. Dubai is the land of cars.
+<img src="https://i.imgur.com/m4xZp04.jpg" loading="lazy"></p>
+<p>When you are a pedestrian in this city, it’s considered a mishap. When you are a
+pedestrian, you wait. No, you WAIT.
+<img src="https://i.imgur.com/6VHsGBh.jpg" loading="lazy"></p>
+<p>If you don’t want to WAIT, you may go. Just don’t expect this experience to be
+safe or pleasant. Sometimes there are no sidewalks in Dubai.
+<img src="https://i.imgur.com/YyXsuSj.jpg" loading="lazy"></p>
+<p>So, if you don’t want to take a taxi, don’t expect that it’ll be free
+either. Dubai forces you to pay. The more, the better. The fine for jaywalking
+here is 400 dirhams (about $110).
+<img src="https://i.imgur.com/JGKzMkN.jpg" loading="lazy" /></p>
+<p>Without a way to cross the road, without a safe sidewalk, a daily routine such
+as going to the grocery store turns into a suicide mission that you’ll have to
+fund if the police catches you.
+<img src="https://i.imgur.com/bEpcvr2.jpg" loading="lazy" /></p>
+<p>Although I am a daring individual, I would not go beneath an overpass for no
+apparent reason. I found myself there looking for a method to go around this
+juncture. There was no such thing, as it turned out. A kilometer away was the
+nearest crossing (not just a safe crossing, but any crossing).
+<img src="https://i.imgur.com/hkcd6LO.jpg" loading="lazy" /></p>
+<p>You have no chance against this concrete jungle, even if you wish to take a
+gamble and run for your life while evading rapid cars.
+<img src="https://i.imgur.com/Jnq0RBD.jpg" loading="lazy" /></p>
+<p>Some of the crossings are not that safe. Take a look at how broad this junction
+is. You can easily erect another skyscraper here.
+<img src="https://i.imgur.com/1SuE5rM.jpg" loading="lazy" /></p>
+<p>This particular crossing has a tiny pedestrian island. I wouldn’t feel
+comfortable there waiting for my green light.
+<img src="https://i.imgur.com/k3FEfT7.jpg" loading="lazy" /></p>
+<p>Basically, everyone here screams that you’re not welcome when you transport
+yourself using something other than a wheel.
+<img src="https://i.imgur.com/t6XQyvq.jpg" loading="lazy" /></p>
+<p>It’s really surprising to me that walking in Dubai is tough. I can clearly see
+that the city invests in public transportation. Walking and public
+transportation go together (or walk together?). Dubai offers multiple ways of
+budget traveling. One is renting a bicycle. I was eager to try it out, but I
+couldn’t because I didn’t have mobile data when I was on the street. In order to
+rent a bicycle, you need an app and an internet connection.
+<img src="https://i.imgur.com/3A46y90.jpg" loading="lazy" /></p>
+<p>Cycling infrastructure does exist in Dubai, but it’s not connected together. The
+bicycle lanes here end abruptly, and you are forced to yield to cars.
+<img src="https://i.imgur.com/0KvRpcE.jpg" loading="lazy" /></p>
+<p>As a result, not many choose to cycle.
+<img src="https://i.imgur.com/NEoU9be.jpg" loading="lazy" /></p>
+<p>Those who do prefer cycling might even have no infrastructure whatsoever.
+<img src="https://i.imgur.com/FsZ0ZMZ.jpg" loading="lazy" /></p>
+<p>If you don’t yield to a car, you might bump into a road worker’s middle finger
+in the form of pavement construction.
+<img src="https://i.imgur.com/ecNdmxs.jpg" loading="lazy" /></p>
+<p>In other cases, the cycling infrastructure is there, but the cyclists have not
+yet been born in that area. And to be perfectly honest, some paint on the ground
+is not cycling infrastructure.
+<img src="https://i.imgur.com/SC8zhaU.jpg" loading="lazy" /></p>
+<p>Anyway, enough of the cycling. You can take a tram in Dubai.
+<img src="https://i.imgur.com/xXIUwwy.jpg" loading="lazy" /></p>
+<p>The only problem is that the coverage is rather poor. The tracks start from
+nowhere and lead to nowhere.
+<img src="https://i.imgur.com/dCIZZBS.jpg" loading="lazy" /></p>
+<p>A much better alternative would be the Dubai Metro, a fast and completely
+autonomous railway system covering all key destinations in the city.
+<img src="https://i.imgur.com/wW6qQu2.jpg" loading="lazy" /></p>
+<p>Every station looks identical (unlike in my city, where every station must have a
+personality).
+<img src="https://i.imgur.com/kczcz4B.jpg" loading="lazy" /></p>
+<p>The metro is also completely safe. There’s no way to fall on the tracks. What I
+love about it is that everything is automated. What I don’t love is that there
+are separate coaches for women and men. Women can go inside coaches for men, but
+men are not allowed to go to the women’s place.
+<img src="https://i.imgur.com/pspN1do.jpg" loading="lazy" /></p>
+<p>I also am not a fan of strict rules like no eating or drinking, or even chewing
+gum.
+<img src="https://i.imgur.com/ESVgVM2.jpg" loading="lazy" /></p>
+<p>No chewing gum yadda-yadda, very dangerous yadda-yadda, can cause a trainwreck
+yadda.
+<img src="https://i.imgur.com/ifoHa6q.jpg" loading="lazy" /></p>
+<p>Those four birds that are not following the leader clearly didn’t obtain their
+flying license legally. I don’t think flying like that is okay in the UAE. Does
+anyone know how many dirhams the fine is for that violation? And also, if they
+chewed bubble gum, that amount would probably be doubled.
+<img src="https://i.imgur.com/PyfPlIX.jpg" loading="lazy" /></p>
+<p>In general, most of Dubai’s life finds itself on Sheikh Zayed Road. The cars and
+the trains make this experience quite noisy. Even with your windows closed.
+<img src="https://i.imgur.com/TXpSrF5.jpg" loading="lazy" /></p>
+<p>Speaking of penalties, the signs informing us what’s not allowed are
+everywhere. I actually think some of them make sense, like this “red light
+violation” rule. However, given the technological advances Dubai has made, I
+think it’s a rather poor attempt. We can install such a sign here in Ukraine,
+but it won’t do any good. Dubai, with trillions of dollars, can develop a more
+advanced solution. An automated system that imposes certain rules on everybody
+would be perfect. The little human interaction, the better. Anyway, I’m not
+gonna solve it for you, Dubai (unless you share with me some of your
+petrodollars).
+<img src="https://i.imgur.com/X0DamYZ.jpg" loading="lazy" /></p>
+<p>If you do speed, you have no chance against the police here. By using muscle
+cars, they can chase anyone without breaking a drop of sweat.
+<img src="https://i.imgur.com/n2mNiZ1.jpg" loading="lazy" /></p>
+<p>This is probably the only place in the world where bus stations have automatic
+sliding doors and air conditioning.
+<img src="https://i.imgur.com/5IEwzOZ.jpg" loading="lazy" /></p>
+<p>Having no internet on the go, I did appreciate the detailed map of bus routes.
+<img src="https://i.imgur.com/fee5hbW.jpg" loading="lazy" /></p>
+<p>However, at a bus terminal, the stops were rather inconvenient &amp; uninformative,
+providing only a little bit of shadow.
+<img src="https://i.imgur.com/DDJF13q.jpg" loading="lazy" /></p>
+<p>The buses themselves are fairly modern and convenient to use (and
+air-conditioned as well).
+<img src="https://i.imgur.com/GlCHeaZ.jpg" loading="lazy" /></p>
+<p>Wheelchair passengers are welcome to use them as well. I didn’t spot any people
+using wheelchairs in Dubai, though.
+<img src="https://i.imgur.com/B9wpuHN.jpg" loading="lazy" /></p>
+<p>html
+Copy code
+At some metro stations, I saw a hi from the past: a payphone. In order to use
+this particular exhibit, you would need to bring some change and also wire up
+your own telephone handset (inserting the ends of the wires directly into your
+ears can be tried but is not recommended).
+<img src="https://i.imgur.com/ICCLlke.jpg" loading="lazy" /></p>
+<p>While most of the things you see in these pictures are brand new, this lamp post
+is not. I’m sure it’s new as well, but it tries to look vintage, which makes it
+look out of place.
+<img src="https://i.imgur.com/qiqO2E7.jpg" loading="lazy" /></p>
+<p>Similarly to the Philippines, the rear side of trucks mentions a number to call
+in case the driver goes bananas on the road.
+<img src="https://i.imgur.com/MQJ3bV0.jpg" loading="lazy" /></p>
+<p>In turn, if you want to go bananas, there’s a number for “Home &amp; Hotel” service
+available in town. The service can be Russian, Turkish, or Pakistani. Hmmmm…
+<img src="https://i.imgur.com/vsDhUyi.jpg" loading="lazy" /></p>
+<p>Basically, closer to the evening time, there’s someone who sows the unfertile
+soil of Dubai with these pamphlets. I was surprised to see something like that
+in a place that is protected by Sharia law.
+<img src="https://i.imgur.com/3EZZ3OU.jpg" loading="lazy" /></p>
+<p>Most of the time, the streets of Dubai look deserted. Wide highways and large
+distances between buildings with no people walking make it hard to believe that
+the city is home to 3.3 million inhabitants.
+<img src="https://i.imgur.com/7jwTr3V.jpg" loading="lazy" /></p>
+<p>Everything changes at night, when the heat is lower. Dubai is about luxury, so
+people spend their time spending.
+<img src="https://i.imgur.com/bPrAeAr.jpg" loading="lazy" /></p>
+<p>If you are from a hot climate country, or maybe you’ve been to such a country,
+you might take a guess and say that during the day there’s nobody on the streets
+because everybody is inside malls. Well, that’s a witty observation. Let’s take
+a gander at one of the malls during lunchtime.
+<img src="https://i.imgur.com/kYpmChd.jpg" loading="lazy" /></p>
+<p>Nope, nobody’s here. Maybe they went to a park for a picnic?
+<img src="https://i.imgur.com/9tgkWVh.jpg" loading="lazy" /></p>
+<p>I can see a few lost souls, but that’s not a park for a city that has such a
+high population. Maybe they are skiing?
+<img src="https://i.imgur.com/XgQrvpn.jpg" loading="lazy" /></p>
+<p>It seems like it’s almost nobody, again. Maybe the men are at work?
+<img src="https://i.imgur.com/rwDkrBv.jpg" loading="lazy" /></p>
+<p>Nope… Yo, where’s everyone in this city?
+<img src="https://i.imgur.com/eUcGucy.jpg" loading="lazy" /></p>
+<p>Dubai’s land skyline is dotted with skyscrapers. But who is this built for if
+the streets are empty?
+<img src="https://i.imgur.com/nh7ifrn.jpg" loading="lazy" /></p>
+<p>You turn your head to the left and see skyscrapers.
+<img src="https://i.imgur.com/sCZTtq5.jpg" loading="lazy" /></p>
+<p>You turn your head to the right - the sea?
+<img src="https://i.imgur.com/lTmhhmU.jpg" loading="lazy" /></p>
+<p>Most of the skyscrapers look blue.
+<img src="https://i.imgur.com/zSnDLCT.jpg" loading="lazy" /></p>
+<p>Not all of the city is like that. These barracks are for Indians or
+Pakistanis. They make up the majority of workers here in Dubai.
+<img src="https://i.imgur.com/zFrQ8pN.jpg" loading="lazy" /></p>
+<p>This is apparently a church in the same area (or a mosque?).
+<img src="https://i.imgur.com/26BRn3l.jpg" loading="lazy" /></p>
+<p>I was ignorant enough to read this as “TOILET”. To be honest, in some of the
+areas of this neighborhood, I could smell an unpleasant presence.
+<img src="https://i.imgur.com/i7wORe5.jpg" loading="lazy" /></p>
+<p>Guys, I am not lying. I’d also be remiss if I didn’t mention that this is also
+the scariest place I found in Dubai. The city feels very safe in general.
+<img src="https://i.imgur.com/zt7iZIL.jpg" loading="lazy" /></p>
+<p>Even in the worst neighborhoods of Dubai, school buses dare to go inside.
+<img src="https://i.imgur.com/7m65V9r.jpg" loading="lazy" /></p>
+<p>Sometimes there’s even fancy architecture.
+<img src="https://i.imgur.com/wI9qMGV.jpg" loading="lazy" /></p>
+<p>Being a multinational city, occasionally you will see Russian signs in Dubai.
+<img src="https://i.imgur.com/a2xQEY2.jpg" loading="lazy" /></p>
+<p>I was especially surprised to see this Russian ballet dance center on the
+outskirts of the city (and, please, don’t ask me what I was doing there. I was
+just trying to find a way to cross a road, okay?).
+<img src="https://i.imgur.com/I08Wpfw.jpg" loading="lazy" /></p>
+<p>You can also find some imported Russian products.
+<img src="https://i.imgur.com/phtV486.jpg" loading="lazy" /></p>
+<p>I was especially surprised to find Ukrainian ice cream here (which is the best
+ice cream in the world, by the way).
+<img src="https://i.imgur.com/K1B5Dfo.jpg" loading="lazy" /></p>
+<p>Speaking of other products, there were a lot of Filipino goods available
+at supermarkets.
+<img src="https://i.imgur.com/UvozFQ3.jpg" loading="lazy" /></p>
+<p>That’s not an accident. According to my personal perception, 1/3 of the country
+speaks Filipino. No matter where you go, Filipinos will be working there. It was
+fun to practice my Tagalog once again and surprise a few folks. “Kabayan” in
+Tagalog means “fellow citizen”.
+<img src="https://i.imgur.com/ZLbKGpF.jpg" loading="lazy" /></p>
+<p>There’s a Catholic church available to everyone. But I guess it exists mostly
+because of the Filipino community here.
+<img src="https://i.imgur.com/uF522PA.jpg" loading="lazy" /></p>
+<p>What I don’t get is why it looks like Alcatraz. Look at the gate and the barbed
+wire.
+<img src="https://i.imgur.com/uNDUSgT.jpg" loading="lazy" /></p>
+<p>Usually, the Catholic churches I’ve been to look very nice both inside and
+outside. This one has a 3-meter concrete wall, which can withstand a direct hit
+from a modern tank, and 3-meter screens to catch all incoming grenades. Do they
+do masses there or mass shootings? What are they hiding there? Or is it to
+protect them from the outside? There are too many questions for a church.
+<img src="https://i.imgur.com/9USQiy9.jpg" loading="lazy" /></p>
+<p>Filipinos do love their pork. I think that’s why in certain supermarkets there
+is a pork section. The sign says “for non-Muslims,” but it should really say
+“for Filipinos.”
+<img src="https://i.imgur.com/8D1FoKs.jpg" loading="lazy" /></p>
+<p>Dubai keeps erecting new condominiums. The construction is sprawling.
+<img src="https://i.imgur.com/5OoWrNy.jpg" loading="lazy" /></p>
+<p>Surprisingly, at the same time, the city feels empty.
+<img src="https://i.imgur.com/A7pBkrJ.jpg" loading="lazy" /></p>
+<p>Tolerance bridge won’t save the situation if there’s nobody who can tolerate or
+be tolerated.
+<img src="https://i.imgur.com/poAhdFw.jpg" loading="lazy" /></p>
+<p>Don’t forget that the climate here is pretty harsh. I was lucky enough to visit
+Dubai in February. People told me that the coldest season is now. All the
+bushes, all the grass, it wasn’t growing by itself.
+<img src="https://i.imgur.com/sZcp6kv.jpg" loading="lazy" /></p>
+<p>It’s all man-made. Without a man’s touch, nature will eventually restore
+everything back to how it was.
+<img src="https://i.imgur.com/Xsn4T0D.jpg" loading="lazy" /></p>
+<p>A lot of money is wasted on these green pastures. What’s the point? Nobody walks
+here, people who drive don’t care that much.
+<img src="https://i.imgur.com/LG731Ad.jpg" loading="lazy" /></p>
+<p>Moreover, to keep it green, you have to waste the most precious resource on
+our planet, water.
+<img src="https://i.imgur.com/RsByUZF.jpg" loading="lazy" /></p>
+<p>I also don’t see any cows around. Who knows, they might convert that into a cow
+field and produce some Dubalpine milk.
+<img src="https://i.imgur.com/sH3kg4C.jpg" loading="lazy" /></p>
+<p>Dubai isn’t a new city but it still lacks history. They tried to build
+“historical” places, but they look too modern.
+<img src="https://i.imgur.com/Qh5v85A.jpg" loading="lazy" /></p>
+<p>But I will admit that some of it does look very beautiful.
+<img src="https://i.imgur.com/AtrJBkn.jpg" loading="lazy"></p>
+<p>I love the idea of donating old or unused clothes. We don’t have such boxes in Ukraine, so I just donate some of my clothes to people I know. If we had these boxes, I would do that much more frequently.
+<img src="https://i.imgur.com/tlM2hX5.jpg" loading="lazy"></p>
+<p>I heard the Dubai Mall is the biggest in the world. I don’t know if that still remains true, but I do know that it’s a clever idea to denote what language every staff member can speak.
+<img src="https://i.imgur.com/tyxHRim.jpg" loading="lazy"></p>
+<p>Being the biggest mall in the world doesn’t guarantee the largest number of visitors. It was relatively empty.
+<img src="https://i.imgur.com/n5og6BB.jpg" loading="lazy"></p>
+<p>I don’t blame people. In order to get here, you need to ride the metro. When you’re at the station, it’s a 15-minute walk through an overpass tunnel going straight to the mall. Yes, there are conveyor belts to speed this up, but even with them, it’s a very uncomfortable experience because there’s not much to look at.
+<img src="https://i.imgur.com/Yqm8vTF.jpg" loading="lazy"></p>
+<p>I think people would happily use golf carts or electric scooters in order to get to the mall or back to the metro station. That’s a free business idea for you, Dubai.
+<img src="https://i.imgur.com/NfjwFaV.jpg" loading="lazy"></p>
+<p>I have a tradition: I go to McDonald’s in every country that I visit and order a Big Mac.
+<img src="https://i.imgur.com/dvdpDrc.jpg" loading="lazy"></p>
+<p>What’s cool in the UAE is that I can customize my Big Mac and literally beef it up.
+<img src="https://i.imgur.com/v7DOAVC.jpg" loading="lazy"></p>
+<p>I didn’t see any squirrels here. Who should live in that house?
+<img src="https://i.imgur.com/c7C0mkz.jpg" loading="lazy"></p>
+<p>This guy?
+<img src="https://i.imgur.com/g1mhTyM.jpg" loading="lazy"></p>
+<p>A lot of famous tech companies are located in Dubai Internet City.
+Oracle.
+<img src="https://i.imgur.com/faHyp1d.jpg" loading="lazy"></p>
+<p>Microsoft.
+<img src="https://i.imgur.com/mGop3Ge.jpg" loading="lazy"></p>
+<p>Most of the fancy buildings are built by Emaar. Their brand name is everywhere.
+<img src="https://i.imgur.com/43PQGxL.jpg" loading="lazy"></p>
+<p>Emaaaaaaar! Find it in this picture.
+<img src="https://i.imgur.com/kRaEXlq.jpg" loading="lazy"></p>
+<p>A lot of these buildings look nice, but when you build thousands of them, they start to look the same (and bland).
+<img src="https://i.imgur.com/NjLsKv5.jpg" loading="lazy"></p>
+<p>Ctrl-C, Ctrl-V.
+<img src="https://i.imgur.com/l11yYBn.jpg" loading="lazy"></p>
+<p>Despite the abundance of skyscrapers, there are also a lot of wastelands.
+<img src="https://i.imgur.com/kcF5Yr1.jpg" loading="lazy"></p>
+<p>This is still very much inside the city.
+<img src="https://i.imgur.com/mCmJiDB.jpg" loading="lazy"></p>
+<p>I don’t know any Arabic, but I found it interesting that the spelling of “men” is so long in this language.
+<img src="https://i.imgur.com/3unK1rZ.jpg" loading="lazy"></p>
+<p>Free hot drinking water is a rare find. Kudos to those who thought about it.
+<img src="https://i.imgur.com/4Ikmb7B.jpg" loading="lazy"></p>
+<p>Sharps disposal box. I had never seen anything like this before. Is this for diabetic people? How interesting.
+<img src="https://i.imgur.com/YLgAKEC.jpg" loading="lazy"></p>
+<p>This guy is likely from Yakutia, the coldest inhabited region in the world. Old habits die hard.
+<img src="https://i.imgur.com/nwZqnUB.jpg" loading="lazy"></p>
+<p>What a dynamic duo they are!
+<img src="https://i.imgur.com/XamxkGk.jpg" loading="lazy"></p>
+<p>This is a sad broadwalk if no pets are allowed. Maybe it’s okay if my doggo wears modest clothes?
+<img src="https://i.imgur.com/5TSzm70.jpg" loading="lazy"></p>
+<p>What I loved about Dubai is how clean it is. The fact that you can go outside, spend the whole day, and come back home wearing completely clean shoes is pure bliss. This is something that’s practically non-existent in my country.
+<img src="https://i.imgur.com/yi7t6Vm.jpg" loading="lazy"></p>
+<p>It’s not a capitalist country if there’s no golf course.
+<img src="https://i.imgur.com/tUiYBqg.jpg" loading="lazy"></p>
+<p>These houses are also situated on the territory of the same golf course. I guess you can live and play here.
+<img src="https://i.imgur.com/VCuo1IC.jpg" loading="lazy"></p>
+<p>In very rare cases, you can see traffic helpers, just like in some Asian countries.
+<img src="https://i.imgur.com/gd6lHEf.jpg" loading="lazy"></p>
+<p>In order to lay down a few bricks, you need nine workers. Open question: how many workers does it take to screw in a light bulb in Dubai?
+<img src="https://i.imgur.com/A7bIuvh.jpg" loading="lazy"></p>
+<p>Some of those guys could visit this place and fix it.
+<img src="https://i.imgur.com/tH8n0Fd.jpg" loading="lazy"></p>
+<p>In very rare cases, manholes can be left open.
+<img src="https://i.imgur.com/tfx7D3x.jpg" loading="lazy"></p>
+<p>Where the school buses sleep.
+<img src="https://i.imgur.com/OooNz7K.jpg" loading="lazy"></p>
+<p>Where “environmental-friendly” vehicles sleep. I’m not sure why this parking space is reserved for them. There’s no charging station here.
+<img src="https://i.imgur.com/af6rnYS.jpg" loading="lazy"></p>
+<p>Where distribution boards (?) are left in the open air. This is not typical of Dubai.
+<img src="https://i.imgur.com/pglYRZ3.jpg" loading="lazy"></p>
+<p>The gap between the rich and the poor is very evident in the UAE. I had thought that everybody in Dubai swims in luxury. It turned out that only some people really do swim in luxury. They swim their yachts.
+<img src="https://i.imgur.com/IxX5mba.jpg" loading="lazy"></p>
+<p>The rest swim in their own sweat, induced by the sun.
+<img src="https://i.imgur.com/cyy1JNq.jpg" loading="lazy"></p>
+<p>Unfortunately, similarly to many Asian megalopolises, you have to use overpasses. At least in Dubai, all of them have working elevators.
+<img src="https://i.imgur.com/CvYIscg.jpg" loading="lazy"></p>
+<p>That’s because the streets belong to cars.
+<img src="https://i.imgur.com/OwVG8Ff.jpg" loading="lazy"></p>
+<p>I really love how some malls in Dubai make the directions clear. The malls here are huge, and it’s really easy to get lost.
+<img src="https://i.imgur.com/lIlYsVI.jpg" loading="lazy"></p>
+<p>Quarantine rules due to COVID-19 are taken seriously here. If you need to wait, you need to wait.
+<img src="https://i.imgur.com/FpY7O8E.jpg" loading="lazy"></p>
+<p>That was my Dubai story.
+<img src="https://i.imgur.com/YjLtakq.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-cebu-my-longest-journey-abroad-so-far"><a class="header" href="#-cebu-my-longest-journey-abroad-so-far">🇵🇭 Cebu. My longest journey abroad so far</a></h1>
+<p>
+  <time datetime="2019-08-24 00:23:44 +0200" itemprop="datePublished">
+    August 24, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Cebu City is the 2nd largest city of the Philippines. It is located on Cebu
+island and it’s the oldest city of the country. It’s similar to Metro Manila in
+a way that Cebu City is just a piece of the puzzle in the bigger picture. Many
+smaller cities comprise Metro Cebu and Cebu City is just one of them.
+<img src="https://i.imgur.com/ByRpAVB.jpg" loading="lazy"></p>
+<p>During the day, just like in Manila, the city is full of people. Most of them
+are concentrated at the roads. The traffic is not as bad as in Manila, but it’s
+getting worse every year. I’ve been told that 10-15 years ago Cebu had no
+traffic problems. Overall, the lack of public transportation is a major problem
+of the Philippines.
+<img src="https://i.imgur.com/eWlPPDS.jpg" loading="lazy" /></p>
+<p>During the night the city is empty. If you see a group of people on the street
+at night, they’re probably call center workers. Other people go to bed early and
+wake up really early. Some people sleep on the sidewalk. It’s really peaceful.
+<img src="https://i.imgur.com/5nb83IS.jpg" loading="lazy" /></p>
+<p>Those who don’t sleep and have no work prefer to go to karaoke bars or
+restaurants. There are almost no parks or pedestrian areas in Cebu, so hanging
+out outside is a bit complicated and not so enjoyable.
+<img src="https://i.imgur.com/EB9ZMav.jpg" loading="lazy" /></p>
+<p>A patch of burnt by the sun grass vaguely resembles a park. People have to sit
+on the ground because there are only 3-4 benches for that area. When it’s
+raining, you can no longer hang out there.
+<img src="https://i.imgur.com/Er4eu9u.jpg" loading="lazy" /></p>
+<p>I have to say that my perception of Cebu is affected by what I saw in
+Manila. That’s why I cannot stop myself from comparing them. In many ways Cebu
+is like Manila but with fewer people, fewer business districts. It’s also more
+clean and spacious.
+<img src="https://i.imgur.com/H4soVvP.jpg" loading="lazy" /></p>
+<p>People here speak Cebuano (unlike Tagalog in Manila). Locals don’t show as much
+interest in foreigners like me as they do it in Manila. This can probably be
+explained by the fact that the city receives more tourists than Manila.
+<img src="https://i.imgur.com/agjZ8D6.jpg" loading="lazy" /></p>
+<p>IT Park, a developing business district, hosts a lot of foreign companies. In a
+way, it’s similar to BGC in Manila, however it’s tiny compared to BGC (which
+itself isn’t huge).
+<img src="https://i.imgur.com/8tSAkzV.jpg" loading="lazy" /></p>
+<p>Unlike BGC, IT Park has problems with flooding during the rainy season. On a
+rainy day the weather forced me to remember autumn in Ukraine, where you need to
+jump from an island to an island inside a big pond that the street turns into.
+<img src="https://i.imgur.com/YmbIYIV.jpg" loading="lazy" /></p>
+<p>When you walk outside IT Park, regular life hits you. No sidewalks is a
+trademark of many Asian countries. You always have to watch your back to make
+sure a crazy jeepney driver doesn’t roll over you.
+<img src="https://i.imgur.com/8Y76aFW.jpg" loading="lazy" /></p>
+<p>In Cebu I finally got used to huge roaches. I still can’t stand them,
+though. Especially, when they fly. These critters can crawl anywhere, no matter
+what floor you live on. Once upon a time I woke up with one in my bed. Yuck!
+<img src="https://i.imgur.com/9bdeSwm.jpg" loading="lazy" /></p>
+<p>Here, like in the rest of the Philippines people build big fences and protect
+them with broken glass. I wonder, if Filipinos are so friendly, why are they
+afraid of each other?
+<img src="https://i.imgur.com/3kIzJhn.jpg" loading="lazy" /></p>
+<p>No problem if you didn’t manage to obtain a license for your motorcycle. You can
+draw it by yourself! “Regested” it says.
+<img src="https://i.imgur.com/BeLu4Z4.jpg" loading="lazy" /></p>
+<p>On Catholic Christmas people go to the church. Not just any church but <a href="https://en.wikipedia.org/wiki/Basilica_del_Santo_Niño">Basilica
+del Santo Niño</a>. In 2019
+I was lucky enough to follow this tradition. Thankfully, we knew nothing about
+COVID-19 back then.
+<img src="https://i.imgur.com/qyeivJx.jpg" loading="lazy" /></p>
+<p>It can get really crowded there. The street turns into a can of sardines where
+our sweat is the oil that we all swim in. It’s also really hot, so you might
+pass out. Yet, it doesn’t stop anyone.
+<img src="https://i.imgur.com/I3LVyDH.jpg" loading="lazy" /></p>
+<p>Cebu has a lot of beaches and mountains. That’s why it’s perfect for nature
+lovers (I am one!). What can be better than hiking in the mountains on a
+Saturday morning? As result, there can be landslides blocking the roads. They do
+happen from time to time.
+<img src="https://i.imgur.com/N0ihagX.jpg" loading="lazy" /></p>
+<p>This way to the toilet will make you feel dizzy as you walk through it. Is the
+idea to reject visitors, so that the toilets will remain cleaner?
+<img src="https://i.imgur.com/0vTwkQf.jpg" loading="lazy" /></p>
+<p>On the way to the toilet you can purchase wet wipes or tissue. Quite nifty!
+<img src="https://i.imgur.com/fITeEsS.jpg" loading="lazy" /></p>
+<p>Cebu’s specialty is lechon, a roasted pig. Typically, Cebuanos order a pig and
+roast it over an open fire when they have a holiday. The pork would be eaten
+with rice. This piece of bread is not real lechon, so don’t be confused.
+<img src="https://i.imgur.com/gHU4X6z.jpg" loading="lazy" /></p>
+<p>90% of the country has never seen snow. Yet, Christmas here is pictured with
+snow. TV goes a long way and forms an alternate reality for a lot of people on
+our planet.
+<img src="https://i.imgur.com/KXfAOTy.jpg" loading="lazy" /></p>
+<p>Something that I struggle to understand is the love of Filipinos for winter
+clothing. Once in a while I see people wearing winter hats when it’s 30°C
+outside. Sometimes it’s a spring coat. This guy won all style points. A pair of
+Timberlands! Let alone his costume. I would be a boiled sausage inside that
+apparel.
+<img src="https://i.imgur.com/fOws44y.jpg" loading="lazy" /></p>
+<p>COVID-19 cannot stop construction here. Many high-rise buildings are being
+constructed 24/7.
+<img src="https://i.imgur.com/EAAgC90.jpg" loading="lazy" /></p>
+<p>When you have an active construction in front of your windows, it can get a
+little noisy.
+<img src="https://i.imgur.com/Uch8EGu.jpg" loading="lazy" /></p>
+<p>Let me share with you a fun fact. Because of
+<a href="https://en.wikipedia.org/wiki/Sinulog">Sinulog</a> it also can get a little noisy
+on the streets in September… or October, or… well, these young musicians
+start practicing really well before the event. In fact, Sinulog is held on the
+third Sunday of January.
+<img src="https://i.imgur.com/C7Nxdv3.jpg" loading="lazy" /></p>
+<p>This is probably the only “Jeepney stop” sign in the country. You see, with
+jeepnees, there are no “stops”. They stop wherever the heck they want. There are
+“waiting areas”, though but you can discover them only if you’re local. Good
+luck finding such an area if you’re a tourist. You’ll probably have to smell
+that stop with your guts because those jeepneys leave a trail of soot.
+<img src="https://i.imgur.com/Hf1UQdZ.jpg" loading="lazy" /></p>
+<p>Speaking of which, pollution is a serious problem in the Philippines. Not only
+Filipinos litter everywhere, but other foreign countries also send trash there
+(and Philippines receives money).
+<img src="https://i.imgur.com/goxVREI.jpg" loading="lazy" /></p>
+<p>It was a rather surprising encounter. A telephone call box is something that
+dinosaurs used to use. It was so inconvenient to use that technology that they
+couldn’t figure out how to call each other and warn about the
+Cretaceous–Paleogene extinction event. That’s why they died.
+<img src="https://i.imgur.com/jEJb6g7.jpg" loading="lazy" /></p>
+<p>No matter where you live, in a shabby boarding house, or in an expensive condo,
+most likely you’ll have to use laundry services. Something that is a bit hard to
+stumble upon in my city is almost on every corner here in Cebu.
+<img src="https://i.imgur.com/euDwWIa.jpg" loading="lazy" /></p>
+<p>Cebu is open for everyone. Koreans and Japanese come here to study English.
+Chinese have a temple. Europeans and Americans come for resorts and
+beaches. Magellan died here. Kyrylo went home.
+<img src="https://i.imgur.com/J9mCzGt.jpg" loading="lazy" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-lviv"><a class="header" href="#-lviv">🇺🇦 Lviv</a></h1>
+<p>
+  <time datetime="2019-07-21 00:23:44 +0200" itemprop="datePublished">
+    July 21, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Lviv is probably the only place in Ukraine that I really wanted to visit. You
+see, I come from Eastern Ukraine where culture is influenced by Russia. The
+language we speak is Russian. On the other hand, Lviv is western Ukraine. It is
+influenced by Poland, Hungary and other western countries. People there speak
+Ukrainian. Lviv is also the most touristy city of Ukraine, so I had to go
+there…
+<img src="https://imgur.com/OvX37Ck.jpg" loading="lazy"></p>
+<p>Lviv leaves mixed feelings. The city centre has a truly amazing old
+architecture. However as soon as you take tram to escape it, it turns into a
+typical boring Soviet-style city. Pay attention to the horizon.
+<img src="https://imgur.com/hR1CW2B.jpg" loading="lazy"></p>
+<p>This old architecture, unfortunately, isn’t achievement of Ukraine. It’s called
+<a href="https://en.wikipedia.org/wiki/Old_Town_(Lviv)">Old Town</a> and it was built by
+previous inhabitants who were mostly Austro-Hungarian people.
+<img src="https://imgur.com/sswKbz7.jpg" loading="lazy"></p>
+<p>This gift, which they left us, Ukrainians, is not really appreciated. It hurts
+me when I see graffitis on old walls, doors, or anywhere in the city centre. I
+am not nitpicking, they are everywhere.
+<img src="https://imgur.com/Kt7OHr7.jpg" loading="lazy"></p>
+<p>Soviets also didn’t appreciate what Austro-Hungarians built. It is a real crime
+to build something like what you can see on the left next to something like what
+you see on the right.
+<img src="https://imgur.com/pqzN5cm.jpg" loading="lazy"></p>
+<p>A lot buildings and architectural whistles in Old Town badly need
+maintenance. If you don’t come too close, everything look amazing. Like this
+palace.
+<img src="https://imgur.com/a6cuZog.jpg" loading="lazy"></p>
+<p>But if you look down at your feet, ugly details will start showing up.
+<img src="https://imgur.com/UwmUEmq.jpg" loading="lazy"></p>
+<p>Modern Ukrainian culture leaves no chances for survival. Designers of this bench
+were probably imagining that it would be used by poets to write books, musicians
+to compose music, dreamers who dream about their love, students who prepare for
+their exams… Instead, it is used by alcoholics.
+<img src="https://imgur.com/UMFISCy.jpg" loading="lazy"></p>
+<p>I actually managed to find them. How dare you, Mr Bear!
+<img src="https://imgur.com/zmuecrM.jpg" loading="lazy"></p>
+<p>Yeah, I managed to find <em>all</em> of the perpetrators. How can you explain
+yourselves, guys?
+<img src="https://imgur.com/fvT5WV2.jpg" loading="lazy"></p>
+<p>Despite anything, Lviv is packed with amazing architecture. It is home for many
+architectural wonders.
+<img src="https://imgur.com/zHit8oh.jpg" loading="lazy"></p>
+<p>It’s not just the facade. The insides of some buildings were created with extra
+love.
+<img src="https://imgur.com/EhsFC2t.jpg" loading="lazy"></p>
+<p>Lviv has a lot of Catholic presence, which is not so common for Ukraine. That’s
+why you can see a lot of bas-reliefs related to religion, and especially
+Catholicism.
+<img src="https://imgur.com/qtXGYQm.jpg" loading="lazy"></p>
+<p>It’s not just on the walls. You need to lift your head up and look into the
+skies to see everything.
+<img src="https://imgur.com/lC4OkZY.jpg" loading="lazy"></p>
+<p>So yeah, Lviv is the centre of tourism in modern Ukraine. Old Town is full of
+tourists from all over the world. Polish children even organise field trips to
+the city.
+<img src="https://imgur.com/Uz31C3s.jpg" loading="lazy"></p>
+<p>The shops have a lot to offer. Lviv has its own identity. It’s proud of numerous
+things. For example, coffee and chocolate.
+<img src="https://imgur.com/E22fWHD.jpg" loading="lazy"></p>
+<p>It’s proud of beer (it says “pivo” in Ukrainian).
+<img src="https://imgur.com/HytPgbH.jpg" loading="lazy"></p>
+<p>And finally, it’s proud of lions! Lviv in Ukrainian roughly means “the city of
+lions”.
+<img src="https://imgur.com/X8l6CwT.jpg" loading="lazy"></p>
+<p>Old Town never sleeps. There are always restaurants that are ready to serve
+clients any time, any day.
+<img src="https://imgur.com/kHpyRR0.jpg" loading="lazy"></p>
+<p>There are always people who entertain.
+<img src="https://imgur.com/NE3IQwP.jpg" loading="lazy"></p>
+<p>There are a lot of thematic restaurants all around Old Town. One restaurant
+won’t let you in if you don’t know their password. Another restaurant serves
+only Jewish food. When you are ready to pay your check, you are supposed to
+bargain about the price of the meals you consumed. Another restaurant will make
+you pay astronomical prices for their meals unless you ask a “90% discount”.
+<img src="https://imgur.com/2UWvtwm.jpg" loading="lazy"></p>
+<p>You would need 3-4 days to cover most of the Old Town.
+<img src="https://imgur.com/zVWK91V.jpg" loading="lazy"></p>
+<p>It’s very convenient that there are tram lines connecting Old Town with the rest
+of Lviv.
+<img src="https://imgur.com/rjTxr45.jpg" loading="lazy"></p>
+<p>I realise that most of what I showed is about Old Town. You may be wondering
+now, what about New Town, the rest of Lviv? Well, I did manage to explore it a
+few times and unfortunately there’s nothing worthy of your attention there.
+Soviet Lviv is not exciting. Hey, let’s just focus on the pictures of Old Town!
+<img src="https://imgur.com/0FUqZdf.jpg" loading="lazy"></p>
+<p>And if you want to escape it…
+<img src="https://imgur.com/mxgGOA0.jpg" loading="lazy"></p>
+<p>You’d better go somewhere high, so that you can appreciate it from the distance!
+Because Lviv is all about Old Town.
+<img src="https://imgur.com/kkn00XR.jpg" loading="lazy"></p>
+<p>In my previous life I was probably a citizen of Lviv.
+<img src="https://imgur.com/YfgMTI4.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-amsterdam"><a class="header" href="#-amsterdam">🇳🇱 Amsterdam</a></h1>
+<p>
+  <time datetime="2019-06-23 00:23:44 +0200" itemprop="datePublished">
+    June 23, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Amsterdam feels like Asia without steroids. I didn’t realise it when I was there
+but it becomes more evident as I’m typing this post. Let’s analyse why that is
+so.
+<img src="https://imgur.com/x695oFf.jpg" loading="lazy" /></p>
+<p>Firstly, you have water canals for trading. Just like in Bangkok (and probably
+many other places in Asia). But here in Amsterdam the canals are used for
+tourists.
+<img src="https://imgur.com/64BQe4B.jpg" loading="lazy" /></p>
+<p>Secondly, the water canals are just as dirty as in Asia.
+<img src="https://imgur.com/UZu9vDZ.jpg" loading="lazy" /></p>
+<p>Thridly, the streets are so narrow that they just beg for street food
+vendors. No street food in Amsterdam, though.
+<img src="https://imgur.com/HqCtfOv.jpg" loading="lazy" /></p>
+<p>Next, public toilets are just on the streets. There’s no shame in peeing on the
+street. Again, the only difference is that in Asia they do it wherever, but in
+Amsterdam there’s a dedicated place on the street.
+<img src="https://imgur.com/7g7R6Hi.jpg" loading="lazy" /></p>
+<p>Next, they have KTV bars (karaoke). Nothing is more Asian than karaoke.
+<img src="https://imgur.com/iR41Cs3.jpg" loading="lazy" /></p>
+<p>Finally, pedicab taxis. They’re not in abundance like in the Philippines, and
+probably less annoying but they do exist. Should Amsterdam be actually called
+Little Manila?
+<img src="https://imgur.com/iAYHL4b.jpg" loading="lazy" /></p>
+<p>Of course, I was just joking. The capital of the Netherlands has its own face,
+and that’s why it’s one of the most popular destinations in the world. Where
+else can you see old houses that almost float above the river?
+<img src="https://imgur.com/RPqIqRu.jpg" loading="lazy" /></p>
+<p>I mean that literally. Some houses actually do float in the river because
+they’re boats.
+<img src="https://imgur.com/PKJY0Wj.jpg" loading="lazy" /></p>
+<p>Architecture here is on another level. It is simply impossible to take an ugly
+picture. I close my eyes, sit down and point the camera at a random
+direction. Turns out I just wanted to tie my shoelace and accidentally pressed
+the “Take picture” button. Here we go, that’s how a masterpiece is born.
+<img src="https://imgur.com/ZnSLDWe.jpg" loading="lazy" /></p>
+<p>It’s really above and beyond. Usually, McDonald’s butchers the look of the
+building that they occupy with their huge “M” signs everywhere. In Amsterdam,
+though, McDonald’s is very modest. It’s just like any other restaurant.
+<img src="https://imgur.com/5qdiJE1.jpg" loading="lazy" /></p>
+<p>Because old houses are tiny, they use hooks on the roof to lift furniture (or yo
+mama).
+<img src="https://imgur.com/tsmrHhI.jpg" loading="lazy" /></p>
+<p>Modern houses look simple but stylish. One important feature is that ground
+floor windows don’t have grills. Unbelievable luxury.
+<img src="https://imgur.com/Ksnh6Qv.jpg" loading="lazy" /></p>
+<p>There are always exceptions, though. I said stylish, but look at this! It’s hard
+to believe that this <a href="https://en.wikipedia.org/wiki/Khrushchyovka">khrushchyovka</a>
+was erected among the 17th century beauty.
+<img src="https://imgur.com/0XIefJD.jpg" loading="lazy" /></p>
+<p>Not many know this, but people in Amsterdam are rather forgetful. Count how many
+“P” signs you can see on this street.
+<img src="https://imgur.com/3DWTaov.jpg" loading="lazy" /></p>
+<p>Make a few steps outside the touristy city centre and there will be nobody. Do
+Dutch people actually live here?
+<img src="https://imgur.com/3vXb9S8.jpg" loading="lazy" /></p>
+<p>Probably, someone does. That someone is really lucky: they have a metro station
+right in their backyard!
+<img src="https://imgur.com/TwSqvEi.jpg" loading="lazy" /></p>
+<p>In your average city lovebirds hang lovelocks to bridges. In Amsterdam they lock
+lovebicycles there.
+<img src="https://imgur.com/D9YSwf3.jpg" loading="lazy" /></p>
+<p>Tourists from all over the world generate gigabytes of data to be posted on the
+internet.
+<img src="https://imgur.com/jp3sNvX.jpg" loading="lazy" /></p>
+<p>In its turn, Amsterdam generates clogs for them.
+<img src="https://imgur.com/FxMHqXO.jpg" loading="lazy" /></p>
+<p>So, this is how a first-world church looks like.
+<img src="https://imgur.com/QZvmZ90.jpg" loading="lazy" /></p>
+<p>It is so first-world that it’s almost about to accept donations in bitcoins.
+<img src="https://imgur.com/OAuUuxN.jpg" loading="lazy" /></p>
+<p>Yeah, Netherlands is first-world. You can drink tap water in the Schiphol
+airport.
+<img src="https://imgur.com/U2vcxeD.jpg" loading="lazy" /></p>
+<p>But you cannot park your regular petrol car anymore. Sorry, grandpa, only
+electric cars are allowed.
+<img src="https://imgur.com/Cas3Vue.jpg" loading="lazy" /></p>
+<p>Netherlands has a very efficient train system that connects all major cities.
+<img src="https://imgur.com/g0nOJUs.jpg" loading="lazy" /></p>
+<p>However, it’s not perfect. We stopped after 5 minutes into the trip. The train
+driver said something in Dutch and everyone laughed. As result, we were stuck
+for 15 minutes. That, basically, sums up my very first experience with public
+transportation in Holland!
+<img src="https://imgur.com/0v2rLqp.jpg" loading="lazy" /></p>
+<p>Some things don’t change, no matter what country you’re in. Mice choose to live
+at train stations, and Schiphol is no exception.
+<img src="https://imgur.com/jHRMEtO.jpg" loading="lazy" /></p>
+<p>I’m not grumpy, though. You see, it doesn’t take a genius to build basic
+amenities for a train station: escalators instead of staircases, benches instead
+of nothing, roof to protect from the sun and the rain. Sounds simple enough. Yet,
+many cities fail. But Amsterdam wins.
+<img src="https://imgur.com/vz4ohfb.jpg" loading="lazy" /></p>
+<p>Pigeons belong to every city across the globe. They eat whatever they can. I
+call them flying rats for that very reason. The Dogs &amp; Burgers kiosk at the top
+right corner of the picture is alarming (did they forget to mention pigeons?).
+<img src="https://imgur.com/5XM6Xn3.jpg" loading="lazy" /></p>
+<p>The Ukrainian flag is used for scaffolding. Not sure if I should be proud or
+angry.
+<img src="https://imgur.com/9fEXKNw.jpg" loading="lazy" /></p>
+<p>Driving here is probably unbearable. First, you have to yield to cyclists. Next,
+you have to pay crazy fees to enter the city centre and park there. Finally, you
+have to wait for moveable bridges.
+<img src="https://imgur.com/LPsvIca.jpg" loading="lazy" /></p>
+<p>Similar to Rotterdam, people without bikes who want to use bike lanes use tiny
+cars instead.
+<img src="https://imgur.com/o6q23IC.jpg" loading="lazy" /></p>
+<p>The past blends with the present through architecture. We should all thank Dutch
+people for preserving this historical landmark that Amsterdam city centre is.
+<img src="https://imgur.com/9ZBJS4V.jpg" loading="lazy" /></p>
+<p>Thanks for preserving this beauty, thanks for everything!
+<img src="https://imgur.com/GlO99yg.jpg" loading="lazy" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-rotterdam"><a class="header" href="#-rotterdam">🇳🇱 Rotterdam</a></h1>
+<p>
+  <time datetime="2019-06-19 00:23:44 +0200" itemprop="datePublished">
+    June 19, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>The Netherlands is a country that I had always wanted to visit. In my head it
+was a little paradise, where people follow the rules, nobody knows trouble and
+cycles all day long. Did it live up to the expectation? Rotterdam will tell.
+<img src="https://imgur.com/Zdeuw2O.jpg" loading="lazy"></p>
+<p>The city is very clean, has a lot of high quality asphalt and… not many
+people. I don’t know, maybe I’ve become too used to the Philippines, but
+Rotterdam has a lot of space and barely any life.
+<img src="https://imgur.com/POoWuVr.jpg" loading="lazy"></p>
+<p>And by clean I mean <em>really</em> clean. This place is one of the few that has <em>some</em>
+litter.
+<img src="https://imgur.com/ZG6kq72.jpg" loading="lazy"></p>
+<p>A lot of modern and spectacular buildings stay dark at night because there’s
+nobody inside.
+<img src="https://imgur.com/hMmZmEv.jpg" loading="lazy"></p>
+<p>I can’t say Rotterdam is concrete jungle but nature is definitely being ousted
+here. You can see little specks of soil here and there, maybe a few trees, but
+it’s a very controlled environment.
+<img src="https://imgur.com/Wglb3mS.jpg" loading="lazy"></p>
+<p>Those few brave trees who survived fled to the river. That’s the only way to
+withstand urbanisation.
+<img src="https://imgur.com/q6nNav4.jpg" loading="lazy"></p>
+<p>My dreams about the wonderland with obeying people were ruined because… you
+know, people are still people, no matter where. Breaking rules is in our
+nature. I had no idea that bicycle lanes can be shared with mini cars and
+mopeds.
+<img src="https://imgur.com/HIHq60T.jpg" loading="lazy"></p>
+<p>So hear me out! With every mini car on a bike lane, one real bicycle gets
+sad.
+<img src="https://imgur.com/mLb1u36.jpg" loading="lazy"></p>
+<p>It can get suffocating even when you park.
+<img src="https://imgur.com/9LMivFP.jpg" loading="lazy"></p>
+<p>Despite that, cycling in Rotterdam is still very enjoyable. I spent a few
+memorable hours doing nothing but cycling wherever the road takes me. I stumbled
+upon an underground tunnel just for cyclists. I couldn’t believe this existed!
+<img src="https://imgur.com/5FNrQzr.jpg" loading="lazy"></p>
+<p>I also found a home of the worst oatmeal ever, Quaker Oats. I have to admit that
+the area around smelled yummy, but don’t let this deceive you.
+<img src="https://imgur.com/Zilk37t.jpg" loading="lazy"></p>
+<p>Speaking of food, you have to try the
+<a href="https://en.wikipedia.org/wiki/Stroopwafel">stroopwafel</a>, a Dutch specialty. A
+stroopwafel with a hot cup of tea is my bread and butter (by the way, bread and
+butter is also nice with tea).
+<img src="https://imgur.com/Quutcjb.jpg" loading="lazy"></p>
+<p>The Rotterdam metro is trying to look like McDonald’s. Sometimes it blends nicely.
+<img src="https://imgur.com/ywuTt2I.jpg" loading="lazy"></p>
+<p>There’s a good criteria that separates rich countries from
+developing ones. Tap water is drinkable in the former.
+<img src="https://imgur.com/fsz7mFS.jpg" loading="lazy"></p>
+<p>Another good criterion is having a freaking helicopter on a yacht. Merely yachts
+don’t impress me anymore.
+<img src="https://imgur.com/YnyYBT8.jpg" loading="lazy"></p>
+<p>So yeah, Rotterdam is an incredibly rich city. As result, everything looks
+expensive, quacks expensive and <em>is</em> expensive. You want electric cars? No
+problem.
+<img src="https://imgur.com/VQPvg2i.jpg" loading="lazy"></p>
+<p>Cruise ships? You got it.
+<img src="https://imgur.com/49ZdG8I.jpg" loading="lazy"></p>
+<p>Retro cars? Check!
+<img src="https://imgur.com/ZE7m4sg.jpg" loading="lazy"></p>
+<p>I don’t see much commonality between Netherlands and Ukraine, but one thing that
+made me chuckle is the casinos. We have exactly the same thing at it looks
+equally ugly on the outside.
+<img src="https://imgur.com/Tr6XQJ9.jpg" loading="lazy"></p>
+<p>Okay, maybe there’s one more thing that unites us. My granny used to grow these
+flowers.
+<img src="https://imgur.com/S0tPf1h.jpg" loading="lazy"></p>
+<p>Because Rotterdam was destroyed during World War 2, it has a lot of modern
+architecture now. Some of it looks nice.
+<img src="https://imgur.com/wbYHhQr.jpg" loading="lazy"></p>
+<p>But other parts remind me of Soviet Union.
+<img src="https://imgur.com/nPxl9si.jpg" loading="lazy"></p>
+<p>Really old buildings are maintained properly. They don’t have air conditioners
+or plastic windows, so they look fashionable even until now.
+<img src="https://imgur.com/HtC5pxt.jpg" loading="lazy"></p>
+<p>This is probably the worst looking piece of “architecture” in the whole city.
+<img src="https://imgur.com/8U4A4Sq.jpg" loading="lazy"></p>
+<p>This church looks old enough, but new buildings block it. It was really tricky
+to find an angle to take a picture of the entrance. Even then the sign blocked
+the view of the door.
+<img src="https://imgur.com/uIOWLbV.jpg" loading="lazy"></p>
+<p>Islam presence is growing, and new mosques get open frequently.
+<img src="https://imgur.com/XI7kwRs.jpg" loading="lazy"></p>
+<p>China is also expanding its influence. I didn’t expect to see Bank of China here
+(it also exists in the Philippines).
+<img src="https://imgur.com/0whaVjP.jpg" loading="lazy"></p>
+<p>As for Ukrainian presence or influence… well, that’s about it.
+<img src="https://imgur.com/CcQiZM9.jpg" loading="lazy"></p>
+<p>Remember I told you that all the trees fled to the river? Well, there’s
+actually a park with a lot of greenery. Dutch people are so used to wheels that
+even in the parks they use segways.
+<img src="https://imgur.com/rqm535m.jpg" loading="lazy"></p>
+<p>And when they sit down they won’t stop cycling. Hup Holland hup!
+<img src="https://imgur.com/OqMeENm.jpg" loading="lazy"></p>
+<p>When you don’t want to give up rap music but work as an office clerk.
+<img src="https://imgur.com/fhIr1Uh.jpg" loading="lazy"></p>
+<p>This is the first cruise line in the Netherlands that connected Netherlands and
+United States.
+<img src="https://imgur.com/Dkdpp3b.jpg" loading="lazy"></p>
+<p>What do you see here? I see a wedding ring, a wine bottle opener and a
+swatter. Art.
+<img src="https://imgur.com/tcLmiAv.jpg" loading="lazy"></p>
+<p>This is how a proper bicycle parking rack should look like. Now take a look at
+your nearest hipster restaurant and notice the abomination near the door that
+they call “bicycle parking rack”.
+<img src="https://imgur.com/aWzaQSN.jpg" loading="lazy"></p>
+<p>One can say that Dutch people take pride in what they do.
+<img src="https://imgur.com/NPHS4Vz.jpg" loading="lazy"></p>
+<p>A typical Rotterdam porch: a glass door, mailboxes and a few vases with flowers.
+<img src="https://imgur.com/S5M8HgH.jpg" loading="lazy"></p>
+<p>I had heard that Dutch trams were modern and silent. They do indeed look modern,
+but I wouldn’t say they make no noise. It’s quite noticeable (which isn’t
+necessarily bad if you have trams cruising in half a meter from you).
+<img src="https://imgur.com/GA8qIrt.jpg" loading="lazy"></p>
+<p>A lot of boats and ships occupy rivers. They’re stationed forever and serve as
+hotels or places to live for locals. Do rent a boat at least for a day because
+it’s a unique experience.
+<img src="https://imgur.com/pqGSKlw.jpg" loading="lazy"></p>
+<p>But always be mindful of pirates.
+<img src="https://imgur.com/3UE7rZ7.jpg" loading="lazy"></p>
+<p>Full ahead onto the next journey.
+<img src="https://imgur.com/5li4wK0.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-manila-chrismas-and-my-future-prospects"><a class="header" href="#-manila-chrismas-and-my-future-prospects">🇵🇭 Manila. Chrismas and my future prospects</a></h1>
+<p>
+  <time datetime="2019-01-26 00:23:44 +0200" itemprop="datePublished">
+    January 26, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>As you might have noticed, I’ve been a frequent visitor to Manila. In fact,
+every year I spend more and more time in the Philippines. One might think that
+there’s not much to speak about anymore. Wrong.
+This time I’ve gotten to experience a beautiful holiday called
+<a href="https://en.wikipedia.org/wiki/Christmas_in_the_Philippines">Paskó</a> (Christmas).
+<img src="https://imgur.com/S0d6geg.jpg" loading="lazy"></p>
+<p>Christmas season starts on September 1 and ends on December 25. Filipinos don’t
+take it lightly. Manila changes drastically. All the malls, parks, and other
+public spaces get decorated with Christmas lights, lanterns (called paról) and
+such.
+<img src="https://imgur.com/qrrR6FF.jpg" loading="lazy"></p>
+<p>Why not, right? Although it consumes a lot of electricity, it’s good for
+business, and makes ordinary people like me happy. It’s very lively.
+<img src="https://imgur.com/FtFRrxY.jpg" loading="lazy"></p>
+<p>Malls know it best and put the most effort. As result, famished for pictures
+tourists get attracted.
+<img src="https://imgur.com/totVe3E.jpg" loading="lazy"></p>
+<p>That said, life doesn’t revolve around Christmas 24/7. Workers gotta work.
+<img src="https://imgur.com/qfTKFx2.jpg" loading="lazy"></p>
+<p>The construction is just crazy here. The city is being built every day and
+every night. Everyone suffers because of noise, pollution and congestion.
+<img src="https://imgur.com/8oab58F.jpg" loading="lazy"></p>
+<p>So yeah, most of the time Manila is congested. The roads are full of
+cars. Average speed is close to 5 km/h.
+<img src="https://imgur.com/QQj1luY.jpg" loading="lazy"></p>
+<p>This is not always the case, though. There’s one, just one special day in the
+calendar when Manila turns into a ghost town (only for half a day). If you
+guessed the morning of December 25, you’re right.
+<img src="https://imgur.com/StOISkO.jpg" loading="lazy"></p>
+<p>Frequently, popular roads, turn into situational markets or places for
+beggars. Since the car speed is so low, even a child can knock on your window
+and ask for a peso.
+<img src="https://imgur.com/2qSSwEg.jpg" loading="lazy"></p>
+<p>While one bunch struggles to survive, some other people live in year 3000. Who
+could’ve guessed that you can shop like this?
+<img src="https://imgur.com/GqE5eMp.jpg" loading="lazy"></p>
+<p>Churches, though, have been here since forever. But what if old churches were
+built according to modern blueprints, they would look something like this
+one. This church is on the rooftop of a mall (yes, Philippines likes to shop
+religiously).
+<img src="https://imgur.com/5bmjDfJ.jpg" loading="lazy"></p>
+<p>Speaking of urban planning in other areas, Manila, as you may know, doesn’t have
+any bicycle lanes. That’s bad. So they started building them. That’s
+good. However, I couldn’t believe my eyes when I saw what they did. A bicycle
+lane that goes through… trees and light poles?
+<img src="https://imgur.com/X1rDwFm.jpg" loading="lazy"></p>
+<p>This one is really a prominent piece of cursed achitecture. It used to be a
+sidewalk, but now it’s a bicycle lane <em>and</em> a sidewalk. If everybody follows the
+rules, there’s no room for pedestrians to walk. Luckily, cyclists still prefer
+cycling on the road.
+<img src="https://imgur.com/NnsZaec.jpg" loading="lazy"></p>
+<p>Basically, cyclists are not welcome in Manila.
+<img src="https://imgur.com/9yZZK5T.jpg" loading="lazy"></p>
+<p>Cars still rule the streets. A casual car of a casual consul from the Russian
+embassy. Looks scary because you don’t see what’s inside.
+<img src="https://imgur.com/BprnOHe.jpg" loading="lazy"></p>
+<p>Scooters or motorcycles also have their place. Often times I would pass by this
+parked scooter. Every time I would have the same question: “why?!”.
+<img src="https://imgur.com/iSbAvlJ.jpg" loading="lazy"></p>
+<p>You might think that they’re builing a nice bicycle lane here. No, they’re just
+repairing the road because it was damaged due to construction of the highrise
+building nearby.
+<img src="https://imgur.com/jKH5fPm.jpg" loading="lazy"></p>
+<p>Modern Filipinos communicate a lot through smartphones. It’s not a lucky shot,
+where I noticed a group of people not noticing each other. That’s just how life
+is in 2018.
+<img src="https://imgur.com/e16UdGy.jpg" loading="lazy"></p>
+<p>Modern life here is also about food and restaurants. The hypewave has also hit
+my brain. I’ve got lucky enough to go to the first branch of the famous Rico’s
+<a href="https://en.wikipedia.org/wiki/Lechon">Lechon</a> in Manila when they just
+opened. It’s famous because even the president of the Philippines, Rodrigo
+Duterte, likes it (there’s a picture on the wall with Duterte and Rico, the
+owner of the restaurant).
+<img src="https://imgur.com/OKcbHrL.jpg" loading="lazy"></p>
+<p>As for me, year 2018 in the Philippines was important because I started learning
+Tagalog (an official language of the Philippines spoken in Manila). While it’s
+not mandatory to know the Tagalog language if you live here, it certainly
+smoothens your communication experience. With help of it I’m able to connect
+with Filipino people on a different level, which can’t be achieved with English
+only.</p>
+<p>So Tagalog lacks the letter “F”. That’s why the word “Filipino” is actually
+“Pilipino” in Tagalog. This leads to interesting results that may tickle your
+brain.
+<img src="https://imgur.com/TkpsEpX.jpg" loading="lazy"></p>
+<p>A lot of people seek happiness and good salary outside Philippines. They’re
+called Overseas Filipino workers (OFW), and get treated in a special
+way. Filipinos work all over the world (maybe except Ukraine because I haven’t
+met a single Filipino there).
+<img src="https://imgur.com/KrOwret.jpg" loading="lazy"></p>
+<p>“First world country, thirld world people”. This is usually associated with
+Singapore but someone meant Philippines this time.
+<img src="https://imgur.com/mQXZpuZ.jpg" loading="lazy"></p>
+<p>The climate can also be harsh here. Either draught with insane heat, or endless
+rainfall. Because of this some light poles have marks on them. They represent
+the level of flood on the street. During those rainy days some parts of Manila
+can be reached only with help of a good boat.
+<img src="https://imgur.com/hHFdOCN.jpg" loading="lazy"></p>
+<p>If runners are crossing, the sign says they should be wearing red sneakers. I’m
+wondering, what if the runners wore blue sneakers? The sign looks a bit silly
+because it looks like the guy is escaping from someone, rather than training.
+<img src="https://imgur.com/5BmJSqY.jpg" loading="lazy"></p>
+<p>A memorial for American and Filipino soldiers who fought in WW2 against Japan.
+<img src="https://imgur.com/5SzJ0Wf.jpg" loading="lazy"></p>
+<p>Makati, which is a part of Metro Manila, has a remarkable street. Nighlife is
+flourishing there, but at the same time also smells like armpits, sewers and
+roaches. If there are children in the room, please cover their noses before you
+start smelling the picture below.
+<img src="https://imgur.com/RUFsAL3.jpg" loading="lazy"></p>
+<p>I celebrated New Year’s Eve 2019 on the street. There was a concert with many
+Filipino stars. Some of them were so horrible that you had to cover your years
+;-)
+<img src="https://imgur.com/XHiuyKg.jpg" loading="lazy"></p>
+<p>Yes, I spent New Year’s Eve 2019 in Asia again and entered year 2019 on the
+street. Might it be my home now (Philippines, not the street)?
+<img src="https://imgur.com/EGEyzrW.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-legazpi"><a class="header" href="#-legazpi">🇵🇭 Legazpi</a></h1>
+<p>
+  <time datetime="2019-01-19 00:23:44 +0200" itemprop="datePublished">
+    January 19, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Legazpi is a city in the southern part of Luzon island. Its population is nearly
+200,000 people, so it’s considered low for the Philippines. The reason why
+people go here (including me) is Mayón Volcano.
+<img src="https://imgur.com/Wg7I9FK.jpg" loading="lazy" /></p>
+<p>Despite the volcano, we all know that all the roads in the Philippines lead to
+Jollibee, a famous fast food chain that competes with McDonald’s, KFC, and
+others. As a diligent Filipino city, Legazpi follows this tradition.
+<img src="https://imgur.com/65x3Bvn.jpg" loading="lazy" /></p>
+<p>The first day was wonderful. The sky was clear, the weather was great, the birds
+were chirping, the kids were playing, the street vendors were honking and
+selling, and the folks were happy. What’s most important, you could see the
+volcano from all the angles.
+<img src="https://imgur.com/FazpuPk.jpg" loading="lazy" /></p>
+<p>However, on the next day, when it was the time to go close to Mayon, it all went
+to shits. Yes, it became cloudy and started raining. How could that happen? No
+matter how close you are, you wouldn’t see anything. Mayon became too shy.
+<img src="https://imgur.com/vvLbBS1.jpg" loading="lazy" /></p>
+<p>The only little thing I could see was the coconut bug I found on a tree. It
+didn’t care if it was raining, storming or snowing as long as there are coconut
+trees to munch on.
+<img src="https://imgur.com/iYMXzBf.jpg" loading="lazy" /></p>
+<p>Yeah, no matter which way you take, the clouds would mystify (sic!) the
+road. Maybe Jollibee has the point? Maybe it <em>is</em> the solution when there’s
+nothing else to do?
+<img src="https://imgur.com/if5SMw7.jpg" loading="lazy" /></p>
+<p>Or maybe it was the right time to find cover under a hut and enjoy the rest of
+the day doing nothing? I mean, there are friends and coconuts there, so it would
+be a pleasant evening.
+<img src="https://imgur.com/ARwRaV7.jpg" loading="lazy" /></p>
+<p>But if you don’t give up easily like me, you will move on. You’ll want to admire
+the view but you won’t see much. So is it really the time to be upset?
+<img src="https://imgur.com/F9GYfW4.jpg" loading="lazy" /></p>
+<p>Of course not! Despite the bad weather I can still have fun.
+<img src="https://imgur.com/Cpd7GmR.jpg" loading="lazy" /></p>
+<p>Despite the litter everywhere I can still have fun.
+<img src="https://imgur.com/bSHqnww.jpg" loading="lazy" /></p>
+<p>Despite poverty I will <em>still</em> have fun.
+<img src="https://imgur.com/31o53W4.jpg" loading="lazy" /></p>
+<p>I will still be enjoying old churches…
+<img src="https://imgur.com/Qrh4dBQ.jpg" loading="lazy" /></p>
+<p>…or modern haciendas.
+<img src="https://imgur.com/eRelDgY.jpg" loading="lazy" /></p>
+<p>Breathtaking nature is what motivates me.
+<img src="https://imgur.com/gXNlRbR.jpg" loading="lazy" /></p>
+<p>Even if it rains, I can go wherever the river flows.
+<img src="https://imgur.com/lVooHwP.jpg" loading="lazy" /></p>
+<p>Even if I didn’t get to see Mayon close enough, I can still imagine it through
+the fog.
+<img src="https://imgur.com/SD1WPKN.jpg" loading="lazy" /></p>
+<p>And you know why? Because it <em>is</em> more fun in the Philippines.
+<img src="https://imgur.com/AZdlZLd.jpg" loading="lazy" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-bohol"><a class="header" href="#-bohol">🇵🇭 Bohol</a></h1>
+<p>
+  <time datetime="2019-01-05 00:23:44 +0200" itemprop="datePublished">
+    January 5, 2019
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Bohol… what a wonderful island. With each visit, I get to know the Philippines better and better. It’s interesting that I’ve never managed to leave Luzon (the island where Manila is). So this trip allowed me to visit my first Philippine island (2nd out of 7641).
+<img src="https://imgur.com/aQS9dKB.jpg" loading="lazy" /></p>
+<p>Bohol is famous for its fabulous <a href="https://en.wikipedia.org/wiki/Chocolate_Hills">Chocolate Hills</a>. I didn’t expect that there were so many of them.
+<img src="https://imgur.com/q1DuR52.jpg" loading="lazy" /></p>
+<p>One simply cannot resist peeping in.
+<img src="https://imgur.com/h8fwXdB.jpg" loading="lazy" /></p>
+<p>As you have already guessed, the Chocolate Hills have nothing to do with chocolate. They just look like chocolate truffles.
+<img src="https://imgur.com/DwR5bdv.jpg" loading="lazy" /></p>
+<p>Every Filipino knows this landmark because it’s printed on the 200 pesos bill. What’s shown on the bill is just a small fraction of what you can see from the observation deck.
+<img src="https://imgur.com/JK5ZOTC.jpg" loading="lazy" /></p>
+<p>It was really silly of me not renting a scooter on my first day here. It turned out to be a cheap and easy way to navigate around the island. Using public transportation is not a viable option. It is more costly and time-consuming in the end. You also have to haggle your way. Fixed price for scooter rent solves all of those headaches and provides flexibility for traveling anywhere and stopping whenever.</p>
+<p>That said, maybe it was a smart move. You see, the word on the street is that you might get into a gun accident if you park where you shouldn’t.
+<img src="https://imgur.com/2dsRcGD.jpg" loading="lazy" /></p>
+<p>This vending machine sells water. I was rather surprised to see something like this here. In Kharkiv, we have the same machines all over the city. They are a bit more advanced, but the idea is still the same.
+<img src="https://imgur.com/Lzi3zrC.jpg" loading="lazy" /></p>
+<p>Tagbilaran, the capital of the island, offers trikes as public transport. The fare is fixed but can get higher if you travel farther. The signature frame is what makes it different from other trikes across the Philippines.
+<img src="https://imgur.com/v151x57.jpg" loading="lazy" /></p>
+<p>Alona beach is an ultra-touristy beach on Panglao Island (not too far from Tagbilaran). This was the first time I saw and touched clean white sand. I’m yet to see blue crystal water, though. The water there was just clean enough.</p>
+<p>Forgive me my savagery, but I found it really strange to see people sitting at tables just 1 meter from the sea. Wouldn’t it be better to have a picnic on the sand instead?
+<img src="https://imgur.com/LCcy62y.jpg" loading="lazy" /></p>
+<p>Water in some other areas can actually be really murky. Not sure if this is because of pollution or natural reasons.
+<img src="https://imgur.com/ZEFLbAc.jpg" loading="lazy" /></p>
+<p>In regular countries, litter is recycled. In Bohol, they make lanterns out of it. I should’ve asked for a blueprint because my room is too dark anyway.
+<img src="https://imgur.com/TY54mFk.jpg" loading="lazy" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Tarsier">Tarsiers</a> live here. I won’t bore you with standard information about them, but do visit them in case they’re gone from our planet (the species is endangered).
+<img src="https://imgur.com/vEaRlj0.jpg" loading="lazy" /></p>
+<p>I’m actually more of a bug and worm guy. Who doesn’t want to start their morning with a good cup of fresh Filipino coffee and a pinch of healthy chichaworms?
+<img src="https://imgur.com/003D5Wp.jpg" loading="lazy" /></p>
+<p>This island is the place with the most kind people, who apologise for being close. Where else would you find such gentlemen?
+<img src="https://imgur.com/25IaEdG.jpg" loading="lazy" /></p>
+<p>But sometimes, when you’re close, you don’t need an apology.
+<img src="https://imgur.com/Z46mwx8.jpg" loading="lazy" /></p>
+<p>The island is bursting with nature. No matter where you go, it’s beautiful.
+<img src="https://imgur.com/F6OjoMS.jpg" loading="lazy" /></p>
+<p>I wish I could be one of these little goats eating green grass, so I could unite with nature.
+<img src="https://imgur.com/CzbfhpU.jpg" loading="lazy" /></p>
+<p>But I’m only a human, and the only thing that Mother Nature offers me is a stalk of unripe bananas.
+<img src="https://imgur.com/lblysog.jpg" loading="lazy" /></p>
+<p>Every dog knows that there are no sidewalks in the country, so you have to walk by the side of the road.
+<img src="https://imgur.com/xDK930T.jpg" loading="lazy" /></p>
+<p>One distinct feature of Bohol is that almost all of the vehicles on the island have broken speedometers. Including this bus.
+<img src="https://imgur.com/0H1Iq2R.jpg" loading="lazy" /></p>
+<p>I’ve never seen an open-space cyber cafe, but it’s a thing here. Just inside a mall, why not.
+<img src="https://imgur.com/SNzJWBA.jpg" loading="lazy" /></p>
+<p>However, malls are not the reason why people go here. Diving, swimming, and enjoying sunsets are just a few of them.
+<img src="https://imgur.com/KOGOWBx.jpg" loading="lazy" /></p>
+<p>Although, please, never forget that life doesn’t end here.
+<img src="https://imgur.com/ONtNlE7.jpg" loading="lazy" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-cavite-province"><a class="header" href="#-cavite-province">🇵🇭 Cavite province</a></h1>
+<p>
+  <time datetime="2018-09-30 00:23:44 +0200" itemprop="datePublished">
+    Semptember 30, 2018
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Cavite is a big province in Luzon, Philippines. During this trip, I was lucky enough to visit Bacoor, Maragondon, and Kawit.
+<img src="https://imgur.com/J3JnrGo.jpg" loading="lazy" /></p>
+<p>Somehow, Maragondon gave me Ukrainian vibes (check the flags).
+<img src="https://imgur.com/ci7OGvC.jpg" loading="lazy" /></p>
+<p>The main point of interest in Maragondon is Bonifacio Shrine. The road to it is sinuous and thorny.
+<img src="https://imgur.com/MrJUU0K.jpg" loading="lazy" /></p>
+<p>If you find yourself vulnerable, lost, and stuck…
+<img src="https://imgur.com/darvhIo.jpg" loading="lazy" /></p>
+<p>…just ask some local cows for directions.
+<img src="https://imgur.com/tsMT33n.jpg" loading="lazy" /></p>
+<p>The shrine itself was actually abandoned.
+<img src="https://imgur.com/OY8RjSn.jpg" loading="lazy" />
+The official way to enter its territory was through a window in the booth by the gate. Because of this, wildlife was prospering. I’m not lying, there were absolutely no people there and the entrance was blocked.</p>
+<img src="https://imgur.com/FECDShz.jpg" loading="lazy" />
+Another point of interest in Cavite is Emilio Aguinaldo Shrine (it's an antique house), which is in the city of Kawit. This time, the road was easy because there were many beefed-up jeepneys cruising the city.
+<img src="https://imgur.com/U6pcCpC.jpg" loading="lazy" />
+I kid you not, it's the best house I've been to. Kuya Vener Vales, the guide, was kind enough to show me some secret passages inside the house and share fascinating stories about the history of the place. He's been the guide there for decades and has even witnessed Emilio Aguinaldo himself.
+<p>Unfortunately, lady History preferred not to reveal pictures of the shrine. Here’s a picture of a Kawit church during a mass, instead.
+<img src="https://imgur.com/s7Y79YU.jpg" loading="lazy" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-baguio"><a class="header" href="#-baguio">🇵🇭 Baguio</a></h1>
+<p>
+  <time datetime="2018-09-01 00:23:44 +0200" itemprop="datePublished">
+    Semptember 1, 2018
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Baguio is a big city in Luzon, Philippines, which is famous for its cold weather, mountains, strawberries and… lions. Why lions? I have no idea, but they have a huge lion head somewhere (and I didn’t stumble upon it)!
+<img src="https://imgur.com/uGRuit0.jpg" loading="lazy"></p>
+<p>One of my goals for this trip was to visit the famous strawberry fields. You get to pick strawberries by yourself, so you buy only the freshest and most delicious ones.
+<img src="https://imgur.com/KGf1JrE.jpg" loading="lazy"></p>
+<p>However, I came there only to discover that strawberries were not in season…
+<img src="https://imgur.com/v9hkR9N.jpg" loading="lazy"></p>
+<p>It’s recommended to visit the farm from February to May. So, I had to eat the dust instead.
+<img src="https://imgur.com/ff4j93C.jpg" loading="lazy"></p>
+<p>On the way to the farm, you pass “The Valley of Colors”.
+<img src="https://imgur.com/u4Ulgou.jpg" loading="lazy"></p>
+<p>It doesn’t look like anything special, though. Just a bunch of happy houses. That said, one of the inhabitants took the name too seriously.
+<img src="https://imgur.com/GKJgbSh.jpg" loading="lazy"></p>
+<p>An immediate observation about Baguio City: their jeepneys look way better than in Manila. They are more snazzy and better maintained. This one looks nothing special, however, it’s more clean and longer.
+<img src="https://imgur.com/Y6Fhnk3.jpg" loading="lazy"></p>
+<p>Have I already mentioned it even has a baby TV-set?
+<img src="https://imgur.com/pG9VE2k.jpg" loading="lazy"></p>
+<p>Without planning it, I discovered that I went there exactly on Baguio City Day. During the holiday, their central street turned into a street for pedestrians.
+<img src="https://imgur.com/eY7K98D.jpg" loading="lazy"></p>
+<p>Not only are jeepneys cleaner here, but Baguio in general is much cleaner than Manila. This is because they keep their surroundings clean.
+<img src="https://imgur.com/0LzN2gt.jpg" loading="lazy"></p>
+<p>They also have Clean Comfort Rooms™ all over the city (it’s just a paid toilet).
+<img src="https://imgur.com/M9izu4S.jpg" loading="lazy"></p>
+<p>It’s quite amusing that you get a ticket to be able to pee. Oh, and there are also discounts for students and senior citizens. Hot stuff!
+<img src="https://imgur.com/RvgrDns.jpg" loading="lazy"></p>
+<p>This is the most thankful toilet I’ve been at.
+<img src="https://imgur.com/2qkeuOC.jpg" loading="lazy"></p>
+<p>And also the most demanding one!
+<img src="https://imgur.com/d057DwL.jpg" loading="lazy"></p>
+<p>Why can’t I pee there?
+<img src="https://imgur.com/Q4NK36E.jpg" loading="lazy"></p>
+<p>Seriously, this toilet is very talkative.
+<img src="https://imgur.com/j4wAK3J.jpg" loading="lazy"></p>
+<p>In the night, if you climb up high enough, you can see some mysterious building that is very well lit and changes its colours. It turned out it was just Baguio City Hall.
+<img src="https://imgur.com/rENUdQC.jpg" loading="lazy"></p>
+<p>The handicapped crossing sign looks like a sign for wheelchair racing.
+<img src="https://imgur.com/bb8hU4M.jpg" loading="lazy"></p>
+<p>Wildlife.
+<img src="https://imgur.com/n0hf8hN.jpg" loading="lazy"></p>
+<p>Some insect.
+<img src="https://imgur.com/gJzenMY.jpg" loading="lazy"></p>
+<p>So here’s the story. I decided to enter some random cave…
+<img src="https://imgur.com/b1NAwtt.jpg" loading="lazy"></p>
+<img src="https://imgur.com/0JxnjOV.jpg" loading="lazy">
+...and I found a freaking huge spider inside who was guarding its eggs! It looked really dangerous, so I said bye-bye.
+<img src="https://imgur.com/lVxokdk.jpg" loading="lazy">
+<p>You can stumble upon some amazing plants. I don’t even know the name, but it looks like the fire from a candle.
+<img src="https://imgur.com/re1Deju.jpg" loading="lazy"></p>
+<p>This is the fanciest speed bump I’ve seen. Not only is it metallic…
+<img src="https://imgur.com/EAmgymw.jpg" loading="lazy"></p>
+<p>…but it also reflects the light.
+<img src="https://imgur.com/NHJuEvB.jpg" loading="lazy"></p>
+<p>Strictly for very elderly. Just elderly won’t cut it.
+<img src="https://imgur.com/kF0rmr7.jpg" loading="lazy"></p>
+<p>In the middle of the market, there are people with rifles. Looks like the army.
+<img src="https://imgur.com/3EjFtFs.jpg" loading="lazy"></p>
+<p>Since the city is in the mountains, it has a lot of fantastic views. Like Mines View.
+<img src="https://imgur.com/vyohFJ6.jpg" loading="lazy"></p>
+<img src="https://imgur.com/Pnz6QbV.jpg" loading="lazy">
+It can get really foggy.
+<img src="https://imgur.com/eomGAbK.jpg" loading="lazy">
+<p>The mountains almost touch the skies…
+<img src="https://imgur.com/CrGkmGa.jpg" loading="lazy"></p>
+<p>Very peaceful… (and mysterious)
+<img src="https://imgur.com/kMMNxGl.jpg" loading="lazy"></p>
+<p>Just grab your friends or a book and hang out at the pond…
+<img src="https://imgur.com/ffbRhI2.jpg" loading="lazy"></p>
+<p>You don’t like ponds? No problem, Baguio has options.
+<img src="https://imgur.com/M3yYWUR.jpg" loading="lazy"></p>
+<p>Let’s get back to the city. There’s a park that speaks to you like a bro.
+“Scoop your poop, you fool!”.
+<img src="https://imgur.com/URrvjGj.jpg" loading="lazy"></p>
+<p>“If you smoke, you’re a butt head!”.
+<img src="https://imgur.com/KwwYV1Q.jpg" loading="lazy"></p>
+<p>I wonder what’s the story behind this sign. The owner must be holding a grudge against someone.
+<img src="https://imgur.com/VzdOsrb.jpg" loading="lazy"></p>
+<p>It’s quite funny that playing cellphone games is a problem. So can I text all day long instead?
+<img src="https://imgur.com/Umpjyoy.jpg" loading="lazy"></p>
+<p>This looks like a place for rituals.
+<img src="https://imgur.com/apAyamZ.jpg" loading="lazy"></p>
+<p>Who can say where the road goes, where the day flows? I can! Onto the next adventure.
+<img src="https://imgur.com/TeAsZJL.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-tagaytay"><a class="header" href="#-tagaytay">🇵🇭 Tagaytay</a></h1>
+<p>
+  <time datetime="2018-02-07 00:23:44 +0200" itemprop="datePublished">
+    February 7, 2018
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>The main point of interest in Tagaytay, Philippines, is obviously the Taal volcano.
+<img src="https://imgur.com/fNi1wbE.jpg" loading="lazy"></p>
+<p>The road to the volcano starts from Staalbucks.
+<img src="https://imgur.com/tvmmYdf.jpg" loading="lazy"></p>
+<p>Just kidding. The road to the volcano starts from here.
+<img src="https://imgur.com/0vxnTEo.jpg" loading="lazy"></p>
+<p>Normal folks prefer to mount a horse and pay a fee but if you have ever met me, you wouldn’t dare to say I’m one of those. I chose the ever trusty Shanks’s pony.
+<img src="https://imgur.com/ytPqo6N.jpg" loading="lazy"></p>
+<p>The benefit is that I could stop whenever I want and relish the moments of beautiful nature…
+<img src="https://imgur.com/519P1Zv.jpg" loading="lazy"></p>
+<p>…horrible odour from horse feces… [picture censored]</p>
+<p>…magma close to the surface…
+<img src="https://imgur.com/ju6wdHM.jpg" loading="lazy"></p>
+<p>…and, obviously, friendly goats.
+<img src="https://imgur.com/8XIua9F.jpg" loading="lazy"></p>
+<p>Prior to going to Taal, I didn’t read anything about the place. I just wanted to see a volcano. Namely, a crater with red burning lava! Well, this is how it looks like in real life.
+<img src="https://imgur.com/l5ZJFE2.jpg" loading="lazy"></p>
+<p>The volcano is active and you can see yellow and burnt grass.
+<img src="https://imgur.com/Gj1n9KA.jpg" loading="lazy"></p>
+<p>The island-in-a-lake-on-an-island-in-a-lake-on-an-island.
+<img src="https://imgur.com/1OKieh4.jpg" loading="lazy"></p>
+<p>The sand is red. Supposedly because of the heat of the volcano.
+<img src="https://imgur.com/UPqHYH8.jpg" loading="lazy"></p>
+<p>The Taal volcano rules. I was surprised to see that the Korean translation mentions its author.
+<img src="https://imgur.com/JPSu8MQ.jpg" loading="lazy"></p>
+<p>Time to go home, there’s nothing else to do here.
+<img src="https://imgur.com/8CuhrAi.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-manila"><a class="header" href="#-manila">🇵🇭 Manila</a></h1>
+<p>
+  <time datetime="2018-01-10 00:23:44 +0200" itemprop="datePublished">
+    January 10, 2018
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Manila still remains the city of contrasts. Somebody lives in expensive condominiums.
+<img src="https://imgur.com/AMDeYca.jpg" loading="lazy"></p>
+<p>Somebody survives in DIY houses.
+<img src="https://imgur.com/rCZqtSD.jpg" loading="lazy"></p>
+<p>Somebody captured the moon with a net of wires (me).
+<img src="https://imgur.com/ZI6Qm0c.jpg" loading="lazy"></p>
+<p>Somebody’s balcony faces a construction yard.
+<img src="https://imgur.com/wTZ1DtN.jpg" loading="lazy"></p>
+<p>Personal protective equipment for construction workers.
+<img src="https://imgur.com/9f3NKnB.jpg" loading="lazy"></p>
+<p>Some parts of the equipment can be looted by anybody because it hangs on the walls.
+<img src="https://imgur.com/IGrOtXP.jpg" loading="lazy"></p>
+<p>Although living conditions are different, the roads are shared by everyone.
+<img src="https://imgur.com/uI1i0lp.jpg" loading="lazy"></p>
+<p>Some pathways are closed. I wonder how people with disabilities are supposed to enter.
+<img src="https://imgur.com/he4TCIv.jpg" loading="lazy"></p>
+<p>Some roads are shared with pedestrians (!). I wonder if they need an according licence for their shoes to use the roads.
+<img src="https://imgur.com/OpqWQKC.jpg" loading="lazy"></p>
+<p>Once upon a time my taxi driver was honking on every intersection we passed. I wonder if this sign suddenly makes sense to you.
+<img src="https://imgur.com/o9A4xy9.jpg" loading="lazy"></p>
+<p>That said, there’s a cat patrol to oversee road commotions.
+<img src="https://imgur.com/2PZOZRp.jpg" loading="lazy"></p>
+<p>The poshest Jollibee I’ve seen so far. It looks almost like a typical Apple Store to me.
+<img src="https://imgur.com/AcmKBuQ.jpg" loading="lazy"></p>
+<p>This wall would probably be illegal somewhere in Germany.
+<img src="https://imgur.com/IN4I2mm.jpg" loading="lazy"></p>
+<p>“Slow down” says the sign, and that’s what I’m going to do.
+<img src="https://imgur.com/wwcrEU0.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-bangkok"><a class="header" href="#-bangkok">🇹🇭 Bangkok</a></h1>
+<p>
+  <time datetime="2017-12-10 00:23:44 +0200" itemprop="datePublished">
+    December 10, 2017
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>I’ve got a strong idea: I need to spend these winter holidays in Asia, away from
+the snow and cold weather. Bangkok’s capital, Thailand, was perfect for that.
+<img src="https://imgur.com/CQzQBCo.jpg" loading="lazy"></p>
+<p>As you may know, Thais speak almost no English. I’ve learned “sawadee ka” &amp; “khop
+kun krap”. These won’t get you anywhere, unfortunately.
+<img src="https://imgur.com/tb6u8TD.jpg" loading="lazy"></p>
+<p>The Thai abugida (alphabet) allows some nice tricks with it. The word is written
+with ropes. Can you imagine the same for English?
+<img src="https://imgur.com/QJHnDQ5.jpg" loading="lazy"></p>
+<p>Even though it’s hard to navigate without knowing the language, a lot of
+touristy places do have signs in English.
+<img src="https://imgur.com/dvNLtPC.jpg" loading="lazy"></p>
+<p>Thailand cares about tourists a little bit more than your average city. They
+even know what you typically would like to buy and provide you a “Tourist choice”.
+<img src="https://imgur.com/BseMNk6.jpg" loading="lazy"></p>
+<p>The MRT (Metropolitan Rapid Transit) is the fastest way to get from point A to
+point B. However, be aware that the staff won’t let you bring your favourite
+durian on the train.
+<img src="https://imgur.com/qPHTbcU.jpg" loading="lazy"></p>
+<p>Along with the MRT, Bangkok offers a developed bus network. There are caveats,
+though. Some bus stops are hard to find. A lot of them don’t provide any
+information about routes. Additionally, I was never able to figure out the fare:
+sometimes you pay per station, sometimes the price is fixed. It was very hard to
+make any sense of it.
+<img src="https://imgur.com/xtpYEGk.jpg" loading="lazy"></p>
+<p>I have to admit, I was very impressed with the friendliness of Thai people. In
+the vast majority of cases where I needed help and asked a Thai person, they
+were nice to me. So if you are on a bus and don’t know where to go, don’t
+worry, someone will help you out if you ask.
+<img src="https://imgur.com/rhSszld.jpg" loading="lazy"></p>
+<p>Having said that, be mindful of tuk-tuk drivers, because those people are not
+nice. Every time I wanted to try a tuk-tuk, the driver’s offered price was
+higher than Uber’s. Yes, they look flashy and cool, but their goal is to rip you
+off.
+<img src="https://imgur.com/p528jHA.jpg" loading="lazy"></p>
+<p>In a way, tuk-tuk is the jeepney of the Philippines (except that jeepney drivers
+don’t rip you off): they are ubiquitous.
+<img src="https://imgur.com/lzywkzl.jpg" loading="lazy"></p>
+<p>Another viable choice to navigate the city is a plain old taxi cab. Quite often
+they are even cheaper than Uber or Grab. Those guys also want to look gaudy.
+<img src="https://imgur.com/mjWR2zG.jpg" loading="lazy"></p>
+<p>It’s interesting that every cab has information about the driver. It
+provides some kind of safety in case they lock you in the car and decide to
+murder you.
+<img src="https://imgur.com/r1MRFin.jpg" loading="lazy"></p>
+<p>Speaking of Uber, in Bangkok you can book UberMOTO. So, instead of cars you actually
+book motorcycles. I haven’t had a chance to try it out, but it makes a lot of
+sense to me, because look at this damn traffic.
+<img src="https://imgur.com/cqoXJm9.jpg" loading="lazy"></p>
+<p>Finally, you can always cycle. The prevalent majority of cyclists use
+small-wheel bicycles. I don’t know why but maybe because they need to maneuver
+between cars?
+<img src="https://imgur.com/v98Puvo.jpg" loading="lazy"></p>
+<p>Bike lanes do exist, but they are super rare.
+<img src="https://imgur.com/ZlufjSB.jpg" loading="lazy"></p>
+<p>As for me, I was a pedestrian.
+<img src="https://imgur.com/gB4Jror.jpg" loading="lazy"></p>
+<p>The life of a pedestrian in Bangkok is full of adventures. When I attempted to
+cross a road, I had to wait for 15 minutes. Not only the traffic is heavy but
+the average speed of a lane is so high that you have to run to survive.
+<img src="https://imgur.com/gfWgSHT.jpg" loading="lazy"></p>
+<p>Quite often traffic lights are absent (or not working) and the car flow is
+constant so pedestrians are blocked. You can really wait for 10 minutes. It’s
+not an exaggeration.
+<img src="https://imgur.com/MWoQwIJ.jpg" loading="lazy"></p>
+<p>There are police stations here and there but I don’t think they’re in control
+of the road situation at all.
+<img src="https://imgur.com/fUT2Tmr.jpg" loading="lazy"></p>
+<p>Sometimes, traffic guards help out.
+<img src="https://imgur.com/9nJ8buI.jpg" loading="lazy"></p>
+<p>One other threat that pedestrians have to deal with is rats (squint your eyes,
+the rat is in the middle of the photo).
+<img src="https://imgur.com/AZ8AQUV.jpg" loading="lazy"></p>
+<p>The bad smell from trash lying on the sidewalks attracts them.
+<img src="https://imgur.com/uFSggiF.jpg" loading="lazy"></p>
+<p>Being an observant pedestrian, I couldn’t miss an opportunity to take a picture
+of someone who parks their car like an asshole. At that moment, I felt like I was
+home.
+<img src="https://imgur.com/YJVOCIH.jpg" loading="lazy"></p>
+<p>A solar powered sign. I have a few questions. Why is it off? Does it only work
+when the sun is up? Why is that so? You actually need them during the night, when
+there’s no sun.
+<img src="https://imgur.com/hUYrcLe.jpg" loading="lazy"></p>
+<p>The LEDs on the ground are supposed to alarm drivers of the bridge.
+<img src="https://imgur.com/k7xmSVD.jpg" loading="lazy"></p>
+<p>Now, let’s get back to tourists. Bangkok is full of them.
+<img src="https://imgur.com/gHKt9w7.jpg" loading="lazy"></p>
+<p>I guess these guards hate them. Once in a while some cheeky bastard takes a
+picture with them without their consent.
+<img src="https://imgur.com/aenu0Ey.jpg" loading="lazy"></p>
+<p>Tourists visit nothing but touristy places so it’s easy to avoid
+them. This pathway is in 50 meters from Khao San Road (a super busy street), and
+there’s not a single person but me.
+<img src="https://imgur.com/SNn8B1K.jpg" loading="lazy"></p>
+<p>While I’m standing there, the Khao San Road crowd feasts on insects.
+<img src="https://imgur.com/vAqegWc.jpg" loading="lazy"></p>
+<p>“Wai!” says Ronald McDonald.
+<img src="https://imgur.com/QmvRDJG.jpg" loading="lazy"></p>
+<p>“Ni hao” replies Mao and his friend.
+<img src="https://imgur.com/vqR4fl7.jpg" loading="lazy"></p>
+<p>I like how nature and urbanism meet each other in Bangkok. Someone is feeding
+squirrels.
+<img src="https://imgur.com/XpFjToo.jpg" loading="lazy"></p>
+<p>Someone is feeding pigeons.
+<img src="https://imgur.com/l0BFHcp.jpg" loading="lazy"></p>
+<p>With the exception of the pigeon. “Don’t feed the pigeon” says the sign.
+<img src="https://imgur.com/AKMWCYz.jpg" loading="lazy"></p>
+<p>Nobody is risking to feed freaking monitor lizards, though.
+<img src="https://imgur.com/1mUs5rd.jpg" loading="lazy"></p>
+<p>A leaky faucet is a problem.
+<img src="https://imgur.com/UCubggb.jpg" loading="lazy"></p>
+<p>But a leaky pipe is fine.
+<img src="https://imgur.com/HyIcEoa.jpg" loading="lazy"></p>
+<p>Speaking of pipes, Thailand is probably the second country on Earth where you
+can buy pipes for smoking drugs just on the street. The first one is likely
+Afghanistan.
+<img src="https://imgur.com/NhEwkEk.jpg" loading="lazy"></p>
+<p>Thailand loves massage. Not only you can be massaged by real people…
+<img src="https://imgur.com/D7RvKHH.jpg" loading="lazy"></p>
+<p>…but also by machines!
+<img src="https://imgur.com/eOJQEBb.jpg" loading="lazy"></p>
+<p>You can also check the weight of your luggage (or yourself for that matter).
+<img src="https://imgur.com/QTX1Dzk.jpg" loading="lazy"></p>
+<p>Speaking of religion, as you know Thailand is a Buddhist country. At first, it was cool going to a wat (temple), but it became repetitive very quickly. The thing I noticed in Thailand is that they like to beg for money.</p>
+<p>You are supposed to donate to monks.
+<img src="https://i.imgur.com/E9KRRBK.jpg" loading="lazy"></p>
+<p>Donate to Buddha.
+<img src="https://i.imgur.com/7UnfeRi.jpg" loading="lazy"></p>
+<p>Donate to the bear.
+<img src="https://i.imgur.com/siq6DPz.jpg" loading="lazy"></p>
+<p>Donate, donate, donate! Donate to this urinal!
+<img src="https://i.imgur.com/7Y7qTgi.jpg" loading="lazy"></p>
+<p>Just don’t lose your head in this donation carnival.
+<img src="https://i.imgur.com/fnPPAGE.jpg" loading="lazy"></p>
+<p>There are so many places to donate to that it’s no wonder thievery is flourishing.
+<img src="https://i.imgur.com/UUtwEWf.jpg" loading="lazy"></p>
+<p>However, I think donating gold would be better because Buddhists love gold.
+<img src="https://i.imgur.com/6jCDbzE.jpg" loading="lazy"></p>
+<p>Thailand is a very weird country in regards to strictness. You are supposed to take off your shoes upon entering a temple, wear proper clothes, stand up at the cinema when they show some propaganda about their king prior to a film, but at the same time you get ladyboys, hookers, pipes being sold on the street and these wrist bands: the “Long live the King” band neighbours with “Mad cunt”.
+<img src="https://i.imgur.com/AURGEOJ.jpg" loading="lazy"></p>
+<p>My face after reading the whole board.
+<img src="https://i.imgur.com/GMDVXIb.jpg" loading="lazy"></p>
+<p>Speaking of the king, they have a serious propaganda there. The king is everywhere. He’s in schools.
+<img src="https://i.imgur.com/9eBnVW7.jpg" loading="lazy"></p>
+<p>In hospitals.
+<img src="https://i.imgur.com/L2cULPF.jpg" loading="lazy"></p>
+<p>Even on money.
+<img src="https://i.imgur.com/zxmQa7j.jpg" loading="lazy"></p>
+<p>All over the city there are people playing some sort of propaganda.
+<img src="https://i.imgur.com/Vqv5kau.jpg" loading="lazy"></p>
+<p>Despite that, to my surprise, Muslims also exist in Thailand. The “Muslim prayer room” sign.
+<img src="https://i.imgur.com/QdzUYac.jpg" loading="lazy"></p>
+<p>Once in a while there will be a random monk on the street doing their chores like topping up. They use the same streets as we, commoners, do.
+<img src="https://i.imgur.com/HK2I0bT.jpg" loading="lazy"></p>
+<p>The most authentic Armani suits in Thailand (no).
+<img src="https://i.imgur.com/Ysm95nu.jpg" loading="lazy"></p>
+<p>In Thailand people can still use payphones.
+<img src="https://i.imgur.com/2IzBbEX.jpg" loading="lazy"></p>
+<p>A key holder at a bus stop without any keys. I wonder if bus drivers leave their keys there because I don’t mind driving a bus. Imagine a buspooling service. Cool, huh?
+<img src="https://i.imgur.com/n1elRtC.jpg" loading="lazy"></p>
+<p>Free mobile charger stand.
+<img src="https://i.imgur.com/HdEwL1d.jpg" loading="lazy"></p>
+<p>A lot of Thai signs are amusing. Sometimes they’re polite. “Please don’t touch” (an old exhibit).
+<img src="https://i.imgur.com/RrJL04N.jpg" loading="lazy"></p>
+<p>Yet, in the same room there’s a sign, which says “Don’t you dare to mask the air conditioner”.
+<img src="https://i.imgur.com/zbjrkjO.jpg" loading="lazy"></p>
+<p>“Caution! Wet floor”. That’s really “helpful”.
+<img src="https://i.imgur.com/J0CwCgg.jpg" loading="lazy"></p>
+<p>Water canals (called khlongs) pierce the flesh of the city all over.
+<img src="https://i.imgur.com/Zi4lVGt.jpg" loading="lazy"></p>
+<p>Floating 7-eleven in a khlong.
+<img src="https://i.imgur.com/PX8oYvj.jpg" loading="lazy"></p>
+<p>In case of flooding or heavy rain the water will naturally flow inside these channels. Make sure to have matches to send them down the stream.
+<img src="https://i.imgur.com/AhelIxl.jpg" loading="lazy"></p>
+<p>Hua Lamphong railway station strongly reminded me of <a href="https://en.wikipedia.org/wiki/Kharkiv_railway_station">Kharkiv Railway Station</a>.
+<img src="https://i.imgur.com/b4lSwPC.jpg" loading="lazy"></p>
+<p>A homeless person sleeping in front of a 5-star hotel.
+<img src="https://i.imgur.com/pGFFukV.jpg" loading="lazy"></p>
+<p>Drum rehearsal.
+<img src="https://i.imgur.com/3aCvfXn.jpg" loading="lazy"></p>
+<p>Asian version of San Francisco’s <a href="https://en.wikipedia.org/wiki/Painted_ladies">Painted ladies</a>.
+<img src="https://i.imgur.com/LyGb4NG.jpg" loading="lazy"></p>
+<p>Alternative version.
+<img src="https://i.imgur.com/SUn5u9e.jpg" loading="lazy"></p>
+<p>Fitness in a park.
+<img src="https://i.imgur.com/15sE0Hz.jpg" loading="lazy"></p>
+<p>You can wash cutlery in hot water before using it.
+<img src="https://i.imgur.com/TceMB4e.jpg" loading="lazy"></p>
+<p>Typical simple Thai diner.
+<img src="https://i.imgur.com/1etJJdO.jpg" loading="lazy"></p>
+<p>While exploring Bangkok sometimes I felt like Lara Croft.
+<img src="https://i.imgur.com/0cQGwuA.jpg" loading="lazy"></p>
+<p>Stunning work of the ancients (spoiler alert: it’s actually modern).
+<img src="https://i.imgur.com/2RIbYpO.jpg" loading="lazy"></p>
+<p>I asked these guys to pose for me…
+<img src="https://i.imgur.com/XiM4a8K.jpg" loading="lazy"></p>
+<p>…but something went wrong.
+<img src="https://i.imgur.com/gmyZaNM.jpg" loading="lazy"></p>
+<p>I’d like to remind the reader that I was there on Christmas time. The fact that it’s Christmas is barely reflected on the streets.
+<img src="https://i.imgur.com/xaVUFqL.jpg" loading="lazy"></p>
+<p>New Year fireworks lasted only 5 minutes.
+<img src="https://i.imgur.com/vj2WJWL.jpg" loading="lazy"></p>
+<p>Nevertheless, Happy New Year 2018!
+<img src="https://i.imgur.com/x6kYpEr.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-manila-first-impressions-food-life-and-traffic-in-the-philippines"><a class="header" href="#-manila-first-impressions-food-life-and-traffic-in-the-philippines">🇵🇭 Manila. First impressions. Food, life and traffic in the Philippines</a></h1>
+<p>
+  <time datetime="2017-08-01 00:23:44 +0200" itemprop="datePublished">
+    August 1, 2017
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Manila is truly a city of contrasts. Posh tall buildings border with shabby
+huts. I turn my head to the right only to see how actively the city is being
+built. Construction never stops, so does progress.
+<img src="https://imgur.com/WrCxLwb.jpg"></p>
+<p>I turn my head to the left and see a stinky river. This makes you think that the
+place has absolutely no prospects. I turn my head to the right and see highrise
+buildings being built as you look at them. Quite a contrast.
+<img src="https://imgur.com/RzknbqY.jpg"></p>
+<img src="https://imgur.com/JuJPHDp.jpg">
+<p>A lot of Filipinos earn money by working in <a href="https://en.wikipedia.org/wiki/Call_center_industry_in_the_Philippines">call
+centers</a>.
+Entire districts are being built just to accommodate their needs. However, not
+everyone is a hard worker. If you go outside downtowns, you can see people doing
+absolutely nothing.
+<img src="https://imgur.com/iUHtqkF.jpg" loading="lazy"></p>
+<p>People who live in cheap boarding houses go to expensive-looking buildings to
+work.
+<img src="https://imgur.com/kVcjbTH.jpg" loading="lazy"></p>
+<img src="https://imgur.com/VWNzUTB.jpg" loading="lazy">
+<p>Manila is also the city of malls.
+<img src="https://i.imgur.com/AYW1KOn.jpg" loading="lazy"></p>
+<p>One of the biggest malls in Asia is here. It occupies two big buildings
+connected by a sky bridge. The inside looks like a small town.</p>
+<p>I was shocked to discover that to enter any mall, you need to be searched first.
+Most of the time, the scan is half-assed: they take a quick glance inside your
+backpack and poke around with a stick, and that’s it. If you want to bomb
+something, it won’t be a problem. That being said, in some parts of the city
+security guards are on almost every intersection. They have rifles, shotguns,
+and pistols.</p>
+<p>There’s no shortage of food in Manila. Food is everywhere. Start with something
+familiar first.
+<img src="https://imgur.com/pxyp9Y6.jpg" loading="lazy"></p>
+<p>When you feel brave enough, try something you’d never normally eat.
+<img src="https://imgur.com/K5QQ54K.jpg" loading="lazy"></p>
+<p>Finally, try some street food. You’d be surprised that some things are edible.
+How about duck fetus?
+<img src="https://imgur.com/S2ozWtG.jpg" loading="lazy"></p>
+<img src="https://imgur.com/5VaqZvD.jpg" loading="lazy">
+<p>I was disappointed to know that vegetables are expensive and not that tasty in general. The situation reminded me of USA. However, the abundance of fruits fully compensates for it. I saw a lot of fruits in the Philippines that I’d never heard of.</p>
+<p>In Ukraine, avocados, pineapples, coconuts, and other tropical goodies are not that tasty. In addition to that, they’re also overpriced. In the Philippines they’re cheap, they look great, and they taste amazing.
+<img src="https://imgur.com/gocaI68.jpg" loading="lazy"></p>
+<p>Finally, seafood is a major plus. My jaw dropped when I saw these juicy shrimps. Not only were they huge, they were also cheap (compared to Ukraine, of course).
+<img src="https://imgur.com/UFKESpM.jpg" loading="lazy"></p>
+<p>Interestingly enough, people don’t use sunflower oil there. They use anything but! I thought the only oils that exist were olive and sunflower. I managed to find sunflower oil and guess what? It was produced in my country!
+<img src="https://imgur.com/2euJ60p.jpg" loading="lazy"></p>
+<p>While the presence of Ukraine is barely noticeable worldwide, I somehow managed to find a Ukrainian toy there. It is made in Ukraine, but I’d never seen it here.
+<img src="https://imgur.com/DMyUcMI.jpg" loading="lazy"></p>
+<p>Anyway, I hope you’re not hungry anymore after all of the food I showed. Let’s take a walk to let the food settle.
+<img src="https://imgur.com/BE4FF2E.jpg" loading="lazy"></p>
+<p>We walk-walk-walk and see… a coin operated phone charger stand. Quite a find, I don’t think I’d ever stumbled upon this until then.
+<img src="https://imgur.com/7NiE1V1.jpg" loading="lazy"></p>
+<p>I didn’t notice a lot of wild dogs on the streets, but the cat invasion is a thing. They chill along the streets and enjoy doing cat things.</p>
+<p>Despite all the pollution from the high volume of traffic, wildlife is still present. Yeah, small lizards are everywhere. I really wanted to catch one, but they were too fast for me. If I wanted, I could catch a frog and cook an elixir.
+<img src="https://imgur.com/5e1pofc.jpg" loading="lazy"></p>
+<img src="https://imgur.com/XVriDSH.jpg" loading="lazy">
+<p>I’m quite happy that some of the cats can only be seen inside a cage. I wouldn’t want to stumble upon these kittens while walking to a sari-sari store.
+<img src="https://imgur.com/p9KnkLQ.jpg" loading="lazy"></p>
+<p>Some wild flowers looked incredible.
+<img src="https://imgur.com/6cgWgat.jpg" loading="lazy"></p>
+<p>I also saw some hibiscus. We drink it here, but in the Philippines nobody knows it’s drinkable. The tea situation is tough there, so no wonder people prefer soda or coffee. Loose leaf black tea is really expensive, so I had to drink tea dust in tea bags.</p>
+<p>A rare find. This plant can actually fold its leaves once it’s touched. The name is “makahiya”, which means “to be shy”. It’s not poisonous.
+<img src="https://imgur.com/VQQazkL.jpg" loading="lazy"></p>
+<p>In Manila, cars rule the streets.
+<img src="https://imgur.com/AhALyAE.jpg" loading="lazy"></p>
+<p>Pedestrians are not respected. Technically, you can’t respect someone who doesn’t exist: there are almost no sidewalks.
+<img src="https://imgur.com/Damg0Kw.jpg" loading="lazy"></p>
+<p>If you don’t own a car, you’re not screwed, but it’d be hard to navigate around the city barefoot. Your best bet is to take a bus with hundreds of people… or a jeepney.
+<img src="https://imgur.com/hxQ9buP.jpg" loading="lazy"></p>
+<img src="https://imgur.com/7WqBNa1.jpg" loading="lazy">
+<p>Inside a jeepney you’re stuffed like canned fish.
+<img src="https://imgur.com/woTaDEy.jpg" loading="lazy"></p>
+<p>Some people have extremely expensive cars. I wonder what the point is. You can’t speed up even if you wanted to: there are too many cars.
+<img src="https://imgur.com/MTMDwWY.jpg" loading="lazy"></p>
+<p>Maybe buy a heavy vehicle and ram your way through?
+<img src="https://imgur.com/3Zb0nkn.jpg" loading="lazy"></p>
+<p>Some places like <a href="https://en.wikipedia.org/wiki/Bonifacio_Global_City">BGC</a> have
+lesser traffic, though.
+<img src="https://imgur.com/xGr1poU.jpg" loading="lazy"></p>
+<p>You may think that getting a bamboo bike would be stylish and practical, but I
+assure you, it’s better not to cycle here as it imposes a serious safety risk.
+<img src="https://imgur.com/axLGKtG.jpg" loading="lazy"></p>
+<p>Another interesting fact is that Manila barely has any public parks. If you look
+at the map, you will see a lot of green “islands”. At first, I confused them as
+parks. When you zoom in, quite often it turns out to be a golf course. See the
+fenced off area on the right?
+<img src="https://imgur.com/bqVxJn0.jpg" loading="lazy"></p>
+<p>Real parks are tiny.
+<img src="https://imgur.com/XaTZT50.jpg" loading="lazy"></p>
+<p>Some parks don’t have enough trees (and a lot of them don’t have enough
+benches). There’s a good reason to have them: the sun burns you alive.
+<img src="https://imgur.com/q1QnDcJ.jpg" loading="lazy"></p>
+<p>This sign protects a piece of untrimmed grass pretending to be a mini park area.
+<img src="https://imgur.com/yTfBOdI.jpg" loading="lazy"></p>
+<p>Speaking of signs, what I like about them is that they’re handmade. Unlike in
+Ukraine where everyone just prints an A4 paper with a sign, people in Manila
+actually use paint.
+<img src="https://imgur.com/dIr8FOd.jpg" loading="lazy"></p>
+<p>Even printed papers try to be legible.
+<img src="https://imgur.com/Syv2KIq.jpg" loading="lazy"></p>
+<img src="https://imgur.com/F0IU0Qp.jpg" loading="lazy">
+<p>Speaking of history, the Philippines had strong American influence in the past.
+<img src="https://imgur.com/0yf4las.jpg" loading="lazy"></p>
+<p>Spain also left its imprint: Catholicism. Catholic wedding.
+<img src="https://i.imgur.com/rmdEGsU.jpg" loading="lazy"></p>
+<p>When <a href="https://en.wikipedia.org/wiki/Rodrigo_Duterte">Rodrigo Duterte</a> came to power, the Philippines started seeking other allies, so don’t expect something like this to happen any time soon.
+<img src="https://i.imgur.com/mOwmMnz.jpg" loading="lazy"></p>
+<p>Albeit the influence, it’s still a part of Asia with Asian toilets.
+<img src="https://i.imgur.com/7XDeS0N.jpg" loading="lazy"></p>
+<p>The story of how the country has passed is long.
+<img src="https://i.imgur.com/4cWjc31.jpg" loading="lazy"></p>
+<p>But the wheel of history never stops spinning.
+<img src="https://i.imgur.com/H5EJfAs.jpg" loading="lazy"></p>
+<p>Now the country is independent.
+<img src="https://i.imgur.com/4Vjo7bs.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-kyiv"><a class="header" href="#-kyiv">🇺🇦 Kyiv</a></h1>
+<p>
+  <time datetime="2017-02-06 00:23:44 +0200" itemprop="datePublished">
+    February 2, 2017
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Ukrainian winter. It’s really cold outside.
+<img src="http://imgur.com/tzVbXEK.jpg" /></p>
+<p>The sky is the limit.
+<img src="http://imgur.com/mW7K6Jl.jpg" /></p>
+<p>Probably most corny place in Kyiv. Achievement unlocked.
+<img src="http://imgur.com/DRP1Cj6.jpg" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-lisbon-business-trip"><a class="header" href="#-lisbon-business-trip">🇵🇹 Lisbon business trip</a></h1>
+<p>
+  <time datetime="2016-09-19 00:23:44 +0200" itemprop="datePublished">
+    September 19, 2016
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>I haven’t travelled for a while. However this year is lucky for me so far: I
+travelled to Lisbon.</p>
+<img src="http://imgur.com/6iKv36p.jpg" loading="lazy">
+<p><a href="https://airbrake.io">Airbrake</a>, my employer, has organised a team meeting in
+Portugal. It turned out that the country is quite nice and relatively cheap. The
+people there are really friendly. Almost everybody there can speak some English.
+Given that we are a partially remote company, with staff throughout the world,
+Lisbon as a meeting location was a pretty good compromise for everybody on the
+team.</p>
+<p>I would like to thank my colleague Thomas in advance for allowing me to use his
+photo album to make this post. All the cool photos were made on Thom’s camera.
+All the grotty photos were taken with my camera.</p>
+<p>This shot is cool (thanks Thom).
+<img src="http://imgur.com/Gifz2ru.gif" loading="lazy"></p>
+<p>This shot sucks (boo Kyrylo).
+<img src="http://imgur.com/KW4tdAu.jpg" loading="lazy"></p>
+<p>Now you know how to tell the difference between the photo quality, so let me
+continue. We couldn’t just book a hotel because we needed a place to work, too.
+Therefore we had to find something special instead. Something special turned out
+to be The Surf Office.
+<img src="http://imgur.com/S0pJ0s5.jpg" loading="lazy"></p>
+<p>The Surf Office is neither an office, nor a hotel: it’s a mixture
+of both. It provides a place for remote teams where they can work and live in
+the same building. I had never heard of this concept before, but I believe it
+provides an unique experience. Our team occupied 3 out of 4 floors (I suspect
+the 4th floor was not used by anybody).</p>
+<p>I was on the 3rd floor.
+<img src="http://imgur.com/NDqPsJM.jpg" loading="lazy"></p>
+<img src="http://imgur.com/uN1XXsn.jpg" loading="lazy">
+<img src="http://imgur.com/9vyDUlm.jpg" loading="lazy">
+Overall, I suspect this way of working together will be much more popular in the
+future.
+<p>The building we lived in has an amazing kitchen, but we never had chance to use
+it.</p>
+<img src="http://imgur.com/pTzezYR.jpg" loading="lazy">
+Basically, the "office" has every modern convenience, but an iron, which I
+missed. It also has a printer and external monitors, additional
+trackpad, a keyboard and some other tools. Nevertheless, even though it has
+quite a few conveniences, it's really hard to focus on work. It's not Surf
+Office's fault, though. When you are in a foreign city, you usually want to
+explore it. We have tried to do our best with regard to work, but we couldn't
+ignore the Lisbon's vibe.
+<p>The vibe has commanded us to go surfing instead.
+<img src="http://imgur.com/RXelMCC.jpg" loading="lazy"></p>
+<p>The vibe has told us to go cycling, too.
+<img src="http://imgur.com/tlGOIpa.jpg" loading="lazy"></p>
+<p>Beware, though. The vibe always guides you to a restaurant.
+<img src="http://imgur.com/7lrUgWS.jpg" loading="lazy"></p>
+<p>The city has a pretty distinct look.
+<img src="http://imgur.com/QLbh3Hj.jpg" loading="lazy"></p>
+<img src="http://imgur.com/WVAmyiW.jpg" loading="lazy">
+<img src="http://imgur.com/hE9SSH4.jpg" loading="lazy">
+<img src="http://imgur.com/mKetJc9.jpg" loading="lazy">
+<p>Most of the time it’s quite hilly.
+<img src="http://imgur.com/W3DXiOJ.jpg" loading="lazy"></p>
+<img src="http://imgur.com/cCQNwUo.jpg" loading="lazy">
+<img src="http://imgur.com/2k8lg5z.jpg" loading="lazy">
+<img src="http://imgur.com/pnYPBKJ.jpg" loading="lazy">
+<p>The streets are very narrow.
+<img src="http://imgur.com/vnycbku.jpg" loading="lazy"></p>
+<img src="http://imgur.com/KD4aXLz.jpg" loading="lazy">
+<p>The houses are very old.
+<img src="http://imgur.com/SvuDykm.jpg" loading="lazy"></p>
+<p>Old doesn’t always mean bad. Lisbon is full of beautiful buildings.
+<img src="http://imgur.com/Aiyd28p.jpg" loading="lazy"></p>
+<img src="http://imgur.com/sE3vwkE.jpg" loading="lazy">
+<p>The problem is that it’s really hard to find a good angle to photograph a
+building because the streets are so narrow.</p>
+<img src="http://imgur.com/aJShe4R.jpg" loading="lazy">
+<p>Lisbon never sleeps. During the night the city is full of life. It’s really
+bright and you feel safe (well, safer than in Ukraine, at least). Just don’t
+mind random people trying to sell you “cocaine”. During my stay I was offered
+“cocaine” at least five times (don’t be fooled by these people). The rest are
+just awesome.
+<img src="http://imgur.com/u0d8uTu.jpg" loading="lazy"></p>
+<img src="http://imgur.com/0NzfCyk.jpg" loading="lazy">
+<img src="http://imgur.com/09cWIla.jpg" loading="lazy">
+<p>Here in Kharkiv we have one of the biggest squares in Europe. Some people like
+to brag about it. As we all know the size doesn’t matter. What matters is
+how you use it, that is how you use the space. Lisbon does it well, that’s for
+sure.
+<img src="http://imgur.com/Gge9k3Y.jpg" loading="lazy"></p>
+<img src="http://imgur.com/t0GsA6w.jpg" loading="lazy">
+<p>We spent a lot of time cycling. I must say it’s quite hard to cycle in Lisbon
+and I didn’t spot many cyclists there. There are some good bicycle lanes near
+the embankment, but apart from those I didn’t see any bike lanes anywhere else.
+<img src="http://imgur.com/VEs5OPW.jpg" loading="lazy"></p>
+<p>Perhaps, it’s because kilometres of roads are covered with cobblestone. It
+contributes to the whole antique look and creates a special southern charm, but
+makes cycling a lot harder.
+<img src="http://imgur.com/1ngn0ZR.jpg" loading="lazy"></p>
+<p>Overall, the city reminded me of [San Francisco]({% post_url
+2014-07-11-internship-in-san-francisco %}) a bit. If you take a close look at
+the map and compare Lisbon to San Francisco, you will see that the landscape has
+a similar shape. Lisbon also has a bridge, which looks almost identical to The
+Golden Gate bridge (same blueprint as we were told).
+<img src="http://imgur.com/9roPvYe.jpg" loading="lazy"></p>
+<p>The symbol of the city is its old-fashioned tram. Almost every fridge magnet has
+a tram on it.
+<img src="http://imgur.com/SIm3G9F.gif" loading="lazy"></p>
+<p>Trams are everywhere in this city.
+<img src="http://imgur.com/HXSfhpQ.jpg" loading="lazy"></p>
+<img src="http://imgur.com/b1MaQjV.jpg" loading="lazy">
+<img src="http://imgur.com/nWZouY4.jpg" loading="lazy">
+<p>Another prominent tourist attraction is the Bica funicular. It’s still
+functional, but in my opinion it’s absolutely useless nowadays: it can lift you
+only about a block up (not entirely sure, but trust me, the distance it covers
+is insignificant to such a young buck like me).</p>
+<img src="http://imgur.com/I4dDZFa.gif" loading="lazy">
+<p>That said the metro is not as iconic.
+<img src="http://imgur.com/9UWyACN.gif" loading="lazy"></p>
+<p>The walls of the city speak to you. Their language is graffiti.
+<img src="http://imgur.com/6Lk7Wdu.gif" loading="lazy"></p>
+<p>Graffiti are everywhere. If you ever find yourself on Rua de São Paulo (or
+somewhere around that area) try to pay attention to the walls. Baco, some unknown
+guy, is known to be a snitch.</p>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BJ5hfVgj9tD/?utm_source=ig_embed&amp;utm_medium=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+<div style="padding:16px;"> <a href="https://www.instagram.com/p/BJ5hfVgj9tD/?utm_source=ig_embed&amp;utm_medium=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> 
+<div style=" display: flex; flex-direction: row; align-items: center;"> 
+<div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+ 
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> 
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+ 
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+</div>
+</div>
+<div style="padding: 19% 0;"></div>
+<div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewbox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div>
+<div style="padding-top: 8px;"> 
+<div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div>
+</div>
+<div style="padding: 12.5% 0;"></div>
+ 
+<div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+<div> 
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div>
+ 
+<div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div>
+ 
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div>
+</div>
+<div style="margin-left: 8px;"> 
+<div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div>
+ 
+<div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div>
+</div>
+<div style="margin-left: auto;"> 
+<div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div>
+ 
+<div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div>
+ 
+<div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div>
+</div>
+</div>
+ 
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> 
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div>
+ 
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div>
+</div>
+</a>
+<p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BJ5hfVgj9tD/?utm_source=ig_embed&amp;utm_medium=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Stephan van Duin (@travel_and_science)</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-09-03T15:28:08+00:00">Sep 3, 2016 at 8:28am PDT</time></p>
+</div>
+</blockquote>
+ <script async="" src="//www.instagram.com/embed.js"></script>
+<p>Don’t be disappointed, though. Apart from vandalism, the city has quite a lot
+of good graffiti.
+<img src="http://imgur.com/9HaRcPD.jpg" loading="lazy" /></p>
+<img src="http://imgur.com/wo7yrvk.jpg" loading="lazy" />
+<img src="http://imgur.com/BIQ6SXf.jpg" loading="lazy" />
+<img src="http://imgur.com/rtmrLao.jpg" loading="lazy" />
+<p>Most of them are concentrated at a place called LX Factory. This place is
+stuffed with all sorts of restaurants, shops and other interesting things. It’s
+under the bridge, so passing trains create a special urban atmosphere.
+<img src="http://imgur.com/sBFIb1U.jpg" loading="lazy" /></p>
+<p>If you walk slowly there, you can notice some interesting details around you…
+such as babies.
+<img src="http://imgur.com/EiUo6np.jpg" loading="lazy" /></p>
+<p>Or programming references.
+<img src="http://imgur.com/qy5V82K.jpg" loading="lazy" /></p>
+<p>Speaking of programming, there’s also a co-working space in one of the buildings.
+<img src="http://imgur.com/xrLKKDz.jpg" loading="lazy" /></p>
+<p>If you have a limited budget for a co-working space, you can always fall back
+to a proven technology.
+<img src="http://imgur.com/GW1I3iz.jpg" loading="lazy" /></p>
+<p>This typewriter still works, but good luck finding any key labels.
+<img src="http://imgur.com/IfKgdvd.jpg" loading="lazy" /></p>
+<p>If you go to the rooftop, you will see a fantastic view. There’s a restaurant
+there, but you don’t have to book a table if you just want to check the view.
+<img src="http://imgur.com/YfWqAK2.jpg" loading="lazy" /></p>
+<img src="http://imgur.com/AFO5NEv.jpg" loading="lazy" />
+<p>They say a picture is worth a thousand words. What if the picture has words on
+it?
+<img src="http://imgur.com/JLvTxvh.jpg" loading="lazy" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-internship-in-san-francisco"><a class="header" href="#-internship-in-san-francisco">🇺🇸 Internship in San Francisco</a></h1>
+<p>
+  <time datetime="2014-08-24 00:23:44 +0200" itemprop="datePublished">
+    August 24, 2014
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>During my internship at <a href="https://bugsnag.com">Bugsnag</a> I took some pictures of
+the city. My bicycle was my companion. I cycled through many neighbourhoods of
+San Francisco and even managed to cycle to neighbouring towns. The quality of
+the photos isn’t astonishing. My second companion was my Chinese smartphone.
+That’s why.</p>
+<img src="https://i.imgur.com/ORoe2Pc.jpg" loading="lazy">
+<p>The hotel I temporarily settled in was the first hotel I have ever visited.
+<img src="https://i.imgur.com/rFgzF7s.jpg" loading="lazy"></p>
+<p>Bathroom.</p>
+<img src="https://i.imgur.com/4ZtW0ex.jpg" loading="lazy">
+<p>Bugsnag’s office was very snug and cosy. In fact, when I showed the photo to my
+parents, they confused it with a flat.
+<img src="https://i.imgur.com/lZrmcd9.jpg" loading="lazy"></p>
+<p>When I moved from the hotel to a studio apartment, I was lucky to have a
+laundromat in my building. It saved me many hours. It is the best invention
+of humanity.
+<img src="https://i.imgur.com/NFgufyU.jpg" loading="lazy"></p>
+<p>Bugsnag’s office is near the UN Plaza. Lots of birds and homeless people nearby.
+Once upon a time I stepped on some American chewing gum. It is of very good
+quality (curse them).
+<img src="https://i.imgur.com/OKftU5Z.jpg" loading="lazy"></p>
+<p>It is a noisy place, though. The traffic is very dense.
+<img src="https://i.imgur.com/2oRyEeb.jpg" loading="lazy"></p>
+<p>Although I’d never been to San Francisco before, it felt like I had. Thanks,
+GTA!
+<img src="https://i.imgur.com/Hzq1EX6.jpg" loading="lazy"></p>
+<p>The IT is real here. Once upon a time I had a project that required integration
+with Salesforce. Those were grim days. To my surprise, I found the headquarters
+of hell on Earth.
+<img src="https://i.imgur.com/wpPHOGw.jpg" loading="lazy"></p>
+<p>Tourists are quite common in this city.
+<img src="https://i.imgur.com/3GlWQkd.jpg" loading="lazy"></p>
+<p>It was always hard to keep track of which litter is recyclable and which is not.
+SF is obsessed with it. An interesting observation: foundations of urns are
+the same, but the top is like a cap and it’s possible to replace it.
+<img src="https://i.imgur.com/uy92SL9.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/hhZYlCR.jpg" loading="lazy">
+<p>The public transportation system is incredibly advanced. You can take trams,
+trolleybuses, buses, trains and taxis. The buses and the trolleybuses have a rack
+in front of them, so you could mount bicycles on them.
+<img src="https://i.imgur.com/Qw0bucE.jpg" loading="lazy"></p>
+<p>The trams look and in fact are old-school. It’s funny, but they’re quieter than
+our <a href="http://en.wikipedia.org/wiki/Tatra_T3">Tatras</a>.
+<img src="https://i.imgur.com/8Tf5VRp.jpg" loading="lazy"></p>
+<p>The city is perfect for cycling. It has enormous hills to train your legs.
+<img src="https://i.imgur.com/ODYvlSF.jpg" loading="lazy"></p>
+<p>Even cars look funny on these hills.
+<img src="https://i.imgur.com/YZBnJUf.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/aQNjmUq.jpg" loading="lazy">
+<p>It’s a bit painful to constantly cycle uphill, but there’s always a reward.
+<img src="https://i.imgur.com/orYbvzA.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/hEi7493.jpg" loading="lazy">
+<p>And the drivers are very cautious.
+<img src="https://i.imgur.com/29uYZY6.jpg" loading="lazy"></p>
+<p>Well, there are always exceptions.
+<img src="https://i.imgur.com/bhE0TkY.jpg" loading="lazy"></p>
+<p>And the infrastructure for cycling is well thought out.
+<img src="https://i.imgur.com/zjOcRnD.jpg" loading="lazy"></p>
+<p>And even the government cares about cyclists.
+<img src="https://i.imgur.com/3gC3ku1.jpg" loading="lazy"></p>
+<p>There are lots of places you can park your bicycle throughout the city. Even
+benches welcome cyclists.
+<img src="https://i.imgur.com/WeD6dcE.jpg" loading="lazy"></p>
+<p>Parking of cars is self-regulated.
+<img src="https://i.imgur.com/4giBpYf.jpg" loading="lazy"></p>
+<p>There are a lot of parking lots. But they’re all empty during the night. I think
+cars dislike the moon and they all hide underground. A lot of buildings include
+parking lots in their basements. Some buildings are built specifically for
+parking.
+<img src="https://i.imgur.com/SUV0y7S.jpg" loading="lazy"></p>
+<p>There’s a vast variety of lamp posts. Even during the night the city shines.
+<img src="https://i.imgur.com/kqVuYtW.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/b2JyHRP.jpg" loading="lazy">
+<img src="https://i.imgur.com/qaPCV9Y.jpg" loading="lazy">
+<img src="https://i.imgur.com/0NGXsyC.jpg" loading="lazy">
+<img src="https://i.imgur.com/OtV465R.jpg" loading="lazy">
+<img src="https://i.imgur.com/4hVWt7Z.jpg" loading="lazy">
+<p>The port of San Francisco greets you.
+<img src="https://i.imgur.com/nwN5lq4.jpg" loading="lazy"></p>
+<p>I mean, it really greets you.
+<img src="https://i.imgur.com/FP3xMiu.jpg" loading="lazy"></p>
+<p>The embankment is quite long.
+<img src="https://i.imgur.com/SZBwceJ.jpg" loading="lazy"></p>
+<p>It’s called The Embarcadero.
+<img src="https://i.imgur.com/WgXFjwS.jpg" loading="lazy"></p>
+<p>The embankment pier has some nice views.
+<img src="https://i.imgur.com/fgzvrI7.jpg" loading="lazy"></p>
+<p>From the same spot you can observe a chameleon lighthouse thing.
+<img src="https://i.imgur.com/Zq11uoy.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/NE1N7NA.jpg" loading="lazy">
+<img src="https://i.imgur.com/8krLSDZ.jpg" loading="lazy">
+<p>The whole embankment is filled with interesting objects. For example, the
+traffic lights by this building are synced. It’s really hypnotising, when the
+colour switches.
+<img src="https://i.imgur.com/hGObN5D.jpg" loading="lazy"></p>
+<p>San-Francisco-Oakland Bay Bridge.
+<img src="https://i.imgur.com/YHsI0Cr.jpg" loading="lazy"></p>
+<p>This is supposed to be scary, but it was almost quiet when I approached it.
+There’s a deep pool behind this plate.
+<img src="https://i.imgur.com/fL3rbUq.jpg" loading="lazy"></p>
+<p>The city is experiencing an IT boom. It’s really easy to determine the time now.
+<img src="https://i.imgur.com/wz7vJ8M.jpg" loading="lazy"></p>
+<p>A warning from Alcatraz.
+<img src="https://i.imgur.com/1g7qlSt.jpg" loading="lazy"></p>
+<p>The trip to the embankment ends here. The boats are sleeping and I decided not
+to disturb them.
+<img src="https://i.imgur.com/2tNmfYX.jpg" loading="lazy"></p>
+<p>“The roof is on fire” saying is all about San Francisco. I’ve never seen so many
+fire trucks in my life. The city burns every day. It’s almost guaranteed that
+you will hear the siren of a fire truck at least once a day.
+<img src="https://i.imgur.com/t9oTEtD.jpg" loading="lazy"></p>
+<p>I have a hunch it’s a serious problem. I witnessed the hotel on fire.
+<img src="https://i.imgur.com/yhhXO6Z.jpg" loading="lazy"></p>
+<p>Something that no tourist agency will tell you is that there are a lot of
+homeless and bonkers people on the streets.
+<img src="https://i.imgur.com/koM2wba.jpg" loading="lazy"></p>
+<p>“Row, row, row your boat, gently down the stream. Ha ha, fooled ya, I’m a
+submarine”.
+<img src="https://i.imgur.com/Qd12PUh.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/Zgizj59.jpg" loading="lazy">
+<p>Speaking of the homeless, it wouldn’t be fair if I didn’t contrast them with the
+rich. From what I read the gap between them is substantial. The contrast can
+be observed with the naked eye.
+<img src="https://i.imgur.com/3MwIvdv.jpg" loading="lazy"></p>
+<p>There are some rich neighbourhoods like Sea Cliff.
+<img src="https://i.imgur.com/GRFMpzA.jpg" loading="lazy"></p>
+<p>There are a lot of posh buildings in this area. A lot of habitants of these
+houses see the ocean every day.
+<img src="https://i.imgur.com/xnaOGHG.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/SXKShXl.jpg" loading="lazy">
+<p>I noticed people prefer not to use curtains.
+<img src="https://i.imgur.com/0koKlP3.jpg" loading="lazy"></p>
+<p>Apparently people don’t litter in this neighbourhood. It is really clean.
+<img src="https://i.imgur.com/dTn0GMz.jpg" loading="lazy"></p>
+<p>Swiss presence.
+<img src="https://i.imgur.com/tdinSsT.jpg" loading="lazy"></p>
+<p>China Beach is also in this neighbourhood.
+<img src="https://i.imgur.com/YM5dDFd.jpg" loading="lazy"></p>
+<p>From that point you can observe Golden Gate bridge.
+<img src="https://i.imgur.com/exVCIxl.jpg" loading="lazy"></p>
+<p>By the way, beaches are not typical beaches.
+<img src="https://i.imgur.com/OX3rWL6.jpg" loading="lazy"></p>
+<p>Don’t even try to bring your swimming trunks.
+<img src="https://i.imgur.com/CE2eivi.jpg" loading="lazy"></p>
+<p>It’s a calm place, though.
+<img src="https://i.imgur.com/gWiBVjv.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/WmtrOmN.jpg" loading="lazy">
+<img src="https://i.imgur.com/SgzXBRy.jpg" loading="lazy">
+<p>I don’t know much about baseball, but apparently it’s a big thing here.
+<img src="https://i.imgur.com/fE1ymG8.jpg" loading="lazy"></p>
+<p>People love baseball.
+<img src="https://i.imgur.com/JFb5HCc.jpg" loading="lazy"></p>
+<p>There’s a big monument on the stadium’s roof. The holy bottle of Coca-Cola and
+the giant glove catching it.
+<img src="https://i.imgur.com/7EkUOI5.jpg" loading="lazy"></p>
+<p>Don’t like baseball? Play basketball or tennis.
+<img src="https://i.imgur.com/NbHGTnW.jpg" loading="lazy"></p>
+<p>Maybe golf?
+<img src="https://i.imgur.com/7zx3Exi.jpg" loading="lazy"></p>
+<p>Oh, are you too short for basketball? No problem, swings are also fun!
+<img src="https://i.imgur.com/bOklFCu.jpg" loading="lazy"></p>
+<p>Stare at the sand beneath the swings if you are not into sports, after all.
+<img src="https://i.imgur.com/f6x4glx.jpg" loading="lazy"></p>
+<p>McDonald’s is not the solution, don’t even try.
+<img src="https://i.imgur.com/YBXeLJO.jpg" loading="lazy"></p>
+<p>People seem to be religious here.
+<img src="https://i.imgur.com/vI3tEft.jpg" loading="lazy"></p>
+<p>A chapel with a huge bell.
+<img src="https://i.imgur.com/FWlTukk.jpg" loading="lazy"></p>
+<p>In general, I saw many churches.
+<img src="https://i.imgur.com/fUiqWT4.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/rjMjIZL.jpg" loading="lazy">
+<p>Richmond is the neighbourhood where the Gospel House is.
+<img src="https://i.imgur.com/ek5o9Ai.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/qmJNlI3.jpg" loading="lazy">
+<p>Although it’s obvious that Kharkiv and San Francisco are pretty different,
+the real difference is revealed to the watchful observer.
+<img src="https://i.imgur.com/Y6vtHJ6.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/HVFDrlI.jpg" loading="lazy">
+<img src="https://i.imgur.com/VSZNcTw.jpg" loading="lazy">
+<p>Some places reminded me of the Motherland. Every child of Ukraine would
+recognise this carousel.
+<img src="https://i.imgur.com/r4scFHc.jpg" loading="lazy"></p>
+<p>This building always attracted me for some reason. Its roof suggests to me that
+it’s some elite mysterious casino. Well, at least that’s my perception of it.
+<img src="https://i.imgur.com/9CSHbYj.jpg" loading="lazy"></p>
+<p>Not sure if the pets are always on a leash, but the grass is indeed clean.
+<img src="https://i.imgur.com/MTQfvcM.jpg" loading="lazy"></p>
+<p>The Holocaust.
+<img src="https://i.imgur.com/ObvUdlT.jpg" loading="lazy"></p>
+<p>I must say, almost all the monuments I’ve seen are dirty and look unmaintained.
+Here’s someone’s wedding with violins and horses.
+<img src="https://i.imgur.com/rquBQgs.jpg" loading="lazy"></p>
+<p>I’ve never seen anything like this before. Seems redundant.
+<img src="https://i.imgur.com/Kb0AW95.jpg" loading="lazy"></p>
+<p>Some road signs explain the street’s name.
+<img src="https://i.imgur.com/KgXIN0x.jpg" loading="lazy"></p>
+<p>Some of them are really verbose.
+<img src="https://i.imgur.com/A3lZy9k.jpg" loading="lazy"></p>
+<p>There’s a common abbreviation for “crossing” that played a trick on me. It
+looks like this — XING. You can often see this word on asphalt. I was always
+wondering, why on Earth, wherever I go I’m in Chinatown.</p>
+<p>If you cycle outside of San Francisco, towards Mill Valley, you magically
+teleport to the Fallout sceneries.
+<img src="https://i.imgur.com/Io2Apla.jpg" loading="lazy"></p>
+<img src="https://i.imgur.com/UH6ka36.jpg" loading="lazy">
+<p>Except there were no helicopters in the game. This one just landed in front of
+me, out of nowhere.
+<img src="https://i.imgur.com/ghj39wj.jpg" loading="lazy"></p>
+<p>There are many diners and restaurants, but this one is just the best. It has
+the fanciest faucet ever.
+<img src="https://i.imgur.com/6QDKzp6.jpg" loading="lazy"></p>
+<p>At the same time, it could not afford a normal covering cloth for the table.
+<img src="https://i.imgur.com/YqhelRK.jpg" loading="lazy"></p>
+<p>During my stay I was lucky to visit GoGaRuCo 2014. Fun fact: I have applied to
+each of the companies you see on this photo and they all rejected or ignored
+my application.
+<img src="https://i.imgur.com/yCKXuLU.jpg" loading="lazy"></p>
+<p>I’ve messed up many other good photos that I couldn’t include in this report. It
+was high time to pack my bags, though.
+<img src="https://i.imgur.com/btpno9Y.jpg" loading="lazy"></p>
+<p>The airport of San Francisco didn’t want me to leave.
+<img src="https://i.imgur.com/fo6KNdE.jpg" loading="lazy"></p>
+<p>However, the aircraft was ready.
+<img src="https://i.imgur.com/lWXYnmP.jpg" loading="lazy"></p>
+<p>Kiss it bye-bye.
+<img src="https://i.imgur.com/z1X2jGW.jpg" loading="lazy"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysokyi"><a class="header" href="#-how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysokyi">🇺🇦 How I cycled to a football match between Metalist and ETM in Vysokyi</a></h1>
+<p>
+  <time datetime="2013-04-12 00:23:44 +0200" itemprop="datePublished">
+    April 12, 2013
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>A month ago, I bought a cheap, used mountain bike. I’ve ridden it twice since
+then (or technically three times, counting the test ride after I bought it). Why
+did I go for a cheap bike? Well, I wasn’t sure I’d actually enjoy cycling. Turns
+out I do.</p>
+<p>By the way, this is my second bike. My first one met a tragic end when I took a
+spill over the handlebars on a hill. That fateful crash was the end of my steel
+companion—dented wheels were the least of its problems. I tried fixing it
+myself, but only made things worse. Back then, I didn’t have the skills—or, more
+importantly, the internet.</p>
+<h2 id="conquering-the-roads"><a class="header" href="#conquering-the-roads">Conquering the roads</a></h2>
+<p>With my second bike, I set myself a clear goal: I want to learn how to cycle on
+roads, not sidewalks. For one, cycling on sidewalks isn’t allowed by the rules.
+And besides, it’s <em>much</em> faster to ride on roads.</p>
+<h2 id="from-noisy-chains-to-game-day"><a class="header" href="#from-noisy-chains-to-game-day">From noisy chains to game day</a></h2>
+<p>Thursday was a perfect day for cycling—10°C, clear skies, and a mild breeze. My
+route was from home to the township of
+<a href="https://en.wikipedia.org/wiki/Vysokyi">Vysokyi</a>. Why Vysokyi? I wanted to catch a
+football match between <a href="https://fcmetalist.com.ua/">Metalist</a> and ETM. Vysokyi is
+where Metalist’s training camp is located.</p>
+<p>Two days before the game, I’d taken a ride around Kharkiv and noticed my bike
+chain was making odd noises, so I needed to oil it. I’d never done that before,
+so I turned to the internet for help. Half of Wednesday went to finding and
+buying oil and oiling the chain. The rest of the day I spent trying to adjust
+the transmission for better reliability—also a first for me. I didn’t finish it
+that day, so I had to continue on Thursday morning. Luckily, the game didn’t
+start until 4 p.m., so I planned to leave around 2.</p>
+<p>By Thursday, I’d managed to get the bike somewhat fixed. I double-checked the
+chain and felt nearly ready to go, but… I realized the transmission was still
+acting up. Bloody buggering hell! I gave it a third try, and finally, it worked.
+The time was 3 p.m.—no problem; I could still catch the second half.</p>
+<h2 id="the-journey-cycling-to-vysokyi-almost"><a class="header" href="#the-journey-cycling-to-vysokyi-almost">The journey: cycling to Vysokyi (almost)</a></h2>
+<p>I started cycling around 3:10. The distance to Vysoky was 25 km, so the round
+trip would be 50 km.</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m21!1m8!1m3!1d82158.9131589308!2d36.29608140847471!3d49.94635972703536!3m2!1i1024!2i768!4f13.1!4m10!1i0!3e6!4m3!3m2!1d50.018642!2d36.330455!4m3!3m2!1d49.883348!2d36.160308!5e0!3m2!1sen!2sua!4v1412971628936" width="600" height="450" frameborder="0" style="border:0"></iframe>
+<p>Obviously, I decided to stick to the sidewalks, as neither I nor my bike was
+road-ready. Why? First, I didn’t know traffic rules well enough (I didn’t even
+have a driver’s license). Second, I didn’t have reflectors or lights. I did have
+a helmet, but since I’d be using sidewalks anyway, I figured it was safe without
+it. I’m not an aggressive cyclist, either.</p>
+<p>As I rode, I noticed that cyclists tend to attract attention here. I had a few
+random interactions along the way. But anyway, enough of these sentimental
+details. What about football? I’ll be honest—I didn’t make it to Vysoky, and I
+didn’t see the match. I cycled about 22 km and then realized it was about to
+rain. So, screw football—I decided not to get wet and dirty and turned back.
+Unfortunately, it rained anyway. I got soaked, covered in mud, and cold—all
+while wearing shorts.</p>
+<p>That’s how far I got.</p>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ua/maps?cbll=49.905117,36.169823&amp;layer=c&amp;panoid=TUnPgHHkXlcN0ehswAbh9w&amp;cbp=12,251.07,,0,9.59&amp;ie=UTF8&amp;ll=49.905117,36.169823&amp;spn=0.264899,0.2005&amp;t=m&amp;z=11&amp;source=embed&amp;output=svembed"></iframe>
+<small>
+<a href="https://maps.google.com.ua/maps?cbll=49.905117,36.169823&amp;layer=c&amp;panoid=TUnPgHHkXlcN0ehswAbh9w&amp;cbp=12,251.07,,0,9.59&amp;ie=UTF8&amp;ll=49.905117,36.169823&amp;spn=0.264899,0.2005&amp;t=m&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+<p>Cycling back was tough. I was exhausted. I’d already hit my second wind and was
+working on my third. Suddenly, the transmission problem popped up again. Gear
+shifts were clunky, making it really hard to ride uphill, so I had to dismount.
+But since I’m writing this, I made it home alive.</p>
+<h2 id="lessons-learned-roads-rain-and-resilience"><a class="header" href="#lessons-learned-roads-rain-and-resilience">Lessons learned: roads, rain, and resilience</a></h2>
+<p>There are a lot of cyclists playing with fire on our roads. Riding in the dark
+without lights is practically asking for trouble. I also realized how awful
+sidewalks are for cycling here. The curbs are high, ramps are scarce, and the
+sidewalk asphalt quality is terrible. Still, despite everything, I enjoyed this
+little adventure.</p>
+<p>Oh, and by the way, Metalist won: Metalist 6:0 ETM.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-euro-2012-ukraine--england-my-trip-to-donetsk"><a class="header" href="#-euro-2012-ukraine--england-my-trip-to-donetsk">🇺🇦 Euro 2012. Ukraine – England. My trip to Donetsk</a></h1>
+<p>
+  <time datetime="2012-08-01 00:23:44 +0200" itemprop="datePublished">
+    July 1, 2012
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>I was lucky to visit Donetsk on the 19th of June. I went to a <a href="https://www.uefa.com/uefaeuro/history/seasons/2012/">Euro 2012</a>
+football match between the Ukrainian and the English national football teams. I
+went to the match with Kyrylo (namesake), a friend of mine.</p>
+<h2 id="day-1-the-match"><a class="header" href="#day-1-the-match">Day 1. The match</a></h2>
+<p>The train journey from Kharkiv to Donetsk takes about three and a half hours. We
+took a modern train officially called HRCS2, but everyone calls it the
+“Hyundai.”
+<img src="https://i.imgur.com/ffsY3Nf.jpg"></p>
+<p>Donetsk didn’t impress me at first. The first thing you see when you exit the
+railway station is an ugly market.</p>
+<p>What caught my attention was the prevalence of Russian-language banners, which
+was quite a contrast to my city, where most signs are in Ukrainian.
+<img src="https://i.imgur.com/0F21Zti.jpg"></p>
+<p>We found a hostel to rent for the night. It was an old, run-down building with a
+strange smell inside.</p>
+<p>Here’s the view from the backyard.
+<img src="https://i.imgur.com/iAcsF88.jpg"></p>
+<p>The good news? The “luxurious” room, complete with a broken TV and a fly flying
+around, cost us only 5 euros.</p>
+<p>While waiting for the receptionist to bring the keys, we entertained ourselves
+by watching a soap opera.
+<img src="https://i.imgur.com/uVrrV8I.jpg" loading="lazy"></p>
+<p>Got the keys. Kyrylo is trying to fix the TV (for some reason—it’s not like we
+were going to watch it).
+<img src="https://i.imgur.com/5uotEkU.jpg" loading="lazy"></p>
+<p>After settling in, we decided to head over to the
+<a href="https://en.wikipedia.org/wiki/Donbas_Arena">Donbas Arena</a>
+to check it out. We picked up a couple of maps at the Euro 2012 help booth.</p>
+<p>We decided the tram was the best way to get there.
+<img src="https://i.imgur.com/51vVa9r.jpg" loading="lazy"></p>
+<p>On the way, we passed through the miners’ land. Donetsk felt like a giant
+village. The streets were gloomy, the atmosphere was depressing, and there
+weren’t many buildings—just grass and trees.</p>
+<p>But when we reached the stadium, everything changed. The lawn was perfectly
+manicured, the flowers were in full bloom, and the fountains were sparkling with
+water.
+<img src="https://i.imgur.com/rZCx8kV.jpg" loading="lazy"></p>
+<p>I had a hunch that Shakhtar’s Brazilian players live in those blue containers.
+Why not? They’re not far from the stadium.
+<img src="https://i.imgur.com/KsXl5ub.jpg" loading="lazy"></p>
+<p>The Donetsk Copacabana.
+<img src="https://i.imgur.com/sA8EItZ.jpg" loading="lazy"></p>
+<p>With 10 hours to kill before the match, we decided to grab a bite. We found a
+great restaurant with delicious food. After breakfast, we made our way to the
+so-called “fan zone.” Since we had football tickets, all public transport was
+free. We took a bus, and the fan zone was just a couple of kilometers away.</p>
+<p>This bridge connects the park to the rest of the city.
+<img src="https://i.imgur.com/tQ0bPM7.jpg" loading="lazy"></p>
+<p>It was scorching hot, and I didn’t have a cap, so I had to find a way to cool my
+head down.
+<img src="https://i.imgur.com/YoKFTCK.jpg" loading="lazy"></p>
+<p>The fan zone was large, but honestly, it was a bit dull. The only fun part was taking photos.</p>
+<p>We posed with some folks promoting Carlsberg.
+<img src="https://i.imgur.com/rQ0YycP.jpg" loading="lazy"></p>
+<p>Took a picture with some fans.
+<img src="https://i.imgur.com/t3vaEUy.jpg" loading="lazy"></p>
+<p>And with some Englishmen.
+<img src="https://i.imgur.com/DY5rysE.jpg" loading="lazy"></p>
+<p>The English were super popular that day. Everyone wanted a photo with them, so
+there was a bit of a queue. The English were happy to oblige, but I couldn’t
+understand the fascination. Why take photos with random strangers?</p>
+<p>On the other hand, nobody seemed interested in taking photos with us.
+<img src="https://i.imgur.com/D0GK35Q.jpg" loading="lazy"></p>
+<p>Out of nowhere, a guy approached us asking to take a picture of me and Kyrylo
+and send it to my email. Not sure why, but he never did.</p>
+<p>Some people began dancing on stage.
+<img src="https://i.imgur.com/07olMJZ.jpg" loading="lazy"></p>
+<p>We ran into a few more Englishmen, some of whom were pretty drunk.
+<img src="https://i.imgur.com/BMRAyIR.jpg" loading="lazy"></p>
+<p>One of them claimed that the English fans would be louder than the entire
+Ukrainian crowd. I thought it was nonsense, but… he wasn’t lying. They were
+louder.</p>
+<p>The fan zone was fun, but we were running late for the match, so we had to
+leave. A quick stop at the bathroom before heading to the stadium.
+<img src="https://i.imgur.com/GMaEDHl.jpg" loading="lazy"></p>
+<p>Finally, we arrived at the stadium. Donbas Arena is breathtaking. We managed to
+get there just in time.
+<img src="https://i.imgur.com/qmA35OU.jpg" loading="lazy"></p>
+<p>I was blown away by the atmosphere. There were many empty seats, though. Sadly,
+the tickets were expensive, and not everyone could afford them.
+<img src="https://i.imgur.com/TKVt6mX.jpg" loading="lazy"></p>
+<p>It was <a href="https://en.wikipedia.org/wiki/Andriy_Shevchenko">Andriy Shevchenko’s</a>
+final game—our best footballer. At the stadium, we
+felt like we were incredibly loud, but when I watched the game on TV later, it
+seemed much quieter. The illusion of sound.
+<img src="https://i.imgur.com/Yti2ewy.jpg" loading="lazy"></p>
+<p>Ukraine lost, and we didn’t qualify for the next round, so everyone was
+disappointed. We initially planned to return to the fan zone after the match,
+but we decided to head back to the hostel to rest instead.</p>
+<h2 id="day-2-aftermatch"><a class="header" href="#day-2-aftermatch">Day 2. Aftermatch</a></h2>
+<p>The next day, our train was at 19:00, so we woke up around 11:00, giving us
+plenty of time to explore the city. It was nearly lunchtime, and we were hungry
+enough to eat a whole elephant. I suggested we visit the same restaurant from
+the day before, but Kyrylo wanted McDonald’s. I wasn’t too keen on that, so I
+ate first, and then we’d go to McD’s. While I ate, Kyrylo ventured out to
+explore more of the city.</p>
+<p>Donetsk is known for its mafia, and we joked about it constantly. But honestly,
+it probably does exist. When I finished my meal and stepped outside to wait for
+Kyrylo, I inadvertently got caught up in a conflict. Apparently, a guy tried to
+kill another “big guy” with a screwdriver. I doubt that’s entirely true, but you
+can <a href="http://podrobnosti.ua/criminal/2012/06/21/843068.html">read about it</a> here
+(in Russian).</p>
+<h3 id="afterlunch"><a class="header" href="#afterlunch">Afterlunch</a></h3>
+<p>We decided to explore the city center. It turned out the area around Donbas
+Arena isn’t really the center at all, but there was a McDonald’s where Kyrylo
+had his meal.</p>
+<p>Donetsk has a cool boulevard, which was specifically built for Euro 2012. We
+wandered down it and found a beautiful, expansive park. However, there were tons
+of McDonald’s ads everywhere, which was a little disappointing.
+<img src="https://i.imgur.com/AMP0qNp.jpg" loading="lazy"></p>
+<p>Kyrylo, trying not to cry over our team’s defeat (though it was probably more of
+a hangover situation).
+<img src="https://i.imgur.com/qenNj2P.jpg" loading="lazy"></p>
+<p>Time to head to the train station. We took a bus with a crazy driver who seemed
+to be in a rush to get home and turn off his iron.</p>
+<p>The good news was, we were on time. Goodbye, Donetsk.
+<img src="https://i.imgur.com/mSY2QHB.jpg" loading="lazy"></p>
+<p>The city center of Donetsk is definitely better than Kharkiv’s, but overall, I
+still prefer my own city. I wouldn’t say I enjoyed Donetsk, but I can’t say I
+didn’t either.</p>
+<p>I’m just glad I had the chance to be part of Euro 2012.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="-how-i-went-to-it-jam-2011-in-odesa"><a class="header" href="#-how-i-went-to-it-jam-2011-in-odesa">🇺🇦 How I went to IT Jam 2011 in Odesa</a></h1>
+<p>
+  <time datetime="2011-08-22 00:23:44 +0200" itemprop="datePublished">
+    July 22, 2011
+  </time>
+  |
+  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <picture>
+    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15">
+  </picture>
+  <span itemprop="name">
+    <a href="/">Kyrylo Silin</a>
+  </span>
+</span>
+·
+<a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+·
+<a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
+·
+<a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+</p>
+
+<p>Apologies in advance for the photo quality, tilted angles, and other possible
+mishaps. First, I’m no photographer. Second, I was inexperienced with the camera
+I brought, and as a result, had no idea how to set it up. Lastly, the camera
+itself wasn’t top-notch. You might want to grab a cup or two of your favorite
+drink before diving in—this is a long one.</p>
+<h2 id="the-journey-begins-kharkiv"><a class="header" href="#the-journey-begins-kharkiv">The journey begins. Kharkiv</a></h2>
+<p>One fine evening, my friend <a href="https://github.com/serhiip">Serhii</a> called with a
+plan: he wanted to attend a conference (<a href="https://www.youtube.com/watch?v=ZWG0FQBRfcc">IT Jam</a>)
+for software developers and IT professionals. Without hesitation, I was in. My
+reasoning was simple: I’d never been to a conference, and I wanted to see what
+it was all about—not for knowledge, but for the experience. After all, I believe
+the benefits of watching a talk are the same whether it’s live or on video.</p>
+<p>So, we formed a group of four, each of us registered online, and bought
+round-trip train tickets. Since the conference was free, it was affordable for
+any student.</p>
+<p>Farewell, Kharkiv!</p>
+<img src="https://i.imgur.com/8WLMnp2.jpg">
+<h2 id="arrival-in-odesa"><a class="header" href="#arrival-in-odesa">Arrival in Odesa</a></h2>
+<p>I’d been to Odesa before, but only in passing. My football team was once en
+route to Illichivsk for training, and we were packed into a tiny yellow bus at
+the Odesa train station, so I remembered little beyond surviving that cramped
+ride.</p>
+<p>This time, we arrived at Odesa at 8:30 a.m. to perfect weather—not too warm, not
+too cold. With a couple of hours to spare before the conference began, we
+decided to wander around and find breakfast.</p>
+<p>Here we are, inspecting the map and planning our route.
+<img src="https://i.imgur.com/0UnswWP.jpg" loading="lazy"></p>
+<p>The sea station, where the conference was held, was within walking distance from
+the train station. Suddenly, a man with keys in hand approached us as we studied
+the map. He offered us a ride, clearly as an unlicensed taxi driver, so we
+declined.</p>
+<p>Our route took us down Odesa’s most famous street, Deribasivska, and then onto
+Pushkinska St., which has a similar feel. Passing several notable buildings, we
+joked that we should visit those instead of the conference.</p>
+<p>Pushkinska St from a sidewalk.
+<img src="https://i.imgur.com/HIXNA1c.jpg" loading="lazy"></p>
+<p>The intersection between Pushkinska St and a Random St. The Random St view.
+<img src="https://i.imgur.com/iFQw2Gj.jpg" loading="lazy"></p>
+<p>After some unspoken consensus, we ended up at McDonald’s for breakfast. Fast and
+convenient. I’m not a frequent visitor, so I defaulted to the Big Mac menu, but
+it wasn’t available on the breakfast menu. After some tough deliberation, I
+ordered a fancy omelette with a latte—my first-ever latte.</p>
+<p>With breakfast done, we had just enough time to reach the sea port. The streets
+of Odesa seemed deserted—until we reached the
+<a href="https://en.wikipedia.org/wiki/Potemkin_Stairs">Potemkin Stairs</a>, where everything
+clicked into place.</p>
+<p>The view of the beautiful sea port, and an ugly ads banner.
+<img src="https://i.imgur.com/2yAGQdk.jpg" loading="lazy"></p>
+<p>Still not too late to hop on a train home.
+<img src="https://i.imgur.com/cWlTuHq.jpg" loading="lazy"></p>
+<p>At the sea port. Try to spot me.
+<img src="https://i.imgur.com/yPUShhN.jpg" loading="lazy"></p>
+<p>Nearby, there was a monument with an egg and a well-built toddler inside.
+Unimpressive. Not even the cannons, yachts, shipyards, or various ships caught
+my attention as much as the sheer length of the queue.</p>
+<p>Whoa… Quite a line.
+<img src="https://i.imgur.com/7uuxKJM.jpg" loading="lazy"></p>
+<p>The ship’s name is <em>Amerigo Vespucci</em>. Built by Italians in 1931. Used by
+Ukrainians in 2011.
+<img src="https://i.imgur.com/7kYKzbZ.jpg" loading="lazy"></p>
+<h2 id="the-conference-begins"><a class="header" href="#the-conference-begins">The conference begins</a></h2>
+<p>After our walk, we headed to the conference and signed in. To my pleasant
+surprise, there were quite a few women attending. One perk was the free food:
+cookies, tea, coffee, water, sandwiches—you name it. Naturally, it disappeared
+fast.</p>
+<p>Quite the line to sign in.
+<img src="https://i.imgur.com/2cy79HB.jpg" loading="lazy"></p>
+<p>A snack before the opening was a good idea. For those who weren’t hungry, there
+was info about the conference to read.</p>
+<p>The spectacular Sasha, one of the presenters, opens the conference.
+<img src="https://i.imgur.com/ZGfRT7Y.jpg" loading="lazy"></p>
+<h2 id="about-the-conference"><a class="header" href="#about-the-conference">About the conference</a></h2>
+<p>A quick overview: the conference had 42 talks, each 30 minutes long with
+10-minute breaks between. Topics included mobile tech, Java, web dev, .NET,
+Quality Assurance, and general tech. Every 40 minutes, from 11:10 a.m. to 3:40
+p.m., attendees chose from seven simultaneous talks. Unfortunately, only
+Spider-Man can be in seven places at once, so I only managed to attend seven
+talks.</p>
+<h2 id="the-talks"><a class="header" href="#the-talks">The talks</a></h2>
+<p>The first talk I attended was on building a simple Rails 3 app using Git and
+GitHub, and deploying it to Heroku. Even though I was familiar with the topic, I
+was curious to see it done by an expert.</p>
+<p>However, the speaker, Serhii Parizhsky, had technical issues and was replaced by
+Andriy Mykhailov, whose topic was Puppet. A few attendees walked out in protest.</p>
+<p>I missed most of the Puppet talk while fiddling with my camera in the dark room,
+but the speaker’s style wasn’t particularly engaging.
+<img src="https://i.imgur.com/aGCSxQX.jpg" loading="lazy"></p>
+<p>Fortunately, the second talk was about Rails. Originally, I planned to attend a
+talk on online payment architecture but switched because I was eager to see the
+Rails talk. So I stayed put.</p>
+<p>Serhii and Sasha. Sasha announces Serhii.
+<img src="https://i.imgur.com/SlCrhGm.jpg" loading="lazy"></p>
+<p>Serhii had issues with his computer, so he borrowed a laptop running Ubuntu from
+the previous speaker. To my surprise, he struggled to use it—couldn’t unlock the
+screen, compared Gedit to Notepad, and struggled to create a new file.</p>
+<p>Eventually, he typed “rails new appname” (or something similar) into the
+terminal. A reasonable question from the audience—“What are you even
+doing?”—sums up this talk. I was disappointed.
+<img src="https://i.imgur.com/EgXt6HY.jpg" loading="lazy"></p>
+<p>The third talk covered Agile development methods, presented by Dmytro Lapshyn.
+He was confident and knowledgeable, but Agile didn’t resonate much with me.
+After the talk, a silver-haired gentleman struck a deal with Dmytro, apparently
+impressed.
+<img src="https://i.imgur.com/zv6GHZA.jpg" loading="lazy"></p>
+<p>The fourth talk on leadership by Dmytro Mindra explored the role and types of
+leaders in a team. It was engaging, well-presented, and straightforward.
+<img src="https://i.imgur.com/8NtX1LS.jpg" loading="lazy"></p>
+<p>Next, Naos Wilbrink, a Dutch specialist, spoke in impeccable English about data
+privacy. His clear and precise talk was my favorite, as he emphasized the value
+of every bit of information. The audience was lively, with plenty of questions.
+<img src="https://i.imgur.com/Kd7scHS.jpg" loading="lazy"></p>
+<p>“Crotches”.
+<img src="https://i.imgur.com/j4fjQys.jpg" loading="lazy"></p>
+<p>The penultimate talk by Yevhen Dmytrychenko was on load testing tools. Not the
+most applicable topic for me, but interesting nonetheless.
+<img src="https://i.imgur.com/iAyufaY.jpg" loading="lazy"></p>
+<p>I had hoped to attend a talk on neural networks in e-commerce, but it was
+replaced with Leonid Bugaev’s semi-promotional session on motivation. Despite
+the shift, I enjoyed it.</p>
+<p><em>Rework</em> is a nice book, but it’s too abstract—just like the talk.
+<img src="https://i.imgur.com/7pO6kQu.jpg" loading="lazy"></p>
+<p>After the talks, there was a break, with tweets tagged #itjam displayed live on
+a TV. Easels with paper and pens were scattered about, and someone even sketched
+a Java “Hello World” program.</p>
+<p>Then came a lottery with conference tickets as prizes, including one for
+RubyShift in Dnipropetrovsk, which I was secretly hoping to win. Sadly, no luck.
+<img src="https://i.imgur.com/dRCKFtR.jpg" loading="lazy"></p>
+<p>The next part of the conference was an interview with the “big bosses” of
+Ukrainian software companies. I didn’t catch their names, but I do remember
+their way of speaking—it was all the same. And it was horrific. They weren’t
+speaking Russian, nor Ukrainian, nor even English. It was a nuclear mix of all
+three languages.</p>
+<p>They’re all Ukrainians (except one), so why on earth were they doing that? I’ll
+cut the big nub from Denmark some slack—at least he was speaking English.</p>
+<p>Question: “Do you use any math in your company?”
+Answer: “We do. We play poker!”
+<img src="https://i.imgur.com/XxSrYik.jpg" loading="lazy"></p>
+<h2 id="wrapping-up"><a class="header" href="#wrapping-up">Wrapping up</a></h2>
+<p>It was time to leave. In general, the “big bosses” panel was underwhelming,
+loaded with ads and irrelevant content. One boss proclaimed, “The best
+programmers are in the USA. And… they are Russians.” It was a popular line,
+but I strongly disagree.</p>
+<p>Despite a few downsides, like English-only materials, I enjoyed IT Jam. The
+conference was informative, and I’d gladly attend next year. But really—why no
+Ukrainian or Russian option? A bit pretentious, perhaps?</p>
+<p>The conference is over. But only for us.
+<img src="https://i.imgur.com/ybRNPKS.jpg" loading="lazy"></p>
+<p>No trip to Odesa is complete without a shot of the famous Potemkin Stairs.
+<img src="https://i.imgur.com/oEmKtOp.jpg" loading="lazy"></p>
+<p>Odesa is a cool city. Goodbye, Odesa!
+<img src="https://i.imgur.com/VK2qJGS.jpg" loading="lazy"></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

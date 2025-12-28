@@ -1,11 +1,12 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 redirect_from: "/about/"
 image: assets/images/web-app-manifest-512x512.png
 ---
+
+<nav>
+  <a href="/travel/">Where I've been</a>
+</nav>
 
 <section>
   <h2>About me</h2>
@@ -320,75 +321,6 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     </li>
     <li>
       <a href="https://github.com/kyrylo/zsh-completion-subtle">zsh-completion-subtle</a>: Z Shell completion scripts for <a href="https://subforge.org/projects/subtle">Subtle WM</a> and its tools.
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>
-    Where I've been
-  </h2>
-
-  <ul>
-    <li>
-      2021 &ndash; <a href="{% post_url 2021-02-24-dubai %}">Dubai, United Arab Emirates</a> 🇦🇪
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-08-24-cebu-my-longest-journey-abroad-so-far %}">Cebu, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-07-21-lviv %}">Lviv, Ukraine</a> 🇺🇦
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-06-23-amsterdam %}">Amsterdam, Netherlands</a> 🇳🇱
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-06-19-rotterdam %}">Rotterdam, Netherlands</a> 🇳🇱
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-01-26-manila-christmas-and-my-future-prospects %}">Manila, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-01-19-legazpi %}">Legazpi, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2019 &ndash; <a href="{% post_url 2019-01-05-bohol %}">Bohol, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2018 &ndash; <a href="{% post_url 2018-09-30-cavite-province %}">Cavite, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2018 &ndash; <a href="{% post_url 2018-09-01-baguio %}">Baguio, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2018 &ndash; <a href="{% post_url 2018-02-07-tagaytay %}">Tagaytay, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2018 &ndash; <a href="{% post_url 2018-01-10-manila %}">Manila, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2017 &ndash; <a href="{% post_url 2017-12-10-bangkok %}">Bangkok, Thailand</a> 🇹🇭
-    </li>
-    <li>
-      2017 &ndash; <a href="{% post_url 2017-08-01-manila-first-impressions-food-life-and-traffic-in-the-philippines %}">Manila, Philippines</a> 🇵🇭
-    </li>
-    <li>
-      2017 &ndash; <a href="{% post_url 2017-02-03-kyiv-trip %}">Kyiv, Ukraine</a> 🇺🇦
-    </li>
-    <li>
-      2016 &ndash; <a href="{% post_url 2016-09-12-lisbon-business-trip %}">Lisbon, Portugal</a> 🇵🇹
-    </li>
-    <li>
-      2014 &ndash; <a href="{% post_url 2014-07-11-internship-in-san-francisco %}">San Francisco, United States</a> 🇺🇸
-    </li>
-    <li>
-      2013 &ndash; <a href="{% post_url 2013-04-12-how-i-cycled-to-a-football-match-between-metalist-and-etm-in-vysoky %}">Kharkiv, Ukraine</a> 🇺🇦
-    </li>
-    <li>
-      2012 &ndash; <a href="{% post_url 2012-08-01-euro-2012-ukraine-england-my-trip-to-donetsk %}">Donetsk, Ukraine</a> 🇺🇦
-    </li>
-    <li>
-      2011 &ndash; <a href="{% post_url 2011-08-22-how-i-went-to-it-jam-2011-in-odesa %}">Odesa, Ukraine</a> 🇺🇦
     </li>
   </ul>
 </section>
