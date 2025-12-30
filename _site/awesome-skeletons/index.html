@@ -377,63 +377,86 @@
       gap: 0.75rem;
     }
 
-    .eternal-loader.visible {
-      opacity: 1;
+    /* === NEW: Hide text until JS has applied skeletons === */
+    .text-skeleton-placeholder {
+      visibility: hidden;
+    }
+
+    .text-skeleton-ready .text-skeleton-placeholder {
+      visibility: visible;
+    }
+
+    /* Fallback for users with JS disabled */
+    noscript .text-skeleton-placeholder {
+      visibility: visible !important;
     }
   </style>
+
+  <noscript>
+    <style>
+      .text-skeleton-placeholder {
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body>
 
   <div class="banner" id="philosophy">
-    Loading philosophy…
+    <span class="text-skeleton-placeholder">Loading philosophy…</span>
   </div>
 
   <header>
     <div class="container">
       <nav>
-        <div class="logo" id="logo">Awesome Skeletons</div>
+        <div class="logo" id="logo"><span class="text-skeleton-placeholder">Awesome Skeletons</span></div>
         <div class="nav-links">
-          <a id="nav1">Features</a>
-          <a id="nav2">Pricing</a>
-          <a id="nav3">Blog</a>
-          <a id="nav4">About</a>
-          <a id="nav5" class="btn">Log in</a>
-          <a id="nav6" class="btn btn-primary">Start free trial</a>
+          <a id="nav1"><span class="text-skeleton-placeholder">Features</span></a>
+          <a id="nav2"><span class="text-skeleton-placeholder">Pricing</span></a>
+          <a id="nav3"><span class="text-skeleton-placeholder">Blog</span></a>
+          <a id="nav4"><span class="text-skeleton-placeholder">About</span></a>
+          <a id="nav5" class="btn"><span class="text-skeleton-placeholder">Log in</span></a>
+          <a id="nav6" class="btn btn-primary"><span class="text-skeleton-placeholder">Start free trial</span></a>
         </div>
         <button class="burger" popovertarget="nav-menu">☰</button>
       </nav>
     </div>
     <div id="nav-menu" popover>
-      <a id="nav-mobile1">Features</a>
-      <a id="nav-mobile2">Pricing</a>
-      <a id="nav-mobile3">Blog</a>
-      <a id="nav-mobile4">About</a>
-      <a id="nav-mobile5" class="btn">Log in</a>
-      <a id="nav-mobile6" class="btn btn-primary">Start free trial</a>
+      <a id="nav-mobile1"><span class="text-skeleton-placeholder">Features</span></a>
+      <a id="nav-mobile2"><span class="text-skeleton-placeholder">Pricing</span></a>
+      <a id="nav-mobile3"><span class="text-skeleton-placeholder">Blog</span></a>
+      <a id="nav-mobile4"><span class="text-skeleton-placeholder">About</span></a>
+      <a id="nav-mobile5" class="btn"><span class="text-skeleton-placeholder">Log in</span></a>
+      <a id="nav-mobile6" class="btn btn-primary"><span class="text-skeleton-placeholder">Start free trial</span></a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
       <h1 id="hero-title">
-        <span id="hero-title-load">Unlock the Magic of Skeleton Animations for Blazing-Fast </span><span id="hero-title-infinite">Perceived Performance</span>
+        <span id="hero-title-load" class="text-skeleton-placeholder">Unlock the Magic of Skeleton Animations for Blazing-Fast </span>
+        <span id="hero-title-infinite" class="text-skeleton-placeholder">Perceived Performance</span>
       </h1>
-      <p id="hero-subtitle">
+      <p id="hero-subtitle" class="text-skeleton-placeholder">
         Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive, slash perceived load times, and captivate users with seamless visual feedback.
       </p>
 
       <div class="hero-actions">
-        <a id="hero-btn1" class="btn btn-primary">Get Started Now</a>
-        <a id="hero-btn2" class="btn">Watch Demo</a>
+        <a id="hero-btn1" class="btn btn-primary"><span class="text-skeleton-placeholder">Get Started Now</span></a>
+        <a id="hero-btn2" class="btn"><span class="text-skeleton-placeholder">Watch Demo</span></a>
       </div>
 
       <div class="punchline" id="punchline">
-        Skeleton animations go beyond mere placeholders. They supercharge perceived speed, crush bounce rates, and lock in user attention during every load.
+        <span class="text-skeleton-placeholder">
+          Skeleton animations go beyond mere placeholders. They supercharge perceived speed, crush bounce rates, and lock in user attention during every load.
+        </span>
       </div>
 
       <div class="extra-punchline" id="extra-punchline1">
-        Pro tip: Deploy skeletons across your entire app to craft an impeccably smooth, professional vibe that cleverly conceals any backend hiccups.
+        <span class="text-skeleton-placeholder">
+          Pro tip: Deploy skeletons across your entire app to craft an impeccably smooth, professional vibe that cleverly conceals any backend hiccups.
+        </span>
       </div>
     </div>
   </section>
@@ -441,7 +464,9 @@
   <section class="features">
     <div class="container">
       <h2 class="section-title" id="features-title">
-        Uncover the Game-Changing Power of Skeleton Animations in Today's Web Applications
+        <span class="text-skeleton-placeholder">
+          Uncover the Game-Changing Power of Skeleton Animations in Today's Web Applications
+        </span>
       </h2>
 
       <div class="features-grid">
@@ -450,8 +475,8 @@
             <div class="feature-icon-skeleton skeleton-block" id="skeleton-icon1"></div>
             <img class="feature-icon hidden" id="icon1" src="broken-image.png" alt="Dashboard icon showcasing skeleton efficiency">
           </div>
-          <h3 id="f1-title">Dashboards</h3>
-          <p id="f1-desc">With skeletons, users get immediate layout previews, skyrocketing satisfaction and making intricate data dashboards feel instantly intuitive and ready to explore.</p>
+          <h3 id="f1-title"><span class="text-skeleton-placeholder">Dashboards</span></h3>
+          <p id="f1-desc" class="text-skeleton-placeholder">With skeletons, users get immediate layout previews, skyrocketing satisfaction and making intricate data dashboards feel instantly intuitive and ready to explore.</p>
         </div>
 
         <div class="feature-card">
@@ -459,8 +484,8 @@
             <div class="feature-icon-skeleton skeleton-block" id="skeleton-icon2"></div>
             <img class="feature-icon hidden" id="icon2" src="broken-image.png" alt="Automation icon highlighting skeleton benefits">
           </div>
-          <h3 id="f2-title">Automation</h3>
-          <p id="f2-desc">Effortlessly automate fluid transitions using skeletons, amplifying efficiency and building unbreakable user confidence in your app's rock-solid performance.</p>
+          <h3 id="f2-title"><span class="text-skeleton-placeholder">Automation</span></h3>
+          <p id="f2-desc" class="text-skeleton-placeholder">Effortlessly automate fluid transitions using skeletons, amplifying efficiency and building unbreakable user confidence in your app's rock-solid performance.</p>
         </div>
 
         <div class="feature-card">
@@ -468,13 +493,15 @@
             <div class="feature-icon-skeleton skeleton-block" id="skeleton-icon3"></div>
             <img class="feature-icon hidden" id="icon3" src="broken-image.png" alt="Integrations icon demonstrating skeleton integration">
           </div>
-          <h3 id="f3-title">Integrations</h3>
-          <p id="f3-desc">Integrate skeletons flawlessly to ensure uniform excellence across all connected services, elevating perceived performance and driving unmatched user loyalty.</p>
+          <h3 id="f3-title"><span class="text-skeleton-placeholder">Integrations</span></h3>
+          <p id="f3-desc" class="text-skeleton-placeholder">Integrate skeletons flawlessly to ensure uniform excellence across all connected services, elevating perceived performance and driving unmatched user loyalty.</p>
         </div>
       </div>
 
       <div class="extra-punchline" id="extra-punchline2">
-        Never forget: Skeletons are the cornerstone of cutting-edge UX: they deliver immediate cues, banish blank stares, and turn every loading moment into a masterpiece of optimization!
+        <span class="text-skeleton-placeholder">
+          Never forget: Skeletons are the cornerstone of cutting-edge UX: they deliver immediate cues, banish blank stares, and turn every loading moment into a masterpiece of optimization!
+        </span>
       </div>
     </div>
   </section>
@@ -577,17 +604,17 @@
   <footer>
     <div class="container">
       <div class="copyright">
-        <span id="copyright-symbol">©</span>
-        <span id="year">2025</span>
-        <span id="footer-name">Awesome Skeletons</span>
+        <span id="copyright-symbol" class="text-skeleton-placeholder">©</span>
+        <span id="year" class="text-skeleton-placeholder">2025</span>
+        <span id="footer-name" class="text-skeleton-placeholder">Awesome Skeletons</span>
       </div>
 
       <div class="extra-punchline" id="extra-punchline3">
-        Yes, this is satire.
+        <span class="text-skeleton-placeholder">Yes, this is satire.</span>
       </div>
 
       <div class="footer-credit" id="footer-credit-skeleton">
-        Made by Kyrylo Silin.
+        <span class="text-skeleton-placeholder">Made by Kyrylo Silin.</span>
       </div>
 
       <div class="footer-credit hidden" id="footer-credit-final">
@@ -656,9 +683,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      skeletonize(document.getElementById('philosophy'),
-        'Because elite performance is rooted in masterful perception!'
-      );
+      skeletonize(document.getElementById('philosophy'), 'Because elite performance is rooted in masterful perception!');
 
       skeletonize(document.getElementById('logo'), 'Awesome Skeletons');
 
@@ -704,10 +729,10 @@
       skeletonize(document.getElementById('year'), '2025');
       skeletonize(document.getElementById('footer-name'), 'Awesome Skeletons');
 
-      skeletonize(document.getElementById('punchline'), document.getElementById('punchline').textContent);
-      skeletonize(document.getElementById('extra-punchline1'), document.getElementById('extra-punchline1').textContent);
-      skeletonize(document.getElementById('extra-punchline2'), document.getElementById('extra-punchline2').textContent);
-      skeletonize(document.getElementById('extra-punchline3'), document.getElementById('extra-punchline3').textContent);
+      skeletonize(document.getElementById('punchline'), document.getElementById('punchline').querySelector('.text-skeleton-placeholder').textContent.trim());
+      skeletonize(document.getElementById('extra-punchline1'), document.getElementById('extra-punchline1').querySelector('.text-skeleton-placeholder').textContent.trim());
+      skeletonize(document.getElementById('extra-punchline2'), document.getElementById('extra-punchline2').querySelector('.text-skeleton-placeholder').textContent.trim());
+      skeletonize(document.getElementById('extra-punchline3'), document.getElementById('extra-punchline3').querySelector('.text-skeleton-placeholder').textContent.trim());
 
       skeletonize(document.getElementById('footer-credit-skeleton'), 'Made by Kyrylo Silin.');
 
@@ -720,13 +745,16 @@
       }, 10000);
 
       setTimeout(() => {
-        skeletonize(document.getElementById('punchline'), document.getElementById('punchline').textContent);
+        skeletonize(document.getElementById('punchline'), document.getElementById('punchline').querySelector('.text-skeleton-placeholder').textContent.trim());
       }, 20000);
 
       setTimeout(() => {
         document.getElementById('footer-credit-skeleton').classList.add('hidden');
         document.getElementById('footer-credit-final').classList.remove('hidden');
       }, 35000);
+
+      // === NEW: Reveal all text once skeletons are applied ===
+      document.body.classList.add('text-skeleton-ready');
     });
   </script>
 </body>
