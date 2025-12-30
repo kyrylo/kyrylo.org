@@ -13,14 +13,14 @@
   <meta property="og:site_name" content="Awesome Skeletons">
   <meta property="og:title" content="Awesome Skeletons">
   <meta property="og:description" content="Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive.">
-  <meta property="og:image" content="/awesome-skeletons/og.png?v=2">
+  <meta property="og:image" content="https://kyrylo.org/awesome-skeletons/og.png?v=2">
   <meta property="og:url" content="https://kyrylo.org/awesome-skeletons/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:title" content="Awesome Skeletons">
   <meta name="twitter:description" content="Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive.">
-  <meta name="twitter:image" content="/awesome-skeletons/og.png?v=2">
+  <meta name="twitter:image" content="https://kyrylo.org/awesome-skeletons/og.png?v=2">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@kyrylosilin">
   <meta name="twitter:site" content="@kyrylosilin">
@@ -377,7 +377,6 @@
       gap: 0.75rem;
     }
 
-    /* === NEW: Hide text until JS has applied skeletons === */
     .text-skeleton-placeholder {
       visibility: hidden;
     }
@@ -386,7 +385,6 @@
       visibility: visible;
     }
 
-    /* Fallback for users with JS disabled */
     noscript .text-skeleton-placeholder {
       visibility: visible !important;
     }
@@ -753,7 +751,6 @@
         document.getElementById('footer-credit-final').classList.remove('hidden');
       }, 35000);
 
-      // === NEW: Reveal all text once skeletons are applied ===
       document.body.classList.add('text-skeleton-ready');
     });
   </script>

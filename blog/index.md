@@ -1,18 +1,21 @@
 ---
 layout: page
 image: assets/images/web-app-manifest-512x512.png
+title: What I Write About
+description: Thoughts on programming, life, and everything in between.
 ---
 
 <section>
-  <h2>What I write about</h2>
+  <h2>What I Write About</h2>
 
-  <ul>
+  <ul class="blog-posts">
     {% for post in site.posts %}
       <li>
-        <time datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date: "%b %-d, %Y" }}
-        </time>
-        &ndash;
+        <span>
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%d %b, %Y" }}
+          </time>
+        </span>
         <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
