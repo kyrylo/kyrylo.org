@@ -1,6 +1,8 @@
 ---
 layout: page
 image: assets/images/web-app-manifest-512x512.png
+title: Past Work
+description: What I've worked on and either finished or abandoned.
 ---
 
 <section>

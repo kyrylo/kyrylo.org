@@ -1,6 +1,8 @@
 ---
 layout: page
 image: assets/images/web-app-manifest-512x512.png
+title: What I'm Working On
+description: My projects, doodles, vibe-coded experiments.
 ---
 
 <section>
