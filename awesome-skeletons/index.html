@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Awesome Skeletons</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Awesome Skeletons">
+  <meta property="og:title" content="Awesome Skeletons">
+  <meta property="og:description" content="Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive.">
+  <meta property="og:image" content="https://kyrylo.org/assets/images/awesome-skeletons/og.png?v=2">
+  <meta property="og:url" content="https://kyrylo.org/awesome-skeletons/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Awesome Skeletons">
+  <meta name="twitter:description" content="Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive.">
+  <meta name="twitter:image" content="https://kyrylo.org/assets/images/awesome-skeletons/og.png?v=2">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+
+  <link rel="canonical" href="https://kyrylo.org/awesome-skeletons/">
+
+  <link rel="icon" href="/awesome-skeletons/favicon.png" type="image/png">
+  <link rel="icon" href="/awesome-skeletons/favicon.svg" type="image/svg+xml">
+
+
+  <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --gray-100: #f3f4f6;
+      --gray-900: #111827;
+      --text: #1f2937;
+      --skeleton-base: #e5e7eb;
+      --skeleton-highlight: #f9fafb;
+      --neutral-gray: #6b7280;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .letter {
+      display: inline;
+    }
+
+    .skeleton {
+      color: transparent !important;
+      background: var(--skeleton-base);
+      border-radius: 6px;
+      animation: pulse 1.8s ease-in-out infinite;
+      user-select: none;
+    }
+
+    .skeleton-block {
+      background: var(--skeleton-base);
+      border-radius: 8px;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    .skeleton-line {
+      height: 1.2em;
+      margin-bottom: 0.75em;
+      border-radius: 4px;
+    }
+
+    .skeleton-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0% {
+        background-color: var(--skeleton-base);
+      }
+
+      50% {
+        background-color: var(--skeleton-highlight);
+      }
+
+      100% {
+        background-color: var(--skeleton-base);
+      }
+    }
+
+    .banner {
+      background: #fde68a;
+      color: #92400e;
+      text-align: center;
+      padding: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    header {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border-color: transparent;
+    }
+
+    .hero {
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .punchline {
+      margin: 4rem auto 0;
+      max-width: 900px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-style: italic;
+      color: var(--neutral-gray);
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .punchline.visible {
+      opacity: 1;
+    }
+
+    .extra-punchline {
+      font-size: 1.2rem;
+      color: var(--neutral-gray);
+      text-align: center;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    .features {
+      background: var(--gray-100);
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      text-align: center;
+    }
+
+    .feature-icon-wrapper {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .feature-icon-skeleton {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .feature-icon {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      background: var(--gray-900);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      color: #9ca3af;
+    }
+
+    .footer-credit {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .footer-credit a {
+      color: #c7d2fe;
+      text-decoration: underline;
+    }
+
+    .footer-credit a:hover {
+      color: #a5b4fc;
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.75rem;
+      cursor: pointer;
+    }
+
+    #nav-menu:popover-open {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+    }
+
+    #nav-menu::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #nav-menu a {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    #nav-menu .btn {
+      width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+    }
+
+    .testimonials,
+    .blog-preview {
+      padding: 6rem 0;
+    }
+
+    .testimonials {
+      background: #fff;
+    }
+
+    .blog-preview {
+      background: var(--gray-100);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-image {
+      height: 200px;
+    }
+
+    .blog-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .eternal-loader.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="banner" id="philosophy">
+    Loading philosophy…
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" id="logo">Awesome Skeletons</div>
+        <div class="nav-links">
+          <a id="nav1">Features</a>
+          <a id="nav2">Pricing</a>
+          <a id="nav3">Blog</a>
+          <a id="nav4">About</a>
+          <a id="nav5" class="btn">Log in</a>
+          <a id="nav6" class="btn btn-primary">Start free trial</a>
+        </div>
+        <button class="burger" popovertarget="nav-menu">☰</button>
+      </nav>
+    </div>
+    <div id="nav-menu" popover>
+      <a id="nav-mobile1">Features</a>
+      <a id="nav-mobile2">Pricing</a>
+      <a id="nav-mobile3">Blog</a>
+      <a id="nav-mobile4">About</a>
+      <a id="nav-mobile5" class="btn">Log in</a>
+      <a id="nav-mobile6" class="btn btn-primary">Start free trial</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 id="hero-title">
+        <span id="hero-title-load">Unlock the Magic of Skeleton Animations for Blazing-Fast </span><span id="hero-title-infinite">Perceived Performance</span>
+      </h1>
+      <p id="hero-subtitle">
+        Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive, slash perceived load times, and captivate users with seamless visual feedback.
+      </p>
+
+      <div class="hero-actions">
+        <a id="hero-btn1" class="btn btn-primary">Get Started Now</a>
+        <a id="hero-btn2" class="btn">Watch Demo</a>
+      </div>
+
+      <div class="punchline" id="punchline">
+        Skeleton animations go beyond mere placeholders. They supercharge perceived speed, crush bounce rates, and lock in user attention during every load.
+      </div>
+
+      <div class="extra-punchline" id="extra-punchline1">
+        Pro tip: Deploy skeletons across your entire app to craft an impeccably smooth, professional vibe that cleverly conceals any backend hiccups.
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title" id="features-title">
+        Uncover the Game-Changing Power of Skeleton Animations in Today's Web Applications
+      </h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon-skeleton skeleton-block" id="skeleton-icon1"></div>
+            <img class="feature-icon hidden" id="icon1" src="broken-image.png" alt="Dashboard icon showcasing skeleton efficiency">
+          </div>
+          <h3 id="f1-title">Dashboards</h3>
+          <p id="f1-desc">With skeletons, users get immediate layout previews, skyrocketing satisfaction and making intricate data dashboards feel instantly intuitive and ready to explore.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon-skeleton skeleton-block" id="skeleton-icon2"></div>
+            <img class="feature-icon hidden" id="icon2" src="broken-image.png" alt="Automation icon highlighting skeleton benefits">
+          </div>
+          <h3 id="f2-title">Automation</h3>
+          <p id="f2-desc">Effortlessly automate fluid transitions using skeletons, amplifying efficiency and building unbreakable user confidence in your app's rock-solid performance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon-skeleton skeleton-block" id="skeleton-icon3"></div>
+            <img class="feature-icon hidden" id="icon3" src="broken-image.png" alt="Integrations icon demonstrating skeleton integration">
+          </div>
+          <h3 id="f3-title">Integrations</h3>
+          <p id="f3-desc">Integrate skeletons flawlessly to ensure uniform excellence across all connected services, elevating perceived performance and driving unmatched user loyalty.</p>
+        </div>
+      </div>
+
+      <div class="extra-punchline" id="extra-punchline2">
+        Never forget: Skeletons are the cornerstone of cutting-edge UX: they deliver immediate cues, banish blank stares, and turn every loading moment into a masterpiece of optimization!
+      </div>
+    </div>
+  </section>
+
+  <!-- New infinite-loading sections -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title skeleton" style="width: 420px; margin: 0 auto;">What Our Users Say</h2>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="skeleton-block skeleton-avatar"></div>
+            <div style="flex-grow: 1;">
+              <div class="skeleton skeleton-line" style="width: 140px;"></div>
+              <div class="skeleton skeleton-line" style="width: 100px; height: 1em; margin-top: 0.5em;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 95%;"></div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 80%;"></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="skeleton-block skeleton-avatar"></div>
+            <div style="flex-grow: 1;">
+              <div class="skeleton skeleton-line" style="width: 160px;"></div>
+              <div class="skeleton skeleton-line" style="width: 110px; height: 1em; margin-top: 0.5em;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skeleton skeleton-line" style="width: 98%;"></div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 90%;"></div>
+            <div class="skeleton skeleton-line" style="width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="skeleton-block skeleton-avatar"></div>
+            <div style="flex-grow: 1;">
+              <div class="skeleton skeleton-line" style="width: 130px;"></div>
+              <div class="skeleton skeleton-line" style="width: 120px; height: 1em; margin-top: 0.5em;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 92%;"></div>
+            <div class="skeleton skeleton-line" style="width: 98%;"></div>
+            <div class="skeleton skeleton-line" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-preview">
+    <div class="container">
+      <h2 class="section-title skeleton" style="width: 380px; margin: 0 auto;">Latest From The Blog</h2>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="skeleton-block blog-image"></div>
+          <div class="blog-content">
+            <div class="skeleton skeleton-line" style="width: 70%;"></div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 95%;"></div>
+            <div class="skeleton skeleton-line" style="width: 40%; margin-top: auto;"></div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="skeleton-block blog-image"></div>
+          <div class="blog-content">
+            <div class="skeleton skeleton-line" style="width: 80%;"></div>
+            <div class="skeleton skeleton-line" style="width: 98%;"></div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 50%; margin-top: auto;"></div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="skeleton-block blog-image"></div>
+          <div class="blog-content">
+            <div class="skeleton skeleton-line" style="width: 65%;"></div>
+            <div class="skeleton skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton skeleton-line" style="width: 90%;"></div>
+            <div class="skeleton skeleton-line" style="width: 45%; margin-top: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="copyright">
+        <span id="copyright-symbol">©</span>
+        <span id="year">2025</span>
+        <span id="footer-name">Awesome Skeletons</span>
+      </div>
+
+      <div class="extra-punchline" id="extra-punchline3">
+        Yes, this is satire.
+      </div>
+
+      <div class="footer-credit" id="footer-credit-skeleton">
+        Made by Kyrylo Silin.
+      </div>
+
+      <div class="footer-credit hidden" id="footer-credit-final">
+        Made by <a href="https://x.com/kyrylo" target="_blank" rel="noopener">Kyrylo Silin</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function skeletonize(el, text) {
+      if (!el) return;
+      el.innerHTML = '';
+      const words = text.split(' ');
+      words.forEach((word, wIndex) => {
+        if (word.length > 0) {
+          const wordSpan = document.createElement('span');
+          wordSpan.style.whiteSpace = 'nowrap';
+          word.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'letter skeleton';
+            span.textContent = char;
+            wordSpan.appendChild(span);
+            const delay = Math.random() < 0.5 ? 40000 : 3000 + Math.random() * 20000;
+            setTimeout(() => {
+              span.classList.remove('skeleton');
+            }, delay);
+          });
+          el.appendChild(wordSpan);
+        }
+        if (wIndex < words.length - 1) {
+          el.appendChild(document.createTextNode(' '));
+        }
+      });
+    }
+
+    function skeletonizeInfinite(el, text) {
+      if (!el) return;
+      el.innerHTML = '';
+      const words = text.split(' ');
+      words.forEach((word, wIndex) => {
+        if (word.length > 0) {
+          const wordSpan = document.createElement('span');
+          wordSpan.style.whiteSpace = 'nowrap';
+          word.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'letter skeleton';
+            span.textContent = char;
+            wordSpan.appendChild(span);
+          });
+          el.appendChild(wordSpan);
+        }
+        if (wIndex < words.length - 1) {
+          el.appendChild(document.createTextNode(' '));
+        }
+      });
+    }
+
+    function blockSkeleton(id) {
+      const img = document.getElementById(id);
+      const skeleton = document.getElementById('skeleton-' + id);
+      const delay = 20000 + Math.random() * 30000;
+      setTimeout(() => {
+        if (skeleton) skeleton.classList.add('hidden');
+        if (img) img.classList.remove('hidden');
+      }, delay);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      skeletonize(document.getElementById('philosophy'),
+        'Because elite performance is rooted in masterful perception!'
+      );
+
+      skeletonize(document.getElementById('logo'), 'Awesome Skeletons');
+
+      skeletonize(document.getElementById('hero-title-load'),
+        'Unlock the Magic of Skeleton Animations for Blazing-Fast '
+      );
+      skeletonizeInfinite(document.getElementById('hero-title-infinite'),
+        'Perceived Performance'
+      );
+      skeletonize(document.getElementById('hero-subtitle'),
+        'Skeleton animations transform waiting into wonder, delivering instant layout previews that make your app feel ultra-responsive, slash perceived load times, and captivate users with seamless visual feedback.'
+      );
+
+      skeletonize(document.getElementById('nav1'), 'Features');
+      skeletonize(document.getElementById('nav2'), 'Pricing');
+      skeletonize(document.getElementById('nav3'), 'Blog');
+      skeletonize(document.getElementById('nav4'), 'About');
+      skeletonize(document.getElementById('nav5'), 'Log in');
+      skeletonize(document.getElementById('nav6'), 'Start free trial');
+
+      skeletonize(document.getElementById('nav-mobile1'), 'Features');
+      skeletonize(document.getElementById('nav-mobile2'), 'Pricing');
+      skeletonize(document.getElementById('nav-mobile3'), 'Blog');
+      skeletonize(document.getElementById('nav-mobile4'), 'About');
+      skeletonize(document.getElementById('nav-mobile5'), 'Log in');
+      skeletonize(document.getElementById('nav-mobile6'), 'Start free trial');
+
+      skeletonize(document.getElementById('hero-btn1'), 'Get Started Now');
+      skeletonize(document.getElementById('hero-btn2'), 'Watch Demo');
+
+      skeletonize(document.getElementById('features-title'),
+        'Uncover the Game-Changing Power of Skeleton Animations in Today\'s Web Applications'
+      );
+
+      skeletonize(document.getElementById('f1-title'), 'Dashboards');
+      skeletonize(document.getElementById('f1-desc'), 'With skeletons, users get immediate layout previews, skyrocketing satisfaction and making intricate data dashboards feel instantly intuitive and ready to explore.');
+      skeletonize(document.getElementById('f2-title'), 'Automation');
+      skeletonize(document.getElementById('f2-desc'), 'Effortlessly automate fluid transitions using skeletons, amplifying efficiency and building unbreakable user confidence in your app\'s rock-solid performance.');
+      skeletonize(document.getElementById('f3-title'), 'Integrations');
+      skeletonize(document.getElementById('f3-desc'), 'Integrate skeletons flawlessly to ensure uniform excellence across all connected services, elevating perceived performance and driving unmatched user loyalty.');
+
+      skeletonize(document.getElementById('copyright-symbol'), '©');
+      skeletonize(document.getElementById('year'), '2025');
+      skeletonize(document.getElementById('footer-name'), 'Awesome Skeletons');
+
+      skeletonize(document.getElementById('punchline'), document.getElementById('punchline').textContent);
+      skeletonize(document.getElementById('extra-punchline1'), document.getElementById('extra-punchline1').textContent);
+      skeletonize(document.getElementById('extra-punchline2'), document.getElementById('extra-punchline2').textContent);
+      skeletonize(document.getElementById('extra-punchline3'), document.getElementById('extra-punchline3').textContent);
+
+      skeletonize(document.getElementById('footer-credit-skeleton'), 'Made by Kyrylo Silin.');
+
+      blockSkeleton('icon1');
+      blockSkeleton('icon2');
+      blockSkeleton('icon3');
+
+      setTimeout(() => {
+        document.getElementById('punchline').classList.add('visible');
+      }, 10000);
+
+      setTimeout(() => {
+        skeletonize(document.getElementById('punchline'), document.getElementById('punchline').textContent);
+      }, 20000);
+
+      setTimeout(() => {
+        document.getElementById('footer-credit-skeleton').classList.add('hidden');
+        document.getElementById('footer-credit-final').classList.remove('hidden');
+      }, 35000);
+    });
+  </script>
+</body>
+
+</html>
