@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to build a dropdown menu with just HTML
-date: 2024-11-25 01:00:00 +0200
+date: 2024-11-24
 categories: html
 image: assets/images/kyrylo-silin@2x.webp
 ---

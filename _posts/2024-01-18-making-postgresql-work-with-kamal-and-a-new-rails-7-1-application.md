@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Making PostgreSQL work with Kamal and a new Rails 7.1 app"
-date: 2024-01-18 00:23:44 +0200
+date: 2024-01-17
 categories: rails kamal
 image: https://imgur.com/WqXJ5lf.png
 ---
