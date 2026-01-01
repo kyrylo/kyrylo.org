@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Embarking on an indie dev journey"
-date: 2023-11-09 00:23:44 +0200
+date: 2023-11-09
 image: https://i.imgur.com/kTXN5lf.png
 ---
 
