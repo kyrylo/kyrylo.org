@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Embarking on an indie dev journey"
+title: Embarking on an indie dev journey
 date: 2023-11-08
-image: https://i.imgur.com/kTXN5lf.png
+image: assets/images/kyrylo-silin@2x.webp
 ---
 
-<img src="https://i.imgur.com/kTXN5lf.png" style="margin-bottom: 1rem;">
-<br>
 My 10-year professional programming career has entered a new chapter. Getting
 laid off not once, but twice in the first half of 2023 was a wakeup call.
 It made me realize that I want to be the captain of my own ship.
