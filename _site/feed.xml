@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-01-01T15:57:48+02:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">How to self-host Bearlytics with Kamal</title><link href="https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html" rel="alternate" type="text/html" title="How to self-host Bearlytics with Kamal" /><published>2025-12-22T00:00:00+02:00</published><updated>2025-12-22T13:25:39+02:00</updated><id>https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal</id><content type="html" xml:base="https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html"><![CDATA[<p>In this article, I’ll guide you through the process of self-hosting
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-01-01T15:58:23+02:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">What 2026 yields (announcing Telesink)</title><link href="https://kyrylo.org/2026/01/01/what-2026-yields-announcing-telesink.html" rel="alternate" type="text/html" title="What 2026 yields (announcing Telesink)" /><published>2026-01-01T00:00:00+02:00</published><updated>2026-01-01T15:58:20+02:00</updated><id>https://kyrylo.org/2026/01/01/what-2026-yields-announcing-telesink</id><content type="html" xml:base="https://kyrylo.org/2026/01/01/what-2026-yields-announcing-telesink.html"><![CDATA[<p>I’m a forward-thinking person. Instead of looking back, I prefer to look
+forward. Looking back means celebrating successes, mourning failures,
+or maybe even learning from mistakes. Besides, I have a bad memory these days
+because LLMs do all the thinking for me. So why not just look ahead and anticipate?
+Anticipation is what drives us forward.</p>
+
+<p>2026 is going to be the best year for me since I <a href="/2023/11/08/embarking-on-an-indie-dev-journey.html">embarked on an indie
+dev journey</a>. I’ll keep building <a href="https://telebugs.com">Telebugs</a>, which has become quite
+mature by now. I’m not done with it (there are still a few big epics ahead),
+but overall, the product is rock solid.</p>
+
+<p>The thing I’m most excited about, though, is a little announcement…
+Since <a href="/software/2025/12/21/im-back-to-open-source.html">I’m back to open source</a>, I want to make 2026 the year of open source.</p>
+
+<h2 id="announcement">Announcement</h2>
+
+<p>Announcing <a href="https://telesink.com">Telesink</a>! Telesink will be an open-source, real-time
+event tracking tool that acts as an informational heartbeat for your business,
+so you can see what’s happening <em>right now</em>.</p>
+
+<p>You’ll be able to hook up your projects and watch live events like:</p>
+
+<ul>
+  <li>“People are signing up”</li>
+  <li>“Payments are flowing”</li>
+  <li>“MRR is ticking up”</li>
+  <li>“New trials are starting”</li>
+  <li>“Users are completing onboarding”</li>
+  <li>“Form submissions are coming in”</li>
+  <li>“Subscribers are renewing”</li>
+  <li>…and many more.</li>
+</ul>
+
+<p>Unlike analytical tools that dig into historical data or developer metrics,
+Telesink is simple and real-time-first. It’s built for everyone, a straightforward,
+all-around dashboard for seeing things happen <em>as they happen</em>.</p>
+
+<p>It’s a cleaner replacement for those read-only bots in <em>Slack</em>, <em>Discord</em>, or
+<em>Telegram</em> that handle this kind of monitoring as an afterthought.</p>
+
+<p>I’ve been thinking about this for months, and it grew directly out of my own
+need to better understand what’s happening in my <a href="/projects/">projects</a> (beyond just
+errors).</p>
+
+<p>It’ll be <strong>open source and free to self-host</strong>, with a paid SaaS offering to
+sustain development.</p>
+
+<p>Right now I have nothing but the idea in my head (it’s been simmering there
+for months). I don’t have all the answers or solutions yet, and honestly it’s
+scary because there are a lot of unknowns, but I’m ready to start.</p>
+
+<p>I’ll be building this in public. <a href="https://x.com/kyrylo">Follow along</a>! I’m looking forward to
+having you with me.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I’m a forward-thinking person. Instead of looking back, I prefer to look forward. Looking back means celebrating successes, mourning failures, or maybe even learning from mistakes. Besides, I have a bad memory these days because LLMs do all the thinking for me. So why not just look ahead and anticipate? Anticipation is what drives us forward.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to self-host Bearlytics with Kamal</title><link href="https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html" rel="alternate" type="text/html" title="How to self-host Bearlytics with Kamal" /><published>2025-12-22T00:00:00+02:00</published><updated>2025-12-22T13:25:39+02:00</updated><id>https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal</id><content type="html" xml:base="https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html"><![CDATA[<p>In this article, I’ll guide you through the process of self-hosting
 <a href="https://github.com/HermanMartinus/bearlytics">Bearlytics</a> with Kamal. It’s a
 bare-bones alternative to Google Analytics (and even Plausible Analytics - see my
 <a href="/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html">installation guide with Kamal</a>).</p>
@@ -864,178 +916,4 @@ that way. Something people can point to and say: yes, that’s the one.</p>
 
 <p>We won’t really need money in this new society. It will be a relic of the past. We will look at ourselves from the past the same way we look at cavemen today.</p>
 
-<p>We need to develop a new system that is adequate for the future we will live in. If we don’t respond to that call, we will be in trouble. AI taking your job will be considered a harmless act compared to what’s coming.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[This truth is hard to accept (even for me), but you must get comfortable with it. The faster, the better.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS</title><link href="https://kyrylo.org/projects/2025/07/02/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js.html" rel="alternate" type="text/html" title="I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS" /><published>2025-07-02T00:00:00+03:00</published><updated>2025-07-03T09:27:25+03:00</updated><id>https://kyrylo.org/projects/2025/07/02/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js</id><content type="html" xml:base="https://kyrylo.org/projects/2025/07/02/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js.html"><![CDATA[<p><img src="/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/01.png" alt="Tech Debt motd" /></p>
-
-<p><a href="https://techdebtgame.com" target="_blank">Tech Debt</a> is a
-keyboard-driven web game that teleports you back to the 90s. Your mission:
-release a bug-free programming language in one day.</p>
-
-<p>Your boss hired you to fix the mess left by the previous programmer before the
-‘95 WEBFEST conference. The conference starts <em>tomorrow</em> morning, and you have a
-full day (Sunday, unfortunately) to get it done.</p>
-
-<h2 id="how-to-play">How to play</h2>
-
-<p>Mechanics are simple: when an error flashes on lane <code class="language-plaintext highlighter-rouge">A:</code>, hit <kbd>A</kbd>; if
-it’s on lane <code class="language-plaintext highlighter-rouge">M:</code>, hit <kbd>M</kbd>, and so on. Every level teems with buggy
-lines, so speed and accuracy are key.</p>
-
-<p>Fix (aka shoot) a bug, and it counts as fixed. Shoot when there’s no bug, and
-you’ve introduced one. Let a bug reach a label unfixed, and it’s counted as
-slipped.</p>
-
-<p>You want to be as accurate as possible, and not let bugs slip through. That
-said, if you miss some, the game will still advance to the next level. It’s not
-the end of the world, but it will impact your final score.</p>
-
-<h2 id="how-the-game-works">How the game works</h2>
-
-<p>The game includes 13 levels, with a final boss on the last one. At each level,
-your boss briefs you through a short narrative (sometimes hinting at what bugs to
-expect).</p>
-
-<p><img src="/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/02.webp" alt="Tech Debt level 2 briefing" /></p>
-
-<p>Bugs spawn randomly in waves. Some levels feature multiple massive waves —
-special events that unleash an unusual number of bugs in a short amount of time.</p>
-
-<p>Difficulty ramps up with each level: the early ones are slow-paced and easy,
-while the later stages demand lightning-fast accuracy.</p>
-
-<p><img src="/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/03.webp" alt="Tech Debt level 2 gameplay" /></p>
-
-<p>At the end of each level, you’ll see statistics: bugs fixed, bugs slipped, and
-new bugs introduced.</p>
-
-<p><img src="/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/04.webp" alt="Tech Debt level 2 stats" /></p>
-
-<p>These stats contribute to your final assessment. After the last level, your boss
-evaluates your programming language and decides whether to keep you on or fire
-you.</p>
-
-<h2 id="why-i-built-it">Why I built it</h2>
-
-<p>Don’t get me wrong — I don’t love errors. But I do love tools that help
-programmers ship better software. My main product is a
-<a href="https://telebugs.com">self-hosted error tracker</a>, and I wanted a fun
-way to promote it.</p>
-
-<p>A bug encyclopedia felt too boring. I’ve seen that before, and it didn’t gain
-much traction. I wanted something original and engaging.</p>
-
-<p>I love computer games and always wanted to make one, but a full-scale game
-demands an insurmountable willpower and time — resources I couldn’t spare for a
-project with no revenue potential.</p>
-
-<p>So instead, I chose to build a small, focused game that could be made quickly
-yet still deliver value and fun. This way, I could combine my passion for games
-with my goal of helping developers improve their software :P</p>
-
-<h2 id="inspiration-and-early-prototype">Inspiration and early prototype</h2>
-
-<p>The idea for Tech Debt came a few months ago. I spun up Grok and asked if
-anything like it existed. When Grok said it hadn’t, I knew I was onto something.</p>
-
-<p><img src="/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/05.webp" alt="Me asking Grok about the existence of my idea" /></p>
-
-<p>Grok produced a rough demo (call it version 0.0.1) even though it was a bad
-artifact, it proved the concept.</p>
-
-<p><img src="/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/06.webp" alt="Grok-coded Tech Debt" /></p>
-
-<p>A month later, I began building the real game. I quickly realized I could borrow
-some ideas from Plants vs Zombies (a timeless classic) because its lane
-mechanics were very similar.</p>
-
-<p>That’s where the idea for huge wave announcements came from (in Tech Debt,
-they’re called testing phases).</p>
-
-<h2 id="why-i-vibe-coded-it">Why I vibe-coded it</h2>
-
-<p>I use AI-aided programming daily, but I’d never truly vibe-coded. To form a
-clear opinion, I had to experience it firsthand. So I decided to vibe-code this
-game entirely from scratch.</p>
-
-<p>I love simplicity, and in the era of AI, I don’t understand our reliance on <a href="https://justfuckingusehtml.com">bloated frameworks</a>. Tech Debt was was
-coded entirely in pure HTML, CSS, and JavaScript. It just works (no build
-process required) and I’m not limited by any frameworks or libraries.</p>
-
-<h2 id="how-i-was-doing-it">How I was doing it</h2>
-
-<p>I used <a href="https://github.com/basecamp/kamal-skiff">kamal-skiff</a> to deploy it. This
-is my go-to stack for building static sites.</p>
-
-<p>For vibe coding, I mostly used Grok, with one or two ventures into Claude and a
-few more into ChatGPT. VSCode is my editor of choice. I have Copilot installed,
-but I didn’t use it at all for this project.</p>
-
-<p>I didn’t use Cursor or Windsurf. They just haven’t dinged with me yet. For now,
-I think I still prefer the old-fashioned (2022? lol) approach: talk to an LLM in
-its own UI, then copy-paste the relevant bits.</p>
-
-<h2 id="how-did-it-go">How did it go</h2>
-
-<p>To fast-forward: it was addictive, but not without caveats. My main problems
-with vibe coding:</p>
-
-<ol>
-  <li>
-    <p><strong>I don’t truly own the code.</strong> Vibe coding can get you far, but the moment
-you commit those first AI‑generated changes, you’re on a journey into the
-unknown. The more code you add, the less you understand. Luckily, I’m fluent
-in raw JavaScript, so I could always drop into old‑fashioned code reading,
-but the incentive to do so is pretty low (AI makes you lazy).</p>
-  </li>
-  <li>
-    <p><strong>Refactoring is necessary.</strong> AI doesn’t produce perfect code (and neither do
-I). With the right prompts you can massage it into shape, but once my
-codebase grew, I had to ask for a refactor. What started as procedural
-spaghetti got a lot more readable (and yes, I split things into multiple files
-by hand, since the AI never suggested it).</p>
-  </li>
-  <li>
-    <p><strong>AI is slow at printing.</strong> I leaned heavily on Grok’s “Think” mode, which
-isn’t the speediest. Asking it to dump an entire file (over 1,000 lines!) so
-I could copy‑paste in one go meant a single change sometimes took 5–7 minutes
-of waiting.</p>
-  </li>
-  <li>
-    <p><strong>Copying small bits of code can be challenging.</strong> When an LLM suggests a
-snippet, finding exactly where it belongs can be a pain. That’s why I kept
-asking for full‑file prints. <em>While I was writing this, I realized what I
-really needed was a git diff I could apply automatically.</em></p>
-  </li>
-  <li>
-    <p><strong>AI is terrible at programmatic music.</strong> I asked it to compose a soundtrack
-in Tone.js. Instead of music, I got… well, farts. So I ended up doing the
-audio by hand.</p>
-  </li>
-  <li>
-    <p><strong>Removing and adding comments all the time is annoying.</strong> LLMs love to
-sprinkle in random comments, and then strip them back out on the next pass.
-Nuff said.</p>
-  </li>
-  <li>
-    <p><strong>AI is dumb.</strong> “Thinking” in LLMs doesn’t exist yet. It can only remix what
-it’s seen before, it won’t invent the core idea for your game. Sure, it can
-write code, but you still need to know what you actually want to build.</p>
-  </li>
-</ol>
-
-<h3 id="the-upside">The upside</h3>
-
-<p>However, vibe coding, as demonstrated by my project, is real. It’s not a
-gimmick, and you should fear for your job. AI is dumb, but in smart hands, it’s
-a dangerous weapon. You can really do things with it. So my recommendation is to
-try and get your feet wet to see what you’re missing. It can’t solve all the
-problems, but it can automate mundane tasks reasonably well.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>I’m really happy with how the game turned out. In my opinion, it came out
-brilliantly well. There are a few rough edges, but they don’t affect the
-gameplay, and honestly, I don’t care enough to fix them.</p>
-
-<p>Time to <a href="https://techdebtgame.com">pay your tech debt</a>!</p>
-
-<p>P.S. The game has an easter egg.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="projects" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/01.png" /><media:content medium="image" url="https://kyrylo.org/assets/images/posts/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js/01.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>We need to develop a new system that is adequate for the future we will live in. If we don’t respond to that call, we will be in trouble. AI taking your job will be considered a harmless act compared to what’s coming.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[This truth is hard to accept (even for me), but you must get comfortable with it. The faster, the better.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
