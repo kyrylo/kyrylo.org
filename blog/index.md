@@ -11,11 +11,9 @@ description: Thoughts on programming, life, and everything in between.
   <ul class="blog-posts">
     {% for post in site.posts %}
       <li>
-        <span>
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%d %b, %Y" }}
-          </time>
-        </span>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%d %b, %Y" }}
+        </time>
         <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
