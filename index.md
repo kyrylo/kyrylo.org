@@ -13,11 +13,17 @@ image: assets/images/web-app-manifest-512x512.png
   </p>
 
   <p>
-    I am an alumnus of
-    <a href="https://nure.ua/en">Kharkiv National University of Radio Electronics</a>,
-    in the
-    <a href="https://nure.ua/en/department/department-of-information-control-system-ics">Department of Information Control Systems (ICS)</a>. (MSc. 2015)
+    I work on:
   </p>
+
+  <ul>
+    <li>
+      <a href="https://telebugs.com">Telebugs:</a> self-hosted Sentry alternative for error tracking.
+    </li>
+    <li>
+      <a href="https://telesink.com">Telesink:</a> real-time event tracking tool that acts as an informational heartbeat for your business.
+    </li>
+  </ul>
 
   <address>
     Get in touch:
