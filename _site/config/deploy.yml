@@ -2,7 +2,7 @@ service: kyrylo
 image: kyrylo
 
 servers:
-  - 188.245.75.139
+  - 157.180.112.13
 
 proxy:
   ssl: true
