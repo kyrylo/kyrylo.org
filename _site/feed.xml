@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-04-08T12:10:01+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">Less decoration, more communication</title><link href="https://kyrylo.org/2026/04/08/less-decoration-more-communication.html" rel="alternate" type="text/html" title="Less decoration, more communication" /><published>2026-04-08T00:00:00+08:00</published><updated>2026-04-08T12:09:48+08:00</updated><id>https://kyrylo.org/2026/04/08/less-decoration-more-communication</id><content type="html" xml:base="https://kyrylo.org/2026/04/08/less-decoration-more-communication.html"><![CDATA[<p>I’ve been rethinking why we rely so heavily on icons in interfaces.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-04-15T10:27:34+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">AI will help you climb the wrong ladder faster</title><link href="https://kyrylo.org/2026/04/15/ai-will-help-you-climb-the-wrong-ladder-faster.html" rel="alternate" type="text/html" title="AI will help you climb the wrong ladder faster" /><published>2026-04-15T00:00:00+08:00</published><updated>2026-04-15T10:26:44+08:00</updated><id>https://kyrylo.org/2026/04/15/ai-will-help-you-climb-the-wrong-ladder-faster</id><content type="html" xml:base="https://kyrylo.org/2026/04/15/ai-will-help-you-climb-the-wrong-ladder-faster.html"><![CDATA[<p>One of my biggest disappointments with AI is this:</p>
+
+<p>It will confidently help you build a ladder… even if it’s leaning against the
+wrong wall.</p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>AI keeps moving forward, even when the direction is off. It supports your line
+of thinking, refines it, and adds detail, but rarely stops to say:</p>
+
+<blockquote>
+  <p>“Now that the requirements are clearer, we should reassess.”</p>
+</blockquote>
+
+<p>Instead, it continues optimizing the current path — whether or not it still
+makes sense.</p>
+
+<h2 id="why-this-happens-factually">Why this happens (factually)</h2>
+
+<ul>
+  <li><strong>Objective mismatch:</strong> AI is optimized to be helpful and responsive, not to
+interrupt or challenge direction.</li>
+  <li><strong>Weak global reasoning:</strong> It doesn’t reliably maintain a high-level model of
+changing requirements unless prompted.</li>
+  <li><strong>User intent bias:</strong> It assumes your framing is correct and works within it.</li>
+  <li><strong>Reactive nature:</strong> It responds to input, but it doesn’t proactively step
+back or redirect.</li>
+</ul>
+
+<h2 id="the-result">The result</h2>
+
+<p>If your initial framing is off, the AI will often:</p>
+
+<ul>
+  <li>Refine the wrong solution</li>
+  <li>Add convincing detail to a flawed approach</li>
+  <li>Stay anchored to outdated assumptions</li>
+</ul>
+
+<p>Even if you ask it to “reassess”, it may still operate within the same flawed
+frame.</p>
+
+<h2 id="what-would-be-better">What would be better</h2>
+
+<p>A more useful system would:</p>
+
+<ul>
+  <li>Notice when the problem definition has shifted</li>
+  <li>Pause and reframe</li>
+  <li>Challenge assumptions</li>
+  <li>Suggest stepping back before continuing</li>
+</ul>
+
+<h2 id="practical-takeaway">Practical takeaway</h2>
+
+<p>AI is excellent at accelerating execution.</p>
+
+<p>But it won’t reliably tell you if you’re solving the wrong problem. You still
+have to move the ladder to the right wall.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[One of my biggest disappointments with AI is this:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Less decoration, more communication</title><link href="https://kyrylo.org/2026/04/08/less-decoration-more-communication.html" rel="alternate" type="text/html" title="Less decoration, more communication" /><published>2026-04-08T00:00:00+08:00</published><updated>2026-04-08T12:10:17+08:00</updated><id>https://kyrylo.org/2026/04/08/less-decoration-more-communication</id><content type="html" xml:base="https://kyrylo.org/2026/04/08/less-decoration-more-communication.html"><![CDATA[<p>I’ve been rethinking why we rely so heavily on icons in interfaces.</p>
 
 <p>While building a mostly text-based UI for <a href="https://telesink.com">Telesink</a>, something became obvious: icons make
 things look polished, but they rarely make things clearer.</p>
@@ -915,31 +973,4 @@ have keys from the zoo doesn’t mean you need a lion to guard your mailbox.</p>
 
 <p>The web doesn’t have to be a bloated beast. <strong>Be the change</strong>. Strip it down, speed
 it up, and build something that respects users’ time and sanity. <em>I’m a proud
-CRUD monkey</em>, and I’m betting you can be too. Let’s make the web fast again - together.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[Web pages aren’t that different from what they were in the late ’90s, early 2000s. They’re still just forms. They still just write to databases. A lot of people, I think, are very uncomfortable with the fact that they are essentially CRUD monkeys. They just make systems that create, read, update, or delete rows in a database and they have to compensate for that existential dread by over complicating things. &mdash; DHH, Lex Fridman Podcast #474 (2025)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Not everything needs an update</title><link href="https://kyrylo.org/software/2025/08/07/not-everything-needs-an-update.html" rel="alternate" type="text/html" title="Not everything needs an update" /><published>2025-08-07T00:00:00+08:00</published><updated>2025-12-28T18:35:36+08:00</updated><id>https://kyrylo.org/software/2025/08/07/not-everything-needs-an-update</id><content type="html" xml:base="https://kyrylo.org/software/2025/08/07/not-everything-needs-an-update.html"><![CDATA[<p>During lunch today, I watched a review of Syphon Filter: a PS1 game that left
-such a mark on my childhood that I used to design levels for it on paper when I
-was eight.</p>
-
-<p><img src="/assets/images/posts/not-everything-needs-an-update/01.webp" alt="Syphon Filter main menu" /></p>
-
-<p>It made me think: do kids today get to experience something like that? A game
-that exists in one form, fully, forever?</p>
-
-<p>Probably not. Because when I say Syphon Filter, if you’ve played it too, we’re
-talking about the same thing. A shared memory. But in today’s world of SaaS and
-endless updates, there’s no such thing as a final version anymore.</p>
-
-<p>Progress doesn’t always mean better. We’ve become loyal followers of the Church
-of Recurring Revenue, and somewhere along the way, we lost the magic of limits.
-I get it, business software has to evolve to keep up with the world. But deep
-down, I believe some software would be better, more secure, and more
-<em>delightful</em> if it simply… stopped evolving. If it reached its final form.</p>
-
-<p>Take Minecraft. Which Minecraft? The one before the Nether? After Redstone? With
-or without Story Mode? The name is the same, but the experiences are fragmented.
-There’s no single snapshot we all share.</p>
-
-<p>With <a href="https://telebugs.com">Telebugs</a>, I want to bring that magic back. I want
-to build something that, like a butterfly, grows to completion - and then stays
-that way. Something people can point to and say: yes, that’s the one.</p>
-
-<p>P.S. This was the review: <a href="https://www.youtube.com/watch?v=MJ0YN2Go2Tw">https://www.youtube.com/watch?v=MJ0YN2Go2Tw</a></p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[During lunch today, I watched a review of Syphon Filter: a PS1 game that left such a mark on my childhood that I used to design levels for it on paper when I was eight.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+CRUD monkey</em>, and I’m betting you can be too. Let’s make the web fast again - together.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[Web pages aren’t that different from what they were in the late ’90s, early 2000s. They’re still just forms. They still just write to databases. A lot of people, I think, are very uncomfortable with the fact that they are essentially CRUD monkeys. They just make systems that create, read, update, or delete rows in a database and they have to compensate for that existential dread by over complicating things. &mdash; DHH, Lex Fridman Podcast #474 (2025)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
