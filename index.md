@@ -5,9 +5,6 @@ image: assets/images/web-app-manifest-512x512.png
 ---
 
 <section>
-  <pre>simple ≠ dumbed-down
-simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
-
   <p>
     Software engineer, web developer, and entrepreneur.<br>
     Originally from Kharkiv, Ukraine 🇺🇦<br>
@@ -26,6 +23,9 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
       <a href="https://telesink.com">Telesink</a> — Real-time product and business event monitoring
     </li>
   </ul>
+
+    <pre>simple ≠ dumbed-down
+simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <address>
     <p>
