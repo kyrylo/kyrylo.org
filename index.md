@@ -9,7 +9,7 @@ image: assets/images/web-app-manifest-512x512.png
   <p>
     Software engineer, web developer, and entrepreneur.<br>
     Originally from Kharkiv, Ukraine 🇺🇦<br>
-    Currently living in the Cebu, Philippines 🇵🇭
+    Currently living in Cebu, Philippines 🇵🇭
   </p>
 
   <pre>simple ≠ dumbed-down
