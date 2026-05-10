@@ -5,11 +5,15 @@ image: assets/images/web-app-manifest-512x512.png
 ---
 
 <section>
+  <h2>About</h2>
   <p>
     Software engineer, web developer, and entrepreneur.<br>
     Originally from Kharkiv, Ukraine 🇺🇦<br>
     Currently living in the Cebu, Philippines 🇵🇭
   </p>
+
+  <pre>simple ≠ dumbed-down
+simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <p>
     I work on:
@@ -24,19 +28,14 @@ image: assets/images/web-app-manifest-512x512.png
     </li>
   </ul>
 
-    <pre>simple ≠ dumbed-down
-simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
-
-  <address>
-    <p>
-      Get in touch:
-      <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a>
-    </p>
-  </address>
-</section>
+  <p>
+    Get in touch:
+  </p>
+ </section>
 
 <nav>
   <ul>
+    <li>Email — <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a></li>
     <li>GitHub — <a href="https://github.com/kyrylo">kyrylo</a></li>
     <li>X — <a href="https://x.com/kyrylo">@kyrylo</a></li>
     <li>Bluesky — <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
