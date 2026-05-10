@@ -18,10 +18,10 @@ image: assets/images/web-app-manifest-512x512.png
 
   <ul>
     <li>
-      <a href="https://telebugs.com">Telebugs:</a> self-hosted Sentry alternative for error tracking.
+      <a href="https://telebugs.com">Telebugs</a> &mdash; Self-hosted Sentry alternative for error tracking
     </li>
     <li>
-      <a href="https://telesink.com">Telesink:</a> real-time event tracking tool that acts as an informational heartbeat for your business.
+      <a href="https://telesink.com">Telesink:</a> &mdash; Real-time product and business event monitoring
     </li>
   </ul>
 
