@@ -12,19 +12,21 @@ layout: base
       |
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <picture>
-          <source srcset="{{ "/assets/images/kyrylo-silin.webp" | relative_url }} 2x, {{ "/assets/images/kyrylo-silin.webp" | relative_url }} 1x" type="image/webp">
-          <img src="{{ "/assets/images/kyrylo-silin.webp" | relative_url }}" alt="Kyrylo Silin" width="15" height="15">
+          <source srcset="{{ " /assets/images/kyrylo-silin.webp" | relative_url }} 2x, {{ "/assets/images/kyrylo-silin.webp" | relative_url }} 1x" type="image/webp">
+
+          <img class="author-avatar" src="{{ " /assets/images/kyrylo-silin.webp" | relative_url }}" alt="Kyrylo Silin" width="15" height="15" loading="lazy">
         </picture>
+
         <span itemprop="name">
           <a href="{{ '/' | relative_url }}">Kyrylo Silin</a>
         </span>
       </span>
+      on
+      <a href="https://x.com/kyrylo" target="_blank">X</a>
       &middot;
-      <a href="https://x.com/kyrylo" target="_blank">@kyrylo</a>
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">Bluesky</a>
       &middot;
-      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky:@kyrylo.org</a>
-      &middot;
-      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon:@kyrylosilin</a>
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">Mastodon</a>
     </p>
   </header>
 
@@ -41,6 +43,7 @@ layout: base
       Next: <a href="{{ page.next.url | relative_url }}" rel="next" title="{{ page.next.title }}">{{ page.next.title }}</a>
     </div>
   {% endif %}
+
   {% if page.previous %}
     <div>
       Prev: <a href="{{ page.previous.url | relative_url }}" rel="prev" title="{{ page.previous.title }}">{{ page.previous.title }}</a>

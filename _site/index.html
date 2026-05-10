@@ -11,20 +11,20 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Software engineer, web developer, entrepreneur" />
 <meta property="og:description" content="Software engineer, web developer, entrepreneur" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="https://kyrylo.org/" />
+<meta property="og:url" content="https://kyrylo.org/" />
 <meta property="og:site_name" content="Kyrylo Silin" />
-<meta property="og:image" content="http://localhost:4000/assets/images/web-app-manifest-512x512.png" />
+<meta property="og:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:image" content="http://localhost:4000/assets/images/web-app-manifest-512x512.png" />
+<meta property="twitter:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png" />
 <meta property="twitter:title" content="Kyrylo Silin" />
 <meta name="twitter:site" content="@kyrylosilin" />
 <meta name="twitter:creator" content="@Kyrylo Silin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-05-10T10:48:10+08:00","description":"Software engineer, web developer, entrepreneur","headline":"Kyrylo Silin","image":"http://localhost:4000/assets/images/web-app-manifest-512x512.png","name":"Kyrylo Silin","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-05-10T10:48:10+08:00","description":"Software engineer, web developer, entrepreneur","headline":"Kyrylo Silin","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png","name":"Kyrylo Silin","url":"https://kyrylo.org/"}</script>
 <!-- End Jekyll SEO tag -->
-<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
@@ -37,14 +37,17 @@
   </script>
 
   <style>
+    :root {
+      --font-size: clamp(1rem, 1vw, 1.75rem);
+    }
+
     body {
-      font: 16px sans-serif;
-      line-height: 1.5;
+      font: normal 400 var(--font-size)/1.5 sans-serif;
     }
 
     main,
     footer {
-      max-width: 80ch;
+      max-width: 68ch;
       margin: 0 auto;
     }
 
@@ -67,8 +70,12 @@
       word-break: break-word;
     }
 
+    .article p {
+       max-width: 60ch;
+    }
+
     code {
-      font-size: 14px;
+      font-size: var(--font-size);
     }
 
     blockquote {
@@ -113,8 +120,19 @@
 
     ul.blog-posts time {
       flex: 0 0 12ch;
-      font-size: 14px;
+      font-size: var(--font-size);
       font-family: monospace;
+    }
+
+    .profile-photo {
+      width: clamp(120px, 120px + 4vw, 180px);
+      height: auto;
+    }
+
+    .author-avatar {
+      height: 1em;
+      width: 1em;
+      vertical-align: baseline;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -153,15 +171,17 @@
 
 <picture>
   <source srcset="/assets/images/kyrylo-silin@2x.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
-  <img src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager" style="float: right; margin: 0 0 1rem 1rem;">
+  <img class="profile-photo" src="/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager" style="float: right; margin: 0 0 1rem 1rem;">
 </picture>
 
 <section>
-  <h2>About Me</h2>
+  <pre>simple ≠ dumbed-down
+simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
 
   <p>
     Software engineer, web developer, and entrepreneur.<br />
-    Originally from Kharkiv, Ukraine 🇺🇦
+    Originally from Kharkiv, Ukraine 🇺🇦<br />
+    Currently living in the Cebu, Philippines 🇵🇭
   </p>
 
   <p>
@@ -170,38 +190,22 @@
 
   <ul>
     <li>
-      <a href="https://telebugs.com">Telebugs</a> &mdash; Self-hosted Sentry alternative for error tracking
+      <a href="https://telebugs.com">Telebugs</a> — Self-hosted Sentry alternative for error tracking
     </li>
     <li>
-      <a href="https://telesink.com">Telesink</a> &mdash; Real-time product and business event monitoring
+      <a href="https://telesink.com">Telesink</a> — Real-time product and business event monitoring
     </li>
   </ul>
 
   <address>
-    Get in touch:
-    <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a>
-  </address>
-
-  <h3>Words of Wisdom</h3>
-
-  <blockquote>
     <p>
-      Just love the craft, not what you earn,<br />
-      As years of practice will confirm.<br />
-      That's how it goes — you can't succeed,<br />
-      Without some dirt beneath your feet.
+      Get in touch:
+      <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a>
     </p>
-  </blockquote>
-
-  <h3>Life Formula</h3>
-
-  <pre>simple ≠ dumbed-down
-simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
+  </address>
 </section>
 
 <nav>
-  <h2>Where to Find Me Online</h2>
-
   <ul>
     <li>GitHub — <a href="https://github.com/kyrylo">kyrylo</a></li>
     <li>X — <a href="https://x.com/kyrylo">@kyrylo</a></li>
@@ -215,15 +219,6 @@ simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
     </main><footer>
   <hr>
   <small>
-    <p><a href="/">Kyrylo Silin</a> — entrepreneur, software engineer, and web developer.</p>
-    <p>
-      Find me on:
-      <a href="https://x.com/kyrylo" target="_blank">x</a>
-      &middot;
-      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">bluesky</a>
-      &middot;
-      <a href="https://mastodon.social/@kyrylosilin" target="_blank">mastodon</a>
-    </p>
     <p>
       <a href="/feed.xml">ATOM feed</a>
       |

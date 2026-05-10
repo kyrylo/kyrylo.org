@@ -20,14 +20,17 @@
   </script>
 
   <style>
+    :root {
+      --font-size: clamp(1rem, 1vw, 1.75rem);
+    }
+
     body {
-      font: 16px sans-serif;
-      line-height: 1.5;
+      font: normal 400 var(--font-size)/1.5 sans-serif;
     }
 
     main,
     footer {
-      max-width: 80ch;
+      max-width: 68ch;
       margin: 0 auto;
     }
 
@@ -50,8 +53,12 @@
       word-break: break-word;
     }
 
+    .article p {
+       max-width: 60ch;
+    }
+
     code {
-      font-size: 14px;
+      font-size: var(--font-size);
     }
 
     blockquote {
@@ -96,8 +103,19 @@
 
     ul.blog-posts time {
       flex: 0 0 12ch;
-      font-size: 14px;
+      font-size: var(--font-size);
       font-family: monospace;
+    }
+
+    .profile-photo {
+      width: clamp(120px, 120px + 4vw, 180px);
+      height: auto;
+    }
+
+    .author-avatar {
+      height: 1em;
+      width: 1em;
+      vertical-align: baseline;
     }
 
     @media (prefers-color-scheme: dark) {
