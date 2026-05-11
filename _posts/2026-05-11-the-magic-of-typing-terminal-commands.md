@@ -7,6 +7,8 @@ image: assets/images/kyrylo-silin@2x.webp
 
 There is a quiet magic in the terminal.
 
+![Empty terminal window](/assets/images/posts/{{ page.slug }}/01.webp)
+
 The screen is black. The cursor blinks — steady and patient. You lean in and
 begin to type, your fingers moving with intention across the keys. A few simple
 words appear: `ls`, `cd`, `mkdir`, `grep`.
