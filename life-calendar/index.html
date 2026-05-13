@@ -33,7 +33,6 @@
   <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
   <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
-  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -662,10 +661,11 @@
     }
 
     function drawGrid(isScreenshot = false, isHorizontal = false) {
-      if (!canvas) {
+      const gridEl = document.getElementById('grid');
+      if (!gridEl.querySelector('canvas')) {
         canvas = document.createElement('canvas');
         ctx = canvas.getContext('2d');
-        document.getElementById('grid').appendChild(canvas);
+        gridEl.appendChild(canvas);
       }
       const dims = isScreenshot ? calculateScreenshotDimensions() : calculateDimensions();
       let { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel } = dims;
@@ -820,9 +820,6 @@
     }
 
     window.onload = function () {
-      canvas = document.createElement('canvas');
-      ctx = canvas.getContext('2d');
-      document.getElementById('grid').appendChild(canvas);
       drawGrid(false, true);
 
       // Enhanced tooltip
