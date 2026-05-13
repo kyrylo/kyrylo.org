@@ -68,5 +68,8 @@ description: My projects, doodles, vibe-coded experiments.
     <li>
       <a href="/awesome-skeletons/">Awesome Skeletons</a>: Unlock the Magic of Skeleton Animations for Blazing-Fast [...]
     </li>
+    <li>
+      <a href="/clamp-vs-media-queries/">clamp() vs Media Queries</a>: CSS Responsiveness Showdown
+    </li>
   </ul>
 </section>
