@@ -582,6 +582,26 @@
     let ctx;
     let lifeExpectancy = 90;
 
+    function getCurrentAgeAndExtraWeeks(birthDate, currentDate) {
+      let age = currentDate.getFullYear() - birthDate.getFullYear();
+      const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+      const dayDiff = currentDate.getDate() - birthDate.getDate();
+      if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+      }
+      if (age < 0) age = 0;
+
+      // Calculate last birthday
+      let lastBirthday = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+      if (lastBirthday > currentDate) {
+        lastBirthday = new Date(currentDate.getFullYear() - 1, birthDate.getMonth(), birthDate.getDate());
+      }
+      const msPerDay = 1000 * 60 * 60 * 24;
+      const daysSinceLastBday = Math.floor((currentDate.getTime() - lastBirthday.getTime()) / msPerDay);
+      const extraWeeksCalc = Math.floor(daysSinceLastBday / 7);
+      return { age, extraWeeks: extraWeeksCalc };
+    }
+
     function debounce(func, delay) {
       let timeout;
       return function (...args) {
@@ -785,8 +805,7 @@
       const totalWeeks = lifeExpectancy * 52;
       const weeksRemaining = Math.max(0, totalWeeks - weeksLived);
       const percentage = Math.min(100, Math.round((weeksLived / totalWeeks) * 100));
-      const currentAge = Math.floor(weeksLived / 52);
-
+      const { age: currentAge } = getCurrentAgeAndExtraWeeks(birthDate, currentDate);
       document.getElementById('weeks-lived').textContent = weeksLived.toLocaleString();
       document.getElementById('weeks-remaining').textContent = weeksRemaining.toLocaleString();
       document.getElementById('life-percentage').textContent = percentage + '%';
@@ -834,8 +853,9 @@
       const currentDate = new Date();
       const timeDiff = currentDate - birthDate;
       const weeksLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
-      fullYears = Math.floor(weeksLived / 52);
-      extraWeeks = weeksLived % 52;
+      const { age: fullYearsPrecise, extraWeeks: extraWeeksPrecise } = getCurrentAgeAndExtraWeeks(birthDate, currentDate);
+      fullYears = fullYearsPrecise;
+      extraWeeks = extraWeeksPrecise;
       drawGrid(false, true);
       updateStats();
     }
