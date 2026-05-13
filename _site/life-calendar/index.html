@@ -33,6 +33,7 @@
   <script defer data-domain="kyrylo.org" src="https://plausible.telebugs.com/js/script.hash.outbound-links.tagged-events.js"></script>
   <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -661,6 +662,11 @@
     }
 
     function drawGrid(isScreenshot = false, isHorizontal = false) {
+      if (!canvas) {
+        canvas = document.createElement('canvas');
+        ctx = canvas.getContext('2d');
+        document.getElementById('grid').appendChild(canvas);
+      }
       const dims = isScreenshot ? calculateScreenshotDimensions() : calculateDimensions();
       let { cellWidth, cellHeight, rowLabelWidth, headerHeight, fontSizeHeader, fontSizeLabel } = dims;
       const dpr = window.devicePixelRatio || 1;
