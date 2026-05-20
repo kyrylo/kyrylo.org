@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Stick with defaults | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Stick with defaults" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There is a strange instinct among developers to distrust defaults. The moment we install a new tool, framework, editor, or operating system, many of us immediately begin searching for “the real setup”. We hunt for configuration guides, optimization tricks, must-have plugins, and dotfiles maintained by people with anime avatars and 700-line configuration files." />
+<meta property="og:description" content="There is a strange instinct among developers to distrust defaults. The moment we install a new tool, framework, editor, or operating system, many of us immediately begin searching for “the real setup”. We hunt for configuration guides, optimization tricks, must-have plugins, and dotfiles maintained by people with anime avatars and 700-line configuration files." />
+<link rel="canonical" href="https://kyrylo.org/2026/05/20/stick-with-defaults.html" />
+<meta property="og:url" content="https://kyrylo.org/2026/05/20/stick-with-defaults.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-05-20T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" />
+<meta property="twitter:title" content="Stick with defaults" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-05-20T20:23:41+08:00","datePublished":"2026-05-20T00:00:00+08:00","description":"There is a strange instinct among developers to distrust defaults. The moment we install a new tool, framework, editor, or operating system, many of us immediately begin searching for “the real setup”. We hunt for configuration guides, optimization tricks, must-have plugins, and dotfiles maintained by people with anime avatars and 700-line configuration files.","headline":"Stick with defaults","image":"https://kyrylo.org/assets/images/kyrylo-silin@2x.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://kyrylo.org/2026/05/20/stick-with-defaults.html"},"url":"https://kyrylo.org/2026/05/20/stick-with-defaults.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script async src="https://analytics.kyrylo.org/js/pa-AIFJJD2jjgvAtiz_pzq6_.js"></script>
+  <script>
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+    plausible.init()
+  </script>
+
+  <style>
+    :root {
+      --font-size: clamp(1rem, 1vw, 1.75rem);
+    }
+
+    body {
+      font: normal 400 var(--font-size)/1.5 sans-serif;
+    }
+
+    main,
+    footer {
+      max-width: 68ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    .article p {
+       max-width: 60ch;
+    }
+
+    code {
+      font-size: var(--font-size);
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    ul.blog-posts {
+      list-style-type: none;
+      padding: unset;
+      margin: 0;
+    }
+
+    ul.blog-posts li {
+      display: flex;
+      align-items: baseline;
+      gap: 1ch;
+    }
+
+    ul.blog-posts time {
+      flex: 0 0 12ch;
+      font-size: var(--font-size);
+      font-family: monospace;
+    }
+
+    .profile-photo {
+      width: clamp(120px, 120px + 4vw, 180px);
+      height: auto;
+    }
+
+    .author-avatar {
+      height: 1em;
+      width: 1em;
+      vertical-align: baseline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Stick with defaults</h1>
+
+    <p>
+      <time datetime="2026-05-20T00:00:00+08:00" itemprop="datePublished">
+        May 20, 2026
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+
+          <img class="author-avatar" src="/%20/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15" loading="lazy">
+        </picture>
+
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      on
+      <a href="https://x.com/kyrylo" target="_blank">X</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">Bluesky</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">Mastodon</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>There is a strange instinct among developers to distrust defaults. The moment we
+install a new tool, framework, editor, or operating system, many of us
+immediately begin searching for “the real setup”. We hunt for configuration
+guides, optimization tricks, must-have plugins, and dotfiles maintained by
+people with anime avatars and 700-line configuration files.</p>
+
+<p>Somewhere along the way, software customization became a hobby of its own. This
+reflects the same pattern behind <a href="/software/2025/08/21/why-do-software-developers-love-complexity.html">why developers love
+complexity</a>.</p>
+
+<p>But the longer I write software, the more I appreciate defaults.</p>
+
+<p>The default path is where every user begins. It is the most exercised, most
+documented, and most battle-tested part of the product. Thousands or millions of
+people have already walked that road before you. Bugs are discovered there
+first. Edge cases are encountered there first. Performance issues become visible
+there first. When something breaks, the maintainers notice because everyone is
+using it.</p>
+
+<p>Defaults are not arbitrary. They are usually the result of years of accumulated
+experience and hard-won trade-offs between performance, maintainability,
+usability, and predictability. When Rails ships with a certain project
+structure, or SQLite enables certain behaviors by default, or a browser decides
+how something should work out of the box, there is often more practical
+reasoning behind those choices than most developers assume.</p>
+
+<p>The customized path, by contrast, is lonely.</p>
+
+<p>The more you diverge from the defaults, the more you become responsible for your
+own ecosystem. Documentation becomes less relevant because your environment no
+longer matches what everyone else is using. Tutorials stop applying cleanly.
+Upgrades become riskier. You start carrying a collection of tweaks whose
+original purpose you no longer remember.</p>
+
+<p><strong>I know this because I used to do exactly that.</strong> I spent countless hours
+configuring editors, terminals, Linux desktops, tiling window managers, browser
+setups, and JavaScript toolchains in pursuit of some ideal workflow that never
+actually arrived. At some point, the setup itself quietly became the project. I
+was investing more energy into perfecting the environment than using it to build
+things.</p>
+
+<p>Meanwhile, the person using the defaults quietly ships their work.</p>
+
+<p>This is not an argument against customization entirely. Sometimes defaults
+genuinely do not fit your needs. Some workloads require tuning. Some preferences
+matter. But customization should come from real friction encountered over time,
+not from the assumption that the default experience must be inferior simply
+because it is common.</p>
+
+<p>There is also a psychological trap here. Developers often associate
+customization with expertise. Using the default setup can feel unsophisticated,
+as if you are leaving performance or productivity on the table. But many
+experienced engineers eventually arrive at the opposite conclusion: simplicity
+has value, and every deviation from the standard path carries a maintenance
+cost.</p>
+
+<p>A good default reduces cognitive load. It lets you focus on the actual work
+instead of endlessly shaping the environment around the work.</p>
+
+<p>This becomes more obvious as software matures. Modern tools are significantly
+better than they used to be. Browsers work well without extensions. Rails
+defaults are remarkably solid. SQLite handles workloads that people once
+considered impossible for it. Even operating systems have become harder to
+misconfigure catastrophically.</p>
+
+<p>The industry has slowly learned that good defaults are a feature.</p>
+
+<p>In many cases, the default path is not merely the easiest option. It is the
+option refined through the largest amount of real-world usage. That matters.
+Software behaves differently under millions of users than it does in theory.</p>
+
+<p>So these days, I try to resist the instinct to immediately optimize and
+customize everything. I start with the defaults and stay there until something
+repeatedly becomes a real problem. Most of the time, that moment never comes.</p>
+
+<p>And when it does, I at least understand exactly why I am changing something.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+
+  
+    <div>
+      Prev: <a href="/2026/05/11/the-magic-of-typing-terminal-commands.html" rel="prev" title="The magic of typing terminal commands">The magic of typing terminal commands</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p>
+      <a href="/feed.xml">ATOM feed</a>
+      |
+      <a href="https://github.com/kyrylo/kyrylo.org">GitHub</a> (CC BY-NC-SA 4.0)
+    </p>
+    <p>Last modified: <time datetime="2026-05-20T20:23:41+08:00">May 20, 2026</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

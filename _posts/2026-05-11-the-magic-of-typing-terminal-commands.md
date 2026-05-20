@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The magic of typing terminal commands
-date: 2026-04-15
+date: 2026-05-11
 image: assets/images/kyrylo-silin@2x.webp
 ---
 

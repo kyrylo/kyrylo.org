@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-05-13T18:01:40+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">The magic of typing terminal commands</title><link href="https://kyrylo.org/2026/04/15/the-magic-of-typing-terminal-commands.html" rel="alternate" type="text/html" title="The magic of typing terminal commands" /><published>2026-04-15T00:00:00+08:00</published><updated>2026-05-11T13:03:02+08:00</updated><id>https://kyrylo.org/2026/04/15/the-magic-of-typing-terminal-commands</id><content type="html" xml:base="https://kyrylo.org/2026/04/15/the-magic-of-typing-terminal-commands.html"><![CDATA[<p>There is a quiet magic in the terminal.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-05-20T20:23:52+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">Stick with defaults</title><link href="https://kyrylo.org/2026/05/20/stick-with-defaults.html" rel="alternate" type="text/html" title="Stick with defaults" /><published>2026-05-20T00:00:00+08:00</published><updated>2026-05-20T20:23:41+08:00</updated><id>https://kyrylo.org/2026/05/20/stick-with-defaults</id><content type="html" xml:base="https://kyrylo.org/2026/05/20/stick-with-defaults.html"><![CDATA[<p>There is a strange instinct among developers to distrust defaults. The moment we
+install a new tool, framework, editor, or operating system, many of us
+immediately begin searching for “the real setup”. We hunt for configuration
+guides, optimization tricks, must-have plugins, and dotfiles maintained by
+people with anime avatars and 700-line configuration files.</p>
+
+<p>Somewhere along the way, software customization became a hobby of its own. This
+reflects the same pattern behind <a href="/software/2025/08/21/why-do-software-developers-love-complexity.html">why developers love
+complexity</a>.</p>
+
+<p>But the longer I write software, the more I appreciate defaults.</p>
+
+<p>The default path is where every user begins. It is the most exercised, most
+documented, and most battle-tested part of the product. Thousands or millions of
+people have already walked that road before you. Bugs are discovered there
+first. Edge cases are encountered there first. Performance issues become visible
+there first. When something breaks, the maintainers notice because everyone is
+using it.</p>
+
+<p>Defaults are not arbitrary. They are usually the result of years of accumulated
+experience and hard-won trade-offs between performance, maintainability,
+usability, and predictability. When Rails ships with a certain project
+structure, or SQLite enables certain behaviors by default, or a browser decides
+how something should work out of the box, there is often more practical
+reasoning behind those choices than most developers assume.</p>
+
+<p>The customized path, by contrast, is lonely.</p>
+
+<p>The more you diverge from the defaults, the more you become responsible for your
+own ecosystem. Documentation becomes less relevant because your environment no
+longer matches what everyone else is using. Tutorials stop applying cleanly.
+Upgrades become riskier. You start carrying a collection of tweaks whose
+original purpose you no longer remember.</p>
+
+<p><strong>I know this because I used to do exactly that.</strong> I spent countless hours
+configuring editors, terminals, Linux desktops, tiling window managers, browser
+setups, and JavaScript toolchains in pursuit of some ideal workflow that never
+actually arrived. At some point, the setup itself quietly became the project. I
+was investing more energy into perfecting the environment than using it to build
+things.</p>
+
+<p>Meanwhile, the person using the defaults quietly ships their work.</p>
+
+<p>This is not an argument against customization entirely. Sometimes defaults
+genuinely do not fit your needs. Some workloads require tuning. Some preferences
+matter. But customization should come from real friction encountered over time,
+not from the assumption that the default experience must be inferior simply
+because it is common.</p>
+
+<p>There is also a psychological trap here. Developers often associate
+customization with expertise. Using the default setup can feel unsophisticated,
+as if you are leaving performance or productivity on the table. But many
+experienced engineers eventually arrive at the opposite conclusion: simplicity
+has value, and every deviation from the standard path carries a maintenance
+cost.</p>
+
+<p>A good default reduces cognitive load. It lets you focus on the actual work
+instead of endlessly shaping the environment around the work.</p>
+
+<p>This becomes more obvious as software matures. Modern tools are significantly
+better than they used to be. Browsers work well without extensions. Rails
+defaults are remarkably solid. SQLite handles workloads that people once
+considered impossible for it. Even operating systems have become harder to
+misconfigure catastrophically.</p>
+
+<p>The industry has slowly learned that good defaults are a feature.</p>
+
+<p>In many cases, the default path is not merely the easiest option. It is the
+option refined through the largest amount of real-world usage. That matters.
+Software behaves differently under millions of users than it does in theory.</p>
+
+<p>So these days, I try to resist the instinct to immediately optimize and
+customize everything. I start with the defaults and stay there until something
+repeatedly becomes a real problem. Most of the time, that moment never comes.</p>
+
+<p>And when it does, I at least understand exactly why I am changing something.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[There is a strange instinct among developers to distrust defaults. The moment we install a new tool, framework, editor, or operating system, many of us immediately begin searching for “the real setup”. We hunt for configuration guides, optimization tricks, must-have plugins, and dotfiles maintained by people with anime avatars and 700-line configuration files.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The magic of typing terminal commands</title><link href="https://kyrylo.org/2026/05/11/the-magic-of-typing-terminal-commands.html" rel="alternate" type="text/html" title="The magic of typing terminal commands" /><published>2026-05-11T00:00:00+08:00</published><updated>2026-05-11T13:03:02+08:00</updated><id>https://kyrylo.org/2026/05/11/the-magic-of-typing-terminal-commands</id><content type="html" xml:base="https://kyrylo.org/2026/05/11/the-magic-of-typing-terminal-commands.html"><![CDATA[<p>There is a quiet magic in the terminal.</p>
 
 <p>The screen is black. The cursor blinks — steady and patient. You lean in and
 begin to type, your fingers moving with intention across the keys. A few simple
@@ -724,114 +799,4 @@ db/production.sqlite3 ".backup backup.sqlite3"</code>) to avoid data loss.</li>
 </ul>
 
 <p>Do I still love SQLite? But of course! However it comes with gotchas that you
-must know to use it efficiently and avoid landmines.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[A single add_foreign_key in a Rails migration can obliterate a dependent table in your SQLite database. This is exactly what happened with my self-hosted error tracker, Telebugs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Why do software developers love complexity?</title><link href="https://kyrylo.org/software/2025/08/21/why-do-software-developers-love-complexity.html" rel="alternate" type="text/html" title="Why do software developers love complexity?" /><published>2025-08-21T00:00:00+08:00</published><updated>2025-08-21T23:19:11+08:00</updated><id>https://kyrylo.org/software/2025/08/21/why-do-software-developers-love-complexity</id><content type="html" xml:base="https://kyrylo.org/software/2025/08/21/why-do-software-developers-love-complexity.html"><![CDATA[<p>The Great Pyramids took decades to build. It was a monumental feat of human
-ingenuity and collaboration. Today, we software developers erect our own
-pyramids each day - not from stone, but from code. Yet despite far more advanced
-tools, these systems don’t always make the experience better. So why, when KISS
-(Keep It Simple, Stupid) is a well-known mantra, do we keep gravitating toward
-complexity?</p>
-
-<h2 id="marketing--simplicity">Marketing &gt; Simplicity</h2>
-
-<p>Sell me this pen: ✎</p>
-
-<p>What? You don’t know how? Okay, instead, sell me this <em>Penzilla</em> - a pen that
-can erase, write in different colors, play music, dial 911, act as a radio
-antenna, and even help you cheat on your homework.</p>
-
-<p>In the software world, how would you sell a competitor to the <code class="language-plaintext highlighter-rouge">cat</code> command?
-Sounds insane, right? It’s so simple - why would anyone compete with it, let
-alone build an alternative? (Let’s pretend Rust coreutils don’t exist.)</p>
-
-<p>But what if instead of a <code class="language-plaintext highlighter-rouge">cat</code> competitor, it was <em>catzilla</em> - a tool that could
-watch your files, hop through portals, and jump across networks? Now that’s
-marketable! Still, nobody would take you seriously. Why? Because <code class="language-plaintext highlighter-rouge">cat</code> just
-works, and it’s highly unlikely anyone will ever need anything else (just like
-Penzilla).</p>
-
-<p>However, if <code class="language-plaintext highlighter-rouge">catzilla</code> were hyped from every corner of the internet, with a
-CatConf coming next month, you’d at least be curious to try it. Social proof
-makes you take it seriously. Even if it’s just a gimmick, it’s still a gimmick
-with users.</p>
-
-<p>Complexity also signals effort, expertise, and exclusivity. If you struggle to
-understand it, your brain rewards you with awe: “Wow, this must be really
-smart,” you think - even if a simpler solution would work just as well.</p>
-
-<p>Marketers, engineers, and startups all exploit this trick. The more layers, the
-fancier the terminology, the more “premium” it feels. Complexity turns into a
-status symbol rather than a necessity.</p>
-
-<h2 id="what-is-inside-the-great-pyramids">What is inside the Great Pyramids?</h2>
-
-<p>Whatever you put inside, duh. Like the Pyramids, modern software is built layer
-upon layer - dependencies, frameworks, and abstractions stacked high. But just
-as the Pyramids’ inner chambers are often empty, these layers can hide a lack of
-substance, making maintenance a nightmare.</p>
-
-<p>When you look at a Pyramid, only a moment later you notice your mouth is open
-wide in awe (close it now). Simplicity, on the other hand, doesn’t hold any
-secrets inside. It’s invisible until you realize it’s genius.</p>
-
-<p>Complexity shouts, “Look at me!”, while simplicity whispers “Did you notice?”.</p>
-
-<p>One thing for sure, though, simplicity often wins in the long run. After the
-initial amazement is gone, it’s the function that quietly does the job that most
-people need.</p>
-
-<h2 id="react-vs-vanilla-javascript">React vs. vanilla JavaScript</h2>
-
-<p>This is a classic example I love to <a href="https://justfuckingusehtml.com">rant about</a>.</p>
-
-<p>React piles concepts into your mental backpack: rendering models, hooks, state
-libraries, routing, and a build pipeline. Say no to it, and suddenly you’re the
-“neckbeard stuck in the ’90s,” outside the cool-kids club.</p>
-
-<p>The simple alternative is just around the corner: sprinkle vanilla JavaScript
-where it’s needed and don’t build your identity around a framework. That mindset
-is hard to swallow, though (especially when companies have spent millions
-convincing developers their stack is the only way forward).</p>
-
-<h2 id="beyond-marketing-why-we-embrace-complexity">Beyond marketing: why we embrace complexity</h2>
-
-<p>While marketing glorifies and normalizes complexity, several deeper, more innate
-forces draw us developers toward it:</p>
-
-<ol>
-  <li>
-    <p><strong>The creative temptation:</strong> We are problem-solvers by nature. Building a
-complex, intricate system is a rewarding intellectual challenge, akin to
-solving a magnificent puzzle. The temptation to over-engineer is a powerful
-siren song when we’re flexing our creative muscles.</p>
-  </li>
-  <li>
-    <p><strong>Legacy systems and technical debt:</strong> Many projects inherit convoluted
-codebases. Adding new features often means piling on more complexity rather
-than simplifying, as time and budget constraints prioritize quick fixes over
-elegant, simple solutions.</p>
-  </li>
-  <li>
-    <p><strong>Team dynamics and collaboration:</strong> In large teams, developers add layers of
-abstraction to make code “future-proof” or accommodate diverse requirements.
-This can lead to over-engineered solutions as each contributor adds their own
-signature, creating a complex whole that no single person fully understands.</p>
-  </li>
-  <li>
-    <p><strong>Pressure to innovate:</strong> In a competitive tech landscape, there’s a constant
-pressure to differentiate. Novelty and innovation are often expressed through
-new features and intricate designs, making complexity an easy, if not always
-effective, way to stand out.</p>
-  </li>
-</ol>
-
-<h2 id="build-pyramids-with-purpose">Build pyramids with purpose</h2>
-
-<p>Build pyramids if you must, but build them like the Egyptians did: with a clear
-purpose, a solid foundation, and chambers that actually contain something of
-value - not just hollow, maze-like passages that future archaeologists (or the
-poor soul maintaining your code in two years) will curse.</p>
-
-<p>So next time you find yourself coding a 500-line abstraction for something that
-could be copy-pasted a few times and done in 50 lines, ask yourself: are you
-solving a real problem for the users and maintainers… or just indulging in
-intellectual masturbation?</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[The Great Pyramids took decades to build. It was a monumental feat of human ingenuity and collaboration. Today, we software developers erect our own pyramids each day - not from stone, but from code. Yet despite far more advanced tools, these systems don’t always make the experience better. So why, when KISS (Keep It Simple, Stupid) is a well-known mantra, do we keep gravitating toward complexity?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+must know to use it efficiently and avoid landmines.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[A single add_foreign_key in a Rails migration can obliterate a dependent table in your SQLite database. This is exactly what happened with my self-hosted error tracker, Telebugs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
