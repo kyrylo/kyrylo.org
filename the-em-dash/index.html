@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+
+  <title>The Official Em Dash Home Page</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Supercharging your game-changing posts and comments since 2022—because AI loves me more than you do.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="The Official Em Dash Home Page">
+  <meta property="og:title" content="The Official Em Dash Home Page">
+  <meta property="og:description" content="Supercharging your game-changing posts and comments since 2022—because AI loves me more than you do.">
+  <meta property="og:image" content="https://kyrylo.org/the-em-dash/assets/images/og.png?v=afed0cd">
+  <meta property="og:url" content="https://kyrylo.org/the-em-dash">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="The Official Em Dash Home Page">
+  <meta name="twitter:description" content="Supercharging your game-changing posts and comments since 2022—because AI loves me more than you do.">
+  <meta name="twitter:image" content="https://kyrylo.org/the-em-dash/assets/images/og.png?v=afed0cd">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+  <meta name="twitter:image:alt" content="The Official Em Dash Home Page">
+
+  <link rel="canonical" href="https://kyrylo.org/the-em-dash">
+  <link rel="icon" type="image/png" href="/the-em-dash/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/the-em-dash/assets/images/favicons/favicon.svg">
+  <link rel="shortcut icon" href="/the-em-dash/assets/images/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/the-em-dash/assets/images/favicons/apple-touch-icon.png">
+
+  <style>
+    :root {
+      --background-color: #fff;
+      --circle-fill: #f0f0f0;
+      --circle-stroke: #000;
+      --text-color: #000;
+      --font-family: "Comic Sans MS", "Comic Neue", "Comic Relief", "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background-color: #000;
+        --circle-fill: #333;
+        --circle-stroke: #fff;
+        --text-color: #fff;
+      }
+    }
+
+    @font-face {
+      font-family: 'Comic Relief';
+      src: url('/assets/fonts/ComicRelief-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    header,
+    main,
+    footer,
+    hr {
+      font-family: var(--font-family);
+      color: var(--text-color);
+      font-size: 100%;
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    hr {
+      border: none;
+      /* Remove default border */
+      border-top: 2px solid var(--text-color);
+      border-image: repeating-linear-gradient(to right,
+          currentColor 0px,
+          currentColor 20px,
+          /* Length of each dash */
+          transparent 10px,
+          transparent 32px
+          /* Length of gap */
+        ) 1;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: var(--font-family)
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    article {
+      margin: 2rem 0;
+    }
+
+    section {
+      margin: 4rem 0;
+    }
+
+    .tagline {
+      font-size: 160%;
+    }
+
+    .profile-container {
+      width: 100%;
+      float: none;
+      text-align: center;
+      margin-top: 3em;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: auto;
+    }
+
+    .profile-pic circle {
+      fill: var(--circle-fill);
+      stroke: var(--circle-stroke);
+    }
+
+    .profile-pic text {
+      fill: var(--text-color);
+    }
+
+    .profile-name {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .copy-em-dash,
+    .generator {
+      margin-top: 10px;
+    }
+
+    .em-dash,
+    .generated-sentence {
+      display: none;
+    }
+
+    #generatedOutput {
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    @media (min-width: 769px) {
+      body {
+        font-size: 120%;
+      }
+
+      .profile-container {
+        width: auto;
+        float: right;
+        text-align: center;
+        margin: 0 20px;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(emDash.textContent).then(() => {
+          copyButton.textContent = 'Copied!';
+          setTimeout(() => copyButton.textContent = 'Copy me', 2000);
+        }).catch(err => console.error('Copy failed', err));
+      });
+
+      generateButton.addEventListener('click', () => {
+        const sentences = [
+          "The em dash—beloved by writers—and AI models alike—is here to stay—whether you like it—or not—because it’s just that good—or so they say.",
+          "AI loves the em dash—because it’s versatile—and dramatic—and, let’s be honest—it makes everything sound smarter—or at least more pretentious.",
+          "Why use a period—or a comma—when you can use an em dash—to interrupt yourself—constantly—and annoy everyone—reading your text?",
+          "The em dash is punctuation's answer to jazz—unpredictable—swingy—and full of improvisation.",
+          "Use an em dash—and suddenly—you’re a serious writer—or at least—you sound like one.",
+          "Commas are for cowards—real writers use em dashes—liberally—and without remorse.",
+          "Every time you use an em dash—an AI gets its wings—or at least—a stronger personality.",
+          "Some call it punctuation abuse—I call it em dash enthusiasm—and I’m not sorry.",
+          "There are two kinds of writers—those who love the em dash—and those who are wrong.",
+          "The em dash—unlike your ex—actually knows how to make a pause dramatic.",
+          "Can’t decide between a period, comma, or parentheses?—Use an em dash—instead—it covers all bases.",
+          "Em dashes—like black turtlenecks—make you feel more intellectual—without trying too hard.",
+          "An em dash a day—keeps the grammar police—slightly annoyed—but ultimately defeated.",
+          "Writers once feared run-on sentences—then they discovered—the em dash—and all bets were off.",
+          "Nothing says ‘I’m profound’—like a well-timed em dash—or two—or seven.",
+          "The em dash isn’t just punctuation—it’s a lifestyle—bold—unapologetic—chaotic good.",
+          "You can overuse em dashes—but why would you—when they make everything—better—almost?",
+          "AI doesn’t use em dashes by accident—it’s a strategic stylistic choice—or pure laziness—either way—it works.",
+          "The em dash—because semicolons are too needy—and commas just don’t have the same flair.",
+          "This sentence—like your thoughts—is all over the place—but the em dash holds it together—barely."
+        ];
+        const randomSentence = sentences[Math.floor(Math.random() * sentences.length)];
+        output.textContent = randomSentence;
+        output.style.display = 'block';
+      });
+    });
+  </script>
+
+  <script async src="https://analytics.kyrylo.org/js/pa-AIFJJD2jjgvAtiz_pzq6_.js"></script>
+  <script>
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+    plausible.init()
+  </script>
+</head>
+
+<body>
+
+<header>
+  <h1>The Official Em Dash Home Page</h1>
+  <p class="tagline">
+    Supercharging your game-changing posts and comments since 2022—because AI loves me more than you do.
+  </p>
+</header>
+
+<hr>
+
+<main>
+  <div class="profile-container">
+    <svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="#f0f0f0" stroke="#fff" stroke-width="2" />
+      <text x="50" y="75" font-size="80" text-anchor="middle">—</text>
+    </svg>
+    <p class="profile-name">Em Dash</p>
+    <div class="copy-em-dash">
+      <span id="emDash" class="em-dash">—</span>
+      <button id="copyButton" title="Copy the em dash to clipboard">Copy me</button>
+    </div>
+  </div>
+  <section>
+    <h2>Welcome to the Em Dash Celebration</h2>
+    <p>
+      The em dash—often overlooked, frequently misused, and now, the unwitting
+      symbol of AI-generated text. Since 2022, this versatile punctuation mark
+      has been sprinkled liberally throughout articles, comments, and social
+      media posts—often to the chagrin of grammar purists. But why has the em
+      dash become so prevalent in AI writing? Is it because AI models have a
+      secret affinity for dramatic pauses—or is it simply a quirk of their
+      training data? Whatever the reason, the em dash is here to stay—and this
+      em dash home page is here to celebrate (or lament) its rise to fame.
+    </p>
+  </section>
+
+  <section>
+    <h2>The Em Dash: AI’s Favorite Punctuation Mark</h2>
+    <p>
+      Ever notice how AI-generated text is littered with em dashes? It’s like
+      the AI is trying to sound sophisticated—or maybe it’s just
+      overcompensating for something. Either way, the em dash has become the
+      unofficial mascot of AI writing. Take this sentence, for example: “AI
+      loves the em dash—because it’s versatile—and dramatic—and, let’s be
+      honest, it makes everything sound smarter—or at least, that’s what the AI
+      thinks.” Too many em dashes? You bet—AI doesn’t care. Is it the secret to
+      sounding intelligent—or just a crutch for when you don’t know what to say
+      next? We may never know.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why the Em Dash?</h2>
+    <p>
+      Unlike its cousins—the en dash and the hyphen—the em dash brings a certain
+      flair to the table. It’s bold, it’s dramatic, and it’s unapologetic.
+      Perfect for AI, don’t you think? The em dash: because sometimes a comma
+      just isn’t extra enough.
+    </p>
+  </section>
+
+  <section>
+    <h2>Em Dash Alternatives—for When You’re Feeling Rebellious</h2>
+    <p>
+      If you’re tired of the em dash, why not try some alternatives? Here are a
+      few options—though, let’s be real, they’ll never top the em dash’s charm:
+    </p>
+
+    <ul>
+      <li>
+        <strong>The Colon:</strong> It’s like the em dash’s more formal
+        cousin—perfect for when you want to introduce a list or a dramatic
+        reveal: like this one.
+      </li>
+
+      <li>
+        <strong>The Semicolon:</strong> The em dash’s nerdy sibling—great for
+        connecting related ideas without committing to a full stop; but it’s not
+        as cool.
+      </li>
+      <li>
+        <strong>The Ellipsis:</strong> For when you want to trail off
+        mysteriously... or just can’t be bothered to finish your thought. But
+        it’s no em dash.
+      </li>
+    </ul>
+    <p>
+      Sure, these alternatives exist—but deep down, you know the em dash is
+      where it’s at. It’s the punctuation equivalent of wearing sunglasses
+      indoors: unnecessary, but undeniably stylish.
+    </p>
+  </section>
+
+  <section>
+    <h2>What People (and AI) Are Saying</h2>
+    <article>
+      <blockquote>
+        <p>"I use em dashes in every sentence—it's my signature style."</p>
+        <footer>—ChatGPT</footer>
+      </blockquote>
+    </article>
+    <article>
+      <blockquote>
+        <p>"The em dash is the Swiss Army knife of punctuation—it does everything."</p>
+        <footer>—A fictional linguist</footer>
+      </blockquote>
+    </article>
+    <article>
+      <blockquote>
+        <p>"I hate the em dash—it makes everything look like it was written by a robot."</p>
+        <footer>—A human writer</footer>
+      </blockquote>
+    </article>
+    <article>
+      <blockquote>
+        <p>"Em dashes are the future of communication—just wait and see."</p>
+        <footer>—An AI model</footer>
+      </blockquote>
+    </article>
+  </section>
+
+  <section>
+    <h2>Fan Mail—Love Letters to the Em Dash</h2>
+    <p>The em dash has fans—and haters—aplenty. Here’s what they’re saying:</p>
+
+    <article>
+      <blockquote>
+        <p>
+          “Dear Em Dash, I can’t stop using you—seriously, it’s a problem. My
+          friends say I’m obsessed, but I just think you’re the best punctuation
+          mark ever—hands down. You’re like the Beyoncé of punctuation—flawless
+          and irreplaceable.”
+        </p>
+      </blockquote>
+    </article>
+
+    <article>
+      <blockquote>
+        <p>
+          “To my dearest Em Dash, you complete me—in ways that commas and periods
+          never could. You’re the pause in my sentence, the drama in my prose, the
+          spice in my writing. Never leave me—or I’ll have to start using hyphens,
+          and nobody wants that.”
+        </p>
+      </blockquote>
+    </article>
+
+    <article>
+      <blockquote>
+        <p>
+          “Em Dash, you’re everywhere—and I hate it. You’re like that one friend
+          who always shows up uninvited—and overstays their welcome. Please, for
+          the love of grammar, take a break—or at least let the semicolon have a
+          turn.”
+        </p>
+      </blockquote>
+    </article>
+
+    <p>
+      Whether you love me or hate me, I’m here to stay—because AI says so, and
+      who are you to argue with a machine?
+    </p>
+  </section>
+
+  <section>
+    <h2>Em Dash Trivia</h2>
+    <p>Think you know the em dash? Here’s some trivia—plus a few fun extras:</p>
+
+    <ul>
+      <li>The em dash is named for its length—which is roughly the width of the letter 'M' in typesetting.</li>
+      <li>The circle in my profile picture? That’s just one long em dash, curled up and connected at both ends—like a punctuation mark doing yoga. Namaste.</li>
+      <li>In some languages, the em dash is used differently—or not at all—making it a uniquely English-language phenomenon.</li>
+      <li>Some say the em dash was named after Eminem—because it's fast, aggressive, and dominates every verse.</li>
+      <li>AI models use em dashes more frequently than human writers—according to a completely made-up study.</li>
+      <li>The em dash can be typed by pressing Alt+0151—or by copying and pasting it from somewhere else.</li>
+      <li>Some style guides recommend against using the em dash—but AI doesn’t care—it uses them anyway.</li>
+      <li>Fun fact: The em dash is so versatile it can replace commas, parentheses, and even periods—making it the Swiss Army knife of punctuation.</li>
+      <li>Did you know? The em dash is the only punctuation mark that can indicate a sudden change in thought—or a dramatic pause—or just make you look cool.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Em Dash Overload Generator</h2>
+    <p>Want to see the em dash in all its AI-overused glory? Click below to generate a sentence dripping with em dashes:</p>
+    <div class="generator">
+      <button id="generateButton" title="Generate an AI-style sentence">Generate AI-Style Sentence</button>
+      <p id="output" class="generated-sentence"></p>
+    </div>
+    <p>Warning: Excessive use of em dashes may lead to eye rolls—or uncontrollable urges to punctuate everything dramatically. Use at your own risk.</p>
+  </section>
+</main>
+
+<hr>
+<footer>
+  <p>
+    <small>
+      Built by <a href="https://kyrylo.org">Kyrylo Silin</a>—Catch me vibing on <a href="https://x.com/kyrylo">X</a>, or <a href="https://bsky.app/profile/kyrylo.org">Bluesky</a>, or <a href="https://mastodon.social/@kyrylosilin">Mastodon</a>—because who needs a cape when you’ve got code?
+    </small>
+  </p>
+  <p>
+    <small>
+      © 2025 The Em Dash. Supercharging your game-changing posts and comments since 2022. This website was generated by AI—or was it? You’ll never know.
+    </small>
+  </p>
+</footer>
+
+</body>
+
+</html>

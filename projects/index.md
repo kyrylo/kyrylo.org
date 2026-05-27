@@ -62,7 +62,7 @@ description: My projects, doodles, vibe-coded experiments.
       A fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.
     </dd>
 
-    <dt><a href="https://the-em-dash.com">The Em Dash</a></dt>
+    <dt><a href="/the-em-dash/">The Em Dash</a></dt>
     <dd>
       Supercharging your game-changing posts and comments since 2022.
     </dd>
