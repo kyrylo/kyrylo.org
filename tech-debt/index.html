@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Press any key to pay tech debt...</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Tech Debt is a fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Tech Debt">
+  <meta property="og:title" content="Press any key to pay tech debt...">
+  <meta property="og:description" content="Tech Debt is a fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.">
+  <meta property="og:image" content="https://kyrylo.org/tech-debt/assets/images/og.png?v=5b60bed">
+  <meta property="og:url" content="https://techdebtgame.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Tech Debt Game">
+  <meta name="twitter:description" content="Tech Debt is a fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.">
+  <meta name="twitter:image" content="https://kyrylo.org/tech-debt/assets/images/og.png?v=5b60bed">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+  <meta name="twitter:image:alt" content="Press any key to pay tech debt...">
+
+  <link rel="canonical" href="https://techdebtgame.com">
+
+  <link rel="icon" type="image/png" href="/tech-debt/assets/images/favicons/favicon-96x96.png?v=6b93f26" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/tech-debt/assets/images/favicons/favicon.svg?v=6b93f26" />
+  <link rel="shortcut icon" href="/tech-debt/assets/images/favicons/favicon.ico?v=6b93f26" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/tech-debt/assets/images/favicons/apple-touch-icon.png?v=6eba6e0" />
+  <meta name="apple-mobile-web-app-title" content="Tech Debt" />
+  <link rel="manifest" href="/tech-debt/assets/images/favicons/site.webmanifest?v=6b93f26" />
+
+  <link rel="stylesheet" type="text/css" href="/tech-debt/assets/stylesheets/reset.css?v=6f67563">
+  <link rel="stylesheet" type="text/css" href="/tech-debt/assets/stylesheets/styles.css?v=5d5446c">
+
+  <script src="https://unpkg.com/tone@14.7.39/build/Tone.js"></script>
+  <script src="https://unpkg.com/@tonejs/midi@2.0.28/build/Midi.js"></script>
+  <script src="/tech-debt/assets/javascripts/script.js?v=9d1d485" type="module"></script>
+
+  <script async src="https://analytics.kyrylo.org/js/pa-AIFJJD2jjgvAtiz_pzq6_.js"></script>
+  <script>
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+    plausible.init()
+  </script>
+</head>
+
+<body>
+
+<div id="mobile-message">This game is designed for desktop computers with a full keyboard. Please switch to a desktop to play.</div>
+
+<header>
+  <h1>Tech Debt</h1>
+</header>
+
+<div class="terminal crt" id="terminal">
+  <pre id="score-line"></pre>
+  <pre id="grid"></pre>
+  <pre id="briefing"></pre>
+  <div id="log-container">
+    <pre id="log-area"></pre>
+    <div id="special-message"></div>
+  </div>
+  <div id="noise-overlay"></div>
+  <div class="scanline"></div>
+</div>
+<div id="mute-container">
+  <span id="mute-checkbox">[ ] Mute</span>
+</div>
+
+<footer>
+  <p>
+    <small>
+      by <a href="https://kyrylo.org">kyrylo</a> ~ <a href="https://x.com/kyrylo">x</a> &middot; <a href="https://bsky.app/profile/kyrylo.org">bsky</a> &middot; <a href="https://mastodon.social/@kyrylosilin">mastodon</a>
+    </small>
+  </p>
+
+  <p>
+    <small>
+      more from me:
+      <br>
+      <a href="https://telebugs.com">telebugs</a> &middot;
+      <a href="https://htmlmaze.com">the html maze</a> &middot;
+      <a href="https://justfuckingusehtml.com">just **** use html</a> &middot;
+      <a href="https://the-em-dash.com">the em dash</a> &middot;
+      <a href="https://weuserails.com">we use rails</a> &middot;
+      <a href="https://flagmatch.com">flag match</a> &middot;
+      <a href="https://coffeeworldrush.com">coffee world rush</a> &middot;
+      <a href="https://dockernamegenerator.com">docker name generator</a> &middot;
+      <a href="https://fuckthispage.com">f**k this page</a> &middot;
+      <a href="https://emojiwhat.com">emojiwhat</a>
+    </small>
+  </p>
+
+  <hr>
+
+  <p>
+    <small>
+      © 2025 Tech Debt. Press any key to pay tech debt.
+    </small>
+  </p>
+</footer>
+
+</body>
+
+</html>

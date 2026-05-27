@@ -57,7 +57,7 @@ description: My projects, doodles, vibe-coded experiments.
       Explore the HTML maze, leave drawings and messages, and find your way out. A playful, interactive web experiment.
     </dd>
 
-    <dt><a href="https://techdebtgame.com">Tech Debt</a></dt>
+    <dt><a href="/tech-debt/">Tech Debt</a></dt>
     <dd>
       A fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.
     </dd>
