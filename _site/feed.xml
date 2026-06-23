@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-05-27T17:55:08+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">Stick with defaults</title><link href="https://kyrylo.org/2026/05/20/stick-with-defaults.html" rel="alternate" type="text/html" title="Stick with defaults" /><published>2026-05-20T00:00:00+08:00</published><updated>2026-05-20T20:24:14+08:00</updated><id>https://kyrylo.org/2026/05/20/stick-with-defaults</id><content type="html" xml:base="https://kyrylo.org/2026/05/20/stick-with-defaults.html"><![CDATA[<p>There is a strange instinct among developers to distrust defaults. The moment we
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-06-23T12:36:51+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">The artificial programmer</title><link href="https://kyrylo.org/2026/06/23/the-artificial-programmer.html" rel="alternate" type="text/html" title="The artificial programmer" /><published>2026-06-23T00:00:00+08:00</published><updated>2026-06-23T12:36:45+08:00</updated><id>https://kyrylo.org/2026/06/23/the-artificial-programmer</id><content type="html" xml:base="https://kyrylo.org/2026/06/23/the-artificial-programmer.html"><![CDATA[<p>I recently got six months of free access to OpenAI’s advanced coding models
+because of my open-source contributions. I
+<a href="https://x.com/kyrylo/status/2068857794955223259">posted</a> about it on X. It’s an
+incredibly generous offer, and I’ve been using Codex every day since.</p>
+
+<p>The convenience is ridiculous.</p>
+
+<p>You describe what you want, and it produces working code. You paste a stack
+trace, and it explains the bug and offers a fix. You ask it to add a feature,
+and it updates the relevant files, writes tests, and sometimes even suggests the
+migration. What used to take an hour of focused work can now take ten minutes of
+prompting and reviewing.</p>
+
+<p>This speed is genuinely useful. I am not going to pretend otherwise. But it also
+makes it dangerously easy to stop doing the real work yourself.</p>
+
+<p>The muscle that actually makes you a programmer is not typing code. It is the
+ability to hold a mental model of a system, reason about trade-offs, spot the
+smell in an abstraction before it spreads, and debug by thinking instead of
+throwing prompts at the wall.</p>
+
+<p>That muscle needs exercise.</p>
+
+<p>With AI, many problems get solved before you ever have to think hard about them.
+The friction disappears, and with it goes some of the growth. You still ship the
+change, but you may not have learned much. You still get the green tests, but
+you may not understand why the solution is shaped the way it is.</p>
+
+<p>At the same time, the power on the other side is absurd. These tools are no
+longer just autocomplete. They can act as agents: explore a codebase, make
+coordinated changes across files, run commands, observe results, and iterate. It
+is like having a tireless pair of hands that can execute at a speed no human can
+match.</p>
+
+<p>The leverage is real. Used well, it lets a single developer ship things that
+previously required a small team.</p>
+
+<p>The problem is the gap between those two realities. The tools reward you for
+staying in the loop of prompting and accepting. They do not punish you for
+slowly losing the ability to work without them. You can produce more output
+while your underlying capability quietly erodes. You become very good at
+directing an artificial programmer instead of remaining a real one yourself.</p>
+
+<p>I have written before that
+<a href="/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html">AI amplifies programmers rather than replacing them</a>.
+I still believe that. But amplification only works if there is still something
+strong on the receiving end. If the human side atrophies, you do not get 10×
+output. You get 10× of whatever shallow thinking you brought to the prompt.</p>
+
+<p>I also still believe that you should
+<a href="/software/2025/03/28/learn-to-code-ignore-ai-then-use-ai-to-code-even-better.html">learn to code, ignore AI, then use AI to code even better</a>.
+Maybe even more now.</p>
+
+<p>The practical question is not whether to use these tools. You would be foolish
+not to. The question is whether you are still doing enough deliberate, unaided
+work to keep your own reasoning sharp.</p>
+
+<p>Sometimes that means closing the AI tab and wrestling with the problem the old
+way first. Sometimes it means using the model only after you have already formed
+your own approach. Sometimes it means reading the generated code line by line
+instead of accepting the diff because the tests passed.</p>
+
+<p>The tools are too good to ignore, but they are also too good at letting you
+coast.</p>
+
+<p>The programmers who will matter in the next few years are not the ones who
+prompt the best. They are the ones who stay sharp enough to know what to prompt
+for, when to use the output, and when the output is wrong.</p>
+
+<p>Everything else is just faster typing.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I recently got six months of free access to OpenAI’s advanced coding models because of my open-source contributions. I posted about it on X. It’s an incredibly generous offer, and I’ve been using Codex every day since.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Stick with defaults</title><link href="https://kyrylo.org/2026/05/20/stick-with-defaults.html" rel="alternate" type="text/html" title="Stick with defaults" /><published>2026-05-20T00:00:00+08:00</published><updated>2026-05-20T20:24:14+08:00</updated><id>https://kyrylo.org/2026/05/20/stick-with-defaults</id><content type="html" xml:base="https://kyrylo.org/2026/05/20/stick-with-defaults.html"><![CDATA[<p>There is a strange instinct among developers to distrust defaults. The moment we
 install a new tool, framework, editor, or operating system, many of us
 immediately begin searching for “the real setup”. We hunt for configuration
 guides, optimization tricks, must-have plugins, and dotfiles maintained by
@@ -715,88 +784,4 @@ has to sit in the driver’s seat.</p>
 
 <p>Tools changed. The job didn’t disappear.</p>
 
-<p>Programmers who understand requirements just became 10× more lethal.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[People who think “vibe coding” will fully replace programmers still don’t understand how software actually gets built.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A mere add_foreign_key can wipe out your whole Rails+SQLite production table</title><link href="https://kyrylo.org/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html" rel="alternate" type="text/html" title="A mere add_foreign_key can wipe out your whole Rails+SQLite production table" /><published>2025-09-27T00:00:00+08:00</published><updated>2025-09-27T20:48:28+08:00</updated><id>https://kyrylo.org/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table</id><content type="html" xml:base="https://kyrylo.org/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html"><![CDATA[<p>A single <code class="language-plaintext highlighter-rouge">add_foreign_key</code> in a Rails migration can obliterate a dependent table
-in your SQLite database. This is exactly what happened with my self-hosted error
-tracker, <a href="https://telebugs.com">Telebugs</a>.</p>
-
-<p>I added a new foreign key to the error <code class="language-plaintext highlighter-rouge">groups</code> table like I normally would,
-then deployed my test instance and saw that all individual reports (those that
-belong to error groups) were gone. Completely. My face was like WTF (if that
-could be a face).</p>
-
-<p>The migration was part of a larger set, but I narrowed it down to this:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddOwnerToGroups</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">8.0</span><span class="p">]</span>
-  <span class="k">def</span> <span class="nf">change</span>
-    <span class="n">add_foreign_key</span> <span class="ss">:groups</span><span class="p">,</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">column: :owner_id</span><span class="p">,</span> <span class="ss">on_delete: :nullify</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>So what’s going on? It’s all about how Rails and SQLite handle schema changes. My schema had a foreign key from <code class="language-plaintext highlighter-rouge">reports</code> to <code class="language-plaintext highlighter-rouge">groups</code> with <code class="language-plaintext highlighter-rouge">on_delete: :cascade</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_foreign_key</span> <span class="s2">"reports"</span><span class="p">,</span> <span class="s2">"groups"</span><span class="p">,</span> <span class="ss">on_delete: :cascade</span>
-</code></pre></div></div>
-
-<p>When I added the new foreign key to <code class="language-plaintext highlighter-rouge">groups</code>, SQLite (via Rails) needed to
-recreate the <code class="language-plaintext highlighter-rouge">groups</code> table because SQLite doesn’t support <code class="language-plaintext highlighter-rouge">ALTER TABLE</code> for
-adding foreign keys. The process goes like this:</p>
-
-<ol>
-  <li>Create a temporary table (<code class="language-plaintext highlighter-rouge">agroups</code>) with the new schema, including the
-foreign key.</li>
-  <li>Copy data from <code class="language-plaintext highlighter-rouge">groups</code> to <code class="language-plaintext highlighter-rouge">agroups</code>.</li>
-  <li>Drop the original <code class="language-plaintext highlighter-rouge">groups</code> table.</li>
-  <li>Recreate <code class="language-plaintext highlighter-rouge">groups</code> with the new schema.</li>
-  <li>Copy data back from <code class="language-plaintext highlighter-rouge">agroups</code> to <code class="language-plaintext highlighter-rouge">groups</code>.</li>
-</ol>
-
-<p>Do you see the problem? When the original <code class="language-plaintext highlighter-rouge">groups</code> table is dropped, the <code class="language-plaintext highlighter-rouge">reports</code>
-table’s <code class="language-plaintext highlighter-rouge">on_delete: :cascade</code> foreign key kicks in. Since <code class="language-plaintext highlighter-rouge">reports.group_id</code>
-temporarily points to non-existent <code class="language-plaintext highlighter-rouge">groups.id</code> values, SQLite deletes all reports
-records 💀</p>
-
-<h2 id="how-i-fixed-it">How I fixed it</h2>
-
-<p>I rewrote the migration to avoid <code class="language-plaintext highlighter-rouge">add_foreign_key</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AddOwnerToGroups</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">8.0</span><span class="p">]</span>
-  <span class="k">def</span> <span class="nf">change</span>
-    <span class="n">add_column</span> <span class="ss">:groups</span><span class="p">,</span> <span class="ss">:owner_id</span><span class="p">,</span> <span class="ss">:integer</span>
-    <span class="n">add_index</span> <span class="ss">:groups</span><span class="p">,</span> <span class="ss">:owner_id</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This adds the <code class="language-plaintext highlighter-rouge">owner_id</code> column and index without touching the table structure,
-so no data is lost. To enforce the foreign key constraint, I added a validation
-in my <code class="language-plaintext highlighter-rouge">Group</code> model:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="n">belongs_to</span> <span class="ss">:owner</span><span class="p">,</span> <span class="ss">class_name: </span><span class="s1">'User'</span><span class="p">,</span> <span class="ss">optional: </span><span class="kp">true</span>
-  <span class="n">validates</span> <span class="ss">:owner_id</span><span class="p">,</span> <span class="ss">inclusion: </span><span class="p">{</span> <span class="ss">in: </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span> <span class="no">User</span><span class="p">.</span><span class="nf">pluck</span><span class="p">(</span><span class="ss">:id</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="kp">nil</span><span class="p">]</span> <span class="p">}</span> <span class="p">},</span> <span class="ss">allow_nil: </span><span class="kp">true</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This ensures <code class="language-plaintext highlighter-rouge">owner_id</code> is either <code class="language-plaintext highlighter-rouge">nil</code> or a valid <code class="language-plaintext highlighter-rouge">User.id</code>, mimicking the
-database foreign key without SQLite’s pitfalls.</p>
-
-<h2 id="lessons-learned">Lessons learned</h2>
-
-<ul>
-  <li><strong>SQLite gotchas:</strong> SQLite’s table recreation for schema changes can wreak
-havoc with cascading foreign keys. Be cautious with <code class="language-plaintext highlighter-rouge">on_delete: :cascade</code> in
-migrations.</li>
-  <li><strong>Safer migrations:</strong> Use <code class="language-plaintext highlighter-rouge">add_column</code> and <code class="language-plaintext highlighter-rouge">add_index</code> for simple column
-additions, and enforce constraints at the application level when using SQLite.</li>
-  <li><strong>Avoid cascading deletes:</strong> Consider using <code class="language-plaintext highlighter-rouge">on_delete: :nullify</code> for foreign
-keys like <code class="language-plaintext highlighter-rouge">reports</code> to <code class="language-plaintext highlighter-rouge">groups</code> to prevent data loss, though you’ll need to
-handle orphaned <code class="language-plaintext highlighter-rouge">reports</code> (with <code class="language-plaintext highlighter-rouge">group_id: nil</code>) in your application logic.</li>
-  <li><strong>Test with data:</strong> Always test migrations with realistic data, including
-invalid foreign key values, to catch issues early.</li>
-  <li><strong>Backup first:</strong> Before running migrations, back up your database (<code class="language-plaintext highlighter-rouge">sqlite3
-db/production.sqlite3 ".backup backup.sqlite3"</code>) to avoid data loss.</li>
-</ul>
-
-<p>Do I still love SQLite? But of course! However it comes with gotchas that you
-must know to use it efficiently and avoid landmines.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[A single add_foreign_key in a Rails migration can obliterate a dependent table in your SQLite database. This is exactly what happened with my self-hosted error tracker, Telebugs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>Programmers who understand requirements just became 10× more lethal.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[People who think “vibe coding” will fully replace programmers still don’t understand how software actually gets built.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
