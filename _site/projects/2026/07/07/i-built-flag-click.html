@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>I built Flag Click | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="I built Flag Click" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I built a small web game called Flag Click." />
+<meta property="og:description" content="I built a small web game called Flag Click." />
+<link rel="canonical" href="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html" />
+<meta property="og:url" content="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://kyrylo.org/assets/images/posts/i-built-flag-click/01.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-07T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://kyrylo.org/assets/images/posts/i-built-flag-click/01.webp" />
+<meta property="twitter:title" content="I built Flag Click" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-07-07T10:03:58+08:00","datePublished":"2026-07-07T00:00:00+08:00","description":"I built a small web game called Flag Click.","headline":"I built Flag Click","image":"https://kyrylo.org/assets/images/posts/i-built-flag-click/01.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html"},"url":"https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <script async src="https://analytics.kyrylo.org/js/pa-AIFJJD2jjgvAtiz_pzq6_.js"></script>
+  <script>
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+    plausible.init()
+  </script>
+
+  <style>
+    :root {
+      --font-size: clamp(1rem, 1vw, 1.75rem);
+    }
+
+    body {
+      font: normal 400 var(--font-size)/1.5 sans-serif;
+    }
+
+    main,
+    footer {
+      max-width: 68ch;
+      margin: 0 auto;
+    }
+
+    pre {
+      overflow: auto;
+    }
+
+    pre,
+    blockquote {
+      background-color: ghostwhite;
+      color: darkslategray;
+    }
+
+    .article img {
+      max-width: 100%;
+    }
+
+    .article a,
+    code {
+      word-break: break-word;
+    }
+
+    .article p {
+       max-width: 60ch;
+    }
+
+    code {
+      font-size: var(--font-size);
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding-left: 20px;
+      border-left: 4px solid dimgray;
+    }
+
+    nav a {
+      margin-right: 8px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited:active,
+    a:active {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    ul.blog-posts {
+      list-style-type: none;
+      padding: unset;
+      margin: 0;
+    }
+
+    ul.blog-posts li {
+      display: flex;
+      align-items: baseline;
+      gap: 1ch;
+    }
+
+    ul.blog-posts time {
+      flex: 0 0 12ch;
+      font-size: var(--font-size);
+      font-family: monospace;
+    }
+
+    .profile-photo {
+      width: clamp(120px, 120px + 4vw, 180px);
+      height: auto;
+    }
+
+    .author-avatar {
+      height: 1em;
+      width: 1em;
+      vertical-align: baseline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: mediumslateblue;
+      }
+
+      a:visited:active,
+      a:active {
+        color: orangered;
+      }
+
+      a:visited {
+        color: plum;
+      }
+
+      pre,
+      blockquote {
+        color: lightsteelblue;
+        background-color: #2b2b2b;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">I built Flag Click</h1>
+
+    <p>
+      <time datetime="2026-07-07T00:00:00+08:00" itemprop="datePublished">
+        Jul 7, 2026
+      </time>
+      |
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <picture>
+          <source srcset="/assets/images/kyrylo-silin.webp 2x, /assets/images/kyrylo-silin.webp 1x" type="image/webp">
+
+          <img class="author-avatar" src="/%20/assets/images/kyrylo-silin.webp" alt="Kyrylo Silin" width="15" height="15" loading="lazy">
+        </picture>
+
+        <span itemprop="name">
+          <a href="/">Kyrylo Silin</a>
+        </span>
+      </span>
+      on
+      <a href="https://x.com/kyrylo" target="_blank">X</a>
+      &middot;
+      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">Bluesky</a>
+      &middot;
+      <a href="https://mastodon.social/@kyrylosilin" target="_blank">Mastodon</a>
+    </p>
+  </header>
+
+  <div class="article" itemprop="articleBody">
+    <p>I built a small web game called <a href="https://flagclick.com">Flag Click</a>.</p>
+
+<p>The idea is almost embarrassingly simple: you click your country flag, your flag
+climbs up the pole, and you try to overtake everyone else. That’s the whole
+game.</p>
+
+<p><img src="/assets/images/posts/i-built-flag-click/01.webp" alt="Flag Click on a phone, with flags climbing a pole in space" /></p>
+
+<p>I keep getting drawn to these tiny internet toys. Not the serious kind of game
+where you need a tutorial, a season pass, and three currencies before you are
+allowed to have fun. I mean the stupid little thing that makes sense
+immediately. You open it, you understand it, and before your brain has time to
+ask why, you are already clicking.</p>
+
+<p>Flag Click grew out of <a href="https://flagmatch.com">Flag Match</a>, my flag matching
+game. Flag Match at least has the noble excuse of being educational. You can
+tell yourself you are learning geography. Flag Click does not have that excuse.
+It is the less responsible cousin. You click a flag because you want your flag
+to be higher than the other flags.</p>
+
+<p>That sounds silly, but that is exactly why flags work so well here. A flag is
+not just a random image on a button. People instantly recognize it. It carries
+just enough identity to make the number feel personal, but not enough gravity to
+turn the thing into something serious. It stays in that nice internet zone where
+everyone knows it does not matter, but it still kind of does.</p>
+
+<p>The first version was not a flagpole. It was a big field of flags where the
+winning countries slowly took over the screen. In my head, this was clearly the
+right mechanic. On the screen, it was ugly. Flags got squished, the layout
+looked noisy, and the whole thing had no drama. It was technically doing what I
+asked it to do, which is often the worst kind of failure because the idea itself
+is the problem.</p>
+
+<p>The flagpole fixed it.</p>
+
+<p>Once countries started climbing instead of occupying space, the game suddenly
+made sense. The screen had a direction. Being #1 meant being at the top. Smaller
+countries could sit lower on the pole. On mobile, it also felt much more natural
+because the entire game became vertical, which is where your thumb already
+lives.</p>
+
+<p>Most of the work after that was not about adding more features. It was about
+making the click feel right. The flag had to wave. The score had to react
+quickly. Overtaking another country needed a little bit of theatre. The sound
+could not be annoying after five seconds. Mobile tapping had to feel good
+because this is absolutely a phone game first.</p>
+
+<p>That kind of polish sounds optional until you build something this small. Then
+you realize the polish is the product. If the button feels bad, there is no game
+left to hide behind.</p>
+
+<p>I also had to think about fake scores, because of course I did. Any public
+clicker invites people to mess with it. That is part of the genre. I do not
+think you can make this kind of thing perfectly cheat-proof, and I do not want
+to turn a silly flag game into airport security. The goal is simpler: make
+casual cheating boring enough that normal players do not feel like the board is
+immediately ruined.</p>
+
+<p>I have no idea if Flag Click will go anywhere. Maybe it gets shared, maybe it
+doesn’t. Maybe one country wakes up and turns the leaderboard into a national
+emergency for twelve minutes. Maybe nobody cares. All outcomes are acceptable.</p>
+
+<p>What I like is that it exists. It is small, weird, and self-contained. It made
+me care about sounds, animation, phone taps, flags, and one very opinionated
+pole. That is enough for me.</p>
+
+<p>Go click your flag: <a href="https://flagclick.com">flagclick.com</a>.</p>
+
+  </div>
+</article>
+
+<hr>
+
+<div>
+  
+
+  
+    <div>
+      Prev: <a href="/2026/06/23/the-artificial-programmer.html" rel="prev" title="The artificial programmer">The artificial programmer</a>
+    </div>
+  
+</div>
+
+    </main><footer>
+  <hr>
+  <small>
+    <p>
+      <a href="/feed.xml">ATOM feed</a>
+      |
+      <a href="https://github.com/kyrylo/kyrylo.org">GitHub</a> (CC BY-NC-SA 4.0)
+    </p>
+    <p>Last modified: <time datetime="2026-07-07T10:03:58+08:00">July 07, 2026</time></p>
+  </small>
+</footer>
+</body>
+
+</html>

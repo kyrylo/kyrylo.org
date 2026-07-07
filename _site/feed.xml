@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-06-23T12:36:51+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">The artificial programmer</title><link href="https://kyrylo.org/2026/06/23/the-artificial-programmer.html" rel="alternate" type="text/html" title="The artificial programmer" /><published>2026-06-23T00:00:00+08:00</published><updated>2026-06-23T12:36:45+08:00</updated><id>https://kyrylo.org/2026/06/23/the-artificial-programmer</id><content type="html" xml:base="https://kyrylo.org/2026/06/23/the-artificial-programmer.html"><![CDATA[<p>I recently got six months of free access to OpenAI’s advanced coding models
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-07T10:06:55+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">I built Flag Click</title><link href="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html" rel="alternate" type="text/html" title="I built Flag Click" /><published>2026-07-07T00:00:00+08:00</published><updated>2026-07-07T10:03:58+08:00</updated><id>https://kyrylo.org/projects/2026/07/07/i-built-flag-click</id><content type="html" xml:base="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html"><![CDATA[<p>I built a small web game called <a href="https://flagclick.com">Flag Click</a>.</p>
+
+<p>The idea is almost embarrassingly simple: you click your country flag, your flag
+climbs up the pole, and you try to overtake everyone else. That’s the whole
+game.</p>
+
+<p><img src="/assets/images/posts/i-built-flag-click/01.webp" alt="Flag Click on a phone, with flags climbing a pole in space" /></p>
+
+<p>I keep getting drawn to these tiny internet toys. Not the serious kind of game
+where you need a tutorial, a season pass, and three currencies before you are
+allowed to have fun. I mean the stupid little thing that makes sense
+immediately. You open it, you understand it, and before your brain has time to
+ask why, you are already clicking.</p>
+
+<p>Flag Click grew out of <a href="https://flagmatch.com">Flag Match</a>, my flag matching
+game. Flag Match at least has the noble excuse of being educational. You can
+tell yourself you are learning geography. Flag Click does not have that excuse.
+It is the less responsible cousin. You click a flag because you want your flag
+to be higher than the other flags.</p>
+
+<p>That sounds silly, but that is exactly why flags work so well here. A flag is
+not just a random image on a button. People instantly recognize it. It carries
+just enough identity to make the number feel personal, but not enough gravity to
+turn the thing into something serious. It stays in that nice internet zone where
+everyone knows it does not matter, but it still kind of does.</p>
+
+<p>The first version was not a flagpole. It was a big field of flags where the
+winning countries slowly took over the screen. In my head, this was clearly the
+right mechanic. On the screen, it was ugly. Flags got squished, the layout
+looked noisy, and the whole thing had no drama. It was technically doing what I
+asked it to do, which is often the worst kind of failure because the idea itself
+is the problem.</p>
+
+<p>The flagpole fixed it.</p>
+
+<p>Once countries started climbing instead of occupying space, the game suddenly
+made sense. The screen had a direction. Being #1 meant being at the top. Smaller
+countries could sit lower on the pole. On mobile, it also felt much more natural
+because the entire game became vertical, which is where your thumb already
+lives.</p>
+
+<p>Most of the work after that was not about adding more features. It was about
+making the click feel right. The flag had to wave. The score had to react
+quickly. Overtaking another country needed a little bit of theatre. The sound
+could not be annoying after five seconds. Mobile tapping had to feel good
+because this is absolutely a phone game first.</p>
+
+<p>That kind of polish sounds optional until you build something this small. Then
+you realize the polish is the product. If the button feels bad, there is no game
+left to hide behind.</p>
+
+<p>I also had to think about fake scores, because of course I did. Any public
+clicker invites people to mess with it. That is part of the genre. I do not
+think you can make this kind of thing perfectly cheat-proof, and I do not want
+to turn a silly flag game into airport security. The goal is simpler: make
+casual cheating boring enough that normal players do not feel like the board is
+immediately ruined.</p>
+
+<p>I have no idea if Flag Click will go anywhere. Maybe it gets shared, maybe it
+doesn’t. Maybe one country wakes up and turns the leaderboard into a national
+emergency for twelve minutes. Maybe nobody cares. All outcomes are acceptable.</p>
+
+<p>What I like is that it exists. It is small, weird, and self-contained. It made
+me care about sounds, animation, phone taps, flags, and one very opinionated
+pole. That is enough for me.</p>
+
+<p>Go click your flag: <a href="https://flagclick.com">flagclick.com</a>.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="projects" /><summary type="html"><![CDATA[I built a small web game called Flag Click.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/posts/i-built-flag-click/01.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/posts/i-built-flag-click/01.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The artificial programmer</title><link href="https://kyrylo.org/2026/06/23/the-artificial-programmer.html" rel="alternate" type="text/html" title="The artificial programmer" /><published>2026-06-23T00:00:00+08:00</published><updated>2026-06-23T12:36:57+08:00</updated><id>https://kyrylo.org/2026/06/23/the-artificial-programmer</id><content type="html" xml:base="https://kyrylo.org/2026/06/23/the-artificial-programmer.html"><![CDATA[<p>I recently got six months of free access to OpenAI’s advanced coding models
 because of my open-source contributions. I
 <a href="https://x.com/kyrylo/status/2068857794955223259">posted</a> about it on X. It’s an
 incredibly generous offer, and I’ve been using Codex every day since.</p>
@@ -759,29 +825,4 @@ A convenience for exploration and ideation.</p>
 You do not govern machines using vibes.</p>
 
 <p>And expecting AI to reliably interpret natural language as precise code
-is like expecting a compiler to understand sarcasm.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[English and natural language in general is a bad interface for programming with AI. Not because it is “imperfect”. But because it was never designed for precision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI amplifies programmers, not replaces them</title><link href="https://kyrylo.org/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html" rel="alternate" type="text/html" title="AI amplifies programmers, not replaces them" /><published>2025-11-26T00:00:00+08:00</published><updated>2025-11-27T05:26:28+08:00</updated><id>https://kyrylo.org/software/2025/11/26/ai-amplifies-programmers-not-replaces-them</id><content type="html" xml:base="https://kyrylo.org/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html"><![CDATA[<p>People who think “vibe coding” will fully replace programmers still don’t
-understand how software actually gets built.</p>
-
-<p>Let’s be real, today’s AI is powerful, but it’s not thinking. The very fact that
-we have to say “AGI” proves the point. If current models were truly intelligent,
-we wouldn’t need a special term for the real thing.</p>
-
-<p>Good software doesn’t materialize out of thin air. It emerges from requirements.
-Hundreds or thousands of tiny, explicit contracts the code has to honor.</p>
-
-<p>Those requirements don’t come from the AI. They come from the real world: users,
-customers, regulators, performance constraints, security policies, legacy
-systems, and edge cases no training set has ever seen.</p>
-
-<p>AI can’t invent human needs. It can only remix what humans have already asked
-for in the past. Until someone translates a messy, ambiguous, real-world problem
-into something precise enough to execute, nothing happens.</p>
-
-<p>So yes, AI writes code faster than ever. It debugs, refactors, documents, and
-scaffolds like a wizard. But the moment you’re building something that actually
-matters and hasn’t been built a thousand times before, a competent human still
-has to sit in the driver’s seat.</p>
-
-<p>Tools changed. The job didn’t disappear.</p>
-
-<p>Programmers who understand requirements just became 10× more lethal.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[People who think “vibe coding” will fully replace programmers still don’t understand how software actually gets built.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+is like expecting a compiler to understand sarcasm.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[English and natural language in general is a bad interface for programming with AI. Not because it is “imperfect”. But because it was never designed for precision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
