@@ -38,6 +38,11 @@ description: My projects, doodles, vibe-coded experiments.
       A fun and educational game to learn flags of countries and their capitals.
     </dd>
 
+    <dt><a href="https://flagclick.com">Flag Click</a></dt>
+    <dd>
+      A small web game where you click your country flag, climb the pole, and try to overtake everyone else.
+    </dd>
+
     <dt><a href="https://dockernamegenerator.com">Docker Name Generator</a></dt>
     <dd>
       Generate random Docker container-style names for any purpose.
@@ -65,11 +70,6 @@ description: My projects, doodles, vibe-coded experiments.
     <dt><a href="/the-em-dash/">The Em Dash</a></dt>
     <dd>
       Supercharging your game-changing posts and comments since 2022.
-    </dd>
-
-    <dt><a href="https://coffeeworldrush.com">Coffee World Rush</a></dt>
-    <dd>
-      Track your coffee consumption and help bring your country to the top of the leaderboard.
     </dd>
 
     <dt><a href="https://fuckthispage.com">Fuck This Page</a></dt>

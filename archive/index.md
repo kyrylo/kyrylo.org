@@ -16,6 +16,9 @@ description: What I've worked on and either finished or abandoned.
       <a href="https://matcharoo.app">Matcharoo</a>: A word association game where you match similar words, learn new words easily, and have a blast with friends as you discover who knows the most (<a href="{% post_url 2024-02-21-i-built-a-word-matching-game-called-matcharoo %}">blog post</a>).
     </li>
     <li>
+      <a href="https://coffeeworldrush.com">Coffee World Rush</a>: A leaderboard for coffee drinkers all around the world (<a href="{% post_url 2024-03-20-coffee-world-rush-a-leaderboard-for-all-coffee-drinkers-around-the-world %}">blog post</a>).
+    </li>
+    <li>
       <a href="https://pry.github.io/">Pry REPL</a>: The featureful development console for Ruby.
     </li>
     <li>
