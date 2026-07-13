@@ -68,7 +68,7 @@ plugins:
 google_analytics: G-HWC9SW2R8S
 
 image:
-  path: /assets/images/web-app-manifest-512x512.png
+  path: /assets/images/web-app-manifest-512x512.png?v=1
 twitter:
   username: kyrylosilin
   card: summary

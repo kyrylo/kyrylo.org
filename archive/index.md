@@ -1,6 +1,6 @@
 ---
 layout: page
-image: assets/images/web-app-manifest-512x512.png
+image: assets/images/web-app-manifest-512x512.png?v=1
 title: Past Work
 description: What I've worked on and either finished or abandoned.
 ---

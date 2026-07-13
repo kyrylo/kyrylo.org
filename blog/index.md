@@ -1,6 +1,6 @@
 ---
 layout: page
-image: assets/images/web-app-manifest-512x512.png
+image: assets/images/web-app-manifest-512x512.png?v=1
 title: What I Write About
 description: Thoughts on programming, life, and everything in between.
 ---
