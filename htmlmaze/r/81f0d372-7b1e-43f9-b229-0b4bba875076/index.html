@@ -66,10 +66,7 @@
       id="canvas"
       aria-hidden="true"
       data-background="#000000"
-      data-stroke="#ffffff"
       data-snapshot="/htmlmaze/assets/canvases/81f0d372-7b1e-43f9-b229-0b4bba875076.png"
-      data-pencil="/htmlmaze/assets/pencil.cur"
-      data-eraser="/htmlmaze/assets/eraser.cur"
     ></canvas>
 
     <main class="product ">
@@ -79,14 +76,12 @@
             <a href="/htmlmaze/" class="stats__title">The HTML Maze</a>
             <div class="stats__by">by <a href="https://kyrylo.org">kyrylo</a></div>
           </div>
-          <div class="archive-status"><span aria-hidden="true">◉</span> frozen archive</div>
         </div>
 
 
       <div><div class="room-wrapper">
 
     <div class="room-header">
-      <p class="room-coordinate">level 1 &middot; 1,2</p>
       <h1>Lurking Garret</h1>
       <p class="room__description">Air conditioning cycles with cold precision.<br>Cabinets keep Antarctic manifests.<br>Walls hold forgotten memories.</p>
     </div>
@@ -138,98 +133,85 @@
     </div>
 
 
-  <div class="drawing-tools">
-    <p class="help">
-      <small>Left click to draw ✏️, right click to erase 🧽<br>Your marks stay in this tab only and vanish when you leave.</small>
-    </p>
-    <button type="button" class="reset-wall" data-reset-canvas>Reset this wall</button>
-  </div>
+  <p class="help"><small>Use the compass to navigate through the maze.</small></p>
 
-  <div class="sealed-heading">
-    <h2>Writings on the Wall</h2>
-    <p>This wall is sealed. Nothing new can be saved.</p>
-  </div>
+  <h2>Writings on the Wall</h2>
 
+  <ul class="writings" aria-label="Writings on the wall">
 
-    <ul class="writings" aria-label="Archived wall writings">
+      <li>ABRAXAS</li>
 
-        <li>ABRAXAS</li>
+      <li>You&#39;ve been here before</li>
 
-        <li>You&#39;ve been here before</li>
+      <li>amogus</li>
 
-        <li>amogus</li>
+      <li>SES</li>
 
-        <li>SES</li>
+      <li>draw on walls</li>
 
-        <li>draw on walls</li>
+      <li>U4u4u4h4h4</li>
 
-        <li>U4u4u4h4h4</li>
+      <li>where did the horse go?</li>
 
-        <li>where did the horse go?</li>
+      <li>sadasd</li>
 
-        <li>sadasd</li>
+      <li>👀</li>
 
-        <li>👀</li>
+      <li>🙄</li>
 
-        <li>🙄</li>
+      <li>Don&#39;t go north</li>
 
-        <li>Don&#39;t go north</li>
+      <li>Scribble</li>
 
-        <li>Scribble</li>
+      <li>wowie</li>
 
-        <li>wowie</li>
+      <li>hhhhhhhhhhhhhhh</li>
 
-        <li>hhhhhhhhhhhhhhh</li>
+      <li>í̴̜́̈́̽͑̈́̿͂̏̈̐̓̈́̚͝͝͠ ̸̧̡̛̙̺͋̔̓̋͆͗̆͋̒̂̌͆̏̈́̒̊͋̉̅́̌͘͘͝͠͝͝ẅ̵̧̠̠̯̖̻̖̮̹̮̲̹̰̹̲̘͉̜̟̪̥̯̝̀̓̾̉͊̾̈̀̉͛̅͐̅͌̋̇̎̚̚̚͜͝͝â̷̡̨̨̪͙̯̦̩̮͓̯͖͚̄́͗́̇̏̏̍̑̉̿͐̎̕͠ŝ̴̇͗͝</li>
 
-        <li>í̴̜́̈́̽͑̈́̿͂̏̈̐̓̈́̚͝͝͠ ̸̧̡̛̙̺͋̔̓̋͆͗̆͋̒̂̌͆̏̈́̒̊͋̉̅́̌͘͘͝͠͝͝ẅ̵̧̠̠̯̖̻̖̮̹̮̲̹̰̹̲̘͉̜̟̪̥̯̝̀̓̾̉͊̾̈̀̉͛̅͐̅͌̋̇̎̚̚̚͜͝͝â̷̡̨̨̪͙̯̦̩̮͓̯͖͚̄́͗́̇̏̏̍̑̉̿͐̎̕͠ŝ̴̇͗͝</li>
+      <li>Fufu</li>
 
-        <li>Fufu</li>
+      <li>SES</li>
 
-        <li>SES</li>
+      <li>No horse ahead</li>
 
-        <li>No horse ahead</li>
+      <li>⠀⠀⠀⠀⣀⢀⣠⣤⠴⠶⠚⠛⠉⣹⡇⠀⢸⠀⠀⠀⠀⠀⢰⣄⠀⠀⠀⠀⠈⢦⢰⠀⠀⠀⠀⠀⠈⢳⡀⠈⢧⠀⠀⠀⠀⢸⠀⠀⠀⠀ ⠀⠀⠉⠀⠀⠀⡏⠀⢰⠃⠀⠀⠀⣿⡇⠀⢸⡀⠀⠀⠀⠀⢸⣸⡆⠀⠀⠀⠰⣌⣧⡆⠀⢷⡀⠀⠀⣄⢳⠀⠀⢣⠀⠀⠀⢸⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⡇⠀⠘⠀⠀⠀⢀⣿⣇⠀⠸⡇⣆⠀⠀⠀⠀⣿⣿⡀⠀⠀⠀⢹⣾⡇⠀⢸⢣⠀⠀⠘</li>
 
-        <li>⠀⠀⠀⠀⣀⢀⣠⣤⠴⠶⠚⠛⠉⣹⡇⠀⢸⠀⠀⠀⠀⠀⢰⣄⠀⠀⠀⠀⠈⢦⢰⠀⠀⠀⠀⠀⠈⢳⡀⠈⢧⠀⠀⠀⠀⢸⠀⠀⠀⠀ ⠀⠀⠉⠀⠀⠀⡏⠀⢰⠃⠀⠀⠀⣿⡇⠀⢸⡀⠀⠀⠀⠀⢸⣸⡆⠀⠀⠀⠰⣌⣧⡆⠀⢷⡀⠀⠀⣄⢳⠀⠀⢣⠀⠀⠀⢸⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⡇⠀⠘⠀⠀⠀⢀⣿⣇⠀⠸⡇⣆⠀⠀⠀⠀⣿⣿⡀⠀⠀⠀⢹⣾⡇⠀⢸⢣⠀⠀⠘</li>
+      <li>nothing written here, especially the previous messages are fake!</li>
 
-        <li>nothing written here, especially the previous messages are fake!</li>
+      <li>fdfdf</li>
 
-        <li>fdfdf</li>
+      <li>aaaa</li>
 
-        <li>aaaa</li>
+      <li>&lt;script&gt;alert(&#39;hello&#39;)&lt;/script&gt;</li>
 
-        <li>&lt;script&gt;alert(&#39;hello&#39;)&lt;/script&gt;</li>
+      <li>berget ai</li>
 
-        <li>berget ai</li>
+      <li>Kilroy</li>
 
-        <li>Kilroy</li>
+      <li>HEAD : yesplease</li>
 
-        <li>HEAD : yesplease</li>
+      <li>herambe.. never forget</li>
 
-        <li>herambe.. never forget</li>
+      <li>Well</li>
 
-        <li>Well</li>
+      <li>Jkkk</li>
 
-        <li>Jkkk</li>
+      <li>SES</li>
 
-        <li>SES</li>
+      <li>GET OUT OF MY HEAD</li>
 
-        <li>GET OUT OF MY HEAD</li>
+      <li>Moufle</li>
 
-        <li>Moufle</li>
+      <li>Yuhggkj</li>
 
-        <li>Yuhggkj</li>
+      <li>Heerrrroooo</li>
 
-        <li>Heerrrroooo</li>
-
-    </ul>
-
+  </ul>
 </div>
 </div>
 
-      <footer class="archive-footer">
-        <p>The HTML Maze was built in July 2025 and frozen on 20 July 2026.</p>
-        <p>by <a href="https://kyrylo.org">kyrylo</a> ~ <a href="https://x.com/kyrylo">x</a> &middot; <a href="https://bsky.app/profile/kyrylo.org">bsky</a> &middot; <a href="https://mastodon.social/@kyrylosilin">mastodon</a></p>
-      </footer>
+
     </main>
   </body>
 </html>

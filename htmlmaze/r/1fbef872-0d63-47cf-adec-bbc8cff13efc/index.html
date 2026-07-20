@@ -66,10 +66,7 @@
       id="canvas"
       aria-hidden="true"
       data-background="#000000"
-      data-stroke="#ffffff"
       data-snapshot="/htmlmaze/assets/canvases/1fbef872-0d63-47cf-adec-bbc8cff13efc.png"
-      data-pencil="/htmlmaze/assets/pencil.cur"
-      data-eraser="/htmlmaze/assets/eraser.cur"
     ></canvas>
 
     <main class="product ">
@@ -79,14 +76,12 @@
             <a href="/htmlmaze/" class="stats__title">The HTML Maze</a>
             <div class="stats__by">by <a href="https://kyrylo.org">kyrylo</a></div>
           </div>
-          <div class="archive-status"><span aria-hidden="true">◉</span> frozen archive</div>
         </div>
 
 
       <div><div class="room-wrapper">
 
     <div class="room-header">
-      <p class="room-coordinate">level 1 &middot; 0,2</p>
       <h1>Macabre Reliquary</h1>
       <p class="room__description">Polished floors reflect distorted ambitions.<br>Belongings scattered mid-task.<br>Traces of eldritch events remain.</p>
     </div>
@@ -138,86 +133,73 @@
     </div>
 
 
-  <div class="drawing-tools">
-    <p class="help">
-      <small>Left click to draw ✏️, right click to erase 🧽<br>Your marks stay in this tab only and vanish when you leave.</small>
-    </p>
-    <button type="button" class="reset-wall" data-reset-canvas>Reset this wall</button>
-  </div>
+  <p class="help"><small>Use the compass to navigate through the maze.</small></p>
 
-  <div class="sealed-heading">
-    <h2>Writings on the Wall</h2>
-    <p>This wall is sealed. Nothing new can be saved.</p>
-  </div>
+  <h2>Writings on the Wall</h2>
 
+  <ul class="writings" aria-label="Writings on the wall">
 
-    <ul class="writings" aria-label="Archived wall writings">
+      <li>What?</li>
 
-        <li>What?</li>
+      <li>A Demiurge lives here.</li>
 
-        <li>A Demiurge lives here.</li>
+      <li>fuck you</li>
 
-        <li>fuck you</li>
+      <li>abcx̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̕̕̕̕̕̕̕̕</li>
 
-        <li>abcx̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̕̕̕̕̕̕̕̕</li>
+      <li>x̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̕̕̕̕̕̕̕̕</li>
 
-        <li>x̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̕̕̕̕̕̕̕̕</li>
+      <li>x̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̕̕̕̕̕̕̕̕</li>
 
-        <li>x̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̀́̂̃̄̅̆̇̈̉̐̕̕̕̕̕̕̕̕</li>
+      <li>ẹ̱́̇</li>
 
-        <li>ẹ̱́̇</li>
+      <li>x̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̕</li>
 
-        <li>x̀́̂̃̄̅̆̇̈̉̐̑̒̓̔̕</li>
+      <li>ṣ̄̂̌̈</li>
 
-        <li>ṣ̄̂̌̈</li>
+      <li>مرحبا، كيف الحال؟</li>
 
-        <li>مرحبا، كيف الحال؟</li>
+      <li>ABC 123 אבג 456</li>
 
-        <li>ABC 123 אבג 456</li>
+      <li>this is the way</li>
 
-        <li>this is the way</li>
+      <li>gaaaaaaaaaaaaaaaaaaaaaaaah</li>
 
-        <li>gaaaaaaaaaaaaaaaaaaaaaaaah</li>
+      <li>SESW</li>
 
-        <li>SESW</li>
+      <li>Baconator</li>
 
-        <li>Baconator</li>
+      <li>My soul is a compass</li>
 
-        <li>My soul is a compass</li>
+      <li>Who goes where?</li>
 
-        <li>Who goes where?</li>
+      <li>Bhhh</li>
 
-        <li>Bhhh</li>
+      <li>í̴̜́̈́̽͑̈́̿͂̏̈̐̓̈́̚͝͝͠ ̸̧̡̛̙̺͋̔̓̋͆͗̆͋̒̂̌͆̏̈́̒̊͋̉̅́̌͘͘͝͠͝͝ẅ̵̧̠̠̯̖̻̖̮̹̮̲̹̰̹̲̘͉̜̟̪̥̯̝̀̓̾̉͊̾̈̀̉͛̅͐̅͌̋̇̎̚̚̚͜͝͝â̷̡̨̨̪͙̯̦̩̮͓̯͖͚̄́͗́̇̏̏̍̑̉̿͐̎̕͠ŝ̴̇͗͝</li>
 
-        <li>í̴̜́̈́̽͑̈́̿͂̏̈̐̓̈́̚͝͝͠ ̸̧̡̛̙̺͋̔̓̋͆͗̆͋̒̂̌͆̏̈́̒̊͋̉̅́̌͘͘͝͠͝͝ẅ̵̧̠̠̯̖̻̖̮̹̮̲̹̰̹̲̘͉̜̟̪̥̯̝̀̓̾̉͊̾̈̀̉͛̅͐̅͌̋̇̎̚̚̚͜͝͝â̷̡̨̨̪͙̯̦̩̮͓̯͖͚̄́͗́̇̏̏̍̑̉̿͐̎̕͠ŝ̴̇͗͝</li>
+      <li>shes got a ggggggreat ass! and you got yo head.. (disco drums) you got yo head... (chica chica bow). ALL. THE. WAY. UPup up up up up up</li>
 
-        <li>shes got a ggggggreat ass! and you got yo head.. (disco drums) you got yo head... (chica chica bow). ALL. THE. WAY. UPup up up up up up</li>
+      <li>I eat ass</li>
 
-        <li>I eat ass</li>
+      <li>⠀⡀⠀⠀⠀⠀⢣⠀⠀⢷⠀⠀⢣⠀⠀⠻⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⢀⡟⢦⡽⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⠁⠀⠀⠀⠀⢸⠀⠀⢸⡄⠀⠈⢇⠀⠀⠈⠿⣿⡿⣷⣄⠀⠀⢀⣀⡠⠤⠤⠤⠤⡤⢴⡟⠓⠀⠀⠀⠀⣷⣾⡆⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⡇⠀⢤⠼⠀⣃⠉⠂⢨⣧⡥⠟⢒⠉⠁⠀⠀⠀⠀⠀⠀⠈⠢⡄⠤⡄⠀⠀</li>
 
-        <li>⠀⡀⠀⠀⠀⠀⢣⠀⠀⢷⠀⠀⢣⠀⠀⠻⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⢀⡟⢦⡽⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⠁⠀⠀⠀⠀⢸⠀⠀⢸⡄⠀⠈⢇⠀⠀⠈⠿⣿⡿⣷⣄⠀⠀⢀⣀⡠⠤⠤⠤⠤⡤⢴⡟⠓⠀⠀⠀⠀⣷⣾⡆⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⡇⠀⢤⠼⠀⣃⠉⠂⢨⣧⡥⠟⢒⠉⠁⠀⠀⠀⠀⠀⠀⠈⠢⡄⠤⡄⠀⠀</li>
+      <li>El caramelo</li>
 
-        <li>El caramelo</li>
+      <li>Cryptic writings</li>
 
-        <li>Cryptic writings</li>
+      <li>Shit</li>
 
-        <li>Shit</li>
+      <li>bro</li>
 
-        <li>bro</li>
+      <li>SESW</li>
 
-        <li>SESW</li>
+      <li>Hehehehehehehe</li>
 
-        <li>Hehehehehehehe</li>
-
-    </ul>
-
+  </ul>
 </div>
 </div>
 
-      <footer class="archive-footer">
-        <p>The HTML Maze was built in July 2025 and frozen on 20 July 2026.</p>
-        <p>by <a href="https://kyrylo.org">kyrylo</a> ~ <a href="https://x.com/kyrylo">x</a> &middot; <a href="https://bsky.app/profile/kyrylo.org">bsky</a> &middot; <a href="https://mastodon.social/@kyrylosilin">mastodon</a></p>
-      </footer>
+
     </main>
   </body>
 </html>
