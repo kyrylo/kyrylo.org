@@ -10,6 +10,9 @@ description: What I've worked on and either finished or abandoned.
 
   <ul>
     <li>
+      <a href="/htmlmaze/">The HTML Maze</a>: A shared, anonymous web experiment with 500 generated rooms, preserved as a read-only static archive after the Rails server was retired in July 2026.
+    </li>
+    <li>
       <a href="https://github.com/kyrylo/ablaze-theme-vscode">Ablaze:</a> A minimalist color theme for Visual Studio Code that burns softly.
     </li>
     <li>

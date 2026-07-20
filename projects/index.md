@@ -57,9 +57,9 @@ description: My projects, doodles, vibe-coded experiments.
       A collection of all the best Just Fucking Use sites.
     </dd>
 
-    <dt><a href="https://htmlmaze.com">The HTML Maze</a></dt>
+    <dt><a href="/htmlmaze/">The HTML Maze</a></dt>
     <dd>
-      Explore the HTML maze, leave drawings and messages, and find your way out. A playful, interactive web experiment.
+      A frozen interactive web experiment: explore 500 rooms, read the messages left behind, draw locally, and find your way out.
     </dd>
 
     <dt><a href="/tech-debt/">Tech Debt</a></dt>
