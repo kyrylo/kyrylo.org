@@ -1,4 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-14T00:17:46+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">I built Flag Click</title><link href="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html" rel="alternate" type="text/html" title="I built Flag Click" /><published>2026-07-07T00:00:00+08:00</published><updated>2026-07-07T10:07:01+08:00</updated><id>https://kyrylo.org/projects/2026/07/07/i-built-flag-click</id><content type="html" xml:base="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html"><![CDATA[<p>I built a small web game called <a href="https://flagclick.com">Flag Click</a>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-22T10:08:14+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">Programming experience is no longer a moat</title><link href="https://kyrylo.org/software/2026/07/22/programming-experience-is-no-longer-a-moat.html" rel="alternate" type="text/html" title="Programming experience is no longer a moat" /><published>2026-07-22T00:00:00+08:00</published><updated>2026-07-22T10:08:02+08:00</updated><id>https://kyrylo.org/software/2026/07/22/programming-experience-is-no-longer-a-moat</id><content type="html" xml:base="https://kyrylo.org/software/2026/07/22/programming-experience-is-no-longer-a-moat.html"><![CDATA[<p>I have a Computer Science degree. I’ve been writing code for more than 15
+years. I’ve written software in more than eight programming languages, read
+countless programming books, and used to do code golf for fun.</p>
+
+<p>Yet in 2026, it feels like I no longer have much of an advantage over someone
+who only learned React.</p>
+
+<p>I <a href="https://x.com/kyrylo/status/2079585326482526389">posted this on X</a>
+and asked a simple question: if AI has compressed years of accumulated
+knowledge into something anyone can access, what should experienced programmers
+focus on now? What becomes the new moat?</p>
+
+<p>Some people read it as a confession rather than a question.</p>
+
+<p>One person, who has been programming since the 1970s,
+<a href="https://x.com/perrymetzger/status/2079714793120833922">replied</a>:
+“Wow, what an admission.”</p>
+
+<p>Another <a href="https://x.com/J_Von_Random/status/2079711656263684514">said</a>
+that perhaps I had been a competent code-slinger but had never learned the
+important architecture and engineering skills.</p>
+
+<p>The implication was that if AI makes you question the value of your experience,
+the only possible explanation is that you never had any. That may be a
+comforting answer, but I don’t think it is the correct one.</p>
+
+<h2 id="experience-still-matters">Experience still matters</h2>
+
+<p>I have written before that
+<a href="/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html">AI amplifies programmers rather than replacing them</a>.
+I still believe that.</p>
+
+<p>Give an incompetent programmer a powerful model and they may produce middling
+crap. Give a competent programmer the same model and they can produce excellent
+work faster than ever. One of the replies made exactly
+<a href="https://x.com/J_Von_Random/status/2079725129597141486">this point</a>,
+and I agree with it.</p>
+
+<p>Experience helps you notice when generated code is subtly wrong. It helps you
+ask better questions, reject bad abstractions, understand trade-offs, and know
+when the green tests are lying to you. A beginner sees working code. An
+experienced programmer sees the maintenance bill hiding behind it.</p>
+
+<p>That is true, but it still wasn’t the point I was making.</p>
+
+<p>My point is that the distance between incompetence and competence has become
+much shorter.</p>
+
+<p>AI does not need to make a beginner equal to an expert to change the economics
+of programming. It only needs to help the beginner catch up faster than before,
+which is already happening.</p>
+
+<h2 id="the-ladder-got-shorter">The ladder got shorter</h2>
+
+<p>When I started programming, knowledge was expensive.</p>
+
+<p>You had to read the book, learn the vocabulary, fight with the compiler, search
+through forum posts, misunderstand the documentation, break the program, and
+then spend hours figuring out why. A lot of what we call experience is simply
+the scar tissue left by repeating this process for years.</p>
+
+<p>Today, a beginner can paste an error into an LLM and get an explanation in
+seconds. They can ask for three possible solutions, request a comparison, and
+then ask the model to implement the best one. They still need enough knowledge
+to judge the result, but the amount they must learn before becoming productive
+has collapsed.</p>
+
+<p>The expert still starts further ahead, but the beginner no longer has to walk
+the whole road to get somewhere useful.</p>
+
+<p>That is what I mean by compression. AI has not deleted the difference between a
+junior and a senior programmer. It has compressed it.</p>
+
+<h2 id="the-manual-is-no-longer-the-bottleneck">The manual is no longer the bottleneck</h2>
+
+<p>The most interesting reply came from the programmer who disagreed with me. He
+<a href="https://x.com/perrymetzger/status/2079721096006316257">said</a> LLMs are
+already excellent at systems programming. He routinely gets complicated
+compiler tooling from them in one shot, and has had them nearly produce hardware
+simulators from a manual in one shot too.</p>
+
+<p>To me, however, this is evidence for my argument rather than against it.</p>
+
+<p>The machine consumed the manual and produced the result. Now imagine that you
+need to learn ten manuals. Would you spend months absorbing all of them before
+starting, or would you use the machine sitting next to you? I know which option
+I would choose.</p>
+
+<p>He later <a href="https://x.com/perrymetzger/status/2079729662318584218">compared</a>
+programming by hand to learning arithmetic before using a calculator, solving
+integrals before using Mathematica, and operating manual machine tools before
+using CNC. I agree with that too. Learning the fundamentals gives you a mental
+model that the tool cannot install with a single prompt.</p>
+
+<p>Children should still learn arithmetic, of course, but doing long
+multiplication by hand is no longer a moat.</p>
+
+<p>Knowing assembly language can make you a better programmer, but it does not
+mean you should manually translate every program into machine code. The
+compiler moved that work into a tool, and AI is doing something similar one
+level higher.</p>
+
+<p>The knowledge still matters, but the market stops rewarding you merely for
+having acquired it the hard way.</p>
+
+<h2 id="programming-is-becoming-a-commodity">Programming is becoming a commodity</h2>
+
+<p>This is the uncomfortable part of the discussion, because programming has been
+such an important part of how many of us see ourselves.</p>
+
+<p>Typing the same ten things by hand feels mundane when you know a machine can do
+them faster. You already proved to yourself that you can write the code. Doing
+it again is like reaching for a regular screwdriver when an electric one is
+sitting next to it.</p>
+
+<p>You can admire the craftsmanship of the regular screwdriver. You can practice
+with it to keep your hands sharp. But don’t confuse that practice with a
+competitive advantage.</p>
+
+<p>AI has made code cheaper because, as the models improve and absorb more public
+code, documentation, books, and examples, more programming knowledge becomes
+available on demand. As a result, the bottleneck moves away from remembering
+how to produce the code.</p>
+
+<p>Whether LLMs <a href="https://x.com/perrymetzger/status/2079724698452066645">“truly
+think”</a> is an
+interesting philosophical argument, but it doesn’t change the practical result.
+If a machine can produce the compiler tooling, debug the system, and ship the
+feature, the market will care about the result more than the internal mechanism
+that produced it.</p>
+
+<p>We will probably live through a turbulent period with mountains of bad
+AI-generated software. Vibe coders will ship security holes, broken
+abstractions, and dependency piles that nobody understands. The market will
+slowly correct for it, though, because users still expect software to work.</p>
+
+<p>Bad output from beginners does not preserve the old moat, though. It simply
+shows that better tools have not eliminated the need for judgment.</p>
+
+<h2 id="so-what-is-the-new-moat">So what is the new moat?</h2>
+
+<p>I don’t think the new moat will be syntax, framework trivia, or remembering an
+API that the model can look up in a second. It will be everything around the
+code: knowing which problem is worth solving, understanding the users and the
+domain, and turning messy requirements into precise decisions.</p>
+
+<p>It will also involve having enough taste to prefer a simple system over an
+impressive mess, recognizing when the AI is confidently wrong, and being
+willing to own the result after the prompt is finished.</p>
+
+<p>Most of this was always part of good software engineering. The difference is
+that it is becoming the job, rather than the layer of thinking around the job.</p>
+
+<p>Experienced programmers should use AI aggressively. We should also keep our
+fundamentals sharp, because without them we cannot judge what the machine gives
+us. But we should stop treating the difficulty of our education as permanent
+protection from newcomers, because it no longer provides that kind of
+protection.</p>
+
+<p>AI did not make my 15 years of experience worthless, but it did make a large
+part of that experience easier for other people to borrow.</p>
+
+<p>That experience still gives me an advantage, but it no longer feels like the
+protective moat it once was. As code becomes cheaper to produce, the judgment
+behind it becomes more important, and that is where I think experienced
+programmers should focus.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[I have a Computer Science degree. I’ve been writing code for more than 15 years. I’ve written software in more than eight programming languages, read countless programming books, and used to do code golf for fun.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">I built Flag Click</title><link href="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html" rel="alternate" type="text/html" title="I built Flag Click" /><published>2026-07-07T00:00:00+08:00</published><updated>2026-07-07T10:07:01+08:00</updated><id>https://kyrylo.org/projects/2026/07/07/i-built-flag-click</id><content type="html" xml:base="https://kyrylo.org/projects/2026/07/07/i-built-flag-click.html"><![CDATA[<p>I built a small web game called <a href="https://flagclick.com">Flag Click</a>.</p>
 
 <p>The idea is almost embarrassingly simple: you click your country flag, your flag
 climbs up the pole, and you try to overtake everyone else. That’s the whole
@@ -706,123 +871,4 @@ submissions. It’s a free directory of Ruby on Rails web apps. Released under
 AGPL-3.0, it ensures that it’s truly open source.</p>
 
 <p>This is <a href="https://github.com/kyrylo/weuserails.com">my humble contribution</a> to
-the ecosystem. Enjoy!</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[If you’ve ever worked with Ruby, chances are you’ve used my code. I started my programming journey by contributing to open source. Helping others and building software has been my passion from day one. In recent years, I paused publishing my own projects to focus on commercial software. But I’ve dearly missed the hacker spirit of open source.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">English is a poor language for programming with AI</title><link href="https://kyrylo.org/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html" rel="alternate" type="text/html" title="English is a poor language for programming with AI" /><published>2025-12-14T00:00:00+08:00</published><updated>2025-12-15T06:32:57+08:00</updated><id>https://kyrylo.org/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai</id><content type="html" xml:base="https://kyrylo.org/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html"><![CDATA[<p>English and natural language in general is a bad interface for programming with
-AI. Not because it is “imperfect”. But because it was never designed for
-precision.</p>
-
-<p>Natural languages evolved for persuasion, storytelling, negotiation, and
-survival in small tribes. They are optimized for social flexibility and rapid
-communication, not exact meaning. That is why they keep failing us when we try
-to use them as the primary interface for machines.</p>
-
-<p>The language is full of hidden landmines: ambiguity, implied context, emotional
-framing, and undefined terms. Humans constantly misinterpret each other (even
-after thousands of years of practice).</p>
-
-<p>The existence of lawyers is not an accident. It is evidence.</p>
-
-<p>If natural language were precise, contracts would not need to be hundreds of
-pages long. Courts would not exist to interpret intent. Disputes would not hinge
-on what someone “meant”.</p>
-
-<p>Now we take this same fuzzy medium and say: “Hey AI, do exactly what I mean”.</p>
-
-<p>That is not engineering. That is wishful thinking.</p>
-
-<h2 id="examples-of-the-problem">Examples of the problem</h2>
-
-<ul>
-  <li>
-    <p><em>“Make it faster”.</em><br />
-Faster how? CPU? Latency? Cost? Perception?</p>
-  </li>
-  <li>
-    <p><em>“Use a lightweight solution”.</em><br />
-Lightweight in memory? Dependencies? Code size?</p>
-  </li>
-  <li>
-    <p><em>“Notify me when it is ready”.</em><br />
-Ready by whose definition?</p>
-  </li>
-</ul>
-
-<p>Humans fill these gaps with intuition and shared context.<br />
-Machines cannot reliably do that. And arguably should not be expected to.</p>
-
-<h2 id="real-world-consequences">Real-world consequences</h2>
-
-<p>2025 research drives the point home. Veracode analyzed code from over 100 LLMs
-and found that 45% of samples introduced OWASP Top 10 vulnerabilities (see
-<a href="https://www.veracode.com/resources/analyst-reports/2025-genai-code-security-report">2025 GenAI Code Security Report</a>).
-A Cloud Security Alliance study
-<a href="https://cloudsecurityalliance.org/blog/2025/07/09/understanding-security-risks-in-ai-generated-code">reported</a>
-that 62% of AI-generated code contains design flaws or known security
-vulnerabilities (even with the latest models).</p>
-
-<p>Prompts rarely specify security constraints, error handling, input validation,
-or performance bounds. The model guesses. And often guesses wrong.</p>
-
-<p>To be fair, natural language prompting has been a breakthrough. It has
-democratized AI, enabling non-programmers to build complex applications quickly
-and opened up rapid prototyping in ways that traditional coding never could.
-Modern LLMs are remarkably good at resolving ambiguity using conversation
-history, context, and probabilistic reasoning. Often better than early skeptics
-predicted (see <a href="https://arxiv.org/html/2411.12395v1">research</a>).</p>
-
-<p>Yet these successes are still papering over a fundamental mismatch. Prompt
-engineering helps, but it remains an imprecise art, not a science. When outputs
-go wrong, we still end up blaming the model for “misunderstanding” us. Rather
-than recognizing the root issue. We are asking it to read our minds in a
-language built for nuance, not specification.</p>
-
-<p>Jacque Fresco, futurist and founder of the Venus Project, repeatedly argued that
-natural language is fundamentally inadequate for operating rational, technical
-systems. In his lecture
-<a href="https://www.youtube.com/watch?v=ENFMAxol4-Y">“The Inadequacy of Language” (1975)</a>,
-he emphasized that words are ambiguous, emotionally charged, and dependent on
-personal interpretation. And that truly rational systems must rely on
-measurable, objective, and instrument-based forms of communication rather than
-symbolic abstraction.</p>
-
-<p>Natural language is symbolic and expressive, not scientific.
-It describes impressions and intentions, not verifiable constraints.</p>
-
-<p>Words like “optimize”, “secure”, “simple”, “important”, and “critical” feel
-meaningful. But they carry zero measurable content unless explicitly defined.</p>
-
-<p>When we instruct AI in natural language, we are translating fuzziness into code
-and hoping it collapses into correctness.</p>
-
-<p>Sometimes it does.<br />
-Often it does not.</p>
-
-<p>The future is not just “better prompt engineering”.<br />
-It is better interfaces. Ones built on.</p>
-
-<p>Explicit constraints instead of vague adjectives.
-Measurable objectives instead of implied intentions.
-Formal definitions instead of metaphors.</p>
-
-<p>We are already seeing promising steps in this direction. Structured prompts
-using JSON schemas or YAML, formal specification tools like
-<a href="https://lamport.azurewebsites.net/tla/tla.html">TLA+</a>
-or
-<a href="https://alloytools.org/">Alloy</a>,
-visual programming environments, and agentic tools like Cursor or Replit Agent
-that let users define goals with clearer boundaries and iterative feedback
-loops.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Natural language can and should remain a conversational layer.</p>
-
-<p>A high-level UI.
-A convenience for exploration and ideation.</p>
-
-<p>But it should never be the source of truth for critical instructions.</p>
-
-<p>You do not build a bridge using poetry.<br />
-You do not govern machines using vibes.</p>
-
-<p>And expecting AI to reliably interpret natural language as precise code
-is like expecting a compiler to understand sarcasm.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[English and natural language in general is a bad interface for programming with AI. Not because it is “imperfect”. But because it was never designed for precision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+the ecosystem. Enjoy!</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[If you’ve ever worked with Ruby, chances are you’ve used my code. I started my programming journey by contributing to open source. Helping others and building software has been my passion from day one. In recent years, I paused publishing my own projects to focus on commercial software. But I’ve dearly missed the hacker spirit of open source.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
