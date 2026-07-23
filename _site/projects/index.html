@@ -22,7 +22,7 @@
 <meta name="twitter:site" content="@kyrylosilin" />
 <meta name="twitter:creator" content="@Kyrylo Silin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-07-14T00:17:49+08:00","description":"My projects, doodles, vibe-coded experiments.","headline":"What I’m Working On","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=1","url":"https://kyrylo.org/projects/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-07-23T20:57:50+08:00","description":"My projects, doodles, vibe-coded experiments.","headline":"What I’m Working On","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=1","url":"https://kyrylo.org/projects/"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=1" sizes="96x96" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico?v=1" />
@@ -125,7 +125,7 @@
     }
 
     .profile-photo {
-      width: clamp(120px, 120px + 4vw, 180px);
+      width: 6em;
       height: auto;
     }
 
@@ -159,14 +159,18 @@
 </head>
 <body>
     <main>
-      <a href="/">
-  <picture>
-    <source srcset="/assets/images/kyrylo-silin@2x.webp?v=1 2x, /assets/images/kyrylo-silin.webp?v=1 1x" type="image/webp">
-    <img src="/assets/images/kyrylo-silin.webp?v=1" alt="Kyrylo Silin's photo" width="48" height="48" loading="eager" style="float: left; margin: 0 1rem 1rem 0;">
-  </picture>
-</a>
-
-<h1>Kyrylo Silin</h1>
+      <header style="display:flex;align-items:center;gap:1em;margin-bottom:1em">
+  <a href="/">
+    <picture>
+      <source srcset="/assets/images/kyrylo-silin@2x.webp?v=1 2x, /assets/images/kyrylo-silin.webp?v=1 1x" type="image/webp">
+      <img class="profile-photo" src="/assets/images/kyrylo-silin.webp?v=1" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager">
+    </picture>
+  </a>
+  <div>
+    <h1 style="margin:0;line-height:1">Kyrylo Silin</h1>
+    <code style="font-size:.6em">simple ≠ dumbed-down<br>simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
+  </div>
+</header>
 
 <nav>
   <a href="/">About</a>
@@ -185,12 +189,6 @@
     <dt><a href="https://telebugs.com">Telebugs</a></dt>
     <dd>
       Self-hosted Sentry alternative for error tracking. Track errors in your apps, get notified, fix bugs faster. (<a href="https://github.com/telebugs/docs.telebugs.com">docs on github</a>)
-    </dd>
-
-    <dt><a href="https://telesink.com">Telesink</a></dt>
-    <dd>
-      Real-time event stream for developers. Know what your product is doing. Right now.
-      (<a href="https://github.com/telesink/">github</a>)
     </dd>
 
     <dt><a href="https://justfuckingusehtml.com">Just Fucking Use HTML</a></dt>
@@ -309,7 +307,7 @@
       |
       <a href="https://github.com/kyrylo/kyrylo.org">GitHub</a> (CC BY-NC-SA 4.0)
     </p>
-    <p>Last modified: <time datetime="2026-07-14T00:17:49+08:00">July 14, 2026</time></p>
+    <p>Last modified: <time datetime="2026-07-23T20:57:50+08:00">July 23, 2026</time></p>
   </small>
 </footer>
 </body>
