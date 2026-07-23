@@ -3,14 +3,18 @@ layout: base
 image: assets/images/web-app-manifest-512x512.png?v=1
 ---
 
-<a href="/">
-  <picture>
-    <source srcset="/assets/images/kyrylo-silin@2x.webp?v=1 2x, /assets/images/kyrylo-silin.webp?v=1 1x" type="image/webp">
-    <img src="/assets/images/kyrylo-silin.webp?v=1" alt="Kyrylo Silin's photo" width="48" height="48" loading="eager" style="float: left; margin: 0 1rem 1rem 0;">
-  </picture>
-</a>
-
-<h1>Kyrylo Silin</h1>
+<header style="display:flex;align-items:center;gap:1em;margin-bottom:1em">
+  <a href="/">
+    <picture>
+      <source srcset="/assets/images/kyrylo-silin@2x.webp?v=1 2x, /assets/images/kyrylo-silin.webp?v=1 1x" type="image/webp">
+      <img class="profile-photo" src="/assets/images/kyrylo-silin.webp?v=1" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager">
+    </picture>
+  </a>
+  <div>
+    <h1 style="margin:0;line-height:1">Kyrylo Silin</h1>
+    <code style="font-size:.6em">simple ≠ dumbed-down<br>simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
+  </div>
+</header>
 
 <nav>
   <a href="/">About</a>

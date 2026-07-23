@@ -16,12 +16,6 @@ description: My projects, doodles, vibe-coded experiments.
       Self-hosted Sentry alternative for error tracking. Track errors in your apps, get notified, fix bugs faster. (<a href="https://github.com/telebugs/docs.telebugs.com">docs on github</a>)
     </dd>
 
-    <dt><a href="https://telesink.com">Telesink</a></dt>
-    <dd>
-      Real-time event stream for developers. Know what your product is doing. Right now.
-      (<a href="https://github.com/telesink/">github</a>)
-    </dd>
-
     <dt><a href="https://justfuckingusehtml.com">Just Fucking Use HTML</a></dt>
     <dd>
       My take on complexity in modern web development.

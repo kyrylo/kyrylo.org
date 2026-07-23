@@ -7,26 +7,14 @@ image: assets/images/web-app-manifest-512x512.png?v=1
 <section>
   <h2>About</h2>
   <p>
-    Software engineer, web developer, and entrepreneur.<br>
+    I build serious software and unserious websites.<br>
     Originally from Kharkiv, Ukraine 🇺🇦<br>
     Currently living in Cebu, Philippines 🇵🇭
   </p>
 
-  <pre>simple ≠ dumbed-down
-simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</pre>
-
   <p>
-    I work on:
+    I work on <a href="https://telebugs.com">Telebugs</a>, a self-hosted Sentry alternative for error tracking.
   </p>
-
-  <ul>
-    <li>
-      <a href="https://telebugs.com">Telebugs</a> — Self-hosted Sentry alternative for error tracking
-    </li>
-    <li>
-      <a href="https://telesink.com">Telesink</a> — Real-time product and business event monitoring
-    </li>
-  </ul>
 
   <p>
     Get in touch:
