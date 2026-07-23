@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-23T11:04:46+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">The hard way has changed</title><link href="https://kyrylo.org/software/2026/07/23/the-hard-way-has-changed.html" rel="alternate" type="text/html" title="The hard way has changed" /><published>2026-07-23T00:00:00+08:00</published><updated>2026-07-23T11:04:40+08:00</updated><id>https://kyrylo.org/software/2026/07/23/the-hard-way-has-changed</id><content type="html" xml:base="https://kyrylo.org/software/2026/07/23/the-hard-way-has-changed.html"><![CDATA[<p>After I wrote that <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">programming experience is no longer a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-23T19:19:53+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>Software engineer, web developer, entrepreneur</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">AI will not stop at simple work</title><link href="https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work.html" rel="alternate" type="text/html" title="AI will not stop at simple work" /><published>2026-07-23T19:17:27+08:00</published><updated>2026-07-23T19:19:48+08:00</updated><id>https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work</id><content type="html" xml:base="https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work.html"><![CDATA[<p>After I wrote that <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">programming experience is no longer a
+moat</a>,
+one reply kept appearing.</p>
+
+<p>AI can write simple code, people said, but when the system becomes complicated,
+you still need an experienced human.</p>
+
+<p>This is a reasonable objection.</p>
+
+<p>It also feels true today.</p>
+
+<p>Ask a model to build a small application and it moves quickly. Ask it to change
+billing rules across a ten-year-old system and it may wander into the woods. A
+human has to pull it back.</p>
+
+<p>The mistake is treating that boundary as permanent.</p>
+
+<p>The models that struggled with a complete feature last year can now explore a
+codebase, change several files, run tests, notice failures, and try again. They
+still get lost, but the forest keeps getting larger.</p>
+
+<p>The replies focused on where the boundary is today. I was more interested in
+where it is moving.</p>
+
+<p>A complicated system is not complicated in one giant way. It is usually a pile
+of smaller decisions held together by constraints.</p>
+
+<p>The payment must be retried, but never twice at the same time. Old customers
+keep their original price. The migration must work without downtime. Failed
+jobs must be safe to run again. This strange database column cannot be removed
+because a forgotten report still uses it.</p>
+
+<p>An experienced programmer carries much of this context in their head.</p>
+
+<p>The model does not.</p>
+
+<p>Give it a vague request and it fills the gaps with guesses. Give it the intended
+behaviour, the constraints, the edge cases, the relevant code, and a way to test
+the result, and something different happens.</p>
+
+<p>It breaks the work down. It proposes a plan. It changes the code, runs the
+tests, reads the failures, and adjusts.</p>
+
+<p>It will still make mistakes. Sometimes serious ones. I am not claiming that AI
+can already redesign every complicated system perfectly.</p>
+
+<p>I am saying that it is moving into complicated work faster than many
+programmers are updating their idea of what complicated means.</p>
+
+<p>That shifts the bottleneck.</p>
+
+<p>The difficult part becomes less about whether the machine can produce the code.
+It becomes whether the human can explain what correct means.</p>
+
+<p>That is not a small task.</p>
+
+<p>Writing a good specification requires understanding the system, finding the
+hidden constraints, resolving contradictions, and choosing trade-offs. Then
+someone still has to review the result and take responsibility for it.</p>
+
+<p>The human remains, but the work changes.</p>
+
+<p>More of it becomes specification, judgment, verification, and ownership.</p>
+
+<p>If you cannot describe the constraints, the model will invent them for you. If
+you can, you still have to check the result and put your name on it.</p>
+
+<p>That is the part experienced programmers should be practising now.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="software" /><summary type="html"><![CDATA[After I wrote that programming experience is no longer a moat, one reply kept appearing.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The hard way has changed</title><link href="https://kyrylo.org/software/2026/07/23/the-hard-way-has-changed.html" rel="alternate" type="text/html" title="The hard way has changed" /><published>2026-07-23T00:00:00+08:00</published><updated>2026-07-23T11:07:50+08:00</updated><id>https://kyrylo.org/software/2026/07/23/the-hard-way-has-changed</id><content type="html" xml:base="https://kyrylo.org/software/2026/07/23/the-hard-way-has-changed.html"><![CDATA[<p>After I wrote that <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">programming experience is no longer a
 moat</a>,
 many people told me that experience was still the real moat.</p>
 
@@ -667,299 +734,4 @@ for months). I don’t have all the answers or solutions yet, and honestly it’
 scary because there are a lot of unknowns, but I’m ready to start.</p>
 
 <p>I’ll be building this in public. <a href="https://x.com/kyrylo">Follow along</a>! I’m looking forward to
-having you with me.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I’m a forward-thinking person. Instead of looking back, I prefer to look forward. Looking back means celebrating successes, mourning failures, or maybe even learning from mistakes. Besides, I have a bad memory these days because LLMs do all the thinking for me. So why not just look ahead and anticipate? Anticipation is what drives us forward.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to self-host Bearlytics with Kamal</title><link href="https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html" rel="alternate" type="text/html" title="How to self-host Bearlytics with Kamal" /><published>2025-12-22T00:00:00+08:00</published><updated>2025-12-22T19:25:39+08:00</updated><id>https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal</id><content type="html" xml:base="https://kyrylo.org/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html"><![CDATA[<p>In this article, I’ll guide you through the process of self-hosting
-<a href="https://github.com/HermanMartinus/bearlytics">Bearlytics</a> with Kamal. It’s a
-bare-bones alternative to Google Analytics (and even Plausible Analytics - see my
-<a href="/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html">installation guide with Kamal</a>).</p>
-
-<p>I saw it online and immediately knew it was my kind of jam:</p>
-
-<ul>
-  <li>low memory footprint</li>
-  <li>runs on SQLite</li>
-  <li>simple to use and maintain</li>
-  <li>lightweight tracking script</li>
-</ul>
-
-<p>It’s designed to be self-hosted, and I love simple self-hosted products (I
-<a href="https://telebugs.com">develop them myself</a>).</p>
-
-<p>I come from the Ruby ecosystem and prefer deploying with
-<a href="https://kamal-deploy.org/">Kamal</a>. Its configuration file looks almost identical
-to <code class="language-plaintext highlighter-rouge">docker-compose.yml</code>, which Bearlytics already ships with, so using Kamal felt
-like a natural fit.</p>
-
-<h2 id="requirements">Requirements</h2>
-
-<h3 id="hardware">Hardware</h3>
-
-<p>Bearlytics will run on virtually any VPS or hardware. My running container, with
-no traffic, consumes only <strong>56 MiB of RAM</strong>. Impressive!</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONTAINER ID   NAME                                                            CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O         PIDS
-0db0cbf3fba1   bearlytics-web-9a7059c5bfe6d403d8bf2de40eaf845956ce69ea         0.02%     55.87MiB / 7.57GiB   0.72%     269kB / 582kB     147kB / 13.8MB    3
-</code></pre></div></div>
-
-<p>Go to <a href="https://hetzner.com/cloud">Hetzner Cloud</a> and grab the cheapest plan
-(you’ll be totally fine).</p>
-
-<h3 id="subdomain">Subdomain</h3>
-
-<p>To self-host Bearlytics, you’ll need a subdomain, for example
-<code class="language-plaintext highlighter-rouge">analytics.example.com</code>.</p>
-
-<p>On Cloudflare, create an <code class="language-plaintext highlighter-rouge">A</code> record pointing to your server’s IP address. This
-will allow you to access Bearlytics at
-<code class="language-plaintext highlighter-rouge">https://analytics.example.com</code>.</p>
-
-<h2 id="step-by-step-guide">Step-by-step guide</h2>
-
-<p>To understand what we’ll be doing, let’s take a look at the
-<a href="https://github.com/HermanMartinus/bearlytics/blob/9a7059c5bfe6d403d8bf2de40eaf845956ce69ea/docker-compose.yaml">docker-compose.yaml</a>
-file from the repository and translate it into a Kamal configuration.</p>
-
-<p>Bearlytics has no external dependencies: it’s a single container. All we need
-to do is set a few environment variables and we’re good to go.</p>
-
-<h3 id="step-1-clone-the-bearlytics-repo">Step 1: Clone the Bearlytics repo</h3>
-
-<p>Start by cloning the repository:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--single-branch</span> https://github.com/HermanMartinus/bearlytics bearlytics
-<span class="nb">cd </span>bearlytics
-</code></pre></div></div>
-
-<h3 id="step-2-branch-out">Step 2: Branch out</h3>
-
-<p>We don’t want to accidentally push these changes upstream. We’ll be working with
-our own configuration values, and it’s unlikely the Bearlytics author would want
-this opinionated setup merged.</p>
-
-<p>Create a new Git branch:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">--b</span> kamal
-</code></pre></div></div>
-
-<h3 id="step-3-generate-kamal-configuration">Step 3: Generate Kamal configuration:</h3>
-
-<p>Install Kamal if you don’t already have it (via <a href="https://rubygems.org">RubyGems</a>):</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>kamal
-</code></pre></div></div>
-
-<p>Then generate the Kamal configuration:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kamal init
-</code></pre></div></div>
-
-<p>You should see output similar to this:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Created configuration file in config/deploy.yml
-Created .kamal/secrets file
-Created sample hooks in .kamal/hooks
-</code></pre></div></div>
-
-<p>We won’t need hooks, so delete that directory:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-rf</span> .kamal/hooks
-</code></pre></div></div>
-
-<h3 id="step-4-update-gitignore">Step 4: Update .gitignore</h3>
-
-<p>Next, add the generated files to <code class="language-plaintext highlighter-rouge">.gitignore</code> so we don’t accidentally leak
-secrets:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .gitignore
-!.kamal
-!.kamal/secrets
-!.config
-!config/deploy.yml
-</code></pre></div></div>
-
-<h3 id="step-5-setting-up-kamal-secrets">Step 5: Setting up Kamal secrets</h3>
-
-<p>Bearlytics requires several mandatory environment variables:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">SECRET_KEY</code>: Django secret key</li>
-  <li><code class="language-plaintext highlighter-rouge">SALT_SECRET</code>: Secret key used to hash PII</li>
-  <li><code class="language-plaintext highlighter-rouge">DEBUG</code>: Set to False in production</li>
-  <li><code class="language-plaintext highlighter-rouge">DB_PATH</code>: SQLite database location (default: <code class="language-plaintext highlighter-rouge">/app/db/db.sqlite3</code>)</li>
-  <li><code class="language-plaintext highlighter-rouge">ALLOWED_HOSTS</code>: Comma-separated list of allowed hosts</li>
-  <li><code class="language-plaintext highlighter-rouge">CSRF_TRUSTED_ORIGINS</code>: Comma-separated list of trusted origins</li>
-</ul>
-
-<p>We’ll define most of them in the <code class="language-plaintext highlighter-rouge">config/secrets</code> file generated by Kamal. It
-should look like this:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEBUG=$DEBUG
-SECRET_KEY=$SECRET_KEY
-SALT_SECRET=$SALT_SECRET
-DB_PATH=$DB_PATH
-CSRF_TRUSTED_ORIGINS=$CSRF_TRUSTED_ORIGINS
-</code></pre></div></div>
-
-<p>Now we need to populate these values from the environment. I’ll use a <code class="language-plaintext highlighter-rouge">.env</code>
-file and the <code class="language-plaintext highlighter-rouge">dotenv</code> Ruby gem (<code class="language-plaintext highlighter-rouge">gem install dotenv</code>). Kamal also supports
-several other approaches, which are covered in the
-<a href="https://kamal-deploy.org/docs/commands/secrets/">documentation</a>.</p>
-
-<ol>
-  <li>Generate <code class="language-plaintext highlighter-rouge">SECRET_KEY</code> and <code class="language-plaintext highlighter-rouge">SALT_SECRET</code> using any password generator.
-<code class="language-plaintext highlighter-rouge">openssl</code> works great.</li>
-  <li><code class="language-plaintext highlighter-rouge">DB_PATH</code> refers to the path <em>inside</em> the Bearlytics Docker container.</li>
-  <li><code class="language-plaintext highlighter-rouge">CSRF_TRUSTED_ORIGINS</code> should point to your installation URL.</li>
-</ol>
-
-<p>Here’s how <code class="language-plaintext highlighter-rouge">.env</code> will look like:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .env at the bearlytics root directory
-SECRET_KEY=$(openssl rand -base64 48)
-SALT_SECRET=$(openssl rand -base64 48)
-DB_PATH="/app/data/production.sqlite3"
-CSRF_TRUSTED_ORIGINS="https://analytics.example.com"
-</code></pre></div></div>
-
-<p>That’s it for secrets. Now we just need to tell Kamal where and how to deploy the
-app.</p>
-
-<h3 id="step-6-update-kamal-configuration">Step 6: Update Kamal configuration</h3>
-
-<p>We’re almost there. Let’s update the Kamal configuration file. I’ll walk you
-through the important sections and then provide the full config at the end.</p>
-
-<p>First, set the service name and image:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">service</span><span class="pi">:</span> <span class="s">bearlytics</span>
-<span class="na">image</span><span class="pi">:</span> <span class="s">bearlytics</span>
-</code></pre></div></div>
-
-<p>Next, define the servers. We’ll use a single server named <code class="language-plaintext highlighter-rouge">web</code>:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">servers</span><span class="pi">:</span>
-  <span class="na">web</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">&lt;your-server-ip&gt;</span>
-</code></pre></div></div>
-
-<p>Now configure <a href="https://github.com/basecamp/kamal-proxy">kamal-proxy</a> to enable
-SSL. We’ll use the subdomain created earlier.</p>
-
-<p><strong>Important:</strong> Bearlytics runs on port <code class="language-plaintext highlighter-rouge">8000</code>, but kamal-proxy assumes port
-<code class="language-plaintext highlighter-rouge">3000</code> by default, so we need to override that.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">proxy</span><span class="pi">:</span>
-  <span class="na">ssl</span><span class="pi">:</span> <span class="kc">true</span>
-  <span class="na">host</span><span class="pi">:</span> <span class="s">analytics.example.com</span>
-  <span class="na">app_port</span><span class="pi">:</span> <span class="m">8000</span>
-  <span class="na">healthcheck</span><span class="pi">:</span>
-    <span class="na">path</span><span class="pi">:</span> <span class="s">/script.js</span>
-</code></pre></div></div>
-
-<p>We also define a health check that hits <code class="language-plaintext highlighter-rouge">/script.js</code>. By default, Kamal pings
-<code class="language-plaintext highlighter-rouge">/up</code>, which Bearlytics doesn’t implement. <code class="language-plaintext highlighter-rouge">/script.js</code> is guaranteed to exist
-because it’s the tracking script itself.</p>
-
-<p>Next, we’ll build the image locally and use Kamal’s <a href="https://kamal-deploy.org/docs/configuration/docker-registry/">local registry
-feature</a> so we
-don’t need to push anything to GHCR or Docker Hub:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">registry</span><span class="pi">:</span>
-  <span class="na">server</span><span class="pi">:</span> <span class="s">localhost:5555</span>
-</code></pre></div></div>
-
-<p>Wire up the environment variables:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">env</span><span class="pi">:</span>
-  <span class="na">clear</span><span class="pi">:</span>
-    <span class="na">DEBUG</span><span class="pi">:</span> <span class="kc">false</span>
-  <span class="na">secret</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">DB_PATH</span>
-    <span class="pi">-</span> <span class="s">SALT_SECRET</span>
-    <span class="pi">-</span> <span class="s">SECRET_KEY</span>
-    <span class="pi">-</span> <span class="s">CSRF_TRUSTED_ORIGINS</span>
-</code></pre></div></div>
-
-<p>Now mount a volume for the database so we get persistence and can make backups if
-needed:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">volumes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">/root/bearlytics-storage:/app/data"</span>
-</code></pre></div></div>
-
-<p>Create the directory on your VPS and adjust permissions:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> /root/bearlytics-storage
-<span class="nb">chown</span> <span class="nt">-R</span> 1000:1000 /root/bearlytics-storage
-</code></pre></div></div>
-
-<p>Finally, specify the build architecture:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">builder</span><span class="pi">:</span>
-  <span class="na">arch</span><span class="pi">:</span> <span class="s">amd64</span>
-</code></pre></div></div>
-
-<p>Here’s the full configuration for convenience:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">service</span><span class="pi">:</span> <span class="s">bearlytics</span>
-<span class="na">image</span><span class="pi">:</span> <span class="s">bearlytics</span>
-
-<span class="na">servers</span><span class="pi">:</span>
-  <span class="na">web</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">&lt;your-server-ip&gt;</span>
-
-<span class="na">proxy</span><span class="pi">:</span>
-  <span class="na">ssl</span><span class="pi">:</span> <span class="kc">true</span>
-  <span class="na">host</span><span class="pi">:</span> <span class="s">analytics.example.com</span>
-  <span class="na">app_port</span><span class="pi">:</span> <span class="m">8000</span>
-  <span class="na">healthcheck</span><span class="pi">:</span>
-    <span class="na">path</span><span class="pi">:</span> <span class="s">/script.js</span>
-
-<span class="na">registry</span><span class="pi">:</span>
-  <span class="na">server</span><span class="pi">:</span> <span class="s">localhost:5555</span>
-
-<span class="na">env</span><span class="pi">:</span>
-  <span class="na">clear</span><span class="pi">:</span>
-    <span class="na">DEBUG</span><span class="pi">:</span> <span class="kc">false</span>
-  <span class="na">secret</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">DB_PATH</span>
-    <span class="pi">-</span> <span class="s">SALT_SECRET</span>
-    <span class="pi">-</span> <span class="s">SECRET_KEY</span>
-    <span class="pi">-</span> <span class="s">CSRF_TRUSTED_ORIGINS</span>
-
-<span class="na">volumes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">/root/bearlytics-storage:/app/data"</span>
-
-<span class="na">builder</span><span class="pi">:</span>
-  <span class="na">arch</span><span class="pi">:</span> <span class="s">amd64</span>
-</code></pre></div></div>
-
-<p>To verify everything is wired correctly, run:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% kamal config
-</code></pre></div></div>
-
-<p>Wonderful! If everything looks good, commit your changes:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
-git commit <span class="nt">-m</span> <span class="s2">"Add Kamal configuration"</span>
-</code></pre></div></div>
-
-<h3 id="step-7-deploy-bearlytics">Step 7: Deploy Bearlytics</h3>
-
-<p>I deployed Bearlytics on a server that was already provisioned with Kamal. If
-you’re using a fresh server, you’ll probably want to run <code class="language-plaintext highlighter-rouge">kamal setup</code> first.</p>
-
-<p>In my case, the server was already running Kamal-managed containers, so I simply
-ran:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% dotenv kamal deploy
-</code></pre></div></div>
-
-<p>The deployment should take about a minute.</p>
-
-<p>Once it’s done, visit
-<code>https://analytics.example.com</code> and you should see the
-Bearlytics sign-up page.</p>
-
-<p>Congratulations, you’ve just self-hosted Bearlyrics with Kamal! I’m
-proud of you!</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="kamal" /><summary type="html"><![CDATA[In this article, I’ll guide you through the process of self-hosting Bearlytics with Kamal. It’s a bare-bones alternative to Google Analytics (and even Plausible Analytics - see my installation guide with Kamal).]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+having you with me.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I’m a forward-thinking person. Instead of looking back, I prefer to look forward. Looking back means celebrating successes, mourning failures, or maybe even learning from mistakes. Besides, I have a bad memory these days because LLMs do all the thinking for me. So why not just look ahead and anticipate? Anticipation is what drives us forward.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
