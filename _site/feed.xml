@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-24T00:17:41+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>I build serious software and unserious websites</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">AI will not stop at simple work</title><link href="https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work.html" rel="alternate" type="text/html" title="AI will not stop at simple work" /><published>2026-07-23T19:17:27+08:00</published><updated>2026-07-23T19:22:49+08:00</updated><id>https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work</id><content type="html" xml:base="https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work.html"><![CDATA[<p>After I wrote that <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">programming experience is no longer a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://kyrylo.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kyrylo.org/" rel="alternate" type="text/html" /><updated>2026-07-24T14:54:14+08:00</updated><id>https://kyrylo.org/feed.xml</id><title type="html">Kyrylo Silin</title><subtitle>I build serious software and unserious websites</subtitle><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><entry><title type="html">The favicon survived the web</title><link href="https://kyrylo.org/html/2026/07/24/the-favicon-survived-the-web.html" rel="alternate" type="text/html" title="The favicon survived the web" /><published>2026-07-24T00:00:00+08:00</published><updated>2026-07-24T14:52:51+08:00</updated><id>https://kyrylo.org/html/2026/07/24/the-favicon-survived-the-web</id><content type="html" xml:base="https://kyrylo.org/html/2026/07/24/the-favicon-survived-the-web.html"><![CDATA[<p>Most of us never look at a favicon.</p>
+
+<p>We look past it, the way we look past a house number we already know. It sits
+quietly in the corner of a browser tab, sixteen pixels or so, reminding us which
+tiny piece of the internet we are visiting.</p>
+
+<p>The favicon appeared in the late 1990s as a “favorite icon” for bookmarked
+websites. Even its name belongs to an older web.</p>
+
+<p>Since then, almost everything around it has changed.</p>
+
+<p>Pages became applications. Desktops gave way to phones. Tables became divs,
+Flash disappeared, servers floated into clouds, and browsers grew so many tabs
+that we can barely read their titles anymore.</p>
+
+<p>Through all of it, the favicon stayed.</p>
+
+<p>Its file format changed. It grew larger versions, sharper versions, touch icons,
+and manifests. But its purpose remained almost untouched: a small mark that
+says, <em>this page belongs to this place</em>.</p>
+
+<p>The web is a city that rebuilds itself overnight. Buildings rise, fashions
+spread, neighborhoods disappear, and yesterday’s landmarks become broken
+links. Yet the favicon is still there, a tiny house number nailed beside the
+door.</p>
+
+<p>Nobody celebrates it. Nobody announces the next generation of favicon. We only
+notice when one is missing and a browser shows us that empty, generic square.</p>
+
+<p>Maybe that is why it survived. It never tried to become more than it was.</p>
+
+<p>The web rushed toward whatever came next.</p>
+
+<p>The favicon stayed in the corner, keeping our place.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><category term="html" /><summary type="html"><![CDATA[Most of us never look at a favicon.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI will not stop at simple work</title><link href="https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work.html" rel="alternate" type="text/html" title="AI will not stop at simple work" /><published>2026-07-23T19:17:27+08:00</published><updated>2026-07-23T19:22:49+08:00</updated><id>https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work</id><content type="html" xml:base="https://kyrylo.org/software/2026/07/23/ai-will-not-stop-at-simple-work.html"><![CDATA[<p>After I wrote that <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">programming experience is no longer a
 moat</a>,
 one reply kept appearing.</p>
 
@@ -682,56 +715,4 @@ simple questions:</p>
 <p>This mental filter has dramatically reduced visual clutter and forced me to
 focus on actual communication rather than aesthetic habit.</p>
 
-<p>Less decoration, more communication.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I’ve been rethinking why we rely so heavily on icons in interfaces.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What 2026 yields (announcing Telesink)</title><link href="https://kyrylo.org/2026/01/01/what-2026-yields-announcing-telesink.html" rel="alternate" type="text/html" title="What 2026 yields (announcing Telesink)" /><published>2026-01-01T00:00:00+08:00</published><updated>2026-01-01T21:58:29+08:00</updated><id>https://kyrylo.org/2026/01/01/what-2026-yields-announcing-telesink</id><content type="html" xml:base="https://kyrylo.org/2026/01/01/what-2026-yields-announcing-telesink.html"><![CDATA[<p>I’m a forward-thinking person. Instead of looking back, I prefer to look
-forward. Looking back means celebrating successes, mourning failures,
-or maybe even learning from mistakes. Besides, I have a bad memory these days
-because LLMs do all the thinking for me. So why not just look ahead and anticipate?
-Anticipation is what drives us forward.</p>
-
-<p>2026 is going to be the best year for me since I <a href="/2023/11/08/embarking-on-an-indie-dev-journey.html">embarked on an indie
-dev journey</a>. I’ll keep building <a href="https://telebugs.com">Telebugs</a>, which has become quite
-mature by now. I’m not done with it (there are still a few big epics ahead),
-but overall, the product is rock solid.</p>
-
-<p>The thing I’m most excited about, though, is a little announcement…
-Since <a href="/software/2025/12/21/im-back-to-open-source.html">I’m back to open source</a>, I want to make 2026 the year of open source.</p>
-
-<h2 id="announcement">Announcement</h2>
-
-<p>Announcing <a href="https://telesink.com">Telesink</a>! Telesink will be an open-source, real-time
-event tracking tool that acts as an informational heartbeat for your business,
-so you can see what’s happening <em>right now</em>.</p>
-
-<p>You’ll be able to hook up your projects and watch live events like:</p>
-
-<ul>
-  <li>“People are signing up”</li>
-  <li>“Payments are flowing”</li>
-  <li>“MRR is ticking up”</li>
-  <li>“New trials are starting”</li>
-  <li>“Users are completing onboarding”</li>
-  <li>“Form submissions are coming in”</li>
-  <li>“Subscribers are renewing”</li>
-  <li>…and many more.</li>
-</ul>
-
-<p>Unlike analytical tools that dig into historical data or developer metrics,
-Telesink is simple and real-time-first. It’s built for everyone, a straightforward,
-all-around dashboard for seeing things happen <em>as they happen</em>.</p>
-
-<p>It’s a cleaner replacement for those read-only bots in <em>Slack</em>, <em>Discord</em>, or
-<em>Telegram</em> that handle this kind of monitoring as an afterthought.</p>
-
-<p>I’ve been thinking about this for months, and it grew directly out of my own
-need to better understand what’s happening in my <a href="/projects/">projects</a> (beyond just
-errors).</p>
-
-<p>It’ll be <strong>open source and free to self-host</strong>, with a paid SaaS offering to
-sustain development.</p>
-
-<p>Right now I have nothing but the idea in my head (it’s been simmering there
-for months). I don’t have all the answers or solutions yet, and honestly it’s
-scary because there are a lot of unknowns, but I’m ready to start.</p>
-
-<p>I’ll be building this in public. <a href="https://x.com/kyrylo">Follow along</a>! I’m looking forward to
-having you with me.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I’m a forward-thinking person. Instead of looking back, I prefer to look forward. Looking back means celebrating successes, mourning failures, or maybe even learning from mistakes. Besides, I have a bad memory these days because LLMs do all the thinking for me. So why not just look ahead and anticipate? Anticipation is what drives us forward.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>Less decoration, more communication.</p>]]></content><author><name>Kyrylo Silin</name><email>silin@kyrylo.org</email></author><summary type="html"><![CDATA[I’ve been rethinking why we rely so heavily on icons in interfaces.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" /><media:content medium="image" url="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
