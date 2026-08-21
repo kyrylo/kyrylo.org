@@ -1,2 +1,6 @@
-# Ignore env file
+# Ignore local secrets
+/.kamal/secrets*
 /.env
+
+# Clone fresh at runtime instead of copying Git history into the image
+/.git
