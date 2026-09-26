@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rethinking Simplicity in the Age of AI
+title: Rethinking simplicity in the age of AI
 date: 2026-09-26
 categories: software
 image: assets/images/kyrylo-silin@2x.webp
