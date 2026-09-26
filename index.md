@@ -1,7 +1,7 @@
 ---
 layout: home
 redirect_from: "/about/"
-image: assets/images/web-app-manifest-512x512.png?v=1
+image: assets/images/web-app-manifest-512x512.png?v=2
 ---
 
 <section>
