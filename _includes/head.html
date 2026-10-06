@@ -28,6 +28,10 @@
       --link: #2563eb;
       --border: #e5e5e5;
       --surface: #f6f6f6;
+      --syntax-keyword: #8250df;
+      --syntax-string: #116329;
+      --syntax-number: #953800;
+      --syntax-name: #0550ae;
     }
 
     * {
@@ -87,14 +91,39 @@
     }
 
     pre {
-      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
       overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: .375rem;
       background: var(--surface);
-      line-height: 1.5;
+      font: .875rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      tab-size: 2;
     }
 
     pre code {
+      font: inherit;
       overflow-wrap: normal;
+    }
+
+    .highlight :is(.c, .ch, .cd, .cm, .c1, .cp, .cpf, .cs) {
+      color: var(--muted);
+    }
+
+    .highlight :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .ow) {
+      color: var(--syntax-keyword);
+    }
+
+    .highlight :is(.s, .sa, .sb, .sc, .dl, .sd, .s1, .s2, .se, .sh, .si, .sr, .ss, .sx) {
+      color: var(--syntax-string);
+    }
+
+    .highlight :is(.m, .mb, .mf, .mh, .mi, .il, .mo, .mx) {
+      color: var(--syntax-number);
+    }
+
+    .highlight :is(.na, .nb, .bp, .nc, .nd, .nf, .fm, .nn, .no, .nt, .nv, .vc, .vg, .vi, .vm) {
+      color: var(--syntax-name);
     }
 
     blockquote {
@@ -499,6 +528,10 @@
         --link: #8abfff;
         --border: #383838;
         --surface: #242424;
+        --syntax-keyword: #d2a8ff;
+        --syntax-string: #a5d6a7;
+        --syntax-number: #ffa657;
+        --syntax-name: #8abfff;
       }
 
     }
