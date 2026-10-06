@@ -3,7 +3,7 @@ layout: post
 title: "How the pay-once business model saved my *aaS"
 date: 2025-05-01
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 Yesterday, I launched Telebugs.

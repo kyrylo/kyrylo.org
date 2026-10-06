@@ -3,7 +3,7 @@ layout: post
 title: "Why do software developers love complexity?"
 date: 2025-08-21
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 The Great Pyramids took decades to build. It was a monumental feat of human

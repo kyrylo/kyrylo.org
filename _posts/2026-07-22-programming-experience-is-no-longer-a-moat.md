@@ -3,7 +3,7 @@ layout: post
 title: Programming experience is no longer a moat
 date: 2026-07-22
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 I have a Computer Science degree. I've been writing code for more than 15

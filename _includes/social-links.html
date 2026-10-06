@@ -1,0 +1,21 @@
+<nav class="social-links" aria-label="Social profiles">
+{% if include.github %}
+  <a href="https://github.com/kyrylo" target="_blank" rel="noopener" aria-label="Kyrylo Silin on GitHub" title="GitHub">
+    {% include icons/github.svg %}
+  </a>
+{% endif %}
+{% if include.linkedin %}
+  <a href="https://www.linkedin.com/in/kyrylo-silin/" target="_blank" rel="noopener" aria-label="Kyrylo Silin on LinkedIn" title="LinkedIn">
+    {% include icons/linkedin.svg %}
+  </a>
+{% endif %}
+  <a href="https://x.com/kyrylo" target="_blank" rel="noopener" aria-label="Kyrylo Silin on X" title="X">
+    {% include icons/x.svg %}
+  </a>
+  <a href="https://bsky.app/profile/kyrylo.org" target="_blank" rel="noopener" aria-label="Kyrylo Silin on Bluesky" title="Bluesky">
+    {% include icons/bluesky.svg %}
+  </a>
+  <a href="https://mastodon.social/@kyrylosilin" target="_blank" rel="noopener" aria-label="Kyrylo Silin on Mastodon" title="Mastodon">
+    {% include icons/mastodon.svg %}
+  </a>
+</nav>

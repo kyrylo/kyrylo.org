@@ -3,7 +3,7 @@ layout: post
 title: You know how it ends
 date: 2025-02-27 01:00:00 +0200
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 <pre>

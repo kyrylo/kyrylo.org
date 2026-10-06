@@ -3,7 +3,7 @@ layout: post
 title: Learn to code, ignore AI, then use AI to code even better
 date: 2025-03-28 01:00:00 +0200
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 I woke up today to an [X post by Amjad Masad](https://x.com/amasad/status/1905103640089825788),

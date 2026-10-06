@@ -1,31 +1,10 @@
 ---
 layout: base
-image: assets/images/web-app-manifest-512x512.png?v=2
+image: assets/images/web-app-manifest-512x512.png?v=3
 ---
 
-<h1 class="site-title">
-  <picture>
-    <source srcset="/assets/images/kyrylo-silin-logo-dark.webp?v=4" type="image/webp" media="(prefers-color-scheme: dark)">
-    <source srcset="/assets/images/kyrylo-silin-logo.svg?v=4" type="image/svg+xml">
-    <source srcset="/assets/images/kyrylo-silin-logo.webp?v=4" type="image/webp">
-    <source srcset="/assets/images/kyrylo-silin-logo-dark.png?v=4" type="image/png" media="(prefers-color-scheme: dark)">
-    <img class="site-logo" src="/assets/images/kyrylo-silin-logo.png?v=4" alt="Kyrylo Silin" width="332" height="41" decoding="async" fetchpriority="high" style="display:block;width:min(100%,20.75rem);height:auto">
-  </picture>
-</h1>
-
-<code style="display:table;font-size:.6em;margin:-1em 0 1em">simple ≠ dumbed-down<br>simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
-
-<nav>
-  <a href="/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/travel/">Travel</a>
-  <a href="/projects/">Projects</a>
-  <a href="/archive/">Archive</a>
-</nav>
-
-<picture>
-  <source srcset="/assets/images/kyrylo-silin@2x.webp?v=2 2x, /assets/images/kyrylo-silin.webp?v=2 1x" type="image/webp">
-  <img class="profile-photo" src="/assets/images/kyrylo-silin.webp?v=2" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager" style="width:9em;float:right;margin:0 0 1rem 1rem">
-</picture>
+<div class="home">
+{% include profile-header.html %}
 
 {{ content }}
+</div>

@@ -3,7 +3,7 @@ layout: post
 title: "English is a poor language for programming with AI"
 date: 2025-12-14
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 English and natural language in general is a bad interface for programming with

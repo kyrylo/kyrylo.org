@@ -3,7 +3,7 @@ layout: post
 title: "AI will take your job (and your boss’s job too)"
 date: 2025-07-10
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 This truth is hard to accept (even for me), but you must get comfortable with it. The faster, the better.

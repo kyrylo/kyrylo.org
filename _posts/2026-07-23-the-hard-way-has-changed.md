@@ -3,7 +3,7 @@ layout: post
 title: The hard way has changed
 date: 2026-07-23
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 After I wrote that [programming experience is no longer a

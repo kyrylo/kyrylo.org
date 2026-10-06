@@ -3,7 +3,7 @@ layout: post
 title: "A mere add_foreign_key can wipe out your whole Rails+SQLite production table"
 date: 2025-09-27
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 A single `add_foreign_key` in a Rails migration can obliterate a dependent table

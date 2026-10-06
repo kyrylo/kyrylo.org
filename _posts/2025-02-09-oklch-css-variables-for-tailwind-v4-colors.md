@@ -3,7 +3,7 @@ layout: post
 title: OKLCH CSS variables for Tailwind v4 colors
 date: 2025-02-09
 categories: css
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 For almost all my projects, I use [Tailwind](https://tailwindcss.com) as my CSS

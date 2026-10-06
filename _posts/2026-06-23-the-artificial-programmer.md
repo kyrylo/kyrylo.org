@@ -2,7 +2,7 @@
 layout: post
 title: The artificial programmer
 date: 2026-06-23
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 I recently got six months of free access to OpenAI's advanced coding models

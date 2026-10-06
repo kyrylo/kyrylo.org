@@ -1,7 +1,7 @@
 <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   <picture>
-    <source srcset="https://kyrylo.org/assets/images/kyrylo-silin@2x.webp?v=2 2x, /assets/images/kyrylo-silin.webp?v=2 1x" type="image/webp">
-    <img src="https://kyrylo.org/assets/images/kyrylo-silin.webp?v=2" alt="Kyrylo Silin" width="15" height="15">
+    <source srcset="/assets/images/kyrylo-silin@2x.webp?v=3 2x, /assets/images/kyrylo-silin.webp?v=3 1x" type="image/webp">
+    <img src="/assets/images/kyrylo-silin.webp?v=3" alt="Kyrylo Silin" width="15" height="15">
   </picture>
   <span itemprop="name">
     <a href="/">Kyrylo Silin</a>

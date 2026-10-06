@@ -1,0 +1,28 @@
+{% assign name_tag = include.name_tag | default: 'h1' %}
+<header class="profile-header">
+  <a href="/" class="profile-home-link" aria-label="Home">
+    <picture>
+      <source srcset="/assets/images/kyrylo-silin@2x.webp?v=3 2x, /assets/images/kyrylo-silin.webp?v=3 1x" type="image/webp">
+      <img class="profile-photo profile-photo-large" src="/assets/images/kyrylo-silin.webp?v=3" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager">
+    </picture>
+  </a>
+  <{{ name_tag }} class="site-title">
+    <a href="/" class="profile-home-link">
+      <picture>
+        <source srcset="/assets/images/kyrylo-silin-logo-dark.webp?v=4" type="image/webp" media="(prefers-color-scheme: dark)">
+        <source srcset="/assets/images/kyrylo-silin-logo.svg?v=4" type="image/svg+xml">
+        <source srcset="/assets/images/kyrylo-silin-logo.webp?v=4" type="image/webp">
+        <source srcset="/assets/images/kyrylo-silin-logo-dark.png?v=4" type="image/png" media="(prefers-color-scheme: dark)">
+        <img class="site-logo" src="/assets/images/kyrylo-silin-logo.png?v=4" alt="Kyrylo Silin" width="332" height="41" decoding="async" fetchpriority="high">
+      </picture>
+    </a>
+  </{{ name_tag }}>
+</header>
+
+<nav class="site-navigation" aria-label="Main navigation">
+  <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>About</a>
+  <a href="/blog/"{% if page.url == '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+  <a href="/travel/">Travel</a>
+  <a href="/projects/"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>Projects</a>
+  <a href="/archive/"{% if page.url == '/archive/' %} aria-current="page"{% endif %}>Archive</a>
+</nav>

@@ -3,7 +3,7 @@ layout: post
 title: "AI amplifies programmers, not replaces them"
 date: 2025-11-26
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 People who think “vibe coding” will fully replace programmers still don’t

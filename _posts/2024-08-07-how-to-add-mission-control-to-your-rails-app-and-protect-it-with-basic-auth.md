@@ -73,7 +73,7 @@ like `config/environments/production.rb`, to only enable authentication in
 production.
 
 Now, when you access
-[`/jobs`](`http://localhost:3000/jobs`), you'll be prompted
+[`/jobs`](http://localhost:3000/jobs), you'll be prompted
 to enter the username and password you specified in the
 `MissionControlController`.
 

@@ -2,7 +2,7 @@
 layout: post
 title: Embarking on an indie dev journey
 date: 2023-11-08
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 My 10-year professional programming career has entered a new chapter. Getting

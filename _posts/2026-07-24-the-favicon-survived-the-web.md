@@ -3,7 +3,7 @@ layout: post
 title: The favicon survived the web
 date: 2026-07-24
 categories: html
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 Most of us never look at a favicon.

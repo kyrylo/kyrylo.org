@@ -3,7 +3,7 @@ layout: post
 title: The vertical bar (|) is the best HTML page title separator
 date: 2025-01-22 01:00:00 +0200
 categories: html
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 In the wild, you’ll see all sorts of HTML title separators:

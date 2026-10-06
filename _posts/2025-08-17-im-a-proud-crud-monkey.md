@@ -3,7 +3,7 @@ layout: post
 title: "I'm a proud CRUD monkey"
 date: 2025-08-17
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 <blockquote cite="https://www.youtube.com/watch?v=vagyIcmIGOQ">

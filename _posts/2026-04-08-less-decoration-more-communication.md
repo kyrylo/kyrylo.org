@@ -2,7 +2,7 @@
 layout: post
 title: Less decoration, more communication
 date: 2026-04-08
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 I’ve been rethinking why we rely so heavily on icons in interfaces.

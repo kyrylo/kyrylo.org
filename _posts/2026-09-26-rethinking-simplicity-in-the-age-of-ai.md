@@ -3,7 +3,7 @@ layout: post
 title: Rethinking simplicity in the age of AI
 date: 2026-09-26
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 “English is a better programming language than Ruby. Rust is amazing if you never

@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>What I Write About | Kyrylo Silin</title>
+<title>Blog | Kyrylo Silin</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="What I Write About" />
+<meta property="og:title" content="Blog" />
 <meta name="author" content="Kyrylo Silin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Thoughts on programming, life, and everything in between." />
@@ -14,21 +14,21 @@
 <link rel="canonical" href="https://kyrylo.org/blog/" />
 <meta property="og:url" content="https://kyrylo.org/blog/" />
 <meta property="og:site_name" content="Kyrylo Silin" />
-<meta property="og:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=2" />
+<meta property="og:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=2" />
-<meta property="twitter:title" content="What I Write About" />
+<meta property="twitter:image" content="https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3" />
+<meta property="twitter:title" content="Blog" />
 <meta name="twitter:site" content="@kyrylosilin" />
 <meta name="twitter:creator" content="@Kyrylo Silin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-07-14T00:17:49+08:00","description":"Thoughts on programming, life, and everything in between.","headline":"What I Write About","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=2","url":"https://kyrylo.org/blog/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-09-26T10:50:08+08:00","description":"Thoughts on programming, life, and everything in between.","headline":"Blog","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3","url":"https://kyrylo.org/blog/"}</script>
 <!-- End Jekyll SEO tag -->
-<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=2" sizes="96x96" />
-  <link rel="shortcut icon" href="/assets/images/favicon.ico?v=2" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=2" />
+<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=3" sizes="96x96" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3" />
   <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
-  <link rel="manifest" href="/assets/images/site.webmanifest?v=2" />
+  <link rel="manifest" href="/assets/images/site.webmanifest?v=3" />
 
   <script async src="https://analytics.kyrylo.org/js/pa-AIFJJD2jjgvAtiz_pzq6_.js"></script>
   <script>
@@ -38,602 +38,892 @@
 
   <style>
     :root {
-      --font-size: clamp(1rem, 1vw, 1.75rem);
+      --font-size: clamp(1.125rem, 1rem + .3vw, 1.25rem);
+      --background: #fff;
+      --text: #222;
+      --muted: #6b6b6b;
+      --link: #2563eb;
+      --border: #e5e5e5;
+      --surface: #f6f6f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--background);
+      color: var(--text);
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
-      font: normal 400 var(--font-size)/1.5 sans-serif;
+      margin: 0;
+      padding: clamp(2rem, 5vw, 4rem) 1.25rem 2rem;
+      font: 400 var(--font-size)/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-wrap: break-word;
     }
 
     main,
-    footer {
-      max-width: 68ch;
+    .site-footer {
+      max-width: 46rem;
       margin: 0 auto;
     }
 
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      letter-spacing: -.025em;
+      text-wrap: balance;
+    }
+
+    h2,
+    h3 {
+      margin: 1.75em 0 .65em;
+    }
+
+    p,
+    ul,
+    ol,
+    dl {
+      margin: 0 0 1.25em;
+    }
+
+    li + li {
+      margin-top: .35em;
+    }
+
+    dd {
+      margin-bottom: 1em;
+    }
+
+    code {
+      font-size: .875em;
+      overflow-wrap: anywhere;
+    }
+
     pre {
+      padding: 1rem 1.25rem;
       overflow: auto;
+      background: var(--surface);
+      line-height: 1.5;
     }
 
-    pre,
+    pre code {
+      overflow-wrap: normal;
+    }
+
     blockquote {
-      background-color: ghostwhite;
-      color: darkslategray;
+      margin: 1.5em 0;
+      padding-left: 1.25rem;
+      border-left: 3px solid var(--border);
+      color: var(--muted);
     }
 
-    .article img {
+    hr {
+      margin: 2em 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .article img,
+    .article video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .article iframe {
       max-width: 100%;
     }
 
-    .article a,
-    code {
-      word-break: break-word;
+    .article figure {
+      margin: 1.5em 0;
     }
 
-    .article p {
-       max-width: 60ch;
+    .article figcaption {
+      color: var(--muted);
+      font-size: .8em;
     }
 
-    code {
-      font-size: var(--font-size);
+    .article table {
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin-bottom: 1.25em;
     }
 
-    blockquote {
-      margin: 1em 0;
-      padding-left: 20px;
-      border-left: 4px solid dimgray;
+    .article th,
+    .article td {
+      padding: .5em .75em;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
     }
 
-    nav a {
-      margin-right: 8px;
+    a,
+    a:visited {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .15em;
     }
 
-    a {
-      color: blue;
+    a:hover,
+    a:focus-visible,
+    a:active {
+      color: var(--link);
+    }
+
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    .site-title {
+      margin-top: 0;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .site-header > a {
+      flex-shrink: 0;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .site-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em 1.25em;
+      margin: 1.5rem 0 2.5rem;
+      font-size: .9em;
     }
 
-    a:visited:active,
-    a:active {
-      color: red;
+    .listing {
+      max-width: 38rem;
+      margin: 0 auto;
     }
 
-    a:visited {
-      color: purple;
+    .listing-title {
+      margin: 0 0 2.5rem;
+      font-size: clamp(1.75rem, 1.25rem + 2vw, 2.25rem);
+      text-align: center;
+    }
+
+    .blog-year + .blog-year,
+    .project-section + .project-section {
+      margin-top: 2.5rem;
+    }
+
+    .blog-year h2,
+    .project-section h2 {
+      margin: 0 0 .75rem;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: normal;
+    }
+
+    .project-list {
+      margin: 0;
+    }
+
+    .project-list dt {
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .project-list dd {
+      margin: .4rem 0 1.75rem;
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .project-list dd:last-child {
+      margin-bottom: 0;
     }
 
     ul.blog-posts {
-      list-style-type: none;
-      padding: unset;
+      list-style: none;
+      padding: 0;
       margin: 0;
     }
 
     ul.blog-posts li {
       display: flex;
       align-items: baseline;
-      gap: 1ch;
+      gap: 1.25rem;
+      padding: .6em 0;
+      margin: 0;
+      line-height: 1.45;
     }
 
     ul.blog-posts time {
-      flex: 0 0 12ch;
-      font-size: var(--font-size);
-      font-family: monospace;
+      flex: 0 0 4rem;
+      font-size: .75em;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
     }
 
     .profile-photo {
-      width: 6em;
+      display: block;
+      width: 4rem;
+      height: auto;
+    }
+
+    .home {
+      max-width: 36rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .profile-header .site-title {
+      margin: 0;
+    }
+
+    .profile-header .site-logo {
+      display: block;
+      width: min(100%, 14.5rem);
+      height: auto;
+      margin-inline: auto;
+    }
+
+    .profile-home-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .profile-photo-large {
+      width: 6rem;
+      border-radius: 50%;
+    }
+
+    .home .site-navigation,
+    .listing .site-navigation {
+      justify-content: center;
+      margin: 1.75rem 0 3rem;
+    }
+
+    .home-intro h2 {
+      margin: 0 0 1.25rem;
+      font-size: clamp(1.75rem, 1.25rem + 2vw, 2.25rem);
+    }
+
+    .home-project {
+      text-wrap: balance;
+    }
+
+    .home-location {
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .home-contact {
+      margin-top: 2.25rem;
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .home-contact p {
+      margin-bottom: .6rem;
+    }
+
+    .home-signature {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: clamp(.6875rem, 2.8vw, .8125rem);
+      line-height: 1.7;
+    }
+
+    .home-signature code {
+      display: inline-block;
+      font-size: 1em;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .post-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .post-author {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .65rem;
+      margin-bottom: 2.75rem;
+      text-decoration: none;
+    }
+
+    .post-author-logo {
+      display: block;
+      width: 8.25rem;
       height: auto;
     }
 
     .author-avatar {
-      height: 1em;
-      width: 1em;
-      vertical-align: baseline;
+      display: block;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .post-date {
+      margin-bottom: .65rem;
+      color: var(--muted);
+      font-size: .75em;
+    }
+
+    .post-header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+      line-height: 1.12;
+    }
+
+    .post-about {
+      margin-top: 3.5rem;
+      text-align: center;
+      font-size: .8em;
+      color: var(--muted);
+    }
+
+    .post-about p {
+      margin-bottom: .75em;
+    }
+
+    .post-about-author {
+      display: inline-block;
+      margin-bottom: .5rem;
+      text-decoration: none;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: .25rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      text-decoration: none;
+    }
+
+    .social-links svg {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .post-navigation {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem 2rem;
+      max-width: 38rem;
+      margin: 2.5rem auto 0;
+      color: var(--muted);
+      font-size: .8em;
+      line-height: 1.45;
+    }
+
+    .post-navigation-link {
+      text-decoration: none;
+    }
+
+    .post-navigation-label {
+      display: block;
+      margin-bottom: .35em;
+      font-size: .85em;
+    }
+
+    .post-navigation-title {
+      text-decoration: underline;
+      text-decoration-color: var(--link);
+      text-decoration-thickness: 1px;
+    }
+
+    .post-navigation-next {
+      grid-column: 2;
+      text-align: right;
+    }
+
+    .post-navigation-link:only-child {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .site-footer {
+      clear: both;
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      color: var(--muted);
+      font-size: .75em;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin-bottom: .5em;
+    }
+
+    .site-footer-home {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 37.5rem) {
+      .post-navigation {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .post-navigation-link {
+        grid-column: auto;
+        text-align: center;
+      }
+
+      ul.blog-posts li {
+        flex-direction: column;
+        gap: .15rem;
+        padding: .65em 0;
+      }
+
+      ul.blog-posts time {
+        flex-basis: auto;
+      }
+
     }
 
     @media (prefers-color-scheme: dark) {
-      a {
-        color: mediumslateblue;
+      :root {
+        --background: #181818;
+        --text: #e5e5e5;
+        --muted: #aaa;
+        --link: #8abfff;
+        --border: #383838;
+        --surface: #242424;
       }
 
-      a:visited:active,
-      a:active {
-        color: orangered;
-      }
-
-      a:visited {
-        color: plum;
-      }
-
-      pre,
-      blockquote {
-        color: lightsteelblue;
-        background-color: #2b2b2b;
-      }
     }
   </style>
 </head>
 <body>
     <main>
-      <header style="display:flex;align-items:center;gap:1em;margin-bottom:1em">
-  <a href="/">
+      <div class="listing">
+
+<header class="profile-header">
+  <a href="/" class="profile-home-link" aria-label="Home">
     <picture>
-      <source srcset="/assets/images/kyrylo-silin@2x.webp?v=2 2x, /assets/images/kyrylo-silin.webp?v=2 1x" type="image/webp">
-      <img class="profile-photo" src="/assets/images/kyrylo-silin.webp?v=2" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager">
+      <source srcset="/assets/images/kyrylo-silin@2x.webp?v=3 2x, /assets/images/kyrylo-silin.webp?v=3 1x" type="image/webp">
+      <img class="profile-photo profile-photo-large" src="/assets/images/kyrylo-silin.webp?v=3" alt="Kyrylo Silin's photo" width="180" height="180" loading="eager">
     </picture>
   </a>
-  <div style="min-width:0">
-    <h1 class="site-title" style="margin:0;line-height:1">
+  <p class="site-title">
+    <a href="/" class="profile-home-link">
       <picture>
         <source srcset="/assets/images/kyrylo-silin-logo-dark.webp?v=4" type="image/webp" media="(prefers-color-scheme: dark)">
         <source srcset="/assets/images/kyrylo-silin-logo.svg?v=4" type="image/svg+xml">
         <source srcset="/assets/images/kyrylo-silin-logo.webp?v=4" type="image/webp">
         <source srcset="/assets/images/kyrylo-silin-logo-dark.png?v=4" type="image/png" media="(prefers-color-scheme: dark)">
-        <img class="site-logo" src="/assets/images/kyrylo-silin-logo.png?v=4" alt="Kyrylo Silin" width="332" height="41" decoding="async" fetchpriority="high" style="display:block;width:min(100%,20.75rem);height:auto">
+        <img class="site-logo" src="/assets/images/kyrylo-silin-logo.png?v=4" alt="Kyrylo Silin" width="332" height="41" decoding="async" fetchpriority="high">
       </picture>
-    </h1>
-    <code style="font-size:.6em">simple ≠ dumbed-down<br>simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
-  </div>
+    </a>
+  </p>
 </header>
 
-<nav>
+<nav class="site-navigation" aria-label="Main navigation">
   <a href="/">About</a>
-  <a href="/blog/">Blog</a>
+  <a href="/blog/" aria-current="page">Blog</a>
   <a href="/travel/">Travel</a>
   <a href="/projects/">Projects</a>
   <a href="/archive/">Archive</a>
 </nav>
 
-<section>
-  <h2>What I Write About</h2>
 
+<h1 class="listing-title">Blog</h1>
+
+
+<section class="blog-year" aria-labelledby="year-2026">
+  <h2 id="year-2026">2026</h2>
   <ul class="blog-posts">
-    
-      <li>
-        <time datetime="2026-09-26T00:00:00+08:00">
-          26 Sep, 2026
-        </time>
-        <a href="/software/2026/09/26/rethinking-simplicity-in-the-age-of-ai.html">Rethinking simplicity in the age of AI</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-07-24T00:00:00+08:00">
-          24 Jul, 2026
-        </time>
-        <a href="/html/2026/07/24/the-favicon-survived-the-web.html">The favicon survived the web</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-07-23T19:17:27+08:00">
-          23 Jul, 2026
-        </time>
-        <a href="/software/2026/07/23/ai-will-not-stop-at-simple-work.html">AI will not stop at simple work</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-07-23T00:00:00+08:00">
-          23 Jul, 2026
-        </time>
-        <a href="/software/2026/07/23/the-hard-way-has-changed.html">The hard way has changed</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-07-22T00:00:00+08:00">
-          22 Jul, 2026
-        </time>
-        <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">Programming experience is no longer a moat</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-07-07T00:00:00+08:00">
-          07 Jul, 2026
-        </time>
-        <a href="/projects/2026/07/07/i-built-flag-click.html">I built Flag Click</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-06-23T00:00:00+08:00">
-          23 Jun, 2026
-        </time>
-        <a href="/2026/06/23/the-artificial-programmer.html">The artificial programmer</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-05-20T00:00:00+08:00">
-          20 May, 2026
-        </time>
-        <a href="/2026/05/20/stick-with-defaults.html">Stick with defaults</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-05-11T00:00:00+08:00">
-          11 May, 2026
-        </time>
-        <a href="/2026/05/11/the-magic-of-typing-terminal-commands.html">The magic of typing terminal commands</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-04-15T00:00:00+08:00">
-          15 Apr, 2026
-        </time>
-        <a href="/2026/04/15/ai-will-help-you-climb-the-wrong-ladder-faster.html">AI will help you climb the wrong ladder faster</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-04-08T00:00:00+08:00">
-          08 Apr, 2026
-        </time>
-        <a href="/2026/04/08/less-decoration-more-communication.html">Less decoration, more communication</a>
-      </li>
-    
-      <li>
-        <time datetime="2026-01-01T00:00:00+08:00">
-          01 Jan, 2026
-        </time>
-        <a href="/2026/01/01/what-2026-yields-announcing-telesink.html">What 2026 yields (announcing Telesink)</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-12-22T00:00:00+08:00">
-          22 Dec, 2025
-        </time>
-        <a href="/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html">How to self-host Bearlytics with Kamal</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-12-21T00:00:00+08:00">
-          21 Dec, 2025
-        </time>
-        <a href="/software/2025/12/21/im-back-to-open-source.html">I'm back to Open Source</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-12-14T00:00:00+08:00">
-          14 Dec, 2025
-        </time>
-        <a href="/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html">English is a poor language for programming with AI</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-11-26T00:00:00+08:00">
-          26 Nov, 2025
-        </time>
-        <a href="/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html">AI amplifies programmers, not replaces them</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-09-27T00:00:00+08:00">
-          27 Sep, 2025
-        </time>
-        <a href="/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html">A mere add_foreign_key can wipe out your whole Rails+SQLite production table</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-08-21T00:00:00+08:00">
-          21 Aug, 2025
-        </time>
-        <a href="/software/2025/08/21/why-do-software-developers-love-complexity.html">Why do software developers love complexity?</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-08-17T00:00:00+08:00">
-          17 Aug, 2025
-        </time>
-        <a href="/software/2025/08/17/im-a-proud-crud-monkey.html">I'm a proud CRUD monkey</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-08-07T00:00:00+08:00">
-          07 Aug, 2025
-        </time>
-        <a href="/software/2025/08/07/not-everything-needs-an-update.html">Not everything needs an update</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-07-10T00:00:00+08:00">
-          10 Jul, 2025
-        </time>
-        <a href="/software/2025/07/10/ai-will-take-your-job-and-your-bosses-job-too.html">AI will take your job (and your boss’s job too)</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-07-02T00:00:00+08:00">
-          02 Jul, 2025
-        </time>
-        <a href="/projects/2025/07/02/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js.html">I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-06-15T00:00:00+08:00">
-          15 Jun, 2025
-        </time>
-        <a href="/software/2025/06/15/your-idea-probably-sucks.html">Your idea probably sucks</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-05-01T00:00:00+08:00">
-          01 May, 2025
-        </time>
-        <a href="/software/2025/05/01/how-the-pay-once-business-model-saved-my-aas.html">How the pay-once business model saved my *aaS</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-03-28T07:00:00+08:00">
-          28 Mar, 2025
-        </time>
-        <a href="/software/2025/03/28/learn-to-code-ignore-ai-then-use-ai-to-code-even-better.html">Learn to code, ignore AI, then use AI to code even better</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-02-27T07:00:00+08:00">
-          27 Feb, 2025
-        </time>
-        <a href="/software/2025/02/27/you-know-how-it-ends.html">You know how it ends</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-02-09T00:00:00+08:00">
-          09 Feb, 2025
-        </time>
-        <a href="/css/2025/02/09/oklch-css-variables-for-tailwind-v4-colors.html">OKLCH CSS variables for Tailwind v4 colors</a>
-      </li>
-    
-      <li>
-        <time datetime="2025-01-22T07:00:00+08:00">
-          22 Jan, 2025
-        </time>
-        <a href="/html/2025/01/22/the-vertical-bar-is-the-best-html-page-title-separator.html">The vertical bar (|) is the best HTML page title separator</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-11-24T00:00:00+08:00">
-          24 Nov, 2024
-        </time>
-        <a href="/html/2024/11/24/how-to-build-a-dropdown-menu-with-just-html.html">How to build a dropdown menu with just HTML</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-11-17T00:00:00+08:00">
-          17 Nov, 2024
-        </time>
-        <a href="/software/2024/11/17/hyperlinks-existed-before-the-web.html">Hyperlinks existed before the web</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-11-17T00:00:00+08:00">
-          17 Nov, 2024
-        </time>
-        <a href="/software/2024/11/17/how-counter-strike-introduced-me-to-the-world-of-programming.html">How Counter-Strike introduced me to the world of programming</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-11-15T18:00:00+08:00">
-          15 Nov, 2024
-        </time>
-        <a href="/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html">How to self-host Plausible Analytics with Kamal</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-10-30T00:00:00+08:00">
-          30 Oct, 2024
-        </time>
-        <a href="/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html">There's no place for Test-Driven Development (TDD)</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-10-25T18:00:00+08:00">
-          25 Oct, 2024
-        </time>
-        <a href="/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html">Why does target="_blank" have an underscore in front?</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-10-23T18:00:00+08:00">
-          23 Oct, 2024
-        </time>
-        <a href="/software/2024/10/23/writing-software-is-like-spreading-butter-on-bread.html">Writing software is like spreading butter on bread</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-09-27T18:00:00+08:00">
-          27 Sep, 2024
-        </time>
-        <a href="/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html">Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-08-07T18:00:00+08:00">
-          07 Aug, 2024
-        </time>
-        <a href="/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html">How to add Mission Control to your Rails app and protect it with Basic Auth</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-07-18T18:00:00+08:00">
-          18 Jul, 2024
-        </time>
-        <a href="/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html">I built a flag-matching game in 6 days</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-06-02T06:00:00+08:00">
-          02 Jun, 2024
-        </time>
-        <a href="/telegram/kamal/2024/06/02/how-to-deploy-a-telegram-bot-with-kamal.html">How to build and deploy a Telegram bot with Kamal</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-03-31T18:00:00+08:00">
-          31 Mar, 2024
-        </time>
-        <a href="/rails/2024/03/31/cloudflare-tunnel-a-free-ngrok-alternative-for-developing-rails-apps-locally.html">Cloudflare Tunnel: a free ngrok alternative for exposing local Rails apps to the internet</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-03-20T18:00:00+08:00">
-          20 Mar, 2024
-        </time>
-        <a href="/coffee-world-rush/2024/03/20/coffee-world-rush-a-leaderboard-for-all-coffee-drinkers-around-the-world.html">Coffee World Rush: a leaderboard for coffee drinkers all around the world</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-02-21T18:00:00+08:00">
-          21 Feb, 2024
-        </time>
-        <a href="/indie-hacking/2024/02/21/i-built-a-word-matching-game-called-matcharoo.html">I built a word-matching game called Matcharoo</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-02-20T18:00:00+08:00">
-          20 Feb, 2024
-        </time>
-        <a href="/rails/overmind/2024/02/20/using-overmind-with-foreman-as-a-fallback-for-rails-7-1-apps.html">Using Overmind with Foreman as a fallback for Rails 7.1+ apps</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-02-16T18:00:00+08:00">
-          16 Feb, 2024
-        </time>
-        <a href="/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html">How to generate sitemap.xml for your Rails 7.1+ app with Kamal</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-01-21T18:00:01+08:00">
-          21 Jan, 2024
-        </time>
-        <a href="/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html">How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-01-21T18:00:00+08:00">
-          21 Jan, 2024
-        </time>
-        <a href="/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html">How to opt out of the cache with Hotwire's Turbo Drive in Rails</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-01-17T00:00:00+08:00">
-          17 Jan, 2024
-        </time>
-        <a href="/rails/kamal/2024/01/17/making-postgresql-work-with-kamal-and-a-new-rails-7-1-application.html">Making PostgreSQL work with Kamal and a new Rails 7.1 app</a>
-      </li>
-    
-      <li>
-        <time datetime="2024-01-08T06:23:44+08:00">
-          08 Jan, 2024
-        </time>
-        <a href="/turbo-native/android/2024/01/08/how-to-run-your-turbo-native-android-app-on-a-physical-device-locally.html">How to run your Turbo Native Android app on a physical device locally</a>
-      </li>
-    
-      <li>
-        <time datetime="2023-11-08T00:00:00+08:00">
-          08 Nov, 2023
-        </time>
-        <a href="/2023/11/08/embarking-on-an-indie-dev-journey.html">Embarking on an indie dev journey</a>
-      </li>
-    
-      <li>
-        <time datetime="2018-06-21T06:23:44+08:00">
-          21 Jun, 2018
-        </time>
-        <a href="/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html">Untangling the “love” Ruby tongue twister</a>
-      </li>
-    
-      <li>
-        <time datetime="2015-05-23T06:23:44+08:00">
-          23 May, 2015
-        </time>
-        <a href="/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html">A bit of bacon, lettuce and tomato</a>
-      </li>
-    
-      <li>
-        <time datetime="2014-12-31T06:23:44+08:00">
-          31 Dec, 2014
-        </time>
-        <a href="/programming/ruby/2014/12/31/rubys-exception-to-message-mapper.html">Ruby's exception to message mapper</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-12-15T00:00:00+08:00">
-          15 Dec, 2013
-        </time>
-        <a href="/programming/javascript/2013/12/15/javascript-eval-tricks.html">JavaScript eval tricks</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-08-24T18:00:00+08:00">
-          24 Aug, 2013
-        </time>
-        <a href="/programming/ruby/2013/08/24/ruby-eval-tricks.html">Ruby eval tricks</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-08-13T18:00:00+08:00">
-          13 Aug, 2013
-        </time>
-        <a href="/programming/ruby/2013/08/13/various-ways-to-count-digits-in-a-ruby-integer.html">Various ways to count digits in a Ruby integer</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-08-09T06:23:44+08:00">
-          09 Aug, 2013
-        </time>
-        <a href="/programming/ruby/2013/08/09/blocks-in-ruby-are-always-there.html">Blocks in Ruby are always there</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-08-02T06:23:44+08:00">
-          02 Aug, 2013
-        </time>
-        <a href="/programming/shell/2013/08/02/how-to-safely-enter-passwords-in-a-terminal.html">How to safely enter passwords in a terminal</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-07-15T06:23:44+08:00">
-          15 Jul, 2013
-        </time>
-        <a href="/programming/ruby/2013/07/15/how-to-say-i-love-you-in-ruby.html">How to say “I love you” in Ruby</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-07-03T06:23:44+08:00">
-          03 Jul, 2013
-        </time>
-        <a href="/programming/ruby/2013/07/03/pulling-through-a-ruby-exception.html">Pulling through a Ruby exception</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-06-03T06:23:44+08:00">
-          03 Jun, 2013
-        </time>
-        <a href="/programming/ruby/2013/06/03/difference-between-frozen-ruby-objects-across-versions.html">Difference between frozen Ruby objects across versions</a>
-      </li>
-    
-      <li>
-        <time datetime="2013-05-30T00:00:00+08:00">
-          30 May, 2013
-        </time>
-        <a href="/programming/ruby/2013/05/30/so-what-is-binding-pry-exactly.html">So what is “binding.pry” exactly?</a>
-      </li>
-    
+
+    <li>
+      <time datetime="2026-09-26T00:00:00+08:00">Sep 26</time>
+      <a href="/software/2026/09/26/rethinking-simplicity-in-the-age-of-ai.html">Rethinking simplicity in the age of AI</a>
+    </li>
+
+    <li>
+      <time datetime="2026-07-24T00:00:00+08:00">Jul 24</time>
+      <a href="/html/2026/07/24/the-favicon-survived-the-web.html">The favicon survived the web</a>
+    </li>
+
+    <li>
+      <time datetime="2026-07-23T19:17:27+08:00">Jul 23</time>
+      <a href="/software/2026/07/23/ai-will-not-stop-at-simple-work.html">AI will not stop at simple work</a>
+    </li>
+
+    <li>
+      <time datetime="2026-07-23T00:00:00+08:00">Jul 23</time>
+      <a href="/software/2026/07/23/the-hard-way-has-changed.html">The hard way has changed</a>
+    </li>
+
+    <li>
+      <time datetime="2026-07-22T00:00:00+08:00">Jul 22</time>
+      <a href="/software/2026/07/22/programming-experience-is-no-longer-a-moat.html">Programming experience is no longer a moat</a>
+    </li>
+
+    <li>
+      <time datetime="2026-07-07T00:00:00+08:00">Jul 7</time>
+      <a href="/projects/2026/07/07/i-built-flag-click.html">I built Flag Click</a>
+    </li>
+
+    <li>
+      <time datetime="2026-06-23T00:00:00+08:00">Jun 23</time>
+      <a href="/2026/06/23/the-artificial-programmer.html">The artificial programmer</a>
+    </li>
+
+    <li>
+      <time datetime="2026-05-20T00:00:00+08:00">May 20</time>
+      <a href="/2026/05/20/stick-with-defaults.html">Stick with defaults</a>
+    </li>
+
+    <li>
+      <time datetime="2026-05-11T00:00:00+08:00">May 11</time>
+      <a href="/2026/05/11/the-magic-of-typing-terminal-commands.html">The magic of typing terminal commands</a>
+    </li>
+
+    <li>
+      <time datetime="2026-04-15T00:00:00+08:00">Apr 15</time>
+      <a href="/2026/04/15/ai-will-help-you-climb-the-wrong-ladder-faster.html">AI will help you climb the wrong ladder faster</a>
+    </li>
+
+    <li>
+      <time datetime="2026-04-08T00:00:00+08:00">Apr 8</time>
+      <a href="/2026/04/08/less-decoration-more-communication.html">Less decoration, more communication</a>
+    </li>
+
+    <li>
+      <time datetime="2026-01-01T00:00:00+08:00">Jan 1</time>
+      <a href="/2026/01/01/what-2026-yields-announcing-telesink.html">What 2026 yields (announcing Telesink)</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2025">
+  <h2 id="year-2025">2025</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2025-12-22T00:00:00+08:00">Dec 22</time>
+      <a href="/kamal/2025/12/22/how-to-self-host-bearlytics-with-kamal.html">How to self-host Bearlytics with Kamal</a>
+    </li>
+
+    <li>
+      <time datetime="2025-12-21T00:00:00+08:00">Dec 21</time>
+      <a href="/software/2025/12/21/im-back-to-open-source.html">I'm back to Open Source</a>
+    </li>
+
+    <li>
+      <time datetime="2025-12-14T00:00:00+08:00">Dec 14</time>
+      <a href="/software/2025/12/14/english-is-a-poor-language-for-programming-with-ai.html">English is a poor language for programming with AI</a>
+    </li>
+
+    <li>
+      <time datetime="2025-11-26T00:00:00+08:00">Nov 26</time>
+      <a href="/software/2025/11/26/ai-amplifies-programmers-not-replaces-them.html">AI amplifies programmers, not replaces them</a>
+    </li>
+
+    <li>
+      <time datetime="2025-09-27T00:00:00+08:00">Sep 27</time>
+      <a href="/software/2025/09/27/a-mere-add-foreign-key-can-wipe-out-your-whole-rails-sqlite-production-table.html">A mere add_foreign_key can wipe out your whole Rails+SQLite production table</a>
+    </li>
+
+    <li>
+      <time datetime="2025-08-21T00:00:00+08:00">Aug 21</time>
+      <a href="/software/2025/08/21/why-do-software-developers-love-complexity.html">Why do software developers love complexity?</a>
+    </li>
+
+    <li>
+      <time datetime="2025-08-17T00:00:00+08:00">Aug 17</time>
+      <a href="/software/2025/08/17/im-a-proud-crud-monkey.html">I'm a proud CRUD monkey</a>
+    </li>
+
+    <li>
+      <time datetime="2025-08-07T00:00:00+08:00">Aug 7</time>
+      <a href="/software/2025/08/07/not-everything-needs-an-update.html">Not everything needs an update</a>
+    </li>
+
+    <li>
+      <time datetime="2025-07-10T00:00:00+08:00">Jul 10</time>
+      <a href="/software/2025/07/10/ai-will-take-your-job-and-your-bosses-job-too.html">AI will take your job (and your boss’s job too)</a>
+    </li>
+
+    <li>
+      <time datetime="2025-07-02T00:00:00+08:00">Jul 2</time>
+      <a href="/projects/2025/07/02/i-vibe-coded-tech-debt-a-game-written-in-pure-html-css-js.html">I vibe-coded Tech Debt: a game written in pure HTML/CSS/JS</a>
+    </li>
+
+    <li>
+      <time datetime="2025-06-15T00:00:00+08:00">Jun 15</time>
+      <a href="/software/2025/06/15/your-idea-probably-sucks.html">Your idea probably sucks</a>
+    </li>
+
+    <li>
+      <time datetime="2025-05-01T00:00:00+08:00">May 1</time>
+      <a href="/software/2025/05/01/how-the-pay-once-business-model-saved-my-aas.html">How the pay-once business model saved my *aaS</a>
+    </li>
+
+    <li>
+      <time datetime="2025-03-28T07:00:00+08:00">Mar 28</time>
+      <a href="/software/2025/03/28/learn-to-code-ignore-ai-then-use-ai-to-code-even-better.html">Learn to code, ignore AI, then use AI to code even better</a>
+    </li>
+
+    <li>
+      <time datetime="2025-02-27T07:00:00+08:00">Feb 27</time>
+      <a href="/software/2025/02/27/you-know-how-it-ends.html">You know how it ends</a>
+    </li>
+
+    <li>
+      <time datetime="2025-02-09T00:00:00+08:00">Feb 9</time>
+      <a href="/css/2025/02/09/oklch-css-variables-for-tailwind-v4-colors.html">OKLCH CSS variables for Tailwind v4 colors</a>
+    </li>
+
+    <li>
+      <time datetime="2025-01-22T07:00:00+08:00">Jan 22</time>
+      <a href="/html/2025/01/22/the-vertical-bar-is-the-best-html-page-title-separator.html">The vertical bar (|) is the best HTML page title separator</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2024">
+  <h2 id="year-2024">2024</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2024-11-24T00:00:00+08:00">Nov 24</time>
+      <a href="/html/2024/11/24/how-to-build-a-dropdown-menu-with-just-html.html">How to build a dropdown menu with just HTML</a>
+    </li>
+
+    <li>
+      <time datetime="2024-11-17T00:00:00+08:00">Nov 17</time>
+      <a href="/software/2024/11/17/hyperlinks-existed-before-the-web.html">Hyperlinks existed before the web</a>
+    </li>
+
+    <li>
+      <time datetime="2024-11-17T00:00:00+08:00">Nov 17</time>
+      <a href="/software/2024/11/17/how-counter-strike-introduced-me-to-the-world-of-programming.html">How Counter-Strike introduced me to the world of programming</a>
+    </li>
+
+    <li>
+      <time datetime="2024-11-15T18:00:00+08:00">Nov 15</time>
+      <a href="/kamal/2024/11/15/how-to-self-host-plausible-analytics-with-kamal.html">How to self-host Plausible Analytics with Kamal</a>
+    </li>
+
+    <li>
+      <time datetime="2024-10-30T00:00:00+08:00">Oct 30</time>
+      <a href="/software/2024/10/30/theres-no-place-for-test-driven-development-tdd.html">There's no place for Test-Driven Development (TDD)</a>
+    </li>
+
+    <li>
+      <time datetime="2024-10-25T18:00:00+08:00">Oct 25</time>
+      <a href="/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html">Why does target="_blank" have an underscore in front?</a>
+    </li>
+
+    <li>
+      <time datetime="2024-10-23T18:00:00+08:00">Oct 23</time>
+      <a href="/software/2024/10/23/writing-software-is-like-spreading-butter-on-bread.html">Writing software is like spreading butter on bread</a>
+    </li>
+
+    <li>
+      <time datetime="2024-09-27T18:00:00+08:00">Sep 27</time>
+      <a href="/rails/2024/09/27/notes-from-the-opening-keynote-by-david-heinemeier-hansson-at-rails-world-2024.html">Notes from the Opening Keynote by David Heinemeier Hansson at Rails World 2024</a>
+    </li>
+
+    <li>
+      <time datetime="2024-08-07T18:00:00+08:00">Aug 7</time>
+      <a href="/rails/2024/08/07/how-to-add-mission-control-to-your-rails-app-and-protect-it-with-basic-auth.html">How to add Mission Control to your Rails app and protect it with Basic Auth</a>
+    </li>
+
+    <li>
+      <time datetime="2024-07-18T18:00:00+08:00">Jul 18</time>
+      <a href="/indie-hacking/2024/07/18/i-built-a-flag-matching-game-in-6-days-and-it-was-played-more-than-45-times-in-2-weeks.html">I built a flag-matching game in 6 days</a>
+    </li>
+
+    <li>
+      <time datetime="2024-06-02T06:00:00+08:00">Jun 2</time>
+      <a href="/telegram/kamal/2024/06/02/how-to-deploy-a-telegram-bot-with-kamal.html">How to build and deploy a Telegram bot with Kamal</a>
+    </li>
+
+    <li>
+      <time datetime="2024-03-31T18:00:00+08:00">Mar 31</time>
+      <a href="/rails/2024/03/31/cloudflare-tunnel-a-free-ngrok-alternative-for-developing-rails-apps-locally.html">Cloudflare Tunnel: a free ngrok alternative for exposing local Rails apps to the internet</a>
+    </li>
+
+    <li>
+      <time datetime="2024-03-20T18:00:00+08:00">Mar 20</time>
+      <a href="/coffee-world-rush/2024/03/20/coffee-world-rush-a-leaderboard-for-all-coffee-drinkers-around-the-world.html">Coffee World Rush: a leaderboard for coffee drinkers all around the world</a>
+    </li>
+
+    <li>
+      <time datetime="2024-02-21T18:00:00+08:00">Feb 21</time>
+      <a href="/indie-hacking/2024/02/21/i-built-a-word-matching-game-called-matcharoo.html">I built a word-matching game called Matcharoo</a>
+    </li>
+
+    <li>
+      <time datetime="2024-02-20T18:00:00+08:00">Feb 20</time>
+      <a href="/rails/overmind/2024/02/20/using-overmind-with-foreman-as-a-fallback-for-rails-7-1-apps.html">Using Overmind with Foreman as a fallback for Rails 7.1+ apps</a>
+    </li>
+
+    <li>
+      <time datetime="2024-02-16T18:00:00+08:00">Feb 16</time>
+      <a href="/rails/kamal/2024/02/16/how-to-generate-sitemap-xml-for-your-rails-7-1-app-with-kamal.html">How to generate sitemap.xml for your Rails 7.1+ app with Kamal</a>
+    </li>
+
+    <li>
+      <time datetime="2024-01-21T18:00:01+08:00">Jan 21</time>
+      <a href="/rails/kamal/2024/01/21/how-to-enable-the-traefik-dashboard-for-a-rails-7-1-app.html">How to enable the Traefik dashboard in a Rails 7.1 app deployed with Kamal</a>
+    </li>
+
+    <li>
+      <time datetime="2024-01-21T18:00:00+08:00">Jan 21</time>
+      <a href="/rails/turbo/2024/01/21/how-to-opt-out-of-the-cache-with-hotwire-turbo-drive-in-rails.html">How to opt out of the cache with Hotwire's Turbo Drive in Rails</a>
+    </li>
+
+    <li>
+      <time datetime="2024-01-17T00:00:00+08:00">Jan 17</time>
+      <a href="/rails/kamal/2024/01/17/making-postgresql-work-with-kamal-and-a-new-rails-7-1-application.html">Making PostgreSQL work with Kamal and a new Rails 7.1 app</a>
+    </li>
+
+    <li>
+      <time datetime="2024-01-08T06:23:44+08:00">Jan 8</time>
+      <a href="/turbo-native/android/2024/01/08/how-to-run-your-turbo-native-android-app-on-a-physical-device-locally.html">How to run your Turbo Native Android app on a physical device locally</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2023">
+  <h2 id="year-2023">2023</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2023-11-08T00:00:00+08:00">Nov 8</time>
+      <a href="/2023/11/08/embarking-on-an-indie-dev-journey.html">Embarking on an indie dev journey</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2018">
+  <h2 id="year-2018">2018</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2018-06-21T06:23:44+08:00">Jun 21</time>
+      <a href="/programming/ruby/2018/06/21/untangling-the-love-ruby-tongue-twister.html">Untangling the “love” Ruby tongue twister</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2015">
+  <h2 id="year-2015">2015</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2015-05-23T06:23:44+08:00">May 23</time>
+      <a href="/programming/ruby/2015/05/23/a-bit-of-bacon-lettuce-and-tomato.html">A bit of bacon, lettuce and tomato</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2014">
+  <h2 id="year-2014">2014</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2014-12-31T06:23:44+08:00">Dec 31</time>
+      <a href="/programming/ruby/2014/12/31/rubys-exception-to-message-mapper.html">Ruby's exception to message mapper</a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="blog-year" aria-labelledby="year-2013">
+  <h2 id="year-2013">2013</h2>
+  <ul class="blog-posts">
+
+    <li>
+      <time datetime="2013-12-15T00:00:00+08:00">Dec 15</time>
+      <a href="/programming/javascript/2013/12/15/javascript-eval-tricks.html">JavaScript eval tricks</a>
+    </li>
+
+    <li>
+      <time datetime="2013-08-24T18:00:00+08:00">Aug 24</time>
+      <a href="/programming/ruby/2013/08/24/ruby-eval-tricks.html">Ruby eval tricks</a>
+    </li>
+
+    <li>
+      <time datetime="2013-08-13T18:00:00+08:00">Aug 13</time>
+      <a href="/programming/ruby/2013/08/13/various-ways-to-count-digits-in-a-ruby-integer.html">Various ways to count digits in a Ruby integer</a>
+    </li>
+
+    <li>
+      <time datetime="2013-08-09T06:23:44+08:00">Aug 9</time>
+      <a href="/programming/ruby/2013/08/09/blocks-in-ruby-are-always-there.html">Blocks in Ruby are always there</a>
+    </li>
+
+    <li>
+      <time datetime="2013-08-02T06:23:44+08:00">Aug 2</time>
+      <a href="/programming/shell/2013/08/02/how-to-safely-enter-passwords-in-a-terminal.html">How to safely enter passwords in a terminal</a>
+    </li>
+
+    <li>
+      <time datetime="2013-07-15T06:23:44+08:00">Jul 15</time>
+      <a href="/programming/ruby/2013/07/15/how-to-say-i-love-you-in-ruby.html">How to say “I love you” in Ruby</a>
+    </li>
+
+    <li>
+      <time datetime="2013-07-03T06:23:44+08:00">Jul 3</time>
+      <a href="/programming/ruby/2013/07/03/pulling-through-a-ruby-exception.html">Pulling through a Ruby exception</a>
+    </li>
+
+    <li>
+      <time datetime="2013-06-03T06:23:44+08:00">Jun 3</time>
+      <a href="/programming/ruby/2013/06/03/difference-between-frozen-ruby-objects-across-versions.html">Difference between frozen Ruby objects across versions</a>
+    </li>
+
+    <li>
+      <time datetime="2013-05-30T00:00:00+08:00">May 30</time>
+      <a href="/programming/ruby/2013/05/30/so-what-is-binding-pry-exactly.html">So what is “binding.pry” exactly?</a>
+    </li>
+
   </ul>
 </section>
 
 
-    </main><footer>
-  <hr>
-  <small>
-    <p>
-      <a href="/feed.xml">ATOM feed</a>
-      |
-      <a href="https://github.com/kyrylo/kyrylo.org">GitHub</a> (CC BY-NC-SA 4.0)
-    </p>
-    <p>Last modified: <time datetime="2026-07-14T00:17:49+08:00">July 14, 2026</time></p>
-  </small>
+</div>
+
+    </main><footer class="site-footer">
+  <p>Subscribe to new posts via the <a href="/feed.xml">Atom feed</a>.</p>
+
 </footer>
 </body>
 

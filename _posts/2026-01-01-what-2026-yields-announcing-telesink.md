@@ -2,7 +2,7 @@
 layout: post
 title: What 2026 yields (announcing Telesink)
 date: 2026-01-01
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 I'm a forward-thinking person. Instead of looking back, I prefer to look

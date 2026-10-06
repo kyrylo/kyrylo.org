@@ -2,7 +2,7 @@
 layout: post
 title: The magic of typing terminal commands
 date: 2026-05-11
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 There is a quiet magic in the terminal.

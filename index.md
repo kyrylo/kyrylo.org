@@ -1,33 +1,22 @@
 ---
 layout: home
 redirect_from: "/about/"
-image: assets/images/web-app-manifest-512x512.png?v=2
+image: assets/images/web-app-manifest-512x512.png?v=3
 ---
 
-<section>
-  <h2>About</h2>
-  <p>
-    I build serious software and unserious websites.<br>
-    Originally from Kharkiv, Ukraine 🇺🇦<br>
-    Currently living in Cebu, Philippines 🇵🇭
+<section class="home-intro" aria-labelledby="home-intro-title">
+  <h2 id="home-intro-title">{{ site.tagline }}</h2>
+  <p class="home-project">
+    <a href="https://telebugs.com">Telebugs</a> is my self&#8209;hosted alternative to Sentry.
   </p>
+  <p class="home-location">From Kharkiv, based in Cebu</p>
+</section>
 
-  <p>
-    I work on <a href="https://telebugs.com">Telebugs</a>, a self-hosted Sentry alternative for error tracking.
-  </p>
+<section class="home-contact" aria-label="Get in touch">
+  <p>Get in touch: <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a></p>
+  {% include social-links.html github=true linkedin=true %}
+</section>
 
-  <p>
-    Get in touch:
-  </p>
- </section>
-
-<nav>
-  <ul>
-    <li>Email — <a href="mailto:silin@kyrylo.org">silin@kyrylo.org</a></li>
-    <li>GitHub — <a href="https://github.com/kyrylo">kyrylo</a></li>
-    <li>X — <a href="https://x.com/kyrylo">@kyrylo</a></li>
-    <li>Bluesky — <a href="https://bsky.app/profile/kyrylo.org">@kyrylo.org</a></li>
-    <li>Mastodon — <a href="https://mastodon.social/@kyrylosilin">@kyrylosilin</a></li>
-    <li>LinkedIn — <a href="https://www.linkedin.com/in/kyrylo-silin/">Kyrylo Silin</a></li>
-  </ul>
-</nav>
+<aside class="home-signature" aria-label="My idea of simplicity">
+  <code>simple ≠ dumbed-down<br>simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
+</aside>

@@ -3,7 +3,7 @@ layout: post
 title: "Your idea probably sucks"
 date: 2025-06-15
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 If you think you have a brilliant idea, I have bad news: your idea probably _sucks_.

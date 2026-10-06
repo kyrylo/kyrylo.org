@@ -3,7 +3,7 @@ layout: post
 title: Hyperlinks existed before the web
 date: 2024-11-17
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 My first encounter with the concept wasn’t online. It came from

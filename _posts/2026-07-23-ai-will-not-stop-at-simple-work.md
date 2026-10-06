@@ -3,7 +3,7 @@ layout: post
 title: AI will not stop at simple work
 date: 2026-07-23 19:17:27 +0800
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 After I wrote that [programming experience is no longer a

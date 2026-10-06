@@ -2,7 +2,7 @@
 layout: post
 title: Stick with defaults
 date: 2026-05-20
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 There is a strange instinct among developers to distrust defaults. The moment we

@@ -1,33 +1,23 @@
 ---
 layout: base
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <a class="post-author" href="{{ '/' | relative_url }}" itemprop="author" itemscope itemtype="http://schema.org/Person" rel="author">
+      <picture>
+        <source srcset="{{ '/assets/images/kyrylo-silin@2x.webp?v=3' | relative_url }} 2x, {{ '/assets/images/kyrylo-silin.webp?v=3' | relative_url }} 1x" type="image/webp">
+        <img class="author-avatar" src="{{ '/assets/images/kyrylo-silin.webp?v=3' | relative_url }}" alt="" width="48" height="48">
+      </picture>
+      <meta itemprop="name" content="{{ site.author.name | escape }}">
+      {% include author-logo.html %}
+    </a>
 
-    <p>
+    <p class="post-date">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: "%b %-d, %Y" }}
+        {{ page.date | date: "%B %-d, %Y" }}
       </time>
-      |
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <picture>
-          <source srcset="{{ "/assets/images/kyrylo-silin@2x.webp?v=2" | relative_url }} 2x, {{ "/assets/images/kyrylo-silin.webp?v=2" | relative_url }} 1x" type="image/webp">
-
-          <img class="author-avatar" src="{{ "/assets/images/kyrylo-silin.webp?v=2" | relative_url }}" alt="Kyrylo Silin" width="15" height="15" loading="lazy">
-        </picture>
-
-        <span itemprop="name">
-          <a href="{{ '/' | relative_url }}">Kyrylo Silin</a>
-        </span>
-      </span>
-      on
-      <a href="https://x.com/kyrylo" target="_blank">X</a>
-      &middot;
-      <a href="https://bsky.app/profile/kyrylo.org" target="_blank">Bluesky</a>
-      &middot;
-      <a href="https://mastodon.social/@kyrylosilin" target="_blank">Mastodon</a>
     </p>
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
   </header>
 
   <div class="article" itemprop="articleBody">
@@ -35,18 +25,24 @@ layout: base
   </div>
 </article>
 
-<hr>
+<aside class="post-about" aria-label="About the author">
+  <p><a class="post-about-author" href="{{ '/' | relative_url }}">{% include author-logo.html %}</a><br>{{ site.tagline }}.</p>
+  {% include social-links.html %}
+</aside>
 
-<div>
-  {% if page.next %}
-    <div>
-      Next: <a href="{{ page.next.url | relative_url }}" rel="next" title="{{ page.next.title }}">{{ page.next.title }}</a>
-    </div>
-  {% endif %}
-
-  {% if page.previous %}
-    <div>
-      Prev: <a href="{{ page.previous.url | relative_url }}" rel="prev" title="{{ page.previous.title }}">{{ page.previous.title }}</a>
-    </div>
-  {% endif %}
-</div>
+{% if page.previous or page.next %}
+<nav class="post-navigation" aria-label="More posts">
+{% if page.previous %}
+    <a class="post-navigation-link" href="{{ page.previous.url | relative_url }}" rel="prev">
+      <span class="post-navigation-label">&larr; Previous</span>
+      <span class="post-navigation-title">{{ page.previous.title | escape }}</span>
+    </a>
+{% endif %}
+{% if page.next %}
+    <a class="post-navigation-link post-navigation-next" href="{{ page.next.url | relative_url }}" rel="next">
+      <span class="post-navigation-label">Next &rarr;</span>
+      <span class="post-navigation-title">{{ page.next.title | escape }}</span>
+    </a>
+{% endif %}
+</nav>
+{% endif %}

@@ -2,7 +2,7 @@
 layout: post
 title: AI will help you climb the wrong ladder faster
 date: 2026-04-15
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 One of my biggest disappointments with AI is this:

@@ -1,16 +1,12 @@
 ---
-layout: page
-image: assets/images/web-app-manifest-512x512.png?v=2
-title: What I'm Working On
+layout: listing
+image: assets/images/web-app-manifest-512x512.png?v=3
+title: Projects
 description: My projects, doodles, vibe-coded experiments.
 ---
 
-<section>
-  <h2>What I'm Working On</h2>
-
-  <h3>Projects</h3>
-
-  <dl>
+<section class="project-section" aria-label="Current projects">
+  <dl class="project-list">
     <dt><a href="https://telebugs.com">Telebugs</a></dt>
     <dd>
       Self-hosted Sentry alternative for error tracking. Track errors in your apps, get notified, fix bugs faster. (<a href="https://github.com/telebugs/docs.telebugs.com">docs on github</a>)
@@ -44,8 +40,11 @@ description: My projects, doodles, vibe-coded experiments.
 
   </dl>
 
-  <h3>Just For Fun</h3>
-  <dl>
+</section>
+
+<section class="project-section" aria-labelledby="just-for-fun">
+  <h2 id="just-for-fun">Just for fun</h2>
+  <dl class="project-list">
     <dt><a href="https://justfuckinguse.com">Just Fucking Use</a></dt>
     <dd>
       A collection of all the best Just Fucking Use sites.
@@ -73,8 +72,11 @@ description: My projects, doodles, vibe-coded experiments.
 
   </dl>
 
-  <h3>Tools</h3>
-  <dl>
+</section>
+
+<section class="project-section" aria-labelledby="tools">
+  <h2 id="tools">Tools</h2>
+  <dl class="project-list">
     <dt><a href="/css-color-names-reference/">CSS Color Names Reference</a></dt>
     <dd>
       Complete reference of all 147 standard CSS color names with hex codes, RGB values, OKLCH, and HSL values.
@@ -92,9 +94,11 @@ description: My projects, doodles, vibe-coded experiments.
 
   </dl>
 
-  <h3>Doodles & experiments</h3>
+</section>
 
-  <dl>
+<section class="project-section" aria-labelledby="doodles-and-experiments">
+  <h2 id="doodles-and-experiments">Doodles &amp; experiments</h2>
+  <dl class="project-list">
     <dt><a href="/dont-pull-my-strings/">Don't pull my strings</a></dt>
     <dd>
       When puns are taken too literally.

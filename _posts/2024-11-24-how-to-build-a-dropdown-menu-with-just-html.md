@@ -3,7 +3,7 @@ layout: post
 title: How to build a dropdown menu with just HTML
 date: 2024-11-24
 categories: html
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 In web development, there are countless ways to create a dropdown menu. The

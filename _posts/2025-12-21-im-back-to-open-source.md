@@ -3,11 +3,11 @@ layout: post
 title: "I'm back to Open Source"
 date: 2025-12-21
 categories: software
-image: assets/images/kyrylo-silin@2x.webp
+image: assets/images/kyrylo-silin@2x.webp?v=3
 ---
 
 If you’ve ever worked with Ruby, chances are you’ve used my code. I started my
-programming journey by [contributing to open source](/programming/ruby/2013/04/12/so-what-is-binding-pry-exactly.html). Helping others and building software has been my passion from day one. In recent years, I paused publishing
+programming journey by [contributing to open source]({% post_url 2013-05-30-so-what-is-binding-pry-exactly %}). Helping others and building software has been my passion from day one. In recent years, I paused publishing
 my own projects to focus on commercial software. But I’ve dearly missed the
 hacker spirit of open source.
 
