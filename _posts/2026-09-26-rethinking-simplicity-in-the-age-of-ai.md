@@ -9,8 +9,9 @@ image: assets/images/kyrylo-silin@2x.webp?v=3
 “English is a better programming language than Ruby. Rust is amazing if you never
 have to look at it.”
 
-That’s DHH at Rails World, three days ago. The guy who built a career on loving
-the source code just said the source is no longer the point.
+That’s [DHH at Rails World](https://www.youtube.com/watch?v=vDjW_dRyKXY), three days
+ago. The guy who built a career on loving the source code just said the source is
+no longer the point.
 
 As a minimalist and a fan of everything simple, I’ve been rethinking what
 simplicity means in the age of AI.
