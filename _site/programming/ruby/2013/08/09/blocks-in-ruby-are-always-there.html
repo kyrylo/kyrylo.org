@@ -326,8 +326,114 @@
     }
 
     .home-location {
+      position: relative;
+      width: min(100%, 28rem);
+      margin: 1.75rem auto 0;
+    }
+
+    .home-location svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .location-grid {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: .5;
+    }
+
+    .location-land {
       color: var(--muted);
-      font-size: .85em;
+      fill: url(#location-dots);
+      opacity: .35;
+    }
+
+    .location-country {
+      color: var(--link);
+      fill: url(#location-country-dots);
+      stroke: var(--link);
+      stroke-width: .6;
+      stroke-linejoin: round;
+      opacity: .65;
+    }
+
+    .location-route {
+      fill: none;
+      stroke: var(--link);
+      stroke-width: 1.5;
+      stroke-dasharray: 3 5;
+      stroke-linecap: round;
+    }
+
+    .location-origin {
+      fill: var(--background);
+      stroke: var(--link);
+      stroke-width: 1.5;
+    }
+
+    .location-destination,
+    .location-halo {
+      fill: var(--link);
+    }
+
+    .location-halo {
+      opacity: .15;
+    }
+
+    .location-label {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.4;
+    }
+
+    .location-label-origin {
+      top: 24.2%;
+      right: 80%;
+      transform: translateY(-50%);
+      text-align: right;
+    }
+
+    .location-label-destination {
+      top: 82%;
+      left: 82.2%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .location-caption {
+      color: var(--muted);
+      font-size: .625rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .location-city {
+      color: var(--text);
+      font-size: .875rem;
+      font-weight: 500;
+    }
+
+    .location-country-name {
+      color: var(--muted);
+      font-size: .6875rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .location-halo {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: location-arrival 3s ease-out 2;
+      }
+
+      @keyframes location-arrival {
+        0%, 100% { transform: scale(1); opacity: .15; }
+        65% { transform: scale(1.6); opacity: 0; }
+        66% { transform: scale(1); opacity: 0; }
+      }
     }
 
     .home-contact {

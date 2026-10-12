@@ -9,7 +9,7 @@ image: assets/images/web-app-manifest-512x512.png?v=3
   <p class="home-project">
     <a href="https://telebugs.com">Telebugs</a> is my self&#8209;hosted alternative to Sentry.
   </p>
-  <p class="home-location">From Kharkiv, based in Cebu</p>
+  {% include home-location.html %}
 </section>
 
 <section class="home-contact" aria-label="Get in touch">
