@@ -64,10 +64,12 @@ body {
   color: var(--muted);
   font-size: 11px;
 }
-.author-block img {
+.author-wordmark {
   display: block;
+  width: 100px;
   height: auto;
-  filter: invert(1);
+  flex: none;
+  color: var(--ink);
 }
 .author-block:hover {
   border-color: #888;

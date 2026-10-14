@@ -118,7 +118,11 @@ export function createLiveCamera({
     armTimeout(token);
     if (source.cameraAlias) {
       frame = document.createElement("iframe");
-      frame.src = `./camera-frame.html?city=${encodeURIComponent(city.id)}&generation=${token}`;
+      // Resolve from this module, even if the document was opened without a slash.
+      const frameURL = new URL("./camera-frame.html", import.meta.url);
+      frameURL.searchParams.set("city", city.id);
+      frameURL.searchParams.set("generation", token);
+      frame.src = frameURL.href;
       frame.title = `${source.place}, ${city.name} — live camera by ${source.provider}`;
       frame.allow = "autoplay; fullscreen";
       frame.tabIndex = -1;

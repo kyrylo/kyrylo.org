@@ -116,11 +116,16 @@ Commit both the source and its public mirror, along with `_site/same24/index.htm
 when changing the redirect. The existing Skiff server publishes commits pushed
 to `master` automatically. Keep development tools and the retired diary/scene
 files out of the public mirror.
+The server redirects `/elsewhere` to `/elsewhere/`. Page assets also use rooted
+URLs, and the camera wrapper resolves from its module URL, so slashless links
+remain functional even before a redirect is applied. The author's original SVG
+wordmark is embedded directly to avoid a separate image request.
 
 ## Verification
 
 ```sh
 node --test elsewhere/_tools/warp-clock.test.mjs
+node elsewhere/_tools/entrypoints.test.mjs
 node elsewhere/_tools/browser.test.mjs
 node elsewhere/_tools/long-watch.test.mjs
 node elsewhere/_tools/recovery.test.mjs

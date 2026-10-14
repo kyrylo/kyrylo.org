@@ -10,7 +10,7 @@ try {
   const clock = await browser.newPage({ timezoneId: "Asia/Tokyo" });
   const errors = [];
   clock.on("pageerror", error => errors.push(error.message));
-  await clock.route("**/live-camera.js", route => route.fulfill({
+  await clock.route("**/live-camera.js*", route => route.fulfill({
     contentType: "application/javascript",
     body: "export function createLiveCamera() { return {load(){}}; }",
   }));

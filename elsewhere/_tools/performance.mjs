@@ -10,7 +10,7 @@ try {
  const context=await browser.newContext({viewport:{width,height},deviceScaleFactor:2,timezoneId:'Asia/Tokyo'});
  const page=await context.newPage();
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
- if(!process.env.PERF_LIVE) await page.route('**/live-camera.js',r=>r.fulfill({contentType:'application/javascript',body:'export function createLiveCamera(){ return {load(){}}; }'}));
+ if(!process.env.PERF_LIVE) await page.route('**/live-camera.js*',r=>r.fulfill({contentType:'application/javascript',body:'export function createLiveCamera(){ return {load(){}}; }'}));
  const cdp=await context.newCDPSession(page);
  await cdp.send('Performance.enable');
  if(process.env.PERF_CPU) await cdp.send('Emulation.setCPUThrottlingRate',{rate:Number(process.env.PERF_CPU)});

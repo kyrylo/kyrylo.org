@@ -5,7 +5,7 @@ import {
   warpDestination,
   easeWarp,
 } from "./warp-clock.js";
-import { createLiveCamera } from "./live-camera.js";
+import { createLiveCamera } from "./live-camera.js?v=4";
 import { updateAtmosphere } from "./atmosphere.js";
 const $ = (id) => document.getElementById(id);
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
