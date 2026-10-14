@@ -99,6 +99,11 @@ description: My projects, doodles, vibe-coded experiments.
 <section class="project-section" aria-labelledby="doodles-and-experiments">
   <h2 id="doodles-and-experiments">Doodles &amp; experiments</h2>
   <dl class="project-list">
+    <dt><a href="/elsewhere/">Elsewhere</a></dt>
+    <dd>
+      A little clock for hopping through time zones and peeking through live webcams.
+    </dd>
+
     <dt><a href="/dont-pull-my-strings/">Don't pull my strings</a></dt>
     <dd>
       When puns are taken too literally.
