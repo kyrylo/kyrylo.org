@@ -97,6 +97,8 @@ Player documentation:
 
 The photographic body is `assets/clock-body.png`; precise SVG markings and
 hands sit over its spindle. No displayed time is baked into the image.
+`assets/og.jpg` is the 1200×630 social share image, generated with the built-in
+imagegen tool; its prompt is saved in `_tools/og-image-prompt.txt`.
 The earlier lives, activity diaries and illustrations are absent from the page
 and runtime; their unused sources and notes are retained.
 

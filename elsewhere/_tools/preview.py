@@ -14,7 +14,7 @@ source = Path(__file__).resolve().parents[1]
 with tempfile.TemporaryDirectory(prefix='elsewhere-preview-') as directory:
     target = Path(directory) / 'elsewhere'
     for name in ('index.html', 'elsewhere.css', 'elsewhere.js', 'base.css', 'favicon.svg',
-                 'cities.js', 'atmosphere.js', 'world-route.js', 'warp-clock.js', 'live-camera.js', 'camera-frame.html', 'camera-frame.js', 'README.md', 'assets/clock-body.png'):
+                 'cities.js', 'atmosphere.js', 'world-route.js', 'warp-clock.js', 'live-camera.js', 'camera-frame.html', 'camera-frame.js', 'README.md', 'assets/clock-body.png', 'assets/og.jpg'):
         (target / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source / name, target / name)
     wordmark = Path(directory) / 'assets/images/kyrylo-silin-logo.svg'

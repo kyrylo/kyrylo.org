@@ -1,0 +1,13 @@
+Generated with the built-in image_gen tool.
+
+Use case: ads-marketing.
+Create a finished, exceptionally beautiful Open Graph share image for Elsewhere, an artful website where a real ticking analog clock takes you through time zones and live camera views. Landscape aspect ratio 1.905:1, ideally 1200 × 630 pixels. This is a designed editorial poster, not a website screenshot.
+Composition: refined asymmetrical split, generous safe margins of at least 60 pixels. Left half is crisp typography with ample breathing room. Right half features one large, perfectly round, front-facing photorealistic analog clock, fully inside the canvas. The clock has a warm ivory dial, a slim brushed champagne-metal bezel, deep forest-green outer case, elegant dark green hour/minute hands at exactly 10:10, a fine muted terracotta second hand, accurate understated numerals 1 through 12 each exactly once, and 60 precise fine tick marks. No brand or location text inside the dial. Tactile enamel, subtle brushed metal, beautifully controlled soft light and a soft dimensional shadow.
+Backdrop: very dark ink and deep teal flowing into muted petrol blue and warm burnished amber, luminous yet dim atmospheric gradients with a very subtle fine film grain. One or two broad, softly glowing curved arcs flow behind the clock, suggesting time bending and distant horizons. Restrained, sophisticated, visually arresting. The cream clock face and cream type are the brightest elements. No bright neon, no saturated purple, no busy particle effects.
+Typography must be typeset with meticulous spacing, large enough to read in a small social preview. In the upper left, small refined sans serif: "Elsewhere". Main headline in a beautiful bold editorial serif (similar to a warm contemporary Georgia), warm ivory, exactly three lines:
+"Right now,"
+"somewhere"
+"else."
+Below, one modest sans-serif line, exact text: "A live window into the world."
+At bottom left, small quiet sans-serif: "kyrylo.org/elsewhere".
+The headline should occupy the visual center of the left half with no overlap with the clock. No italics, no green text, no additional words, no interface controls, no badges, no logos, no flags, no map, no globe, no collage. Ensure every word is exact and all four margins feel intentional. Premium art direction, a calm sense of wonder.
