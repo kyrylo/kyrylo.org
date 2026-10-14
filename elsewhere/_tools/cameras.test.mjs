@@ -46,7 +46,9 @@ try {
           cameraAlias: current.cameraAlias,
         };
         try {
-          await page.goto(url);
+          // Production embeds can keep the load event pending; verify playback
+          // below instead of waiting for every third-party resource to finish.
+          await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
           await page.locator(`.city-stop[data-city="${current.id}"]`).click();
           await page.waitForSelector("#camera-panel[data-state=playing]", {
             timeout: 35000,
