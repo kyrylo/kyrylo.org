@@ -1,0 +1,438 @@
+{
+  "date": "2026-10-14",
+  "method": "Chrome, 6.5 seconds idle and 6.5 seconds traveling through 8 destinations, 350ms apart. Baseline was captured before optimization. Mobile checks use 4x CPU throttling and a camera stub; desktop checks use live video. Camera/network startup varies independently. RAF measures page responsiveness; ambient canvas intentionally renders at 30fps.",
+  "runs": {
+    "before-live": {
+      "label": "before-live",
+      "url": "http://127.0.0.1:8244/elsewhere-perf-before/",
+      "viewport": "1600\u00d71000 @2x",
+      "cpu": 1,
+      "live": true,
+      "startupMs": 7154,
+      "errors": [],
+      "phases": [
+        {
+          "phase": "idle",
+          "frames": 390,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "over25": 0,
+          "over50": 0,
+          "interactionMs": [],
+          "metrics": {
+            "TaskDuration": 0.4879230000000001,
+            "ScriptDuration": 0.04771600000000001,
+            "LayoutDuration": 0.025492,
+            "RecalcStyleDuration": 0.06326299999999996,
+            "LayoutCount": 391,
+            "RecalcStyleCount": 391
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 1707,
+              "ms": 143.49200000000002
+            },
+            "UpdateLayoutTree": {
+              "count": 391,
+              "ms": 63.06599999999995
+            },
+            "Layout": {
+              "count": 392,
+              "ms": 19.543000000000003
+            },
+            "PrePaint": {
+              "count": 398,
+              "ms": 66.86699999999992
+            },
+            "Layerize": {
+              "count": 398,
+              "ms": 107.6800000000002
+            },
+            "Paint": {
+              "count": 20,
+              "ms": 2.1079999999999997
+            }
+          }
+        },
+        {
+          "phase": "travel",
+          "frames": 363,
+          "p50": 16.69999999999709,
+          "p95": 33.29999999999927,
+          "p99": 33.400000000001455,
+          "over25": 23,
+          "over50": 2,
+          "interactionMs": [
+            5.900000000372529,
+            5.5,
+            5.400000000372529,
+            5.900000000372529,
+            5.800000000745058,
+            6.799999998882413,
+            6.099999999627471,
+            8.900000000372529
+          ],
+          "metrics": {
+            "TaskDuration": 1.6896999999999998,
+            "ScriptDuration": 0.09758799999999998,
+            "LayoutDuration": 0.04800099999999999,
+            "RecalcStyleDuration": 0.8397020000000001,
+            "LayoutCount": 389,
+            "RecalcStyleCount": 390
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 1510,
+              "ms": 1349.856999999993
+            },
+            "UpdateLayoutTree": {
+              "count": 437,
+              "ms": 881.6749999999997
+            },
+            "Layout": {
+              "count": 419,
+              "ms": 57.84499999999993
+            },
+            "PrePaint": {
+              "count": 471,
+              "ms": 107.89999999999995
+            },
+            "Layerize": {
+              "count": 460,
+              "ms": 120.63200000000006
+            },
+            "Paint": {
+              "count": 1544,
+              "ms": 120.87500000000061
+            }
+          }
+        }
+      ]
+    },
+    "single-canvas-live": {
+      "label": "single-canvas-live",
+      "url": "http://127.0.0.1:8244/elsewhere/",
+      "viewport": "1600\u00d71000 @2x",
+      "cpu": 1,
+      "live": true,
+      "startupMs": 9658,
+      "errors": [],
+      "phases": [
+        {
+          "phase": "idle",
+          "frames": 390,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "over25": 0,
+          "over50": 0,
+          "interactionMs": [],
+          "metrics": {
+            "TaskDuration": 0.4094789999999999,
+            "ScriptDuration": 0.062295000000000045,
+            "LayoutDuration": 0.0022800000000000042,
+            "RecalcStyleDuration": 0.01019299999999998,
+            "LayoutCount": 6,
+            "RecalcStyleCount": 134
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 1608,
+              "ms": 202.48400000000115
+            },
+            "UpdateLayoutTree": {
+              "count": 134,
+              "ms": 10.322000000000006
+            },
+            "PrePaint": {
+              "count": 402,
+              "ms": 29.678000000000026
+            },
+            "Layerize": {
+              "count": 402,
+              "ms": 58.250000000000156
+            },
+            "Layout": {
+              "count": 7,
+              "ms": 2.294
+            },
+            "Paint": {
+              "count": 22,
+              "ms": 3.6370000000000005
+            }
+          }
+        },
+        {
+          "phase": "travel",
+          "frames": 389,
+          "p50": 16.700000000000728,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000291,
+          "over25": 1,
+          "over50": 0,
+          "interactionMs": [
+            7.400000000372529,
+            6.799999998882413,
+            6.200000001117587,
+            5.900000000372529,
+            4.900000000372529,
+            5.599999999627471,
+            6,
+            13.800000000745058
+          ],
+          "metrics": {
+            "TaskDuration": 0.8024760000000002,
+            "ScriptDuration": 0.14391699999999996,
+            "LayoutDuration": 0.031726000000000004,
+            "RecalcStyleDuration": 0.075955,
+            "LayoutCount": 27,
+            "RecalcStyleCount": 327
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 1690,
+              "ms": 463.144
+            },
+            "PrePaint": {
+              "count": 433,
+              "ms": 74.02599999999994
+            },
+            "Layerize": {
+              "count": 433,
+              "ms": 122.70399999999978
+            },
+            "UpdateLayoutTree": {
+              "count": 355,
+              "ms": 84.17599999999983
+            },
+            "Layout": {
+              "count": 50,
+              "ms": 43.59900000000002
+            },
+            "Paint": {
+              "count": 425,
+              "ms": 60.23800000000006
+            }
+          }
+        }
+      ]
+    },
+    "before-mobile": {
+      "label": "before-mobile",
+      "url": "http://127.0.0.1:8244/elsewhere-perf-before/",
+      "viewport": "390\u00d7844 @2x",
+      "cpu": 4,
+      "live": false,
+      "startupMs": 987,
+      "errors": [],
+      "phases": [
+        {
+          "phase": "idle",
+          "frames": 391,
+          "p50": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "p99": 16.800000000000182,
+          "over25": 0,
+          "over50": 0,
+          "interactionMs": [],
+          "metrics": {
+            "TaskDuration": 3.187392,
+            "ScriptDuration": 0.341859,
+            "LayoutDuration": 0.177147,
+            "RecalcStyleDuration": 0.554519,
+            "LayoutCount": 394,
+            "RecalcStyleCount": 394
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 787,
+              "ms": 377.78399999999914
+            },
+            "UpdateLayoutTree": {
+              "count": 394,
+              "ms": 552.5239999999997
+            },
+            "Layout": {
+              "count": 394,
+              "ms": 133.39799999999997
+            },
+            "PrePaint": {
+              "count": 394,
+              "ms": 530.9530000000001
+            },
+            "Layerize": {
+              "count": 394,
+              "ms": 644.4750000000001
+            },
+            "Paint": {
+              "count": 14,
+              "ms": 16.502
+            }
+          }
+        },
+        {
+          "phase": "travel",
+          "frames": 214,
+          "p50": 33.29999999999927,
+          "p95": 50,
+          "p99": 66.69999999999891,
+          "over25": 140,
+          "over50": 7,
+          "interactionMs": [
+            41.80000000074506,
+            42.90000000037253,
+            41.59999999962747,
+            43.30000000074506,
+            39.5,
+            37.90000000037253,
+            45.59999999962747,
+            74
+          ],
+          "metrics": {
+            "TaskDuration": 5.871953999999999,
+            "ScriptDuration": 0.2589380000000001,
+            "LayoutDuration": 0.20160500000000003,
+            "RecalcStyleDuration": 3.556877,
+            "LayoutCount": 224,
+            "RecalcStyleCount": 224
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 440,
+              "ms": 579.4499999999996
+            },
+            "UpdateLayoutTree": {
+              "count": 224,
+              "ms": 3557.6410000000005
+            },
+            "Layout": {
+              "count": 224,
+              "ms": 173.67600000000004
+            },
+            "PrePaint": {
+              "count": 216,
+              "ms": 371.388
+            },
+            "Layerize": {
+              "count": 216,
+              "ms": 401.66799999999995
+            },
+            "Paint": {
+              "count": 827,
+              "ms": 427.07399999999996
+            }
+          }
+        }
+      ]
+    },
+    "after-mobile": {
+      "label": "after-mobile",
+      "url": "http://127.0.0.1:8244/elsewhere/",
+      "viewport": "390\u00d7844 @2x",
+      "cpu": 4,
+      "live": false,
+      "startupMs": 947,
+      "errors": [],
+      "phases": [
+        {
+          "phase": "idle",
+          "frames": 391,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "over25": 0,
+          "over50": 0,
+          "interactionMs": [],
+          "metrics": {
+            "TaskDuration": 1.4929250000000003,
+            "ScriptDuration": 0.18796200000000002,
+            "LayoutDuration": 0.010171000000000013,
+            "RecalcStyleDuration": 0.208369,
+            "LayoutCount": 7,
+            "RecalcStyleCount": 393
+          },
+          "timings": {
+            "FunctionCall": {
+              "count": 940,
+              "ms": 219.11399999999972
+            },
+            "UpdateLayoutTree": {
+              "count": 393,
+              "ms": 205.639
+            },
+            "PrePaint": {
+              "count": 393,
+              "ms": 192.72400000000005
+            },
+            "Layerize": {
+              "count": 393,
+              "ms": 169.11100000000002
+            },
+            "Layout": {
+              "count": 7,
+              "ms": 10.004000000000001
+            },
+            "Paint": {
+              "count": 16,
+              "ms": 17.895000000000003
+            }
+          }
+        },
+        {
+          "phase": "travel",
+          "frames": 378,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 33.30000000000109,
+          "over25": 9,
+          "over50": 1,
+          "interactionMs": [
+            34.19999999925494,
+            19.5,
+            29,
+            20.09999999962747,
+            17.299999998882413,
+            21.5,
+            23.899999998509884,
+            45.09999999962747
+          ],
+          "metrics": {
+            "TaskDuration": 2.5479289999999994,
+            "ScriptDuration": 0.4789709999999999,
+            "LayoutDuration": 0.09588199999999997,
+            "RecalcStyleDuration": 0.29001899999999997,
+            "LayoutCount": 23,
+            "RecalcStyleCount": 389
+          },
+          "timings": {
+            "Layout": {
+              "count": 24,
+              "ms": 93.211
+            },
+            "PrePaint": {
+              "count": 380,
+              "ms": 262.02500000000015
+            },
+            "Paint": {
+              "count": 360,
+              "ms": 176.55300000000014
+            },
+            "Layerize": {
+              "count": 380,
+              "ms": 320.1710000000011
+            },
+            "FunctionCall": {
+              "count": 1055,
+              "ms": 610.8380000000011
+            },
+            "UpdateLayoutTree": {
+              "count": 389,
+              "ms": 287.37499999999994
+            }
+          }
+        }
+      ]
+    }
+  }
+}

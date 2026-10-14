@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Right now, somewhere else.</title>
+    <meta
+      name="description"
+      content="A little time warp. Zoom a ticking clock through the world’s time zones, with live cameras along the way."
+    />
+    <link rel="canonical" href="https://kyrylo.org/elsewhere/" />
+    <meta property="og:title" content="Right now, somewhere else." />
+    <meta
+      property="og:description"
+      content="Zoom the clock. Go somewhere else. A whole world, one shared moment."
+    />
+    <meta property="og:url" content="https://kyrylo.org/elsewhere/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./favicon.svg?v=3" type="image/svg+xml" />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./elsewhere.css" />
+    <link rel="preload" as="image" href="./assets/clock-body.png" />
+    <script type="module" src="./elsewhere.js"></script>
+  </head>
+  <body>
+    <div id="place-atmosphere" class="place-atmosphere" aria-hidden="true"></div>
+    <a class="author-block" href="/" aria-label="by Kyrylo Silin"
+      ><span>by</span
+      ><img
+        src="/assets/images/kyrylo-silin-logo.svg"
+        width="100"
+        height="12"
+        alt="Kyrylo Silin"
+    /></a>
+    <main class="wrap">
+      <header class="now-intro">
+        <h1>Right now, <strong>somewhere else.</strong></h1>
+      </header>
+      <div class="time-warp">
+        <section class="clock-section" aria-label="Time-zone clock">
+          <div
+            id="clock-portal"
+            class="clock-portal"
+            tabindex="0"
+            role="slider"
+            aria-label="Time warp"
+            aria-valuemin="1"
+            aria-valuemax="1"
+            aria-valuenow="1"
+            aria-valuetext="Loading time zones"
+            aria-describedby="warp-hint"
+          >
+            <div class="warp-rings" aria-hidden="true"><i></i><i></i></div>
+            <div
+              class="real-clock"
+              id="clock-visual"
+              role="img"
+              aria-label="Analog clock showing the selected city’s time"
+            >
+              <img
+                src="./assets/clock-body.png"
+                width="1254"
+                height="1254"
+                alt=""
+                fetchpriority="high"
+              />
+              <svg id="live-dial" viewBox="0 0 1254 1254" aria-hidden="true">
+                <defs>
+                  <filter
+                    id="hand-shadow"
+                    x="-100%"
+                    y="-100%"
+                    width="300%"
+                    height="300%"
+                  >
+                    <feDropShadow
+                      dx="3"
+                      dy="5"
+                      stdDeviation="3"
+                      flood-opacity="0.23"
+                    />
+                  </filter>
+                </defs>
+                <g id="live-markings"></g>
+                <text id="clock-city" x="626" y="452" class="clock-location"></text>
+              </svg>
+              <div id="hour-hand" class="clock-hand" aria-hidden="true">
+                <svg viewBox="0 0 1254 1254" class="real-hand">
+                  <path d="M614 635 L615 409 Q626 380 637 409 L638 635 Z" filter="url(#hand-shadow)" />
+                </svg>
+              </div>
+              <div id="minute-hand" class="clock-hand" aria-hidden="true">
+                <svg viewBox="0 0 1254 1254" class="real-hand">
+                  <path d="M618 640 L619 301 Q626 277 633 301 L634 640 Z" filter="url(#hand-shadow)" />
+                </svg>
+              </div>
+              <div id="second-hand" class="clock-hand" aria-hidden="true">
+                <svg viewBox="0 0 1254 1254">
+                  <g filter="url(#hand-shadow)">
+                    <path d="M626 690 V199" />
+                    <circle cx="626" cy="673" r="17" />
+                  </g>
+                </svg>
+              </div>
+              <svg viewBox="0 0 1254 1254" aria-hidden="true">
+                <circle cx="626" cy="608" r="27" fill="#26382c" />
+                <circle cx="626" cy="608" r="8" fill="#c6ae78" />
+              </svg>
+            </div>
+          </div>
+          <div class="clock-caption">
+            <div class="digital-time">
+              <time id="current-time">--:--</time
+              ><span id="current-seconds" aria-hidden="true">:--</span>
+            </div>
+            <p class="timezone">
+              <span id="current-zone"></span><span aria-hidden="true"> · </span
+              ><span id="current-date"></span>
+            </p>
+          </div>
+          <div
+            class="zoom-controls"
+            role="group"
+            aria-label="Warp between time zones"
+          >
+            <button
+              id="zoom-out"
+              type="button"
+              aria-label="Zoom out, travel west"
+              title="Zoom out · west"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14" />
+              </svg>
+            </button>
+            <p id="warp-hint">
+              Scroll or pinch the clock<br /><span>to go somewhere else.</span>
+            </p>
+            <button
+              id="zoom-in"
+              type="button"
+              aria-label="Zoom in, travel east"
+              title="Zoom in · east"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5v14" />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <section class="camera-section" aria-labelledby="camera-city">
+          <span id="camera-status" class="camera-status" role="status"
+            >Connecting</span
+          >
+          <div id="camera-panel" class="camera-panel" data-state="connecting">
+            <div id="camera-mount" class="camera-mount"></div>
+            <div id="camera-overlay" class="camera-overlay">
+              <div class="connection-orbit" aria-hidden="true"></div>
+
+              <p id="camera-message">Opening a window to somewhere else…</p>
+              <button id="camera-play" type="button" hidden>Play camera</button>
+              <button id="camera-retry" type="button" hidden>Try again</button>
+              <button id="camera-next" type="button" hidden>
+                Find a live view →
+              </button>
+            </div>
+          </div>
+          <div class="camera-caption">
+            <div>
+              <h2 id="camera-city">&nbsp;</h2>
+              <p>
+                <span id="camera-place"></span
+                ><span aria-hidden="true"> · </span
+                ><span class="country-label"
+                  ><span id="camera-flag" aria-hidden="true"></span
+                  ><span id="camera-country"></span
+                ></span>
+              </p>
+            </div>
+          </div>
+          <p id="camera-credit" class="camera-credit">
+            Camera by
+            <a id="camera-source" target="_blank" rel="noopener noreferrer"></a>
+          </p>
+        </section>
+      </div>
+      <nav
+        id="city-route"
+        class="city-route"
+        aria-label="Choose a time zone"
+      ></nav>
+      <p id="travel-status" class="sr-only" role="status"></p>
+      <noscript
+        ><p class="quiet">
+          Enable JavaScript to warp the clock and watch the cameras.
+        </p></noscript
+      >
+    </main>
+    <footer class="page-footer wrap">
+      <p>
+        Elsewhere is a small window into the world right now. Travel through time
+        zones and watch everyday life unfold. Pick a place and stay a while.
+      </p>
+    </footer>
+  </body>
+</html>
