@@ -1,8 +1,8 @@
-import { createRaceClock, formatRaceTime, readRaceBests } from './race-clock.js?v=instant-menu-132';
-import { ROAD, STRETCH, SHOES, districtAt, createGame, setShoeMask, planStep, suggestStep, takeStep, selectFoot, recoveryBarrier, recoverFooting, cancelStep, advance, condition, progress } from './model.js?v=instant-menu-132';
-import { createRenderer } from './render.js?v=instant-menu-132';
-import { createAmbience } from './ambience.js?v=instant-menu-132';
-import { beginHomeArrival, advanceHomeArrival } from './home-arrival.js?v=instant-menu-132';
+import { createRaceClock, formatRaceTime, readRaceBests } from './race-clock.js?v=clear-step-133';
+import { ROAD, STRETCH, SHOES, districtAt, createGame, setShoeMask, planStep, suggestStep, takeStep, selectFoot, recoveryBarrier, recoverFooting, cancelStep, advance, condition, progress } from './model.js?v=clear-step-133';
+import { createRenderer } from './render.js?v=clear-step-133';
+import { createAmbience } from './ambience.js?v=clear-step-133';
+import { beginHomeArrival, advanceHomeArrival } from './home-arrival.js?v=clear-step-133';
 const $ = id => document.getElementById(id), canvas = $('street'), reduced = matchMedia('(prefers-reduced-motion: reduce)');
 // Replacing identical text still rebuilds DOM text nodes and can force layout
 // before the next canvas coordinate read. Only touch values that have changed.

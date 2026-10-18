@@ -1,18 +1,18 @@
-import {createHomeEntranceSteps} from './home-entrance.js?v=instant-menu-132';
-import {HOME} from './home-arrival.js?v=instant-menu-132';
-import {rippleProfile,reflectionFacets,reflectionSample} from './water-motion.js?v=instant-menu-132';
-import {createLooseDebris,updateLooseDebris,createDebrisPainter,debrisPose} from './loose-debris.js?v=instant-menu-132';
-import {createFootprintPainter} from './footprints.js?v=instant-menu-132';
-import {paintGroundBank,paintCrater,groundPath,paintSteppingStone,paintWashoutMouth,paintAggregateSpill} from './road-ground.js?v=instant-menu-132';
-import {paintRoadWear,paintCurbDrain,paintPaving,paintPlantingBed} from './street-surfaces.js?v=instant-menu-132';
-import { VEHICLES, vehicleLineup } from './vehicles.js?v=instant-menu-132';
-import {paintVanMessage} from './street-charm.js?v=instant-menu-132';
-import { SHOE_CROP, SHOE_MASK } from './sprite-data.js?v=instant-menu-132';
-import { createDenim, legRows, legContains } from './denim.js?v=instant-menu-132';
-import { createShoeWearSteps } from './shoe-wear.js?v=instant-menu-132';
-import { ROAD, PAVEMENT, SHOES, MATERIALS, boundary, randomSource, condition, predictedTarget, surfaceAt, footPoint, clamp, puddleDepth, DISTRICT_LENGTH, CAR } from './model.js?v=instant-menu-132';
-import { createNeighborhood } from './neighborhood.js?v=instant-menu-132';
-import { paintGroundContacts, paintStickyThreads } from './ground-effects.js?v=instant-menu-132';
+import {createHomeEntranceSteps} from './home-entrance.js?v=clear-step-133';
+import {HOME} from './home-arrival.js?v=clear-step-133';
+import {rippleProfile,reflectionFacets,reflectionSample} from './water-motion.js?v=clear-step-133';
+import {createLooseDebris,updateLooseDebris,createDebrisPainter,debrisPose} from './loose-debris.js?v=clear-step-133';
+import {createFootprintPainter} from './footprints.js?v=clear-step-133';
+import {paintGroundBank,paintCrater,groundPath,paintSteppingStone,paintWashoutMouth,paintAggregateSpill} from './road-ground.js?v=clear-step-133';
+import {paintRoadWear,paintCurbDrain,paintPaving,paintPlantingBed} from './street-surfaces.js?v=clear-step-133';
+import { VEHICLES, vehicleLineup } from './vehicles.js?v=clear-step-133';
+import {paintVanMessage} from './street-charm.js?v=clear-step-133';
+import { SHOE_CROP, SHOE_MASK } from './sprite-data.js?v=clear-step-133';
+import { createDenim, legRows, legContains } from './denim.js?v=clear-step-133';
+import { createShoeWearSteps } from './shoe-wear.js?v=clear-step-133';
+import { ROAD, PAVEMENT, SHOES, MATERIALS, boundary, randomSource, condition, predictedTarget, surfaceAt, footPoint, clamp, puddleDepth, DISTRICT_LENGTH, CAR } from './model.js?v=clear-step-133';
+import { createNeighborhood } from './neighborhood.js?v=clear-step-133';
+import { paintGroundContacts, paintStickyThreads } from './ground-effects.js?v=clear-step-133';
 const makeCanvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
 const loadImage = url => new Promise(resolve => { const image = new Image(); image.onload = () => resolve(image); image.onerror = () => resolve(null); image.src = url; });
 const ellipse = (c, x, y, rx, ry, color) => { c.beginPath(); c.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2); c.fillStyle = color; c.fill(); };
@@ -93,6 +93,15 @@ export async function createRenderer(canvas, inspection = null, resultInspection
     if (shoeImage) drawShoePhoto(c, 96, 224, side);
     else ellipse(c, 48, 112, 43, 105, '#eee');
   }
+  // Bake the warning tint once. Preserve the photo's silhouette and laces,
+  // without filtering or compositing a new sprite while the player aims.
+  const blockedSprites = cleanSprites.map(sprite => {
+    const tinted = makeCanvas(96, 224), c = tinted.getContext('2d');
+    c.drawImage(sprite, 0, 0);
+    c.globalCompositeOperation = 'source-atop';
+    c.fillStyle = '#ed4039d9'; c.fillRect(0, 0, 96, 224);
+    return tinted;
+  });
   const paintShoeWear=await prepareArtwork(createShoeWearSteps(terrain,cleanSprites));
   await yieldArtwork();
   // Photograph-shaped contact shadows, baked at three softness levels. A
@@ -1078,12 +1087,13 @@ export async function createRenderer(canvas, inspection = null, resultInspection
     }
     if (g.phase === 'walking' && (g.preview || g.mode === 'charging')) {
       const target = g.preview || predictedTarget(g), s = SHOES[g.shoeId];
-      // A faint shoe at the chosen landing is enough to aim. No labels, reach
-      // diagrams or surface ratings are painted over the street.
+      // Red means this move is invalid or crosses an obstacle. Dirt and water
+      // remain ordinary footholds: the preview never rates their cleanliness.
+      const blocked = target.valid === false || target.blocked;
       ctx.save();
       ctx.translate(target.x, screenY(target.y)); ctx.rotate(target.angle ?? 0);
-      ctx.globalAlpha = target.valid === false || target.blocked ? .12 : .38;
-      ctx.drawImage(cleanSprites[g.active], -s.width/2, -s.length/2, s.width, s.length);
+      ctx.globalAlpha = blocked ? .6 : .38;
+      ctx.drawImage((blocked ? blockedSprites : cleanSprites)[g.active], -s.width/2, -s.length/2, s.width, s.length);
       ctx.restore();
     }
     neighborhood.paintLife(ctx, g, screenY, reduced, viewH);
@@ -1113,7 +1123,8 @@ export async function createRenderer(canvas, inspection = null, resultInspection
     for (const p of g.particles) { ellipse(ctx, p.x + 4, screenY(p.y) + 2, p.r, p.r * .5, '#14233225'); ellipse(ctx, p.x, screenY(p.y) - p.z * .65, p.r, p.r * 1.2, rgba(p.type, .85)); }
     if (g.precisionAim && g.preview && g.phase === 'walking' && g.mode === 'idle') {
       // Copy only the small landing area before drawing the lens, avoiding feedback.
-      const target = g.preview, color = '#f5efcf', diameter = rect.width < 600 ? 108 : 126;
+      const target = g.preview, blocked = target.valid === false || target.blocked;
+      const color = blocked ? '#ed514a' : '#f5efcf', diameter = rect.width < 600 ? 108 : 126;
       const px = (target.x - offset) * scale, py = screenY(target.y) * scale;
       const sourceSize = Math.max(SHOES[g.shoeId].length * scale * 1.25, diameter / 2);
       lensContext.fillStyle = '#535d55'; lensContext.fillRect(0, 0, 160, 160);
@@ -1121,7 +1132,7 @@ export async function createRenderer(canvas, inspection = null, resultInspection
       const radius = diameter / 2, x = clamp(px, radius + 14, rect.width - radius - 14);
       const y = clamp(py - radius - 80, radius + 90, rect.height - radius - 45);
       ctx.save(); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.strokeStyle = '#f4ffdb70'; ctx.lineWidth = 1; ctx.setLineDash([3, 5]); ctx.beginPath(); ctx.moveTo(x, y + radius); ctx.lineTo(px, py - 22); ctx.stroke(); ctx.setLineDash([]);
+      ctx.strokeStyle = blocked ? '#ed514aaa' : '#f4ffdb70'; ctx.lineWidth = 1; ctx.setLineDash([3, 5]); ctx.beginPath(); ctx.moveTo(x, y + radius); ctx.lineTo(px, py - 22); ctx.stroke(); ctx.setLineDash([]);
       ctx.shadowColor = '#10271d65'; ctx.shadowBlur = 14; ctx.shadowOffsetY = 5;
       ctx.fillStyle = '#fffbed'; ctx.beginPath(); ctx.arc(x, y, radius + 4, 0, Math.PI * 2); ctx.fill(); ctx.shadowColor = 'transparent';
       ctx.save(); ctx.beginPath(); ctx.arc(x, y, radius, 0, Math.PI * 2); ctx.clip(); ctx.drawImage(lens, x - radius, y - radius, diameter, diameter); ctx.restore();

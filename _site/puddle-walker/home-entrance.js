@@ -1,6 +1,6 @@
-import {randomSource} from './model.js?v=instant-menu-132';
-import {HOME} from './home-arrival.js?v=instant-menu-132';
-import {paintHomeKeepsakes} from './street-charm.js?v=instant-menu-132';
+import {randomSource} from './model.js?v=clear-step-133';
+import {HOME} from './home-arrival.js?v=clear-step-133';
+import {paintHomeKeepsakes} from './street-charm.js?v=clear-step-133';
 
 // A permanent destination, baked into terrain tiles with the rest of the street.
 // The mat ends the race; the open hall receives the automatic final steps.

@@ -1,4 +1,4 @@
-import {MATERIALS,SHOES,footPoint,surfaceAt,clamp} from './model.js?v=instant-menu-132';
+import {MATERIALS,SHOES,footPoint,surfaceAt,clamp} from './model.js?v=clear-step-133';
 
 // Cosmetic cloth history has its own noise and clock. It never consumes the
 // simulation's random stream, changes a sole, or participates in cleanliness.

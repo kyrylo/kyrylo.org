@@ -1,4 +1,4 @@
-import { randomSource } from './model.js?v=instant-menu-132';
+import { randomSource } from './model.js?v=clear-step-133';
 
 // Recorded outdoor footsteps; decoded once, only after the player enables sound.
 // Source authors, licenses and edits are in assets/audio/credits.txt.

@@ -1,7 +1,7 @@
 {
-  "version": "instant-menu-132",
-  "checksPassed": 47,
-  "checksScope": "47 targeted controller and camera regression tests passed. Browser QA held the engine behind a manual load gate: sneaker photos and Loading\u2026 were visible before engine execution; start remained disabled/busy, then enabled with no change to its layout rectangle. Normal startup passed without runtime errors. The unchanged simulation retains the previous 392-test full-suite verification.",
+  "version": "clear-step-133",
+  "checksPassed": 73,
+  "checksScope": "73 targeted controller, recovery, camera and footwork tests passed, including 144 simulated rail traps. Desktop browser QA confirmed red blocked and invalid previews, a white valid preview, rejection of a backward placement, a completed valid step and recovery from a real corner trap. A 390 px canvas showed the red shoe and border in the touch magnifier. Physics is unchanged; prior full verification covered 392 tests.",
   "previousFullVerification": {
     "version": "footprint-perf-131",
     "checksPassed": 392
@@ -11,41 +11,28 @@
   "syntaxCheckedModules": 23,
   "sourceLiveBuildMatch": true,
   "publicFiles": 65,
-  "publicSha256": "87047390d4aab7dba014adf6e75cef1aac3dc8b5816748c7afbfde0d0c4f8cd9",
+  "publicSha256": "2fca6c61cdabd0a0610f31d988d4e067a7ad8be6f622828700fd5813bea3cdc4",
   "changes": [
-    "The opening pair is a 24,572-byte WebP photo embedded once in the HTML and reused with mirrored SVG instances. It displays independently of game modules, street textures and canvas setup.",
-    "A small Loading\u2026 status is visible until renderer and starting terrain are ready. Shoes remain fully visible; the pulse starts only when the start control enables. Clearing the status preserves layout and removes its accessible description.",
-    "Removed the renderer-only opening canvas and its setup argument. Existing sneaker geometry, left/right mapping, gameplay artwork and race keys are preserved.",
-    "The embedded image is reproducibly generated from the existing sneaker photo and SHOE_CROP by _art/build-menu-sneakers.py. No new standalone runtime image is downloaded."
+    "Invalid placements and swings obstructed by street furniture use a red translucent sneaker preview at 60% opacity, replacing the nearly invisible 12% white preview.",
+    "Valid footholds retain the white photo preview. Mud, water and other contaminants do not trigger a warning just because they are dirty.",
+    "The touch magnifier border and leader follow the same blocked/invalid state. Foot selection, step constraints, obstacle collisions and recovery mechanics are unchanged.",
+    "Two 96 by 224 tinted photo sprites are baked once from existing artwork. Added canvas storage is 172032 bytes, with no new downloads or per-frame filtering."
   ],
   "browser": {
-    "viewport": "1280x720",
-    "runtimeErrors": 0,
+    "viewport": "1280x720; 390x844 iframe for touch lens",
     "assetsReady": true,
     "normalStartAndStep": true,
     "preview": "http://127.0.0.1:8321/puddle-walker/",
-    "loadingTransition": {
-      "before": {
-        "busy": "true",
-        "disabled": true,
-        "height": 283.328125,
-        "width": 300,
-        "x": 490,
-        "y": 169.140625
-      },
-      "after": {
-        "busy": "false",
-        "disabled": false,
-        "height": 283.328125,
-        "width": 300,
-        "x": 490,
-        "y": 169.140625
-      },
-      "engineHeldBack": true,
-      "shoesVisibleBeforeEngine": true,
-      "normalStartPassed": true,
-      "runtimeErrors": 0
-    }
+    "blockedPreviewRed": true,
+    "invalidPreviewRed": true,
+    "validPreviewWhite": true,
+    "invalidPlacementDoesNotStep": true,
+    "cornerRecoveryRestoresValidPreview": true,
+    "touchLensRed": true,
+    "desktopRuntimeErrors": 0,
+    "notes": [
+      "One MutationObserver.observe error without a source URL appeared while the browser tool clicked inside the phone iframe. No game module uses MutationObserver; the preview rendered correctly. The desktop fixture reported no errors."
+    ]
   },
   "balance": {
     "carefulRoutesFinishAtLeast95PercentClean": true,
@@ -1038,6 +1025,6 @@
     "temporaryPreviewFilesRemaining": 0,
     "latestScreenshotOnly": true,
     "rebuildableJekyllCacheRemoved": true,
-    "removedBytesThisPass": 77092653
+    "removedBytesThisPass": 77117836
   }
 }
