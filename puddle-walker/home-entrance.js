@@ -1,6 +1,6 @@
-import {randomSource} from './model.js?v=footprint-perf-131';
-import {HOME} from './home-arrival.js?v=footprint-perf-131';
-import {paintHomeKeepsakes} from './street-charm.js?v=footprint-perf-131';
+import {randomSource} from './model.js?v=instant-menu-132';
+import {HOME} from './home-arrival.js?v=instant-menu-132';
+import {paintHomeKeepsakes} from './street-charm.js?v=instant-menu-132';
 
 // A permanent destination, baked into terrain tiles with the rest of the street.
 // The mat ends the race; the open hall receives the automatic final steps.

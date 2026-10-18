@@ -1,4 +1,4 @@
-import { randomSource } from './model.js?v=footprint-perf-131';
+import { randomSource } from './model.js?v=instant-menu-132';
 
 export function createWildlife(street) {
   const rand = randomSource(street.seed ^ 0x42697264);

@@ -1,4 +1,4 @@
-import { MATERIALS, GRID, clamp } from './model.js?v=footprint-perf-131';
+import { MATERIALS, GRID, clamp } from './model.js?v=instant-menu-132';
 
 // A stable material field at sprite resolution. Grain does not crawl when the
 // foot flexes; only moisture and the amount of physically deposited material change.

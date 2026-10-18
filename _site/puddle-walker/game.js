@@ -1,8 +1,8 @@
-import { createRaceClock, formatRaceTime, readRaceBests } from './race-clock.js?v=footprint-perf-131';
-import { ROAD, STRETCH, SHOES, districtAt, createGame, setShoeMask, planStep, suggestStep, takeStep, selectFoot, recoveryBarrier, recoverFooting, cancelStep, advance, condition, progress } from './model.js?v=footprint-perf-131';
-import { createRenderer } from './render.js?v=footprint-perf-131';
-import { createAmbience } from './ambience.js?v=footprint-perf-131';
-import { beginHomeArrival, advanceHomeArrival } from './home-arrival.js?v=footprint-perf-131';
+import { createRaceClock, formatRaceTime, readRaceBests } from './race-clock.js?v=instant-menu-132';
+import { ROAD, STRETCH, SHOES, districtAt, createGame, setShoeMask, planStep, suggestStep, takeStep, selectFoot, recoveryBarrier, recoverFooting, cancelStep, advance, condition, progress } from './model.js?v=instant-menu-132';
+import { createRenderer } from './render.js?v=instant-menu-132';
+import { createAmbience } from './ambience.js?v=instant-menu-132';
+import { beginHomeArrival, advanceHomeArrival } from './home-arrival.js?v=instant-menu-132';
 const $ = id => document.getElementById(id), canvas = $('street'), reduced = matchMedia('(prefers-reduced-motion: reduce)');
 // Replacing identical text still rebuilds DOM text nodes and can force layout
 // before the next canvas coordinate read. Only touch values that have changed.
@@ -24,11 +24,14 @@ function requestFrame(){if(!frameRequested){frameRequested=true;requestAnimation
 const ambience = createAmbience();
 try { raceBests = readRaceBests(localStorage.getItem(raceStorageKey)); } catch {}
 try { audioOn = localStorage.getItem(soundStorageKey) === 'true'; } catch {}
-const renderer = await createRenderer(canvas, null, $('result-inspection'), $('menu-inspection'));
+const renderer = await createRenderer(canvas, null, $('result-inspection'));
 if (renderer.mask) setShoeMask(game, renderer.mask);
 await renderer.prime?.(game,reduced.matches);
 updateSoundControl();
 $('start').disabled = false;
+$('start').setAttribute('aria-busy','false');
+text($('loading-status'),'');
+$('loading-status').hidden = true;
 canvas.dataset.assetsReady = renderer.assetsReady;
 function updateSoundControl() {
   $('sound').setAttribute('aria-pressed', audioOn);

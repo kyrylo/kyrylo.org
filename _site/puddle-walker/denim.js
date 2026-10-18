@@ -1,4 +1,4 @@
-import {createDenimWear,updateDenimWear,paintDenimWear} from './denim-wear.js?v=footprint-perf-131';
+import {createDenimWear,updateDenimWear,paintDenimWear} from './denim-wear.js?v=instant-menu-132';
 // Material coordinates run from cuff (v=0) to thigh (v=1). The same cloth
 // vertices carry the weave, creases, stitching and dirt through every pose.
 const WIDTH=96,HEIGHT=512,BANDS=24;

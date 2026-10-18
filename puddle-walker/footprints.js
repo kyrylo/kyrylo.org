@@ -1,4 +1,4 @@
-import {MATERIALS,footPoint,createSubmersionTest} from './model.js?v=footprint-perf-131';
+import {MATERIALS,footPoint,createSubmersionTest} from './model.js?v=instant-menu-132';
 
 const SCALE=2,MAX_BYTES=4*1024*1024,MAX_PRINTS=24;
 const durations=[6,13,22];

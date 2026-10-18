@@ -1,18 +1,18 @@
-import {createHomeEntranceSteps} from './home-entrance.js?v=footprint-perf-131';
-import {HOME} from './home-arrival.js?v=footprint-perf-131';
-import {rippleProfile,reflectionFacets,reflectionSample} from './water-motion.js?v=footprint-perf-131';
-import {createLooseDebris,updateLooseDebris,createDebrisPainter,debrisPose} from './loose-debris.js?v=footprint-perf-131';
-import {createFootprintPainter} from './footprints.js?v=footprint-perf-131';
-import {paintGroundBank,paintCrater,groundPath,paintSteppingStone,paintWashoutMouth,paintAggregateSpill} from './road-ground.js?v=footprint-perf-131';
-import {paintRoadWear,paintCurbDrain,paintPaving,paintPlantingBed} from './street-surfaces.js?v=footprint-perf-131';
-import { VEHICLES, vehicleLineup } from './vehicles.js?v=footprint-perf-131';
-import {paintVanMessage} from './street-charm.js?v=footprint-perf-131';
-import { SHOE_CROP, SHOE_MASK } from './sprite-data.js?v=footprint-perf-131';
-import { createDenim, legRows, legContains } from './denim.js?v=footprint-perf-131';
-import { createShoeWearSteps } from './shoe-wear.js?v=footprint-perf-131';
-import { ROAD, PAVEMENT, SHOES, MATERIALS, boundary, randomSource, condition, predictedTarget, surfaceAt, footPoint, clamp, puddleDepth, DISTRICT_LENGTH, CAR } from './model.js?v=footprint-perf-131';
-import { createNeighborhood } from './neighborhood.js?v=footprint-perf-131';
-import { paintGroundContacts, paintStickyThreads } from './ground-effects.js?v=footprint-perf-131';
+import {createHomeEntranceSteps} from './home-entrance.js?v=instant-menu-132';
+import {HOME} from './home-arrival.js?v=instant-menu-132';
+import {rippleProfile,reflectionFacets,reflectionSample} from './water-motion.js?v=instant-menu-132';
+import {createLooseDebris,updateLooseDebris,createDebrisPainter,debrisPose} from './loose-debris.js?v=instant-menu-132';
+import {createFootprintPainter} from './footprints.js?v=instant-menu-132';
+import {paintGroundBank,paintCrater,groundPath,paintSteppingStone,paintWashoutMouth,paintAggregateSpill} from './road-ground.js?v=instant-menu-132';
+import {paintRoadWear,paintCurbDrain,paintPaving,paintPlantingBed} from './street-surfaces.js?v=instant-menu-132';
+import { VEHICLES, vehicleLineup } from './vehicles.js?v=instant-menu-132';
+import {paintVanMessage} from './street-charm.js?v=instant-menu-132';
+import { SHOE_CROP, SHOE_MASK } from './sprite-data.js?v=instant-menu-132';
+import { createDenim, legRows, legContains } from './denim.js?v=instant-menu-132';
+import { createShoeWearSteps } from './shoe-wear.js?v=instant-menu-132';
+import { ROAD, PAVEMENT, SHOES, MATERIALS, boundary, randomSource, condition, predictedTarget, surfaceAt, footPoint, clamp, puddleDepth, DISTRICT_LENGTH, CAR } from './model.js?v=instant-menu-132';
+import { createNeighborhood } from './neighborhood.js?v=instant-menu-132';
+import { paintGroundContacts, paintStickyThreads } from './ground-effects.js?v=instant-menu-132';
 const makeCanvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
 const loadImage = url => new Promise(resolve => { const image = new Image(); image.onload = () => resolve(image); image.onerror = () => resolve(null); image.src = url; });
 const ellipse = (c, x, y, rx, ry, color) => { c.beginPath(); c.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2); c.fillStyle = color; c.fill(); };
@@ -56,7 +56,7 @@ export function cameraTarget(g, viewH, scale) {
   const heelRoom=SHOES[g.shoeId].length*.5+26/scale;
   return Math.max(0,Math.min(meanY-clamp(viewH*.13,90,120),rearY-heelRoom));
 }
-export async function createRenderer(canvas, inspection = null, resultInspection = null, menuInspection = null) {
+export async function createRenderer(canvas, inspection = null, resultInspection = null) {
   const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
   const lens = makeCanvas(160, 160), lensContext = lens.getContext('2d', {alpha:false});
   const [shoeImage, asphalt, atlas, denim, terrain, carImage, waterImage, bushImage, neighborhoodAtlas, lifeAtlas, awakeCat, doorstepDetails, pavingImage, everydayAtlas, ...extraCars] = await Promise.all(['white-sneaker.webp', 'asphalt.webp', 'street-props.webp', 'denim.webp', 'terrain.webp', 'parked-car.webp', 'puddle-water.webp', 'roadside-bush.webp', 'neighborhood-props.webp', 'street-life.webp', 'awake-cat.webp', 'doorstep-details.webp', 'concrete-paving.webp', 'everyday-details.webp', ...VEHICLES.slice(1).map(v=>v.asset)].map(p => loadImage('./assets/' + p)));
@@ -92,11 +92,6 @@ export async function createRenderer(canvas, inspection = null, resultInspection
     const c = cleanSprites[side].getContext('2d');
     if (shoeImage) drawShoePhoto(c, 96, 224, side);
     else ellipse(c, 48, 112, 43, 105, '#eee');
-  }
-  if (menuInspection) {
-    const mc = menuInspection.getContext('2d');
-    mc.clearRect(0, 0, menuInspection.width, menuInspection.height);
-    for (const side of [0, 1]) mc.drawImage(cleanSprites[side], side ? 197 : 55, side ? 60 : 32, 108, 252);
   }
   const paintShoeWear=await prepareArtwork(createShoeWearSteps(terrain,cleanSprites));
   await yieldArtwork();

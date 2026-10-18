@@ -1,36 +1,51 @@
 {
-  "version": "footprint-perf-131",
-  "checksPassed": 392,
-  "checksScope": "All 392 regression tests passed. Prepared surface clipping matches contact physics across 20,119 course points plus layered-material, equal-depth, pavement-edge and shallow-water cases. The captured v130 footprint raster matches all 33 paired cases exactly; the saved 179-step route retains identical feet, condition and physics random state.",
+  "version": "instant-menu-132",
+  "checksPassed": 47,
+  "checksScope": "47 targeted controller and camera regression tests passed. Browser QA held the engine behind a manual load gate: sneaker photos and Loading\u2026 were visible before engine execution; start remained disabled/busy, then enabled with no change to its layout rectangle. Normal startup passed without runtime errors. The unchanged simulation retains the previous 392-test full-suite verification.",
   "previousFullVerification": {
-    "version": "smooth-start-130",
-    "checksPassed": 389,
-    "visualCases": {
-      "shoes": 216,
-      "denimStains": 108,
-      "desktopScenes": 6,
-      "mobileScenes": 8
-    }
+    "version": "footprint-perf-131",
+    "checksPassed": 392
   },
   "buildPassed": true,
   "buildRuntime": "Installed Jekyll 4.3.4 / Ruby 3.4.8 with JEKYLL_NO_BUNDLER_REQUIRE; current default Ruby bundle lacks required dependencies.",
   "syntaxCheckedModules": 23,
   "sourceLiveBuildMatch": true,
   "publicFiles": 65,
-  "publicSha256": "174da6425ffbf4aee77e6998279d27a9696cb2256fca68a2d7b0eb7e0415f511",
+  "publicSha256": "87047390d4aab7dba014adf6e75cef1aac3dc8b5816748c7afbfde0d0c4f8cd9",
   "changes": [
-    "Footprint rasterization resolves repeated tread columns and rows once, rotates pixels with shared sine/cosine values, and avoids two sample objects plus a world-point object per pixel.",
-    "A per-footprint submersion query prepares surface bounds, priorities and liquid flags once. Stable priority ordering skips buried surfaces while preserving equal-depth ties, covers, films and irregular shorelines.",
-    "The ordinary walking surface query and spatial index remain unchanged. Broader physics-query experiments were discarded after inconsistent or slower walk benchmarks.",
-    "No artwork, terrain, physics balance, race keys, audio or public assets changed. All existing footprint layers, fades, beads and slipped tread remain exact."
+    "The opening pair is a 24,572-byte WebP photo embedded once in the HTML and reused with mirrored SVG instances. It displays independently of game modules, street textures and canvas setup.",
+    "A small Loading\u2026 status is visible until renderer and starting terrain are ready. Shoes remain fully visible; the pulse starts only when the start control enables. Clearing the status preserves layout and removes its accessible description.",
+    "Removed the renderer-only opening canvas and its setup argument. Existing sneaker geometry, left/right mapping, gameplay artwork and race keys are preserved.",
+    "The embedded image is reproducibly generated from the existing sneaker photo and SHOE_CROP by _art/build-menu-sneakers.py. No new standalone runtime image is downloaded."
   ],
   "browser": {
-    "viewport": "1280x720 desktop browser; additional 390x844 game-canvas layout on the same machine, not physical phone hardware",
+    "viewport": "1280x720",
     "runtimeErrors": 0,
     "assetsReady": true,
     "normalStartAndStep": true,
-    "fullRouteFinished": true,
-    "preview": "http://127.0.0.1:8321/puddle-walker/"
+    "preview": "http://127.0.0.1:8321/puddle-walker/",
+    "loadingTransition": {
+      "before": {
+        "busy": "true",
+        "disabled": true,
+        "height": 283.328125,
+        "width": 300,
+        "x": 490,
+        "y": 169.140625
+      },
+      "after": {
+        "busy": "false",
+        "disabled": false,
+        "height": 283.328125,
+        "width": 300,
+        "x": 490,
+        "y": 169.140625
+      },
+      "engineHeldBack": true,
+      "shoesVisibleBeforeEngine": true,
+      "normalStartPassed": true,
+      "runtimeErrors": 0
+    }
   },
   "balance": {
     "carefulRoutesFinishAtLeast95PercentClean": true,
@@ -994,6 +1009,28 @@
         "Browser cadence without game work was 59.97 fps. The earlier instrumented phase profile is diagnostic only, not a controlled before/after FPS comparison.",
         "No increased canvas sprite budget, new media assets, or per-frame terrain work. Submersion preparation and column tables are temporary work for a newly visible footprint."
       ]
+    },
+    "openingScreen132": {
+      "embeddedPhotoBytes": 24572,
+      "externalRequestsForOpeningShoes": 0,
+      "waitsForGameRenderer": false,
+      "layoutBefore": {
+        "busy": "true",
+        "disabled": true,
+        "height": 283.328125,
+        "width": 300,
+        "x": 490,
+        "y": 169.140625
+      },
+      "layoutAfter": {
+        "busy": "false",
+        "disabled": false,
+        "height": 283.328125,
+        "width": 300,
+        "x": 490,
+        "y": 169.140625
+      },
+      "newCanvasSpriteBytes": 0
     }
   },
   "cleanup": {
@@ -1001,6 +1038,6 @@
     "temporaryPreviewFilesRemaining": 0,
     "latestScreenshotOnly": true,
     "rebuildableJekyllCacheRemoved": true,
-    "removedBytesThisPass": 77831600
+    "removedBytesThisPass": 77092653
   }
 }
