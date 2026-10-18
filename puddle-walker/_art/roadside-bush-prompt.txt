@@ -1,0 +1,11 @@
+Mode: built-in image_gen, transparent background.
+Project asset: puddle-walker/assets/roadside-bush.png
+Export: downscaled to 384px, preserving transparency.
+
+Use case: photorealistic-natural
+Asset type: transparent top-down sprite for a realistic wet-street walking game
+Primary request: one small, low, dense roadside evergreen shrub, viewed from directly vertically overhead (orthographic 90-degree top view).
+Subject: a compact, irregular oval boxwood shrub with dense small leathery leaves, several naturally merging low leafy lobes. Real photographic leaf detail, dark muted olive and deep natural greens, a few lighter new leaves, subtly wet from rain. About 60 cm wide and 30 cm tall in reality.
+Composition: entire shrub isolated and centered, filling 88% of a square frame, all foliage edges visible with a clean alpha cutout. Leaves and fine twigs only; dense foliage obscures the interior.
+Lighting: soft overcast daylight, delicate self-shadowing between leaves.
+Constraints: genuine transparent background. No tree trunk, no exposed large branches, no tall tree crown, no roots, no ground, no soil, no planter, no cast shadow, no perspective tilt, no flowers, no text, no cartoon or stylized illustration.

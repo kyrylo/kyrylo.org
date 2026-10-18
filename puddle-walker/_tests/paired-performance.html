@@ -1,0 +1,32 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Paired performance check</title>
+<style>body{margin:16px;font:14px system-ui}canvas{display:block;width:1000px;height:760px}pre{white-space:pre-wrap}</style>
+<button id="run" disabled>Compare identical wet frames</button><pre id="report">Loading both versions…</pre><canvas id="street"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import * as old from './_qa-before-61/model.js?v=garage-60';
+import * as next from './model.js?v=perf-61';
+import {createRenderer as before} from './_qa-before-61/render.js?v=garage-60';
+import {createRenderer as after} from './render.js?v=perf-61';
+const canvas=document.querySelector('#street'),inspection=document.querySelector('#inspection'),report=document.querySelector('#report');
+const renderers=[await before(canvas,inspection),await after(canvas,inspection)],models=[old,next];
+const stats=a=>{a=[...a].sort((x,y)=>x-y);return {mean:a.reduce((x,y)=>x+y,0)/a.length,p95:a[Math.floor(a.length*.95)],max:a.at(-1)};};
+document.querySelector('#run').disabled=false;report.textContent='Ready.';
+document.querySelector('#run').onclick=()=>{
+ const games=models.map((m,i)=>{const g=m.createGame('leather',321);m.setShoeMask(g,renderers[i].mask);g.phase='walking';g.feet.forEach((f,n)=>{f.x=420+n*60;f.y=g.street.sections[2].y+n*20;});return g;});
+ const cpu=[[],[]],physics=[[],[]],draw=[[],[]];let frame=0;
+ document.querySelector('#run').disabled=true;report.textContent='Comparing both versions on the same fixed physics frames…';
+ function tick(now){
+  for(const i of (frame%2?[1,0]:[0,1])){
+   const m=models[i],g=games[i],t=performance.now();
+   if(g.mode==='idle'){m.beginStep(g);m.aimStep(g,{x:Math.sin(g.steps)*30,y:100});}if(g.mode==='charging'&&g.charge>.8)m.releaseStep(g);
+   m.advance(g,1/60);if(frame%27===0)m.emitSplash(g,g.feet[g.active],m.surfaceAt(g,g.feet[g.active].x,g.feet[g.active].y),350);g.events.length=0;
+   const sim=performance.now();renderers[i].render(g,now,1/60);const end=performance.now();
+   if(frame>=90){cpu[i].push(end-t);physics[i].push(sim-t);draw[i].push(end-sim);}
+  }
+  frame++;if(frame<720)requestAnimationFrame(tick);else{
+   report.textContent=JSON.stringify({done:true,frames:cpu[0].length,before:{cpu:stats(cpu[0]),physics:stats(physics[0]),draw:stats(draw[0]),clean:old.condition(games[0])},after:{cpu:stats(cpu[1]),physics:stats(physics[1]),draw:stats(draw[1]),clean:next.condition(games[1])}},null,2);
+   document.querySelector('#run').disabled=false;
+  }
+ }
+ requestAnimationFrame(tick);
+};
+</script>

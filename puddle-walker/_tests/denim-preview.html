@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><meta name="viewport" content="width=device-width"><title>Denim motion check</title>
+<style>body{margin:0;background:#28352e;color:white;font:13px system-ui}nav{position:fixed;z-index:2;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap;width:90%}button{padding:10px}#street{width:100vw;height:100vh;display:block}#inspection{position:fixed;bottom:16px;left:16px;width:150px}#report{position:fixed;left:12px;top:65px;background:#14251bcc;padding:8px}</style>
+<nav><button id="walk">Walk slowly</button><button id="frame">Next frame</button><button id="reset">Standing</button><button id="wide">Stretched stance</button><button id="wet">Wet cuffs</button><button id="measure">Measure rendering</button></nav><pre id="report">Loading…</pre><canvas id="street"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,setShoeMask,takeStep,advance} from './model.js?v=denim-50';
+import {createRenderer} from './render.js?v=denim-50';
+const canvas=document.querySelector('#street'),report=document.querySelector('#report'),r=await createRenderer(canvas,document.querySelector('#inspection'));
+let g,playing=false,last=0,frames=0,now=performance.now();
+function reset(){playing=false;g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);g.phase='walking';g.feet.forEach((f,i)=>{f.y=1600-i*20;f.bestY=f.y;});paint();}
+function paint(){now+=8;r.render(g,now,1/120);report.textContent=JSON.stringify({mode:g.mode,steps:g.steps,frames,assets:r.assetsReady,feet:g.feet.map(f=>({x:f.x,y:f.y,z:f.z}))});}
+function step(){if(g.mode==='idle')takeStep(g,{x:450+(g.active?35:-35)+Math.sin(g.steps*.8)*90,y:Math.max(...g.feet.map(f=>f.y))+150});advance(g,1/120);frames++;paint();}
+document.querySelector('#frame').onclick=()=>{playing=false;step();};
+document.querySelector('#walk').onclick=()=>{playing=!playing;};
+document.querySelector('#reset').onclick=reset;
+document.querySelector('#wide').onclick=()=>{reset();g.feet[0].y+=210;g.feet[0].x-=30;paint();};
+document.querySelector('#wet').onclick=()=>{for(const f of g.feet)for(let i=0;i<70;i++)f.jeans.push({x:Math.sin(i*13)*.3,y:(i%13)/20,r:2+i%4,type:i%3?'mud':'water',opacity:.6});paint();};
+document.querySelector('#measure').onclick=()=>{playing=false;let start=0,values=[],intervals=[],prior=0;function frame(t){if(!start)start=prior=t;const a=performance.now();if(g.mode==='idle')takeStep(g,{x:g.feet[g.active].x,y:Math.max(...g.feet.map(f=>f.y))+150});advance(g,1/60);r.render(g,t,1/60);values.push(performance.now()-a);intervals.push(t-prior);prior=t;if(t-start<8000)requestAnimationFrame(frame);else{values.sort((a,b)=>a-b);report.textContent=JSON.stringify({done:true,frames:values.length,mean:values.reduce((a,b)=>a+b)/values.length,p95:values[Math.floor(values.length*.95)],fps:1000/(intervals.reduce((a,b)=>a+b)/intervals.length)});}}requestAnimationFrame(frame);};
+function animate(t){if(playing&&t-last>33){last=t;step();}requestAnimationFrame(animate);}reset();requestAnimationFrame(animate);
+</script>

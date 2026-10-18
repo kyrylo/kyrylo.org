@@ -1,0 +1,38 @@
+Puddle Walker — recorded sound credits
+
+Footsteps on different surfaces, compiled/edited by congusbongus:
+https://opengameart.org/content/footsteps-on-different-surfaces
+
+pavement-0..3.mp3: footstep-concrete.wav by swuing
+https://freesound.org/people/swuing/sounds/38873/
+License: Creative Commons Attribution 3.0
+https://creativecommons.org/licenses/by/3.0/
+
+water-0..3.mp3: Water Footsteps by EminYILDIRIM, with
+footstep-concrete.wav by swuing (above)
+https://freesound.org/people/EminYILDIRIM/sounds/608663/
+License: Creative Commons Attribution 3.0
+https://creativecommons.org/licenses/by/3.0/
+
+metal-0..3.mp3: fboots on aluminum ladder 01 by Eelke
+https://freesound.org/people/Eelke/sounds/462598/
+License: Creative Commons Attribution 3.0
+https://creativecommons.org/licenses/by/3.0/
+
+gravel-0..3.mp3: Gravel Footsteps by Ali_6868
+https://freesound.org/people/Ali_6868/packs/21608/
+License: CC0 1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+
+mud-0.mp3, stone-0.mp3, paper-0..1.mp3:
+Different steps on wood, stone, leaves, gravel and mud by TinyWorlds,
+edited from public-domain pdsounds.org recordings.
+https://opengameart.org/node/5701
+License: CC0 1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+The leaf recordings are used as soft paper/wing rustles.
+
+Puddle Walker edits: selected individual takes, mono 32 kHz MP3 encoding,
+65 Hz rumble removal and 3 ms onset fades. Runtime mixes, levels and subtly
+varies recorded takes according to actual shoe contact. No author endorsement
+is implied. No synthesized tones or continuous noise loops are used.

@@ -1,0 +1,52 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Puddle Walker · water contact</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#f5f4ef;color:#29362f;font:14px system-ui}h1{margin:0 0 8px;font-size:24px}p{margin:0 0 22px;color:#616960}main{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}article{padding:14px;background:#fff}h2{margin:0 0 10px;font-size:14px}article canvas{width:100%;height:300px;object-fit:contain;display:block}small{display:block;line-height:1.45;margin-top:12px}#world{position:fixed;left:0;top:0;width:1800px;height:1400px;visibility:hidden;pointer-events:none}#inspection{display:none}pre{font-size:10px;white-space:pre-wrap}button{margin-top:20px;padding:10px;background:#fff;color:#29362f;border:1px solid #aaa}</style>
+<h1>Puddle Walker</h1><p>Footsteps disturb the reflection. Calm water settles back into place.</p><main id="gallery"></main><button id="motion">Replay the ripples</button><pre id="report">Loading…</pre><canvas id="world"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,indexStreet,setShoeMask,emitSplash,surfaceAt,puddleDepth} from './model.js?v=water-75';
+import {createRenderer} from './render.js?v=water-75';
+const world=document.querySelector('#world'),r=await createRenderer(world,document.querySelector('#inspection')),report=document.querySelector('#report'),results=[];
+function setup(type='water',edge=false){
+ const g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='paused';
+ const patch={id:0,type,x:420,y:1000,rx:85,ry:85,depth:12,seed:4,cos:Math.cos(.21),sin:Math.sin(.21)};
+ g.street=indexStreet({...g.street,districts:[],patches:[patch],clutter:[],obstacles:[],parking:[]});
+ Object.assign(g.feet[0],{x:edge?483:420,y:1000,angle:.23});
+ emitSplash(g,g.feet[0],surfaceAt(g,g.feet[0].x,g.feet[0].y),450);
+ const waves=g.rings;g.particles=[];g.feet.forEach(f=>Object.assign(f,{x:-1000,y:900}));g.rings=[];
+ return {g,patch,waves};
+}
+function card(label,caption){const article=document.createElement('article');article.innerHTML='<h2>'+label+'</h2><canvas width="240" height="300"></canvas><small>'+caption+'</small>';document.querySelector('#gallery').append(article);return article.querySelector('canvas');}
+function paint(f,output,age=.45,reduced=false){
+ f.g.rings=f.waves;f.waves.forEach(w=>{w.age=age;w.radius=Math.max(w.rx,w.ry)+age*40;});r.render(f.g,performance.now(),1,reduced);
+ const box=world.getBoundingClientRect(),target=r.screenPoint({x:440,y:1000}),scale=box.width/900,ratio=world.width/box.width;
+ output.getContext('2d').drawImage(world,(target.x-box.left-60*scale)*ratio,(target.y-box.top-75*scale)*ratio,120*scale*ratio,150*scale*ratio,0,0,240,300);
+}
+const water=setup(),still=card('Still water','The reflection remains anchored to the puddle.');paint({...water,waves:[]},still);
+const ripple=card('After a footstep','A small, spreading wave bends the reflection.');paint(water,ripple);
+const edge=setup('water',true);paint(edge,card('Near the edge','Ripples stop at the irregular shoreline.'));
+const mud=setup('mud');paint(mud,card('Muddy water','Thicker water loses its motion more quickly.'));
+// Compare actual renderer pixels with and without a wave at the same instant.
+// The test reads pixels here, once; the game never reads pixels during drawing.
+const check=setup('water',true),c=world.getContext('2d');
+r.render(check.g,performance.now(),1,false);const before=c.getImageData(0,0,world.width,world.height).data;
+paint(check,ripple);const after=c.getImageData(0,0,world.width,world.height).data;
+const box=world.getBoundingClientRect(),ratio=world.width/box.width,scale=box.width/900,origin=r.screenPoint({x:0,y:0});
+let changed=0,outside=0,maxLeak=0;
+for(let py=0;py<world.height;py++)for(let px=0;px<world.width;px++){
+ const i=(py*world.width+px)*4,d=Math.max(Math.abs(before[i]-after[i]),Math.abs(before[i+1]-after[i+1]),Math.abs(before[i+2]-after[i+2]));if(d<3)continue;
+ const x=(px+.5)/(scale*ratio),y=(origin.y-box.top-(py+.5)/ratio)/scale;
+ if(Math.abs(x-420)>160||Math.abs(y-1000)>160)continue;
+ changed++;
+ if(!puddleDepth(check.patch,x,y)&&![-1,0,1].some(dx=>[-1,0,1].some(dy=>puddleDepth(check.patch,x+dx,y+dy)))){outside++;maxLeak=Math.max(maxLeak,d);}
+}
+check.g.rings=[];r.render(check.g,performance.now(),1,true);const quiet=c.getImageData(0,0,world.width,world.height).data;
+check.g.rings=check.waves;r.render(check.g,performance.now(),1,true);const reduced=c.getImageData(0,0,world.width,world.height).data;
+let reducedChanged=0;for(let i=0;i<quiet.length;i++)if(quiet[i]!==reduced[i])reducedChanged++;
+paint(water,ripple);
+report.textContent=JSON.stringify({ready:true,assets:r.assetsReady,changedPixels:changed,outsideWater:outside,maxLeak,reducedChanged,passes:changed>100&&outside===0&&reducedChanged===0});
+document.querySelector('#motion').onclick=()=>{let start=0,frames=0,cpu=[],lastPixels=null,moving=0;
+ function frame(t){if(!start)start=t;const age=(t-start)/1000,a=performance.now();paint(water,ripple,age);cpu.push(performance.now()-a);frames++;
+  const pixels=ripple.getContext('2d').getImageData(0,0,240,300).data;if(lastPixels&&pixels.some((v,i)=>v!==lastPixels[i]))moving++;lastPixels=pixels;
+  if(age<1.7)requestAnimationFrame(frame);else{cpu.sort((a,b)=>a-b);report.textContent=JSON.stringify({done:true,frames,moving,meanCpu:cpu.reduce((a,b)=>a+b)/cpu.length,p95Cpu:cpu[Math.floor(cpu.length*.95)],maxCpu:cpu.at(-1),assets:r.assetsReady});}
+ }requestAnimationFrame(frame);
+};
+</script>

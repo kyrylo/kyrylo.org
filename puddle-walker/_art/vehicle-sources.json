@@ -1,0 +1,58 @@
+[
+  {
+    "id": "red-hatchback",
+    "source": "/Users/kyrylo/.codex/generated_images/01a13d15-8478-77d3-bc36-3635c5cb73f8/exec-e7c7b61c-e318-40c9-934e-282bb3a51a7a.png",
+    "asset": "puddle-walker/assets/car-red-hatchback.webp",
+    "crop": [
+      149,
+      37,
+      805,
+      1365
+    ],
+    "bodyWidth": 661,
+    "drawWidth": 406.8,
+    "bytes": 110598
+  },
+  {
+    "id": "ivory-estate",
+    "source": "/Users/kyrylo/.codex/generated_images/01a13d15-8478-77d3-bc36-3635c5cb73f8/exec-2dd1ea46-6e1f-4c20-91f7-5d908786a90d.png",
+    "asset": "puddle-walker/assets/car-ivory-estate.webp",
+    "crop": [
+      150,
+      23,
+      724,
+      1489
+    ],
+    "bodyWidth": 630,
+    "drawWidth": 383.8,
+    "bytes": 103864
+  },
+  {
+    "id": "white-van",
+    "source": "/Users/kyrylo/.codex/generated_images/01a13d15-8478-77d3-bc36-3635c5cb73f8/exec-7c36b937-9452-4f0e-a278-ba1d68242a54.png",
+    "asset": "puddle-walker/assets/car-white-van.webp",
+    "crop": [
+      143,
+      44,
+      739,
+      1458
+    ],
+    "bodyWidth": 616,
+    "drawWidth": 400.7,
+    "bytes": 87598
+  },
+  {
+    "id": "green-classic",
+    "source": "/Users/kyrylo/.codex/generated_images/01a13d15-8478-77d3-bc36-3635c5cb73f8/exec-1618c9d7-24c4-48e2-b8bf-2825c3ab918d.png",
+    "asset": "puddle-walker/assets/car-green-classic.webp",
+    "crop": [
+      167,
+      15,
+      690,
+      1500
+    ],
+    "bodyWidth": 619,
+    "drawWidth": 372.3,
+    "bytes": 142726
+  }
+]

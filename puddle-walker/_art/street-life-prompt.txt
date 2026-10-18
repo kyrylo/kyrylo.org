@@ -1,0 +1,12 @@
+Mode: built-in image_gen, transparent background.
+Asset: puddle-walker/assets/street-life.png
+Export: 768px atlas, preserving alpha.
+
+Use case: photorealistic-natural
+Asset type: transparent sprite atlas for an overhead rainy-neighborhood walking game.
+Square image with exactly four separate subjects in equal 2 by 2 quadrants. Leave generous transparent padding inside every quadrant. Camera is perfectly straight down, 90-degree orthographic overhead. Real photographic textures, subdued soft overcast light, clean alpha silhouettes.
+TOP LEFT: a single small grey city pigeon standing with wings folded against its body, beak and head pointing straight up in the image, tail straight down. Grey blue feathers, charcoal wing bars, small iridescent green neck, tiny pink feet. Complete entire bird.
+TOP RIGHT: the SAME grey pigeon in flight seen exactly from above, head pointing straight up, both feathered wings fully extended sideways horizontally, wings symmetrical. Tail down, complete wings with no cropping. Same grey blue plumage and black wing bars. Its central body has the same head-to-tail proportions as the standing bird.
+BOTTOM LEFT: one small pale cream butterfly with all four wings spread, body vertically oriented, directly overhead, natural slightly translucent cream wings with dark grey tips, fine wing veins. Complete delicate silhouette.
+BOTTOM RIGHT: one small well-used coral-red child's kick scooter parked flat, viewed directly overhead. Deck runs vertically, front wheel and straight handlebar at top, rear wheel at bottom. Visible slim dark rubber grips, warm red painted deck, silver metal steering tube, tiny black wheels. Entire scooter including handlebar fits in quadrant. No branding or letters.
+Constraints: genuine transparent background everywhere around the subjects; no scenery, ground, floor, water, cast shadows, grid lines, dividers, labels, text, extra animals, blur or cartoon style. Nothing overlaps quadrant boundaries.

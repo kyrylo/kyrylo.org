@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Home arrival preview</title>
+<style>body{margin:0;background:white;font:13px system-ui}canvas{display:block;width:100vw;height:100vh}nav,pre{position:fixed;left:12px;top:10px;z-index:2}pre{top:45px;background:#fffd;padding:8px}button{padding:8px}[hidden]{display:none!important}</style>
+<nav><button id="wipe">Wiping shoes</button><button id="door">Entering home</button><button id="play">Play ending</button><button id="photo">Hide controls</button></nav><pre id="report">Loading</pre><canvas></canvas>
+<script type="module">
+import{createGame,ROAD,setShoeMask,condition}from'./model.js?v=small-discoveries-121';
+import{beginHomeArrival,advanceHomeArrival}from'./home-arrival.js?v=small-discoveries-121';
+import{createRenderer}from'./render.js?v=small-discoveries-121';
+const canvas=document.querySelector('canvas'),report=document.querySelector('#report'),r=await createRenderer(canvas);
+let g,playing=false,last=0;
+function reset(){g=createGame('leather',42);setShoeMask(g,r.mask);g.phase='finished';g.feet.forEach((f,i)=>{Object.assign(f,{y:ROAD.finish+(i?-175:-25),coverage:.8});f.stain.fill(.3);f.sole.forEach(z=>{z.stain=.8;z.dirt=.7;z.wet=.2;});for(let j=0;j<f.tint.length;j+=3){f.tint[j]=86;f.tint[j+1]=65;f.tint[j+2]=38;}f.revision++;});beginHomeArrival(g,ROAD.finish);}
+function render(now=performance.now(),dt=1/60){r.render(g,now,dt);report.textContent=JSON.stringify({stage:g.arrival.stage,elapsed:g.arrival.elapsed,done:g.arrival.done,clean:condition(g),assets:r.assetsReady,feet:g.feet.map(f=>({x:f.x,y:f.y,z:f.z})),wipes:g.events.filter(e=>e.type==='wipe').length});}
+function pose(stage,fraction){playing=false;reset();const s=g.arrival.segments.find(s=>s.stage===stage),end=s.start+s.duration*fraction;while(g.arrival.elapsed<end)advanceHomeArrival(g,Math.min(1/120,end-g.arrival.elapsed));render();}
+document.querySelector('#wipe').onclick=()=>pose('wipe',.2);
+document.querySelector('#door').onclick=()=>{playing=false;reset();const s=g.arrival.segments.filter(s=>s.stage==='enter')[2],end=s.start+s.duration*.8;while(g.arrival.elapsed<end)advanceHomeArrival(g,Math.min(1/120,end-g.arrival.elapsed));render();};
+document.querySelector('#play').onclick=()=>{reset();playing=true;};
+document.querySelector('#photo').onclick=()=>{document.querySelector('nav').hidden=report.hidden=true;};
+function frame(now){const dt=Math.min(.1,(now-last)/1000||1/60);last=now;if(playing){advanceHomeArrival(g,dt);render(now,dt);if(g.arrival.done)playing=false;}requestAnimationFrame(frame);}
+pose('wipe',.2);requestAnimationFrame(frame);
+</script>

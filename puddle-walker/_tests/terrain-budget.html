@@ -1,0 +1,42 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Terrain budget comparison</title>
+<style>body{font:14px system-ui;margin:16px}canvas{width:1000px;height:640px;display:block}pre{white-space:pre-wrap}</style>
+<button id="run" disabled>Compare street detail and preparation</button><pre id="report">Loading…</pre><canvas id="street"></canvas>
+<script type="module">
+import {createGame,setShoeMask} from './model.js?v=small-discoveries-121';
+import {createRenderer as before} from './_qa-sync-render.js';
+import {createRenderer as after} from './render.js?v=small-discoveries-121';
+const canvas=document.querySelector('canvas'),report=document.querySelector('#report'),button=document.querySelector('button');
+if(new URLSearchParams(location.search).has('phone')){canvas.style.width='390px';canvas.style.height='844px';}
+canvas.getContext('2d',{alpha:false,willReadFrequently:true});
+const pending=new Map();let id=0;
+window.requestIdleCallback=fn=>{pending.set(++id,fn);return id;};window.cancelIdleCallback=i=>pending.delete(i);
+const renderers=[await before(canvas),await after(canvas)],samples=[],idle=[[],[]];
+button.disabled=false;report.textContent='Ready.';
+button.onclick=async()=>{
+ button.disabled=true;samples.length=0;idle.forEach(a=>a.length=0);let stamp=0;
+ // Warm both contexts before comparing cached tiles. Chromium's first canvas
+ // draws differ even when comparing the unchanged renderer to itself.
+ for(const r of renderers){const g=createGame('leather',321);setShoeMask(g,r.mask);g.feet.forEach((f,i)=>{f.y=600-i*30;});r.render(g,++stamp,1,true);}
+ pending.clear();
+ for(const y of [600,3300,7100,11000,15100,19500,20260,20900]){
+  const g=createGame('leather',321);setShoeMask(g,renderers[0].mask);g.feet.forEach((f,i)=>{f.x=420+i*60;f.y=y-i*30;});
+  const pixels=[];
+  for(let i=0;i<2;i++){
+   pending.clear();const r=renderers[i];
+   r.render(g,++stamp,1,true);
+   for(let n=0;n<200&&r.metrics.prefetched<1;n++){
+    r.render(g,++stamp,1,true);
+    for(const [key,fn] of [...pending]){pending.delete(key);const t=performance.now();fn({timeRemaining:()=>50});idle[i].push(performance.now()-t);}
+    await new Promise(requestAnimationFrame);
+   }
+   g.feet.forEach(f=>f.y+=500);r.render(g,++stamp,1,true);
+   pixels.push(canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data);
+   g.feet.forEach(f=>f.y-=500);
+  }
+  let different=0,maxDelta=0;for(let p=0;p<pixels[0].length;p++)if(pixels[0][p]!==pixels[1][p]){different++;maxDelta=Math.max(maxDelta,Math.abs(pixels[0][p]-pixels[1][p]));}
+  samples.push({y,different,maxDelta});report.textContent=JSON.stringify({running:true,samples});
+ }
+ pending.clear();const stats=a=>{a.sort((x,y)=>x-y);return{count:a.length,mean:a.reduce((a,b)=>a+b,0)/a.length,p95:a[Math.floor(a.length*.95)],max:a.at(-1)}};
+ report.textContent=JSON.stringify({done:true,passed:samples.every(s=>s.different===0),samples,before:stats(idle[0]),after:stats(idle[1])});button.disabled=false;
+};
+</script>

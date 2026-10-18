@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Street choices and recorded audio</title>
+<style>body{margin:0;background:#1b251f;color:#faf9f0;font:13px system-ui}nav{position:fixed;top:10px;left:10px;z-index:2;display:flex;gap:5px}button{padding:8px}canvas{display:block;width:100vw;height:100vh}pre{position:fixed;top:48px;left:10px;padding:9px;background:#17271cdd;white-space:pre-wrap;max-width:800px}[hidden]{display:none!important}</style>
+<nav><button id="first">First fork</button><button id="covers">Covers or bank</button><button id="home">Homeward fork</button><button id="left">Walk left</button><button id="right">Walk right</button><button id="audio">Check recordings</button><button id="listen">Hear surfaces</button><button id="photo">Hide controls</button></nav><pre id="report">Loading…</pre><canvas></canvas>
+<script type="module">
+import{createGame,setShoeMask,selectFoot,takeStep,advance,condition}from'./model.js?v=small-discoveries-121';
+import{createRenderer}from'./render.js?v=small-discoveries-121';
+import{createAmbience,loadRecordings,RECORDINGS}from'./ambience.js?v=small-discoveries-121';
+const witnesses=__WITNESSES__,report=document.querySelector('#report'),r=await createRenderer(document.querySelector('canvas'));
+let g,section,route=null,cursor=0,last=0,stage=0,sound,ac;
+function reset(which){stage=which;g=createGame('leather',321);g.phase='walking';setShoeMask(g,r.mask);section=g.street.sections.find(s=>s.stage===which&&s.choice);g.feet.forEach((f,i)=>Object.assign(f,{x:450+(i?28:-28),y:section.y-255,bestY:section.y-255}));route=null;draw();}
+function draw(now=0,dt=1/60){r.render(g,now,dt);report.textContent=JSON.stringify({choice:section.choice,stage,clean:condition(g),steps:g.steps,done:!route,assets:r.assetsReady});}
+function walk(branch){reset(stage);route=witnesses.find(w=>w.seed===321&&w.stage===stage&&w.branch===branch)?.route;cursor=0;}
+document.querySelector('#first').onclick=()=>reset(0);document.querySelector('#home').onclick=()=>reset(4);document.querySelector('#covers').onclick=()=>reset(3);
+document.querySelector('#left').onclick=()=>walk(0);document.querySelector('#right').onclick=()=>walk(1);
+document.querySelector('#photo').onclick=()=>{document.querySelector('nav').hidden=report.hidden=true;};
+document.querySelector('#audio').onclick=async()=>{
+ const ctx=new OfflineAudioContext(2,48000*5,48000),clips=await loadRecordings(ctx),a=createAmbience({load:async()=>clips});await a.prepare(ctx);
+ for(const [i,surface]of['asphalt','gravel','water','mud','metal'].entries())a.update(ctx,g,true,[{type:'land',surface,side:i%2,force:1,depth:18}]);
+ const buffer=await ctx.startRendering(),samples=buffer.getChannelData(0),peak=Math.max(...samples.slice(0,40000).map(Math.abs));
+ report.textContent=JSON.stringify({done:true,decoded:Object.fromEntries(Object.entries(clips).map(([k,v])=>[k,v.length])),expected:Object.values(RECORDINGS).reduce((a,b)=>a+b,0),peak,finite:samples.every(Number.isFinite),bytes:buffer.length*buffer.numberOfChannels*4});a.stop();
+};
+document.querySelector('#listen').onclick=async()=>{
+ ac||=new AudioContext();await ac.resume();sound||=createAmbience();await sound.prepare(ac);
+ for(const [i,surface]of['asphalt','gravel','water','mud','metal'].entries())setTimeout(()=>sound.update(ac,g,true,[{type:'land',surface,side:i%2,force:1,depth:18}]),i*800);
+};
+function frame(now){const dt=Math.min(.05,(now-last)/1000||1/60);last=now;if(route){if(g.mode==='idle'){const p=route[cursor++];if(p){selectFoot(g,p.side);takeStep(g,p);}else route=null;}advance(g,dt);draw(now,dt);}requestAnimationFrame(frame);}
+reset(0);requestAnimationFrame(frame);
+</script>

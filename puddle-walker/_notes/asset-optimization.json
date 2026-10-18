@@ -1,0 +1,136 @@
+[
+  {
+    "file": "white-sneaker.png",
+    "before": 1317433,
+    "after": 769872,
+    "size": null,
+    "lossless": true
+  },
+  {
+    "file": "asphalt.jpg",
+    "before": 898454,
+    "after": 66048,
+    "size": [
+      384,
+      384
+    ],
+    "lossless": false
+  },
+  {
+    "file": "denim.jpg",
+    "before": 873431,
+    "after": 3222,
+    "size": [
+      96,
+      96
+    ],
+    "lossless": false
+  },
+  {
+    "file": "terrain.jpg",
+    "before": 894730,
+    "after": 378770,
+    "size": [
+      1024,
+      1024
+    ],
+    "lossless": false
+  },
+  {
+    "file": "concrete-paving.png",
+    "before": 4062704,
+    "after": 182126,
+    "size": [
+      720,
+      720
+    ],
+    "lossless": false
+  },
+  {
+    "file": "street-props.png",
+    "before": 2110713,
+    "after": 180634,
+    "size": [
+      768,
+      768
+    ],
+    "lossless": false
+  },
+  {
+    "file": "roadside-bush.png",
+    "before": 239806,
+    "after": 27902,
+    "size": [
+      256,
+      256
+    ],
+    "lossless": false
+  },
+  {
+    "file": "awake-cat.png",
+    "before": 1517904,
+    "after": 106544,
+    "size": [
+      768,
+      768
+    ],
+    "lossless": false
+  },
+  {
+    "file": "doorstep-details.png",
+    "before": 1700964,
+    "after": 240606,
+    "size": [
+      1024,
+      1024
+    ],
+    "lossless": false
+  },
+  {
+    "file": "neighborhood-props.png",
+    "before": 664108,
+    "after": 142790,
+    "size": [
+      768,
+      768
+    ],
+    "lossless": false
+  },
+  {
+    "file": "street-life.png",
+    "before": 338617,
+    "after": 75722,
+    "size": [
+      768,
+      768
+    ],
+    "lossless": false
+  },
+  {
+    "file": "parked-car.png",
+    "before": 2452732,
+    "after": 257488,
+    "size": null,
+    "lossless": false
+  },
+  {
+    "file": "puddle-water.jpg",
+    "before": 199345,
+    "after": 186802,
+    "size": [
+      768,
+      768
+    ],
+    "lossless": false
+  },
+  {
+    "file": "everyday-details.png",
+    "before": 2675699,
+    "after": 120102,
+    "size": [
+      768,
+      512
+    ],
+    "lossless": false
+  }
+]

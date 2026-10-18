@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><meta name="viewport" content="width=device-width"><title>Puddle Walker — footprints preview</title>
+<style>body{margin:0;background:#112820;color:#f5efcf;font:14px system-ui}header{padding:12px 20px;display:flex;gap:12px;align-items:center}button{background:#d9f46c;color:#112820;border:0;border-radius:4px;padding:10px 14px;font-weight:bold}#scene{position:relative;width:min(1100px,100vw);margin:auto}#street{width:100%;height:calc(100vh - 130px);min-height:420px;display:block}#inspection{position:absolute;bottom:16px;left:16px;width:150px}#report{max-width:1100px;margin:auto;padding:12px 0;overflow-wrap:anywhere;font-size:10px}</style>
+<header><strong>PUDDLE WALKER</strong><button id="walk">Wet & muddy footsteps</button><button id="age">Let the tracks dry</button><span>Footprint playtest</span></header><div id="scene"><canvas id="street"></canvas><canvas id="inspection" width="360" height="220"></canvas></div><div id="report">Loading…</div>
+<script type="module">
+import {createGame,setShoeMask,indexStreet,MATERIALS,takeStep,advance,condition} from './model.js?v=contact-30';
+import {createRenderer} from './render.js?v=contact-30';
+const canvas=document.querySelector('#street'),report=document.querySelector('#report');
+const r=await createRenderer(canvas,document.querySelector('#inspection'));
+let g;
+const tick=seconds=>{for(let i=0;i<Math.round(seconds*120);i++)advance(g,1/120);};
+function paint(){r.render(g,performance.now(),1,true);report.dataset.result=JSON.stringify({steps:g.steps,prints:g.prints.map(p=>({side:p.side,x:p.x,y:p.y,age:g.time-p.born,wet:p.zones.reduce((s,z)=>s+z.wet,0),dirt:p.zones.reduce((s,z)=>s+z.dirt,0)})),clean:condition(g),assets:r.assetsReady});report.textContent='Dark water tracks evaporate. Brown mud stays longer. Each dry step leaves a lighter impression.';}
+function setup(){g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);g.phase='walking';g.feet.forEach((f,i)=>{f.x=340+i*100;f.y=1000-i*20;f.bestY=f.y;});
+ g.street.patches=g.street.patches.filter(p=>Math.abs(p.y-1120)>380);
+ for(const [i,type] of ['water','mud'].entries())g.street.patches.push({id:100+i,type,x:340+i*100,y:1000-i*20,rx:29,ry:48,depth:8,seed:2+i,cos:1,sin:0,dirt:MATERIALS[type].dirt});
+ g.street.obstacles=g.street.obstacles.filter(p=>Math.abs(p.y-1120)>380);indexStreet(g.street);tick(.25);
+ for(const point of [{x:340,y:1110},{x:440,y:1145},{x:400,y:1180},{x:490,y:1215}]){takeStep(g,point);tick(.6);}
+ paint();}
+document.querySelector('#walk').onclick=setup;
+document.querySelector('#age').onclick=()=>{tick(25);paint();};setup();
+function frame(t){r.render(g,t,1/60,true);requestAnimationFrame(frame);}requestAnimationFrame(frame);
+</script>

@@ -1,0 +1,51 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Neighborhood details</title>
+<style>body{margin:0;font:13px system-ui;background:#24362a}canvas{display:block;width:100vw;height:100vh}nav,pre{position:fixed;left:10px;top:10px;z-index:2}nav{right:10px;display:flex;flex-wrap:wrap;gap:2px}pre{top:90px;pointer-events:none;background:#ffffffe8;padding:8px;max-width:900px;white-space:pre-wrap}button{padding:8px}[hidden]{display:none!important}</style>
+<nav><button id="cat">Shoebox cat</button><button id="duck">Bath duck</button><button id="tea">Tea break</button><button id="chalk">Chalk sun</button><button id="home">Home</button><button id="garden">Boot garden</button><button id="plans">Little roadworks</button><button id="pigeon">Pigeon</button><button id="seedlings">Plant stand</button><button id="raincloud">Raincloud</button><button id="keys">Home keys</button><button id="snail">Garden snail</button><button id="scare">Approach snail</button><button id="back">Stand back</button><button id="newspaper">Sunday puzzle</button><button id="tea-home">Tea for two</button><button id="dandelion">Dandelion</button><button id="brush">Brush past</button><button id="drift">Drift away</button><button id="work-gloves">Wet cement</button><button id="boats">Puddle club</button><button id="van">Wash me</button><button id="sandbags">Tiny seaside</button><button id="helper">Little helper</button><button id="nod">Pass helper</button><button id="party">Rainy party</button><button id="waft">Pass balloon</button><button id="settle">Let settle</button><button id="thief">Biscuit guest</button><button id="steal">Sneak up</button><button id="take">Pinch biscuit</button><button id="flee">Fly away</button><button id="shoo">Shoo</button><button id="breeze">Breeze</button><button id="approach">Watch waddle</button><button id="close">Close approach</button><button id="ripple">Ripple</button><button id="press">Step on toy</button><button id="release">Step away</button><button id="cost">Measure rendering</button><button id="photo">Hide controls</button></nav><pre id="report">Loading</pre><canvas></canvas>
+<script type="module">
+import{createGame,ROAD,setShoeMask}from'./model.js?v=shoebox-tenant-128';
+import{createRenderer}from'./render.js?v=shoebox-tenant-128';
+import{createNeighborhood}from'./neighborhood.js?v=shoebox-tenant-128';
+import{pinwheelPose}from'./street-charm.js?v=shoebox-tenant-128';
+const canvas=document.querySelector('canvas'),report=document.querySelector('#report'),r=await createRenderer(canvas);let g,kind,clock=0,playing=false,last=0,samples=null,stopAt=Infinity,pigeon;
+function draw(){clock+=16.7;r.render(g,clock,1/60);report.textContent=JSON.stringify({kind,time:g.time,assets:r.assetsReady,helpers:r.sceneState().helpers,balloons:r.sceneState().balloons,thieves:r.sceneState().thieves,dandelions:r.sceneState().dandelions,snails:r.sceneState().snails,pinwheel:kind==='seedlings'?pinwheelPose(g.time,r.sceneState().landmarks.find(l=>l.kind==='seedlings').seed):undefined,bird:r.wildlifeState()[2],ducks:r.sceneState().ducks,cat:r.sceneState().cat,cacheMiB:r.metrics.cacheBytes/1048576});}
+function reset(which){kind=which;playing=false;stopAt=Infinity;g=createGame('leather',321);g.phase='walking';setShoeMask(g,r.mask);const n=createNeighborhood();n.update(g);const scene=n.sceneState();pigeon=n.wildlifeState()[2];let y=0;
+ if(which==='cat')y=scene.cat.y-145;
+ if(which==='duck'){y=scene.ducks[0].y-105;playing=true;}
+ if(which==='helper')y=scene.helpers[0].y-160;
+ if(which==='party')y=scene.balloons[0].anchorY-150;
+ if(which==='thief')y=scene.thieves[0].snack.y-180;
+ if(which==='tea')y=scene.landmarks.find(l=>l.kind==='tea-break').y-100;
+ if(which==='chalk')y=280;
+ if(which==='home'){y=ROAD.finish+30;g.phase='finished';}
+ if(which==='garden'||which==='plans')y=scene.landmarks.find(l=>l.kind===which).y-175;
+ if(which==='seedlings'||which==='keys'||which==='raincloud')y=scene.landmarks.find(l=>l.kind===(which==='raincloud'?'chalk':which)).y-175;
+ if(which==='pigeon')y=pigeon.y-310;
+ if(which==='snail')y=scene.snails[0].y-140;
+ if(which==='dandelion')y=scene.dandelions[0].y-150;
+ if(which==='van'){const car=g.street.parking.find(c=>c.y>8240&&c.y<12240);y=car.y+(car.side?-330:330)-155;}
+ if(which==='newspaper'||which==='tea-home'||which==='work-gloves'||which==='boats'||which==='sandbags')y=scene.landmarks.find(l=>l.kind===which).y-160;
+ g.feet.forEach((f,i)=>{f.x=420+i*60;f.y=y-i*25;});draw();
+}
+for(const id of ['cat','duck','tea','chalk','home','garden','plans','pigeon','seedlings','keys','raincloud','snail','newspaper','tea-home','dandelion','work-gloves','boats','van','thief','party','helper','sandbags'])document.querySelector('#'+id).onclick=()=>reset(id);
+document.querySelector('#nod').onclick=()=>{const h=r.sceneState().helpers[0],left=h.x<450;g.active=left?0:1;Object.assign(g.feet[g.active],{x:left?145:755,y:h.y,z:10,vx:0,vy:120});Object.assign(g.feet[1-g.active],{x:left?205:695,y:h.y-70,z:0});playing=true;stopAt=g.time+.15;};
+document.querySelector('#waft').onclick=()=>{const b=r.sceneState().balloons[0],left=b.x<450;g.active=left?0:1;Object.assign(g.feet[g.active],{x:left?145:755,y:b.anchorY+16,z:10,vx:0,vy:120});Object.assign(g.feet[1-g.active],{x:left?205:695,y:b.anchorY-70,z:0});playing=true;stopAt=g.time+.25;};
+document.querySelector('#settle').onclick=()=>{g.feet.forEach(f=>{f.x=450;f.vy=0;});playing=true;stopAt=g.time+4;};
+document.querySelector('#steal').onclick=()=>{playing=true;stopAt=g.time+1.3;};
+document.querySelector('#take').onclick=()=>{playing=true;stopAt=g.time+.4;};
+document.querySelector('#flee').onclick=()=>{playing=true;stopAt=g.time+3;};
+document.querySelector('#shoo').onclick=()=>{const b=r.sceneState().thieves[0],left=b.x<450;g.active=left?0:1;Object.assign(g.feet[g.active],{x:left?145:755,y:b.y,z:0});Object.assign(g.feet[1-g.active],{x:left?205:695,y:b.y-80,z:0});playing=true;stopAt=g.time+.5;};
+document.querySelector('#brush').onclick=()=>{const f=r.sceneState().dandelions[0];const left=f.x<450;g.active=left?0:1;Object.assign(g.feet[g.active],{x:left?145:755,y:f.y,z:10,vy:120});Object.assign(g.feet[1-g.active],{x:left?205:695,y:f.y-85,z:0});playing=true;stopAt=g.time+.8;};
+document.querySelector('#drift').onclick=()=>{g.feet.forEach(f=>{f.x=450;f.vy=0;});playing=true;stopAt=g.time+6;};
+document.querySelector('#scare').onclick=()=>{const snail=r.sceneState().snails[0];Object.assign(g.feet[0],{x:snail.x<450?160:740,y:snail.y,z:0});playing=true;stopAt=g.time+1;};
+document.querySelector('#back').onclick=()=>{g.feet.forEach(f=>f.x=450);playing=true;stopAt=g.time+5;};
+document.querySelector('#breeze').onclick=()=>{playing=!playing;stopAt=Infinity;};
+document.querySelector('#approach').onclick=()=>{g.feet.forEach((f,i)=>{f.x=pigeon.x+i*60;f.y=pigeon.y-230;});playing=true;stopAt=g.time+1.4;};
+document.querySelector('#close').onclick=()=>{g.feet.forEach((f,i)=>{f.x=pigeon.x+i*60;f.y=pigeon.y+20;});playing=true;stopAt=g.time+.65;};
+document.querySelector('#ripple').onclick=()=>{const d=r.sceneState().ducks[0];g.rings=[{x:d.x-25,y:d.y,radius:60,strength:1.2}];playing=true;};
+document.querySelector('#press').onclick=()=>{const d=r.sceneState().ducks[0];Object.assign(g.feet[0],{x:d.x-4,y:d.y,z:0,angle:0});playing=true;};
+document.querySelector('#release').onclick=()=>{g.feet[0].y-=140;playing=true;};
+document.querySelector('#photo').onclick=()=>{playing=false;document.querySelector('nav').hidden=report.hidden=true;};
+document.querySelector('#cost').onclick=()=>{samples=[];stopAt=Infinity;playing=true;};
+function frame(now){const dt=Math.min(.05,(now-last)/1000||1/60);last=now;if(playing){g.time+=dt;const start=performance.now();draw();if(samples){samples.push(performance.now()-start);if(samples.length===180){samples.sort((a,b)=>a-b);report.textContent=JSON.stringify({kind,frames:samples.length,mean:samples.reduce((a,b)=>a+b,0)/samples.length,p95:samples[171],max:samples.at(-1),assets:r.assetsReady});samples=null;playing=false;}}if(g.time>=stopAt)playing=false;}requestAnimationFrame(frame);}
+reset('cat');requestAnimationFrame(frame);
+</script>

@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>Water and wear · Puddle Walker</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f4ee;color:#25312c;font:14px system-ui;padding:24px}h1{font-size:24px;margin:0 0 5px}p{margin:0 0 16px;color:#687269}#samples{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}article{background:white;border:1px solid #dedfd6;padding:14px}h2{font-size:15px;margin:0 0 5px}small{display:block;min-height:30px;color:#657066;font-size:12px}canvas{width:100%;height:175px;object-fit:contain;display:block}strong{display:block;text-align:center;font-size:12px}.work{position:fixed;left:-3000px;top:0;width:900px;height:800px;visibility:hidden}.pair{position:fixed;left:-3000px;visibility:hidden}</style>
+<h1>A little water helps. Too much doesn’t.</h1><p>Actual game physics and sneaker rendering. The first four pairs start with identical mud contact.</p>
+<div id="samples"></div><canvas class="work" id="world" width="900" height="800"></canvas><canvas class="pair" id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,setShoeMask,indexStreet,advance,condition,takeStep} from './model.js?v=water-rinse-111';
+import {createRenderer} from './render.js?v=water-rinse-111';
+const renderer=await createRenderer(world,inspection),tick=(g,seconds)=>{for(let i=0;i<seconds*120;i++)advance(g,1/120);};
+function field(g,type,depth){g.street=indexStreet({...g.street,obstacles:[],patches:type==='dry'?[]:[{id:0,type,x:450,y:5000,rx:1000,ry:12000,depth,seed:4,cos:1,sin:0}]});g.feet.forEach(f=>f.contactPose='');}
+function step(g){takeStep(g,{x:g.active?480:420,y:Math.max(...g.feet.map(f=>f.y))+130});tick(g,1);}
+const results=[];
+for(const [type,water,age,label,detail] of [
+ ['mud',0,0,'Muddy shoes','Before rinsing: clumps and brown pigment'],
+ ['mud',5,0,'After shallow water','Loose dirt washes off; bound stains remain'],
+ ['mud',24,0,'After deep water','No rinse bonus. Higher, darker wet marks'],
+ ['mud',24,35,'After drying','Moisture fades. The tide mark stays'],
+ ['clay',0,0,'Clay','Rust-brown clumps around the lower edge'],
+ ['tar',0,0,'Tar','Black sticky residue that resists rinsing'],
+ ['cement',0,0,'Cement slurry','Pale, granular deposits in the seams'],
+ ['algae',0,0,'Algae','A thin green film and wet sheen']
+]){
+ const card=document.createElement('article');card.innerHTML=`<h2>${label}</h2><small>${detail}</small><canvas width="360" height="220"></canvas><strong>Loading…</strong>`;samples.append(card);
+ const g=createGame('leather',321);if(renderer.mask)setShoeMask(g,renderer.mask);g.phase='walking';
+ g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:1000,bestY:1000,angle:0}));
+ field(g,type,type==='tar'?3.5:type==='algae'?4:9);for(let i=0;i<3;i++)step(g);
+ if(water){field(g,'water',water);step(g);step(g);}
+ if(age){field(g,'dry');tick(g,age);}
+ renderer.render(g,performance.now(),1,true);card.querySelector('canvas').getContext('2d').drawImage(inspection,0,0);
+ const clean=condition(g);card.querySelector('strong').textContent=`${clean.toFixed(1)}% clean`;
+ results.push({label,clean,wet:g.feet.reduce((n,f)=>n+f.wetness.reduce((n,v)=>n+v,0),0)});
+}
+document.body.dataset.results=JSON.stringify(results);document.body.dataset.ready='true';
+</script>

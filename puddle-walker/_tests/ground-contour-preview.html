@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>Ground contact clipping check</title>
+<button id="run">Check ground contact clipping</button><pre id="report">Ready</pre><canvas id="sample" width="900" height="600"></canvas>
+<script type="module">
+import {createGame} from './model.js?v=verges-71';
+import {groundDepth,groundEdge,groundPath} from './road-ground.js?v=verges-71';
+const c=document.querySelector('canvas').getContext('2d');
+document.querySelector('button').onclick=()=>{
+  let points=0,mismatches=0,banks=0;
+  for(const seed of [1,42,321,9182])for(const p of createGame('leather',seed).street.patches.filter(p=>p.groundField)){
+    const path=groundPath(p);banks++;
+    for(let row=0;row<51;row++){
+      const ly=-p.ry+(row+.3)/51*p.ry*2;
+      for(let lx=-p.rx+.37;lx<p.rx;lx+=7.13){points++;if(c.isPointInPath(path,lx,-ly)!==(groundDepth(p,p.x+lx,p.y+ly)>0))mismatches++;}
+      // The exact shore, including a shoe cell grazing either side.
+      for(const delta of [-.1,.1]){const lx=groundEdge(p,ly)+delta;points++;if(c.isPointInPath(path,lx,-ly)!==(groundDepth(p,p.x+lx,p.y+ly)>0))mismatches++;}
+    }
+  }
+  document.querySelector('#report').textContent=JSON.stringify({banks,points,mismatches,passed:mismatches===0});
+};
+</script>

@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Leg rendering equivalence</title><style>body{font:14px system-ui}canvas{width:320px;height:240px}pre{white-space:pre-wrap}</style><h1>Leg rendering equivalence</h1><pre id="report">Checking…</pre><div id="examples"></div>
+<script type="module">
+import * as next from './denim.js?v=small-discoveries-121';
+// The complete mesh is the reference for the culled, reused mesh.
+const old=next;
+import {createGame,SHOES} from './model.js?v=small-discoveries-121';
+const image=await new Promise(resolve=>{const i=new Image();i.onload=()=>resolve(i);i.src='./assets/denim.webp';});
+const painters=[old.createDenim(image),next.createDenim(image)],canvas=()=>{const c=document.createElement('canvas');c.width=320;c.height=240;return c;},meshes=[[],[]],g=createGame('leather',321),results=[];
+const counts=[0,0];
+for(const side of [0,1])for(const lift of [0,30,65])for(const angle of [-.24,0,.24])for(const bottom of [40,90,180]){
+ const pose={x:0,y:0,sx:1+lift/700,sy:1+lift/1100,angle},canvases=[canvas(),canvas()],pixels=[];
+ const rows=[old.legRows(pose,SHOES.leather,side,lift,side?35:-35,bottom,.4),next.legRows(pose,SHOES.leather,side,lift,side?35:-35,bottom,.4,meshes[side])];
+ if(JSON.stringify(rows[0])!==JSON.stringify(rows[1]))throw Error('Mesh changed');
+ for(let i=0;i<2;i++){
+  const c=canvases[i].getContext('2d',{willReadFrequently:true}),draw=c.drawImage.bind(c);c.drawImage=(...args)=>{counts[i]++;draw(...args);};
+  c.translate(160,240-bottom);painters[i](c,g,g.feet[side],rows[i],i?bottom:Infinity);pixels.push(c.getImageData(0,0,320,240).data);
+ }
+ let changed=0,maxDelta=0;for(let p=0;p<pixels[0].length;p++)if(pixels[0][p]!==pixels[1][p]){changed++;maxDelta=Math.max(maxDelta,Math.abs(pixels[0][p]-pixels[1][p]));}
+ results.push({side,lift,angle,bottom,changed,maxDelta});
+ if(side===0&&lift===30&&angle===0&&bottom===90)document.querySelector('#examples').append(...canvases);
+}
+document.querySelector('#report').textContent=JSON.stringify({passed:results.every(r=>!r.changed),cases:results.length,counts,failures:results.filter(r=>r.changed)},null,2);
+</script>

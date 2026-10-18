@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Terrain prefetch compatibility</title>
+<style>body{font:14px system-ui;margin:0}canvas{display:block;width:1000px;height:640px}pre{white-space:pre-wrap}</style>
+<button id="run" disabled>Check terrain preparation</button><pre id="report">Loading…</pre><canvas></canvas>
+<script type="module">
+import {createGame,setShoeMask,ROAD} from './model.js?v=small-discoveries-121';
+import {createRenderer} from './render.js?v=small-discoveries-121';
+const params=new URLSearchParams(location.search),fallback=params.has('fallback'),starved=params.has('starved');
+if(params.has('phone')){const canvas=document.querySelector('canvas');canvas.style.width='390px';canvas.style.height='844px';}
+if(fallback){window.requestIdleCallback=undefined;window.cancelIdleCallback=undefined;}
+if(starved){
+ window.requestIdleCallback=(fn,options)=>{
+  if(!(options?.timeout>0))throw Error('Busy browsers need a bounded prefetch timeout');
+  return setTimeout(()=>fn({didTimeout:true,timeRemaining:()=>0}),16);
+ };window.cancelIdleCallback=clearTimeout;
+}
+const r=await createRenderer(document.querySelector('canvas')),button=document.querySelector('button'),report=document.querySelector('pre');
+button.disabled=false;report.textContent='Ready.';
+button.onclick=()=>{
+ button.disabled=true;const g=createGame('leather',321);setShoeMask(g,r.mask);let count=0,initialMisses=0,last=0;
+ const rect=document.querySelector('canvas').getBoundingClientRect(),viewH=rect.height/(rect.width/(rect.width<600?760:900));
+ const started=performance.now(),target=Math.floor((ROAD.finish+viewH+400)/768)-Math.floor(viewH/768);
+ function frame(now){
+  r.render(g,now,1,true);if(!initialMisses)initialMisses=r.metrics.visibleMisses;
+  // Move a whole tile: shorter advances eventually wait forever at some viewport heights.
+  if(r.metrics.prefetched>count){count=r.metrics.prefetched;g.feet.forEach(f=>f.y+=768);}
+  if(now-last>1000){last=now;report.textContent=JSON.stringify({running:true,fallback,starved,prefetched:r.metrics.prefetched});}
+  if(r.metrics.prefetched<target&&now-started<30000){requestAnimationFrame(frame);return;}
+  const m=r.metrics;
+  report.textContent=JSON.stringify({done:true,passed:m.prefetched===target&&m.visibleMisses===initialMisses&&m.chunks<=5,fallback,starved,chunks:m.generated,prefetched:m.prefetched,visibleMisses:m.visibleMisses,initialMisses,cacheMiB:m.cacheBytes/1048576,longestSlice:m.warmLongestSlice,elapsed:now-started});button.disabled=false;
+ }
+ requestAnimationFrame(frame);
+};
+</script>

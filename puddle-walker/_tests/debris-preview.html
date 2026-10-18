@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Puddle Walker · loose street detail</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#f5f4ef;color:#29362f;font:14px system-ui}h1{margin:0 0 8px;font-size:24px}p{margin:0 0 22px;color:#616960}main{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}article{padding:14px;background:#fff}h2{margin:0 0 10px;font-size:14px}article canvas{width:100%;height:300px;object-fit:contain;display:block}small{display:block;line-height:1.45;margin-top:12px}#world{position:fixed;left:0;top:0;width:1800px;height:1400px;visibility:hidden;pointer-events:none}#inspection{display:none}pre{font-size:10px;white-space:pre-wrap}button{margin-top:20px;padding:10px;background:#fff;color:#29362f;border:1px solid #aaa}</style>
+<h1>Small things underfoot</h1><p>Actual street rendering, enlarged. Sole contact changes the litter’s position and shape.</p><main id="gallery"></main><button id="motion">Replay the step</button><pre id="report">Loading…</pre><canvas id="world"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,indexStreet,setShoeMask,takeStep,advance} from './model.js?v=litter-74';
+import {createRenderer} from './render.js?v=litter-74';
+const world=document.querySelector('#world'),r=await createRenderer(world,document.querySelector('#inspection')),report=document.querySelector('#report'),results=[];
+function setup(wet=false){
+ const g=createGame('leather',321);g.phase='walking';setShoeMask(g,r.mask);
+ g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:860-i*20,bestY:860-i*20}));
+ const clutter=[{x:411,y:1011,type:0,size:8,angle:-.45},{x:425,y:1001,type:5,size:7,angle:.25},{x:420,y:1024,type:6,size:9,angle:.2}];
+ const patches=wet?[{id:0,type:'water',x:420,y:1008,rx:75,ry:75,depth:1,seed:4,cos:1,sin:0,dirt:.42}]:[];
+ g.street=indexStreet({...g.street,districts:undefined,patches,clutter,obstacles:[],parking:[]});return g;
+}
+function land(g){takeStep(g,{x:420,y:1000});while(g.mode==='flight')advance(g,1/120);}
+function card(label,caption){const article=document.createElement('article');article.innerHTML='<h2>'+label+'</h2><canvas width="240" height="300"></canvas><small>'+caption+'</small>';document.querySelector('#gallery').append(article);return article.querySelector('canvas');}
+const views=new WeakMap();
+function paint(g,output){
+ if(!views.has(g))views.set(g,{});const view=views.get(g);Object.assign(view,g,{feet:g.feet.map(f=>({...f,x:-1000,y:780})),preview:null});r.render(view,performance.now(),1,false);
+ const box=world.getBoundingClientRect(),target=r.screenPoint({x:420,y:1010}),scale=box.width/900,ratio=world.width/box.width;
+ output.getContext('2d').drawImage(world,(target.x-box.left-30*scale)*ratio,(target.y-box.top-37.5*scale)*ratio,60*scale*ratio,75*scale*ratio,0,0,240,300);
+ return r.debrisState();
+}
+const g=setup(),before=card('Before the step','A curled leaf, a scrap of paper and a small stone.');paint(g,before);
+land(g);for(let i=0;i<6;i++)advance(g,1/120);
+const hop=card('Just after contact','The stone skips; the leaf and paper yield to the sole.');results.push({label:'contact',items:paint(g,hop)});
+for(let i=0;i<100;i++)advance(g,1/120);
+const after=card('Once it settles','The leaf stays creased and the paper remains crumpled.');results.push({label:'settled',items:paint(g,after)});
+const wet=setup(true);land(wet);for(let i=0;i<100;i++)advance(wet,1/120);
+results.push({label:'damp',items:paint(wet,card('On damp ground','Wet litter barely shifts and settles close to the surface.'))});
+report.textContent=JSON.stringify({ready:true,assets:r.assetsReady,results});
+document.querySelector('#motion').onclick=()=>{
+ const game=setup();paint(game,hop);takeStep(game,{x:420,y:1000});let start=0,last=0,previous=null,movedFrames=0,maxHeight=0;
+ function frame(t){if(!start)start=last=t;const dt=Math.min((t-last)/1000,.05);last=t;advance(game,dt);const items=paint(game,hop);
+  const stone=items.find(i=>i.type===6);if(stone){maxHeight=Math.max(maxHeight,stone.pose.z);if(previous&&Math.hypot(stone.pose.x-previous.x,stone.pose.y-previous.y)>.001)movedFrames++;previous=stone.pose;}
+  if(t-start<1800)requestAnimationFrame(frame);else report.textContent=JSON.stringify({done:true,movedFrames,maxHeight,items,assets:r.assetsReady});
+ }requestAnimationFrame(frame);
+};
+</script>

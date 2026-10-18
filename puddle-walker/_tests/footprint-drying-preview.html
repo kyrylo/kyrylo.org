@@ -1,0 +1,38 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><meta name="viewport" content="width=device-width"><title>Puddle Walker · footprint detail</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:24px;background:#f5f4ef;color:#29362f;font:14px system-ui}h1{margin:0 0 8px;font-size:24px}p{margin:0 0 22px;color:#616960}main{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}article{padding:14px;background:#fff}h2{margin:0 0 10px;font-size:14px;font-weight:600}article canvas{width:100%;height:300px;object-fit:contain;display:block}small{display:block;line-height:1.45;margin-top:12px}#world{position:fixed;left:0;top:0;width:900px;height:700px;visibility:hidden;pointer-events:none}#inspection{display:none}button{margin-top:20px;padding:10px 15px;background:#fff;border:1px solid #bbb;font:inherit}pre{font-size:11px;white-space:pre-wrap}body.running main{display:none}body.running #world{position:relative;visibility:visible;width:900px;max-width:100%;height:580px}body.running #inspection{display:none}</style>
+<h1>Footprints · close up</h1><p>Actual game rendering. Thin water films dry first; deposited mud stays behind.</p><main id="gallery"></main><button id="stress">Check 90 cached footprints</button><pre id="report">Loading…</pre><canvas id="world"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,setShoeMask,indexStreet,MATERIALS,takeStep,advance,condition} from './model.js?v=tracks-73';
+import {createRenderer} from './render.js?v=tracks-73';
+const canvas=document.querySelector('#world'),r=await createRenderer(canvas,document.querySelector('#inspection')),report=document.querySelector('#report');
+function fixture(type,shore=false){
+ const g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='walking';
+ g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:1000-i*20,bestY:1000-i*20}));
+ const patches=[{id:0,type,x:420,y:1000,rx:27,ry:58,depth:12,seed:4,cos:1,sin:0,dirt:MATERIALS[type].dirt}];
+ if(shore)patches.push({id:1,type:'water',x:438,y:1120,rx:22,ry:50,depth:12,seed:19,cos:1,sin:0,dirt:MATERIALS.water.dirt});
+ g.street=indexStreet({...g.street,districts:undefined,patches,obstacles:[],clutter:[],parking:[]});
+ for(let i=0;i<24;i++)advance(g,1/120);
+ takeStep(g,{x:420,y:1120});for(let i=0;i<180&&g.mode!=='idle';i++)advance(g,1/120);
+ return g;
+}
+const water=fixture('water'),mud=fixture('mud'),shore=fixture('mud',true),results=[];
+for(const [g,age,label,detail] of [[water,.15,'Fresh water','Fine tread grooves and a thin damp outline.'],[water,9,'Nine seconds later','The thin film has gone. The deeper tread is still damp.'],[mud,25,'Mud after drying','Water evaporates, leaving a lighter, grainy deposit.'],[shore,.15,'At the puddle edge','Only the pavement receives tread; none floats on the water.']]){
+ const p=g.prints.find(p=>p.side===0),article=document.createElement('article');article.innerHTML='<h2>'+label+'</h2><canvas width="240" height="300"></canvas><small>'+detail+'</small>';document.querySelector('#gallery').append(article);
+ const view={...g,time:p.born+age,feet:g.feet.map(f=>({...f,x:-1000,y:p.y-220})),preview:null};r.render(view,performance.now(),1,true);
+ const point=r.screenPoint(p),box=canvas.getBoundingClientRect(),ratio=canvas.width/box.width;
+ article.querySelector('canvas').getContext('2d').drawImage(canvas,(point.x-box.left-40)*ratio,(point.y-box.top-50)*ratio,80*ratio,100*ratio,0,0,240,300);
+ results.push({label,age,prints:g.prints.length,clean:condition(g),cacheBytes:r.metrics.footprintCacheBytes});
+}
+report.textContent=JSON.stringify({ready:true,assets:r.assetsReady,examples:results});
+document.querySelector('#stress').onclick=()=>{
+ document.body.classList.add('running');const g=fixture('mud'),p=g.prints[0];
+ g.time=p.born+.2;g.prints=Array.from({length:90},(_,i)=>({...p,x:250+i%10*40,y:1300+Math.floor(i/10)*55,side:i%2,born:g.time-.2}));
+ g.feet=g.feet.map(f=>({...f,x:-1000,y:1250}));g.preview=null;
+ r.invalidateSize();const cold=performance.now();r.render(g,cold,1,true);const coldCpu=performance.now()-cold,prepared=r.metrics.footprintsPrepared;
+ let start=0,last=0,frames=[],cpu=[];report.textContent='Measuring cached tracks…';
+ function frame(t){if(!start)start=last=t;const dt=t-last;last=t;const a=performance.now();r.render(g,t,dt/1000,true);const cost=performance.now()-a;
+  if(t-start>500){frames.push(dt);cpu.push(cost);}
+  if(t-start<6000)requestAnimationFrame(frame);else{const sorted=[...cpu].sort((a,b)=>a-b);report.textContent=JSON.stringify({done:true,prints:90,visiblePrepared:prepared,extraPreparations:r.metrics.footprintsPrepared-prepared,coldCpu:+coldCpu.toFixed(2),fps:+(1000/(frames.reduce((a,b)=>a+b,0)/frames.length)).toFixed(1),cpuMean:+(cpu.reduce((a,b)=>a+b,0)/cpu.length).toFixed(2),cpuP95:sorted[Math.floor(sorted.length*.95)],footprintCacheMiB:+(r.metrics.footprintCacheBytes/1048576).toFixed(2),assets:r.assetsReady});}
+ }requestAnimationFrame(frame);
+};
+</script>

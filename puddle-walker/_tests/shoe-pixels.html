@@ -1,0 +1,42 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Shoe rendering equivalence</title>
+<style>body{font:15px system-ui;padding:24px;background:#f5f2e9}pre{white-space:pre-wrap}canvas{width:144px;height:336px;margin:10px}</style>
+<h1>Shoe rendering equivalence</h1><pre id="report">Comparing the previous renderer with the optimized renderer…</pre><div id="shoes"></div>
+<script type="module">
+import {createShoeWear as before} from './_qa-before-129/shoe-wear.js';
+import {createShoeWear as after} from './shoe-wear.js?v=deep-perf-129';
+import {createGame,MATERIALS,GRID} from './model.js?v=deep-perf-129';
+import {SHOE_CROP,SHOE_MASK} from './sprite-data.js?v=deep-perf-129';
+const load=src=>new Promise(resolve=>{const i=new Image();i.onload=()=>resolve(i);i.src=src;});
+const [photo,terrain]=await Promise.all([load('./assets/white-sneaker.webp'),load('./assets/terrain.webp')]);
+const canvas=()=>{const c=document.createElement('canvas');c.width=96;c.height=224;return c;};
+const clean=[0,1].map(side=>{const c=canvas(),ctx=c.getContext('2d',{willReadFrequently:true}),r=SHOE_CROP;if(!side){ctx.translate(96,0);ctx.scale(-1,1);}ctx.drawImage(photo,r.x,r.y,r.width,r.height,0,0,96,224);return c;});
+const oldPaint=before(terrain,clean),newPaint=after(terrain,clean),names=Object.keys(MATERIALS),results=[];
+for(const pattern of ['dense','rim','speck'])for(const type of ['clean','spatter','water','mud','oil','gum','gravel','poop','clay','tar','cement','algae'])for(const side of [0,1])for(const wet of [0,.17,.85]){
+ const f=createGame().feet[side],id=names.indexOf(type),amount=type==='clean'||type==='spatter'?0:.67;
+ for(let i=0;i<f.stain.length;i++){
+  if(!SHOE_MASK[i]||(pattern==='rim'&&i%24>3&&i%24<20)||(pattern==='speck'&&i%101!==0))continue;
+  f.stain[i]=amount*(.3+.7*((i*13%31)/31));f.deposits[i]=type==='water'?0:amount*.7;f.wetness[i]=wet;f.depositTypes[i]=Math.max(0,id);
+  f.smearX[i]=Math.sin(i)*.3;f.smearY[i]=Math.cos(i)*.3;
+  for(let ch=0;ch<3;ch++)f.tint[i*3+ch]=(MATERIALS[type]||MATERIALS.mud).color[ch];
+ }
+ if(type==='spatter')f.spatter.push({u:.5,v:.15,r:.008,cell:100,type:'water'});
+ const a=canvas(),b=canvas(),ac=a.getContext('2d',{willReadFrequently:true}),bc=b.getContext('2d',{willReadFrequently:true});
+ ac.drawImage(clean[side],0,0);bc.drawImage(clean[side],0,0);oldPaint(ac,f);newPaint(bc,f);
+ for(const c of [ac,bc]){c.globalCompositeOperation='destination-in';c.drawImage(clean[side],0,0);c.globalCompositeOperation='source-over';}
+ const av=ac.getImageData(0,0,96,224).data,bv=bc.getImageData(0,0,96,224).data;
+ let different=0,maxDelta=0;for(let i=0;i<av.length;i++)if(av[i]!==bv[i]){different++;maxDelta=Math.max(maxDelta,Math.abs(av[i]-bv[i]));}
+ results.push({pattern,type,side,wet,different,maxDelta});
+ if(pattern==='dense'&&type==='mud'&&side===0&&wet===.85)document.querySelector('#shoes').append(a,b);
+}
+const failures=results.filter(r=>r.different);
+const button=document.createElement('button');button.textContent='Benchmark dirty shoes';document.body.prepend(button);
+document.querySelector('#report').textContent=JSON.stringify({passed:!failures.length,cases:results.length,failures},null,2);
+button.onclick=()=>{
+ button.disabled=true;const f=createGame().feet[0],id=names.indexOf('mud');
+ for(let i=0;i<f.stain.length;i++){f.stain[i]=.83;f.deposits[i]=.65;f.wetness[i]=.7;f.depositTypes[i]=id;for(let ch=0;ch<3;ch++)f.tint[i*3+ch]=MATERIALS.mud.color[ch];}
+ const c=canvas().getContext('2d'),times=[[],[]],painters=[oldPaint,newPaint];let round=0;
+ function frame(){for(const i of round%2?[1,0]:[0,1]){const t=performance.now();for(let j=0;j<8;j++){c.clearRect(0,0,96,224);c.drawImage(clean[0],0,0);painters[i](c,f);}if(round>2)times[i].push((performance.now()-t)/8);}
+ if(++round<23)requestAnimationFrame(frame);else{const stats=a=>{a.sort((x,y)=>x-y);return {median:(a[9]+a[10])/2,p95:a[19]}};document.querySelector('#report').textContent=JSON.stringify({passed:!failures.length,cases:results.length,failures,before:stats(times[0]),after:stats(times[1])},null,2);button.disabled=false;}}
+ requestAnimationFrame(frame);
+};
+</script>

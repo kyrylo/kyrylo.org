@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><meta name="viewport" content="width=device-width"><title>Surface footsteps · Puddle Walker</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:32px;background:#14251d;color:#f0efdc;font:14px system-ui;max-width:780px}h1{font-size:30px;margin:0 0 8px}p{color:#b9c8b1;line-height:1.5}button,a{font:inherit;color:#17251b;background:#e5f275;padding:11px 16px;border:0;border-radius:5px;text-decoration:none;cursor:pointer}button:disabled{opacity:.5;cursor:wait}#surfaces{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}.surface{border:1px solid #4e6250;padding:14px}.surface b{display:block;font-size:15px}.surface small{color:#adbea3;display:block;margin:5px 0 10px}.surface canvas{width:100%;height:34px;display:block}.surface button{background:#314a36;color:#eff4dc;font-size:12px;padding:6px 10px;margin-top:10px}audio{display:block;width:100%;margin:20px 0}#report{white-space:pre-wrap;font-size:11px;color:#a6b8a1}#download[hidden]{display:none}</style>
+<h1>Hear the ground beneath your feet.</h1><p>Two real landing events per surface. Firm stone, rough asphalt, splashes, squelches, grit, and a ringing manhole.</p><button id="render">Render footstep comparison</button><div id="surfaces"></div><audio id="audio" controls hidden></audio><a id="download" hidden download="puddle-walker-surface-footsteps.wav">Download comparison</a><pre id="report">Ready.</pre>
+<script type="module">
+import {createGame,indexStreet,takeStep,advance,MATERIALS} from './model.js?v=contact-30';
+import {createAmbience} from './ambience.js?v=contact-30';
+const cases=[['concrete','Concrete','Firm heel + rubber sole'],['asphalt','Asphalt','Short, rough contact'],['water','Puddle','Splash + falling droplets'],['mud','Mud','Damped squelch'],['gravel','Gravel','Crunch + scattered grit'],['metal','Manhole','Hollow metallic ring'],['oil','Oil','Slippery swish'],['gum','Gum','Sticky tack'],['poop','Dog mess','Soft, muffled squish']];
+const report=document.querySelector('#report'),renderButton=document.querySelector('#render'),player=document.querySelector('#audio');let currentURL;
+function eventFor(type,side){
+ const g=createGame('leather',42);g.phase='walking';g.active=side;
+ const y=type==='concrete'?400:1120,x=420+side*60;g.feet.forEach((f,i)=>{f.y=y-140-i*20;});
+ g.street=indexStreet({...g.street,obstacles:[],patches:['concrete','asphalt'].includes(type)?[]:[{id:0,type,x,y,rx:100,ry:120,depth:20,dirt:MATERIALS[type].dirt,cos:1,sin:0,seed:2}]});
+ takeStep(g,{x,y});while(g.mode!=='idle')advance(g,1/120);
+ return g.events.find(e=>e.type==='land');
+}
+function wav(channels,rate){const length=channels[0].length,buffer=new ArrayBuffer(44+length*4),v=new DataView(buffer);const string=(at,s)=>[...s].forEach((c,i)=>v.setUint8(at+i,c.charCodeAt(0)));string(0,'RIFF');v.setUint32(4,buffer.byteLength-8,true);string(8,'WAVE');string(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,2,true);v.setUint32(24,rate,true);v.setUint32(28,rate*4,true);v.setUint16(32,4,true);v.setUint16(34,16,true);string(36,'data');v.setUint32(40,length*4,true);for(let i=0;i<length;i++)for(let ch=0;ch<2;ch++)v.setInt16(44+(i*2+ch)*2,Math.round(Math.max(-1,Math.min(1,channels[ch][i]))*32767),true);return new Blob([buffer],{type:'audio/wav'});}
+function play(blob){player.pause();if(currentURL)URL.revokeObjectURL(currentURL);currentURL=URL.createObjectURL(blob);player.src=currentURL;player.hidden=false;player.play();}
+const cards=cases.map(([id,name,description])=>{const card=document.createElement('div');card.className='surface';card.innerHTML=`<b>${name}</b><small>${description}</small><canvas width="300" height="60"></canvas><button disabled>Play ${name.toLowerCase()}</button>`;document.querySelector('#surfaces').append(card);return card;});
+renderButton.onclick=async()=>{
+ renderButton.disabled=true;report.textContent='Rendering actual Web Audio footsteps…';
+ try{
+ const rate=24000,duration=1.6,combined=[new Float32Array(rate*duration*cases.length),new Float32Array(rate*duration*cases.length)],metrics=[];
+ for(let n=0;n<cases.length;n++){
+  const [surface]=cases[n],ctx=new OfflineAudioContext(2,rate*duration,rate),g=createGame('leather',42),a=createAmbience();g.phase='walking';a.update(ctx,g,true);
+  const atHeel=ctx.suspend(.3),atToe=ctx.suspend(.8),rendered=ctx.startRendering();
+  await atHeel;g.time=.3;a.update(ctx,g,true,[eventFor(surface,0)]);ctx.resume();
+  await atToe;g.time=.8;a.update(ctx,g,true,[eventFor(surface,1)]);ctx.resume();
+  const buffer=await rendered,channels=[buffer.getChannelData(0),buffer.getChannelData(1)];a.stop();
+  channels.forEach((data,ch)=>combined[ch].set(data,n*rate*duration));
+  let peak=0,energy=0;for(const channel of channels)for(const value of channel){if(!Number.isFinite(value))throw Error('Non-finite sample');peak=Math.max(peak,Math.abs(value));energy+=value*value;}
+  metrics.push({surface,peak:+peak.toFixed(4),rms:+Math.sqrt(energy/(channels[0].length*2)).toFixed(4),contact:eventFor(surface,0).contacts[0].surface});
+  const c=cards[n].querySelector('canvas').getContext('2d');c.strokeStyle='#e5f275';c.lineWidth=1;c.beginPath();for(let x=0;x<300;x++){let max=0;for(let i=Math.floor(x*channels[0].length/300);i<Math.floor((x+1)*channels[0].length/300);i++)max=Math.max(max,Math.abs(channels[0][i]));c.moveTo(x,30-max*360);c.lineTo(x,30+max*360);}c.stroke();
+  const blob=wav(channels,rate),button=cards[n].querySelector('button');button.disabled=false;button.onclick=()=>play(blob);
+ }
+ const blob=wav(combined,rate),url=URL.createObjectURL(blob),link=document.querySelector('#download');link.href=url;link.hidden=false;player.src=url;player.hidden=false;
+ report.textContent=JSON.stringify({passed:metrics.every(m=>m.peak>0&&m.peak<.95&&m.surface===m.contact),seconds:duration*cases.length,order:cases.map(c=>c[1]),metrics},null,2);report.dataset.done='true';
+ }catch(error){report.textContent=error.stack;report.dataset.error='true';}finally{renderButton.disabled=false;}
+};
+</script>

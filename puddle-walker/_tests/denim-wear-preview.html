@@ -1,0 +1,36 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Cloth and street encounter check</title>
+<style>[hidden]{display:none!important}body{margin:0;background:#1b251f;color:#faf9f0;font:13px system-ui}nav{position:fixed;top:12px;left:12px;z-index:2;display:flex;gap:6px}button{padding:8px 12px}canvas{display:block;width:100vw;height:100vh}pre{position:fixed;top:48px;left:12px;background:#15231cd9;padding:9px;max-width:650px;white-space:pre-wrap}</style>
+<nav><button data-type="dry">Clean</button><button data-type="water">Deep water</button><button data-type="mud">Deep mud</button><button data-type="clay">Clay</button><button data-type="oil">Oil</button><button id="dry">Dry for a minute</button><button id="cost">Check wet rendering</button><button id="ball">Yard ball</button><button id="nudge">Nudge ball</button><button id="photo">Hide controls</button></nav><pre id="report">Loading…</pre><canvas></canvas>
+<script type="module">
+import {createGame,indexStreet,setShoeMask,advance,emitSplash,surfaceAt,condition} from './model.js?v=small-discoveries-121';
+import {createRenderer} from './render.js?v=small-discoveries-121';
+const canvas=document.querySelector('canvas'),report=document.querySelector('pre'),r=await createRenderer(canvas);
+let g,playing=false,clock=0,kind='dry',pending=0,frames=[],ballMode=false;
+function reset(type='dry'){
+ kind=type;ballMode=false;g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='walking';
+ g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:9100-i*40,bestY:9100-i*40,angle:i?.08:-.08}));
+ g.street=indexStreet({...g.street,obstacles:[],patches:type==='dry'?[]:[{id:0,type,x:450,y:9100,rx:270,ry:520,depth:30,seed:4,cos:1,sin:0,contaminant:type==='clay'}]});
+ pending=type==='dry'?0:8;playing=pending>0;frames=[];draw();
+}
+function draw(){clock+=16.7;const t=performance.now();r.render(g,clock,1/60);frames.push(performance.now()-t);report.textContent=JSON.stringify({done:!playing,surface:kind,clean:condition(g),jeansMarks:g.feet.map(f=>f.jeans.length),assets:r.assetsReady,renderMean:+(frames.reduce((a,b)=>a+b,0)/frames.length).toFixed(2),scene:ballMode?r.sceneState().balls:undefined});}
+for(const b of document.querySelectorAll('[data-type]'))b.onclick=()=>reset(b.dataset.type);
+document.querySelector('#dry').onclick=()=>{g.feet.forEach(f=>{f.y+=1050;f.bestY=f.y;f.contactPose='';});kind+=' · drying';pending=60;playing=true;};
+document.querySelector('#ball').onclick=()=>{g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='walking';g.feet.forEach((f,i)=>{f.x=420+i*60;f.y=3400-i*35;});kind='yard encounter';ballMode=true;playing=false;frames=[];draw();};
+document.querySelector('#nudge').onclick=()=>{const b=r.sceneState()?.balls[0];if(!b)return;Object.assign(g.feet[0],{x:b.x-4,y:b.y,z:0,vx:80});draw();};
+document.querySelector('#cost').onclick=()=>{
+ playing=ballMode=false;const times=[];let n=0;
+ function measure(now){const start=performance.now();advance(g,1/60);clock+=16.7;r.render(g,clock,1/60);times.push(performance.now()-start);
+ if(++n<240){requestAnimationFrame(measure);return;}times.sort((a,b)=>a-b);report.textContent=JSON.stringify({done:true,surface:kind,frames:n,cpuMean:times.reduce((a,b)=>a+b,0)/n,cpuP95:times[Math.floor(n*.95)],cpuMax:times.at(-1)});}
+ requestAnimationFrame(measure);
+};
+document.querySelector('#photo').onclick=()=>{playing=ballMode=false;document.querySelector('nav').hidden=true;report.hidden=true;};
+function frame(){
+ if(playing){
+  const ticks=12;
+  for(let i=0;i<ticks;i++){advance(g,1/120);if(!kind.includes('drying')&&Math.floor(g.time*120)%96===0)for(const f of g.feet)emitSplash(g,f,surfaceAt(g,f.x,f.y),420);}
+  pending-=ticks/120;if(pending<=0)playing=false;draw();
+ }else if(ballMode){advance(g,1/60);draw();}
+ requestAnimationFrame(frame);
+}
+reset();requestAnimationFrame(frame);
+</script>

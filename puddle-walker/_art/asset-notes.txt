@@ -1,0 +1,5 @@
+Runtime images live in assets/*.webp. Original photographs are preserved in source-assets/; underscore directories are excluded from Jekyll publication.
+Regenerate with: python3 puddle-walker/_art/optimize-assets.py (requires cwebp).
+The sneaker is lossless at its original resolution: its pixels, silhouette, and physics mask are unchanged. Other textures use quality 88, lossless alpha, and dimensions matched to their existing render targets. The car remains at full resolution because its source crop uses fixed pixels.
+sprite-data.js contains the original browser-measured sneaker crop/contact mask and neighborhood crop boxes. Their source measurements are in _notes/original-shoe-mask.json and _notes/original-sprite-crops.json. Update these if the artwork or 384px sprite preparation changes; do not recalculate them per visit.
+Performance and wear-equivalence browser fixtures: node puddle-walker/_tests/build-performance-fixtures.mjs. The reference dirt painter is retained only in the excluded test directory, for pixel equivalence verification.

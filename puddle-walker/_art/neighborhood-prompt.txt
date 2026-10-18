@@ -1,0 +1,13 @@
+Mode: built-in image_gen, transparent background.
+Asset: puddle-walker/assets/neighborhood-props.png
+Export: 768px atlas with original alpha preserved.
+
+Use case: photorealistic-natural
+Asset type: transparent four-quadrant sprite atlas for a realistic top-down neighborhood walking game.
+Make a square image split into an exact 2 by 2 grid of equal cells. Every object is centered in its own cell and completely contained with generous transparent padding. All objects photographed from exactly overhead, orthographic vertical 90 degree top view, no perspective tilt.
+TOP LEFT: one weathered round terracotta flowerpot, dense green leaves and cheerful small pink and cream daisylike flowers. Looking straight down into the pot. Leaves partly cover the orange clay rim.
+TOP RIGHT: one small sage-green metal watering can with curved handle and long spout, worn painted metal, viewed directly overhead, no text.
+BOTTOM LEFT: one cute real ginger tabby cat asleep, tightly curled in a compact oval with tail wrapped around its body, head tucked beside paws, all four paws tucked away. Realistic fine orange fur, soft cream ear tips, complete cat fully in cell. Seen straight down from above, no eye contact.
+BOTTOM RIGHT: one small folded newspaper paper boat seen straight down, simple classic origami shape, off-white paper with faint illegible newsprint, the bow points up.
+Lighting: consistent soft overcast daylight, realistic materials, natural colors, subtle self-shadowing.
+Constraints: genuinely transparent background around each separate object. No scene, floor, ground, water, mat, cast shadows, dividers, grid lines, labels, lettering, border, extra objects or objects crossing quadrant boundaries. Photographic realism, not cartoon, not illustration. All four subjects have clean complete silhouettes.

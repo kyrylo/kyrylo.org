@@ -1,0 +1,42 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Denim stain performance</title>
+<button id="run" disabled>Benchmark saturated denim</button><pre id="report">Checking pixels…</pre><canvas width="96" height="512"></canvas><canvas width="96" height="512"></canvas>
+<script type="module">
+import * as before from './_qa-before-129/denim-wear.js';
+import * as after from './denim-wear.js?v=deep-perf-129';
+const versions=[before,after],contexts=[...document.querySelectorAll('canvas')].map(c=>c.getContext('2d',{willReadFrequently:true})),report=document.querySelector('pre'),button=document.querySelector('button');
+const states=versions.map(v=>v.createDenimWear(0)),materials=['mud','water','oil','clay','cement','poop','gravel','tar','gum'];
+function fill(w,side,type,wet){
+ w.side=side;
+ w.hem.forEach((b,i)=>Object.assign(b,{height:70+i*7,type,soil:.7,wet}));
+ w.spots=Array.from({length:84},(_,i)=>({x:4+i*37%88,y:5+i*23%230,rx:3+i%7,ry:4+i%11,type,soil:.1+(i%7)/10,wet,seed:13.13+i*17}));
+}
+function paint(i){const c=contexts[i];c.clearRect(0,0,96,512);versions[i].paintDenimWear(c,states[i]);}
+const cases=[];
+for(const side of [0,1])for(const type of materials)for(const wet of [0,.4,1]){
+ states.forEach(w=>fill(w,side,type,wet));
+ // Paint again to exercise cached geometry as wetness, hem height and material change.
+ for(let round=0;round<2;round++){
+  states.forEach(w=>w.hem.forEach((b,i)=>{b.height+=round*3;b.type=round?materials[(materials.indexOf(type)+1)%materials.length]:type;}));
+  versions.forEach((_,i)=>paint(i));const pixels=contexts.map(c=>c.getImageData(0,0,96,512).data);
+  let changed=0;for(let i=0;i<pixels[0].length;i++)if(pixels[0][i]!==pixels[1][i])changed++;
+  cases.push({side,type,wet,round,changed});
+ }
+}
+const comparison={passed:cases.every(c=>!c.changed),cases:cases.length,failures:cases.filter(c=>c.changed)};
+report.textContent=JSON.stringify(comparison);button.disabled=false;
+button.onclick=()=>{
+ button.disabled=true;states.forEach(w=>fill(w,0,'mud',.7));const times=[[],[]];let frame=0;
+ function tick(){
+  for(const i of frame%2?[1,0]:[0,1]){
+   const start=performance.now();for(let n=0;n<8;n++)paint(i);
+   if(frame>=3)times[i].push((performance.now()-start)/8);
+  }
+  if(++frame<33)requestAnimationFrame(tick);
+  else{
+   const stats=a=>{a.sort((a,b)=>a-b);return{median:a[Math.floor(a.length/2)],p95:a[Math.floor(a.length*.95)]};};
+   report.textContent=JSON.stringify({...comparison,done:true,before:stats(times[0]),after:stats(times[1])});button.disabled=false;
+  }
+ }
+ requestAnimationFrame(tick);
+};
+</script>

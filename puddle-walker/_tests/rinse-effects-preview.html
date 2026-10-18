@@ -1,0 +1,37 @@
+<!doctype html><meta charset="utf-8"><title>Rinsing detail · Puddle Walker</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:26px;background:#f6f4ee;color:#27332e;font:14px system-ui}h1{font-size:25px;margin:0 0 7px}p{color:#67716b;margin:0 0 22px}main{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}article{padding:15px;background:white;border:1px solid #dedfd8}h2{font-size:17px;margin:0 0 8px}small{display:block;margin-bottom:12px;color:#68716b}article canvas{width:100%;height:330px;object-fit:contain;display:block}strong{display:block;font-size:13px;text-align:center;margin-top:12px}#world{position:fixed;left:-3000px;top:0;width:900px;height:900px;visibility:hidden}#inspection{display:none}</style>
+<h1>Leave a little dirt behind.</h1><p>Close-ups from the game renderer: actual washed pigment disperses where the shoe touched shallow water.</p>
+<main id="samples"></main><canvas id="world" width="900" height="900"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,setShoeMask,indexStreet,advance,condition,takeStep,selectFoot,puddleDepth} from './model.js?v=raster-budget-113';
+import {createRenderer} from './render.js?v=raster-budget-113';
+const create=document.createElement.bind(document);let canvasAllocations=0;document.createElement=(tag,...args)=>{if(tag==='canvas')canvasAllocations++;return create(tag,...args);};
+const r=await createRenderer(world,inspection),results=[];
+const tick=(g,t)=>{for(let i=0;i<t*120;i++)advance(g,1/120);};
+function move(g,x,y){if(!takeStep(g,{x,y}))throw Error('Invalid fixture step');for(let i=0;i<240&&g.mode!=='idle';i++)advance(g,1/120);}
+for(const [type,label,detail] of [['mud','Mud','Soft brown silt'],['clay','Clay','Rust-coloured pigment'],['cement','Cement slurry','A pale mineral cloud'],['algae','Algae','A green film in the water']]){
+ const g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='walking';g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:1000,bestY:1000,angle:0}));
+ const base={id:0,x:450,y:5000,rx:1000,ry:12000,depth:8,seed:4,cos:1,sin:0};
+ g.street=indexStreet({...g.street,obstacles:[],patches:[{...base,type}]});
+ for(let n=0;n<4;n++)move(g,g.active?480:420,Math.max(...g.feet.map(f=>f.y))+130);
+ g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:860-i*20,bestY:860-i*20,contactPose:''}));g.groundContacts=[];g.rings=[];g.prints=[];g.particles=[];g.crumbs=[];g.active=0;
+ const water={...base,type:'water',x:420,y:1000,rx:80,ry:90,depth:5};
+ const cover={...base,id:1,type:'metal',x:440,y:996,rx:10,ry:25,depth:1.5,cos:Math.cos(.4),sin:Math.sin(.4)};
+ g.street=indexStreet({...g.street,obstacles:[],patches:[water,cover]});
+ const before=condition(g,0);move(g,420,1000);const after=condition(g,0);
+ const mark=g.groundContacts.find(m=>m.wash);if(!mark)throw Error('Missing actual wash');
+ tick(g,.3);selectFoot(g,0);move(g,350,g.feet[0].y-50);
+ r.render(g,performance.now(),1,false);
+ const article=document.createElement('article');article.innerHTML=`<h2>${label}</h2><small>${detail}</small><canvas width="288" height="330"></canvas><strong>${before.toFixed(1)}% → ${after.toFixed(1)}% clean</strong>`;samples.append(article);
+ const p=r.screenPoint(mark),box=world.getBoundingClientRect(),scale=world.width/box.width;
+ article.querySelector('canvas').getContext('2d').drawImage(world,(p.x-box.left-56)*scale,(p.y-box.top-70)*scale,112*scale,128*scale,0,0,288,330);
+ const painted=world.getContext('2d').getImageData(0,0,world.width,world.height),contacts=g.groundContacts;
+ g.groundContacts=contacts.map(m=>m.wash?{...m,wash:null}:m);r.render(g,performance.now(),1,false);
+ const plain=world.getContext('2d').getImageData(0,0,world.width,world.height);let coverChanged=0,washedPixels=0;
+ for(let y=cover.y-40;y<cover.y+40;y++)for(let x=cover.x-45;x<cover.x+35;x++){const q=r.screenPoint({x,y}),px=Math.round((q.x-box.left)*scale),py=Math.round((q.y-box.top)*scale);if(px<0||py<0||px>=world.width||py>=world.height)continue;const at=(py*world.width+px)*4;const changed=[0,1,2].some(c=>painted.data[at+c]!==plain.data[at+c]);if(changed){washedPixels++;if(puddleDepth(cover,x,y)>.5)coverChanged++;}}
+ g.groundContacts=contacts;const allocated=canvasAllocations;r.render(g,performance.now(),1,false);const repeatCanvasAllocations=canvasAllocations-allocated;
+ results.push({type,before,after,coverChanged,washedPixels,repeatCanvasAllocations,wisps:mark.wash.filter(Boolean).length,mass:mark.wash.reduce((n,w)=>n+(w?.mass||0),0)});
+}
+if(results.some(x=>x.coverChanged||!x.washedPixels||x.repeatCanvasAllocations))throw Error('Water clipping regression: '+JSON.stringify(results));
+ document.body.dataset.results=JSON.stringify(results);document.body.dataset.ready='true';
+</script>

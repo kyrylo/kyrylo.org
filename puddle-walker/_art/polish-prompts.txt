@@ -1,0 +1,4 @@
+Generated with the built-in image_gen tool. Original alpha preserved.
+
+assets/parked-car.png
+Use case: product-mockup. Asset type: photorealistic transparent top-down sprite for a realistic residential-street walking game. A single compact parked hatchback car, muted dark blue-grey paint, seen perfectly orthographically straight down from above. Front points straight up, rear straight down. Complete entire vehicle visible with no cropping, centered in portrait composition, natural width-to-length ratio about 1:2.3. Realistic sculpted hood, windows reflecting soft overcast sky, black rubber tires barely visible at sides, side mirrors, pale headlamp lenses, rear lamps, roof detail. Slight rain dampness and fine droplets. No logos, no readable license plate, no text, no people. Genuine transparent background, no road, no ground, no cast shadow. Natural subdued daylight from upper left, photographic material detail, no cartoon styling.

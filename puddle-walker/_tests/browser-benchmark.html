@@ -1,0 +1,84 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><meta name="viewport" content="width=device-width"><title>Puddle renderer benchmark</title>
+<style>body{margin:16px;font:13px system-ui;background:white}#scene{position:relative;width:min(1000px,95vw)}#street{width:100%;height:760px;display:block}#inspection{position:absolute;left:12px;bottom:12px;width:150px;height:auto;background:#203029aa}pre{white-space:pre-wrap}button{padding:12px}</style>
+<button id="fabric">Check fabric anchoring</button><button id="run">Run 12-second wet-street benchmark</button><button id="baseline">Measure frame cadence without game work</button><button id="crossing">Inspect wet street</button><button data-pose="standing">Standing pair</button><button data-pose="charging">Wind up</button><button data-pose="flight">Mid stride</button><button data-pose="landing">Heel strike</button><button data-pose="entrance">Paved entrance</button><button data-pose="middle">Halfway neighborhood</button><button data-pose="last">Final neighborhood</button><button data-pose="finish">Paved finish</button><button data-pose="bush">Bush beds</button><button data-pose="garden">Garden doorstep</button><button data-pose="boat">Paper boat</button><button data-pose="birds">Pigeons</button><button data-pose="bird-flight">Pigeons take off</button><button data-pose="scooter">Scooter corner</button><button data-pose="cat-alert">Awake doorstep cat</button><button id="boat-wave">Rock the paper boat</button><pre id="report">Ready.</pre><div id="scene"><canvas id="street"></canvas><canvas id="inspection" width="360" height="220"></canvas></div>
+<script type="module">
+import {ROAD,createGame,setShoeMask,beginStep,takeStep,aimStep,releaseStep,advance,emitSplash,surfaceAt,condition} from './model.js?v=denim-50';
+import {createRenderer} from './render.js?v=denim-50';
+const canvas=document.querySelector('#street'),report=document.querySelector('#report'),button=document.querySelector('#run');
+const loadedAt=performance.now();
+const r=await createRenderer(canvas,document.querySelector('#inspection'));
+const readyAt=performance.now();
+report.textContent=JSON.stringify({readyAt:+readyAt.toFixed(1),rendererSetupMs:+(readyAt-loadedAt).toFixed(1),assetBytes:performance.getEntriesByType('resource').filter(e=>e.name.includes('/assets/')).reduce((n,e)=>n+e.decodedBodySize,0),assets:r.assetsReady});
+// A translated leg must carry exactly the same fabric pixels with it.
+// This catches screen-anchored patterns without asserting renderer internals.
+document.querySelector('#fabric').onclick=()=>{
+ const g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);
+ g.feet.forEach((f,i)=>{f.y=1000-i*20;});
+ const now=performance.now();r.render(g,now,1,true);
+ const box=canvas.getBoundingClientRect(),pixels=canvas.width/box.width,worldScale=box.width/900;
+ const sample=side=>{
+  const point=r.screenPoint(g.feet[side]);
+  return canvas.getContext('2d').getImageData(Math.round((point.x-box.left-4)*pixels),Math.round((point.y-box.top+35)*pixels),Math.round(8*pixels),Math.round(28*pixels)).data;
+ };
+ const before=g.feet.map((f,i)=>sample(i));
+ g.feet.forEach(f=>{f.x+=32/worldScale;});r.render(g,now+1,1,true);
+ const errors=g.feet.map((f,side)=>{
+  const after=sample(side);let error=0;
+  for(let i=0;i<after.length;i++)error+=Math.abs(after[i]-before[side][i]);
+  return +(error/after.length).toFixed(4);
+ });
+ report.textContent=JSON.stringify({fabricAnchored:errors.every(n=>n<.25),meanChannelError:errors,translatedCSSPixels:32},null,2);
+};
+document.querySelector('#baseline').onclick=()=>{
+ let start=0,last=0,values=[];report.textContent='Measuring baseline…';
+ function frame(t){if(!start)start=last=t;if(t-start>500)values.push(t-last);last=t;if(t-start<8000)requestAnimationFrame(frame);else{values.sort((a,b)=>a-b);report.textContent=JSON.stringify({baseline:true,frames:values.length,fps:1000/(values.reduce((a,b)=>a+b,0)/values.length),p95:values[Math.floor(values.length*.95)]});}}requestAnimationFrame(frame);
+};
+document.querySelector('#crossing').onclick=()=>{const g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);g.feet.forEach((f,i)=>{f.x=420+i*60;f.y=g.street.sections[2].y-180+i*100;});r.render(g,performance.now(),1,true);report.textContent='Shallow rainwater, parked-car bottlenecks, and narrow dry footholds.';};
+for(const button of document.querySelectorAll('[data-pose]'))button.onclick=()=>{
+ const pose=button.dataset.pose,g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);
+ g.phase='walking';g.feet.forEach((f,i)=>{f.x=420+i*60;f.y=1800-i*20;});
+ if(pose==='birds')g.feet.forEach((f,i)=>{f.y=700-i*20;});
+ if(pose==='bird-flight'){g.feet.forEach((f,i)=>{f.x=330+i*60;f.y=960-i*20;});r.prepare(g,performance.now(),1,true);g.time=.35;}
+ if(pose==='scooter')g.feet.forEach((f,i)=>{f.y=3120-i*20;});
+ if(pose==='entrance')g.feet.forEach((f,i)=>{f.y=260-i*20;});
+ if(pose==='cat-alert'){g.feet.forEach((f,i)=>{f.x=(g.street.parkingSide?280:560)+i*60;f.y=1790-i*20;});for(let i=0;i<15;i++){g.time=i*.1;r.prepare(g,performance.now()+i, .1);}}
+ if(pose==='garden')g.feet.forEach((f,i)=>{f.y=1550-i*20;});
+ if(pose==='boat')g.feet.forEach((f,i)=>{f.y=2420-i*20;});
+ if(pose==='middle')g.feet.forEach((f,i)=>{f.y=9550-i*20;});
+ if(pose==='last')g.feet.forEach((f,i)=>{f.y=17550-i*20;});
+ if(pose==='finish')g.feet.forEach((f,i)=>{f.y=ROAD.finish-20-i*30;});
+ if(pose==='bush'){const bush=g.street.obstacles.find(o=>o.type==='bush');g.feet.forEach((f,i)=>{f.x=bush.x<450?145+i*60:695+i*60;f.y=bush.y-i*20;});}
+ if(['charging','flight','landing'].includes(pose)){
+  beginStep(g);aimStep(g,{x:-85,y:100});for(let i=0;i<132;i++)advance(g,1/120);
+  if(pose!=='charging'){releaseStep(g);if(pose==='flight')for(let i=0;i<27;i++)advance(g,1/120);else{while(g.mode==='flight')advance(g,1/120);for(let i=0;i<5;i++)advance(g,1/120);}}
+ }
+ g.phase='paused';r.render(g,performance.now(),1);report.textContent=JSON.stringify({pose,mode:g.mode,feet:g.feet.map(f=>({side:f.side,x:f.x,y:f.y,z:f.z,angle:f.angle})),assets:r.assetsReady,wildlife:r.wildlifeState(),scene:r.sceneState()});
+};
+document.querySelector('#boat-wave').onclick=()=>{
+ const g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);g.phase='walking';r.prepare(g,performance.now(),1);
+ const boat=r.sceneState().boats[0];if(!boat){report.textContent='No boat on this street.';return;}
+ g.feet.forEach((f,i)=>{f.x=boat.x-38+i*60;f.y=boat.y-10-i*20;});
+ emitSplash(g,g.feet[0],surfaceAt(g,g.feet[0].x,g.feet[0].y),430);
+ let last=0,start=0,maxRock=0,maxDrift=0;
+ function frame(t){if(!start)start=last=t;const dt=Math.min((t-last)/1000,.05);last=t;advance(g,dt);r.render(g,t,dt);
+ const b=r.sceneState().boats[0];maxRock=Math.max(maxRock,Math.abs(b.roll));maxDrift=Math.max(maxDrift,Math.hypot(b.dx,b.dy));
+ if(t-start<6000)requestAnimationFrame(frame);else report.textContent=JSON.stringify({boatReaction:true,maxRock,maxDrift,settled:r.sceneState().boats[0],assets:r.assetsReady},null,2);
+ }report.textContent='A nearby splash reaches the paper boat…';requestAnimationFrame(frame);
+};
+button.onclick=()=>{
+ button.disabled=true;report.textContent='Running…';const g=createGame('leather',321);if(r.mask)setShoeMask(g,r.mask);g.phase='walking';g.feet.forEach((f,i)=>{f.x=420+i*60;f.y=g.street.sections[2].y+i*20;});
+ let start=0,last=0,frames=[],cpu=[],physics=[],draw=[],emitted=0,maxCpu=0,slowFrames=0;
+ function frame(t){if(!start)start=last=t;const dt=Math.min((t-last)/1000,.1);last=t;
+ const a=performance.now();
+ if(g.mode==='idle'){beginStep(g);aimStep(g,{x:Math.sin(g.steps)*30,y:100});}if(g.mode==='charging'&&g.charge>.8)releaseStep(g);
+ advance(g,dt);if(t-emitted>450){emitSplash(g,g.feet[g.active],surfaceAt(g,g.feet[g.active].x,g.feet[g.active].y),350);emitted=t;}g.events.length=0;
+ const b=performance.now();r.render(g,t,dt);const c=performance.now();
+ maxCpu=Math.max(maxCpu,c-a);if(c-a>16.7)slowFrames++;
+ if(t-start>1500){frames.push(dt*1000);cpu.push(c-a);physics.push(b-a);draw.push(c-b);}
+ if(t-start<12000)requestAnimationFrame(frame);else{
+ const stats=v=>{v.sort((a,b)=>a-b);return {mean:+(v.reduce((a,b)=>a+b,0)/v.length).toFixed(2),p95:+v[Math.floor(v.length*.95)].toFixed(2)};};
+ report.textContent=JSON.stringify({done:true,maxCpu:+maxCpu.toFixed(2),slowFrames,visible:document.visibilityState,frames:frames.length,fps:+(1000/(frames.reduce((a,b)=>a+b,0)/frames.length)).toFixed(1),interval:stats(frames),cpu:stats(cpu),physics:stats(physics),draw:stats(draw),canvas:[canvas.width,canvas.height],cacheMiB:+(r.metrics.cacheBytes/1048576).toFixed(1),clean:condition(g).toFixed(1)},null,2);button.disabled=false;
+ }
+ }requestAnimationFrame(frame);
+};
+</script>

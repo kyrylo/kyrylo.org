@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Actual surface contact · Puddle Walker</title>
+<style>*{box-sizing:border-box}body{background:#f2f0e8;color:#28342b;font:14px system-ui;margin:0;padding:24px}h1{font-size:24px;margin:0 0 8px}p{margin:0 0 24px}main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}article{padding:14px;background:#fff;border:1px solid #ccc}h2{margin:0 0 10px;font-size:16px}article canvas{width:100%;height:auto;display:block}small{display:block;margin-top:8px;min-height:38px}#world{position:fixed;left:0;top:0;width:900px;height:700px;visibility:hidden;pointer-events:none}#inspection{display:none}button{padding:10px 20px;margin-top:18px}#report{font-size:11px;white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<h1>What a step leaves behind</h1><p>Actual shoe contacts, enlarged. Pressure, displaced material, and tread transferred onto dry road.</p><main id="gallery"></main><button id="age">Age surfaces 12 seconds</button><pre id="report">Loading…</pre><canvas id="world"></canvas><canvas id="inspection" width="360" height="220"></canvas>
+<script type="module">
+import {createGame,setShoeMask,indexStreet,MATERIALS,takeStep,advance,condition} from './model.js?v=surfaces-66';
+import {createRenderer} from './render.js?v=surfaces-66';
+const canvas=document.querySelector('#world'),r=await createRenderer(canvas,document.querySelector('#inspection')),states=[];
+const tick=(g,seconds)=>{for(let n=0;n<seconds*120;n++)advance(g,1/120);};
+for(const [type,label,detail] of [['water','Water','Displaced water closes over the sole; bubbles fade.'],['mud','Mud','Pressed tread, wet grooves and small displaced clods.'],['gravel','Grit','Compacted dust and grains scattered away from the shoe.'],['oil','Oil','Broken sheen and sliding tread channels.'],['gum','Gum','Flattened gum with sole ribs pressed into it.'],['poop','Dog mess','The lump spreads under pressure and retains the tread.'],['metal','Wet metal','A short-lived wiped sole impression.'],['transfer','Mud → dry asphalt','The wet tread leaves a partial print and loose clay.']]){
+ const g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='walking';
+ g.feet.forEach((f,i)=>Object.assign(f,{x:420+i*60,y:860-i*20,bestY:860-i*20}));
+ const kind=type==='transfer'?'mud':type;
+ g.street=indexStreet({...g.street,districts:undefined,patches:[{id:0,type:kind,x:420,y:1000,rx:kind==='gum'||kind==='poop'?17:50,ry:kind==='gum'||kind==='poop'?18:58,depth:kind==='metal'?2:9,cos:1,sin:0,seed:4,dirt:MATERIALS[kind].dirt}],obstacles:[],clutter:[],parking:[]});
+ takeStep(g,{x:420,y:1000});tick(g,.8);let target={x:420,y:1000};
+ if(type==='transfer'){takeStep(g,{x:480,y:1100});tick(g,.8);takeStep(g,{x:420,y:1150});tick(g,.8);target={x:g.feet[0].x,y:g.feet[0].y};}
+ const article=document.createElement('article');article.innerHTML='<h2>'+label+'</h2><canvas width="224" height="280"></canvas><small>'+detail+'</small>';document.querySelector('#gallery').append(article);
+ states.push({g,target,output:article.querySelector('canvas')});
+}
+function paint(){
+ for(const {g,target,output} of states){
+  // Move only the inspection camera/legs out of the crop; the contact geometry
+  // and ground data come unchanged from the completed physical step.
+  const view={...g,feet:g.feet.map(f=>({...f,x:-1000,y:target.y-220})),preview:null};r.render(view,performance.now(),1,true);
+  const point=r.screenPoint(target),box=canvas.getBoundingClientRect(),ratio=canvas.width/box.width;
+  output.getContext('2d').drawImage(canvas,(point.x-box.left-48)*ratio,(point.y-box.top-60)*ratio,96*ratio,120*ratio,0,0,224,280);
+ }
+ document.querySelector('#report').textContent=JSON.stringify({ready:true,assets:r.assetsReady,surfaces:states.map(({g})=>({kind:g.groundContacts[0]?.kind,marks:g.groundContacts.length,prints:g.prints.length,clean:condition(g)}))});
+}
+function crop(g,target,output){
+ const view={...g,feet:g.feet.map(f=>({...f,x:-1000,y:target.y-220})),preview:null};r.render(view,performance.now(),1,true);
+ const point=r.screenPoint(target),box=canvas.getBoundingClientRect(),ratio=canvas.width/box.width;
+ output.getContext('2d').drawImage(canvas,(point.x-box.left-30)*ratio,(point.y-box.top-37.5)*ratio,60*ratio,75*ratio,0,0,224,280);
+}
+function boatComparison(){
+ const g=createGame('leather',321);setShoeMask(g,r.mask);g.phase='walking';r.prepare(g,performance.now(),1,true);
+ const boat=r.sceneState().boats[0];
+ for(const crushed of [false,true]){
+  if(crushed){g.feet.forEach((f,i)=>Object.assign(f,{x:boat.x+i*60,y:boat.y-130-i*20,bestY:boat.y-130-i*20}));takeStep(g,{x:boat.x,y:boat.y});tick(g,.8);r.prepare(g,performance.now(),1,true);tick(g,.3);}
+  const article=document.createElement('article');article.innerHTML='<h2>'+(crushed?'Paper boat · after':'Paper boat · before')+'</h2><canvas width="224" height="280"></canvas><small>'+(crushed?'Collapsed, waterlogged folds retain the shoe’s pressure marks.':'The intact photographic boat floats and rocks with nearby ripples.')+'</small>';document.querySelector('#gallery').append(article);
+  crop(g,boat,article.querySelector('canvas'));
+ }
+ document.querySelector('#report').dataset.boat=JSON.stringify(r.sceneState().boats[0]);
+}
+document.querySelector('#age').onclick=()=>{for(const {g} of states){g.phase='walking';tick(g,12);}paint();};paint();boatComparison();
+</script>

@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>Startup performance comparison</title>
+<style>body{font:14px system-ui}canvas{width:1000px;height:640px}pre{white-space:pre-wrap}</style>
+<button id="run">Compare startup responsiveness</button><pre id="report">Ready.</pre><canvas></canvas>
+<script type="module">
+import {createGame} from './model.js?v=deep-perf-129';
+import {createRenderer as before} from './_qa-before-129/render.js';
+import {createRenderer as after} from './render.js?v=deep-perf-129';
+const canvas=document.querySelector('canvas'),button=document.querySelector('button'),report=document.querySelector('pre');
+button.onclick=async()=>{
+ button.disabled=true;const results=[];
+ for(let round=0;round<4;round++)for(const side of round%2?[1,0]:[0,1]){
+  const gaps=[];let last=performance.now();
+  const heartbeat=setInterval(()=>{const now=performance.now();gaps.push(now-last);last=now;},4);
+  const start=performance.now(),renderer=await [before,after][side](canvas),setup=performance.now()-start;
+  const g=createGame('leather',321);g.phase='finished';await renderer.prime(g);
+  clearInterval(heartbeat);
+  results.push({round,version:side?'after':'before',setup,total:performance.now()-start,longestTaskGap:Math.max(...gaps),initializationSlice:renderer.metrics.initializationLongestSlice,terrainSlice:renderer.metrics.startupLongestSlice});
+  report.textContent=JSON.stringify({running:true,results},null,2);
+  await new Promise(requestAnimationFrame);
+ }
+ report.textContent=JSON.stringify({done:true,results},null,2);button.disabled=false;
+};
+</script>

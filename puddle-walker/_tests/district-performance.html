@@ -1,0 +1,30 @@
+<!doctype html><meta charset="utf-8"><base href="/puddle-walker/"><title>District performance comparison</title>
+<style>body{margin:0;font:14px system-ui}canvas{display:block;width:1000px;height:640px}pre{white-space:pre-wrap}</style>
+<button id="run" disabled>Compare five dirty districts</button><pre id="report">Loading…</pre><canvas id="street"></canvas>
+<script type="module">
+import * as model from './model.js?v=deep-perf-129';
+import {createRenderer as before} from './_qa-before-129/render.js';
+import {createRenderer as after} from './render.js?v=deep-perf-129';
+const canvas=document.querySelector('canvas'),report=document.querySelector('pre'),button=document.querySelector('button');
+const renderers=[await before(canvas),await after(canvas)];
+const stats=a=>{a=[...a].sort((x,y)=>x-y);return{mean:a.reduce((s,n)=>s+n,0)/a.length,p95:a[Math.floor(a.length*.95)],max:a.at(-1)}};
+button.disabled=false;report.textContent='Ready.';
+button.onclick=()=>{
+ button.disabled=true;
+ const games=renderers.map(r=>{const g=model.createGame('leather',321);model.setShoeMask(g,r.mask);g.phase='walking';return g;});
+ const times=[[],[]],districts=[];let frame=0;
+ function tick(now){
+  const district=Math.floor(frame/180),local=frame%180;
+  for(const i of frame%2?[1,0]:[0,1]){
+   const g=games[i];g.feet.forEach((f,n)=>{f.x=420+n*60;f.y=700+district*4000+local*3-n*20;});
+   model.advance(g,1/60);g.events.length=0;
+   const start=performance.now();renderers[i].render(g,now,1/60);
+   if(local>=60)times[i].push(performance.now()-start);
+  }
+  if(local===179){districts.push({district,before:stats(times[0]),after:stats(times[1]),clean:games.map(g=>model.condition(g)),cacheMiB:renderers.map(r=>r.metrics.cacheBytes/1048576)});times.forEach(t=>t.length=0);report.textContent=JSON.stringify({running:true,districts});}
+  if(++frame<900)requestAnimationFrame(tick);
+  else{report.textContent=JSON.stringify({done:true,framesPerDistrict:120,districts},null,2);button.disabled=false;}
+ }
+ requestAnimationFrame(tick);
+};
+</script>

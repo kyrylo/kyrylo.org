@@ -1,0 +1,1006 @@
+{
+  "version": "footprint-perf-131",
+  "checksPassed": 392,
+  "checksScope": "All 392 regression tests passed. Prepared surface clipping matches contact physics across 20,119 course points plus layered-material, equal-depth, pavement-edge and shallow-water cases. The captured v130 footprint raster matches all 33 paired cases exactly; the saved 179-step route retains identical feet, condition and physics random state.",
+  "previousFullVerification": {
+    "version": "smooth-start-130",
+    "checksPassed": 389,
+    "visualCases": {
+      "shoes": 216,
+      "denimStains": 108,
+      "desktopScenes": 6,
+      "mobileScenes": 8
+    }
+  },
+  "buildPassed": true,
+  "buildRuntime": "Installed Jekyll 4.3.4 / Ruby 3.4.8 with JEKYLL_NO_BUNDLER_REQUIRE; current default Ruby bundle lacks required dependencies.",
+  "syntaxCheckedModules": 23,
+  "sourceLiveBuildMatch": true,
+  "publicFiles": 65,
+  "publicSha256": "174da6425ffbf4aee77e6998279d27a9696cb2256fca68a2d7b0eb7e0415f511",
+  "changes": [
+    "Footprint rasterization resolves repeated tread columns and rows once, rotates pixels with shared sine/cosine values, and avoids two sample objects plus a world-point object per pixel.",
+    "A per-footprint submersion query prepares surface bounds, priorities and liquid flags once. Stable priority ordering skips buried surfaces while preserving equal-depth ties, covers, films and irregular shorelines.",
+    "The ordinary walking surface query and spatial index remain unchanged. Broader physics-query experiments were discarded after inconsistent or slower walk benchmarks.",
+    "No artwork, terrain, physics balance, race keys, audio or public assets changed. All existing footprint layers, fades, beads and slipped tread remain exact."
+  ],
+  "browser": {
+    "viewport": "1280x720 desktop browser; additional 390x844 game-canvas layout on the same machine, not physical phone hardware",
+    "runtimeErrors": 0,
+    "assetsReady": true,
+    "normalStartAndStep": true,
+    "fullRouteFinished": true,
+    "preview": "http://127.0.0.1:8321/puddle-walker/"
+  },
+  "balance": {
+    "carefulRoutesFinishAtLeast95PercentClean": true,
+    "carelessPairFullyDirtyByMetres": [
+      17.325,
+      17.325,
+      20.25,
+      20.25
+    ],
+    "routeChoices": 3,
+    "branchWitnesses": 16,
+    "raceRecordsKey": "puddle-walker-clean-times-walking-v8",
+    "notes": "Course geometry, contamination, shoes, race clock and record key are unchanged in this pass; route figures are retained from the previous full verification."
+  },
+  "performance": {
+    "newMediaAssets": 0,
+    "newPerFrameTerrainWork": false,
+    "newCanvasSpriteBytes": 0,
+    "baselineFullRoute": {
+      "done": true,
+      "idleFps": 60,
+      "steps": 179,
+      "splits": [
+        {
+          "elapsed": 10202.89999999106,
+          "duration": 10202.89999999106
+        },
+        {
+          "elapsed": 24628.39999999106,
+          "duration": 14425.5
+        },
+        {
+          "elapsed": 37982.89999999106,
+          "duration": 13354.5
+        },
+        {
+          "elapsed": 51253.59999999404,
+          "duration": 13270.70000000298
+        },
+        {
+          "elapsed": 61260.79999999702,
+          "duration": 10007.20000000298
+        }
+      ],
+      "metres": 100,
+      "clean": 95.97668626754776,
+      "time": 61260.79999999702,
+      "cpu": {
+        "mean": 1.36,
+        "p95": 3.1,
+        "max": 99.9
+      },
+      "interval": {
+        "mean": 17.51,
+        "p95": 17.6,
+        "max": 101.1
+      },
+      "fps": 57.1,
+      "frames": 3498,
+      "slowCpuFrames": 1,
+      "generatedChunks": 28,
+      "prefetched": 27,
+      "visibleMisses": 1,
+      "missingTiles": [
+        0
+      ],
+      "warmLongestSlice": 43.29999999701977,
+      "cacheMiB": 13.18359375,
+      "assets": true,
+      "readyMs": "678.4"
+    },
+    "dirtyShoeRaster": {
+      "passed": true,
+      "cases": 216,
+      "failures": [],
+      "before": {
+        "median": 23.350000000558794,
+        "p95": 51.76249999925494
+      },
+      "after": {
+        "median": 16.168749999254942,
+        "p95": 56.73749999888241
+      }
+    },
+    "pairedDistricts": {
+      "done": true,
+      "framesPerDistrict": 120,
+      "districts": [
+        {
+          "district": 0,
+          "before": {
+            "mean": 3.011666666592161,
+            "p95": 6.5999999940395355,
+            "max": 11.099999994039536
+          },
+          "after": {
+            "mean": 2.8133333342770737,
+            "p95": 6.299999997019768,
+            "max": 11
+          },
+          "clean": [
+            79.73852635460864,
+            79.73852635460864
+          ],
+          "cacheMiB": [
+            10.546875,
+            10.546875
+          ]
+        },
+        {
+          "district": 1,
+          "before": {
+            "mean": 3.0150000008443993,
+            "p95": 5.700000002980232,
+            "max": 7
+          },
+          "after": {
+            "mean": 2.9341666659961145,
+            "p95": 5.799999997019768,
+            "max": 6
+          },
+          "clean": [
+            51.30430164594605,
+            51.30430164594605
+          ],
+          "cacheMiB": [
+            13.18359375,
+            13.18359375
+          ]
+        },
+        {
+          "district": 2,
+          "before": {
+            "mean": 3.1908333338797092,
+            "p95": 6.0999999940395355,
+            "max": 6.5999999940395355
+          },
+          "after": {
+            "mean": 3.010000000521541,
+            "p95": 5.899999991059303,
+            "max": 6
+          },
+          "clean": [
+            36.75223145959114,
+            36.75223145959114
+          ],
+          "cacheMiB": [
+            13.18359375,
+            13.18359375
+          ]
+        },
+        {
+          "district": 3,
+          "before": {
+            "mean": 3.599166666716337,
+            "p95": 7.4000000059604645,
+            "max": 8.300000011920929
+          },
+          "after": {
+            "mean": 3.4858333334326743,
+            "p95": 7.299999997019768,
+            "max": 8.900000005960464
+          },
+          "clean": [
+            29.68584573839948,
+            29.68584573839948
+          ],
+          "cacheMiB": [
+            13.18359375,
+            13.18359375
+          ]
+        },
+        {
+          "district": 4,
+          "before": {
+            "mean": 4.136666667088866,
+            "p95": 9.400000005960464,
+            "max": 14.100000008940697
+          },
+          "after": {
+            "mean": 4.1374999990065895,
+            "p95": 8.099999994039536,
+            "max": 37.8999999910593
+          },
+          "clean": [
+            8.920336888460605,
+            8.920336888460605
+          ],
+          "cacheMiB": [
+            13.18359375,
+            13.18359375
+          ]
+        }
+      ]
+    },
+    "terrainPixels": {
+      "done": true,
+      "passed": true,
+      "samples": [
+        {
+          "y": 600,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 3300,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 7100,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 11000,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 15100,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 19500,
+          "different": 0,
+          "maxDelta": 0
+        }
+      ],
+      "before": {
+        "count": 25,
+        "mean": 4.54,
+        "p95": 6.799999997019768,
+        "max": 11.900000005960464
+      },
+      "after": {
+        "count": 24,
+        "mean": 4.475000000869234,
+        "p95": 6.799999997019768,
+        "max": 13
+      }
+    },
+    "fallbackPrefetch": {
+      "done": true,
+      "passed": true,
+      "fallback": true,
+      "starved": false,
+      "chunks": 28,
+      "prefetched": 27,
+      "visibleMisses": 1,
+      "initialMisses": 1,
+      "cacheMiB": 13.18359375,
+      "longestSlice": 8,
+      "elapsed": 4971.5000000029795
+    },
+    "notes": [
+      "Full-walk wall-clock FPS varied substantially between runs; paired rendering is the stronger comparison. Do not interpret local timings as a universal device guarantee.",
+      "Dense-mud shoe painting improved about 31% at the median; overall paired district rendering improved about 3.4%.",
+      "Additional footprint-bound and glint lookup arrays total about 4.4 KiB; no new canvas sprites or media.",
+      "Public source, live files and Jekyll output match; 23 JavaScript modules pass syntax checks.",
+      "The original full-course control varied from 57.1 to 43.3 FPS; optimized runs before the final startup fix ranged from 39.2 to 37.8 FPS. These wall-clock samples are not evidence of a guaranteed frame-rate gain.",
+      "The tall-screen prefetch fixture previously moved 740 units per prepared 768-unit tile and eventually stopped short of its next tile. It now advances exactly one tile; the previous timeout was a harness error, not an in-game dead end.",
+      "The corrected starved-idle phone test completed in 7.623 seconds versus 21.6435 seconds for the original, about 2.84\u00d7 faster, with the same 13.18 MiB tile cache.",
+      "Final implementation immediately auto-started a complete 100 m walk: 59.9 FPS, 1.52 ms mean game-frame CPU, 3.4 ms p95, no visible tile misses, and 6.8 ms longest prefetch task. No intro-screen idle warm-up was provided; idleFps is null for that reason. Startup longest paint slice was 24.5 ms; the game stays on its intro until opening preparation completes."
+    ],
+    "repeatedBaselineFullRoute": {
+      "done": true,
+      "idleFps": 60,
+      "steps": 179,
+      "splits": [
+        {
+          "elapsed": 10331.70000000298,
+          "duration": 10331.70000000298
+        },
+        {
+          "elapsed": 25235.89999999106,
+          "duration": 14904.199999988079
+        },
+        {
+          "elapsed": 39240,
+          "duration": 14004.10000000894
+        },
+        {
+          "elapsed": 52745.89999999106,
+          "duration": 13505.89999999106
+        },
+        {
+          "elapsed": 62765.59999999404,
+          "duration": 10019.70000000298
+        }
+      ],
+      "metres": 100,
+      "clean": 95.84154612083407,
+      "time": 62765.59999999404,
+      "cpu": {
+        "mean": 2.93,
+        "p95": 6.4,
+        "max": 236.2
+      },
+      "interval": {
+        "mean": 23.1,
+        "p95": 50.4,
+        "max": 233.9
+      },
+      "fps": 43.3,
+      "frames": 2716,
+      "slowCpuFrames": 3,
+      "generatedChunks": 28,
+      "prefetched": 27,
+      "visibleMisses": 1,
+      "missingTiles": [
+        0
+      ],
+      "warmLongestSlice": 16,
+      "cacheMiB": 13.18359375,
+      "assets": true,
+      "readyMs": "1567.8"
+    },
+    "repeatedOptimizedFullRouteBeforeFinalPrefetchFix": {
+      "done": true,
+      "idleFps": 60,
+      "steps": 179,
+      "splits": [
+        {
+          "elapsed": 10582.40000000596,
+          "duration": 10582.40000000596
+        },
+        {
+          "elapsed": 25480.5,
+          "duration": 14898.09999999404
+        },
+        {
+          "elapsed": 39004.5,
+          "duration": 13524
+        },
+        {
+          "elapsed": 52859,
+          "duration": 13854.5
+        },
+        {
+          "elapsed": 63116.60000000894,
+          "duration": 10257.60000000894
+        }
+      ],
+      "metres": 100,
+      "clean": 95.84131654421245,
+      "time": 63116.60000000894,
+      "cpu": {
+        "mean": 2.98,
+        "p95": 6.4,
+        "max": 193.9
+      },
+      "interval": {
+        "mean": 26.45,
+        "p95": 66.6,
+        "max": 200.4
+      },
+      "fps": 37.8,
+      "frames": 2384,
+      "slowCpuFrames": 3,
+      "generatedChunks": 28,
+      "prefetched": 26,
+      "visibleMisses": 1,
+      "missingTiles": [
+        1
+      ],
+      "warmLongestSlice": 45.900000005960464,
+      "startupLongestSlice": 10.600000008940697,
+      "cacheMiB": 13.18359375,
+      "assets": true,
+      "readyMs": "4155.0"
+    },
+    "starvedPhonePrefetch": {
+      "done": true,
+      "passed": true,
+      "fallback": false,
+      "starved": true,
+      "chunks": 30,
+      "prefetched": 27,
+      "visibleMisses": 3,
+      "initialMisses": 3,
+      "cacheMiB": 13.18359375,
+      "longestSlice": 6.0999999940395355,
+      "elapsed": 7622.999999988078
+    },
+    "starvedPhonePrefetchBefore": {
+      "done": true,
+      "passed": true,
+      "fallback": false,
+      "starved": true,
+      "chunks": 30,
+      "prefetched": 27,
+      "visibleMisses": 3,
+      "initialMisses": 3,
+      "cacheMiB": 13.18359375,
+      "longestSlice": 7.200000002980232,
+      "elapsed": 21643.49999999702
+    },
+    "starvedPhoneSpeedup": 2.8392365210587522,
+    "optimizedFullRouteBeforeFinalPrefetchFix": {
+      "done": true,
+      "idleFps": 60,
+      "steps": 179,
+      "splits": [
+        {
+          "elapsed": 10337.10000000894,
+          "duration": 10337.10000000894
+        },
+        {
+          "elapsed": 25945.20000000298,
+          "duration": 15608.09999999404
+        },
+        {
+          "elapsed": 39455.90000000596,
+          "duration": 13510.70000000298
+        },
+        {
+          "elapsed": 53307.60000000894,
+          "duration": 13851.70000000298
+        },
+        {
+          "elapsed": 63774.40000000596,
+          "duration": 10466.79999999702
+        }
+      ],
+      "metres": 100,
+      "clean": 95.97706716650151,
+      "time": 63774.40000000596,
+      "cpu": {
+        "mean": 2.84,
+        "p95": 6.3,
+        "max": 60.3
+      },
+      "interval": {
+        "mean": 25.52,
+        "p95": 65.9,
+        "max": 284
+      },
+      "fps": 39.2,
+      "frames": 2495,
+      "slowCpuFrames": 5,
+      "generatedChunks": 28,
+      "prefetched": 27,
+      "visibleMisses": 0,
+      "warmLongestSlice": 7.700000002980232,
+      "startupLongestSlice": 16.799999997019768,
+      "cacheMiB": 13.18359375,
+      "assets": true,
+      "readyMs": "1675.0"
+    },
+    "optimizedFullRoute": {
+      "done": true,
+      "idleFps": null,
+      "steps": 179,
+      "splits": [
+        {
+          "elapsed": 10181.5,
+          "duration": 10181.5
+        },
+        {
+          "elapsed": 24354.20000000298,
+          "duration": 14172.70000000298
+        },
+        {
+          "elapsed": 37732.5,
+          "duration": 13378.29999999702
+        },
+        {
+          "elapsed": 51001.70000000298,
+          "duration": 13269.20000000298
+        },
+        {
+          "elapsed": 60988.90000000596,
+          "duration": 9987.20000000298
+        }
+      ],
+      "metres": 100,
+      "clean": 95.97802785203348,
+      "time": 60988.90000000596,
+      "cpu": {
+        "mean": 1.52,
+        "p95": 3.4,
+        "max": 18.9
+      },
+      "interval": {
+        "mean": 16.7,
+        "p95": 17.5,
+        "max": 51.1
+      },
+      "fps": 59.9,
+      "frames": 3651,
+      "slowCpuFrames": 1,
+      "generatedChunks": 28,
+      "prefetched": 26,
+      "visibleMisses": 0,
+      "warmLongestSlice": 6.799999997019768,
+      "startupLongestSlice": 24.5,
+      "cacheMiB": 13.18359375,
+      "assets": true,
+      "readyMs": "1120.4"
+    },
+    "deepPass130": {
+      "startup": {
+        "method": "Four alternating before/after renderer and opening-terrain preparations in one browser, same canvas and seed; medians below exclude the first cold round. Local measurements, not a cross-device guarantee.",
+        "beforeMedianMs": 492.1000000089407,
+        "afterMedianMs": 294.29999999701977,
+        "reductionPercent": 40.2,
+        "beforeLongestGapMedianMs": 420.59999999403954,
+        "afterLongestGapMedianMs": 156.5,
+        "rounds": [
+          {
+            "round": 0,
+            "version": "before",
+            "setup": 429.20000000298023,
+            "total": 737.2999999970198,
+            "longestTaskGap": 652.1000000089407,
+            "terrainSlice": 42.29999999701977
+          },
+          {
+            "round": 0,
+            "version": "after",
+            "setup": 247,
+            "total": 302.79999999701977,
+            "longestTaskGap": 152.59999999403954,
+            "initializationSlice": 129.29999999701977,
+            "terrainSlice": 7.5
+          },
+          {
+            "round": 1,
+            "version": "after",
+            "setup": 261,
+            "total": 294.29999999701977,
+            "longestTaskGap": 156.80000001192093,
+            "initializationSlice": 140.29999999701977,
+            "terrainSlice": 4.5
+          },
+          {
+            "round": 1,
+            "version": "before",
+            "setup": 259.70000000298023,
+            "total": 302.29999999701977,
+            "longestTaskGap": 280.29999999701977,
+            "terrainSlice": 8
+          },
+          {
+            "round": 2,
+            "version": "before",
+            "setup": 348.5,
+            "total": 495.59999999403954,
+            "longestTaskGap": 474.09999999403954,
+            "terrainSlice": 5.799999997019768
+          },
+          {
+            "round": 2,
+            "version": "after",
+            "setup": 268.8999999910593,
+            "total": 299.59999999403954,
+            "longestTaskGap": 156.5,
+            "initializationSlice": 139.90000000596046,
+            "terrainSlice": 6.200000002980232
+          },
+          {
+            "round": 3,
+            "version": "after",
+            "setup": 236.1000000089407,
+            "total": 273.30000001192093,
+            "longestTaskGap": 141.5,
+            "initializationSlice": 127.29999999701977,
+            "terrainSlice": 7.799999997019768
+          },
+          {
+            "round": 3,
+            "version": "before",
+            "setup": 325.79999999701977,
+            "total": 492.1000000089407,
+            "longestTaskGap": 420.59999999403954,
+            "terrainSlice": 4.600000008940697
+          }
+        ]
+      },
+      "denim": {
+        "passed": true,
+        "cases": 108,
+        "failures": [],
+        "done": true,
+        "before": {
+          "median": 3.512499999254942,
+          "p95": 4.362499998882413
+        },
+        "after": {
+          "median": 2.9375,
+          "p95": 3.675000000745058
+        }
+      },
+      "terrainPixels": [
+        {
+          "y": 600,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 3300,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 7100,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 11000,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 15100,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 19500,
+          "different": 0,
+          "maxDelta": 0
+        }
+      ],
+      "mobilePixels": [
+        {
+          "y": 600,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 3300,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 7100,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 11000,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 15100,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 19500,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 20260,
+          "different": 0,
+          "maxDelta": 0
+        },
+        {
+          "y": 20900,
+          "different": 0,
+          "maxDelta": 0
+        }
+      ],
+      "starvedPhonePrefetch": {
+        "done": true,
+        "passed": true,
+        "fallback": false,
+        "starved": true,
+        "chunks": 30,
+        "prefetched": 27,
+        "visibleMisses": 3,
+        "initialMisses": 3,
+        "cacheMiB": 13.18359375,
+        "longestSlice": 9.399999991059303,
+        "elapsed": 4792.9
+      },
+      "immediateStartFullRoute": {
+        "done": true,
+        "idleFps": null,
+        "steps": 179,
+        "splits": [
+          {
+            "elapsed": 10190,
+            "duration": 10190
+          },
+          {
+            "elapsed": 24413.29999999702,
+            "duration": 14223.29999999702
+          },
+          {
+            "elapsed": 37767.79999999702,
+            "duration": 13354.5
+          },
+          {
+            "elapsed": 51058.09999999404,
+            "duration": 13290.29999999702
+          },
+          {
+            "elapsed": 61015.29999999702,
+            "duration": 9957.20000000298
+          }
+        ],
+        "metres": 100,
+        "clean": 95.9793059525752,
+        "time": 61015.29999999702,
+        "cpu": {
+          "mean": 1.21,
+          "p95": 2.6,
+          "max": 16.4
+        },
+        "interval": {
+          "mean": 16.68,
+          "p95": 18.2,
+          "max": 34.2
+        },
+        "fps": 59.9,
+        "frames": 3656,
+        "slowCpuFrames": 0,
+        "generatedChunks": 28,
+        "prefetched": 26,
+        "visibleMisses": 0,
+        "warmLongestSlice": 23.700000002980232,
+        "initializationLongestSlice": 106.90000000596046,
+        "startupLongestSlice": 42.400000005960464,
+        "cacheMiB": 13.18359375,
+        "assets": true,
+        "readyMs": "804.0"
+      },
+      "notes": [
+        "Full-route test starts immediately after preparation and uses isolated record storage. The private fixture had a syntax error during its first launch; its builder was fixed and checked before the successful run. No production runtime error was observed.",
+        "Native canvas operations remain atomic: setup and rare background operations can exceed the nominal task budget. Full-route maximum frame interval was 34.2 ms; do not claim a universally locked 60 fps.",
+        "Denim cached geometry is bounded by seven hem bands and 84 retained splashes per leg; weak maps release old marks and walks. No new media assets or visual simplification."
+      ],
+      "fallbackPhonePrefetch": {
+        "done": true,
+        "passed": true,
+        "fallback": true,
+        "starved": false,
+        "chunks": 30,
+        "prefetched": 27,
+        "visibleMisses": 3,
+        "initialMisses": 3,
+        "cacheMiB": 13.18359375,
+        "longestSlice": 19.69999998807907,
+        "elapsed": 2912.1999999910595
+      }
+    },
+    "deepPass131": {
+      "pairedContactBenchmark": {
+        "equivalence": {
+          "footprints": 33,
+          "surfacePoints": 20119,
+          "walk": {
+            "steps": 179,
+            "clean": 95.98065030081736,
+            "identicalFeet": true
+          }
+        },
+        "tasks": {
+          "footprints": {
+            "before": 291.0817295000006,
+            "after": 120.57639650000056,
+            "reductionPercent": 58.57644631041664,
+            "samples": [
+              [
+                345.1128370000006,
+                288.97376299999996,
+                291.2375659999998,
+                295.7212760000002,
+                287.62986600000113,
+                290.92589300000145
+              ],
+              [
+                119.62414199999967,
+                121.34524799999963,
+                122.52628900000127,
+                119.80754500000148,
+                116.65356199999951,
+                213.06327500000043
+              ]
+            ]
+          },
+          "surfaces": {
+            "before": 33.934768999998596,
+            "after": 34.085381499999585,
+            "reductionPercent": -0.44382945409469077,
+            "samples": [
+              [
+                36.525979999999436,
+                33.100430999999844,
+                34.697250999999596,
+                33.746830999998565,
+                32.975516000000425,
+                34.12270699999863
+              ],
+              [
+                34.09116199999971,
+                39.09291399999984,
+                37.23894300000029,
+                34.07960099999946,
+                33.46744199999921,
+                33.36276199999884
+              ]
+            ]
+          },
+          "walk": {
+            "before": 814.3786530000007,
+            "after": 761.5795849999995,
+            "reductionPercent": 6.483356090622028,
+            "samples": [
+              [
+                849.4011479999999,
+                820.4599870000002,
+                781.4197260000001,
+                808.7199710000004,
+                764.2645780000003,
+                820.0373350000009
+              ],
+              [
+                762.1381189999993,
+                837.2010690000006,
+                789.7567089999993,
+                752.7455920000011,
+                761.0210509999997,
+                750.4427849999993
+              ]
+            ]
+          }
+        }
+      },
+      "browser": {
+        "cadence": {
+          "baseline": true,
+          "frames": 451,
+          "fps": 59.970214350300516,
+          "p95": 17.600000000000364
+        },
+        "wet": {
+          "done": true,
+          "maxCpu": 160.4,
+          "slowFrames": 2,
+          "visible": "visible",
+          "frames": 630,
+          "fps": 60,
+          "interval": {
+            "mean": 16.68,
+            "p95": 17.5
+          },
+          "cpu": {
+            "mean": 1.96,
+            "p95": 5.2
+          },
+          "physics": {
+            "mean": 0.35,
+            "p95": 1.8
+          },
+          "draw": {
+            "mean": 1.62,
+            "p95": 3.6
+          },
+          "canvas": [
+            1000,
+            760
+          ],
+          "cacheMiB": 10.5,
+          "clean": "48.2"
+        },
+        "narrowCanvas": {
+          "done": true,
+          "maxCpu": 162.5,
+          "slowFrames": 2,
+          "visible": "visible",
+          "frames": 631,
+          "fps": 60,
+          "interval": {
+            "mean": 16.67,
+            "p95": 17.4
+          },
+          "cpu": {
+            "mean": 2,
+            "p95": 4.9
+          },
+          "physics": {
+            "mean": 0.32,
+            "p95": 1.7
+          },
+          "draw": {
+            "mean": 1.68,
+            "p95": 3.4
+          },
+          "canvas": [
+            390,
+            844
+          ],
+          "cacheMiB": 13.2,
+          "clean": "48.4"
+        }
+      },
+      "immediateFullRoute": {
+        "done": true,
+        "idleFps": null,
+        "steps": 179,
+        "splits": [
+          {
+            "elapsed": 10431.79999999702,
+            "duration": 10431.79999999702
+          },
+          {
+            "elapsed": 25344.79999999702,
+            "duration": 14913
+          },
+          {
+            "elapsed": 38984.79999999702,
+            "duration": 13640
+          },
+          {
+            "elapsed": 52276.89999999106,
+            "duration": 13292.09999999404
+          },
+          {
+            "elapsed": 62245.79999999702,
+            "duration": 9968.90000000596
+          }
+        ],
+        "metres": 100,
+        "clean": 95.97808055699961,
+        "time": 62245.79999999702,
+        "cpu": {
+          "mean": 1.24,
+          "p95": 2.6,
+          "max": 52.5
+        },
+        "interval": {
+          "mean": 18.73,
+          "p95": 32.6,
+          "max": 166.9
+        },
+        "fps": 53.4,
+        "frames": 3322,
+        "slowCpuFrames": 2,
+        "generatedChunks": 28,
+        "prefetched": 26,
+        "visibleMisses": 0,
+        "warmLongestSlice": 15.099999994039536,
+        "initializationLongestSlice": 98.8999999910593,
+        "startupLongestSlice": 42.29999999701977,
+        "cacheMiB": 13.18359375,
+        "assets": true,
+        "readyMs": "925.4"
+      },
+      "notes": [
+        "Paired Node medians alternate implementations for six measured rounds after warmup. Raster work fell 58.6%; prior isolated runs measured 54.8\u201356.5%. Surface and walk timings vary, so no physics speedup is claimed.",
+        "The full route averaged 1.24 ms CPU with 2.6 ms p95, but observed 53.4 fps, two CPU frames over 16.7 ms and a 166.9 ms maximum frame interval. Do not present this as a locked 60 fps full-route result.",
+        "Subsequent 12-second wet stress scenes averaged 60 fps at both 1000x760 and 390x844, with CPU p95 5.2 and 4.9 ms. Each had two slow startup frames while building unprimed terrain; reported steady statistics exclude the first 1.5 seconds. The ordinary game primes terrain before enabling start.",
+        "Browser cadence without game work was 59.97 fps. The earlier instrumented phase profile is diagnostic only, not a controlled before/after FPS comparison.",
+        "No increased canvas sprite budget, new media assets, or per-frame terrain work. Submersion preparation and column tables are temporary work for a newly visible footprint."
+      ]
+    }
+  },
+  "cleanup": {
+    "temporaryBuildRemoved": true,
+    "temporaryPreviewFilesRemaining": 0,
+    "latestScreenshotOnly": true,
+    "rebuildableJekyllCacheRemoved": true,
+    "removedBytesThisPass": 77831600
+  }
+}
