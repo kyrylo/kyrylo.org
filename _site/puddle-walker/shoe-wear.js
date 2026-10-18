@@ -1,8 +1,8 @@
-import { MATERIALS, GRID, clamp } from './model.js?v=clear-step-133';
+import { MATERIALS, GRID, clamp } from './model.js?v=lean-frames-134';
 
 // A stable material field at sprite resolution. Grain does not crawl when the
 // foot flexes; only moisture and the amount of physically deposited material change.
-const W=96,H=224,names=Object.keys(MATERIALS),moistureTint=[142,154,151];
+const W=96,H=224,names=Object.keys(MATERIALS);
 const materials=names.map(type=>({color:MATERIALS[type].color,gum:type==='gum'||type==='tar',grit:type==='gravel',
  photographed:['mud','poop','gravel'].includes(type)||MATERIALS[type].earthy,clay:['mud','poop','clay','cement'].includes(type)}));
 const smooth=t=>t*t*(3-2*t);
@@ -16,16 +16,18 @@ function noiseField(scaleX,scaleY,seed){
   return (values[i]*(1-u)+values[i+1]*u)*(1-v)+(values[i+width]*(1-u)+values[i+width+1]*u)*v;
  };
 }
-// The physics grid and sprite size never change. Reuse their interpolation map.
-const sampleMap=Array.from({length:W*H},(_,p)=>{
- const x=clamp((p%W+.5)/4-.5,0,GRID.width-1),y=clamp((Math.floor(p/W)+.5)/4-.5,0,GRID.height-1);
- const ix=Math.floor(x),iy=Math.floor(y);
- return {i:iy*GRID.width+ix,j:Math.min(iy+1,GRID.height-1)*GRID.width+ix,dx:ix<GRID.width-1?1:0,u:x-ix,v:y-iy,cell:Math.round(y)*GRID.width+Math.round(x)};
+// Bilinear sampling is separable. Each physics row supplies four sprite rows;
+// compute its horizontal interpolation once, preserving double precision and
+// the original arithmetic order. Small axis tables replace per-pixel objects.
+const sampleX=Array.from({length:W},(_,p)=>{
+ const x=clamp((p+.5)/4-.5,0,GRID.width-1),i=Math.floor(x);
+ return {i,dx:i<GRID.width-1?1:0,u:x-i,cell:Math.round(x)};
 });
-function sample(a,map){
- const {i,j,dx,u,v}=map;
- return (a[i]*(1-u)+a[i+dx]*u)*(1-v)+(a[j]*(1-u)+a[j+dx]*u)*v;
-}
+const sampleY=Array.from({length:H},(_,p)=>{
+ const y=clamp((p+.5)/4-.5,0,GRID.height-1),i=Math.floor(y);
+ return {i,j:Math.min(i+1,GRID.height-1),v:y-i,cell:Math.round(y)*GRID.width};
+});
+const nearestCell=Uint16Array.from({length:W*H},(_,p)=>sampleY[Math.floor(p/W)].cell+sampleX[p%W].cell);
 export function createShoeWear(...args){
  const steps=createShoeWearSteps(...args);let result;
  do{result=steps.next();}while(!result.done);
@@ -77,6 +79,8 @@ export function* createShoeWearSteps(terrain,cleanSprites){
  }
  const rowLeft=new Int16Array(GRID.height),rowRight=new Int16Array(GRID.height);
  const pixelLeft=new Int16Array(H),pixelRight=new Int16Array(H);
+ const neededLeft=new Int16Array(GRID.height),neededRight=new Int16Array(GRID.height);
+ const stainRows=new Float64Array(GRID.height*W),wetRows=new Float64Array(GRID.height*W),massRows=new Float64Array(GRID.height*W);
  const neighbours=new Int16Array(GRID.width*GRID.height),stretchByCell=new Float64Array(GRID.width*GRID.height),pixelWet=new Float64Array(W*H);
  return function paint(target,f){
   if(!f.spatter.length&&!f.stain.some(amount=>amount>=.003)&&!f.wetness.some(amount=>amount>=.03))return;
@@ -90,10 +94,20 @@ export function* createShoeWearSteps(terrain,cleanSprites){
    const row=Math.floor(i/GRID.width),col=i%GRID.width;
    rowLeft[row]=Math.min(rowLeft[row],col);rowRight[row]=Math.max(rowRight[row],col);
   }
+  neededLeft.fill(W);neededRight.fill(-1);
   for(let y=0;y<H;y++){
-   const map=sampleMap[y*W],a=Math.floor(map.i/GRID.width),b=Math.floor(map.j/GRID.width);
+   const {i:a,j:b}=sampleY[y];
    pixelLeft[y]=Math.max(left[y],Math.min(rowLeft[a],rowLeft[b])*4-3);
    pixelRight[y]=Math.min(right[y],Math.max(rowRight[a],rowRight[b])*4+6);
+   if(pixelLeft[y]>pixelRight[y])continue;
+   neededLeft[a]=Math.min(neededLeft[a],pixelLeft[y]);neededLeft[b]=Math.min(neededLeft[b],pixelLeft[y]);
+   neededRight[a]=Math.max(neededRight[a],pixelRight[y]);neededRight[b]=Math.max(neededRight[b],pixelRight[y]);
+  }
+  for(let y=0;y<GRID.height;y++)for(let x=neededLeft[y];x<=neededRight[y];x++){
+   const {i,dx,u}=sampleX[x],a=y*GRID.width+i,b=a+dx,p=y*W+x,weight=1-u;
+   stainRows[p]=f.stain[a]*weight+f.stain[b]*u;
+   wetRows[p]=f.wetness[a]*weight+f.wetness[b]*u;
+   massRows[p]=f.deposits[a]*weight+f.deposits[b]*u;
   }
   // Resolve pigment neighbours and smear lengths once per physics cell, rather
   // than allocating and searching the same neighbours for every sprite pixel.
@@ -105,51 +119,64 @@ export function* createShoeWearSteps(terrain,cleanSprites){
    if(cell+GRID.width<f.stain.length&&f.stain[cell+GRID.width]>f.stain[best])best=cell+GRID.width;
    neighbours[cell]=best;stretchByCell[cell]=Math.hypot(f.smearX[cell],f.smearY[cell]);
   }
-  for(let y=0;y<H;y++)for(let x=pixelLeft[y];x<=pixelRight[y];x++){
-   const p=y*W+x,k=p*4,map=sampleMap[p];
-   const amount=sample(f.stain,map),wet=sample(f.wetness,map);if(amount<.003&&wet<.03)continue;
-   pixelWet[p]=wet;let cell=map.cell;
-   // Interpolated edge coverage must inherit a dirty neighbour's pigment,
-   // rather than uninitialised black from just beyond the contact mask.
-   if(f.stain[cell]<amount*.25)cell=neighbours[cell];
-   const mass=sample(f.deposits,map);
-   // Moisture is visible even on rinsed white leather. It follows the actual
-   // waterline, darkens seams, and fades independently from bound dirt pigment.
-   const ink=Math.min(220,amount*205*inkGrain[p]*(1+wet*.15));
-   const damp=wet*52*dampGrain[p]*(1-ink/255),alpha=ink+damp;
-   for(let channel=0;channel<3;channel++){
-    const pigment=clamp(f.tint[cell*3+channel]+(1-wet)*14-wet*16+pigmentGrain[p],0,255);
-    fd[k+channel]=alpha?(pigment*ink+moistureTint[channel]*damp)/alpha:0;
+  for(let y=0;y<H;y++){
+   const row=sampleY[y],v=row.v,weight=1-v,top=row.i*W,bottom=row.j*W;
+   for(let x=pixelLeft[y];x<=pixelRight[y];x++){
+    const p=y*W+x,k=p*4,a=top+x,b=bottom+x;
+    const amount=stainRows[a]*weight+stainRows[b]*v,wet=wetRows[a]*weight+wetRows[b]*v;if(amount<.003&&wet<.03)continue;
+    pixelWet[p]=wet;let cell=nearestCell[p];
+    // Interpolated edge coverage must inherit a dirty neighbour's pigment,
+    // rather than uninitialised black from just beyond the contact mask.
+    if(f.stain[cell]<amount*.25)cell=neighbours[cell];
+    const mass=massRows[a]*weight+massRows[b]*v;
+    // Moisture is visible even on rinsed white leather. It follows the actual
+    // waterline, darkens seams, and fades independently from bound dirt pigment.
+    const ink=Math.min(220,amount*205*inkGrain[p]*(1+wet*.15));
+    const damp=wet*52*dampGrain[p]*(1-ink/255),alpha=ink+damp;
+    fd[k+3]=alpha;
+    if(fd[k+3]){
+     // Share the moisture calculation across RGB; keep the arithmetic order
+     // and clamped-byte rounding of the original material shader.
+     const tint=cell*3,dryLight=(1-wet)*14,wetShade=wet*16,grit=pigmentGrain[p];
+     fd[k]=(clamp(f.tint[tint]+dryLight-wetShade+grit,0,255)*ink+142*damp)/alpha;
+     fd[k+1]=(clamp(f.tint[tint+1]+dryLight-wetShade+grit,0,255)*ink+154*damp)/alpha;
+     fd[k+2]=(clamp(f.tint[tint+2]+dryLight-wetShade+grit,0,255)*ink+151*damp)/alpha;
+     hasFilm=true;
+    }
+    if(mass<.009)continue;
+    // Water and oil have no raised deposits. Deforming and shading clay for
+    // every wet pixel was expensive work whose result was immediately discarded.
+    const material=materials[f.depositTypes[cell]],{color,gum,grit}=material;
+    const tx=f.smearX[cell],ty=f.smearY[cell],stretch=stretchByCell[cell],sx=clamp(Math.round(x-tx*5),0,W-1),sy=clamp(Math.round(y-ty*5),0,H-1);
+    const cluster=coarse[p]*(1-stretch*.35)+coarse[sy*W+sx]*stretch*.35;
+    const threshold=.7-Math.min(.45,mass*.7);
+    const broken=clamp((cluster-threshold+.1+cavity[p]*mass*.18)/.24,0,1),coverage=smooth(broken)*clamp(mass*5,0,1);
+    const density=grit?coverage*(grain[p]>.68?1:.12):coverage;
+    // Connected, torn-edged clay deposits instead of a regular necklace of dots.
+    bd[k+3]=density*(grit?190:145+mass*100);
+    relief[p]=density*mass*(.55+fine[p]*.45);
+    // Invisible deposits still contribute relief to their neighbours, but
+    // transparent RGB never reaches the shoe. Skip only that colour work.
+    if(!bd[k+3])continue;
+    const moisture=gum?.45:wet,dryLight=(1-moisture)*22,wetShade=moisture*23;
+    const photographed=earth&&material.photographed,detail=(fine[p]-.5)*(gum?8:18),grainShade=(grain[p]-.5)*10,crease=cavity[p]*12;
+    bd[k]=clamp(color[0]+dryLight-wetShade+(photographed?(earth[k]-90)*.55:0)+detail+grainShade-crease,0,255);
+    bd[k+1]=clamp(color[1]+dryLight-wetShade+(photographed?(earth[k+1]-90)*.55:0)+detail+grainShade-crease,0,255);
+    bd[k+2]=clamp(color[2]+dryLight-wetShade+(photographed?(earth[k+2]-90)*.55:0)+detail+grainShade-crease,0,255);
+    hasBody=true;
    }
-   fd[k+3]=alpha;
-   if(fd[k+3])hasFilm=true;
-   if(mass<.009)continue;
-   // Water and oil have no raised deposits. Deforming and shading clay for
-   // every wet pixel was expensive work whose result was immediately discarded.
-   const material=materials[f.depositTypes[cell]],{color,gum,grit}=material;
-   const tx=f.smearX[cell],ty=f.smearY[cell],stretch=stretchByCell[cell],sx=clamp(Math.round(x-tx*5),0,W-1),sy=clamp(Math.round(y-ty*5),0,H-1);
-   const cluster=coarse[p]*(1-stretch*.35)+coarse[sy*W+sx]*stretch*.35;
-   const threshold=.7-Math.min(.45,mass*.7);
-   const broken=clamp((cluster-threshold+.1+cavity[p]*mass*.18)/.24,0,1),coverage=smooth(broken)*clamp(mass*5,0,1);
-   const density=grit?coverage*(grain[p]>.68?1:.12):coverage;
-   const moisture=gum?.45:wet,dry=1-moisture;
-   for(let channel=0;channel<3;channel++){
-    const photographed=earth&&material.photographed?(earth[k+channel]-90)*.55:0;
-    bd[k+channel]=clamp(color[channel]+dry*22-moisture*23+photographed+(fine[p]-.5)*(gum?8:18)+(grain[p]-.5)*10-cavity[p]*12,0,255);
-   }
-   // Connected, torn-edged clay deposits instead of a regular necklace of dots.
-   bd[k+3]=density*(grit?190:145+mass*100);
-   if(bd[k+3])hasBody=true;
-   relief[p]=density*mass*(.55+fine[p]*.45);
   }
   if(hasBody)for(let y=1;y<H-1;y++)for(let x=Math.max(1,pixelLeft[y]);x<=Math.min(W-2,pixelRight[y]);x++){
    const p=y*W+x,k=p*4;if(!bd[k+3])continue;
    const wet=pixelWet[p];
    const slope=(relief[p-1]-relief[p+1])*.65+(relief[p-W]-relief[p+W]);
    const shadow=clamp(slope*85,-28,26),glint=Math.max(0,slope-.06)*wet*105;
-   const cell=sampleMap[p].cell,clay=materials[f.depositTypes[cell]].clay;
+   const cell=nearestCell[p],clay=materials[f.depositTypes[cell]].clay;
    const cracked=clay&&wet<.18&&relief[p]>.13&&Math.abs(fine[p]-.5)<.021;
-   for(let channel=0;channel<3;channel++)bd[k+channel]=clamp(bd[k+channel]+shadow+glint-(cracked?23:0),0,255);
+   const crack=cracked?23:0;
+   bd[k]=clamp(bd[k]+shadow+glint-crack,0,255);
+   bd[k+1]=clamp(bd[k+1]+shadow+glint-crack,0,255);
+   bd[k+2]=clamp(bd[k+2]+shadow+glint-crack,0,255);
   }
   // Pure water/oil has no raised clay layer; a transparent upload and composite
   // still makes the browser synchronize a canvas. Skip only fully empty layers.

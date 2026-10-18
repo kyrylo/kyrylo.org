@@ -1,6 +1,6 @@
-import {paintDrainGrate,paintPaving,paintCurb} from './street-surfaces.js?v=clear-step-133';
-import { randomSource, ROAD } from './model.js?v=clear-step-133';
-import {paintBiscuitCrumbs,paintBootPlanter,paintLittleRoadworks,paintPinwheelStake,paintRainyChalk,paintHouseKeyFob,paintSnailLeaf,paintCrossword,paintDandelionRoot,paintLadybirdPebble,paintPawRepair,paintBoatWorkshop,paintRainyPartyCrown,paintWorkshopHelperBody,paintSandbagSeaside} from './street-charm.js?v=clear-step-133';
+import {paintDrainGrate,paintPaving,paintCurb} from './street-surfaces.js?v=lean-frames-134';
+import { randomSource, ROAD } from './model.js?v=lean-frames-134';
+import {paintBiscuitCrumbs,paintBootPlanter,paintLittleRoadworks,paintPinwheelStake,paintRainyChalk,paintHouseKeyFob,paintSnailLeaf,paintCrossword,paintDandelionRoot,paintLadybirdPebble,paintPawRepair,paintBoatWorkshop,paintRainyPartyCrown,paintWorkshopHelperBody,paintSandbagSeaside} from './street-charm.js?v=lean-frames-134';
 
 // Verge props stay outside the walking lane. Where a story spills onto the
 // road, its position follows the matching physical patch in the route model.

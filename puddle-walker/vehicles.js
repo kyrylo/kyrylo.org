@@ -1,4 +1,4 @@
-import { randomSource, districtAt } from './model.js?v=clear-step-133';
+import { randomSource, districtAt } from './model.js?v=lean-frames-134';
 
 // Sprite widths include mirrors. Calibrated body widths share the existing
 // 334-unit collision envelope; the route never changes when a model changes.

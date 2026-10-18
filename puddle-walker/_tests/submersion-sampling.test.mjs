@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createGame,createSubmersionTest,indexStreet,MATERIALS,PAVEMENT,surfaceAt} from '../model.js';
+import {createGame,createSubmersionTest,createSurfaceSampler,indexStreet,MATERIALS,PAVEMENT,surfaceAt} from '../model.js';
 
 const patch=(type,extra={})=>({type,x:450,y:1000,rx:60,ry:90,cos:1,sin:0,depth:12,seed:4,...extra});
 function compare(patches,points){
-  const order=[...patches],g={street:indexStreet({patches,obstacles:[]})},submerged=createSubmersionTest(patches);
+  const order=[...patches],g={street:indexStreet({patches,obstacles:[]})},submerged=createSubmersionTest(patches),sample=createSurfaceSampler(patches);
   for(const [x,y] of points){
     const surface=surfaceAt(g,x,y,patches);
+    assert.deepEqual(sample(x,y),surface,`prepared contact at ${x}, ${y}`);
     assert.equal(submerged(x,y),Boolean(MATERIALS[surface.type].liquid)&&surface.depth>=.3,`${x}, ${y}: ${surface.type}`);
   }
   assert.deepEqual(patches,order,'preparation must not reorder shared street geometry');

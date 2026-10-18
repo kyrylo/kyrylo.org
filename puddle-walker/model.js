@@ -1,6 +1,6 @@
-import {recordGroundContact,recordRinse,settleGroundContact,ageGroundContacts} from './ground-effects.js?v=clear-step-133';
-import {groundBank,groundDepth,fractureRadius,utilityCutRadius,breakPool,dirtRoad,spillWeight} from './road-ground.js?v=clear-step-133';
-import {onWelcomeMat} from './home-arrival.js?v=clear-step-133';
+import {recordGroundContact,recordRinse,settleGroundContact,ageGroundContacts} from './ground-effects.js?v=lean-frames-134';
+import {groundBank,groundDepth,fractureRadius,utilityCutRadius,breakPool,dirtRoad,spillWeight} from './road-ground.js?v=lean-frames-134';
+import {onWelcomeMat} from './home-arrival.js?v=lean-frames-134';
 // 200 world units = 1 metre. Fixed 120 Hz simulation, independent of display rate.
 export const ROAD = { left: 108, right: 792, start: 240, finish: 20240, length: 20000, metres: 100 };
 export const PAVEMENT = { startEnd: 540, finishStart: ROAD.finish - 120 };
@@ -733,14 +733,37 @@ export function surfaceAt(g, x, y, patches = nearby(g.street, y).patches) {
   const type = found?.type || 'dry', mat = MATERIALS[type];
   return { type, depth, dirt: mat.dirt, grip: mat.grip, patch: found };
 }
+function surfaceCandidates(patches){
+  return patches.map(p=>({p,rank:p.roadDecay?0:p.onCover?4:p.type==='metal'||p.type==='stone'?3:p.contaminant?2.5:p.surfaceFilm||p.type==='gum'||p.type==='poop'?2:1,liquid:Boolean(MATERIALS[p.type].liquid),
+    rx:(Math.abs(p.rx*p.cos)+Math.abs(p.ry*p.sin))*1.2,
+    ry:(Math.abs(p.rx*p.sin)+Math.abs(p.ry*p.cos))*1.2})).sort((a,b)=>b.rank-a.rank);
+}
+// Contact grids visit the same few patches hundreds of times. Prepare their
+// bounds and priority once, then reuse one result instead of allocating a
+// surface object for every cell. The returned result is borrowed until the
+// next sample; callers that retain it must copy it.
+export function createSurfaceSampler(patches){
+  const candidates=surfaceCandidates(patches);
+  const result={type:'dry',depth:0,dirt:0,grip:MATERIALS.dry.grip,patch:null};
+  return (x,y)=>{
+    let found=null,depth=0,priority=-1;
+    if(!isPavement(y))for(const {p,rank,rx,ry} of candidates){
+      if(rank<priority)break;
+      if(Math.abs(x-p.x)>rx||Math.abs(y-p.y)>ry||(rank===priority&&p.depth<=depth))continue;
+      const d=puddleDepth(p,x,y);
+      if(d>0&&(rank>priority||d>depth)){found=p;depth=d;priority=rank;}
+    }
+    const type=found?.type||'dry',material=MATERIALS[type];
+    result.type=type;result.depth=depth;result.dirt=material.dirt;result.grip=material.grip;result.patch=found;
+    return result;
+  };
+}
 // A footprint samples one immutable neighbourhood thousands of times. Cache its
 // bounds and priority once; ordinary walking keeps the lightweight surfaceAt path.
 // Covers and deposits still win in exactly the same order as contact physics.
 export function createSubmersionTest(patches){
   if(!patches.some(p=>MATERIALS[p.type].liquid))return ()=>false;
-  const candidates=patches.map(p=>({p,rank:p.roadDecay?0:p.onCover?4:p.type==='metal'||p.type==='stone'?3:p.contaminant?2.5:p.surfaceFilm||p.type==='gum'||p.type==='poop'?2:1,liquid:Boolean(MATERIALS[p.type].liquid),
-    rx:(Math.abs(p.rx*p.cos)+Math.abs(p.ry*p.sin))*1.2,
-    ry:(Math.abs(p.rx*p.sin)+Math.abs(p.ry*p.cos))*1.2})).sort((a,b)=>b.rank-a.rank);
+  const candidates=surfaceCandidates(patches);
   return (x,y)=>{
     if(isPavement(y))return false;
     let priority=-1,depth=0,liquid=false;
@@ -804,18 +827,28 @@ function landingContact(g, f) {
   let risk = 0, material = 'dry', wetCells = 0, cells = 0;
   const c = Math.cos(f.angle), s = Math.sin(f.angle), patches = footprintPatches(g,f);
   if(!patches.length)return {risk:0,material:'dry',wetFraction:0};
+  const sample=createSurfaceSampler(patches);
   // Inspect the same silhouette used by contact physics, including the toe and heel.
   // Nine rectangle samples missed small puddles and warned about empty shoe corners.
   for (const i of shoeCells(g,f)) {
     cells++;
     const x = cellX[i] * shoe.width;
     const y = cellY[i] * shoe.length;
-    const surface = surfaceAt(g, f.x + x * c + y * s, f.y - x * s + y * c, patches);
+    const surface = sample(f.x + x * c + y * s, f.y - x * s + y * c);
     if (surface.depth <= .3 || !surface.dirt) continue;
     wetCells++;
     if (surface.dirt * surface.depth > risk) { risk = surface.dirt * surface.depth; material = surface.type; }
   }
   return {risk, material, wetFraction:cells ? wetCells / cells : 0};
+}
+function hasDirtyContact(g,f){
+  const patches=footprintPatches(g,f);if(!patches.length)return false;
+  const sample=createSurfaceSampler(patches),shoe=SHOES[g.shoeId],c=Math.cos(f.angle),s=Math.sin(f.angle);
+  for(const i of shoeCells(g,f)){
+    const x=cellX[i]*shoe.width,y=cellY[i]*shoe.length,surface=sample(f.x+x*c+y*s,f.y-x*s+y*c);
+    if(surface.depth>.3&&surface.dirt)return true;
+  }
+  return false;
 }
 // Sound uses the area beneath the actual shoe at touchdown, not the aim marker
 // or just its centre. A wet toe and a dry heel can make both sounds together.
@@ -828,11 +861,11 @@ function landingSounds(g, f) {
   // A fully dry landing away from a paving seam has exactly one sound. Partial
   // puddle contact and apron boundaries still use every silhouette cell.
   if(!patches.length&&low>PAVEMENT.startEnd&&high<PAVEMENT.finishStart)return [{surface:'asphalt',fraction:1,depth:0}];
-  const areas=new Map();
+  const areas=new Map(),sample=createSurfaceSampler(patches);
   let cells=0;
   for(const i of samples){
     const x=cellX[i]*shoe.width,y=cellY[i]*shoe.length,wx=f.x+x*c+y*s,wy=f.y-x*s+y*c;
-    const ground=surfaceAt(g,wx,wy,patches);
+    const ground=sample(wx,wy);
     const surface=ground.type==='dry'?(isPavement(wy)?'concrete':'asphalt'):ground.type;
     const area=areas.get(surface)||{surface,cells:0,depth:0};area.cells++;area.depth+=ground.depth;areas.set(surface,area);cells++;
   }
@@ -852,22 +885,29 @@ export function planStep(g, point) {
   const target = constrainTarget(g, requested), shoe = SHOES[g.shoeId];
   const dx = target.x - f.x, dy = target.y - f.y;
   const angle = clamp(Math.atan2(dx, Math.abs(dy) + 1), -.7, .7) * .35;
-  const contact = landingContact(g, {...target, angle, side:f.side});
+  // Aiming only needs reach and obstacle clearance. Keep the detailed surface
+  // forecast available to route tools, but don't sample a whole shoe until a
+  // caller asks for it. Capture this pose and silhouette, not the moving foot.
+  const context = { street:g.street, shoeId:g.shoeId, mask:g.mask };
+  const pose = {...target, angle, side:f.side};
+  let contact;
+  const inspect = () => contact ||= landingContact(context, pose);
   let blocked = false;
   // The preview warns about furniture along the whole stride, not just at its end.
+  const ca=Math.cos(angle),sa=Math.sin(angle);
+  const probes=[-.32,0,.32].map(along=>({x:along*shoe.length*sa,y:along*shoe.length*ca}));
   for (let n = 0; n <= 12 && !blocked; n++) {
-    const pose = { x: f.x + dx * n / 12, y: f.y + dy * n / 12, angle };
-    for (const o of nearby(g.street, pose.y).obstacles) for (const along of [-.32, 0, .32]) {
-      const p = footPoint(pose, 0, along * shoe.length);
-      const ox = Math.max(0, Math.abs(p.x - o.x) - (o.halfWidth || 0));
-      const oy = Math.max(0, Math.abs(p.y - o.y) - (o.halfLength || 0));
+    const x=f.x+dx*n/12,y=f.y+dy*n/12;
+    for (const o of nearby(g.street, y).obstacles) for (const probe of probes) {
+      const ox = Math.max(0, Math.abs(x + probe.x - o.x) - (o.halfWidth || 0));
+      const oy = Math.max(0, Math.abs(y + probe.y - o.y) - (o.halfLength || 0));
       if (Math.hypot(ox, oy) < (o.halfWidth ? 0 : o.r) + shoe.width * .48) blocked = true;
     }
   }
   const sideways=lateral&&Math.abs(target.x-f.x)>=12;
   const backward = requested.y < minimumY || target.y < minimumY-.001;
   const stride = target.y - Math.max(f.y, g.feet[1 - g.active].y);
-  g.preview = { ...target, angle, ...contact, blocked, backward, stride, sideways, gathering, soft:stride<95, limited: Math.hypot(point.x - target.x, point.y - target.y) > 14, valid: !backward && (gathering ? dy<=-12 : lateral ? sideways&&dy>=0 : dy>=24) };
+  g.preview = { ...target, angle, get risk(){return inspect().risk;}, get material(){return inspect().material;}, get wetFraction(){return inspect().wetFraction;}, blocked, backward, stride, sideways, gathering, soft:stride<95, limited: Math.hypot(point.x - target.x, point.y - target.y) > 14, valid: !backward && (gathering ? dy<=-12 : lateral ? sideways&&dy>=0 : dy>=24) };
   return g.preview;
 }
 // Shift weight while both shoes are planted. Selecting a foot never moves it,
@@ -972,7 +1012,7 @@ function prepareStride(g, target) {
   g.strideBack = Math.min(...g.feet.map(f=>f.y));
   g.strideClean = condition(g);
   g.crossingDistance = 0;g.hitStop=false;
-  g.strideStartedDry = landingContact(g, g.feet[g.active]).wetFraction === 0;
+  g.strideStartedDry = !hasDirtyContact(g, g.feet[g.active]);
   g.strideAdvance = Math.max(0, target.y - g.strideFront);
   // A shorter placement lowers the heel gently; a long stride carries more impact.
   g.landingForce = clamp(.42 + g.strideAdvance / 190 * .85, .5, 1.4);
@@ -1059,10 +1099,11 @@ function contactField(g,f,patches){
   const shoe=SHOES[g.shoeId],c=Math.cos(f.angle),s=Math.sin(f.angle);
   const pose = `${f.x.toFixed(1)},${f.y.toFixed(1)},${f.angle.toFixed(3)},${g.shoeId}`;
   if (f.contactPose !== pose) {
+    const sample=createSurfaceSampler(patches);
     f.contactWaterDepth=0;
     for (const i of shoeCells(g,f)) {
       const lx = cellX[i] * shoe.width, ly = cellY[i] * shoe.length;
-      const water = surfaceAt(g, f.x + lx * c + ly * s, f.y - lx * s + ly * c, patches);
+      const water = sample(f.x + lx * c + ly * s, f.y - lx * s + ly * c);
       f.contactDepths[i] = water.depth; f.contactTypes[i] = MATERIAL_NAMES.indexOf(water.type);
       if(water.type==='water')f.contactWaterDepth=Math.max(f.contactWaterDepth,water.depth);
       // Sediment is patchy within a puddle; its stable world field follows the
@@ -1444,8 +1485,7 @@ function simulate(g, dt) {
       f.vx = f.vy = 0; g.mode = 'idle'; g.steps++;
       g.blockTravel += Math.max(0, Math.min(...g.feet.map(foot=>foot.y)) - (g.strideBack ?? Math.min(...g.feet.map(foot=>foot.y))));
       if (f.y > f.bestY + 40 && !isPavement(f.y)) {
-        const contact = landingContact(g, f), support = landingContact(g, g.feet[1-g.active]);
-        if (contact.wetFraction === 0 && support.wetFraction === 0 && condition(g) >= (g.strideClean ?? condition(g))-.05 && !g.bumped) {
+        if (!hasDirtyContact(g, f) && !hasDirtyContact(g, g.feet[1-g.active]) && condition(g) >= (g.strideClean ?? condition(g))-.05 && !g.bumped) {
           g.chain++; g.cleanSteps++; g.bestChain = Math.max(g.bestChain, g.chain);
           const distance=Math.max(0,f.y-g.strideFront),margin=landingMargin(g,f),close=margin<=38,precision=margin<=8;
           const previousMultiplier=flowMultiplier(g);

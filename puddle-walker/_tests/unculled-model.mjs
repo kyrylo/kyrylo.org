@@ -9,5 +9,6 @@ const source=readFileSync(file,'utf8');
 const culled=/function footprintPatches\(g, f\) \{[\s\S]*?\n\}\nexport function constrainTarget/;
 assert.ok(culled.test(source),'footprint broad-phase must still be identifiable');
 const reference=source.replace(culled,'function footprintPatches(g, f) { return nearby(g.street,f.y).patches; }\nexport function constrainTarget')
+ .replace(/export function createSurfaceSampler\(patches\)\{[\s\S]*?\n\}/, 'export function createSurfaceSampler(patches){return (x,y)=>surfaceAt(null,x,y,patches);}')
  .replace(/from '([^']+)'/g,(_,path)=>`from '${new URL(path,file).href}'`);
 export default await import('data:text/javascript;base64,'+Buffer.from(reference).toString('base64'));
