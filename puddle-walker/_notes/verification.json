@@ -10,8 +10,8 @@
   "buildRuntime": "Installed Jekyll 4.3.4 / Ruby 3.4.8 with JEKYLL_NO_BUNDLER_REQUIRE; current default Ruby bundle lacks required dependencies.",
   "syntaxCheckedModules": 23,
   "sourceLiveBuildMatch": true,
-  "publicFiles": 65,
-  "publicSha256": "afe981f04b9059eecff7e8f509a62ab71d9024d4bedaa5d968599d59f86337d1",
+  "publicFiles": 66,
+  "publicSha256": "b960b22460cad6c3dbebb0a98c6c4b624595734e224abcb94b8060d4d57aef41",
   "changes": [
     "Sole grain uses fixed Float64 positions and one style/radius per zone instead of recalculating noise, colours and radii for every speck on every repaint.",
     "Denim cubic weights, texture-strip bounds and shoe bend samples are prepared once. Mesh resolution, draw order, antialiasing and flex are unchanged.",
@@ -1821,6 +1821,18 @@
     "temporaryPreviewFilesRemaining": 0,
     "latestScreenshotOnly": true,
     "rebuildableJekyllCacheRemoved": true,
-    "removedBytesThisPass": 77894614
+    "removedBytesThisPass": 77113020
+  },
+  "socialPreview": {
+    "image": "https://kyrylo.org/puddle-walker/assets/og.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 19807,
+    "animated": false,
+    "source": "Static capture of the opening screen, with its existing sneaker photograph, title and signature. Loading text and pulse rings are omitted.",
+    "openGraphAndTwitterMetadataVerified": true,
+    "legacyRedirectMetadataVerified": true,
+    "buildPassed": true,
+    "gameplayFilesChanged": false
   }
 }
