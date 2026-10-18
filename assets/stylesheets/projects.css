@@ -1,0 +1,115 @@
+.projects-gallery {
+  max-width: none;
+}
+
+.projects-gallery .listing-title {
+  margin: 0 0 3rem;
+  color: var(--muted);
+  font-size: .85em;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.projects-gallery .project-section + .project-section {
+  margin-top: 3rem;
+}
+
+.projects-gallery .project-section h2 {
+  margin-bottom: 1.25rem;
+  padding-bottom: .65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-grid > li {
+  min-width: 0;
+  margin: 0;
+}
+
+.project-card,
+.project-card:visited {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: .5rem;
+}
+
+.project-cover {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  border-radius: .5rem;
+  background: var(--surface);
+}
+
+.project-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: .85rem 0 .35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+  text-wrap: auto;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+.project-card:hover h3,
+.project-card:focus-visible h3 {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  text-decoration-thickness: 1px;
+}
+
+.project-card:hover .project-cover,
+.project-card:focus-visible .project-cover {
+  border-color: var(--muted);
+}
+
+.project-source {
+  display: inline-block;
+  margin-top: .35rem;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .project-cover img {
+    transition: transform 180ms ease;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 35rem) {
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}

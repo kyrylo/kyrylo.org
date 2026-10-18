@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="405" viewBox="0 0 720 405">
+  <rect width="720" height="405" fill="#f0f4fb"/>
+  <g fill="none" stroke="#d9e1ef" stroke-width="2">
+    <path d="M80 95v220h560M80 240h560M80 165h560M220 95v220M360 95v220M500 95v220"/>
+  </g>
+  <path d="M80 275h110l340-140h110" fill="none" stroke="#2563eb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M80 290h185v-65h190v-65h185" fill="none" stroke="#9d88c9" stroke-width="5" stroke-linejoin="round" stroke-dasharray="8 8"/>
+  <g font-family="ui-monospace, monospace" font-size="24">
+    <text x="80" y="66" fill="#2563eb">clamp()</text>
+    <text x="640" y="66" fill="#8470b0" text-anchor="end">@media</text>
+  </g>
+</svg>

@@ -22,7 +22,7 @@
 <meta name="twitter:site" content="@kyrylosilin" />
 <meta name="twitter:creator" content="@Kyrylo Silin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-10-06T13:07:23+08:00","description":"My projects, doodles, vibe-coded experiments.","headline":"Projects","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3","url":"https://kyrylo.org/projects/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-10-14T22:55:10+08:00","description":"My projects, doodles, vibe-coded experiments.","headline":"Projects","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3","url":"https://kyrylo.org/projects/"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=3" sizes="96x96" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico?v=3" />
@@ -627,10 +627,13 @@
 
     }
   </style>
+
+  <link rel="stylesheet" href="/assets/stylesheets/projects.css">
+
 </head>
 <body>
     <main>
-      <div class="listing">
+      <div class="listing projects-gallery">
 
 <header class="profile-header">
   <a href="/" class="profile-home-link" aria-label="Home">
@@ -661,134 +664,283 @@
 </nav>
 
 
-<h1 class="listing-title">Projects</h1>
+<h1 class="listing-title">A few useful things. A few just for fun.</h1>
 
-<section class="project-section" aria-label="Current projects">
-  <dl class="project-list">
-    <dt><a href="https://telebugs.com">Telebugs</a></dt>
-    <dd>
-      Self-hosted Sentry alternative for error tracking. Track errors in your apps, get notified, fix bugs faster. (<a href="https://github.com/telebugs/docs.telebugs.com">docs on github</a>)
-    </dd>
 
-    <dt><a href="https://justfuckingusehtml.com">Just Fucking Use HTML</a></dt>
-    <dd>
-      My take on complexity in modern web development.
-    </dd>
+<section class="project-section" aria-labelledby="current-projects">
+  <h2 id="current-projects">Current projects</h2>
+  <ul class="project-grid">
 
-    <dt><a href="https://weuserails.com">We Use Rails</a></dt>
-    <dd>
-      Discover web apps built with Ruby on Rails
-      (<a href="https://github.com/kyrylo/weuserails.com">github</a>).
-    </dd>
+    <li>
+      <a class="project-card" href="https://telebugs.com" aria-labelledby="project-telebugs" aria-describedby="description-telebugs">
+        <span class="project-cover">
+          <img src="/assets/images/projects/telebugs.webp" alt="" width="720" height="405" loading="eager" decoding="async" />
+        </span>
+        <h3 id="project-telebugs">Telebugs</h3>
+        <p id="description-telebugs">A self-hosted Sentry alternative. Track errors, get notified, fix bugs faster.</p>
+      </a>
 
-    <dt><a href="https://flagmatch.com">Flag Match</a></dt>
-    <dd>
-      A fun and educational game to learn flags of countries and their capitals.
-    </dd>
+      <a class="project-source" href="https://github.com/telebugs/docs.telebugs.com" aria-label="Telebugs: Docs on GitHub">Docs on GitHub</a>
 
-    <dt><a href="https://flagclick.com">Flag Click</a></dt>
-    <dd>
-      A small web game where you click your country flag, climb the pole, and try to overtake everyone else.
-    </dd>
+    </li>
 
-    <dt><a href="https://dockernamegenerator.com">Docker Name Generator</a></dt>
-    <dd>
-      Generate random Docker container-style names for any purpose.
-    </dd>
+    <li>
+      <a class="project-card" href="https://minicar.racing" aria-labelledby="project-minicar-racing" aria-describedby="description-minicar-racing">
+        <span class="project-cover">
+          <img src="/assets/images/projects/minicar-racing.webp" alt="" width="720" height="405" loading="eager" decoding="async" />
+        </span>
+        <h3 id="project-minicar-racing">Mini Car Racing</h3>
+        <p id="description-minicar-racing">Buy a car, upgrade your weapons, and race solo or with friends.</p>
+      </a>
 
-  </dl>
+    </li>
 
+    <li>
+      <a class="project-card" href="https://justfuckingusehtml.com" aria-labelledby="project-just-fucking-use-html" aria-describedby="description-just-fucking-use-html">
+        <span class="project-cover">
+          <img src="/assets/images/projects/just-fucking-use-html.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-just-fucking-use-html">Just Fucking Use HTML</h3>
+        <p id="description-just-fucking-use-html">My take on complexity in modern web development.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="https://weuserails.com" aria-labelledby="project-we-use-rails" aria-describedby="description-we-use-rails">
+        <span class="project-cover">
+          <img src="/assets/images/projects/we-use-rails.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-we-use-rails">We Use Rails</h3>
+        <p id="description-we-use-rails">Discover web apps built with Ruby on Rails.</p>
+      </a>
+
+      <a class="project-source" href="https://github.com/kyrylo/weuserails.com" aria-label="We Use Rails: GitHub">GitHub</a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="https://flagmatch.com" aria-labelledby="project-flag-match" aria-describedby="description-flag-match">
+        <span class="project-cover">
+          <img src="/assets/images/projects/flag-match.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-flag-match">Flag Match</h3>
+        <p id="description-flag-match">Learn the world&#39;s flags and capitals, one match at a time.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="https://flagclick.com" aria-labelledby="project-flag-click" aria-describedby="description-flag-click">
+        <span class="project-cover">
+          <img src="/assets/images/projects/flag-click.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-flag-click">Flag Click</h3>
+        <p id="description-flag-click">Click your country&#39;s flag. Climb the pole. Overtake everyone.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="https://dockernamegenerator.com" aria-labelledby="project-docker-name-generator" aria-describedby="description-docker-name-generator">
+        <span class="project-cover">
+          <img src="/assets/images/projects/docker-name-generator.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-docker-name-generator">Docker Name Generator</h3>
+        <p id="description-docker-name-generator">Random Docker-style names for whatever needs a name.</p>
+      </a>
+
+    </li>
+
+  </ul>
 </section>
 
 <section class="project-section" aria-labelledby="just-for-fun">
   <h2 id="just-for-fun">Just for fun</h2>
-  <dl class="project-list">
-    <dt><a href="https://justfuckinguse.com">Just Fucking Use</a></dt>
-    <dd>
-      A collection of all the best Just Fucking Use sites.
-    </dd>
+  <ul class="project-grid">
 
-    <dt><a href="/htmlmaze/">The HTML Maze</a></dt>
-    <dd>
-      A frozen interactive web experiment: explore 500 rooms, read the messages left behind, draw locally, and find your way out.
-    </dd>
+    <li>
+      <a class="project-card" href="https://justfuckinguse.com" aria-labelledby="project-just-fucking-use" aria-describedby="description-just-fucking-use">
+        <span class="project-cover">
+          <img src="/assets/images/projects/just-fucking-use.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-just-fucking-use">Just Fucking Use</h3>
+        <p id="description-just-fucking-use">A collection of all the best Just Fucking Use sites.</p>
+      </a>
 
-    <dt><a href="/tech-debt/">Tech Debt</a></dt>
-    <dd>
-      A fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.
-    </dd>
+    </li>
 
-    <dt><a href="/the-em-dash/">The Em Dash</a></dt>
-    <dd>
-      Supercharging your game-changing posts and comments since 2022.
-    </dd>
+    <li>
+      <a class="project-card" href="/htmlmaze/" aria-labelledby="project-html-maze" aria-describedby="description-html-maze">
+        <span class="project-cover">
+          <img src="/assets/images/projects/html-maze.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-html-maze">The HTML Maze</h3>
+        <p id="description-html-maze">500 rooms. Messages left behind. Find your way out.</p>
+      </a>
 
-    <dt><a href="https://fuckthispage.com">Fuck This Page</a></dt>
-    <dd>
-      Take revenge on any website you dislike.
-    </dd>
+    </li>
 
-  </dl>
+    <li>
+      <a class="project-card" href="/tech-debt/" aria-labelledby="project-tech-debt" aria-describedby="description-tech-debt">
+        <span class="project-cover">
+          <img src="/assets/images/projects/tech-debt.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-tech-debt">Tech Debt</h3>
+        <p id="description-tech-debt">Ship a bug-free programming language before the &#39;95 WEBFEST deadline.</p>
+      </a>
 
+    </li>
+
+    <li>
+      <a class="project-card" href="/the-em-dash/" aria-labelledby="project-the-em-dash" aria-describedby="description-the-em-dash">
+        <span class="project-cover">
+          <img src="/assets/images/projects/the-em-dash.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-the-em-dash">The Em Dash</h3>
+        <p id="description-the-em-dash">Supercharging your game-changing posts and comments since 2022.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="https://fuckthispage.com" aria-labelledby="project-fuck-this-page" aria-describedby="description-fuck-this-page">
+        <span class="project-cover">
+          <img src="/assets/images/projects/fuck-this-page.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-fuck-this-page">Fuck This Page</h3>
+        <p id="description-fuck-this-page">Take revenge on any website you dislike.</p>
+      </a>
+
+    </li>
+
+  </ul>
 </section>
 
 <section class="project-section" aria-labelledby="tools">
   <h2 id="tools">Tools</h2>
-  <dl class="project-list">
-    <dt><a href="/css-color-names-reference/">CSS Color Names Reference</a></dt>
-    <dd>
-      Complete reference of all 147 standard CSS color names with hex codes, RGB values, OKLCH, and HSL values.
-    </dd>
+  <ul class="project-grid">
 
-    <dt><a href="/tailwind-css-v4-color-palette-reference/">Tailwind CSS v4 Color Palette Reference</a></dt>
-    <dd>
-      Complete reference of all default Tailwind CSS v4 colors with hex, RGB, HSL, and OKLCH values.
-    </dd>
+    <li>
+      <a class="project-card" href="/css-color-names-reference/" aria-labelledby="project-css-color-names" aria-describedby="description-css-color-names">
+        <span class="project-cover">
+          <img src="/assets/images/projects/css-color-names.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-css-color-names">CSS Color Names Reference</h3>
+        <p id="description-css-color-names">All 147 CSS color names, with hex, RGB, OKLCH, and HSL values.</p>
+      </a>
 
-    <dt><a href="/clamp-vs-media-queries/">clamp() vs Media Queries</a></dt>
-    <dd>
-      CSS Responsiveness Showdown
-    </dd>
+    </li>
 
-  </dl>
+    <li>
+      <a class="project-card" href="/tailwind-css-v4-color-palette-reference/" aria-labelledby="project-tailwind-colors" aria-describedby="description-tailwind-colors">
+        <span class="project-cover">
+          <img src="/assets/images/projects/tailwind-colors.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-tailwind-colors">Tailwind CSS v4 Color Palette Reference</h3>
+        <p id="description-tailwind-colors">Every default Tailwind v4 color, in all the formats you need.</p>
+      </a>
 
+    </li>
+
+    <li>
+      <a class="project-card" href="/clamp-vs-media-queries/" aria-labelledby="project-clamp-vs-media-queries" aria-describedby="description-clamp-vs-media-queries">
+        <span class="project-cover">
+          <img src="/assets/images/projects/clamp-vs-media-queries.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-clamp-vs-media-queries">clamp() vs Media Queries</h3>
+        <p id="description-clamp-vs-media-queries">A side-by-side CSS responsiveness showdown.</p>
+      </a>
+
+    </li>
+
+  </ul>
 </section>
 
 <section class="project-section" aria-labelledby="doodles-and-experiments">
   <h2 id="doodles-and-experiments">Doodles &amp; experiments</h2>
-  <dl class="project-list">
-    <dt><a href="/elsewhere/">Elsewhere</a></dt>
-    <dd>
-      A little clock for hopping through time zones and peeking through live webcams.
-    </dd>
+  <ul class="project-grid">
 
-    <dt><a href="/dont-pull-my-strings/">Don't pull my strings</a></dt>
-    <dd>
-      When puns are taken too literally.
-    </dd>
+    <li>
+      <a class="project-card" href="/puddle-walker/" aria-labelledby="project-puddle-walker" aria-describedby="description-puddle-walker">
+        <span class="project-cover">
+          <img src="/assets/images/projects/puddle-walker.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-puddle-walker">Puddle Walker</h3>
+        <p id="description-puddle-walker">A different street every time. Dodge the mess. Keep your white sneakers clean.</p>
+      </a>
 
-    <dt><a href="/seasick-simulator/">SeaSick Simulator</a></dt>
-    <dd>
-      Experience the queasy charm of rough seas on any website.
-    </dd>
+    </li>
 
-    <dt><a href="/life-calendar/">Life Calendar</a></dt>
-    <dd>
-      Every week is a gift. Make them count.
-    </dd>
+    <li>
+      <a class="project-card" href="/elsewhere/" aria-labelledby="project-elsewhere" aria-describedby="description-elsewhere">
+        <span class="project-cover">
+          <img src="/assets/images/projects/elsewhere.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-elsewhere">Elsewhere</h3>
+        <p id="description-elsewhere">Hop through time zones and peek through live webcams.</p>
+      </a>
 
-    <dt><a href="/the-catipede/">The Catipede</a></dt>
-    <dd>
-      An emoji-based online game inspired by Tamagotchi.
-    </dd>
+    </li>
 
-    <dt><a href="/awesome-skeletons/">Awesome Skeletons</a></dt>
-    <dd>
-      Unlock the Magic of Skeleton Animations for Blazing-Fast Web Interfaces.
-    </dd>
+    <li>
+      <a class="project-card" href="/dont-pull-my-strings/" aria-labelledby="project-dont-pull-my-strings" aria-describedby="description-dont-pull-my-strings">
+        <span class="project-cover">
+          <img src="/assets/images/projects/dont-pull-my-strings.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-dont-pull-my-strings">Don&#39;t pull my strings</h3>
+        <p id="description-dont-pull-my-strings">When puns are taken too literally.</p>
+      </a>
 
-  </dl>
+    </li>
+
+    <li>
+      <a class="project-card" href="/seasick-simulator/" aria-labelledby="project-seasick-simulator" aria-describedby="description-seasick-simulator">
+        <span class="project-cover">
+          <img src="/assets/images/projects/seasick-simulator.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-seasick-simulator">SeaSick Simulator</h3>
+        <p id="description-seasick-simulator">The queasy charm of rough seas, on any website.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="/life-calendar/" aria-labelledby="project-life-calendar" aria-describedby="description-life-calendar">
+        <span class="project-cover">
+          <img src="/assets/images/projects/life-calendar.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-life-calendar">Life Calendar</h3>
+        <p id="description-life-calendar">Every week is a gift. Make them count.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="/the-catipede/" aria-labelledby="project-the-catipede" aria-describedby="description-the-catipede">
+        <span class="project-cover">
+          <img src="/assets/images/projects/the-catipede.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-the-catipede">The Catipede</h3>
+        <p id="description-the-catipede">An emoji-based pet game inspired by Tamagotchi.</p>
+      </a>
+
+    </li>
+
+    <li>
+      <a class="project-card" href="/awesome-skeletons/" aria-labelledby="project-awesome-skeletons" aria-describedby="description-awesome-skeletons">
+        <span class="project-cover">
+          <img src="/assets/images/projects/awesome-skeletons.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
+        </span>
+        <h3 id="project-awesome-skeletons">Awesome Skeletons</h3>
+        <p id="description-awesome-skeletons">Skeleton animations for interfaces that feel fast.</p>
+      </a>
+
+    </li>
+
+  </ul>
 </section>
+
 
 </div>
 

@@ -1,0 +1,129 @@
+- title: Current projects
+  id: current-projects
+  projects:
+    - name: Telebugs
+      id: telebugs
+      url: https://telebugs.com
+      image: telebugs.webp
+      description: A self-hosted Sentry alternative. Track errors, get notified, fix bugs faster.
+      source_url: https://github.com/telebugs/docs.telebugs.com
+      source_label: Docs on GitHub
+    - name: Mini Car Racing
+      id: minicar-racing
+      url: https://minicar.racing
+      image: minicar-racing.webp
+      description: Buy a car, upgrade your weapons, and race solo or with friends.
+    - name: Just Fucking Use HTML
+      id: just-fucking-use-html
+      url: https://justfuckingusehtml.com
+      image: just-fucking-use-html.webp
+      description: My take on complexity in modern web development.
+    - name: We Use Rails
+      id: we-use-rails
+      url: https://weuserails.com
+      image: we-use-rails.webp
+      description: Discover web apps built with Ruby on Rails.
+      source_url: https://github.com/kyrylo/weuserails.com
+      source_label: GitHub
+    - name: Flag Match
+      id: flag-match
+      url: https://flagmatch.com
+      image: flag-match.webp
+      description: Learn the world's flags and capitals, one match at a time.
+    - name: Flag Click
+      id: flag-click
+      url: https://flagclick.com
+      image: flag-click.webp
+      description: Click your country's flag. Climb the pole. Overtake everyone.
+    - name: Docker Name Generator
+      id: docker-name-generator
+      url: https://dockernamegenerator.com
+      image: docker-name-generator.webp
+      description: Random Docker-style names for whatever needs a name.
+
+- title: Just for fun
+  id: just-for-fun
+  projects:
+    - name: Just Fucking Use
+      id: just-fucking-use
+      url: https://justfuckinguse.com
+      image: just-fucking-use.webp
+      description: A collection of all the best Just Fucking Use sites.
+    - name: The HTML Maze
+      id: html-maze
+      url: /htmlmaze/
+      image: html-maze.webp
+      description: 500 rooms. Messages left behind. Find your way out.
+    - name: Tech Debt
+      id: tech-debt
+      url: /tech-debt/
+      image: tech-debt.webp
+      description: Ship a bug-free programming language before the '95 WEBFEST deadline.
+    - name: The Em Dash
+      id: the-em-dash
+      url: /the-em-dash/
+      image: the-em-dash.webp
+      description: Supercharging your game-changing posts and comments since 2022.
+    - name: Fuck This Page
+      id: fuck-this-page
+      url: https://fuckthispage.com
+      image: fuck-this-page.svg
+      description: Take revenge on any website you dislike.
+
+- title: Tools
+  id: tools
+  projects:
+    - name: CSS Color Names Reference
+      id: css-color-names
+      url: /css-color-names-reference/
+      image: css-color-names.svg
+      description: All 147 CSS color names, with hex, RGB, OKLCH, and HSL values.
+    - name: Tailwind CSS v4 Color Palette Reference
+      id: tailwind-colors
+      url: /tailwind-css-v4-color-palette-reference/
+      image: tailwind-colors.svg
+      description: Every default Tailwind v4 color, in all the formats you need.
+    - name: clamp() vs Media Queries
+      id: clamp-vs-media-queries
+      url: /clamp-vs-media-queries/
+      image: clamp-vs-media-queries.svg
+      description: A side-by-side CSS responsiveness showdown.
+
+- title: Doodles & experiments
+  id: doodles-and-experiments
+  projects:
+    - name: Puddle Walker
+      id: puddle-walker
+      url: /puddle-walker/
+      image: puddle-walker.webp
+      description: A different street every time. Dodge the mess. Keep your white sneakers clean.
+    - name: Elsewhere
+      id: elsewhere
+      url: /elsewhere/
+      image: elsewhere.webp
+      description: Hop through time zones and peek through live webcams.
+    - name: Don't pull my strings
+      id: dont-pull-my-strings
+      url: /dont-pull-my-strings/
+      image: dont-pull-my-strings.webp
+      description: When puns are taken too literally.
+    - name: SeaSick Simulator
+      id: seasick-simulator
+      url: /seasick-simulator/
+      image: seasick-simulator.webp
+      description: The queasy charm of rough seas, on any website.
+    - name: Life Calendar
+      id: life-calendar
+      url: /life-calendar/
+      image: life-calendar.webp
+      description: Every week is a gift. Make them count.
+    - name: The Catipede
+      id: the-catipede
+      url: /the-catipede/
+      image: the-catipede.webp
+      description: An emoji-based pet game inspired by Tamagotchi.
+    - name: Awesome Skeletons
+      id: awesome-skeletons
+      url: /awesome-skeletons/
+      image: awesome-skeletons.webp
+      description: Skeleton animations for interfaces that feel fast.

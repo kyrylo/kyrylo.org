@@ -610,4 +610,7 @@
 
     }
   </style>
+{% if page.stylesheet %}
+  <link rel="stylesheet" href="{{ page.stylesheet | relative_url }}">
+{% endif %}
 </head>

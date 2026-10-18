@@ -1,133 +1,31 @@
 ---
 layout: listing
+listing_class: projects-gallery
+stylesheet: /assets/stylesheets/projects.css
 image: assets/images/web-app-manifest-512x512.png?v=3
 title: Projects
+heading: A few useful things. A few just for fun.
 description: My projects, doodles, vibe-coded experiments.
 ---
 
-<section class="project-section" aria-label="Current projects">
-  <dl class="project-list">
-    <dt><a href="https://telebugs.com">Telebugs</a></dt>
-    <dd>
-      Self-hosted Sentry alternative for error tracking. Track errors in your apps, get notified, fix bugs faster. (<a href="https://github.com/telebugs/docs.telebugs.com">docs on github</a>)
-    </dd>
-
-    <dt><a href="https://justfuckingusehtml.com">Just Fucking Use HTML</a></dt>
-    <dd>
-      My take on complexity in modern web development.
-    </dd>
-
-    <dt><a href="https://weuserails.com">We Use Rails</a></dt>
-    <dd>
-      Discover web apps built with Ruby on Rails
-      (<a href="https://github.com/kyrylo/weuserails.com">github</a>).
-    </dd>
-
-    <dt><a href="https://flagmatch.com">Flag Match</a></dt>
-    <dd>
-      A fun and educational game to learn flags of countries and their capitals.
-    </dd>
-
-    <dt><a href="https://flagclick.com">Flag Click</a></dt>
-    <dd>
-      A small web game where you click your country flag, climb the pole, and try to overtake everyone else.
-    </dd>
-
-    <dt><a href="https://dockernamegenerator.com">Docker Name Generator</a></dt>
-    <dd>
-      Generate random Docker container-style names for any purpose.
-    </dd>
-
-  </dl>
-
+{% for section in site.data.projects %}
+<section class="project-section" aria-labelledby="{{ section.id }}">
+  <h2 id="{{ section.id }}">{{ section.title | escape }}</h2>
+  <ul class="project-grid">
+{% for project in section.projects %}
+    <li>
+      <a class="project-card" href="{{ project.url }}" aria-labelledby="project-{{ project.id }}" aria-describedby="description-{{ project.id }}">
+        <span class="project-cover">
+          <img src="{{ '/assets/images/projects/' | append: project.image | relative_url }}" alt="" width="720" height="405" loading="{% if section.id == 'current-projects' and forloop.index <= 2 %}eager{% else %}lazy{% endif %}" decoding="async">
+        </span>
+        <h3 id="project-{{ project.id }}">{{ project.name | escape }}</h3>
+        <p id="description-{{ project.id }}">{{ project.description | escape }}</p>
+      </a>
+{% if project.source_url %}
+      <a class="project-source" href="{{ project.source_url }}" aria-label="{{ project.name | escape }}: {{ project.source_label }}">{{ project.source_label }}</a>
+{% endif %}
+    </li>
+{% endfor %}
+  </ul>
 </section>
-
-<section class="project-section" aria-labelledby="just-for-fun">
-  <h2 id="just-for-fun">Just for fun</h2>
-  <dl class="project-list">
-    <dt><a href="https://justfuckinguse.com">Just Fucking Use</a></dt>
-    <dd>
-      A collection of all the best Just Fucking Use sites.
-    </dd>
-
-    <dt><a href="/htmlmaze/">The HTML Maze</a></dt>
-    <dd>
-      A frozen interactive web experiment: explore 500 rooms, read the messages left behind, draw locally, and find your way out.
-    </dd>
-
-    <dt><a href="/tech-debt/">Tech Debt</a></dt>
-    <dd>
-      A fast-paced, keyboard-driven text game where you work to launch a bug-free programming language before the looming '95 WEBFEST deadline.
-    </dd>
-
-    <dt><a href="/the-em-dash/">The Em Dash</a></dt>
-    <dd>
-      Supercharging your game-changing posts and comments since 2022.
-    </dd>
-
-    <dt><a href="https://fuckthispage.com">Fuck This Page</a></dt>
-    <dd>
-      Take revenge on any website you dislike.
-    </dd>
-
-  </dl>
-
-</section>
-
-<section class="project-section" aria-labelledby="tools">
-  <h2 id="tools">Tools</h2>
-  <dl class="project-list">
-    <dt><a href="/css-color-names-reference/">CSS Color Names Reference</a></dt>
-    <dd>
-      Complete reference of all 147 standard CSS color names with hex codes, RGB values, OKLCH, and HSL values.
-    </dd>
-
-    <dt><a href="/tailwind-css-v4-color-palette-reference/">Tailwind CSS v4 Color Palette Reference</a></dt>
-    <dd>
-      Complete reference of all default Tailwind CSS v4 colors with hex, RGB, HSL, and OKLCH values.
-    </dd>
-
-    <dt><a href="/clamp-vs-media-queries/">clamp() vs Media Queries</a></dt>
-    <dd>
-      CSS Responsiveness Showdown
-    </dd>
-
-  </dl>
-
-</section>
-
-<section class="project-section" aria-labelledby="doodles-and-experiments">
-  <h2 id="doodles-and-experiments">Doodles &amp; experiments</h2>
-  <dl class="project-list">
-    <dt><a href="/elsewhere/">Elsewhere</a></dt>
-    <dd>
-      A little clock for hopping through time zones and peeking through live webcams.
-    </dd>
-
-    <dt><a href="/dont-pull-my-strings/">Don't pull my strings</a></dt>
-    <dd>
-      When puns are taken too literally.
-    </dd>
-
-    <dt><a href="/seasick-simulator/">SeaSick Simulator</a></dt>
-    <dd>
-      Experience the queasy charm of rough seas on any website.
-    </dd>
-
-    <dt><a href="/life-calendar/">Life Calendar</a></dt>
-    <dd>
-      Every week is a gift. Make them count.
-    </dd>
-
-    <dt><a href="/the-catipede/">The Catipede</a></dt>
-    <dd>
-      An emoji-based online game inspired by Tamagotchi.
-    </dd>
-
-    <dt><a href="/awesome-skeletons/">Awesome Skeletons</a></dt>
-    <dd>
-      Unlock the Magic of Skeleton Animations for Blazing-Fast Web Interfaces.
-    </dd>
-
-  </dl>
-</section>
+{% endfor %}

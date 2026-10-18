@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="405" viewBox="0 0 720 405">
+<rect width="720" height="405" fill="#faf8f5"/>
+<rect x="86" y="58" width="172" height="108" rx="5" fill="#ff7f50"/>
+<text x="172" y="190" text-anchor="middle" fill="#605852" font-family="ui-monospace, monospace" font-size="16">coral</text>
+<rect x="274" y="58" width="172" height="108" rx="5" fill="#6495ed"/>
+<text x="360" y="190" text-anchor="middle" fill="#605852" font-family="ui-monospace, monospace" font-size="16">cornflowerblue</text>
+<rect x="462" y="58" width="172" height="108" rx="5" fill="#98fb98"/>
+<text x="548" y="190" text-anchor="middle" fill="#605852" font-family="ui-monospace, monospace" font-size="16">palegreen</text>
+<rect x="86" y="216" width="172" height="108" rx="5" fill="#dda0dd"/>
+<text x="172" y="348" text-anchor="middle" fill="#605852" font-family="ui-monospace, monospace" font-size="16">plum</text>
+<rect x="274" y="216" width="172" height="108" rx="5" fill="#f0e68c"/>
+<text x="360" y="348" text-anchor="middle" fill="#605852" font-family="ui-monospace, monospace" font-size="16">khaki</text>
+<rect x="462" y="216" width="172" height="108" rx="5" fill="#ffa07a"/>
+<text x="548" y="348" text-anchor="middle" fill="#605852" font-family="ui-monospace, monospace" font-size="16">lightsalmon</text>
+</svg>

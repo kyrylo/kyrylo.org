@@ -2,10 +2,10 @@
 layout: base
 ---
 
-<div class="listing">
+<div class="listing{% if page.listing_class %} {{ page.listing_class }}{% endif %}">
 {% include profile-header.html name_tag='p' %}
 
-<h1 class="listing-title">{{ page.title }}</h1>
+<h1 class="listing-title">{{ page.heading | default: page.title | escape }}</h1>
 
 {{ content }}
 </div>
