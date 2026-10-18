@@ -1,10 +1,10 @@
-import {paintPaving,paintCurb,paintServiceCover,paintPlantingBed} from './street-surfaces.js?v=lean-frames-134';
-import { districtDetails, paintDistrictDetails, createDistrictSprites, detailApron } from './district-details.js?v=lean-frames-134';
-import { NEIGHBORHOOD_CROPS } from './sprite-data.js?v=lean-frames-134';
-import { randomSource, ROAD, PAVEMENT, DISTRICT_LENGTH, surfaceAt } from './model.js?v=lean-frames-134';
-import { createWildlife, updateWildlife, birdPose } from './wildlife.js?v=lean-frames-134';
-import { createStreetMotion, updateStreetMotion, boatPose, butterflyPose, floatingDuckPose, snailPose, dandelionPose, dandelionSeedPose, DANDELION_SEEDS, biscuitThiefPose, doorstepBalloonPose, workshopHelperPose } from './street-motion.js?v=lean-frames-134';
-import { paintShoeBox, paintCatKeepsakes, paintCatWaterBowl, createDuckSprite, createPinwheelSprite, PINWHEEL, pinwheelPose, createSnailSprite, paintSnail, paintTeaSteam, createDandelionSprites, paintDandelion, paintFloatingSeed, createBiscuitSprite, createDoorstepBalloonSprite, paintDoorstepBalloon, createWorkshopHelperHead, paintWorkshopHelperHead } from './street-charm.js?v=lean-frames-134';
+import {paintPaving,paintCurb,paintServiceCover,paintPlantingBed} from './street-surfaces.js?v=light-materials-135';
+import { districtDetails, paintDistrictDetails, createDistrictSprites, detailApron } from './district-details.js?v=light-materials-135';
+import { NEIGHBORHOOD_CROPS } from './sprite-data.js?v=light-materials-135';
+import { randomSource, ROAD, PAVEMENT, DISTRICT_LENGTH, surfaceAt } from './model.js?v=light-materials-135';
+import { createWildlife, updateWildlife, birdPose } from './wildlife.js?v=light-materials-135';
+import { createStreetMotion, updateStreetMotion, boatPose, butterflyPose, floatingDuckPose, snailPose, dandelionPose, dandelionSeedPose, DANDELION_SEEDS, biscuitThiefPose, doorstepBalloonPose, workshopHelperPose } from './street-motion.js?v=light-materials-135';
+import { paintShoeBox, paintCatKeepsakes, paintCatWaterBowl, createDuckSprite, createPinwheelSprite, PINWHEEL, pinwheelPose, createSnailSprite, paintSnail, paintTeaSteam, createDandelionSprites, paintDandelion, paintFloatingSeed, createBiscuitSprite, createDoorstepBalloonSprite, paintDoorstepBalloon, createWorkshopHelperHead, paintWorkshopHelperHead } from './street-charm.js?v=light-materials-135';
 
 // Small neighborhood scenes use their own seed, so decoration never changes a route.
 export function createNeighborhood(atlas, paving, asphalt, lifeAtlas, shrub, awakeCat, details, curbing = paving, everydayAtlas, soil = asphalt) {

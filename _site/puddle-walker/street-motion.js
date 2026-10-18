@@ -1,4 +1,4 @@
-import {shoeContainsPoint,surfaceAt,MATERIALS} from './model.js?v=lean-frames-134';
+import {shoeContainsPoint,surfaceAt,MATERIALS} from './model.js?v=light-materials-135';
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 
 // Decoration has its own state: water can move a boat without moving the player's shoes.

@@ -1,22 +1,22 @@
 {
-  "version": "lean-frames-134",
+  "version": "light-materials-135",
   "checksPassed": 393,
-  "checksScope": "393 full-suite tests passed. A separate paired replay checked 1,395 previews and a full 179-step walk against the previous production modules, with identical foot arrays, timing, cleanliness, footprints and ground contacts. Browser tests compare shoe pixels and whole scenes, and time a complete 100 m walk.",
+  "checksScope": "393 full-suite tests passed. Renderer-only changes additionally passed 216 shoe-material, 183 sole-transition and 54 cloth-mesh comparisons, plus eight desktop and eight mobile full-scene comparisons. Every comparison was pixel-identical. Physics, contamination, timing and course generation are unchanged.",
   "previousFullVerification": {
-    "version": "footprint-perf-131",
-    "checksPassed": 392
+    "version": "lean-frames-134",
+    "checksPassed": 393
   },
   "buildPassed": true,
   "buildRuntime": "Installed Jekyll 4.3.4 / Ruby 3.4.8 with JEKYLL_NO_BUNDLER_REQUIRE; current default Ruby bundle lacks required dependencies.",
   "syntaxCheckedModules": 23,
   "sourceLiveBuildMatch": true,
   "publicFiles": 65,
-  "publicSha256": "761bab7f1e25f8c3853d58add9844529f261a9833d4694a7e2d04530440735d5",
+  "publicSha256": "afe981f04b9059eecff7e8f509a62ab71d9024d4bedaa5d968599d59f86337d1",
   "changes": [
-    "Aim previews defer the unused full-shoe surface forecast until route tooling reads it. Reach and obstacle checks remain immediate, with reused toe/heel offsets. Forecasts retain their original pose, shoe and street.",
-    "Grid contact and landing audio reuse prepared bounds, surface priorities and one borrowed result object. Clean-contact checks stop at the first dirty cell; simulation rates, collision geometry, contamination equations and sound blends are unchanged.",
-    "Shoe shading reuses horizontal bilinear interpolation across adjacent sprite rows in Float64 buffers. 320 axis records and typed buffers replace 21,504 per-pixel lookup objects. RGB shares moisture calculations and skips transparent colour work while preserving neighbouring relief.",
-    "No new media, lowered texture resolution, skipped animation, reduced simulation rate or extra canvas cache. Temporary profile assets and builds are removed before publication."
+    "Sole grain uses fixed Float64 positions and one style/radius per zone instead of recalculating noise, colours and radii for every speck on every repaint.",
+    "Denim cubic weights, texture-strip bounds and shoe bend samples are prepared once. Mesh resolution, draw order, antialiasing and flex are unchanged.",
+    "Shoe smear offsets are rounded once per physics cell. Water and rinsed residue skip deposit interpolation, relief clearing and smear preparation when no input can reach the existing raised-deposit threshold.",
+    "No additional media or canvas textures, reduced resolution, skipped animation or changed physics cadence. The added typed lookup buffers total 12,680 bytes; terrain cache remains capped at 13.18 MiB."
   ],
   "browser": {
     "viewport": "1280x720; 1000x640 and 390x844 scene comparisons",
@@ -31,55 +31,57 @@
       "steps": 179,
       "splits": [
         {
-          "elapsed": 10230.29999999702,
-          "duration": 10230.29999999702
+          "elapsed": 11446,
+          "duration": 11446
         },
         {
-          "elapsed": 24418.5,
-          "duration": 14188.20000000298
+          "elapsed": 26945,
+          "duration": 15499
         },
         {
-          "elapsed": 37775.70000000298,
-          "duration": 13357.20000000298
+          "elapsed": 41103.5,
+          "duration": 14158.5
         },
         {
-          "elapsed": 51049.20000000298,
-          "duration": 13273.5
+          "elapsed": 55999.90000000596,
+          "duration": 14896.40000000596
         },
         {
-          "elapsed": 60970,
-          "duration": 9920.79999999702
+          "elapsed": 66805,
+          "duration": 10805.09999999404
         }
       ],
       "metres": 100,
-      "clean": 95.9779164521356,
-      "time": 60970,
+      "clean": 95.97393213498867,
+      "time": 66805,
       "cpu": {
-        "mean": 1.03,
-        "p95": 2.1,
-        "max": 16.7
+        "mean": 3.18,
+        "p95": 6,
+        "max": 176
       },
       "interval": {
-        "mean": 16.69,
-        "p95": 18.5,
-        "max": 66.7
+        "mean": 36.18,
+        "p95": 83.7,
+        "max": 284.3
       },
-      "fps": 59.9,
-      "frames": 3652,
-      "slowCpuFrames": 1,
+      "fps": 27.6,
+      "frames": 1845,
+      "slowCpuFrames": 5,
       "generatedChunks": 28,
       "prefetched": 26,
       "visibleMisses": 0,
-      "warmLongestSlice": 22.80000001192093,
-      "initializationLongestSlice": 135.70000000298023,
-      "startupLongestSlice": 8.400000005960464,
+      "warmLongestSlice": 146.8999999910593,
+      "initializationLongestSlice": 846.8999999910593,
+      "startupLongestSlice": 175.70000000298023,
       "cacheMiB": 13.18359375,
       "assets": true,
-      "readyMs": "1012.7"
+      "readyMs": "5091.5"
     },
     "shoePixelsIdentical": 216,
     "phoneScenePixelsIdentical": 8,
-    "desktopScenePixelsIdentical": 8
+    "desktopScenePixelsIdentical": 8,
+    "solePixelsIdentical": 183,
+    "denimPixelsIdentical": 54
   },
   "balance": {
     "carefulRoutesFinishAtLeast95PercentClean": true,
@@ -1450,6 +1452,368 @@
           "max": 5.799999997019768
         }
       }
+    },
+    "materialPass135": {
+      "shoes": {
+        "passed": true,
+        "cases": 216,
+        "failures": [],
+        "benchmarks": [
+          {
+            "workload": "mud",
+            "before": {
+              "median": 6.156249999068677,
+              "p95": 11.462500000372529
+            },
+            "after": {
+              "median": 5.793749999254942,
+              "p95": 11.349999999627471
+            }
+          },
+          {
+            "workload": "clean water",
+            "before": {
+              "median": 2.03125,
+              "p95": 2.349999999627471
+            },
+            "after": {
+              "median": 1.862500000745058,
+              "p95": 3.0625
+            }
+          },
+          {
+            "workload": "rinsed residue",
+            "before": {
+              "median": 2.087500000372529,
+              "p95": 2.362499998882413
+            },
+            "after": {
+              "median": 1.887499999254942,
+              "p95": 2.237500000745058
+            }
+          }
+        ]
+      },
+      "districts": {
+        "done": true,
+        "framesPerDistrict": 120,
+        "districts": [
+          {
+            "district": 0,
+            "before": {
+              "mean": 2.669999999552965,
+              "p95": 4.799999997019768,
+              "max": 16
+            },
+            "after": {
+              "mean": 2.6116666667163373,
+              "p95": 5.800000011920929,
+              "max": 10.599999994039536
+            },
+            "clean": [
+              79.73852635460864,
+              79.73852635460864
+            ],
+            "cacheMiB": [
+              10.546875,
+              10.546875
+            ]
+          },
+          {
+            "district": 1,
+            "before": {
+              "mean": 2.522500000273188,
+              "p95": 4.700000002980232,
+              "max": 5
+            },
+            "after": {
+              "mean": 2.4475000007698933,
+              "p95": 4.5,
+              "max": 5
+            },
+            "clean": [
+              51.30430164594605,
+              51.30430164594605
+            ],
+            "cacheMiB": [
+              13.18359375,
+              13.18359375
+            ]
+          },
+          {
+            "district": 2,
+            "before": {
+              "mean": 2.605000000571211,
+              "p95": 4.799999997019768,
+              "max": 5.300000011920929
+            },
+            "after": {
+              "mean": 2.487499999130766,
+              "p95": 4.4000000059604645,
+              "max": 4.899999991059303
+            },
+            "clean": [
+              36.75223145959114,
+              36.75223145959114
+            ],
+            "cacheMiB": [
+              13.18359375,
+              13.18359375
+            ]
+          },
+          {
+            "district": 3,
+            "before": {
+              "mean": 2.661666666592161,
+              "p95": 5.300000011920929,
+              "max": 5.5
+            },
+            "after": {
+              "mean": 2.544999999801318,
+              "p95": 4.799999997019768,
+              "max": 5.200000002980232
+            },
+            "clean": [
+              29.68584573839948,
+              29.68584573839948
+            ],
+            "cacheMiB": [
+              13.18359375,
+              13.18359375
+            ]
+          },
+          {
+            "district": 4,
+            "before": {
+              "mean": 2.91583333350718,
+              "p95": 5.5,
+              "max": 6.300000011920929
+            },
+            "after": {
+              "mean": 2.7766666658222676,
+              "p95": 5.299999997019768,
+              "max": 6.0999999940395355
+            },
+            "clean": [
+              8.920336888460605,
+              8.920336888460605
+            ],
+            "cacheMiB": [
+              13.18359375,
+              13.18359375
+            ]
+          }
+        ]
+      },
+      "desktop": {
+        "passed": true,
+        "samples": [
+          {
+            "y": 600,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 3300,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 7100,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 11000,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 15100,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 19500,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 20260,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 20900,
+            "different": 0,
+            "maxDelta": 0
+          }
+        ]
+      },
+      "mobile": {
+        "passed": true,
+        "samples": [
+          {
+            "y": 600,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 3300,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 7100,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 11000,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 15100,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 19500,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 20260,
+            "different": 0,
+            "maxDelta": 0
+          },
+          {
+            "y": 20900,
+            "different": 0,
+            "maxDelta": 0
+          }
+        ]
+      },
+      "sole": {
+        "passed": true,
+        "cases": 183
+      },
+      "denim": {
+        "passed": true,
+        "cases": 54
+      },
+      "renderCpuReductionPercent": 3.788162005512574,
+      "addedTypedLookupBytes": 12680,
+      "fullRoute": {
+        "done": true,
+        "idleFps": null,
+        "steps": 179,
+        "splits": [
+          {
+            "elapsed": 11446,
+            "duration": 11446
+          },
+          {
+            "elapsed": 26945,
+            "duration": 15499
+          },
+          {
+            "elapsed": 41103.5,
+            "duration": 14158.5
+          },
+          {
+            "elapsed": 55999.90000000596,
+            "duration": 14896.40000000596
+          },
+          {
+            "elapsed": 66805,
+            "duration": 10805.09999999404
+          }
+        ],
+        "metres": 100,
+        "clean": 95.97393213498867,
+        "time": 66805,
+        "cpu": {
+          "mean": 3.18,
+          "p95": 6,
+          "max": 176
+        },
+        "interval": {
+          "mean": 36.18,
+          "p95": 83.7,
+          "max": 284.3
+        },
+        "fps": 27.6,
+        "frames": 1845,
+        "slowCpuFrames": 5,
+        "generatedChunks": 28,
+        "prefetched": 26,
+        "visibleMisses": 0,
+        "warmLongestSlice": 146.8999999910593,
+        "initializationLongestSlice": 846.8999999910593,
+        "startupLongestSlice": 175.70000000298023,
+        "cacheMiB": 13.18359375,
+        "assets": true,
+        "readyMs": "5091.5"
+      },
+      "notes": [
+        "Timings compare v134 and v135 in alternating order on the same page. Five districts each have 60 warmup frames and 120 measured frames; shoe workloads have three warmup rounds and twenty measured rounds of eight paints.",
+        "Both full 100 m routes completed under heavy host CPU contention: v135 at 27.6 FPS and the unchanged v134 control at 15 FPS. These sequential, variably loaded runs are functional checks, not a speedup comparison. Use the paired alternating-frame benchmark for relative rendering costs; do not claim universal 60 FPS.",
+        "The full suite passed in 138985 ms. Final shoe, sole, mesh and scene comparisons completed after all renderer edits. The production model has only a cache-key change."
+      ],
+      "busyHostControlRoute": {
+        "done": true,
+        "idleFps": null,
+        "steps": 179,
+        "splits": [
+          {
+            "elapsed": 12955,
+            "duration": 12955
+          },
+          {
+            "elapsed": 29643.09999999404,
+            "duration": 16688.09999999404
+          },
+          {
+            "elapsed": 45367.19999998808,
+            "duration": 15724.09999999404
+          },
+          {
+            "elapsed": 60002.39999999106,
+            "duration": 14635.20000000298
+          },
+          {
+            "elapsed": 71508.09999999404,
+            "duration": 11505.70000000298
+          }
+        ],
+        "metres": 100,
+        "clean": 95.70647685383264,
+        "time": 71508.09999999404,
+        "cpu": {
+          "mean": 6.09,
+          "p95": 9.9,
+          "max": 380.6
+        },
+        "interval": {
+          "mean": 66.63,
+          "p95": 133.3,
+          "max": 716.5
+        },
+        "fps": 15,
+        "frames": 1072,
+        "slowCpuFrames": 9,
+        "generatedChunks": 28,
+        "prefetched": 25,
+        "visibleMisses": 1,
+        "warmLongestSlice": 232.59999999403954,
+        "initializationLongestSlice": 1192.5,
+        "startupLongestSlice": 81.90000000596046,
+        "cacheMiB": 13.18359375,
+        "assets": true,
+        "readyMs": "7131.6"
+      }
     }
   },
   "cleanup": {
@@ -1457,6 +1821,6 @@
     "temporaryPreviewFilesRemaining": 0,
     "latestScreenshotOnly": true,
     "rebuildableJekyllCacheRemoved": true,
-    "removedBytesThisPass": 78284950
+    "removedBytesThisPass": 77894614
   }
 }

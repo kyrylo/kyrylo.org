@@ -1,4 +1,4 @@
-import { randomSource } from './model.js?v=lean-frames-134';
+import { randomSource } from './model.js?v=light-materials-135';
 
 export function createWildlife(street) {
   const rand = randomSource(street.seed ^ 0x42697264);

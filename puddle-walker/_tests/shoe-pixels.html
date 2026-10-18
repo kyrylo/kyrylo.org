@@ -33,10 +33,22 @@ const button=document.createElement('button');button.textContent='Benchmark dirt
 document.querySelector('#report').textContent=JSON.stringify({passed:!failures.length,cases:results.length,failures},null,2);
 button.onclick=()=>{
  button.disabled=true;const f=createGame().feet[0],id=names.indexOf('mud');
- for(let i=0;i<f.stain.length;i++){f.stain[i]=.83;f.deposits[i]=.65;f.wetness[i]=.7;f.depositTypes[i]=id;for(let ch=0;ch<3;ch++)f.tint[i*3+ch]=MATERIALS.mud.color[ch];}
- const c=canvas().getContext('2d'),times=[[],[]],painters=[oldPaint,newPaint];let round=0;
+ const workloads=[{name:'mud',stain:.83,mass:.65},{name:'clean water',stain:0,mass:0},{name:'rinsed residue',stain:.05,mass:.008}];
+ const c=canvas().getContext('2d'),times=[[],[]],painters=[oldPaint,newPaint],benchmarks=[];let round=0,workload=0;
+ function prepare(){
+  const w=workloads[workload];
+  for(let i=0;i<f.stain.length;i++){f.stain[i]=w.stain;f.deposits[i]=w.mass;f.wetness[i]=.7;f.depositTypes[i]=id;for(let ch=0;ch<3;ch++)f.tint[i*3+ch]=MATERIALS.mud.color[ch];}
+ }
+ prepare();
  function frame(){for(const i of round%2?[1,0]:[0,1]){const t=performance.now();for(let j=0;j<8;j++){c.clearRect(0,0,96,224);c.drawImage(clean[0],0,0);painters[i](c,f);}if(round>2)times[i].push((performance.now()-t)/8);}
- if(++round<23)requestAnimationFrame(frame);else{const stats=a=>{a.sort((x,y)=>x-y);return {median:(a[9]+a[10])/2,p95:a[19]}};document.querySelector('#report').textContent=JSON.stringify({passed:!failures.length,cases:results.length,failures,before:stats(times[0]),after:stats(times[1])},null,2);button.disabled=false;}}
+  if(++round===23){
+   const stats=a=>{a.sort((x,y)=>x-y);return {median:(a[9]+a[10])/2,p95:a[19]}};
+   benchmarks.push({workload:workloads[workload].name,before:stats(times[0]),after:stats(times[1])});
+   if(++workload===workloads.length){document.querySelector('#report').textContent=JSON.stringify({passed:!failures.length,cases:results.length,failures,benchmarks},null,2);button.disabled=false;return;}
+   round=0;times.forEach(a=>a.length=0);prepare();
+  }
+  requestAnimationFrame(frame);
+ }
  requestAnimationFrame(frame);
 };
 </script>

@@ -1,10 +1,20 @@
-import {createDenimWear,updateDenimWear,paintDenimWear} from './denim-wear.js?v=lean-frames-134';
+import {createDenimWear,updateDenimWear,paintDenimWear} from './denim-wear.js?v=light-materials-135';
 // Material coordinates run from cuff (v=0) to thigh (v=1). The same cloth
 // vertices carry the weave, creases, stitching and dirt through every pose.
 const WIDTH=96,HEIGHT=512,BANDS=24;
 const mix=(a,b,t)=>a+(b-a)*t;
 const smooth=t=>t*t*(3-2*t);
-const curve=(a,b,c,d,t,p)=>{p.x=(1-t)**3*a.x+3*(1-t)**2*t*b.x+3*(1-t)*t*t*c.x+t**3*d.x;p.y=(1-t)**3*a.y+3*(1-t)**2*t*b.y+3*(1-t)*t*t*c.y+t**3*d.y;return p;};
+// The cloth's sample positions and texture strips are fixed. Only its control
+// points move; keep the original cubic arithmetic without rebuilding weights.
+const samples=Array.from({length:BANDS+1},(_,i)=>{
+  const v=i/BANDS,lower=v<=.5,t=lower?v*2:(v-.5)*2;
+  return {v,lower,ease:smooth(t),a:(1-t)**3,b:3*(1-t)**2*t,c:3*(1-t)*t*t,d:t**3};
+});
+const strips=Array.from({length:BANDS},(_,i)=>{
+  const sy=i*HEIGHT/BANDS,sh=HEIGHT/BANDS,top=Math.max(0,sy-1);
+  return {sy,sh,top,height:Math.min(HEIGHT,sy+sh+1)-top};
+});
+const curve=(a,b,c,d,w,p)=>{p.x=w.a*a.x+w.b*b.x+w.c*c.x+w.d*d.x;p.y=w.a*a.y+w.b*b.y+w.c*c.y+w.d*d.y;return p;};
 export function legRows(pose,shoe,side,lift,center,viewH,breath=0,rows=[]){
   const ca=Math.cos(pose.angle),sa=Math.sin(pose.angle);
   const ankle={x:pose.x-shoe.length*.17*pose.sy*sa,y:pose.y+shoe.length*.17*pose.sy*ca};
@@ -18,10 +28,10 @@ export function legRows(pose,shoe,side,lift,center,viewH,breath=0,rows=[]){
   const kneeAngle=Math.atan2(ankle.x-hip.x,hip.y-ankle.y)*.45;
   const point={};
   for(let i=0;i<=BANDS;i++){
-    const v=i/BANDS,lower=v<=.5,t=lower?v*2:(v-.5)*2;
-    const p=lower?curve(ankle,shin,below,knee,t,point):curve(knee,above,thigh,hip,t,point);
-    const angle=lower?mix(pose.angle,kneeAngle,smooth(t)):mix(kneeAngle,0,smooth(t));
-    const width=lower?mix(shoe.width*.54*pose.sx,24,smooth(t)):mix(24,28,smooth(t));
+    const w=samples[i],{v,lower,ease}=w;
+    const p=lower?curve(ankle,shin,below,knee,w,point):curve(knee,above,thigh,hip,w,point);
+    const angle=lower?mix(pose.angle,kneeAngle,ease):mix(kneeAngle,0,ease);
+    const width=lower?mix(shoe.width*.54*pose.sx,24,ease):mix(24,28,ease);
     const dx=Math.cos(angle)*width,dy=Math.sin(angle)*width;
     const row=rows[i]||={left:{},right:{},v};
     row.left.x=p.x-dx;row.left.y=p.y-dy;row.right.x=p.x+dx;row.right.y=p.y+dy;
@@ -74,7 +84,8 @@ export function createDenim(image){
     }
     return stained[f.side];
   }
-  function triangle(ctx,texture,a,b,c,sy,sh,second){
+  function triangle(ctx,texture,a,b,c,strip,second){
+    const {sy,sh,top,height}=strip;
     // Subpixel overlap prevents hairline cracks between opaque mesh triangles.
     const mx=(a.x+b.x+c.x)/3,my=(a.y+b.y+c.y)/3;
     ctx.save();ctx.beginPath();
@@ -87,7 +98,7 @@ export function createDenim(image){
     const ax=second?(b.x-c.x)/WIDTH:(b.x-a.x)/WIDTH,ay=second?(b.y-c.y)/WIDTH:(b.y-a.y)/WIDTH;
     const bx=second?(b.x-a.x)/sh:(c.x-a.x)/sh,by=second?(b.y-a.y)/sh:(c.y-a.y)/sh;
     ctx.transform(ax,ay,bx,by,a.x-(second?ax*WIDTH:0)-bx*sy,a.y-(second?ay*WIDTH:0)-by*sy);
-    ctx.drawImage(texture,0,Math.max(0,sy-1),WIDTH,Math.min(HEIGHT,sy+sh+1)-Math.max(0,sy-1),0,Math.max(0,sy-1),WIDTH,Math.min(HEIGHT,sy+sh+1)-Math.max(0,sy-1));
+    ctx.drawImage(texture,0,top,WIDTH,height,0,top,WIDTH,height);
     ctx.restore();
   }
   return (ctx,g,f,rows,bottom=Infinity)=>{
@@ -100,13 +111,13 @@ export function createDenim(image){
     // bleed through the fabric and look like a shimmering weave.
     ctx.fillStyle='#26475f';ctx.fill();ctx.clip();
     for(let i=0;i<BANDS;i++){
-      const a=rows[i],b=rows[i+1],sy=i*HEIGHT/BANDS,sh=HEIGHT/BANDS;
+      const a=rows[i],b=rows[i+1],strip=strips[i];
       // The hip extends beyond the screen. Keep its mesh for hit testing and
       // the cloth outline, but do not submit invisible texture triangles.
       // One world pixel includes the triangle's subpixel seam overlap.
       if(Math.min(a.left.y,a.right.y,b.left.y,b.right.y)>bottom+1)continue;
-      triangle(ctx,texture,a.left,a.right,b.left,sy,sh,false);
-      triangle(ctx,texture,a.right,b.right,b.left,sy,sh,true);
+      triangle(ctx,texture,a.left,a.right,b.left,strip,false);
+      triangle(ctx,texture,a.right,b.right,b.left,strip,true);
     }
     ctx.restore();
   };

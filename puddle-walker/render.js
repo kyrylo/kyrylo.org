@@ -1,22 +1,31 @@
-import {createHomeEntranceSteps} from './home-entrance.js?v=lean-frames-134';
-import {HOME} from './home-arrival.js?v=lean-frames-134';
-import {rippleProfile,reflectionFacets,reflectionSample} from './water-motion.js?v=lean-frames-134';
-import {createLooseDebris,updateLooseDebris,createDebrisPainter,debrisPose} from './loose-debris.js?v=lean-frames-134';
-import {createFootprintPainter} from './footprints.js?v=lean-frames-134';
-import {paintGroundBank,paintCrater,groundPath,paintSteppingStone,paintWashoutMouth,paintAggregateSpill} from './road-ground.js?v=lean-frames-134';
-import {paintRoadWear,paintCurbDrain,paintPaving,paintPlantingBed} from './street-surfaces.js?v=lean-frames-134';
-import { VEHICLES, vehicleLineup } from './vehicles.js?v=lean-frames-134';
-import {paintVanMessage} from './street-charm.js?v=lean-frames-134';
-import { SHOE_CROP, SHOE_MASK } from './sprite-data.js?v=lean-frames-134';
-import { createDenim, legRows, legContains } from './denim.js?v=lean-frames-134';
-import { createShoeWearSteps } from './shoe-wear.js?v=lean-frames-134';
-import { ROAD, PAVEMENT, SHOES, MATERIALS, boundary, randomSource, condition, predictedTarget, surfaceAt, footPoint, clamp, puddleDepth, DISTRICT_LENGTH, CAR } from './model.js?v=lean-frames-134';
-import { createNeighborhood } from './neighborhood.js?v=lean-frames-134';
-import { paintGroundContacts, paintStickyThreads } from './ground-effects.js?v=lean-frames-134';
+import {createHomeEntranceSteps} from './home-entrance.js?v=light-materials-135';
+import {HOME} from './home-arrival.js?v=light-materials-135';
+import {rippleProfile,reflectionFacets,reflectionSample} from './water-motion.js?v=light-materials-135';
+import {createLooseDebris,updateLooseDebris,createDebrisPainter,debrisPose} from './loose-debris.js?v=light-materials-135';
+import {createFootprintPainter} from './footprints.js?v=light-materials-135';
+import {paintGroundBank,paintCrater,groundPath,paintSteppingStone,paintWashoutMouth,paintAggregateSpill} from './road-ground.js?v=light-materials-135';
+import {paintRoadWear,paintCurbDrain,paintPaving,paintPlantingBed} from './street-surfaces.js?v=light-materials-135';
+import { VEHICLES, vehicleLineup } from './vehicles.js?v=light-materials-135';
+import {paintVanMessage} from './street-charm.js?v=light-materials-135';
+import { SHOE_CROP, SHOE_MASK } from './sprite-data.js?v=light-materials-135';
+import { createDenim, legRows, legContains } from './denim.js?v=light-materials-135';
+import { createShoeWearSteps } from './shoe-wear.js?v=light-materials-135';
+import { ROAD, PAVEMENT, SHOES, MATERIALS, boundary, randomSource, condition, predictedTarget, surfaceAt, footPoint, clamp, puddleDepth, DISTRICT_LENGTH, CAR } from './model.js?v=light-materials-135';
+import { createNeighborhood } from './neighborhood.js?v=light-materials-135';
+import { paintGroundContacts, paintStickyThreads } from './ground-effects.js?v=light-materials-135';
 const makeCanvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
 const loadImage = url => new Promise(resolve => { const image = new Image(); image.onload = () => resolve(image); image.onerror = () => resolve(null); image.src = url; });
 const ellipse = (c, x, y, rx, ry, color) => { c.beginPath(); c.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2); c.fillStyle = color; c.fill(); };
 const rgba = (type, a) => `rgba(${MATERIALS[type]?.color.join(',') || '90,70,45'},${a})`;
+// Sole grain stays attached to its zone. Its seeded positions never depend on
+// moisture or stain strength, so do not hash them again on every repaint.
+const soleGrain=[0,1].map(side=>{
+  const noise=n=>{const v=Math.sin(n*127.1+side*311.7)*43758.5453;return v-Math.floor(v);};
+  return Array.from({length:8},(_,i)=>Float64Array.from({length:56},(_,j)=>j%2
+    ?Math.floor(i/2)*56+noise(i*50+Math.floor(j/2)+600)*56
+    :i%2*48+noise(i*50+j/2+300)*48));
+});
+const shoeBends=Float64Array.from({length:17},(_,i)=>Math.sin(i/16*Math.PI));
 function rainLeaf(c, x, y, size, angle, color) {
   c.save(); c.translate(x,y); c.rotate(angle);
   c.beginPath();c.moveTo(0,-size);c.bezierCurveTo(size*.9,-size*.5,size*.65,size*.6,0,size);
@@ -939,18 +948,18 @@ export async function createRenderer(canvas, inspection = null, resultInspection
     paintedAt[f.side] = g.time;
   }
   function updateSole(f) {
-    const noise=n=>{const v=Math.sin(n*127.1+f.side*311.7)*43758.5453;return v-Math.floor(v);};
     const sc=soles[f.side].getContext('2d');sc.clearRect(0,0,96,224);sc.drawImage(cleanSoles[f.side],0,0);
     sc.globalCompositeOperation='source-atop';
     f.sole.forEach((zone,i)=>{
       soleStains[f.side][i]=zone.stain;soleTypes[f.side][i]=zone.stainType;
       if(!zone.stain)return;
       const x=i%2*48,y=Math.floor(i/2)*56;
+      const lump=['mud','poop','gum','clay','tar','cement'].includes(zone.stainType),r=lump?1+zone.stain*3:.5+zone.stain;
       sc.fillStyle=rgba(zone.stainType,Math.min(.94,zone.stain*1.7));sc.fillRect(x,y,48,56);
+      const grain=soleGrain[f.side][i];
+      sc.fillStyle=rgba(zone.stainType,Math.min(.9,zone.stain*2));
       for(let k=0;k<28;k++){
-        const px=x+noise(i*50+k+300)*48,py=y+noise(i*50+k+600)*56;
-        const lump=['mud','poop','gum','clay','tar','cement'].includes(zone.stainType),r=lump?1+zone.stain*3:.5+zone.stain;
-        ellipse(sc,px,py,r,r*.7,rgba(zone.stainType,Math.min(.9,zone.stain*2)));
+        sc.beginPath();sc.ellipse(grain[k*2],grain[k*2+1],r,r*.7,0,0,Math.PI*2);sc.fill();
       }
     });
     sc.globalCompositeOperation='source-over';
@@ -963,8 +972,7 @@ export async function createRenderer(canvas, inspection = null, resultInspection
     c.drawImage(soles[f.side], -w / 2, -h / 2 + 1.6 + Math.abs(heelLift), w, h);
     for (let i = 0; i < 16; i++) {
       const v = i / 16, next = (i + 1) / 16;
-      const bend = t => Math.sin(t * Math.PI) * heelLift;
-      const y0 = -h / 2 + v * h + bend(v), y1 = -h / 2 + next * h + bend(next);
+      const y0 = -h / 2 + v * h + shoeBends[i]*heelLift, y1 = -h / 2 + next * h + shoeBends[i+1]*heelLift;
       c.drawImage(sprites[f.side], 0, i * 14, 96, 14, -w / 2, y0, w, y1 - y0 + .3);
     }
   }

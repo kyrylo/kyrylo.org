@@ -1,4 +1,4 @@
-import { MATERIALS, GRID, clamp } from './model.js?v=lean-frames-134';
+import { MATERIALS, GRID, clamp } from './model.js?v=light-materials-135';
 
 // A stable material field at sprite resolution. Grain does not crawl when the
 // foot flexes; only moisture and the amount of physically deposited material change.
@@ -82,11 +82,16 @@ export function* createShoeWearSteps(terrain,cleanSprites){
  const neededLeft=new Int16Array(GRID.height),neededRight=new Int16Array(GRID.height);
  const stainRows=new Float64Array(GRID.height*W),wetRows=new Float64Array(GRID.height*W),massRows=new Float64Array(GRID.height*W);
  const neighbours=new Int16Array(GRID.width*GRID.height),stretchByCell=new Float64Array(GRID.width*GRID.height),pixelWet=new Float64Array(W*H);
+ const smearX=new Int16Array(GRID.width*GRID.height),smearY=new Int16Array(GRID.width*GRID.height);
  return function paint(target,f){
   if(!f.spatter.length&&!f.stain.some(amount=>amount>=.003)&&!f.wetness.some(amount=>amount>=.03))return;
   const {coarse,fine,grain,cavity,inkGrain,dampGrain,pigmentGrain,left,right,glints}=fields[f.side],fd=film.data,bd=body.data;
+  // Rinsed leather and water have no raised material. Bilinear interpolation
+  // cannot exceed its largest input, so skip the entire deposit preparation
+  // when no cell can reach the shader's existing visibility threshold.
+  const deposits=f.deposits.some(mass=>mass>=.009);
   let hasFilm=false,hasBody=false;
-  fd.fill(0);bd.fill(0);relief.fill(0);
+  fd.fill(0);if(deposits){bd.fill(0);relief.fill(0);}
   // Most real stains occupy a small rim or toe. Only visit sprite columns
   // that can interpolate a visible stained cell; retain the exact same pixels.
   rowLeft.fill(GRID.width);rowRight.fill(-1);
@@ -107,7 +112,7 @@ export function* createShoeWearSteps(terrain,cleanSprites){
    const {i,dx,u}=sampleX[x],a=y*GRID.width+i,b=a+dx,p=y*W+x,weight=1-u;
    stainRows[p]=f.stain[a]*weight+f.stain[b]*u;
    wetRows[p]=f.wetness[a]*weight+f.wetness[b]*u;
-   massRows[p]=f.deposits[a]*weight+f.deposits[b]*u;
+   if(deposits)massRows[p]=f.deposits[a]*weight+f.deposits[b]*u;
   }
   // Resolve pigment neighbours and smear lengths once per physics cell, rather
   // than allocating and searching the same neighbours for every sprite pixel.
@@ -117,18 +122,23 @@ export function* createShoeWearSteps(terrain,cleanSprites){
    if(cell+1<f.stain.length&&f.stain[cell+1]>f.stain[best])best=cell+1;
    if(cell>=GRID.width&&f.stain[cell-GRID.width]>f.stain[best])best=cell-GRID.width;
    if(cell+GRID.width<f.stain.length&&f.stain[cell+GRID.width]>f.stain[best])best=cell+GRID.width;
-   neighbours[cell]=best;stretchByCell[cell]=Math.hypot(f.smearX[cell],f.smearY[cell]);
+   neighbours[cell]=best;
+   if(deposits){
+    stretchByCell[cell]=Math.hypot(f.smearX[cell],f.smearY[cell]);
+    // Smear coordinates are bounded Float32 values. Round their offset once
+    // instead of repeating the same rounding at every integer sprite pixel.
+    smearX[cell]=Math.round(-f.smearX[cell]*5);smearY[cell]=Math.round(-f.smearY[cell]*5);
+   }
   }
   for(let y=0;y<H;y++){
    const row=sampleY[y],v=row.v,weight=1-v,top=row.i*W,bottom=row.j*W;
    for(let x=pixelLeft[y];x<=pixelRight[y];x++){
     const p=y*W+x,k=p*4,a=top+x,b=bottom+x;
     const amount=stainRows[a]*weight+stainRows[b]*v,wet=wetRows[a]*weight+wetRows[b]*v;if(amount<.003&&wet<.03)continue;
-    pixelWet[p]=wet;let cell=nearestCell[p];
+    let cell=nearestCell[p];
     // Interpolated edge coverage must inherit a dirty neighbour's pigment,
     // rather than uninitialised black from just beyond the contact mask.
     if(f.stain[cell]<amount*.25)cell=neighbours[cell];
-    const mass=massRows[a]*weight+massRows[b]*v;
     // Moisture is visible even on rinsed white leather. It follows the actual
     // waterline, darkens seams, and fades independently from bound dirt pigment.
     const ink=Math.min(220,amount*205*inkGrain[p]*(1+wet*.15));
@@ -143,11 +153,14 @@ export function* createShoeWearSteps(terrain,cleanSprites){
      fd[k+2]=(clamp(f.tint[tint+2]+dryLight-wetShade+grit,0,255)*ink+151*damp)/alpha;
      hasFilm=true;
     }
+    if(!deposits)continue;
+    const mass=massRows[a]*weight+massRows[b]*v;
     if(mass<.009)continue;
+    pixelWet[p]=wet;
     // Water and oil have no raised deposits. Deforming and shading clay for
     // every wet pixel was expensive work whose result was immediately discarded.
     const material=materials[f.depositTypes[cell]],{color,gum,grit}=material;
-    const tx=f.smearX[cell],ty=f.smearY[cell],stretch=stretchByCell[cell],sx=clamp(Math.round(x-tx*5),0,W-1),sy=clamp(Math.round(y-ty*5),0,H-1);
+    const stretch=stretchByCell[cell],sx=clamp(x+smearX[cell],0,W-1),sy=clamp(y+smearY[cell],0,H-1);
     const cluster=coarse[p]*(1-stretch*.35)+coarse[sy*W+sx]*stretch*.35;
     const threshold=.7-Math.min(.45,mass*.7);
     const broken=clamp((cluster-threshold+.1+cavity[p]*mass*.18)/.24,0,1),coverage=smooth(broken)*clamp(mass*5,0,1);

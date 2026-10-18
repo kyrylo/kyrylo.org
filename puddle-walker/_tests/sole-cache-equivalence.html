@@ -15,7 +15,7 @@ function check(g,label){
 for(const shoe of ['leather','knit','canvas']){
  const g=createGame(shoe,321);setShoeMask(g,renderers[0].mask);g.time=8;
  check(g,shoe+' clean reset');
- for(const type of ['water','mud','oil','gum','gravel','poop']){
+ for(const type of ['water','mud','oil','gum','gravel','poop','clay','tar','cement','algae']){
   for(const f of g.feet){
    f.stain.fill(.4);f.wetness.fill(.9);f.deposits.fill(MATERIALS[type].liquid?0:.4);f.depositTypes.fill(names.indexOf(type));
    for(let i=0;i<f.stain.length;i++)for(let c=0;c<3;c++)f.tint[i*3+c]=MATERIALS[type].color[c];
