@@ -273,7 +273,7 @@
     .profile-photo {
       display: block;
       width: 4rem;
-      height: auto;
+      height: 4rem;
     }
 
     .home {
@@ -290,13 +290,16 @@
     }
 
     .profile-header .site-title {
+      width: min(100%, 14.5rem);
       margin: 0;
     }
 
     .profile-header .site-logo {
       display: block;
-      width: min(100%, 14.5rem);
+      width: 100%;
       height: auto;
+      aspect-ratio: 332 / 41;
+      object-fit: contain;
       margin-inline: auto;
     }
 
@@ -307,6 +310,7 @@
 
     .profile-photo-large {
       width: 6rem;
+      height: 6rem;
       border-radius: 50%;
     }
 
