@@ -337,81 +337,55 @@
     }
 
     .home-location {
-      position: relative;
       width: min(100%, 28rem);
-      margin: 1.75rem auto 0;
+      margin: 2.5rem auto 0;
     }
 
-    .home-location svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      overflow: visible;
-    }
-
-    .location-grid {
-      fill: none;
-      stroke: var(--border);
-      stroke-width: .5;
-    }
-
-    .location-land {
-      color: var(--muted);
-      fill: url(#location-dots);
-      opacity: .35;
-    }
-
-    .location-country {
-      color: var(--link);
-      fill: url(#location-country-dots);
-      stroke: var(--link);
-      stroke-width: .6;
-      stroke-linejoin: round;
-      opacity: .65;
-    }
-
-    .location-route {
-      fill: none;
-      stroke: var(--link);
-      stroke-width: 1.5;
-      stroke-dasharray: 3 5;
-      stroke-linecap: round;
-    }
-
-    .location-origin {
-      fill: var(--background);
-      stroke: var(--link);
-      stroke-width: 1.5;
-    }
-
-    .location-destination,
-    .location-halo {
-      fill: var(--link);
-    }
-
-    .location-halo {
-      opacity: .15;
+    .location-labels {
+      display: grid;
+      grid-template-columns: auto minmax(2.5rem, 1fr) auto;
+      align-items: center;
+      gap: clamp(.75rem, 3vw, 1.5rem);
     }
 
     .location-label {
-      position: absolute;
       display: flex;
       flex-direction: column;
-      line-height: 1.4;
+      gap: .15rem;
+      line-height: 1.35;
     }
 
     .location-label-origin {
-      top: 24.2%;
-      right: 80%;
-      transform: translateY(-50%);
-      text-align: right;
+      text-align: left;
     }
 
     .location-label-destination {
-      top: 82%;
-      left: 82.2%;
-      transform: translateX(-50%);
-      text-align: center;
+      text-align: right;
+    }
+
+    .location-flight {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      color: var(--muted);
+    }
+
+    .location-flight::before,
+    .location-flight::after {
+      content: "";
+      flex: 1;
+      border-top: 1px dashed currentColor;
+      opacity: .35;
+    }
+
+    .location-plane {
+      flex: 0 0 1.5rem;
+      height: 1.5rem;
+      background: currentColor;
+      clip-path: polygon(100% 50%, 95% 45%, 87% 43%, 65% 43%,
+        40% 10%, 28% 10%, 44% 43%, 16% 43%, 7% 30%, 0 30%,
+        5% 50%, 0 70%, 7% 70%, 16% 57%, 44% 57%, 28% 90%,
+        40% 90%, 65% 57%, 87% 57%, 95% 55%);
     }
 
     .location-caption {
@@ -424,27 +398,13 @@
 
     .location-city {
       color: var(--text);
-      font-size: .875rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 600;
     }
 
     .location-country-name {
       color: var(--muted);
-      font-size: .6875rem;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .location-halo {
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: location-arrival 3s ease-out 2;
-      }
-
-      @keyframes location-arrival {
-        0%, 100% { transform: scale(1); opacity: .15; }
-        65% { transform: scale(1.6); opacity: 0; }
-        66% { transform: scale(1); opacity: 0; }
-      }
+      font-size: .75rem;
     }
 
     .home-contact {
