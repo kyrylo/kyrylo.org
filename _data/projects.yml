@@ -92,6 +92,11 @@
 - title: Doodles & experiments
   id: doodles-and-experiments
   projects:
+    - name: A Little Life
+      id: a-little-life
+      url: /a-little-life/
+      image: a-little-life.webp
+      description: A hand-drawn story about the people who hold us and the care we pass on.
     - name: Puddle Walker
       id: puddle-walker
       url: /puddle-walker/
