@@ -11,7 +11,7 @@
     - name: Owlytics
       id: owlytics
       url: /owlytics/
-      image: owlytics-owl.webp
+      image: owlytics-owl-v2.webp
       description: Damn small, self-hosted web analytics. Rust, SQLite, and no cookies.
       source_url: https://github.com/kyrylo/owlytics
       source_label: GitHub
