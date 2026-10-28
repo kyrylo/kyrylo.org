@@ -8,6 +8,13 @@
       description: A self-hosted Sentry alternative. Track errors, get notified, fix bugs faster.
       source_url: https://github.com/telebugs/docs.telebugs.com
       source_label: Docs on GitHub
+    - name: Owlytics
+      id: owlytics
+      url: /owlytics/
+      image: owlytics-v2.webp
+      description: Damn small, self-hosted web analytics. Rust, SQLite, and no cookies.
+      source_url: https://github.com/kyrylo/owlytics
+      source_label: GitHub
     - name: Mini Car Racing
       id: minicar-racing
       url: https://minicar.racing

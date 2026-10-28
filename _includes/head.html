@@ -7,8 +7,12 @@
   {%- seo -%}
   {%- feed_meta -%}
 
+  {% if page.favicon %}
+  <link rel="icon" type="image/svg+xml" href="{{ page.favicon | relative_url }}" />
+  {% else %}
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=3" sizes="96x96" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico?v=3" />
+  {% endif %}
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3" />
   <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
   <link rel="manifest" href="/assets/images/site.webmanifest?v=3" />

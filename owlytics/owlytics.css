@@ -1,0 +1,236 @@
+:root {
+  color-scheme: light dark;
+  --background: light-dark(#f7f8fc, #11131d);
+  --text: light-dark(#26283b, #edf0fa);
+  --muted: light-dark(#676d82, #a3abc2);
+  --border: light-dark(#dcdde7, #35394b);
+  --link: light-dark(#7150d7, #b6a0ff);
+}
+
+.author-block {
+  position: absolute;
+  top: -1px;
+  left: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 0 0 8px 8px;
+  background: light-dark(#ffffff60, #ffffff08);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.author-wordmark {
+  display: block;
+  width: 100px;
+  height: auto;
+  flex: none;
+  color: var(--text);
+}
+
+.author-block:hover { border-color: var(--muted); }
+.author-block:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+
+.owl-hero {
+  padding: 2.5rem 0 3.25rem;
+  text-align: center;
+}
+
+.owl-portrait {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto .65rem;
+}
+
+.owl-name {
+  margin: 0 0 2rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+.owl-hero h1 {
+  margin: 0 auto;
+  color: var(--text);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.owl-repository {
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.owlytics-page { max-width: 68rem; }
+
+.owl-product {
+  max-width: 52rem;
+  margin: 0 auto 3.5rem;
+}
+
+.owl-product-link {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: .625rem;
+}
+
+.owl-product img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.owl-product figcaption {
+  margin-top: .8rem;
+  color: var(--muted);
+  font-size: .75rem;
+  text-align: center;
+}
+
+.owl-footprint {
+  max-width: 52rem;
+  margin: 0 auto 4rem;
+}
+
+.owl-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 1.5rem 0;
+  border-block: 1px solid var(--border);
+  text-align: center;
+}
+
+.owl-stats > div { display: flex; flex-direction: column; }
+.owl-stats dt { color: var(--muted); font-size: .8rem; }
+.owl-stats dd {
+  order: -1;
+  margin: 0 0 .4rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+}
+.owl-stats dd span { font-size: .5em; letter-spacing: -.02em; }
+.owl-measurement {
+  max-width: 42rem;
+  margin: 1rem auto 2.5rem;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.owl-install {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: .625rem;
+  background: light-dark(#fff, #1b1e2b);
+}
+.owl-install-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.owl-install-heading h2 { margin: 0; font-size: 1.25rem; }
+.owl-install-heading > span { color: var(--muted); font-size: .75rem; }
+.owl-install-command {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: .375rem;
+  background: var(--background);
+}
+.owl-install-command pre {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: .25rem;
+  background: transparent;
+  font-size: .8rem;
+}
+.owl-copy {
+  flex: none;
+  padding: .45rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: .25rem;
+  color: var(--text);
+  background: light-dark(#fff, #232738);
+  font: inherit;
+  font-size: .75rem;
+  cursor: pointer;
+}
+.owl-copy:hover { border-color: var(--muted); }
+.owl-copy:focus-visible, .owl-start > summary:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+.owl-start { margin-top: 1rem; font-size: .875rem; }
+.owl-start > summary { cursor: pointer; text-underline-offset: .2em; }
+.owl-start[open] > summary { margin-bottom: 1rem; }
+.owl-start p { margin-bottom: 1rem; }
+.owl-start pre { background: var(--background); font-size: .75rem; }
+.owl-install-alternatives { margin: 1rem 0 0; color: var(--muted); font-size: .8rem; }
+
+.owl-letter {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.125rem, 1rem + .4vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.owl-letter::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--muted);
+}
+
+.owl-letter p { margin: 0 0 1.3em; }
+.owl-letter .owl-letter-opening {
+  font-size: 1.2em;
+  line-height: 1.55;
+  letter-spacing: -.015em;
+}
+.owl-letter-opening::first-letter {
+  float: left;
+  margin: .04em .12em 0 0;
+  font-size: 3.2em;
+  line-height: .82;
+}
+.owl-letter a { text-underline-offset: .2em; }
+.owl-letter .owl-signature {
+  margin-top: 1.75rem;
+  font-size: 1.15em;
+  font-style: italic;
+}
+.owl-signature a { color: var(--text); }
+
+@media (max-width: 37.5rem) {
+  .owl-hero { padding: 2.5rem 0 2.5rem; }
+  .owl-portrait { width: 56px; height: 56px; }
+  .owl-name { margin-bottom: 1.5rem; }
+  .owl-letter { padding-top: .5rem; }
+  .owl-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
+  .owl-install { padding: 1rem; }
+}
