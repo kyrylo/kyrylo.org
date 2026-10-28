@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Owlytics | damn small self-hosted analytics | Kyrylo Silin</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Owlytics | damn small self-hosted analytics" />
+<meta name="author" content="Kyrylo Silin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Small, self-hosted web analytics built with Rust and SQLite. Cookieless, open source, and ready to run on your server." />
+<meta property="og:description" content="Small, self-hosted web analytics built with Rust and SQLite. Cookieless, open source, and ready to run on your server." />
+<link rel="canonical" href="https://kyrylo.org/owlytics/" />
+<meta property="og:url" content="https://kyrylo.org/owlytics/" />
+<meta property="og:site_name" content="Kyrylo Silin" />
+<meta property="og:image" content="https://kyrylo.org/owlytics/og-v2.png" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:alt" content="Owlytics owl above the headline “Damn small self-hosted analytics”" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://kyrylo.org/owlytics/og-v2.png" />
+<meta name="twitter:image:alt" content="Owlytics owl above the headline “Damn small self-hosted analytics”" />
+<meta property="twitter:title" content="Owlytics | damn small self-hosted analytics" />
+<meta name="twitter:site" content="@kyrylosilin" />
+<meta name="twitter:creator" content="@Kyrylo Silin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-10-28T21:02:31+08:00","description":"Small, self-hosted web analytics built with Rust and SQLite. Cookieless, open source, and ready to run on your server.","headline":"Owlytics | damn small self-hosted analytics","image":{"width":1200,"height":630,"alt":"Owlytics owl above the headline “Damn small self-hosted analytics”","url":"https://kyrylo.org/owlytics/og-v2.png","@type":"imageObject"},"url":"https://kyrylo.org/owlytics/"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" />
+  <link rel="icon" type="image/svg+xml" href="/owlytics/favicon.svg?v=3" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3" />
+  <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
+  <link rel="manifest" href="/assets/images/site.webmanifest?v=3" />
+
+  <script async src="https://analytics.kyrylo.org/js/pa-AIFJJD2jjgvAtiz_pzq6_.js"></script>
+  <script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>
+  <script>
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+    plausible.init()
+  </script>
+
+  <style>
+    :root {
+      --font-size: clamp(1.125rem, 1rem + .3vw, 1.25rem);
+      --background: #fff;
+      --text: #222;
+      --muted: #6b6b6b;
+      --link: #2563eb;
+      --border: #e5e5e5;
+      --surface: #f6f6f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--background);
+      color: var(--text);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: clamp(2rem, 5vw, 4rem) 1.25rem 2rem;
+      font: 400 var(--font-size)/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-wrap: break-word;
+    }
+
+    main,
+    .site-footer {
+      max-width: 46rem;
+      margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      letter-spacing: -.025em;
+      text-wrap: balance;
+    }
+
+    h2,
+    h3 {
+      margin: 1.75em 0 .65em;
+    }
+
+    p,
+    ul,
+    ol,
+    dl {
+      margin: 0 0 1.25em;
+    }
+
+    li + li {
+      margin-top: .35em;
+    }
+
+    dd {
+      margin-bottom: 1em;
+    }
+
+    code {
+      font-size: .875em;
+      overflow-wrap: anywhere;
+    }
+
+    pre {
+      padding: 1rem 1.25rem;
+      overflow: auto;
+      background: var(--surface);
+      font: .875rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+
+    pre code {
+      font: inherit;
+      overflow-wrap: normal;
+    }
+
+    blockquote {
+      margin: 1.5em 0;
+      padding-left: 1.25rem;
+      border-left: 3px solid var(--border);
+      color: var(--muted);
+    }
+
+    hr {
+      margin: 2em 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .article img,
+    .article video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .article iframe {
+      max-width: 100%;
+    }
+
+    .article figure {
+      margin: 1.5em 0;
+    }
+
+    .article figcaption {
+      color: var(--muted);
+      font-size: .8em;
+    }
+
+    .article table {
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin-bottom: 1.25em;
+    }
+
+    .article th,
+    .article td {
+      padding: .5em .75em;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    a,
+    a:visited {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .15em;
+    }
+
+    a:hover,
+    a:focus-visible,
+    a:active {
+      color: var(--link);
+    }
+
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    .site-title {
+      margin-top: 0;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .site-header > a {
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .site-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em 1.25em;
+      margin: 1.5rem 0 2.5rem;
+      font-size: .9em;
+    }
+
+    .site-navigation a[aria-current="page"] {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .listing {
+      max-width: 38rem;
+      margin: 0 auto;
+    }
+
+    .listing-title {
+      margin: 0 0 2.5rem;
+      font-size: clamp(1.75rem, 1.25rem + 2vw, 2.25rem);
+      text-align: center;
+    }
+
+    .blog-year + .blog-year,
+    .project-section + .project-section {
+      margin-top: 2.5rem;
+    }
+
+    .blog-year h2,
+    .project-section h2 {
+      margin: 0 0 .75rem;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: normal;
+    }
+
+    .project-list {
+      margin: 0;
+    }
+
+    .project-list dt {
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .project-list dd {
+      margin: .4rem 0 1.75rem;
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .project-list dd:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.blog-posts {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.blog-posts li {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      padding: .6em 0;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    ul.blog-posts time {
+      flex: 0 0 4rem;
+      font-size: .75em;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .home {
+      max-width: 36rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .profile-header .site-title {
+      width: min(100%, 14.5rem);
+      margin: 0;
+    }
+
+    .profile-header .site-logo {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 332 / 41;
+      object-fit: contain;
+      margin-inline: auto;
+    }
+
+    .profile-home-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .profile-photo-large {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+    }
+
+    .home .site-navigation,
+    .listing .site-navigation {
+      justify-content: center;
+      margin: 1.75rem 0 3rem;
+    }
+
+    .home-intro h2 {
+      margin: 0 0 1.25rem;
+      font-size: clamp(1.75rem, 1.25rem + 2vw, 2.25rem);
+    }
+
+    .home-project {
+      text-wrap: balance;
+    }
+
+    .home-location {
+      width: min(100%, 28rem);
+      margin: 2.5rem auto 0;
+    }
+
+    .location-labels {
+      display: grid;
+      grid-template-columns: auto minmax(2.5rem, 1fr) auto;
+      align-items: center;
+      gap: clamp(.75rem, 3vw, 1.5rem);
+    }
+
+    .location-label {
+      display: flex;
+      flex-direction: column;
+      gap: .15rem;
+      line-height: 1.35;
+    }
+
+    .location-label-origin {
+      text-align: left;
+    }
+
+    .location-label-destination {
+      text-align: right;
+    }
+
+    .location-flight {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      color: var(--muted);
+    }
+
+    .location-flight::before,
+    .location-flight::after {
+      content: "";
+      flex: 1;
+      border-top: 1px dashed currentColor;
+      opacity: .35;
+    }
+
+    .location-plane {
+      flex: 0 0 1.5rem;
+      height: 1.5rem;
+      background: currentColor;
+      clip-path: polygon(100% 50%, 95% 45%, 87% 43%, 65% 43%,
+        40% 10%, 28% 10%, 44% 43%, 16% 43%, 7% 30%, 0 30%,
+        5% 50%, 0 70%, 7% 70%, 16% 57%, 44% 57%, 28% 90%,
+        40% 90%, 65% 57%, 87% 57%, 95% 55%);
+    }
+
+    .location-caption {
+      color: var(--muted);
+      font-size: .625rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .location-city {
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .location-country-name {
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    .home-contact {
+      margin-top: 2.25rem;
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .home-contact p {
+      margin-bottom: .6rem;
+    }
+
+    .home-signature {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: clamp(.6875rem, 2.8vw, .8125rem);
+      line-height: 1.7;
+    }
+
+    .home-signature code {
+      display: inline-block;
+      font-size: 1em;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .post-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .post-author {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .65rem;
+      margin-bottom: 2.75rem;
+      text-decoration: none;
+    }
+
+    .post-author-logo {
+      display: block;
+      width: 8.25rem;
+      height: auto;
+    }
+
+    .author-avatar {
+      display: block;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .post-date {
+      margin-bottom: .65rem;
+      color: var(--muted);
+      font-size: .75em;
+    }
+
+    .post-header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+      line-height: 1.12;
+    }
+
+    .post-about {
+      margin-top: 3.5rem;
+      text-align: center;
+      font-size: .8em;
+      color: var(--muted);
+    }
+
+    .post-about p {
+      margin-bottom: .75em;
+    }
+
+    .post-about-author {
+      display: inline-block;
+      margin-bottom: .5rem;
+      text-decoration: none;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: .25rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      text-decoration: none;
+    }
+
+    .social-links svg {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .post-navigation {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem 2rem;
+      max-width: 38rem;
+      margin: 2.5rem auto 0;
+      color: var(--muted);
+      font-size: .8em;
+      line-height: 1.45;
+    }
+
+    .post-navigation-link {
+      text-decoration: none;
+    }
+
+    .post-navigation-label {
+      display: block;
+      margin-bottom: .35em;
+      font-size: .85em;
+    }
+
+    .post-navigation-title {
+      text-decoration: underline;
+      text-decoration-color: var(--link);
+      text-decoration-thickness: 1px;
+    }
+
+    .post-navigation-next {
+      grid-column: 2;
+      text-align: right;
+    }
+
+    .post-navigation-link:only-child {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .site-footer {
+      clear: both;
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      color: var(--muted);
+      font-size: .75em;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin-bottom: .5em;
+    }
+
+    .site-footer-home {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 37.5rem) {
+      .post-navigation {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .post-navigation-link {
+        grid-column: auto;
+        text-align: center;
+      }
+
+      ul.blog-posts li {
+        flex-direction: column;
+        gap: .15rem;
+        padding: .65em 0;
+      }
+
+      ul.blog-posts time {
+        flex-basis: auto;
+      }
+
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #181818;
+        --text: #e5e5e5;
+        --muted: #aaa;
+        --link: #8abfff;
+        --border: #383838;
+        --surface: #242424;
+      }
+
+    }
+  </style>
+
+  <link rel="stylesheet" href="/owlytics/owlytics.css">
+
+</head>
+<body>
+    <a class="author-block" href="/" rel="author" aria-label="by Kyrylo Silin"
+      ><span>by</span
+      ><svg class="author-wordmark" width="100" height="12" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 2867 354"><path fill="currentColor" d="M55.5 209v139.5H0V6h55.5v154.5l51-4L176.5 6H240l-84.5 172 88 170.5H179l-72.5-143zm362.004-1.5v141h-56v-141L254.004 6h62.5l72.5 147 73-147h62zm284.414 19h-80.5v122h-55.5V6h130q116 0 116 109 0 73-56 99l56.5 134.5h-61zm53-111q0-61.5-59-61.5h-74.5v124.5h75.5q30 0 44-17 14-17.5 14-46m246.082 92v141h-56v-141L837.5 6H900l72.5 147 73-147h62zm340.41 91.5v49.5h-192V6h55.5v293zm169.81 55c-26 0-47.83-3.5-65.5-10.5s-32-17.667-43-32q-16.5-21.5-24-54.5c-4.67-22-7-48-7-78q0-45 7.5-78.5 7.5-34 24-56c11-14.667 25.33-25.667 43-33s39.33-11 65-11 47.33 3.667 65 11c17.67 7 32 18 43 33 11 14.667 18.83 33.167 23.5 55.5q7.5 33.5 7.5 79c0 25.667-1.83 49.333-5.5 71-3.33 21.333-10.17 39.833-20.5 55.5-10 15.333-24.17 27.333-42.5 36q-27 12.5-70.5 12.5m-65-78c11.67 19.667 33.33 29.5 65 29.5 16 0 29.17-2.333 39.5-7 10.67-4.667 19-12 25-22 6.33-10.333 10.67-23.5 13-39.5 2.67-16 4-35.333 4-58s-1.33-42.167-4-58.5q-4.005-25-13.5-40.5c-6-10.667-14.33-18.5-25-23.5q-15.495-7.5-39-7.5c-15.67 0-28.83 2.5-39.5 7.5-10.33 5-18.67 12.833-25 23.5q-9.495 16-13.5 40.5c-2.67 16-4 35.333-4 58 0 45.667 5.67 78.167 17 97.5m478.99-227c-42.34 0-63.5 14.833-63.5 44.5q0 22.5 15 32.5c10 6.667 32.16 14.667 66.5 24 17 4.667 31.33 9.667 43 15 12 5.333 21.66 11.667 29 19 7.33 7.333 12.66 16.167 16 26.5 3.33 10 5 22 5 36 0 36.333-10.34 63.333-31 81-20.34 17.667-48.17 26.5-83.5 26.5q-21.51 0-45-2.5c-15.34-1.667-31.67-4.167-49-7.5l-18-3.5 5.5-44.5c45 6 79.33 9 103 9 41.33 0 62-18.333 62-55 0-14.333-4.67-25-14-32q-14.01-10-63-22.5c-16.34-4-30.67-8.667-43-14q-18-8-30-19.5t-18-28q-6-17-6-40 0-47 30-70.5t84-23.5c25.66 0 56 3 91 9l17.5 3-4.5 45q-35.01-4-60-6-24.51-2-39-2m226.48 299.5h-55.5V6h55.5zm270.78-49.5v49.5h-192V6h55.5v293zm100.8 49.5h-55.5V6h55.5zm134.28 0h-55.5V6h97l104 293.5h7.5V6h55.5v342.5h-95l-106.5-294h-7z"/></svg></a>
+
+    <main class="owlytics-page">
+      <header class="owl-hero">
+        <img class="owl-portrait" src="/owlytics/logo.svg" width="72" height="72" alt="">
+        <p class="owl-name">Owlytics</p>
+        <h1>Damn small self&#8209;hosted analytics</h1>
+        <p class="owl-repository"><a href="https://github.com/kyrylo/owlytics">View on GitHub <span aria-hidden="true">→</span></a></p>
+      </header>
+
+      <figure class="owl-product">
+        <a class="owl-product-link" href="/owlytics/dashboard-light-v2@2x.webp" aria-label="Open the demo dashboard screenshot at full size">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="/owlytics/dashboard-dark-v2.webp 1x, /owlytics/dashboard-dark-v2@2x.webp 2x">
+            <img src="/owlytics/dashboard-light-v2.webp" srcset="/owlytics/dashboard-light-v2.webp 1x, /owlytics/dashboard-light-v2@2x.webp 2x" width="832" height="378" alt="Owlytics dashboard for the fictional site paperplane.example, showing visitor stats and a traffic chart. All data is synthetic." loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <figcaption>Demo dashboard. Fictional data.</figcaption>
+      </figure>
+
+      <section class="owl-footprint" aria-label="A small footprint">
+        <dl class="owl-stats">
+          <div><dt>RAM at idle</dt><dd>~6 <span>MB</span></dd></div>
+          <div><dt>Tracker, gzipped</dt><dd>2.2 <span>KB</span></dd></div>
+          <div><dt>Executable</dt><dd>1</dd></div>
+          <div><dt>SQLite database</dt><dd>1</dd></div>
+        </dl>
+        <p class="owl-measurement">Measured on macOS with 22k demo pageviews. Sampled peak: ~23 MB during login, reports, and 200 new events. Memory varies with load.</p>
+
+        <div class="owl-install">
+          <div class="owl-install-heading">
+            <h2>Run it yourself.</h2>
+            <span>Requires Rust 1.96+</span>
+          </div>
+          <div class="owl-install-command">
+            <pre><code id="owl-install-command">cargo install --git https://github.com/kyrylo/owlytics --locked</code></pre>
+            <button type="button" class="owl-copy" aria-label="Copy install command" hidden>Copy</button>
+          </div>
+          <details class="owl-start">
+            <summary>Set your password &amp; start</summary>
+            <p>Choose a password with at least 12 characters (Bash/Zsh):</p>
+            <pre><code>printf 'Owner password: '
+read -r -s owlytics_password
+export OWLYTICS_PASSWORD_HASH="$(printf '%s' "$owlytics_password" | owlytics hash-password)"
+unset owlytics_password
+owlytics</code></pre>
+            <p>Open <a href="http://localhost:3000">localhost:3000</a>, sign in, and add your website. Save the password hash in your service’s environment for restarts.</p>
+          </details>
+          <p class="owl-install-alternatives">Also runs with <a href="https://github.com/kyrylo/owlytics#docker">Docker</a> or <a href="https://github.com/kyrylo/owlytics#deploy-with-kamal">Kamal</a>.</p>
+        </div>
+      </section>
+
+      <article class="owl-letter" aria-label="A letter from Kyrylo">
+        <p class="owl-letter-opening">I like Plausible. A few useful numbers, a clear dashboard, then back to making things.</p>
+
+        <p>But running it on my own server took more RAM than I wanted to give my analytics. So I built Owlytics.</p>
+
+        <p>Rust and SQLite keep it to one executable and one database file. Visitors, pages, referrers. No cookies or stored raw IPs. Your Plausible history can come with you.</p>
+
+        <p>Like <a href="https://telebugs.com/">Telebugs</a>, I made it for my own projects. It’s <a href="https://github.com/kyrylo/owlytics">open source under MIT</a>, ready for yours.</p>
+
+        <p class="owl-signature">— <a href="/" rel="author">Kyrylo</a></p>
+      </article>
+    </main>
+    <script src="/owlytics/install.js" defer></script>
+  </body>
+</html>

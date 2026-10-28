@@ -24,8 +24,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-10-18T22:12:09+08:00","description":"My projects, doodles, vibe-coded experiments.","headline":"Projects","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3","url":"https://kyrylo.org/projects/"}</script>
 <!-- End Jekyll SEO tag -->
-<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" /><link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=3" sizes="96x96" />
+<link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=3" sizes="96x96" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico?v=3" />
+
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3" />
   <meta name="apple-mobile-web-app-title" content="Kyrylo Silin" />
   <link rel="manifest" href="/assets/images/site.webmanifest?v=3" />
@@ -656,9 +658,22 @@
     </li>
 
     <li>
+      <a class="project-card" href="/owlytics/" aria-labelledby="project-owlytics" aria-describedby="description-owlytics">
+        <span class="project-cover">
+          <img src="/assets/images/projects/owlytics-v2.webp" alt="" width="720" height="405" loading="eager" decoding="async" />
+        </span>
+        <h3 id="project-owlytics">Owlytics</h3>
+        <p id="description-owlytics">Damn small, self-hosted web analytics. Rust, SQLite, and no cookies.</p>
+      </a>
+
+      <a class="project-source" href="https://github.com/kyrylo/owlytics" aria-label="Owlytics: GitHub">GitHub</a>
+
+    </li>
+
+    <li>
       <a class="project-card" href="https://minicar.racing" aria-labelledby="project-minicar-racing" aria-describedby="description-minicar-racing">
         <span class="project-cover">
-          <img src="/assets/images/projects/minicar-racing.webp" alt="" width="720" height="405" loading="eager" decoding="async" />
+          <img src="/assets/images/projects/minicar-racing.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
         </span>
         <h3 id="project-minicar-racing">Mini Car Racing</h3>
         <p id="description-minicar-racing">Buy a car, upgrade your weapons, and race solo or with friends.</p>
