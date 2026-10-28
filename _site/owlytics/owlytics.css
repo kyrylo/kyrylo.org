@@ -201,16 +201,31 @@
 .owl-install-alternatives { margin: 1rem 0 0; color: var(--muted); font-size: .8rem; }
 
 .owl-letter {
-  max-width: 32rem;
-  margin: 0 auto;
-  padding: 1rem 0;
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  padding: 3.5rem 4rem;
+  border: 1px solid light-dark(#e6e1d5, #3b3743);
+  background: light-dark(#fffefa, #1d1c24);
+  color: light-dark(#292625, #eee9de);
+  box-shadow: 0 3px 8px light-dark(#26283b06, #0002), 0 18px 48px light-dark(#26283b0c, #0003);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.125rem, 1rem + .4vw, 1.25rem);
   line-height: 1.7;
 }
 
-.owl-letter p { margin: 0 0 1.3em; }
-.owl-letter .owl-salutation { margin-bottom: 1.5em; }
+.owl-letter::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(225deg, var(--background) 50%, light-dark(#ece6d8, #36323f) 50%);
+}
+.owl-letter p { margin: 0 0 1.3em; text-wrap: pretty; }
+.owl-letter .owl-salutation { margin-bottom: 1.5em; font-style: italic; }
+.owl-letter strong { font-weight: 700; }
 .owl-letter a { text-underline-offset: .2em; }
 .owl-signature {
   display: flex;
@@ -234,7 +249,7 @@
   .owl-hero { padding: 2.5rem 0 2.5rem; }
   .owl-portrait { width: 56px; height: 56px; }
   .owl-name { margin-bottom: 1.5rem; }
-  .owl-letter { padding-top: .5rem; }
+  .owl-letter { padding: 2rem 1.25rem; }
   .owl-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
   .owl-install { padding: 1rem; }
 }
