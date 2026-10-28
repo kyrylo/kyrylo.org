@@ -209,33 +209,26 @@
   line-height: 1.7;
 }
 
-.owl-letter::before {
-  content: "";
-  display: block;
-  width: 2.5rem;
-  margin-bottom: 2rem;
-  border-top: 1px solid var(--muted);
-}
-
 .owl-letter p { margin: 0 0 1.3em; }
-.owl-letter .owl-letter-opening {
-  font-size: 1.2em;
-  line-height: 1.55;
-  letter-spacing: -.015em;
-}
-.owl-letter-opening::first-letter {
-  float: left;
-  margin: .04em .12em 0 0;
-  font-size: 3.2em;
-  line-height: .82;
-}
+.owl-letter .owl-salutation { margin-bottom: 1.5em; }
 .owl-letter a { text-underline-offset: .2em; }
-.owl-letter .owl-signature {
-  margin-top: 1.75rem;
-  font-size: 1.15em;
-  font-style: italic;
+.owl-signature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
-.owl-signature a { color: var(--text); }
+.owl-signature img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.owl-signature p { margin: 0; line-height: 1.5; }
+.owl-signature a { color: var(--text); font-weight: 600; text-decoration: none; }
+.owl-signature a:hover { text-decoration: underline; }
 
 @media (max-width: 37.5rem) {
   .owl-hero { padding: 2.5rem 0 2.5rem; }
