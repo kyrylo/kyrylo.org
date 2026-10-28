@@ -14,15 +14,21 @@ module AnalyticsCoverage
       src = attributes[/\bsrc\s*=\s*["']([^"']+)["']/i, 1]
       src && TRACKER.match?(src)
     end
+    owlytics = scripts.select { |attributes, _| attributes.match?(%r{\bsrc=["']https://owlytics\.kyrylo\.org/script\.js["']}) }
     redirect = html.scan(/<meta\b[^>]*>/i).any? do |tag|
       tag.match?(/\bhttp-equiv\s*=\s*["']refresh["']/i)
     end
 
     if EXCLUDED.key?(path) || redirect
-      return trackers.empty? ? [] : ["#{path}: redirect or utility page must not track an extra pageview"]
+      return trackers.empty? && owlytics.empty? ? [] : ["#{path}: redirect or utility page must not track an extra pageview"]
     end
 
     problems = []
+    problems << "#{path}: expected one Owlytics tracker, found #{owlytics.length}" unless owlytics.length == 1
+    owlytics.each do |attributes, _|
+      problems << "#{path}: Owlytics must use the kyrylo.org domain" unless attributes.match?(/\bdata-domain=["']kyrylo\.org["']/)
+      problems << "#{path}: Owlytics must load asynchronously" unless attributes.match?(/(?:\A|\s)(?:defer|async)(?:\s|=|\z)/i)
+    end
     problems << "#{path}: expected one Plausible tracker, found #{trackers.length}" unless trackers.length == 1
     if trackers.any? { |attributes, _| !attributes.match?(/(?:\A|\s)async(?:\s|=|\z)/i) }
       problems << "#{path}: Plausible must load asynchronously"

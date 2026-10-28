@@ -5,6 +5,7 @@ require_relative "../_plugins/analytics_coverage"
 class AnalyticsCoverageTest < Minitest::Test
   SNIPPET = <<~HTML.freeze
     <script async src="https://analytics.kyrylo.org/js/pa-example.js"></script>
+    <script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>
     <script>
       window.plausible = window.plausible || function () {};
       plausible.init = plausible.init || function () {};
@@ -13,7 +14,7 @@ class AnalyticsCoverageTest < Minitest::Test
   HTML
 
   def test_standalone_page_needs_tracker_and_initializer
-    assert_equal 2, AnalyticsCoverage.issues("<head></head>", "new-doodle/index.html").length
+    assert_equal 3, AnalyticsCoverage.issues("<head></head>", "new-doodle/index.html").length
     assert_empty AnalyticsCoverage.issues("<head>#{SNIPPET}</head>", "new-doodle/index.html")
   end
 
@@ -28,8 +29,14 @@ class AnalyticsCoverageTest < Minitest::Test
     refute_empty AnalyticsCoverage.issues(SNIPPET.sub(" async", ""), "index.html")
   end
 
+  def test_owlytics_domain_and_loading_are_checked
+    refute_empty AnalyticsCoverage.issues(SNIPPET.sub('data-domain="kyrylo.org"', 'data-domain="wrong.example"'), "index.html")
+    refute_empty AnalyticsCoverage.issues(SNIPPET.sub(" defer", ""), "index.html")
+    refute_empty AnalyticsCoverage.issues('<script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>', "up.html")
+  end
+
   def test_commented_snippet_does_not_count
-    assert_equal 2, AnalyticsCoverage.issues("<!-- #{SNIPPET} -->", "index.html").length
+    assert_equal 3, AnalyticsCoverage.issues("<!-- #{SNIPPET} -->", "index.html").length
   end
 
   def test_redirects_and_utility_pages_do_not_count_extra_views
@@ -50,7 +57,7 @@ class AnalyticsCoverageTest < Minitest::Test
       File.write("#{directory}/new-doodle/index.html", "<head></head>")
       File.write("#{directory}/drawing.js", "// no analytics needed")
       problems = AnalyticsCoverage.check(directory)
-      assert_equal 2, problems.length
+      assert_equal 3, problems.length
       assert problems.all? { |p| p.start_with?("new-doodle/index.html:") }
     end
   end
