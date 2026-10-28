@@ -1,0 +1,70 @@
+{
+  "sourcePage": "https://www.bls.gov/tus/data/datafiles-2025.htm",
+  "retrievedAt": "2026-10-14",
+  "retrieval": "Internet Archive snapshots of official BLS downloads; direct BLS returns HTTP 403",
+  "files": [
+    {
+      "file": "atusact-2025.zip",
+      "url": "https://www.bls.gov/tus/datafiles/atusact-2025.zip",
+      "archiveUrl": "https://web.archive.org/web/20260819213652id_/https://www.bls.gov/tus/datafiles/atusact-2025.zip",
+      "archiveTimestamp": "20260819213652",
+      "bytes": 1882541,
+      "sha256": "664314e9f0c7373534f10bb1450a1dfc2b50d04c7932ecfea090ff4a1c65bca3",
+      "member": "atusact_2025.dat",
+      "rows": 114151,
+      "caseCount": 6146,
+      "years": [
+        "2025"
+      ],
+      "zipCrcValid": true
+    },
+    {
+      "file": "atusresp-2025.zip",
+      "url": "https://www.bls.gov/tus/datafiles/atusresp-2025.zip",
+      "archiveUrl": "https://web.archive.org/web/20260819213650id_/https://www.bls.gov/tus/datafiles/atusresp-2025.zip",
+      "archiveTimestamp": "20260819213650",
+      "bytes": 429058,
+      "sha256": "77566d2864f1b96412a46ceeee9ea53709bc191b092f3573af04c17b2d409873",
+      "member": "atusresp_2025.dat",
+      "rows": 6146,
+      "caseCount": 6146,
+      "years": [
+        "2025"
+      ],
+      "zipCrcValid": true
+    },
+    {
+      "file": "atusrost-2025.zip",
+      "url": "https://www.bls.gov/tus/datafiles/atusrost-2025.zip",
+      "archiveUrl": "https://web.archive.org/web/20260909210555id_/https://www.bls.gov/tus/datafiles/atusrost-2025.zip",
+      "archiveTimestamp": "20260909210555",
+      "bytes": 78890,
+      "sha256": "b10ac3ee0d2fd6229d8c0a1978a4497412f30b4ae16b24e393adc57a658ddd89",
+      "member": "atusrost_2025.dat",
+      "rows": 15052,
+      "caseCount": 6146,
+      "years": [
+        "2025"
+      ],
+      "zipCrcValid": true
+    },
+    {
+      "file": "lexiconnoex2025.pdf",
+      "url": "https://www.bls.gov/tus/lexicons/lexiconnoex2025.pdf",
+      "archiveUrl": "https://web.archive.org/web/20260819202737id_/https://www.bls.gov/tus/lexicons/lexiconnoex2025.pdf",
+      "archiveTimestamp": "20260819202737",
+      "bytes": 254911,
+      "sha256": "b0a93e6b88daccf4344d4312f475a43ce3125f4f67d45ae43778ee5d57d39514"
+    }
+  ],
+  "documentation": [
+    {
+      "file": "atusintcodebk25.pdf",
+      "url": "https://www.bls.gov/tus/dictionaries/atusintcodebk25.pdf",
+      "archiveUrl": "https://web.archive.org/web/20260819202738id_/https://www.bls.gov/tus/dictionaries/atusintcodebk25.pdf",
+      "archiveTimestamp": "20260819202738",
+      "bytes": 466369,
+      "sha256": "c7a9be1d5712733e847f4733ba408aeee790695d7d8c9066d27e4783a80dc6ac"
+    }
+  ]
+}
