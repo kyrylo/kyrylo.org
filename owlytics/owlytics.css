@@ -64,11 +64,30 @@
   text-wrap: balance;
 }
 
-.owl-repository {
-  margin: 1.5rem 0 0;
+.owl-repository { margin: 1.75rem 0 0; }
+
+.owl-repository a,
+.owl-repository a:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  min-height: 3rem;
+  padding: .75rem 1.35rem;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--background);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
 }
+.owl-repository a:hover {
+  background: light-dark(#45475d, #fff);
+  color: var(--background);
+}
+.owl-repository a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.owl-repository svg { width: 1.25rem; height: 1.25rem; flex: none; }
 
 .owlytics-page { max-width: 68rem; }
 
@@ -90,13 +109,6 @@
   height: auto;
 }
 
-.owl-product figcaption {
-  margin-top: .8rem;
-  color: var(--muted);
-  font-size: .75rem;
-  text-align: center;
-}
-
 .owl-footprint {
   max-width: 52rem;
   margin: 0 auto 4rem;
@@ -105,32 +117,31 @@
 .owl-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   margin: 0;
-  padding: 1.5rem 0;
-  border-block: 1px solid var(--border);
-  text-align: center;
+  padding: 0;
+  text-align: left;
 }
 
-.owl-stats > div { display: flex; flex-direction: column; }
-.owl-stats dt { color: var(--muted); font-size: .8rem; }
+.owl-stats > div { display: flex; flex-direction: column; gap: .5rem; }
+.owl-stats dt { font-size: .875rem; line-height: 1.4; }
 .owl-stats dd {
   order: -1;
-  margin: 0 0 .4rem;
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 650;
-  line-height: 1.15;
-  letter-spacing: -.055em;
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-.owl-stats dd span { font-size: .5em; letter-spacing: -.02em; }
 .owl-measurement {
-  max-width: 42rem;
-  margin: 1rem auto 2.5rem;
+  margin: 1.5rem 0 2.5rem;
   color: var(--muted);
-  font-size: .75rem;
-  line-height: 1.6;
-  text-align: center;
+  font-size: .8125rem;
+  line-height: 1.55;
+  text-align: left;
+  text-wrap: pretty;
 }
 
 .owl-install {

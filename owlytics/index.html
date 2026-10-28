@@ -26,7 +26,7 @@ twitter:
         <img class="owl-portrait" src="/owlytics/logo.svg" width="72" height="72" alt="">
         <p class="owl-name">Owlytics</p>
         <h1>Damn small self&#8209;hosted analytics</h1>
-        <p class="owl-repository"><a href="https://github.com/kyrylo/owlytics">View on GitHub <span aria-hidden="true">→</span></a></p>
+        <p class="owl-repository"><a href="https://github.com/kyrylo/owlytics">{% include icons/github.svg %}<span>View on GitHub</span></a></p>
       </header>
 
       <figure class="owl-product">
@@ -36,17 +36,16 @@ twitter:
             <img src="/owlytics/dashboard-light-v2.webp" srcset="/owlytics/dashboard-light-v2.webp 1x, /owlytics/dashboard-light-v2@2x.webp 2x" width="832" height="378" alt="Owlytics dashboard for the fictional site paperplane.example, showing visitor stats and a traffic chart. All data is synthetic." loading="lazy" decoding="async">
           </picture>
         </a>
-        <figcaption>Demo dashboard. Fictional data.</figcaption>
       </figure>
 
       <section class="owl-footprint" aria-label="A small footprint">
         <dl class="owl-stats">
-          <div><dt>RAM at idle</dt><dd>~6 <span>MB</span></dd></div>
-          <div><dt>Tracker, gzipped</dt><dd>2.2 <span>KB</span></dd></div>
-          <div><dt>Executable</dt><dd>1</dd></div>
-          <div><dt>SQLite database</dt><dd>1</dd></div>
+          <div><dt>RAM at idle</dt><dd>~6 MB</dd></div>
+          <div><dt>Gzipped tracker</dt><dd>2.2 KB</dd></div>
+          <div><dt>Built with Rust</dt><dd>1 binary</dd></div>
+          <div><dt>Just a SQLite file</dt><dd>1 database</dd></div>
         </dl>
-        <p class="owl-measurement">Measured on macOS with 22k demo pageviews. Sampled peak: ~23 MB during login, reports, and 200 new events. Memory varies with load.</p>
+        <p class="owl-measurement">macOS, 22k demo pageviews. Sampled peak: ~23 MB during login, reports, and 200 new events. Memory varies with load.</p>
 
         <div class="owl-install">
           <div class="owl-install-heading">
