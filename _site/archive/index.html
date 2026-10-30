@@ -195,14 +195,28 @@
 
     .site-navigation {
       display: flex;
-      flex-wrap: wrap;
-      gap: .5em 1.25em;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .8rem;
       margin: 1.5rem 0 2.5rem;
       font-size: .9em;
     }
 
-    .site-navigation a[aria-current="page"] {
-      color: inherit;
+    .primary-navigation,
+    .collection-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em 1.25em;
+    }
+
+    .collection-navigation {
+      gap: .5em clamp(.65rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .site-navigation a[aria-current] {
+      color: var(--text);
       font-weight: 600;
       text-decoration: none;
     }
@@ -319,8 +333,14 @@
 
     .home .site-navigation,
     .listing .site-navigation {
-      justify-content: center;
+      align-items: center;
       margin: 1.75rem 0 3rem;
+    }
+
+    .home .primary-navigation,
+    .listing .primary-navigation,
+    .listing .collection-navigation {
+      justify-content: center;
     }
 
     .home-intro h2 {
@@ -618,18 +638,40 @@
   </p>
 </header>
 
-<nav class="site-navigation" aria-label="Main navigation">
-  <a href="/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/travel/">Travel</a>
-  <a href="/projects/">Projects</a>
-  <a href="/archive/" aria-current="page">Archive</a>
-</nav>
+
+<div class="site-navigation">
+  <nav class="primary-navigation" aria-label="Main navigation">
+    <a href="/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/projects/" aria-current="true">Projects</a>
+    <a href="/travel/">Travel</a>
+  </nav>
+
+  <nav class="collection-navigation" aria-label="Project categories">
+    <a href="/projects/">Software</a>
+    <a href="/tools/">Tools</a>
+    <a href="/games/">Games</a>
+    <a href="/doodles/">Doodles</a>
+    <a href="/archive/" aria-current="page">Archive</a>
+  </nav>
+
+</div>
 
 
-<h1 class="listing-title">Archive</h1>
+
+
 
 <dl class="project-list">
+  <dt><a href="https://weuserails.com">We Use Rails</a></dt>
+  <dd>
+    Discover web apps built with Ruby on Rails (<a href="https://github.com/kyrylo/weuserails.com">GitHub</a>).
+  </dd>
+
+  <dt><a href="https://justfuckinguse.com">Just Fucking Use</a></dt>
+  <dd>
+    A collection of all the best Just Fucking Use sites.
+  </dd>
+
   <dt><a href="/htmlmaze/">The HTML Maze</a></dt>
   <dd>
     A shared, anonymous web experiment with 500 generated rooms, preserved as a read-only static archive after the Rails server was retired in July 2026.

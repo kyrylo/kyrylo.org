@@ -55,7 +55,7 @@ body {
   left: 15px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   border: 1px solid var(--line);
   border-radius: 0 0 8px 8px;
   padding: 9px 12px;

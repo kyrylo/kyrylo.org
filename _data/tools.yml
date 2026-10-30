@@ -1,0 +1,23 @@
+- title: Tools
+  id: tools
+  projects:
+    - name: Docker Name Generator
+      id: docker-name-generator
+      url: https://dockernamegenerator.com
+      image: docker-name-generator.webp
+      description: Random Docker-style names for whatever needs a name.
+    - name: CSS Color Names Reference
+      id: css-color-names
+      url: /css-color-names-reference/
+      image: css-color-names.svg
+      description: All 147 CSS color names, with hex, RGB, OKLCH, and HSL values.
+    - name: Tailwind CSS v4 Color Palette Reference
+      id: tailwind-colors
+      url: /tailwind-css-v4-color-palette-reference/
+      image: tailwind-colors.svg
+      description: Every default Tailwind v4 color, in all the formats you need.
+    - name: clamp() vs Media Queries
+      id: clamp-vs-media-queries
+      url: /clamp-vs-media-queries/
+      image: clamp-vs-media-queries.svg
+      description: A side-by-side CSS responsiveness showdown.

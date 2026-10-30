@@ -1,0 +1,48 @@
+- title: Doodles & experiments
+  id: doodles-and-experiments
+  projects:
+    - name: A Little Life
+      id: a-little-life
+      url: /a-little-life/
+      image: a-little-life.webp
+      description: A hand-drawn story about the people who hold us and the care we pass on.
+    - name: Elsewhere
+      id: elsewhere
+      url: /elsewhere/
+      image: elsewhere.webp
+      description: Hop through time zones and peek through live webcams.
+    - name: Don't pull my strings
+      id: dont-pull-my-strings
+      url: /dont-pull-my-strings/
+      image: dont-pull-my-strings.webp
+      description: When puns are taken too literally.
+    - name: SeaSick Simulator
+      id: seasick-simulator
+      url: /seasick-simulator/
+      image: seasick-simulator.webp
+      description: The queasy charm of rough seas, on any website.
+    - name: Life Calendar
+      id: life-calendar
+      url: /life-calendar/
+      image: life-calendar.webp
+      description: Every week is a gift. Make them count.
+    - name: Awesome Skeletons
+      id: awesome-skeletons
+      url: /awesome-skeletons/
+      image: awesome-skeletons.webp
+      description: Skeleton animations for interfaces that feel fast.
+    - name: The Em Dash
+      id: the-em-dash
+      url: /the-em-dash/
+      image: the-em-dash.webp
+      description: Supercharging your game-changing posts and comments since 2022.
+    - name: Fuck This Page
+      id: fuck-this-page
+      url: /fuck-this-page/
+      image: fuck-this-page.svg
+      description: Take revenge on any website you dislike.
+    - name: Just Fucking Use HTML
+      id: just-fucking-use-html
+      url: https://justfuckingusehtml.com
+      image: just-fucking-use-html.webp
+      description: My take on complexity in modern web development.
