@@ -16,14 +16,15 @@ bundle exec jekyll build
 
 ## Analytics
 
-Every public page needs Plausible, including standalone doodles that do not use
-the Jekyll layout. Copy the async tracker and `plausible.init()` snippet from
-`_includes/head.html` into a new standalone page's `<head>`. Travel pages get it
-from `_travel/theme/head.hbs`; HTML Maze keeps its existing Plausible property.
+Every public page needs one Owlytics tracker, including standalone doodles that
+do not use the Jekyll layout. Copy the deferred script from `_includes/head.html`
+into a new standalone page's `<head>`, with `data-domain="kyrylo.org"`.
+Travel pages get it from `_travel/theme/head.hbs`.
 
-The Jekyll build checks all generated HTML for missing or duplicate tracking.
-Redirects, `/up.html`, and Elsewhere's embedded camera frame are excluded to avoid
-extra pageviews. Localhost previews are ignored by Plausible's default settings.
+The Jekyll build checks all generated HTML for missing or duplicate tracking
+and rejects leftover Plausible scripts. Redirects, `/up.html`, and Elsewhere's
+embedded camera frame are excluded to avoid extra pageviews. Localhost previews
+are ignored by Owlytics.
 
 Run `ruby _tests/analytics_coverage_test.rb` to check coverage and the build guard.
 Commit the changed `_site/` output with the source: production serves that directory.
