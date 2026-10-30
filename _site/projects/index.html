@@ -9,8 +9,8 @@
 <meta property="og:title" content="Projects" />
 <meta name="author" content="Kyrylo Silin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="My projects, doodles, vibe-coded experiments." />
-<meta property="og:description" content="My projects, doodles, vibe-coded experiments." />
+<meta name="description" content="My software, websites, and tools." />
+<meta property="og:description" content="My software, websites, and tools." />
 <link rel="canonical" href="https://kyrylo.org/projects/" />
 <meta property="og:url" content="https://kyrylo.org/projects/" />
 <meta property="og:site_name" content="Kyrylo Silin" />
@@ -22,7 +22,7 @@
 <meta name="twitter:site" content="@kyrylosilin" />
 <meta name="twitter:creator" content="@Kyrylo Silin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-10-18T22:12:09+08:00","description":"My projects, doodles, vibe-coded experiments.","headline":"Projects","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3","url":"https://kyrylo.org/projects/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Kyrylo Silin","url":"https://kyrylo.org/"},"dateModified":"2026-10-18T22:12:09+08:00","description":"My software, websites, and tools.","headline":"Projects","image":"https://kyrylo.org/assets/images/web-app-manifest-512x512.png?v=3","url":"https://kyrylo.org/projects/"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png?v=3" sizes="96x96" />
@@ -197,14 +197,28 @@
 
     .site-navigation {
       display: flex;
-      flex-wrap: wrap;
-      gap: .5em 1.25em;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .8rem;
       margin: 1.5rem 0 2.5rem;
       font-size: .9em;
     }
 
-    .site-navigation a[aria-current="page"] {
-      color: inherit;
+    .primary-navigation,
+    .collection-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em 1.25em;
+    }
+
+    .collection-navigation {
+      gap: .5em clamp(.65rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .site-navigation a[aria-current] {
+      color: var(--text);
       font-weight: 600;
       text-decoration: none;
     }
@@ -321,8 +335,14 @@
 
     .home .site-navigation,
     .listing .site-navigation {
-      justify-content: center;
+      align-items: center;
       margin: 1.75rem 0 3rem;
+    }
+
+    .home .primary-navigation,
+    .listing .primary-navigation,
+    .listing .collection-navigation {
+      justify-content: center;
     }
 
     .home-intro h2 {
@@ -623,20 +643,31 @@
   </p>
 </header>
 
-<nav class="site-navigation" aria-label="Main navigation">
-  <a href="/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/travel/">Travel</a>
-  <a href="/projects/" aria-current="page">Projects</a>
-  <a href="/archive/">Archive</a>
-</nav>
+
+<div class="site-navigation">
+  <nav class="primary-navigation" aria-label="Main navigation">
+    <a href="/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/projects/" aria-current="true">Projects</a>
+    <a href="/travel/">Travel</a>
+  </nav>
+
+  <nav class="collection-navigation" aria-label="Project categories">
+    <a href="/projects/" aria-current="page">Software</a>
+    <a href="/tools/">Tools</a>
+    <a href="/games/">Games</a>
+    <a href="/doodles/">Doodles</a>
+    <a href="/archive/">Archive</a>
+  </nav>
+
+</div>
 
 
-<h1 class="listing-title">A few useful things. A few just for fun.</h1>
 
 
-<section class="project-section" aria-labelledby="current-projects">
-  <h2 id="current-projects">Current projects</h2>
+
+
+<section class="project-section" aria-label="Projects">
   <ul class="project-grid">
 
     <li>
@@ -662,271 +693,6 @@
       </a>
 
       <a class="project-source" href="https://github.com/kyrylo/owlytics" aria-label="Owlytics: GitHub">GitHub</a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://minicar.racing" aria-labelledby="project-minicar-racing" aria-describedby="description-minicar-racing">
-        <span class="project-cover">
-          <img src="/assets/images/projects/minicar-racing.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-minicar-racing">Mini Car Racing</h3>
-        <p id="description-minicar-racing">Buy a car, upgrade your weapons, and race solo or with friends.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://justfuckingusehtml.com" aria-labelledby="project-just-fucking-use-html" aria-describedby="description-just-fucking-use-html">
-        <span class="project-cover">
-          <img src="/assets/images/projects/just-fucking-use-html.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-just-fucking-use-html">Just Fucking Use HTML</h3>
-        <p id="description-just-fucking-use-html">My take on complexity in modern web development.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://weuserails.com" aria-labelledby="project-we-use-rails" aria-describedby="description-we-use-rails">
-        <span class="project-cover">
-          <img src="/assets/images/projects/we-use-rails.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-we-use-rails">We Use Rails</h3>
-        <p id="description-we-use-rails">Discover web apps built with Ruby on Rails.</p>
-      </a>
-
-      <a class="project-source" href="https://github.com/kyrylo/weuserails.com" aria-label="We Use Rails: GitHub">GitHub</a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://flagmatch.com" aria-labelledby="project-flag-match" aria-describedby="description-flag-match">
-        <span class="project-cover">
-          <img src="/assets/images/projects/flag-match.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-flag-match">Flag Match</h3>
-        <p id="description-flag-match">Learn the world&#39;s flags and capitals, one match at a time.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://flagclick.com" aria-labelledby="project-flag-click" aria-describedby="description-flag-click">
-        <span class="project-cover">
-          <img src="/assets/images/projects/flag-click.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-flag-click">Flag Click</h3>
-        <p id="description-flag-click">Click your country&#39;s flag. Climb the pole. Overtake everyone.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://dockernamegenerator.com" aria-labelledby="project-docker-name-generator" aria-describedby="description-docker-name-generator">
-        <span class="project-cover">
-          <img src="/assets/images/projects/docker-name-generator.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-docker-name-generator">Docker Name Generator</h3>
-        <p id="description-docker-name-generator">Random Docker-style names for whatever needs a name.</p>
-      </a>
-
-    </li>
-
-  </ul>
-</section>
-
-<section class="project-section" aria-labelledby="just-for-fun">
-  <h2 id="just-for-fun">Just for fun</h2>
-  <ul class="project-grid">
-
-    <li>
-      <a class="project-card" href="https://justfuckinguse.com" aria-labelledby="project-just-fucking-use" aria-describedby="description-just-fucking-use">
-        <span class="project-cover">
-          <img src="/assets/images/projects/just-fucking-use.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-just-fucking-use">Just Fucking Use</h3>
-        <p id="description-just-fucking-use">A collection of all the best Just Fucking Use sites.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/htmlmaze/" aria-labelledby="project-html-maze" aria-describedby="description-html-maze">
-        <span class="project-cover">
-          <img src="/assets/images/projects/html-maze.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-html-maze">The HTML Maze</h3>
-        <p id="description-html-maze">500 rooms. Messages left behind. Find your way out.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/tech-debt/" aria-labelledby="project-tech-debt" aria-describedby="description-tech-debt">
-        <span class="project-cover">
-          <img src="/assets/images/projects/tech-debt.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-tech-debt">Tech Debt</h3>
-        <p id="description-tech-debt">Ship a bug-free programming language before the &#39;95 WEBFEST deadline.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/the-em-dash/" aria-labelledby="project-the-em-dash" aria-describedby="description-the-em-dash">
-        <span class="project-cover">
-          <img src="/assets/images/projects/the-em-dash.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-the-em-dash">The Em Dash</h3>
-        <p id="description-the-em-dash">Supercharging your game-changing posts and comments since 2022.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="https://fuckthispage.com" aria-labelledby="project-fuck-this-page" aria-describedby="description-fuck-this-page">
-        <span class="project-cover">
-          <img src="/assets/images/projects/fuck-this-page.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-fuck-this-page">Fuck This Page</h3>
-        <p id="description-fuck-this-page">Take revenge on any website you dislike.</p>
-      </a>
-
-    </li>
-
-  </ul>
-</section>
-
-<section class="project-section" aria-labelledby="tools">
-  <h2 id="tools">Tools</h2>
-  <ul class="project-grid">
-
-    <li>
-      <a class="project-card" href="/css-color-names-reference/" aria-labelledby="project-css-color-names" aria-describedby="description-css-color-names">
-        <span class="project-cover">
-          <img src="/assets/images/projects/css-color-names.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-css-color-names">CSS Color Names Reference</h3>
-        <p id="description-css-color-names">All 147 CSS color names, with hex, RGB, OKLCH, and HSL values.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/tailwind-css-v4-color-palette-reference/" aria-labelledby="project-tailwind-colors" aria-describedby="description-tailwind-colors">
-        <span class="project-cover">
-          <img src="/assets/images/projects/tailwind-colors.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-tailwind-colors">Tailwind CSS v4 Color Palette Reference</h3>
-        <p id="description-tailwind-colors">Every default Tailwind v4 color, in all the formats you need.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/clamp-vs-media-queries/" aria-labelledby="project-clamp-vs-media-queries" aria-describedby="description-clamp-vs-media-queries">
-        <span class="project-cover">
-          <img src="/assets/images/projects/clamp-vs-media-queries.svg" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-clamp-vs-media-queries">clamp() vs Media Queries</h3>
-        <p id="description-clamp-vs-media-queries">A side-by-side CSS responsiveness showdown.</p>
-      </a>
-
-    </li>
-
-  </ul>
-</section>
-
-<section class="project-section" aria-labelledby="doodles-and-experiments">
-  <h2 id="doodles-and-experiments">Doodles &amp; experiments</h2>
-  <ul class="project-grid">
-
-    <li>
-      <a class="project-card" href="/a-little-life/" aria-labelledby="project-a-little-life" aria-describedby="description-a-little-life">
-        <span class="project-cover">
-          <img src="/assets/images/projects/a-little-life.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-a-little-life">A Little Life</h3>
-        <p id="description-a-little-life">A hand-drawn story about the people who hold us and the care we pass on.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/puddle-walker/" aria-labelledby="project-puddle-walker" aria-describedby="description-puddle-walker">
-        <span class="project-cover">
-          <img src="/assets/images/projects/puddle-walker.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-puddle-walker">Puddle Walker</h3>
-        <p id="description-puddle-walker">A different street every time. Dodge the mess. Keep your white sneakers clean.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/elsewhere/" aria-labelledby="project-elsewhere" aria-describedby="description-elsewhere">
-        <span class="project-cover">
-          <img src="/assets/images/projects/elsewhere.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-elsewhere">Elsewhere</h3>
-        <p id="description-elsewhere">Hop through time zones and peek through live webcams.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/dont-pull-my-strings/" aria-labelledby="project-dont-pull-my-strings" aria-describedby="description-dont-pull-my-strings">
-        <span class="project-cover">
-          <img src="/assets/images/projects/dont-pull-my-strings.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-dont-pull-my-strings">Don&#39;t pull my strings</h3>
-        <p id="description-dont-pull-my-strings">When puns are taken too literally.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/seasick-simulator/" aria-labelledby="project-seasick-simulator" aria-describedby="description-seasick-simulator">
-        <span class="project-cover">
-          <img src="/assets/images/projects/seasick-simulator.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-seasick-simulator">SeaSick Simulator</h3>
-        <p id="description-seasick-simulator">The queasy charm of rough seas, on any website.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/life-calendar/" aria-labelledby="project-life-calendar" aria-describedby="description-life-calendar">
-        <span class="project-cover">
-          <img src="/assets/images/projects/life-calendar.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-life-calendar">Life Calendar</h3>
-        <p id="description-life-calendar">Every week is a gift. Make them count.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/the-catipede/" aria-labelledby="project-the-catipede" aria-describedby="description-the-catipede">
-        <span class="project-cover">
-          <img src="/assets/images/projects/the-catipede.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-the-catipede">The Catipede</h3>
-        <p id="description-the-catipede">An emoji-based pet game inspired by Tamagotchi.</p>
-      </a>
-
-    </li>
-
-    <li>
-      <a class="project-card" href="/awesome-skeletons/" aria-labelledby="project-awesome-skeletons" aria-describedby="description-awesome-skeletons">
-        <span class="project-cover">
-          <img src="/assets/images/projects/awesome-skeletons.webp" alt="" width="720" height="405" loading="lazy" decoding="async" />
-        </span>
-        <h3 id="project-awesome-skeletons">Awesome Skeletons</h3>
-        <p id="description-awesome-skeletons">Skeleton animations for interfaces that feel fast.</p>
-      </a>
 
     </li>
 

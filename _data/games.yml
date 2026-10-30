@@ -1,0 +1,38 @@
+- title: Games
+  id: games
+  projects:
+    - name: Mini Car Racing
+      id: minicar-racing
+      url: https://minicar.racing
+      image: minicar-racing.webp
+      description: Buy a car, upgrade your weapons, and race solo or with friends.
+    - name: Flag Match
+      id: flag-match
+      url: https://flagmatch.com
+      image: flag-match.webp
+      description: Learn the world's flags and capitals, one match at a time.
+    - name: Flag Click
+      id: flag-click
+      url: https://flagclick.com
+      image: flag-click.webp
+      description: Click your country's flag. Climb the pole. Overtake everyone.
+    - name: The HTML Maze
+      id: html-maze
+      url: /htmlmaze/
+      image: html-maze.webp
+      description: 500 rooms. Messages left behind. Find your way out.
+    - name: Tech Debt
+      id: tech-debt
+      url: /tech-debt/
+      image: tech-debt.webp
+      description: Ship a bug-free programming language before the '95 WEBFEST deadline.
+    - name: Puddle Walker
+      id: puddle-walker
+      url: /puddle-walker/
+      image: puddle-walker.webp
+      description: A different street every time. Dodge the mess. Keep your white sneakers clean.
+    - name: The Catipede
+      id: the-catipede
+      url: /the-catipede/
+      image: the-catipede.webp
+      description: An emoji-based pet game inspired by Tamagotchi.

@@ -1,0 +1,21 @@
+{% for section in include.sections %}
+{% assign first_section = forloop.first %}
+<section class="project-section" aria-label="{{ page.title | escape }}">
+  <ul class="project-grid">
+{% for project in section.projects %}
+    <li>
+      <a class="project-card" href="{{ project.url }}" aria-labelledby="project-{{ project.id }}" aria-describedby="description-{{ project.id }}">
+        <span class="project-cover">
+          <img src="{{ '/assets/images/projects/' | append: project.image | relative_url }}" alt="" width="720" height="405" loading="{% if first_section and forloop.index <= 2 %}eager{% else %}lazy{% endif %}" decoding="async">
+        </span>
+        <h3 id="project-{{ project.id }}">{{ project.name | escape }}</h3>
+        <p id="description-{{ project.id }}">{{ project.description | escape }}</p>
+      </a>
+{% if project.source_url %}
+      <a class="project-source" href="{{ project.source_url }}" aria-label="{{ project.name | escape }}: {{ project.source_label }}">{{ project.source_label }}</a>
+{% endif %}
+    </li>
+{% endfor %}
+  </ul>
+</section>
+{% endfor %}

@@ -195,14 +195,28 @@
 
     .site-navigation {
       display: flex;
-      flex-wrap: wrap;
-      gap: .5em 1.25em;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .8rem;
       margin: 1.5rem 0 2.5rem;
       font-size: .9em;
     }
 
-    .site-navigation a[aria-current="page"] {
-      color: inherit;
+    .primary-navigation,
+    .collection-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em 1.25em;
+    }
+
+    .collection-navigation {
+      gap: .5em clamp(.65rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+      font-size: .85em;
+    }
+
+    .site-navigation a[aria-current] {
+      color: var(--text);
       font-weight: 600;
       text-decoration: none;
     }
@@ -319,8 +333,14 @@
 
     .home .site-navigation,
     .listing .site-navigation {
-      justify-content: center;
+      align-items: center;
       margin: 1.75rem 0 3rem;
+    }
+
+    .home .primary-navigation,
+    .listing .primary-navigation,
+    .listing .collection-navigation {
+      justify-content: center;
     }
 
     .home-intro h2 {
@@ -618,20 +638,24 @@
   </h1>
 </header>
 
-<nav class="site-navigation" aria-label="Main navigation">
-  <a href="/" aria-current="page">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/travel/">Travel</a>
-  <a href="/projects/">Projects</a>
-  <a href="/archive/">Archive</a>
-</nav>
+
+<div class="site-navigation">
+  <nav class="primary-navigation" aria-label="Main navigation">
+    <a href="/" aria-current="page">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/projects/">Projects</a>
+    <a href="/travel/">Travel</a>
+  </nav>
+
+</div>
+
 
 
 <section class="home-intro" aria-labelledby="home-intro-title">
   <h2 id="home-intro-title">I build serious software and unserious websites</h2>
-  <p class="home-project">
-    <a href="https://telebugs.com">Telebugs</a> is my self&#8209;hosted alternative to Sentry.
-  </p>
+  <aside class="home-signature" aria-label="My idea of simplicity">
+    <code>simple ≠ dumbed-down<br />simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
+  </aside>
   <figure class="home-location" role="img" aria-label="From Kharkiv, Ukraine, based in Cebu, Philippines.">
   <figcaption class="location-labels" aria-hidden="true">
     <span class="location-label location-label-origin">
@@ -686,10 +710,6 @@
 </nav>
 
 </section>
-
-<aside class="home-signature" aria-label="My idea of simplicity">
-  <code>simple ≠ dumbed-down<br />simple = Σ ( max(signalᵢ) / min(noiseᵢ) )</code>
-</aside>
 
 </div>
 

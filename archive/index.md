@@ -1,11 +1,22 @@
 ---
 layout: listing
+hide_heading: true
 image: assets/images/web-app-manifest-512x512.png?v=3
 title: Archive
 description: What I've worked on and either finished or abandoned.
 ---
 
 <dl class="project-list">
+  <dt><a href="https://weuserails.com">We Use Rails</a></dt>
+  <dd>
+    Discover web apps built with Ruby on Rails (<a href="https://github.com/kyrylo/weuserails.com">GitHub</a>).
+  </dd>
+
+  <dt><a href="https://justfuckinguse.com">Just Fucking Use</a></dt>
+  <dd>
+    A collection of all the best Just Fucking Use sites.
+  </dd>
+
   <dt><a href="/htmlmaze/">The HTML Maze</a></dt>
   <dd>
     A shared, anonymous web experiment with 500 generated rooms, preserved as a read-only static archive after the Rails server was retired in July 2026.

@@ -19,10 +19,4 @@
   </{{ name_tag }}>
 </header>
 
-<nav class="site-navigation" aria-label="Main navigation">
-  <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>About</a>
-  <a href="/blog/"{% if page.url == '/blog/' %} aria-current="page"{% endif %}>Blog</a>
-  <a href="/travel/">Travel</a>
-  <a href="/projects/"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>Projects</a>
-  <a href="/archive/"{% if page.url == '/archive/' %} aria-current="page"{% endif %}>Archive</a>
-</nav>
+{% include site-navigation.html %}

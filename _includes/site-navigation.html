@@ -1,0 +1,18 @@
+{% assign project_pages = '/projects/|/tools/|/games/|/doodles/|/archive/' | split: '|' %}
+<div class="site-navigation">
+  <nav class="primary-navigation" aria-label="Main navigation">
+    <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>About</a>
+    <a href="/blog/"{% if page.url == '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+    <a href="/projects/"{% if project_pages contains page.url %} aria-current="true"{% endif %}>Projects</a>
+    <a href="/travel/">Travel</a>
+  </nav>
+{% if project_pages contains page.url %}
+  <nav class="collection-navigation" aria-label="Project categories">
+    <a href="/projects/"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>Software</a>
+    <a href="/tools/"{% if page.url == '/tools/' %} aria-current="page"{% endif %}>Tools</a>
+    <a href="/games/"{% if page.url == '/games/' %} aria-current="page"{% endif %}>Games</a>
+    <a href="/doodles/"{% if page.url == '/doodles/' %} aria-current="page"{% endif %}>Doodles</a>
+    <a href="/archive/"{% if page.url == '/archive/' %} aria-current="page"{% endif %}>Archive</a>
+  </nav>
+{% endif %}
+</div>

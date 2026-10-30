@@ -2,25 +2,8 @@
   max-width: none;
 }
 
-.projects-gallery .listing-title {
-  margin: 0 0 3rem;
-  color: var(--muted);
-  font-size: .85em;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: normal;
-  text-align: center;
-  text-wrap: balance;
-}
-
 .projects-gallery .project-section + .project-section {
   margin-top: 3rem;
-}
-
-.projects-gallery .project-section h2 {
-  margin-bottom: 1.25rem;
-  padding-bottom: .65rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .project-grid {
