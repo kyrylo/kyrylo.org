@@ -15,3 +15,10 @@
       description: Damn small, self-hosted web analytics. Rust, SQLite, and no cookies.
       source_url: https://github.com/kyrylo/owlytics
       source_label: GitHub
+    - name: Feeds
+      id: feeds
+      url: /feeds/
+      image: feeds.jpg
+      description: A little log for your projects. Self-hosted events, Rust, and SQLite.
+      source_url: https://github.com/kyrylo/feeds
+      source_label: GitHub
