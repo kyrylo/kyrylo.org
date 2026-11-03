@@ -41,12 +41,12 @@
 
   <script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>
 
-{% if page.telesink_endpoint %}
+  {% if page.telesink_endpoint %}
   <script>
     window.TELESINK_ENDPOINT = {{ page.telesink_endpoint | jsonify }};
     window.TELESINK_DISABLED = window.location.hostname !== "kyrylo.org";
   </script>
-{% endif %}
+  {% endif %}
 
   {% feed_meta %}
 </head>

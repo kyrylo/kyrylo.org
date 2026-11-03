@@ -3,7 +3,7 @@
   projects:
     - name: Docker Name Generator
       id: docker-name-generator
-      url: https://dockernamegenerator.com
+      url: /docker-name-generator/
       image: docker-name-generator.webp
       description: Random Docker-style names for whatever needs a name.
     - name: CSS Color Names Reference
