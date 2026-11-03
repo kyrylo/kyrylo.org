@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{{ page.title | escape }}</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:image" content="{{ page.image | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="{{ page.title | escape }}">
+  <meta name="twitter:description" content="{{ page.description | escape }}">
+  <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+  <meta name="twitter:image:alt" content="{{ page.title | escape }}">
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+
+  <link rel="icon" type="image/png" href="/docker-name-generator/assets/images/favicons/favicon-96x96.png?v=6b93f26" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/docker-name-generator/assets/images/favicons/favicon.svg?v=6b93f26" />
+  <link rel="shortcut icon" href="/docker-name-generator/assets/images/favicons/favicon.ico?v=6b93f26" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/docker-name-generator/assets/images/favicons/apple-touch-icon.png?v=6eba6e0" />
+  <meta name="apple-mobile-web-app-title" content="DNG" />
+  <link rel="manifest" href="/docker-name-generator/assets/images/favicons/site.webmanifest?v=6b93f26" />
+
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/reset.css?v=6b93f26">
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/styles.css?v=20260925-2">
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/whales.css?v=782e2a9">
+
+  <script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>
+
+  {% if page.telesink_endpoint %}
+  <script>
+    window.TELESINK_ENDPOINT = {{ page.telesink_endpoint | jsonify }};
+    window.TELESINK_DISABLED = window.location.hostname !== "kyrylo.org";
+  </script>
+  {% endif %}
+
+  {% feed_meta %}
+</head>
+<body>
+
+{{ content }}
+<hr>
+<div class="footer">
+  <small>
+    &copy; {{ site.time | date: "%Y" }} <a href="/">Kyrylo Silin</a>.<br>
+    Generate random Docker container-style names for any purpose.<br>
+    <a href="/docker-name-generator/">Generator</a> &middot;
+    <a href="/docker-name-generator/docker-names/">Docker names</a> &middot;
+    <a href="/docker-name-generator/docker-compose-container-name/">Compose names</a> &middot;
+    <a href="/docker-name-generator/about/">About</a> &middot;
+    <a href="/docker-name-generator/contact/">Contact</a> &middot;
+    <a href="/docker-name-generator/privacy/">Privacy</a>
+  </small>
+</div>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Docker Name Generator - Random Docker Container Names</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Generate random Docker container names in the same adjective_surname style used by Docker. Copy container-friendly names with dash or underscore separators.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Kyrylo Silin">
+  <meta property="og:title" content="Docker Name Generator - Random Docker Container Names">
+  <meta property="og:description" content="Generate random Docker container names in the same adjective_surname style used by Docker. Copy container-friendly names with dash or underscore separators.">
+  <meta property="og:image" content="https://kyrylo.org/docker-name-generator/assets/images/og.png?v=7907af4">
+  <meta property="og:url" content="https://kyrylo.org/docker-name-generator/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Docker Name Generator - Random Docker Container Names">
+  <meta name="twitter:description" content="Generate random Docker container names in the same adjective_surname style used by Docker. Copy container-friendly names with dash or underscore separators.">
+  <meta name="twitter:image" content="https://kyrylo.org/docker-name-generator/assets/images/og.png?v=7907af4">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+  <meta name="twitter:image:alt" content="Docker Name Generator - Random Docker Container Names">
+
+  <link rel="canonical" href="https://kyrylo.org/docker-name-generator/">
+
+
+  <link rel="icon" type="image/png" href="/docker-name-generator/assets/images/favicons/favicon-96x96.png?v=6b93f26" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/docker-name-generator/assets/images/favicons/favicon.svg?v=6b93f26" />
+  <link rel="shortcut icon" href="/docker-name-generator/assets/images/favicons/favicon.ico?v=6b93f26" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/docker-name-generator/assets/images/favicons/apple-touch-icon.png?v=6eba6e0" />
+  <meta name="apple-mobile-web-app-title" content="DNG" />
+  <link rel="manifest" href="/docker-name-generator/assets/images/favicons/site.webmanifest?v=6b93f26" />
+
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/reset.css?v=6b93f26">
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/styles.css?v=20260925-2">
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/whales.css?v=782e2a9">
+
+  <script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>
+
+  
+  <script>
+    window.TELESINK_ENDPOINT = "https://feeds.kyrylo.org/api/v1/feeds/G4TrwrwV1KJ4cfUvoAt28wEc/events";
+    window.TELESINK_DISABLED = window.location.hostname !== "kyrylo.org";
+  </script>
+  
+
+  <link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" />
+</head>
+<body>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "name": "Docker Name Generator",
+  "url": "https://kyrylo.org/docker-name-generator/"
+}
+</script>
+
+<script src="/docker-name-generator/assets/javascripts/script.js?v=owlytics-20261030" type="module"></script>
+
+<main>
+  <div class="product">
+    <div class="product__body">
+      <header class="product__header text-center">
+        <img src="/docker-name-generator/assets/images/logo.svg?v=6b93f26" alt="Docker Name Generator logo">
+        <h1>Docker Name Generator</h1>
+        <p>Generate random Docker container names <mark>for any purpose</mark></p>
+
+        <section>
+          <div id="nameList" class="name-list">
+            <table>
+              <tbody id="nameTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="controls">
+            <button id="submitButton" title="Generate">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+            </button>
+            <button id="copyAllButton" title="Copy all names" aria-label="Copy all names">
+              <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.25 7.5h7.5M8.25 12h7.5m-7.5 4.5h7.5M5.25 3.75h13.5A2.25 2.25 0 0 1 21 6v12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18V6a2.25 2.25 0 0 1 2.25-2.25Z" />
+              </svg>
+              <svg class="tick-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </button>
+            <button id="copyDockerCommandButton" title="Copy Docker command" aria-label="Copy Docker command">
+              <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m6.75 7.5 3 3-3 3m4.5 0h6M5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 17.25V6.75A2.25 2.25 0 0 1 5.25 4.5Z" />
+              </svg>
+              <svg class="tick-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </button>
+            <button onclick="options.showModal()" title="Options">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              </svg>
+            </button>
+          </div>
+
+          <dialog id="options">
+            <button onclick="options.close()" class="close-button" aria-label="Close options">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <form>
+              <fieldset>
+                <legend>Options</legend>
+                <div>
+                  <label for="separator">
+                    Separator:
+                    <select id="separator">
+                      <option value="-">Dash</option>
+                      <option value="_">Underscore</option>
+                    </select>
+                  </label>
+                </div>
+                <div>
+
+                  <div class="count-input">
+                    <label for="count">Count (10 max):</label>
+                    <input type="number" id="count" min="1" max="10" value="1">
+                  </div>
+              </fieldset>
+            </form>
+          </dialog>
+        </section>
+      </header>
+
+      <footer>
+        <div class="container">
+          <div class="whaleContainer">
+            <div class="whalePos size1">
+              <div class="whaleRotate size1">
+                <div class="whale"></div>
+                <div class="fin"></div>
+              </div>
+            </div>
+            <div class="whalePos size2">
+              <div class="whaleRotate size2">
+                <div class="whale"></div>
+                <div class="fin"></div>
+              </div>
+            </div>
+            <div class="whalePos size3">
+              <div class="whaleRotate size3">
+                <div class="whale"></div>
+                <div class="fin"></div>
+              </div>
+            </div>
+            <div class="whalePos size4">
+              <div class="whaleRotate size4">
+                <div class="whale"></div>
+                <div class="fin"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cPos">
+            <div class="cc">
+              <div class="circle one"></div>
+              <div class="circle two"></div>
+              <div class="circle three"></div>
+              <div class="circle four"></div>
+            </div>
+          </div>
+          <div class="triangleContainer">
+            <span class="triangle"></span><span class="triangle"></span><span class="triangle"></span><span
+              class="triangle"></span><span class="triangle"></span><span class="triangle"></span><span
+              class="triangle"></span><span class="triangle"></span><span class="triangle"></span><span
+              class="triangle"></span><span class="triangle"></span><span class="triangle"></span><span
+              class="triangle"></span><span class="triangle"></span><span class="triangle"></span><span
+              class="triangle"></span><span class="triangle"></span><span class="triangle"></span><span
+              class="triangle"></span>
+          </div>
+          <div class="gradientContainer">
+            <div class="overlay one"></div>
+            <div class="gradient"><span class="ray1"></span><span class="ray2"></span><span class="ray3"></span><span
+                class="ray4"></span><span class="ray5"></span><span class="ray6"></span><span class="ray7"></span><span
+                class="ray8"></span><span class="ray9"></span><span class="ray10"></span><span class="ray11"></span><span
+                class="ray12"></span><span class="ray13"></span><span class="ray14"></span><span class="ray15"></span><span
+                class="ray16"></span><span class="ray17"></span><span class="ray18"></span><span class="ray19"></span><span
+                class="ray20"></span><span class="ray21"></span><span class="ray22"></span><span class="ray23"></span><span
+                class="ray24"></span><span class="ray25"></span><span class="ray26"></span><span class="ray27"></span><span
+                class="ray28"></span><span class="ray29"></span><span class="ray30"></span><span class="ray31"></span><span
+                class="ray32"></span><span class="ray33"></span><span class="ray34"></span><span class="ray35"></span><span
+                class="ray36"></span><span class="ray37"></span><span class="ray38"></span><span class="ray1"></span><span
+                class="ray2"></span><span class="ray3"></span><span class="ray4"></span><span class="ray5"></span><span
+                class="ray6"></span><span class="ray7"></span><span class="ray8"></span><span class="ray9"></span><span
+                class="ray10"></span><span class="ray11"></span><span class="ray12"></span><span class="ray13"></span><span
+                class="ray14"></span><span class="ray15"></span><span class="ray16"></span><span class="ray17"></span><span
+                class="ray18"></span><span class="ray19"></span><span class="ray20"></span><span class="ray21"></span><span
+                class="ray22"></span><span class="ray23"></span><span class="ray24"></span><span class="ray25"></span><span
+                class="ray26"></span><span class="ray27"></span><span class="ray28"></span><span class="ray29"></span><span
+                class="ray30"></span><span class="ray31"></span><span class="ray32"></span><span class="ray33"></span><span
+                class="ray34"></span><span class="ray35"></span><span class="ray36"></span><span class="ray37"></span><span
+                class="ray38"></span>
+            </div>
+          </div>
+          <div class="rocks">
+            <div class="rock one"></div>
+            <div class="rock two"></div>
+            <div class="rock three"></div>
+            <div class="rock four"></div>
+          </div>
+          <div class="bubbleContainer"><span class="bubbleY1"><span class="bubbleX1"></span></span><span
+              class="bubbleY2"><span class="bubbleX2"></span></span><span class="bubbleY3"><span
+                class="bubbleX3"></span></span><span class="bubbleY4"><span class="bubbleX4"></span></span><span
+              class="bubbleY5"><span class="bubbleX5"></span></span><span class="bubbleY6"><span
+                class="bubbleX6"></span></span><span class="bubbleY7"><span class="bubbleX7"></span></span><span
+              class="bubbleY8"><span class="bubbleX8"></span></span><span class="bubbleY9"><span
+                class="bubbleX9"></span></span><span class="bubbleY10"><span class="bubbleX10"></span></span><span
+              class="bubbleY11"><span class="bubbleX11"></span></span><span class="bubbleY12"><span
+                class="bubbleX12"></span></span><span class="bubbleY13"><span class="bubbleX13"></span></span><span
+              class="bubbleY14"><span class="bubbleX14"></span></span><span class="bubbleY15"><span
+                class="bubbleX15"></span></span><span class="bubbleY16"><span class="bubbleX16"></span></span><span
+              class="bubbleY17"><span class="bubbleX17"></span></span><span class="bubbleY18"><span
+                class="bubbleX18"></span></span><span class="bubbleY19"><span class="bubbleX19"></span></span><span
+              class="bubbleY20"><span class="bubbleX20"></span></span><span class="bubbleY21"><span
+                class="bubbleX21"></span></span><span class="bubbleY22"><span class="bubbleX22"></span></span><span
+              class="bubbleY23"><span class="bubbleX23"></span></span><span class="bubbleY24"><span
+                class="bubbleX24"></span></span><span class="bubbleY25"><span class="bubbleX25"></span></span><span
+              class="bubbleY26"><span class="bubbleX26"></span></span><span class="bubbleY27"><span
+                class="bubbleX27"></span></span><span class="bubbleY28"><span class="bubbleX28"></span></span><span
+              class="bubbleY29"><span class="bubbleX29"></span></span><span class="bubbleY30"><span
+                class="bubbleX30"></span></span><span class="bubbleY31"><span class="bubbleX31"></span></span><span
+              class="bubbleY32"><span class="bubbleX32"></span></span><span class="bubbleY33"><span
+                class="bubbleX33"></span></span><span class="bubbleY34"><span class="bubbleX34"></span></span><span
+              class="bubbleY35"><span class="bubbleX35"></span></span><span class="bubbleY36"><span
+                class="bubbleX36"></span></span><span class="bubbleY37"><span class="bubbleX37"></span></span><span
+              class="bubbleY38"><span class="bubbleX38"></span></span><span class="bubbleY39"><span
+                class="bubbleX39"></span></span><span class="bubbleY40"><span class="bubbleX40"></span></span><span
+              class="bubbleY41"><span class="bubbleX41"></span></span><span class="bubbleY42"><span
+                class="bubbleX42"></span></span><span class="bubbleY43"><span class="bubbleX43"></span></span><span
+              class="bubbleY44"><span class="bubbleX44"></span></span><span class="bubbleY45"><span
+                class="bubbleX45"></span></span><span class="bubbleY46"><span class="bubbleX46"></span></span><span
+              class="bubbleY47"><span class="bubbleX47"></span></span><span class="bubbleY48"><span
+                class="bubbleX48"></span></span><span class="bubbleY49"><span class="bubbleX49"></span></span>
+          </div>
+        </div>
+
+        <p>
+          <small>
+            by <a href="https://kyrylo.org">kyrylo</a> &middot;
+            <a href="https://kyrylo.org/projects/">more small projects</a>
+          </small>
+        </p>
+
+        <p class="contextual-cta">
+          <small>
+            I built this little tool to help with my main project,
+            <a href="https://telebugs.com/?utm_source=kyrylo.org&amp;utm_medium=referral&amp;utm_campaign=preview-environments&amp;utm_content=docker-name-generator"><img width="119" height="28" src="/docker-name-generator/assets/images/telebugs.svg?v=20260925-2" alt="Telebugs"></a>:
+            error tracking you can self-host in a single Docker container.
+          </small>
+        </p>
+
+        <hr>
+      </footer>
+
+      <section class="product__content">
+        <h2>What are Docker-style names?</h2>
+
+        <p>
+          <a href="https://www.docker.com/resources/what-container" target="_blank">Docker containers</a> are often given
+          quirky, human-readable names like <code>agitated_torvalds</code> or
+          <code>bold_turing</code>. These names combine an adjective with the
+          surname of a notable scientist or hacker, making it easier to identify
+          and manage containers in development or production environments.
+        </p>
+
+        <p>
+          <strong>Fun fact:</strong> the Docker team froze the list in 2022 to
+          avoid endless debates over new entries (see the <a
+          href="https://github.com/moby/moby/pull/43210" target="_blank">GitHub
+          discussion</a>).
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Docker naming guides</h2>
+        <p>
+          Ready to use a name? Learn the rules, validation, <code>docker run --name</code>,
+          and renaming in the <a href="/docker-name-generator/docker-names/">Docker container names guide</a>.
+          For multi-container apps, see how project names, service names, DNS, and
+          <code>container_name</code> fit together in the
+          <a href="/docker-name-generator/docker-compose-container-name/">Docker Compose names guide</a>.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Why should I use this?</h2>
+        <p>
+          You tell <a href="https://kyrylo.org" target="_blank">me</a>! I needed this
+          project because my potential buyers wanted to evaluate <a
+          href="https://telebugs.com/" target="_blank">Telebugs</a>. So, I’ve been
+          using these generated names as subdomains. Clients visit addresses like
+          <code>adoring-beaver.telebugs.com</code> to test our services. This
+          setup provides each client with a unique, memorable URL for their
+          evaluation environment. It simplifies the process of setting up and
+          sharing access while adding a professional yet playful touch to the
+          experience.
+        </p>
+
+        <p>
+          P.S. Tell me how you <em>use</em> it, and I’ll feature your idea here!
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>How are Docker names generated?</h2>
+        <p>
+          The process is simple yet clever: an adjective (e.g.,
+          <code>admiring</code>) is paired with a surname (e.g.,
+          <code>agnesi</code>) using a separator like <code>_</code> or
+          <code>-</code>. The lists come straight from <a href="https://github.com/moby/moby/blob/2e25c2b14f42f634e2b6beed2318bb62580675e3/pkg/namesgenerator/names-generator.go" target="_blank">Docker’s official
+          implementation</a>, featuring adjectives like <code>awesome</code> and
+          <code>zen</code>, and surnames of people like <code>curie</code> and
+          <code>turing</code>.
+          For the naming pattern, vocabulary size, valid characters, and more
+          examples, see the <a href="/docker-name-generator/docker-names/">Docker container names guide</a>.
+        </p>
+
+        <p>
+          Here’s a simplified example in JavaScript:
+        </p>
+
+        <pre><code>const a = ["admiring", "bold", "jolly"];
+const s = ["curie", "turing", "hopper"];
+const adj = `${a[Math.floor(Math.random() * a.length)]}`;
+const sur = `${s[Math.floor(Math.random() * s.length)]}`;
+const name = `${adj}_${sur}`;
+console.log(name);
+// Output: "jolly_curie" or "bold_hopper"</code></pre>
+
+        <p>
+          <strong>P.S.</strong> A special rule skips <code>boring_wozniak</code> — because Steve Wozniak
+          is anything but boring!
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Other use cases for Docker container names</h2>
+        <p>
+          These names aren’t just for client evaluations — they can add value
+          anywhere unique identifiers are needed. Here are some practical
+          applications:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Development and testing environments:</strong> Developers can
+            label testing environments with names like <code>focused_turing</code>
+            for a stable branch or <code>adorable_einstein</code> for experimental
+            features, making it easier to manage multiple setups.
+          </li>
+          <li>
+            <strong>Educational purposes:</strong> In coding bootcamps or online
+            courses, instructors can assign personalized environments to students,
+            such as <code>brave-hopper.studentcourse.com</code>, simplifying
+            assignment tracking and adding a fun element.
+          </li>
+          <li>
+            <strong>Demo environments:</strong>
+            Companies showcasing products can create temporary demo sites at
+            subdomains like <code>dazzling-fermat.productdemo.com</code>, making
+            presentations stand out and stick in clients’ minds.
+          </li>
+          <li>
+            <strong>Hackathons and coding competitions:</strong> Organizers can
+            assign team projects unique, memorable subdomains like
+            <code>epic-newton.hackathon.com</code> — making it easy for judges and
+            participants to access them.
+          </li>
+
+          <li>
+            <strong>Personal projects:</strong> Hobbyists juggling multiple
+            projects can organize them with names like
+            <code>serene-hopper.myprojects.com</code> and
+            <code>vibrant-tesla.myprojects.com</code>, keeping their work distinct
+            and engaging.
+          </li>
+        </ul>
+      </section>
+
+      <section class="product__content">
+        <h2>Examples of generated Docker names</h2>
+        <p>
+          Here are some examples:
+        </p>
+
+        <ul>
+          <li>
+            <code>vibrant_tesla</code>
+          </li>
+          <li>
+            <code>serene_hopper</code>
+          </li>
+          <li>
+            <code>jolly_black</code>
+          </li>
+          <li>
+            <code>focused_turing</code>
+          </li>
+          <li>
+            <code>quirky_einstein</code>
+          </li>
+          <li>
+            <code>dazzling_fermat</code>
+          </li>
+        </ul>
+
+        <p>
+          Try it yourself above!
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Frequently asked questions</h2>
+        <h3>How many names can I generate?</h3>
+        <p>Up to 10 unique names at once — perfect for batch container creation.</p>
+
+        <h3>Are these names truly unique?</h3>
+        <p>
+          Yes, the generator avoids duplicates within a single run.
+        </p>
+
+        <h3>Can I use these names globally?</h3>
+        <p>
+          While Docker-style names are unique within a single generation, they
+          are not guaranteed to be globally unique due to the limited vocabulary
+          of 25,488 possible combinations. This means that two different users
+          or systems could independently generate the same name.
+        </p>
+
+        <p>
+          To ensure global uniqueness, consider appending a UUID (Universally Unique Identifier) or a timestamp to the generated
+          name. For example:
+        </p>
+
+        <ul>
+          <li>Original name: happy-visvesvaraya</li>
+          <li>With UUID: happy-visvesvaraya-550e8400-e29b-41d4-a716-446655440000</li>
+          <li>With timestamp: happy-visvesvaraya-20231025T123456Z</li>
+        </ul>
+
+        <p>
+          This additional identifier makes the name unique across different
+          users, systems, and time periods.
+        </p>
+
+        <h3>What separators can I use?</h3>
+        <p>
+          Choose between a dash (<code>-</code>) or an underscore (<code>_</code>) to suit your style.
+        </p>
+
+        <h3>Can I customize the lists?</h3>
+        <p>
+          Not yet, but the current lists are packed with great options from
+          Docker’s official set!
+        </p>
+
+        <h3>Why use these over random IDs?</h3>
+        <p>
+          Docker-style names are memorable and fun, making it easier to identify
+          things. They’re easier to remember and add a playful twist to your
+          projects.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Did you know?</h2>
+        <ul>
+          <li>Marie Curie was the first woman to win a Nobel Prize.</li>
+          <li>Steve Wozniak co-founded Apple Inc. with Steve Jobs.</li>
+          <li>Alan Turing is considered the father of modern computer science.</li>
+          <li>Grace Hopper invented the first compiler for a computer programming language.</li>
+        </ul>
+      </section>
+
+      <section class="product__content">
+        <h2>Tech behind the tool</h2>
+        <p>
+          Built with plain JavaScript, HTML, CSS and a sprinkle of creativity,
+          this generator lets you have fun with Docker-style names.
+        </p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<hr>
+<div class="footer">
+  <small>
+    &copy; 2026 <a href="/">Kyrylo Silin</a>.<br>
+    Generate random Docker container-style names for any purpose.<br>
+    <a href="/docker-name-generator/">Generator</a> &middot;
+    <a href="/docker-name-generator/docker-names/">Docker names</a> &middot;
+    <a href="/docker-name-generator/docker-compose-container-name/">Compose names</a> &middot;
+    <a href="/docker-name-generator/about/">About</a> &middot;
+    <a href="/docker-name-generator/contact/">Contact</a> &middot;
+    <a href="/docker-name-generator/privacy/">Privacy</a>
+  </small>
+</div>
+</body>
+</html>

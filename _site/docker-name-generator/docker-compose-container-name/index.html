@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Docker Compose Container Names: container_name, Project Names &amp; DNS</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Understand Docker Compose container names, container_name, project-name precedence, service DNS, scaling limits, and name-conflict fixes.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:site_name" content="Kyrylo Silin">
+  <meta property="og:title" content="Docker Compose Container Names: container_name, Project Names &amp; DNS">
+  <meta property="og:description" content="Understand Docker Compose container names, container_name, project-name precedence, service DNS, scaling limits, and name-conflict fixes.">
+  <meta property="og:image" content="https://kyrylo.org/docker-name-generator/assets/images/og.png?v=7907af4">
+  <meta property="og:url" content="https://kyrylo.org/docker-name-generator/docker-compose-container-name/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:title" content="Docker Compose Container Names: container_name, Project Names &amp; DNS">
+  <meta name="twitter:description" content="Understand Docker Compose container names, container_name, project-name precedence, service DNS, scaling limits, and name-conflict fixes.">
+  <meta name="twitter:image" content="https://kyrylo.org/docker-name-generator/assets/images/og.png?v=7907af4">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kyrylosilin">
+  <meta name="twitter:site" content="@kyrylosilin">
+  <meta name="twitter:image:alt" content="Docker Compose Container Names: container_name, Project Names &amp; DNS">
+
+  <link rel="canonical" href="https://kyrylo.org/docker-name-generator/docker-compose-container-name/">
+
+
+  <link rel="icon" type="image/png" href="/docker-name-generator/assets/images/favicons/favicon-96x96.png?v=6b93f26" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/docker-name-generator/assets/images/favicons/favicon.svg?v=6b93f26" />
+  <link rel="shortcut icon" href="/docker-name-generator/assets/images/favicons/favicon.ico?v=6b93f26" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/docker-name-generator/assets/images/favicons/apple-touch-icon.png?v=6eba6e0" />
+  <meta name="apple-mobile-web-app-title" content="DNG" />
+  <link rel="manifest" href="/docker-name-generator/assets/images/favicons/site.webmanifest?v=6b93f26" />
+
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/reset.css?v=6b93f26">
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/styles.css?v=20260925-2">
+  <link rel="stylesheet" type="text/css" href="/docker-name-generator/assets/stylesheets/whales.css?v=782e2a9">
+
+  <script defer data-domain="kyrylo.org" src="https://owlytics.kyrylo.org/script.js"></script>
+
+  
+
+  <link type="application/atom+xml" rel="alternate" href="https://kyrylo.org/feed.xml" title="Kyrylo Silin" />
+</head>
+<body>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker Compose Container Names: container_name, Project Names & DNS",
+  "description": "Understand Docker Compose container names, container_name, project-name precedence, service DNS, scaling limits, and name-conflict fixes.",
+  "author": {
+    "@type": "Person",
+    "name": "Kyrylo",
+    "url": "https://kyrylo.org/"
+  },
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "mainEntityOfPage": "https://kyrylo.org/docker-name-generator/docker-compose-container-name/",
+  "url": "https://kyrylo.org/docker-name-generator/docker-compose-container-name/"
+}
+</script>
+<script src="/docker-name-generator/assets/javascripts/guide.js?v=owlytics-20261030" type="module"></script>
+
+<main>
+  <article class="product">
+    <div class="product__body">
+      <header class="product__content page-title">
+        <h1>Docker Compose container names</h1>
+        <p>
+          Understand the default project-service-replica pattern before reaching
+          for <code>container_name</code>.
+        </p>
+      </header>
+
+      <section class="product__content">
+        <h2>Default Compose container names</h2>
+        <p>
+          Docker Compose derives each container name from the project name,
+          service name, and replica index: <code>&lt;project&gt;-&lt;service&gt;-&lt;index&gt;</code>.
+          With this <code>compose.yaml</code>, Compose creates
+          <code>storefront-api-1</code> and <code>storefront-db-1</code> by default.
+        </p>
+
+        <pre><code>name: storefront
+
+services:
+  api:
+    image: nginx:alpine
+  db:
+    image: postgres:18-alpine</code></pre>
+
+        <p>
+          Letting Compose assign names prevents collisions between projects and
+          gives replicas predictable numeric suffixes. The top-level
+          <code>version</code> field is obsolete and is intentionally omitted from
+          current Compose examples.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Set a fixed name with <code>container_name</code></h2>
+        <p>
+          The <code>container_name</code> service attribute replaces the generated
+          name with one exact value.
+        </p>
+
+        <pre><code>services:
+  api:
+    image: nginx:alpine
+    container_name: storefront-api</code></pre>
+
+        <p>
+          A fixed name can help a human-facing local workflow, but it makes the
+          file less reusable across project names and hosts. Docker Compose
+          rejects an attempt to scale a service beyond one container when that
+          service declares <code>container_name</code>. Prefer the default name
+          unless an external tool truly requires a fixed container name. See the
+          official <a href="https://docs.docker.com/reference/compose-file/services/#container_name" target="_blank" rel="noopener">Compose service reference</a>.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Service names, container names, and DNS</h2>
+        <p>
+          Other containers in the same Compose app should connect to a service by
+          its service name, not by a generated container name. In the example
+          below, <code>api</code> should use <code>http://db:5432</code>. Compose
+          attaches both services to a default network and keeps the stable DNS
+          name <code>db</code> even when a container is recreated with a new IP.
+        </p>
+
+        <pre><code>services:
+  api:
+    image: example/api
+    environment:
+      DATABASE_HOST: db
+  db:
+    image: postgres:18-alpine</code></pre>
+
+        <p>
+          From the host machine, use the published host port instead of the
+          service's internal DNS name. The official
+          <a href="https://docs.docker.com/compose/how-tos/networking/" target="_blank" rel="noopener">Compose networking guide</a>
+          explains the default network and service discovery behavior.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Compose project-name precedence</h2>
+        <p>
+          The project name namespaces generated containers, networks, and other
+          resources. Compose chooses it using this precedence, from highest to
+          lowest:
+        </p>
+        <ol>
+          <li>The <code>-p</code> command-line flag.</li>
+          <li>The <code>COMPOSE_PROJECT_NAME</code> environment variable.</li>
+          <li>The top-level <code>name</code> field in the Compose file.</li>
+          <li>The directory containing the first Compose file.</li>
+          <li>The current directory when no Compose file path is supplied.</li>
+        </ol>
+
+        <pre><code>docker compose -p preview-1842 up -d
+# Creates names such as preview-1842-api-1</code></pre>
+
+        <p>
+          The <a href="https://docs.docker.com/compose/how-tos/project-name/" target="_blank" rel="noopener">official project-name guide</a>
+          documents the full precedence and naming constraints.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Check a proposed <code>container_name</code></h2>
+        <p>
+          This validator applies Docker's container-name pattern separately from
+          lowercase DNS-label guidance. It checks the exact input and never trims
+          or rewrites it.
+        </p>
+
+        <div class="validator" data-container-name-validator>
+          <label for="compose-name-input">Container name to validate</label>
+          <input id="compose-name-input" type="text" autocomplete="off" spellcheck="false"
+            placeholder="storefront-api" data-validator-input>
+          <div class="validator__feedback validator__feedback--empty" role="status"
+            aria-live="polite" aria-atomic="true" data-validator-feedback>
+            <p>Enter a proposed container name to check it without changing it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="product__content">
+        <h2>Troubleshoot container name conflicts</h2>
+        <p>
+          A conflict means the Docker host already has a container with the same
+          exact name, including a stopped container. Identify the owner before
+          changing anything:
+        </p>
+
+        <pre><code>docker ps -a --filter name=storefront-api
+docker compose ls
+docker compose ps -a</code></pre>
+
+        <p>
+          Then choose the least surprising fix: start the intended existing
+          project, run the new app with a different project name, rename the old
+          container, or remove a container you no longer need. Avoid immediately
+          deleting a conflicting container when you do not know which project
+          owns it.
+        </p>
+
+        <pre><code>docker compose -p storefront-dev up -d
+docker rename storefront-api storefront-api-old</code></pre>
+      </section>
+
+      <section class="product__content">
+        <h2>Choose names for your containers and projects</h2>
+        <p>
+          Use the <a href="/docker-name-generator/">Docker name generator</a> for memorable random names,
+          or read the broader <a href="/docker-name-generator/docker-names/">Docker container names guide</a>
+          for <code>docker run --name</code>, validation, renaming, and naming
+          conventions.
+        </p>
+      </section>
+    </div>
+  </article>
+</main>
+
+<hr>
+<div class="footer">
+  <small>
+    &copy; 2026 <a href="/">Kyrylo Silin</a>.<br>
+    Generate random Docker container-style names for any purpose.<br>
+    <a href="/docker-name-generator/">Generator</a> &middot;
+    <a href="/docker-name-generator/docker-names/">Docker names</a> &middot;
+    <a href="/docker-name-generator/docker-compose-container-name/">Compose names</a> &middot;
+    <a href="/docker-name-generator/about/">About</a> &middot;
+    <a href="/docker-name-generator/contact/">Contact</a> &middot;
+    <a href="/docker-name-generator/privacy/">Privacy</a>
+  </small>
+</div>
+</body>
+</html>

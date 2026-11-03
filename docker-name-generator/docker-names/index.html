@@ -1,0 +1,178 @@
+---
+layout: "docker-name-generator"
+title: "Docker Container Names: How to Name and Rename Containers"
+description: "Learn docker run --name, automatic Docker names, container name validation, naming conventions, and how to rename a Docker container."
+permalink: "/docker-name-generator/docker-names/"
+image: "/docker-name-generator/assets/images/og.png?v=7907af4"
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker Container Names: How to Name and Rename Containers",
+  "description": "Learn docker run --name, automatic Docker names, container name validation, naming conventions, and how to rename a Docker container.",
+  "author": {
+    "@type": "Person",
+    "name": "Kyrylo",
+    "url": "https://kyrylo.org/"
+  },
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-21",
+  "mainEntityOfPage": "https://kyrylo.org/docker-name-generator/docker-names/",
+  "url": "https://kyrylo.org/docker-name-generator/docker-names/"
+}
+</script>
+<script src="/docker-name-generator/assets/javascripts/guide.js?v=owlytics-20261030" type="module"></script>
+
+<main>
+  <article class="product">
+    <div class="product__body">
+      <header class="product__content page-title">
+        <h1>Docker container names</h1>
+        <p>
+          Set a memorable name, check whether it is valid, and rename a
+          container without recreating it.
+        </p>
+      </header>
+
+      <section class="product__content">
+        <h2>Name a container with <code>docker run --name</code></h2>
+        <p>
+          Pass <code>--name</code> before the image name when you create a
+          container. A chosen name is easier to use in commands than a generated
+          container ID.
+        </p>
+
+        <pre><code>docker run --name my-container -d nginx
+docker logs my-container
+docker stop my-container</code></pre>
+
+        <p>
+          Container names must be unique on the same Docker host. If
+          <code>my-container</code> already exists, remove or rename that container,
+          or choose another name. The <a href="/docker-name-generator/">Docker name generator</a> creates
+          ready-to-copy names and commands.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Automatic Docker names</h2>
+        <p>
+          When you omit <code>--name</code>, Docker assigns a human-readable name
+          such as <code>focused_turing</code> or <code>serene_hopper</code>. The name
+          combines an adjective and the surname of a notable scientist or hacker.
+          It is convenient for temporary containers, while an explicit name is
+          usually clearer in scripts and long-lived environments.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Docker container name rules and validator</h2>
+        <p>
+          Docker accepts a letter or number first, followed by one or more
+          letters, numbers, underscores, periods, or hyphens. In regular-expression
+          form, the rule is <code>^[A-Za-z0-9][A-Za-z0-9_.-]+$</code>.
+        </p>
+        <p>
+          Docker validity and DNS friendliness are different. Lowercase names
+          containing only letters, numbers, and internal hyphens are the safest
+          choice for hostnames. A single DNS label can be at most 63 characters.
+        </p>
+
+        <div class="validator" data-container-name-validator>
+          <label for="docker-name-input">Container name to validate</label>
+          <input id="docker-name-input" type="text" autocomplete="off" spellcheck="false"
+            placeholder="my-container" data-validator-input>
+          <div class="validator__feedback validator__feedback--empty" role="status"
+            aria-live="polite" aria-atomic="true" data-validator-feedback>
+            <p>Enter a proposed container name to check it without changing it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="product__content">
+        <h2>Rename a Docker container</h2>
+        <p>
+          Use <code>docker rename</code> with the current name or container ID and
+          the new name. The command also works while a container is running.
+        </p>
+
+        <pre><code>docker rename old-api-name new-api-name
+docker ps --filter name=new-api-name</code></pre>
+
+        <p>
+          Renaming changes Docker's container name, not configuration stored
+          inside the container. Update scripts or monitoring rules that refer to
+          the old name. See the official
+          <a href="https://docs.docker.com/reference/cli/docker/container/rename/" target="_blank" rel="noopener">docker container rename reference</a>.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Container naming conventions and examples</h2>
+        <p>
+          A useful convention describes the app, role, and environment without
+          duplicating information already managed elsewhere. Keep names short,
+          stable, lowercase, and predictable when humans or scripts will type
+          them.
+        </p>
+        <ul>
+          <li><code>billing-api</code> — app and role</li>
+          <li><code>billing-worker-staging</code> — app, role, and environment</li>
+          <li><code>preview-1842</code> — temporary environment plus identifier</li>
+          <li><code>admiring_curie</code> — memorable Docker-generated style</li>
+          <li><code>focused-hopper</code> — random but DNS-friendly style</li>
+        </ul>
+        <p>
+          Do not encode mutable details such as an image patch version in a
+          container name unless your deployment process intentionally manages
+          that lifecycle.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Dash versus underscore</h2>
+        <p>
+          Docker's automatic names use an underscore, as in
+          <code>quirky_einstein</code>. A dash produces
+          <code>quirky-einstein</code>, which is friendlier for DNS labels,
+          subdomains, and preview URLs. Both separators are valid in Docker
+          container names, but underscores are not valid in ordinary hostname
+          labels.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>How random Docker names are generated</h2>
+        <p>
+          Docker's generator randomly picks one adjective and one surname, then
+          joins them with an underscore. This site uses the same 108 adjectives
+          and 236 surnames from the Moby source. That produces 25,488 raw pairs.
+          Docker skips <code>boring_wozniak</code>, leaving 25,487 names that can
+          actually be generated.
+        </p>
+
+        <pre><code>adjective + "_" + surname
+// admiring_curie</code></pre>
+
+        <p>
+          The vocabulary is attributed to Docker's open source implementation in
+          the Moby project:
+          <a href="https://github.com/moby/moby/blob/2e25c2b14f42f634e2b6beed2318bb62580675e3/pkg/namesgenerator/names-generator.go" target="_blank" rel="noopener">names-generator.go</a>.
+          Generate a batch with the <a href="/docker-name-generator/">Docker name generator</a>.
+        </p>
+      </section>
+
+      <section class="product__content">
+        <h2>Docker Compose container names</h2>
+        <p>
+          Docker Compose normally builds container names from the project,
+          service, and replica number. Before setting <code>container_name</code>,
+          learn how that affects scaling and service discovery in the
+          <a href="/docker-name-generator/docker-compose-container-name/">Docker Compose container names guide</a>.
+        </p>
+      </section>
+    </div>
+  </article>
+</main>

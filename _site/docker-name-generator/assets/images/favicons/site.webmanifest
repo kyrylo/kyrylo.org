@@ -1,0 +1,24 @@
+{
+  "name": "Docker Name Generator",
+  "short_name": "DNG",
+  "icons": [
+    {
+      "src": "/docker-name-generator/assets/images/favicons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/docker-name-generator/assets/images/favicons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "id": "/docker-name-generator/",
+  "start_url": "/docker-name-generator/",
+  "scope": "/docker-name-generator/"
+}
