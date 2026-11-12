@@ -14,6 +14,21 @@ cd _travel && mdbook build && cd -
 bundle exec jekyll build
 ```
 
+## Analytics
+
+Every public page needs one Owlytics tracker, including standalone doodles that
+do not use the Jekyll layout. Copy the deferred script from `_includes/head.html`
+into a new standalone page's `<head>`, with `data-domain="kyrylo.org"`.
+Travel pages get it from `_travel/theme/head.hbs`.
+
+The Jekyll build checks all generated HTML for missing or duplicate tracking
+and rejects leftover Plausible scripts. Redirects, `/up.html`, and Elsewhere's
+embedded camera frame are excluded to avoid extra pageviews. Localhost previews
+are ignored by Owlytics.
+
+Run `ruby _tests/analytics_coverage_test.rb` to check coverage and the build guard.
+Commit the changed `_site/` output with the source: production serves that directory.
+
 [1]: https://kyrylo.org
 [2]: https://github.com/rust-lang/mdBook
 [3]: https://github.com/basecamp/kamal-skiff

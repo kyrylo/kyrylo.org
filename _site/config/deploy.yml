@@ -2,7 +2,7 @@ service: kyrylo
 image: kyrylo
 
 servers:
-  - 157.180.112.13
+  - telebugs
 
 proxy:
   ssl: true
